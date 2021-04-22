@@ -1,0 +1,485 @@
+ACTOR ValiantImp : DoomImp
+{
+	Obituary "%o was scorched by a valiant imp."
+	HitObituary "%o got scratched by a valiant imp."
+	Tag "Valiant Imp"
+	States
+	{
+	Spawn:
+		TRO2 AB 10 A_Look
+		Loop
+	  See:
+		TRO2 AABBCCDD 3 A_Chase
+		Loop
+	  Melee:
+	  Missile:
+		TRO2 EF 8 A_FaceTarget
+		TRO2 G 6 A_CustomComboAttack("ValiantImpBall", 32, 3*random(1,8), "imp/melee")
+		TRO2 VW 8 A_FaceTarget
+		TRO2 X 6 A_CustomComboAttack("ValiantImpBall", 32, 3*random(1,8), "imp/melee")
+		Goto See
+	  Pain:
+		TRO2 H 2
+		TRO2 H 2 A_Pain
+		Goto See
+	  Death:
+		TRO2 I 8
+		TRO2 J 8 A_Scream
+		TRO2 L 6 A_NoBlocking
+		TRO2 M -1
+		Stop
+	  XDeath:
+		TRO2 N 5
+		TRO2 O 5 A_XScream
+		TRO2 P 5
+		TRO2 Q 5 A_NoBlocking
+		TRO2 RST 5
+		TRO2 U -1
+		Stop
+	  Raise:
+		TROO MLKJI 8
+		Goto See
+	}
+}
+
+ACTOR ValiantImpBall
+{
+  Game Doom
+  SpawnID 10
+  Radius 6
+  Height 8
+  Speed 16
+  FastSpeed 20
+  Damage 3
+  Projectile
+  +RANDOMIZE
+  RenderStyle Add
+  Alpha 1
+  SeeSound "imp/attack"
+  DeathSound "imp/shotx"
+  States
+  {
+  Spawn:
+    VBL1 AB 4 Bright
+    Loop
+  Death:
+    VBL1 CDE 6 Bright
+    Stop
+  }
+}
+
+ACTOR ValiantDemon : Demon
+{
+  Speed 12
+  Obituary "%o was bit by a valiant demon."
+  Tag "Valiant Demon"
+  States
+  {
+  Spawn:
+    VSRG AB 10 A_Look
+    Loop
+  See:
+    VSRG AABBCCDD 2  A_Chase
+    Loop
+  Melee:
+    VSRG EF 3 A_FaceTarget
+    VSRG G 18 A_SargAttack
+    Goto See
+  Pain:
+    VSRG H 2 
+    VSRG H 2 A_Pain
+    Goto See
+  Death:
+    VSRG I 8
+    VSRG J 8 A_Scream
+    VSRG K 4
+    VSRG L 4 A_NoBlocking
+    VSRG M 4
+    VSRG N -1
+    Stop
+  Raise:
+    VSRG N 5
+    VSRG MLKJI 5
+    Goto See
+  }
+}
+
+ACTOR ValiantSpectre : ValiantDemon
+{
+  +SHADOW
+  RenderStyle OptFuzzy
+  Alpha 0.5
+  SeeSound "spectre/sight"
+  AttackSound "spectre/melee"
+  PainSound "spectre/pain"
+  DeathSound "spectre/death"
+  ActiveSound "spectre/active"
+  HitObituary "%o was eaten by a valiant spectre."
+  Tag "Valiant Spectre"
+}
+
+ACTOR ValiantBaronBall
+{
+  Game Doom
+  SpawnID 154
+  Radius 6
+  Height 16
+  Speed 30
+  FastSpeed 40
+  Damage 5
+  Projectile
+  +RANDOMIZE
+  RenderStyle Add
+  Alpha 1
+  SeeSound "weapons/firbfi"
+  DeathSound "baron/shotx"
+  Decal "BaronScorch"
+  States
+  {
+  Spawn:
+    VBL7 AB 4 Bright
+    Loop
+  Death:
+    VBL7 CDE 6 Bright
+    Stop
+  }
+}
+
+ACTOR ValiantPyroDemon : HellKnight
+{
+  Monster
+  SeeSound "monster/ar2sit"
+  PainSound "knight/pain"
+  DeathSound "monster/ar2dth"
+  ActiveSound "knight/active"
+  Obituary "%o was burned to cinders by a pyro knight."
+  HitObituary "%o got ripped to shreds by a pyro knight."
+  Tag "Pyro Knight"
+  States
+  {
+    Spawn:
+		PYRO AB 10 Bright A_Look
+		Loop
+	See:
+		PYRO AABBCCDD 3  Bright A_Chase
+		Loop
+	Missile:
+		PYRO A 0 A_Jump(128,"AltMissile")
+		PYRO E 4 Bright A_FaceTarget
+		PYRO F 4 Bright A_CustomComboAttack("ValiantImpBall", 32, 3*random(1,8), "imp/melee")
+		PYRO G 4 Bright A_CustomComboAttack("ValiantImpBall", 32, 3*random(1,8), "imp/melee")
+		PYRO H 4 Bright A_CustomComboAttack("ValiantBaronBall", 32, 10*random(1,8), "baron/melee")
+		PYRO I 4 Bright A_FaceTarget
+		PYRO J 4 Bright A_CustomComboAttack("ValiantImpBall", 32, 3*random(1,8), "imp/melee")
+		PYRO K 4 Bright A_CustomComboAttack("ValiantImpBall", 32, 3*random(1,8), "imp/melee")
+		PYRO L 4 Bright A_CustomComboAttack("ValiantBaronBall", 32, 10*random(1,8), "baron/melee")
+		Goto See
+	AltMissile:
+		PYRO M 8 Bright A_FaceTarget
+		PYRO N 8 Bright A_FaceTarget
+		PYRO OOPP 4 Bright A_CustomComboAttack("ValiantBaronBall", 32, 10*random(1, 8), "baron/melee")
+		Goto See
+	Melee:
+		PYRO E 4 Bright A_FaceTarget
+		PYRO F 4 Bright A_CustomComboAttack("ValiantImpBall", 32, 3*random(1,8), "imp/melee")
+		PYRO G 4 Bright A_CustomComboAttack("ValiantImpBall", 32, 3*random(1,8), "imp/melee")
+		PYRO H 4 Bright A_CustomComboAttack("ValiantBaronBall", 32, 10*random(1,8), "baron/melee")
+		PYRO I 4 Bright A_FaceTarget
+		PYRO J 4 Bright A_CustomComboAttack("ValiantImpBall", 32, 3*random(1,8), "imp/melee")
+		PYRO K 4 Bright A_CustomComboAttack("ValiantImpBall", 32, 3*random(1,8), "imp/melee")
+		PYRO L 4 Bright A_CustomComboAttack("ValiantBaronBall", 32, 10*random(1,8), "baron/melee")
+		Goto See
+	Pain:
+		PYRO Q 2 Bright
+		PYRO Q 2 Bright A_Pain
+		Goto See
+	Death:
+		PYRO R 10 Bright A_Scream
+		PYRO ST 10 Bright
+		PYRO U 10 A_Fall
+		PYRO VWX 6
+		PYRO Y 3
+		PYRO Z -1
+		Stop
+	Raise:
+		PYRO Y 8
+		PYRO XWVU 8
+		PYRO TS 8 Bright
+		Goto See
+  }
+}
+
+ACTOR ValiantArachnotron : Arachnotron
+{
+	States
+	{
+	Spawn:
+		VSPI AB 10 A_Look
+		Loop
+	See:
+		VSPI A 20
+		VSPI A 3 A_BabyMetal
+		VSPI ABBCC 3 A_Chase
+		VSPI D 3 A_BabyMetal
+		VSPI DEEFF 3 A_Chase
+		Goto See+1
+	Missile:
+		VSPI A 20 Bright A_FaceTarget
+		VSPI G 4 Bright A_CustomMissile("ValiantArachnotronPlasma",32,0,0)
+		VSPI H 4 Bright
+		VSPI H 1 Bright A_SpidRefire
+		Goto Missile+1
+	Pain:
+		VSPI I 3
+		VSPI I 3 A_Pain
+		Goto See+1
+		//Goto See
+	Death:
+		VSPI I 11 A_Scream
+		VSPI A 0 A_Jump(128,"Death2")
+		VSPI J 7 A_Fall
+		VSPI KLM 7
+		VSPI N 7
+		VSPI P -1 A_BossDeath
+		Stop
+	Death2:
+		VACB I 0 A_Fall
+		VACB I 26 A_SpawnItem("ValiantArachnorb", 8)
+		VACB J 11
+		VACB K 7
+		VACB L 7
+		VACB M -1 A_BossDeath
+		Stop
+	Raise:
+		VSPI P 5
+		VSPI ONMLKJ 5
+		Goto See+1
+	}
+}
+ACTOR ValiantArachnotronPlasma : ArachnotronPlasma
+{
+  States
+  {
+  Spawn:
+    VPLS AB 5 Bright
+    Loop
+  Death:
+    VPBX ABCDE 5 Bright
+    Stop
+  }
+}
+ACTOR ValiantArachnorb
+{
+	Health 120
+	Speed 12
+	Radius 16 //Change to fit in lost soul spaces
+	Height 56
+	Damage 0
+	ReactionTime 8
+	PainChance 150
+	Mass 400
+	Monster
+	+FLOAT
+	+NOGRAVITY
+	SeeSound "aracnorb/sight"
+	PainSound "baby/pain"
+	DeathSound "aracnorb/death"
+	ActiveSound "baby/active"
+	Obituary "%o got blasted by an Arachnorb."
+	Tag "Arachnorb"
+	States
+	{
+	Spawn:
+		VACB A 10 A_Look
+		Goto Spawn
+	See:
+		VACB A 3 A_Chase
+		VACB A 3 A_Chase
+		Goto See
+	Pain:
+		VACB H 3
+		VACB H 3 A_Pain
+		Goto See
+	Missile:
+		VACB A 20 A_FaceTarget
+		VACB BCB 9 Bright A_CustomMissile("ValiantArachnotronPlasma",32,0,0)
+		VACB A 9 A_SpidRefire
+		Goto Missile
+	Raise:
+		VACB FED 5
+		Goto See
+	Death:
+		VACB D 5
+		VACB E 5 A_Scream
+		VACB F 5 A_Fall
+		VACB G -1
+		Stop
+	}
+}
+
+Actor SuperMancubus : Fatso
+{
+   Health 1000
+   PainChance 80
+   BloodColor "73 00 00"
+   SeeSound "Daedabus/Sight"
+   PainSound "fatso/pain"
+   DeathSound "Daedabus/Death"
+   ActiveSound "fatso/Active"
+   Obituary "%o was torched by a super mancubus."
+   Tag "Super Mancubus"
+   States
+   {
+   Spawn:
+      DAED AB 15 A_Look
+      Loop
+   See:
+      DAED AABBCCDDEEFF 4 A_Chase
+      Loop
+   Pain:
+      DAED J 3
+      DAED J 3 A_Pain
+      Goto See
+   Missile:
+      DAED G 20 A_FatRaise
+      DAED H 3 Bright A_FatAttack1
+      DAED H 3 Bright A_FatAttack2
+      DAED H 4 Bright A_FatAttack3
+      DAED IGGGG 5 A_FaceTarget
+      DAED H 3 Bright A_FatAttack1
+      DAED H 3 Bright A_FatAttack2
+      DAED H 4 Bright A_FatAttack3
+      DAED IG 5 A_FaceTarget
+      Goto See
+   Death:
+      DAED K 6
+      DAED L 6 A_Scream
+      DAED M 6 A_NoBlocking
+      DAED NOPQRS 6
+      DAED T -1 A_BossDeath
+      Stop
+   Raise:
+      DAED RQPONMLK 5
+      Goto See
+   }
+}
+
+ACTOR Cybruiser : BaronOfHell
+{ 
+Health 500 
+Radius 24 
+Height 64 
+Mass 1000 
+Speed 8 
+PainChance 20 
+MONSTER
+MeleeDamage 10
+Obituary "%o was blown away by a Cybruiser."
+HitObituary "%o was smashed by a Cybruiser."
+Tag "Cybruiser"
++FLOORCLIP
++NORADIUSDMG
+//Change: no +BOSS flag
+SeeSound "monster/brusit" 
+PainSound "baron/pain" 
+DeathSound "monster/brudth"
+MeleeSound "baron/melee"
+States 
+   { 
+   Spawn: 
+       BRUS AB 10 A_Look 
+       Loop 
+   See:
+       BRUS A 1 A_Playsound("monster/bruwlk")
+       BRUS A 2 A_Chase
+       BRUS A 3 A_Chase
+       BRUS BB 3 A_Chase
+       BRUS C 1 A_Playsound("monster/bruwlk")
+       BRUS C 2 A_Chase
+       BRUS C 3 A_Chase 
+       BRUS DD 3 A_Chase
+       Loop 
+   Missile:
+       BRUS E 8 A_FaceTarget 
+       BRUS F 12 Bright A_CyberAttack
+       Goto See
+   Melee:
+       BRUS GH 8 A_FaceTarget
+       BRUS I 8 A_MeleeAttack
+       Goto See
+   Pain: 
+       BRUS J 2 
+       BRUS J 2 A_Pain 
+       Goto See 
+   Death: 
+       BRUS K 6 Bright A_Scream
+       BRUS LMN 6 Bright
+       BRUS O 6 Bright A_NoBlocking
+       BRUS QRS 6 Bright
+       BRUS T -1
+       Stop
+   } 
+}
+
+ACTOR ValiantSuperVile : Archvile
+{
+	Health 7500
+	Radius 20
+	Height 56
+	Mass 500
+	Speed 20
+	PainChance 10
+	ReactionTime 4
+	Monster
+	MaxTargetRange 896
+	+QUICKTORETALIATE
+	+FLOORCLIP
+	+NOTARGET
+	+BOSS //Change: has +BOSS
+	SeeSound "vile/sight"
+	PainSound "vile/pain"
+	DeathSound "vile/death"
+	ActiveSound "vile/active"
+	MeleeSound "vile/stop"
+	Obituary "%o couldn't avoid the super archvile's fire."
+	Tag "Super Archvile"
+	States
+	{
+	Spawn:
+		DIAB AB 10 Bright A_Look
+		Loop
+	See:
+		DIAB AABBCCDDEEFF 2 A_VileChase
+		Loop
+	Missile:
+		DIAB G 0 Bright A_VileStart
+		DIAB G 10 Bright A_FaceTarget
+		DIAB H 8 Bright A_VileTarget
+		DIAB IJKLMN 8 Bright A_FaceTarget
+		DIAB O 8 Bright A_VileAttack
+		DIAB MN 8 Bright A_FaceTarget
+		DIAB O 8 Bright A_VileAttack
+		DIAB MN 8 Bright A_FaceTarget
+		DIAB O 8 Bright A_VileAttack
+		DIAB MN 8 Bright A_FaceTarget
+		DIAB O 8 Bright A_VileAttack
+		DIAB P 20 Bright
+		Goto See
+	Heal:
+		DIA2 ABC 16 Bright
+		Goto See
+	Pain:
+		DIAB Q 5
+		DIAB Q 5 A_Pain
+		Goto See
+	Death:
+		DIAB R 7
+		DIAB S 7 A_Scream
+		DIAB T 7
+		DIAB U 7 A_Fall
+		DIAB VWX 7
+		DIAB Y 7
+		DIAB Z -1 A_BossDeath
+		Stop
+	}
+}

@@ -1,0 +1,109 @@
+actor EvilMarine
+{
+  obituary "%o was killed by an evil marine."
+  health 250
+  radius 20
+  height 56
+  mass 100
+  speed 8 //Change: slowed down from Scythe II incarnation for balance reasons
+  painchance 160
+  SeeSound "shotguy/sight"
+  PainSound "shotguy/pain"
+  DeathSound "shotguy/death"
+  ActiveSound "shotguy/active"
+  dropitem "cell"
+  translation 2
+  Tag "Evil Marine"
+  Monster
+  States
+  {
+  Spawn:
+    PLAY AB 10 A_look
+    Loop
+  See:
+    PLAY AAABBBCCCDDD 1 A_Chase
+    Loop
+  Missile:
+    PLAY E 1 A_facetarget
+	PLAY F 2 Bright A_BspiAttack
+	PLAY E 1 A_facetarget
+	PLAY F 2 Bright A_BspiAttack
+	PLAY E 1 A_facetarget
+	PLAY F 2 Bright A_BspiAttack
+	PLAY E 1 A_facetarget
+    Goto See
+  Pain:
+    PLAY G 4 
+    PLAY G 4 A_Pain
+    Goto See
+  Death:
+    PLAY H 5
+	PLAY I 5 A_scream
+	PLAY J 5 A_Noblocking
+	PLAY K 5
+	PLAY L -1
+	Stop
+  XDeath:
+    PLAY M 10
+    PLAY N 10 A_Scream
+    PLAY O 10 A_NoBlocking
+    PLAY PQRSTUV 5
+    PLAY W -1
+    Stop
+  Raise:
+	PLAY L 5
+	PLAY KJIH 51
+	Goto See
+  }
+}
+
+actor Afrit
+{
+  Health 1500 //Deus Vult II's health pool (Scythe II is 2500)
+  Speed 8
+  Radius 24
+  Height 64
+  PainChance 30
+  Mass 400
+  SeeSound "Baron/Sight"
+  PainSound "Baron/Pain"
+  DeathSound "Baron/Death"
+  ActiveSound "Baron/Active"
+  Monster
+  +NoGravity
+  +Float
+  +DontHurtSpecies
+  Obituary "%o was scorched by an Afrit."
+  Tag "Afrit"
+  States
+  {
+  Spawn:
+    FRIT AABB 10 Bright A_Look
+    Loop
+  See:
+    FRIT AABBCCDD 3 Bright A_Chase
+    Loop
+  Missile:
+	FRIT S 8 A_FaceTarget
+	FRIT T 8 A_FaceTarget
+    FRIT U 1 Bright A_FatAttack1
+	FRIT U 1 Bright A_FatAttack2
+	FRIT U 1 Bright A_FatAttack3
+	FRIT U 1 Bright A_FaceTarget
+	FRIT U 1 Bright A_SkelMissile
+	FRIT U 1 Bright A_SkelMissile
+	FRIT U 6 Bright A_SkelMissile
+    Goto See
+  Pain:
+    FRIT H 4 Bright
+    FRIT H 4 Bright A_Pain
+    Goto See
+  Death:
+    TNT1 A 0 A_NoGravity
+    FRIT I 6 Bright A_Scream
+    FRIT J 5 Bright A_NoBlocking
+    FRIT KLMNOPQ 4 Bright
+	FRIT R 4 Bright A_BossDeath
+    Stop
+  }
+}

@@ -1,0 +1,44 @@
+ACTOR AngryMastermind : SpiderMastermind
+{
+  Health 5000 //Change: 12000 --> 5000 health for balance reasons
+  Speed 24
+  +MISSILEEVENMORE //Added just for the heck of it, really
+  Obituary "%o stood in awe of the angry spiderdemon."
+  Tag "Angry Spiderdemon"
+  States
+  {
+  Spawn:
+    RSPD AB 10 A_Look
+    Loop
+  See:
+    RSPD A 3 A_Metal
+    RSPD ABB 3 A_Chase
+    RSPD C 3 A_Metal
+    RSPD CDD 3 A_Chase
+    RSPD C 3 A_Metal
+    RSPD CBB 3 A_Chase
+    Loop
+  Missile:
+    RSPD A 10 Bright A_FaceTarget
+    RSPD E 4 Bright A_SPosAttackUseAtkSound
+    RSPD G 4 Bright A_SPosAttackUseAtkSound
+    RSPD E 1 Bright A_SpidRefire
+    Goto Missile+1
+  Pain: //Change: I don't know the frame numbers, so these are probably wrong.
+    RSPD H 3
+    RSPD H 3 A_Pain
+    RSPD A 10 Bright A_FaceTarget
+    RSPD E 3 Bright A_FatAttack1
+    RSPD G 3 Bright A_FatAttack2
+    RSPD E 3 Bright A_SkelMissile
+    RSPD G 3 Bright A_SkelMissile
+    Goto See
+  Death:
+    RSPD I 20 A_Scream
+    RSPD N 10 A_NoBlocking
+    RSPD OPQRSTU 10
+    RSPD V 30
+    RSPD V -1 A_BossDeath
+    Stop
+  }
+}

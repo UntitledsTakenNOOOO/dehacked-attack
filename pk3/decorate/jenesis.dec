@@ -1,0 +1,56 @@
+ACTOR JenesisMutant
+{
+  Health 90
+  Radius 20
+  Height 56
+  Mass 100
+  Speed 12
+  PainChance 170
+  Monster
+  +FLOORCLIP
+  SeeSound "chainguy/sight"
+  AttackSound "chainguy/attack"
+  PainSound "chainguy/pain"
+  DeathSound "chainguy/death"
+  ActiveSound "chainguy/active"
+  Obituary "%o was shot by a mutant gateway technician."
+  DropItem "Clip"
+  DropItem "Shotgun" //Change: Drops shotgun as well to be more consistent
+  Tag "Mutant Gateway Technician"
+  States
+  {
+  Spawn:
+    GTCH AB 10 A_Look
+    Loop
+  See:
+    GTCH AABBCCDD 3 A_Chase
+    Loop
+  Missile:
+    GTCH E 8 A_FaceTarget
+    GTCH F 8 Bright A_SPosAttackUseAtkSound
+    GTCH E 8
+    Goto See
+  Pain:
+    GTCH E 3
+    GTCH E 3 A_Pain
+    Goto See
+  Death:
+    GTCH H 5
+    GTCH I 5 A_Scream
+    GTCH J 5 A_NoBlocking
+    GTCH K 5
+    GTCH L -1
+    Stop
+  XDeath:
+    GTCH M 5
+    GTCH N 5 A_XScream
+    GTCH O 5 A_NoBlocking
+    GTCH PQRST 5
+    GTCH U -1
+    Stop
+  Raise:
+    GTCH L 5
+    GTCH KJIH 5
+    Goto See
+  }
+}

@@ -1,0 +1,47 @@
+ACTOR GridlockCardinal : Cyberdemon
+{
+  Health 6000
+  Speed 16
+  PainChance 32
+  +FLOAT
+  +NOGRAVITY
+  Obituary "%o was splattered by a gridlock cardinal."
+  PainSound "brain/pain"
+  Tag "Gridlock Cardinal"
+  States
+  {
+  Spawn:
+    GCRD AB 10 A_Look
+    Loop
+  See:
+    GCRD AB 3 A_Chase
+    Loop
+  Missile:
+    GCRD C 6 A_FaceTarget
+    GCRD D 0 A_FatAttack1
+    GCRD D 0 A_FatAttack2
+    GCRD D 6 A_FatAttack3
+    GCRD C 6 A_FaceTarget
+    GCRD D 6 A_SkelMissile
+    GCRD C 10 A_FaceTarget
+	Goto MissileLoop
+  MissileLoop:
+    GCRD D 2 A_BSpiAttack
+	GCRD C 2 A_SpidRefire
+    Loop
+  Pain:
+    GCRD E 10 A_Pain
+    GCRD C 6 A_FaceTarget
+    GCRD D 6 A_CyberAttack
+    Goto See
+  Death:
+    GCRD F 10
+    GCRD G 10 A_Scream
+    GCRD HIJ 10
+    GCRD K 10 A_NoBlocking
+    GCRD L 10
+    GCRD M 30
+    GCRD M -1 A_BossDeath
+    Stop
+  }
+}

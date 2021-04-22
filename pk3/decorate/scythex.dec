@@ -1,0 +1,180 @@
+Actor ShadowImp
+{
+  Health 125
+  Radius 20
+  Height 56
+  Speed 16
+  PainChance 170
+  Mass 200
+  BloodColor "DarkGreen"
+  Monster
+  +MISSILEMORE
+  SeeSound "imp/sight"
+  PainSound "imp/pain"
+  DeathSound "imp/death"
+  ActiveSound "imp/active"
+  Obituary "%o was killed by a shadow imp."
+  Tag "Shadow Imp"
+  States
+  {
+  Spawn:
+    SHTR A 3 A_Look
+    Loop
+  See:
+    SHTR BBDDCCEE 3 A_Chase
+    Loop
+  Melee:
+  Missile:
+    SHTR FF 3 A_FaceTarget
+    SHTR G 6 A_CustomMissile("ShadowImpBall",32,0,0)
+    Goto See
+  Pain:
+    SHTR H 2
+    SHTR H 2 A_Pain
+    Goto See
+  Death:
+    SHTR I 8
+    SHTR J 8 A_Scream
+    SHTR K 6
+    SHTR L 6 A_NoBlocking
+    SHTR M -1
+    Stop
+  Raise:
+    SHTR ML 8
+    SHTR KJI 6
+    Goto See
+  }
+}
+ACTOR ShadowImpBall
+{
+  Radius 13
+  Height 8
+  Speed 25
+  Damage 5
+  Projectile
+  +RANDOMIZE
+  RenderStyle Add 
+  Alpha 0.75
+  SeeSound "baron/attack"
+  DeathSound "baron/shotx"
+  States
+  {
+  Spawn:
+    ACID AB 5 Bright A_SpawnItemEx("ShadowImpBallFX",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+    Loop
+  Death:
+	ACID A 0 A_PainAttack("ShadowSoul")
+    ACID CDE 5 Bright
+    Stop
+  }
+}
+ACTOR ShadowImpBallFX
+{
+  +NOINTERACTION
+  +CLIENTSIDEONLY
+  RenderStyle Add
+  Alpha 0.75
+  States
+  {
+  Spawn:
+    ACID CDE 5 Bright
+    Stop  
+  }
+}
+
+ACTOR ShadowSoul
+{
+  Health 5
+  Radius 16
+  Height 56
+  Mass 50
+  Speed 7
+  PainChance 256
+  Monster
+  +FLOAT
+  +NOGRAVITY
+  +MISSILEMORE
+  +DONTFALL
+  +NOICEDEATH
+  -SOLID
+  AttackSound "skull/melee"
+  PainSound "skull/pain"
+  DeathSound "skull/death"
+  ActiveSound "skull/active"
+  RenderStyle SoulTrans
+  Obituary "%o was spooked by a shadow spirit." // "%o was spooked by a lost soul."
+  BloodColor "DarkGreen"
+  Tag "Shadow Spirit"
+  States
+  {
+  Spawn:
+    SHSP A 10 Bright A_Look
+    Loop
+  See:
+    SHSP AB 3 Bright A_Chase
+    Loop
+  Missile:
+    SHSP AB 3 Bright A_FaceTarget
+    SHSP A 0 Bright A_BruisAttack
+	Goto See
+  Pain:
+    SHSP AB 3
+    Goto See
+  Death:
+    SHSP EFGH 3 Bright A_NoBlocking
+    SHSP IJ 3
+    Stop
+  }
+}
+
+ACTOR ShadowElemental
+{
+  Health 400
+  Radius 31
+  Height 56
+  Mass 400
+  Speed 8
+  PainChance 128
+  Monster
+  +FLOAT
+  +NOGRAVITY
+  +MISSILEMORE
+  SeeSound "pain/sight"
+  PainSound "pain/pain"
+  DeathSound "pain/death"
+  ActiveSound "pain/active"
+  Obituary "%o was killed by a shadow elemental."
+  BloodColor "DarkGreen"
+  Tag "Shadow Elemental"
+  States
+  {
+  Spawn:
+    SHPA A 10 A_Look
+    Loop
+  See:
+    SHPA AABBCC 3 A_Chase
+    Loop
+  Missile:
+    SHPA DE 5 A_FaceTarget
+    SHPA F 5 Bright A_CustomMissile("ShadowImpBall",32,0,0)
+    SHPA E 5 A_FaceTarget
+    SHPA F 5 Bright A_CustomMissile("ShadowImpBall",32,0,0)
+    Goto See
+  Pain:
+    SHPA G 6
+    SHPA G 6 A_Pain
+    Goto See
+  Death:
+    SHPA H 8 Bright
+    SHPA I 8 Bright A_Scream
+    SHPA JK 8 Bright
+    SHPA L 8 Bright A_PainDie("ShadowSoul")
+    SHPA M 8 Bright
+    Stop
+  Raise:
+    SHPA MLKJIH 8
+    Goto See
+  }
+}
+
+#include "decorate/secret.dec"

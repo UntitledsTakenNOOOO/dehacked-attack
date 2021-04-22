@@ -1,0 +1,45 @@
+/////////////////////////
+//   Deus Vult 1 & 2   //
+/////////////////////////
+
+ClericSee		HCLERIC1
+ClericRoam		HCLERIC2
+ClericPain		HCLERIC3
+ClericSwing		HCLERIC4
+ClericHit		HCLERIC5
+ClericDeath		HCLERIC6
+ClericGib		HCLERIC7
+
+Daedabus/Sight		DAEDSIGH
+Daedabus/Death 		DAEDDEAT
+
+monster/brusit dsbrusit
+monster/brudth dsbrudth
+monster/bruwlk dsbruwlk
+
+diablo2/goatman/sight		011sit
+Goat/Pain				goath2
+
+nightmaredemon/sight	SHSTSIT
+nightmaredemon/attack	SHSTATK
+nightmaredemon/pain		SHSTACT
+nightmaredemon/death	SHSTPAIN
+nightmaredemon/active	SHSTDTH
+
+astralcaco/sight	DSASTSIT
+astralcaco/active	DSASTACT
+astralcaco/death	DSASTRDT
+astralcaco/pain		DSASTRPN
+
+monster/ar2sit dsar2sit
+monster/ar2dth dsar2dth
+weapons/firbfi dsfirbfi
+
+aracnorb/sight		dsaracst
+aracnorb/death		dsaracdt
+
+eviternity/plasma	EVSKLDTH
+antaresia/plasma	ARPLASMA
+antaresia/sight		ARBRSSIT
+antaresia/pain		ARBOSCUB
+antaresia/death		ARBRSDTH

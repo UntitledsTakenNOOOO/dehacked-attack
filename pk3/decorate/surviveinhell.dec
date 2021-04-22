@@ -1,0 +1,54 @@
+ACTOR AvatarOfHell
+{
+  Health 8000 //Change: 20000 --> 8000 health for balance reasons
+  Radius 40
+  Height 110
+  Mass 1000
+  Speed 24
+  PainChance 20
+  Monster
+  MinMissileChance 160
+  +BOSS //Added
+  +MISSILEMORE //Added
+  +MISSILEEVENMORE //Added
+  +FLOORCLIP
+  +NORADIUSDMG //Added
+  +DONTMORPH
+  +BOSSDEATH
+  Obituary "%o was incinerated by an avatar of hell."
+  SeeSound ""
+  PainSound "brain/pain"
+  DeathSound ""
+  ActiveSound "cyber/active"
+  Tag "Avatar of Hell"
+  States
+  {
+  Spawn:
+    AVTR A 10 A_Look
+    Loop
+  See:
+    AVTR AB 6 A_Chase
+    Loop
+  Missile:
+    AVTR C 6 A_FaceTarget
+    AVTR D 1 A_FatAttack1
+    AVTR D 1 A_FatAttack2
+    AVTR D 1 A_FatAttack3
+    AVTR E 1 A_FatAttack1
+    AVTR E 1 A_FatAttack2
+    AVTR E 1 A_FatAttack3
+    Goto See
+  Pain:
+    AVTR F 10 A_Pain
+    Goto See
+  Death:
+    AVTR G 10
+    AVTR H 10 A_Scream
+    AVTR IJK 10
+    AVTR L 10 A_NoBlocking
+    AVTR MNO 10
+    AVTR P 30
+    AVTR P -1 A_BossDeath
+    Stop
+  }
+}

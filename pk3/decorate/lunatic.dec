@@ -1,0 +1,114 @@
+ACTOR PlasmaZombie
+{
+  DropItem "Cell" //Changed from Clip for consistency reasons
+  Health 40
+  Radius 20
+  Height 56
+  Speed 10
+  PainChance 96
+  Monster
+  +FloorClip
+  SeeSound "Grunt/Sight"
+  PainSound "Grunt/Pain"
+  DeathSound "Grunt/Death"
+  ActiveSound "Grunt/Active"
+  Obituary "%o was burned by a plasma zombie."
+  Decal MummyScorch
+  Tag "Plasma Zombie"
+  States 
+  {
+  Spawn:
+    RPZM AB 10 A_Look 
+    Loop 
+  See:
+    RPZM AABBCCDD 4 A_Chase 
+    Loop 
+  Missile:
+    RPZM EF 3 A_FaceTarget
+    RPZM G 3 Bright A_BSpiAttack
+    RPZM F 3
+    RPZM H 3 Bright A_BSpiAttack
+    RPZM E 3
+    RPZM G 3 Bright A_BSpiAttack
+    RPZM F 3
+    RPZM EF 3 A_FaceTarget
+    Goto See
+  Pain:
+    RPZM I 3 
+    RPZM I 3 A_Pain 
+    Goto See 
+  Death:
+    RPZM I 4
+    RPZM J 5
+    RPZM K 5 A_Scream 
+    RPZM L 5 A_Fall 
+    RPZM M 5 
+    RPZM N -1 
+    Stop
+  XDeath:
+    RPZM O 5
+    RPZM P 5 A_XScream
+    RPZM Q 5
+    RPZM R 5 A_Fall
+    RPZM STUV 5
+    RPZM W -1
+    Stop
+  Raise: 
+    RPZM NMLKJI 5
+    Goto See 
+  } 
+}
+
+ACTOR RevMissileGuy
+{
+  DropItem "RocketAmmo"
+  obituary "%o was got in the way of a zombie's fireball."
+  health 75
+  radius 20
+  height 56
+  mass 100
+  speed 8
+  painchance 170
+  seesound "chainguy/sight"
+  painsound "chainguy/pain"
+  deathsound "chainguy/death"
+  activesound "chainguy/active"
+  MONSTER
+  +FLOORCLIP
+  Tag "Revenant Missile Zombie"
+  states
+  {
+  Spawn:
+    DEVZ AB 10 A_Look
+    loop
+  See:
+    DEVZ AABBCCDD 3 A_Chase
+    loop
+  Missile:
+    DEVZ E 8 A_FaceTarget
+    DEVZ F 8 Bright A_SkelMissile
+    DEVZ E 8
+    goto See
+  Pain:
+    DEVZ G 3
+    DEVZ G 3 A_Pain
+    goto See
+  Death:
+    DEVZ H 5
+    DEVZ I 5 A_Scream
+    DEVZ J 5 A_NoBlocking
+    DEVZ KLM 5
+    DEVZ N -1
+    stop
+  XDeath:
+    DEVZ O 5
+    DEVZ P 5 A_XScream
+    DEVZ Q 5 A_NoBlocking
+    DEVZ RS 5
+    DEVZ T -1
+    stop
+  Raise:
+    DEVZ NMLKJIH 5
+    goto See
+  }
+}
