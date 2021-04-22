@@ -5,7 +5,7 @@ actor EvilMarine
   radius 20
   height 56
   mass 100
-  speed 8 //Change: slowed down from Scythe II incarnation for balance reasons
+  speed 16 //Change: slowed down from Scythe II incarnation for balance reasons
   painchance 160
   SeeSound "shotguy/sight"
   PainSound "shotguy/pain"
