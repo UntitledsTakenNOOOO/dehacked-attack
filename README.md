@@ -14,10 +14,10 @@ SCYTHE X:
 * Shadow Elemental: Spawns with Pain Elementals; these variants shoot out spirits lightning quick, and release more when they die.
 * Shadow Spirit: The aforementioned spiritual creatures summoned by the Shadow Imp.
 
-JENESIS
+JENESIS:
 * Mutant Gateway Technician: Possessing a whole 90 HP, these are rather durable variants of the shotgunner.
 
-LUNATIC
+LUNATIC:
 * Plasma Zombie: A Zombie that can fire arachnotron plasma in bursts of three. Spawns with shotgunners.
 * Revenant Missile Zombie: A 75 HP Zombie that fires revenant missiles. Spawns with chaingunners.
 

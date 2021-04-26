@@ -73,8 +73,8 @@ Actor PlasmaElite : FormerCaptain
 {
 	Health 65
 	PainChance 100
-	Obituary "%o was destroyed by a chaingun elite."
-	Tag "Plasma Elite"
+	Obituary "%o was destroyed by a plasma elite."
+	Tag "Plasma Elite" //Name changed for consistency reasons
 	States
 	{
 	Missile:

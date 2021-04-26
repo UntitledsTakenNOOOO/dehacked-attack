@@ -4,8 +4,8 @@ ACTOR PlasmaZombie
   Health 40
   Radius 20
   Height 56
-  Speed 10
-  PainChance 96
+  Speed 9
+  PainChance 170
   Monster
   +FloorClip
   SeeSound "Grunt/Sight"
@@ -61,7 +61,7 @@ ACTOR PlasmaZombie
 
 ACTOR RevMissileGuy
 {
-  DropItem "RocketAmmo"
+  DropItem "RocketAmmo" //Added for consistency reasons (orig. dropped nothing)
   obituary "%o was got in the way of a zombie's fireball."
   health 75
   radius 20
