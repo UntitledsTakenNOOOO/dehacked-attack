@@ -1,18 +1,10 @@
-Actor ShadowImp
+Actor ShadowImp : DoomImp
 {
   Health 125
-  Radius 20
-  Height 56
   Speed 16
   PainChance 170
   Mass 200
   BloodColor "DarkGreen"
-  Monster
-  +MISSILEMORE
-  SeeSound "imp/sight"
-  PainSound "imp/pain"
-  DeathSound "imp/death"
-  ActiveSound "imp/active"
   Obituary "%o was killed by a shadow imp."
   Tag "Shadow Imp"
   States
@@ -93,7 +85,6 @@ ACTOR ShadowSoul
   Monster
   +FLOAT
   +NOGRAVITY
-  +MISSILEMORE
   +DONTFALL
   +NOICEDEATH
   -SOLID
@@ -127,22 +118,8 @@ ACTOR ShadowSoul
   }
 }
 
-ACTOR ShadowElemental
+ACTOR ShadowElemental : PainElemental
 {
-  Health 400
-  Radius 31
-  Height 56
-  Mass 400
-  Speed 8
-  PainChance 128
-  Monster
-  +FLOAT
-  +NOGRAVITY
-  +MISSILEMORE
-  SeeSound "pain/sight"
-  PainSound "pain/pain"
-  DeathSound "pain/death"
-  ActiveSound "pain/active"
   Obituary "%o was killed by a shadow elemental."
   BloodColor "DarkGreen"
   Tag "Shadow Elemental"

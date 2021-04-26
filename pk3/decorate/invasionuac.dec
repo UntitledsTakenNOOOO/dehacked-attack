@@ -19,12 +19,11 @@ ACTOR InvasionMonarch : Cyberdemon
   Missile:
     DCYB E 6 A_FaceTarget
     DCYB F 12 A_CyberAttack
+    DCYB E 0 A_BruisAttack
     DCYB E 0 A_FatAttack1
+    DCYB E 0 A_SkelMissile
     DCYB E 0 A_FatAttack2
     DCYB E 0 A_FatAttack3
-    DCYB E 0 A_SkelMissile
-    DCYB E 0 A_BruisAttack
-    DCYB E 0 A_HeadAttack
     DCYB E 12 A_FaceTarget
     Goto See
   Pain:
@@ -40,4 +39,48 @@ ACTOR InvasionMonarch : Cyberdemon
     DCYB P -1 A_BossDeath
     Stop
   }
+}
+
+ACTOR WarlordOfHell : BaronOfHell
+{
+    Health 5000 //Lowered from 30000
+    Radius 36
+    Height 96
+    Speed 24
+    PainChance 10
+    Scale 1.5
+	Mass 1500
+    BloodColor "39 59 9F" //Added
+	+FLOORCLIP
+	+NORADIUSDMG
+	+BOSS
+    Obituary "%o was extuingished by the warlord of hell."
+    States
+    {
+    Spawn:
+        BOS6 AB 10 A_Look
+        Loop
+    See:
+        BOS6 AABBCCDD 4 A_Chase
+        Loop
+    Missile:
+		BOS6 E 0 A_VileStart
+        BOS6 E 8 A_VileTarget
+        BOS6 F 8 A_FaceTarget
+        BOS6 G 8 A_VileAttack
+        Goto See
+    Pain:
+        BOS6 H 2
+        BOS6 H 2 A_Pain
+        Goto See
+    Death:
+        BOS6 I 12
+        BOS6 J 12 A_Scream
+        BOS6 K 12 A_Fall
+        BOS6 LMN 12
+        BOS6 O -1
+        Stop
+    Raise:
+        Stop
+    }
 }

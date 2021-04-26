@@ -148,6 +148,7 @@ ACTOR DehackedCyberSpawner : RandomSpawner replaces Cyberdemon
 	DropItem "DHCyberdemon", 256, 4
 	DropItem "GridlockCardinal", 256, 1
 	DropItem "AvatarOfHell", 256, 1
+	//DropItem "InvasionMonarch", 256, 1
 }
 ACTOR DHCyberdemon : Cyberdemon {}
 
@@ -156,5 +157,6 @@ ACTOR DehackedSpiderSpawner : RandomSpawner replaces SpiderMastermind
 	DropItem "DHSpiderMastermind", 256, 4
 	DropItem "AngryMastermind", 256, 2
 	DropItem "ValiantSuperVile", 256, 1
+	//DropItem "WarlordOfHell", 256, 1
 }
 ACTOR DHSpiderMastermind : SpiderMastermind {}

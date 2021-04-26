@@ -57,22 +57,12 @@ actor EvilMarine
   }
 }
 
-actor Afrit
+actor Afrit : BaronOfHell
 {
   Health 1500 //Deus Vult II's health pool (Scythe II is 2500)
-  Speed 8
-  Radius 24
-  Height 64
   PainChance 30
-  Mass 400
-  SeeSound "Baron/Sight"
-  PainSound "Baron/Pain"
-  DeathSound "Baron/Death"
-  ActiveSound "Baron/Active"
-  Monster
   +NoGravity
   +Float
-  +DontHurtSpecies
   Obituary "%o was scorched by an Afrit."
   Tag "Afrit"
   States

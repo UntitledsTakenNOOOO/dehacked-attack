@@ -4,7 +4,7 @@ ACTOR JenesisMutant
   Radius 20
   Height 56
   Mass 100
-  Speed 12
+  Speed 8
   PainChance 170
   Monster
   +FLOORCLIP

@@ -177,7 +177,6 @@ Actor EviternityAnnihilator : BaronOfHell
 	Health 1100
 	Speed 10
 	PainChance 20
-	+MISSILEMORE //Added just because I felt like being a jerk
 	+DONTHARMCLASS //Added to avoid rocket infights within the same class
 	SeeSound "monster/brusit" 
 	PainSound "baron/pain" 

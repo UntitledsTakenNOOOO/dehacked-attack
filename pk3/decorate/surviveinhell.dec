@@ -40,6 +40,13 @@ ACTOR AvatarOfHell
     Goto See
   Pain:
     AVTR F 10 A_Pain
+    AVTR C 6 A_FaceTarget
+    AVTR D 1 A_FatAttack1
+    AVTR D 1 A_FatAttack2
+    AVTR D 1 A_FatAttack3
+    AVTR E 1 A_FatAttack1
+    AVTR E 1 A_FatAttack2
+    AVTR E 1 A_FatAttack3
     Goto See
   Death:
     AVTR G 10
