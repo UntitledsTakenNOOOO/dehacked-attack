@@ -1,0 +1,45 @@
+ACTOR Slomnibus
+{
+  Health 150
+  Radius 31
+  Height 56
+  Mass 400
+  Speed 30
+  PainChance 128
+  Monster
+  +FLOAT
+  +NOGRAVITY
+  SeeSound "slomnibus/sight"
+  PainSound "slomnibus/pain"
+  DeathSound "slomnibus/death"
+  ActiveSound "slomnibus/active"
+  Obituary "%o was blown up by a slomnibus."
+  HitObituary "%o was blown up by a slomnibus."
+  Tag "Slomnibus"
+  States
+  {
+  Spawn:
+    NDCP AB 10 A_Look
+    Loop
+  See:
+    NDCP AABBCCDD 3 A_Chase
+    Loop
+  Melee:
+	NDCP F 6 A_VileAttack
+	NDCP F 0 A_Die
+	Goto Death
+  Pain:
+    NDCP E 3
+    NDCP E 3 A_Pain
+    NDCP E 6
+    Goto See
+  Death:
+    NDCP F 0 A_ScreamAndUnblock
+	NDCP G 8 A_Explode
+    NDCP H 8
+    MISL B 8
+	MISL C 6
+	MISL D 4
+    Stop
+  }
+}

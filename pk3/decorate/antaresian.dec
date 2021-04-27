@@ -85,23 +85,17 @@ Actor PlasmaElite : FormerCaptain
 	}
 }
 
-Actor AntaresianElite
+Actor Antaresia : BaronOfHell
 {
-	Health 800 //575 in orig. DECORATE, but 650 in orig. DEHACKED, 800 elite
+	Health 575 //575 in orig. DECORATE, but 650 in orig. DEHACKED, 800 elite
 	Speed 16
-	Radius 20
-	Height 56 //64-->56 because of slot
-	ReactionTime 8
-	PainChance 8 //50 in orig. DECORATE, 30 in orig. DEHACKED, 8 for elite
-	Mass 1000
-	Monster
-	+FLOORCLIP
+	PainChance 50 //50 in orig. DECORATE, 30 in orig. DEHACKED, 8 for elite
 	SeeSound "antaresia/sight"
 	PainSound "antaresia/pain"
 	DeathSound "antaresia/death"
-	Obituary "An antaresian elite took %o's soul again."
-	HitObituary "%o was perforated by an antaresian elite."
-	Tag "Antaresian Elite"
+	Obituary "An antaresia took %o's soul again."
+	HitObituary "%o was perforated by an antaresia."
+	Tag "Antaresian"
 	States
 	{
 	Spawn:
@@ -114,6 +108,7 @@ Actor AntaresianElite
 		ARBS E 2 
 		ARBS E 2 A_Pain
 		goto See
+	Melee:
 	Missile:
 		ARBS E 12 Bright A_FaceTarget
 		ARBS FFF 4 Bright A_HeadAttack

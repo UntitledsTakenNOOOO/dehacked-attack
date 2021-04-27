@@ -1,11 +1,93 @@
-ACTOR AvatarOfHell
+ACTOR Belphegor : BaronOfHell
+{
+   Health 1500
+   Obituary "%o was incinerated by a Belphegor."
+   HitObituary "the last thing %o saw was the Belphegor's abs."
+   Tag "Belphegor"
+   States
+   {
+   Spawn:
+      BOS3 AB 10 A_Look
+      Loop
+   See:
+      BOS3 AABBCCDD 3 A_Chase
+      Loop
+   Melee:
+   Missile:
+      BOS3 EF 6 A_FaceTarget
+      BOS3 G 6 A_BruisAttack
+      BOS3 F 6 A_FaceTarget
+      BOS3 G 6 A_BruisAttack
+      Goto See
+   Pain:
+      BOS3 H 2
+      BOS3 H 2 A_Pain
+      Goto See
+   Death:
+      BOS3 I 8
+      BOS3 J 8 A_Scream
+      BOS3 K 8
+      BOS3 L 8 A_NoBlocking
+      BOS3 MN 8
+      BOS3 O -1
+      Stop
+   Raise:
+      BOS3 ONMLKJI 8
+      Goto See
+   }
+}
+
+ACTOR PoisonSoul
+{
+Health 500
+Radius 16
+Height 56
+Mass 50
+Speed 8
+RENDERSTYLE SoulTrans
+PAINCHANCE 255
+MONSTER
++NOGRAVITY
++FLOAT
++dontfall
+AttackSound "skull/melee"
+PainSound "skull/pain"
+DeathSound "skull/death"
+ActiveSound "skull/active"
+States
+   {
+   Spawn:
+       SKLL A 10 A_Look
+       Loop
+   See:
+       SKLL A 3 A_Chase
+       Loop
+   Missile:
+       SKLL B 10 A_FaceTarget
+       SKLL B 4 A_BruisAttack
+       Goto See
+   Pain:
+       SKLL C 3
+       SKLL C 3 A_Pain
+       Goto See
+   Death:
+       SKLL D 6
+       SKLL E 6 A_Scream
+       SKLL F 6
+       SKLL G 6 A_Noblocking
+       SKLL H 6
+       Stop
+   } 
+}
+
+ACTOR HellSmith
 {
   Health 8000 //Change: 20000 --> 8000 health for balance reasons
   Radius 40
   Height 110
   Mass 1000
   Speed 24
-  PainChance 20
+  PainChance 0
   Monster
   MinMissileChance 160
   +BOSS //Added
@@ -15,12 +97,12 @@ ACTOR AvatarOfHell
   +NORADIUSDMG //Added
   +DONTMORPH
   +BOSSDEATH
-  Obituary "%o was incinerated by an avatar of hell."
+  Obituary "%o was incinerated by a hell smith."
   SeeSound ""
   PainSound "brain/pain"
   DeathSound ""
   ActiveSound "cyber/active"
-  Tag "Avatar of Hell"
+  Tag "Hell Smith"
   States
   {
   Spawn:
@@ -30,23 +112,16 @@ ACTOR AvatarOfHell
     AVTR AB 6 A_Chase
     Loop
   Missile:
-    AVTR C 6 A_FaceTarget
-    AVTR D 1 A_FatAttack1
-    AVTR D 1 A_FatAttack2
+    AVTR C 3 A_FaceTarget
     AVTR D 1 A_FatAttack3
+    AVTR D 1 A_FatAttack2
+    AVTR D 1 A_FatAttack1
     AVTR E 1 A_FatAttack1
     AVTR E 1 A_FatAttack2
     AVTR E 1 A_FatAttack3
     Goto See
   Pain:
     AVTR F 10 A_Pain
-    AVTR C 6 A_FaceTarget
-    AVTR D 1 A_FatAttack1
-    AVTR D 1 A_FatAttack2
-    AVTR D 1 A_FatAttack3
-    AVTR E 1 A_FatAttack1
-    AVTR E 1 A_FatAttack2
-    AVTR E 1 A_FatAttack3
     Goto See
   Death:
     AVTR G 10

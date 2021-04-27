@@ -43,3 +43,8 @@ antaresia/plasma	ARPLASMA
 antaresia/sight		ARBRSSIT
 antaresia/pain		ARBOSCUB
 antaresia/death		ARBRSDTH
+
+slomnibus/sight		SLOMNSIT
+slomnibus/pain		SLOMNIPA
+slomnibus/deaeth	SLOMNDTH
+slomnibus/active	SLOMNIAT
