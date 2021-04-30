@@ -13,8 +13,8 @@ ACTOR Slomnibus
   PainSound "slomnibus/pain"
   DeathSound "slomnibus/death"
   ActiveSound "slomnibus/active"
-  Obituary "%o was blown up by a slomnibus."
-  HitObituary "%o was blown up by a slomnibus."
+  Obituary "%o was blown up by a Slomnibus."
+  HitObituary "%o was blown up by a Slomnibus."
   Tag "Slomnibus"
   States
   {

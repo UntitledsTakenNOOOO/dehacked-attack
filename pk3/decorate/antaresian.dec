@@ -78,54 +78,211 @@ Actor PlasmaElite : FormerCaptain
 	States
 	{
 	Missile:
-		ARWV E 16 A_FaceTarget
-		ARWV FEF 4 Bright A_CustomMissile("AntaresianPlasma",32,0,0)
-		ARWV E 8 A_FaceTarget
+		EVWV E 16 A_FaceTarget
+		EVWV FEF 4 Bright A_CustomMissile("AntaresianPlasma",32,0,0)
+		EVWV E 8 A_FaceTarget
 		goto See
 	}
 }
 
 Actor Antaresia : BaronOfHell
 {
-	Health 575 //575 in orig. DECORATE, but 650 in orig. DEHACKED, 800 elite
+	Health 575 //575 in DECORATE, 650 in DEHACKED
 	Speed 16
-	PainChance 50 //50 in orig. DECORATE, 30 in orig. DEHACKED, 8 for elite
+	PainChance 50 //50 in DECORATE, 30 in DEHACKED
 	SeeSound "antaresia/sight"
 	PainSound "antaresia/pain"
 	DeathSound "antaresia/death"
-	Obituary "An antaresia took %o's soul again."
-	HitObituary "%o was perforated by an antaresia."
-	Tag "Antaresian"
+	Obituary "An Antaresia took %o's soul again."
+	HitObituary "%o was perforated by an Antaresia."
+	Tag "Antaresia"
 	States
 	{
 	Spawn:
-		ARBS A 10 A_Look
+		ANTR A 10 A_Look
 		goto Spawn
 	See:
-		ARBS ABCD 3 A_Chase
+		ANTR ABCD 3 A_Chase
 		goto See
 	Pain:
-		ARBS E 2 
-		ARBS E 2 A_Pain
+		ANTR E 2 
+		ANTR E 2 A_Pain
 		goto See
 	Melee:
 	Missile:
-		ARBS E 12 Bright A_FaceTarget
-		ARBS FFF 4 Bright A_HeadAttack
-		ARBS F 8 Bright A_FaceTarget
-		ARBS FF 0 Bright A_CustomMissile("AntaresianPlasma",32,0,0)
-		ARBS F 6 Bright A_CustomMissile("AntaresianPlasma",32,0,0)
+		ANTR E 12 Bright A_FaceTarget
+		ANTR FFF 4 Bright A_HeadAttack
+		ANTR F 8 Bright A_FaceTarget
+		ANTR FF 0 Bright A_CustomMissile("AntaresianPlasma",32,0,0)
+		ANTR F 6 Bright A_CustomMissile("AntaresianPlasma",32,0,0)
 		goto See
 	Death:
-		ARBS G 5 
-		ARBS H 5 A_Scream
-		ARBS I 5
-		ARBS J 5 A_Fall
-		ARBS KL 5
-		ARBS M -1 
+		ANTR G 5 
+		ANTR H 5 A_Scream
+		ANTR I 5
+		ANTR J 5 A_Fall
+		ANTR KL 5
+		ANTR M -1 
 		stop
 	Raise:
-		ARBS MLKJIHG 2 
+		ANTR MLKJIHG 2 
 		goto See
 	}
+}
+
+Actor AntaresiaElite : Antaresia
+{
+	Health 800
+	PainChance 10
+	SeeSound "antaresia/sight"
+	PainSound "antaresia/pain"
+	DeathSound "antaresia/death"
+	Obituary "An Antaresia elite took %o's soul again."
+	HitObituary "%o was perforated by an Antaresia elite."
+	Tag "Antaresia Elite"
+	Translation "16:47=192:207", "48:79=192:207", "80:111=192:207", "168:191=192:207", "3:3=203:203"
+	+NOINFIGHTING //As I found out, they can't infight in the original either.
+	States
+	{
+	See:
+		ANTR ABCD 2 A_Chase
+		goto See
+	Melee:
+	Missile:
+		ANTR E 12 Bright A_FaceTarget
+		ANTR FFFF 1 Bright A_CustomMissile("AntaresianPlasma",32,0,0)
+		goto See
+	}
+}
+
+ACTOR Afriest
+{
+  Health 500
+  Radius 20
+  Height 56
+  Speed 12
+  PainChance 48
+  Monster
+  +FLOAT
+  +NOGRAVITY
+  +NOBLOOD
+  SeeSound "afriest/sight"
+  PainSound "afriest/pain"
+  DeathSound "afirest/death"
+  ActiveSound ""
+  Obituary "%o succumbed to an Afriest's dark power."
+  States
+  {
+  Spawn:
+    ABIS A 10 A_Look
+    Loop
+  See:
+    ABIS AB 3 A_Chase //Change: 2 -> 3 tics to be more in line with Cacodemon
+    Loop
+  Pain:
+    ABIS C 6
+    ABIS C 6 A_Pain
+    Goto See
+  Missile:
+    ABIS DE 7 A_FaceTarget //Change: Extra attack frame because we have one
+    ABIS F 0 A_HeadAttack
+    ABIS F 0 A_BruisAttack
+    ABIS F 5 A_CustomMissile("AntaresianPlasma",32,0,0)
+    Goto See
+  Death:
+    ABIS G 6
+    ABIS H 6 Bright A_Scream
+    ABIS I 5 Bright A_NoBlocking
+    ABIS J 5 Bright
+    ABIS K 5 Bright
+    ABIS LM 4 Bright
+    ABIS N 4
+    ABIS O 4
+    ABIS P -1
+    Stop
+  }
+}
+
+ACTOR AntaresianArachnotron : Arachnotron
+{
+  Radius 56
+  Speed 14
+  AttackSound "chainguy/attack"
+  States
+  {
+  Spawn:
+    ASPI AB 10 A_Look
+    Loop
+  See:
+    ASPI A 20
+    ASPI A 3 A_BabyMetal
+    ASPI ABBCC 3 A_Chase
+    ASPI D 3 A_BabyMetal
+    ASPI DEEFF 3 A_Chase
+    Goto See+1
+  Missile:
+    ASPI A 20 Bright A_FaceTarget
+    ASPI G 2 Bright A_CPosAttack
+    ASPI H 2 Bright A_FaceTarget
+    ASPI H 0 Bright A_CPosRefire
+    Goto Missile+1
+  Pain:
+    ASPI I 3
+    ASPI I 3 A_Pain
+    Goto See+1
+  Death:
+    ASPI J 20 A_Scream
+    ASPI K 7 A_NoBlocking
+    ASPI L 7
+	BSPI MNO 7
+    BSPI P -1 A_BossDeath
+    Stop
+  Raise:
+    BSPI PNOM 5
+    ASPI LKJ 5
+    Goto See+1
+  }
+}
+
+ACTOR IndomitableMastermind : SpiderMastermind
+{
+  Health 3300
+  PainChance 10
+  Speed 8
+  Obituary "%o stood in awe of the Indomitable Mastermind."
+  ReactionTime 4
+  States
+  {
+  Spawn:
+    ANSP AB 10 A_Look
+    Loop
+  See:
+    ANSP A 2 A_Metal
+    ANSP ABB 2 A_Chase
+    ANSP C 2 A_Metal
+    ANSP CDD 2 A_Chase
+    ANSP E 2 A_Metal
+    ANSP EFF 2 A_Chase
+    Loop
+  Missile:
+    ANSP A 20 Bright A_FaceTarget
+    ANSP G 0 Bright A_CustomMissile("AntaresianPlasma",32,0,0)
+    ANSP G 4 Bright A_SPosAttackUseAtkSound
+    ANSP H 0 Bright A_CustomMissile("AntaresianPlasma",32,0,0)
+    ANSP H 4 Bright A_SPosAttackUseAtkSound
+    ANSP H 1 Bright A_SpidRefire
+    Goto Missile+1
+  Pain:
+    ANSP I 3
+    ANSP I 3 A_Pain
+    Goto See
+  Death:
+    ANSP J 20 A_Scream
+    ANSP K 10 A_NoBlocking
+    ANSP L 10
+	SPID MNOPQR 10
+    SPID S 30
+    SPID S -1 A_BossDeath
+    Stop
+  }
 }

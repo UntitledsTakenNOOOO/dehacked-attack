@@ -1,7 +1,6 @@
 ACTOR AngryMastermind : SpiderMastermind
 {
   Health 5000 //Change: 12000 --> 5000 health for balance reasons
-  Speed 24
   +MISSILEEVENMORE //Added just for the heck of it, really
   Obituary "%o stood in awe of the angry spiderdemon."
   Tag "Angry Spiderdemon"

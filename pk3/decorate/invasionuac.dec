@@ -1,4 +1,4 @@
-ACTOR InvasionMonarch : Cyberdemon
+ACTOR DarkCyberdemon : Cyberdemon
 {
   Health 5000 //Lowered from 10000
   Speed 22 //Lowered from 30
@@ -20,8 +20,8 @@ ACTOR InvasionMonarch : Cyberdemon
     DCYB E 6 A_FaceTarget
     DCYB F 12 A_CyberAttack
     DCYB E 0 A_BruisAttack
-    DCYB E 0 A_FatAttack1
     DCYB E 0 A_SkelMissile
+    DCYB E 0 A_FatAttack1
     DCYB E 0 A_FatAttack2
     DCYB E 0 A_FatAttack3
     DCYB E 12 A_FaceTarget
@@ -46,7 +46,7 @@ ACTOR WarlordOfHell : BaronOfHell
     Health 5000 //Lowered from 30000
     Radius 36
     Height 96
-    Speed 24
+    Speed 18 //Lowered from 24
     PainChance 10
     Scale 1.5
 	Mass 1500
@@ -55,6 +55,7 @@ ACTOR WarlordOfHell : BaronOfHell
 	+NORADIUSDMG
 	+BOSS
     Obituary "%o was extuingished by the warlord of hell."
+	Tag "Warlord Of Hell"
     States
     {
     Spawn:

@@ -54,6 +54,9 @@ AttackSound "skull/melee"
 PainSound "skull/pain"
 DeathSound "skull/death"
 ActiveSound "skull/active"
+Tag "Poison Soul"
+Obituary "%o was poisoned by a Poison Soul."
+HitObituary "%o was chomped on by a Poison Soul."
 States
    {
    Spawn:
@@ -97,7 +100,7 @@ ACTOR HellSmith
   +NORADIUSDMG //Added
   +DONTMORPH
   +BOSSDEATH
-  Obituary "%o was incinerated by a hell smith."
+  Obituary "%o was incinerated by a Hell Smith."
   SeeSound ""
   PainSound "brain/pain"
   DeathSound ""
@@ -112,13 +115,13 @@ ACTOR HellSmith
     AVTR AB 6 A_Chase
     Loop
   Missile:
-    AVTR C 3 A_FaceTarget
-    AVTR D 1 A_FatAttack3
-    AVTR D 1 A_FatAttack2
-    AVTR D 1 A_FatAttack1
-    AVTR E 1 A_FatAttack1
-    AVTR E 1 A_FatAttack2
-    AVTR E 1 A_FatAttack3
+    AVTR C 6 A_FaceTarget //Change: Doubled firing times to be less mean.
+    AVTR D 2 A_FatAttack3
+    AVTR D 2 A_FatAttack2
+    AVTR D 2 A_FatAttack1
+    AVTR E 2 A_FatAttack1
+    AVTR E 2 A_FatAttack2
+    AVTR E 2 A_FatAttack3
     Goto See
   Pain:
     AVTR F 10 A_Pain

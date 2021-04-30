@@ -34,36 +34,36 @@ Actor FormerCaptain
 	States
 	{
 	Spawn:
-		ARWV AABB 10 A_Look
+		EVWV AABB 10 A_Look
 		goto Spawn
 	See:
-		ARWV AABBCCDD 2 A_Chase
+		EVWV AABBCCDD 2 A_Chase
 		goto See
 	Pain:
-		ARWV G 3 
-		ARWV G 3 A_Pain
+		EVWV G 3 
+		EVWV G 3 A_Pain
 		goto See
 	Missile:
-		ARWV E 16 A_FaceTarget
-		ARWV FEFEF 4 Bright A_CustomMissile("EviternityPlasma",32,0,0)
-		ARWV E 8 A_FaceTarget
+		EVWV E 16 A_FaceTarget
+		EVWV FEFEF 4 Bright A_CustomMissile("EviternityPlasma",32,0,0)
+		EVWV E 8 A_FaceTarget
 		goto See
 	Death:
-		ARWV H 5 
-		ARWV I 5 A_Scream
-		ARWV J 5 A_Fall
-		ARWV KLM 5 
-		ARWV N -1 
+		EVWV H 5 
+		EVWV I 5 A_Scream
+		EVWV J 5 A_Fall
+		EVWV KLM 5 
+		EVWV N -1 
 		stop
 	XDeath:
-		ARWV O 5 
-		ARWV P 5 A_XScream
-		ARWV Q 5 A_Fall
-		ARWV RST 5 
-		ARWV U -1 
+		EVWV O 5 
+		EVWV P 5 A_XScream
+		EVWV Q 5 A_Fall
+		EVWV RST 5 
+		EVWV U -1 
 		stop
 	Raise:
-		ARWV NMLKJIH 5 
+		EVWV NMLKJIH 5 
 		goto See
 	}
 }
@@ -88,27 +88,27 @@ Actor NightmareDemon
 	States
 	{
 	Spawn:
-		SHSG AABB 10 A_Look
+		EVSG AABB 10 A_Look
 		goto Spawn
 	See:
-		SHSG AABBCCDD 2 Fast A_Chase
+		EVSG AABBCCDD 2 Fast A_Chase
 		goto See
 	Melee:
-		SHSG E 6 A_FaceTarget
-		SHSG F 7 A_FaceTarget
-		SHSG G 8 A_SargAttack
+		EVSG E 6 A_FaceTarget
+		EVSG F 7 A_FaceTarget
+		EVSG G 8 A_SargAttack
 		goto See
 	Pain:
-		SHSG H 2
-		SHSG H 2 A_Pain
+		EVSG H 2
+		EVSG H 2 A_Pain
 		goto See
 	Death:
-		SHSG I 8
-		SHSG J 8 A_Scream
-		SHSG K 4
-		SHSG L 4
-		SHSG M 4
-		SHSG N -1
+		EVSG I 8
+		EVSG J 8 A_Scream
+		EVSG K 4
+		EVSG L 4
+		EVSG M 4
+		EVSG N -1
 		stop
 	}
 }

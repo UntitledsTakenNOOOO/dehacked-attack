@@ -48,3 +48,7 @@ slomnibus/sight		SLOMNSIT
 slomnibus/pain		SLOMNIPA
 slomnibus/deaeth	SLOMNDTH
 slomnibus/active	SLOMNIAT
+
+afriest/death		ABISDTH
+afriest/sight		ABISSIT
+afriest/pain		ABISPAI

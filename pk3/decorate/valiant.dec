@@ -152,8 +152,8 @@ ACTOR ValiantPyroDemon : HellKnight
   PainSound "knight/pain"
   DeathSound "monster/ar2dth"
   ActiveSound "knight/active"
-  Obituary "%o was burned to cinders by a pyro knight."
-  HitObituary "%o got ripped to shreds by a pyro knight."
+  Obituary "%o was burned to cinders by a Pyro Knight."
+  HitObituary "%o got ripped to shreds by a Pyro Knight."
   Tag "Pyro Knight"
   States
   {

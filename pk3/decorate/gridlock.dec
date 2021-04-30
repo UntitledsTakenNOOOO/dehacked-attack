@@ -5,7 +5,7 @@ ACTOR GridlockCardinal : Cyberdemon
   PainChance 32
   +FLOAT
   +NOGRAVITY
-  Obituary "%o was splattered by a gridlock cardinal."
+  Obituary "%o was splattered by a Gridlock Cardinal."
   PainSound "brain/pain"
   Tag "Gridlock Cardinal"
   States

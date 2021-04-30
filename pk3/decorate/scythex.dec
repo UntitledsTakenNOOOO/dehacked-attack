@@ -5,7 +5,7 @@ Actor ShadowImp : DoomImp
   PainChance 170
   Mass 200
   BloodColor "DarkGreen"
-  Obituary "%o was killed by a shadow imp."
+  Obituary "%o was killed by a Shadow Imp."
   Tag "Shadow Imp"
   States
   {
@@ -120,7 +120,7 @@ ACTOR ShadowSoul
 
 ACTOR ShadowElemental : PainElemental
 {
-  Obituary "%o was killed by a shadow elemental."
+  Obituary "%o was killed by a Shadow Elemental."
   BloodColor "DarkGreen"
   Tag "Shadow Elemental"
   States

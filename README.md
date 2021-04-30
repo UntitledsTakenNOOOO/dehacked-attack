@@ -57,14 +57,20 @@ PSX DOOM:
 * Nightmare Spectre: Faster moving and much tougher variant of the spectre. Has 300 HP and spawns with spectres, naturally.
 	* Note: This is not a DEHACKED original, but I felt like giving tribute to a rather different version of Doom and its one new monster.
 
-ANTARESIAN LEGACY/RELIQUARY:
+ANTARESIAN RELIQUARY:
 * Former Ranger: Possessing an energy blaster instead of a rifle, these guys are a bit scarier than the ordinary zombie that they spawn with.
 * Plasma Elite: A variant of the former captain up above; these guys shoot blue energy bolts in volleys of three instead, and spawn with the chaingunner.
 * Antaresia: A serpent-like creature that has a strange firing pattern. Spawns with Hell Knights.
-* Antaresian Arachnotron: A variant of the arachnotron that uses the energy bolts used by the former ranger and plasma elite.
+
+STRUGGLE: ANTARESIAN LEGACY:
+* Antaresia Elite: A more powerful variant of the Antaresia that spawns with the Archvile. Has more HP, less pain chance, and moves much faster.
+* Afriest: A flying priest with a powerful triple attack. Spawns with Cacodemons rarely.
+* Antaresian Arachnotron: A variant of the arachnotron that moves faster and uses a chaingun instead of a plasma rifle.
+* Reliquary Arachnotron: A variant of the arachnotron that uses the energy bolts used by the former ranger and plasma elite.
 
 BOSSES:
 * Gridlock Cardinal (Gridlock 64): A darker, flying variant of the cyberdemon that cycles between different monster attacks. If flinched, it retaliates with a rocket.
 * Avatar of Hell (Survive in Hell): This guy unleashes a powerful wave of 12 fireballs at once as his attack, and has a lot of health. He spawns in the cyberdemon slot.
+* Indomitable Mastermind (Struggle: Antaresian Legacy): A variant of the spidermastermind that uses both a super-chaingun AND a plasma rifle at the same time.
 * Angry Spiderdemon (Going Down): Her brain's red for some reason. Guess you made her REALLY mad at you. Retaliates with fireballs when hurt, and has more health.
 * Super Archvile (Valiant): Good luck. You'll need it if this M-F-er spawns.

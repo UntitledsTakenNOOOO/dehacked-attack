@@ -69,9 +69,10 @@ ACTOR DHRevenant : Revenant {}
 
 ACTOR DehackedCacoSpawner : RandomSpawner replaces Cacodemon
 {
-	DropItem "DHCacodemon", 256, 85
+	DropItem "DHCacodemon", 256, 70
 	DropItem "AstralCaco", 256, 10
-	DropItem "Slomnibus", 256, 5
+	DropItem "Afriest", 256, 10
+	DropItem "Slomnibus", 256, 10
 }
 ACTOR DHCacodemon : Cacodemon {}
 
@@ -84,8 +85,8 @@ ACTOR DHLostSoul : LostSoul {}
 
 ACTOR DehackedPainSpawner : RandomSpawner replaces PainElemental
 {
-	DropItem "DHPainElemental", 256, 50
-	DropItem "ShadowElemental", 256, 30
+	DropItem "DHPainElemental", 256, 48
+	DropItem "ShadowElemental", 256, 32
 	DropItem "PoisonSoul", 256, 20
 }
 ACTOR DHPainElemental : PainElemental
@@ -136,9 +137,10 @@ ACTOR DHFatso : Fatso {}
 ACTOR DehackedArachSpawner : RandomSpawner replaces Arachnotron
 {
 	DropItem "DHArachnotron", 256, 30
-	DropItem "EviternityArachnotron", 256, 20
-	DropItem "AntaresianArachnotron", 256, 20
 	DropItem "ValiantArachnotron", 256, 30
+	DropItem "EviternityArachnotron", 256, 20
+	DropItem "ReliquaryArachnotron", 256, 15
+	DropItem "AntaresianArachnotron", 256, 10
 }
 ACTOR DHArachnotron : Arachnotron {}
 ACTOR EviternityArachnotron : Arachnotron
@@ -153,14 +155,14 @@ ACTOR EviternityArachnotron : Arachnotron
 		Goto Missile+1
 	}
 }
-ACTOR AntaresianArachnotron : Arachnotron
+ACTOR ReliquaryArachnotron : Arachnotron
 {
 	States
 	{
 	Missile:
 		BSPI A 20 Bright A_FaceTarget
-		BSPI G 4 Bright A_CustomMissile("AntaresianPlasma")
-		BSPI H 4 Bright
+		BSPI G 3 Bright A_CustomMissile("AntaresianPlasma")
+		BSPI H 3 Bright
 		BSPI H 1 Bright A_SpidRefire
 		Goto Missile+1
 	}
@@ -168,23 +170,25 @@ ACTOR AntaresianArachnotron : Arachnotron
 
 ACTOR DehackedArchSpawner : RandomSpawner replaces Archvile
 {
-	DropItem "DHArchvile", 256, 75
-	DropItem "EvilMarine", 256, 25
+	DropItem "DHArchvile", 256, 60
+	DropItem "AntaresiaElite", 256, 30
+	DropItem "EvilMarine", 256, 10
 }
 ACTOR DHArchvile : Archvile {}
 
 ACTOR DehackedCyberSpawner : RandomSpawner replaces Cyberdemon
 {
-	DropItem "DHCyberdemon", 256, 70
-	DropItem "GridlockCardinal", 256, 15
-	DropItem "HellSmith", 256, 15
+	DropItem "DHCyberdemon", 256, 60
+	DropItem "GridlockCardinal", 256, 20
+	DropItem "HellSmith", 256, 20
 }
 ACTOR DHCyberdemon : Cyberdemon {}
 
 ACTOR DehackedSpiderSpawner : RandomSpawner replaces SpiderMastermind
 {
-	DropItem "DHSpiderMastermind", 256, 60
-	DropItem "AngryMastermind", 256, 30
+	DropItem "DHSpiderMastermind", 256, 50
+	DropItem "IndomitableMastermind", 256, 25
+	DropItem "AngryMastermind", 256, 15
 	DropItem "ValiantSuperVile", 256, 10
 }
 ACTOR DHSpiderMastermind : SpiderMastermind {}
