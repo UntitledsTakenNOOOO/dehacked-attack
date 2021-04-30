@@ -73,5 +73,5 @@ BOSSES:
 * Gridlock Cardinal (Gridlock 64): A darker, flying variant of the cyberdemon that cycles between different monster attacks. If flinched, it retaliates with a rocket.
 * Hell Smith (Survive in Hell): This guy unleashes a powerful wave of 12 fireballs at once as his attack, and has a LOT of health. He spawns in the cyberdemon slot.
 * Indomitable Mastermind (Struggle: Antaresian Legacy): A variant of the spidermastermind that uses both a super-chaingun AND a plasma rifle at the same time.
-* Angry Spiderdemon (Going Down): Her brain's red for some reason. Guess you made her REALLY mad at you. Retaliates with fireballs when hurt, and has more health.
+* Angry Spiderdemon (Going Down): Her brain's red for some reason. Retaliates with fireballs when hurt, and has 50% more health than the ordinary Spider Mastermind.
 * Super Archvile (Valiant): Good luck. You'll need it if this M-F-er spawns, spawning uncommonly with the Spider Mastermind.
