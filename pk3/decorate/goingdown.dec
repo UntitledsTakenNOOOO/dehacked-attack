@@ -4,6 +4,7 @@ ACTOR AngryMastermind : SpiderMastermind
   +MISSILEEVENMORE //Added just for the heck of it, really
   Obituary "%o stood in awe of the angry spiderdemon."
   Tag "Angry Spiderdemon"
+  PainSound "brain/pain"
   States
   {
   Spawn:
@@ -19,18 +20,17 @@ ACTOR AngryMastermind : SpiderMastermind
     Loop
   Missile:
     RSPD A 10 Bright A_FaceTarget
-    RSPD E 4 Bright A_SPosAttackUseAtkSound
-    RSPD G 4 Bright A_SPosAttackUseAtkSound
+    RSPD EG 4 Bright A_SPosAttackUseAtkSound
     RSPD E 1 Bright A_SpidRefire
     Goto Missile+1
   Pain: //Change: I don't know the frame numbers, so these are probably wrong.
     RSPD H 3
     RSPD H 3 A_Pain
     RSPD A 10 Bright A_FaceTarget
-    RSPD E 3 Bright A_FatAttack1
-    RSPD G 3 Bright A_FatAttack2
-    RSPD E 3 Bright A_SkelMissile
-    RSPD G 3 Bright A_SkelMissile
+    RSPD E 4 Bright A_FatAttack1
+    RSPD G 4 Bright A_FatAttack2
+    RSPD E 4 Bright A_FaceTarget
+    RSPD G 4 Bright A_SkelMissile
     Goto See
   Death:
     RSPD I 20 A_Scream
