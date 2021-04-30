@@ -17,14 +17,11 @@ monster/brusit dsbrusit
 monster/brudth dsbrudth
 monster/bruwlk dsbruwlk
 
-diablo2/goatman/sight		011sit
-Goat/Pain				goath2
-
-nightmaredemon/sight	SHSTSIT
-nightmaredemon/attack	SHSTATK
-nightmaredemon/pain		SHSTACT
-nightmaredemon/death	SHSTPAIN
-nightmaredemon/active	SHSTDTH
+nightmaredemon/sight	EVSGSIT
+nightmaredemon/attack	EVSGATK
+nightmaredemon/active	EVSGACT
+nightmaredemon/pain		EVSGPAIN
+nightmaredemon/death	EVSGDTH
 
 astralcaco/sight	DSASTSIT
 astralcaco/active	DSASTACT
@@ -44,11 +41,17 @@ antaresia/sight		ARBRSSIT
 antaresia/pain		ARBOSCUB
 antaresia/death		ARBRSDTH
 
+afriest/death		ABISDTH
+afriest/sight		ABISSIT
+afriest/pain		ABISPAI
+
 slomnibus/sight		SLOMNSIT
 slomnibus/pain		SLOMNIPA
 slomnibus/deaeth	SLOMNDTH
 slomnibus/active	SLOMNIAT
 
-afriest/death		ABISDTH
-afriest/sight		ABISSIT
-afriest/pain		ABISPAI
+haymaker/sight 		HMKRSIT
+haymaker/death		HMKRDTH
+
+diablo2/goatman/sight	011sit
+Goat/Pain				goath2

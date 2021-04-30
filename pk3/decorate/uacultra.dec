@@ -1,0 +1,36 @@
+actor Haymaker : Cyberdemon //Inheritence used to prevent infighting
+{
+  obituary "%o was floored by a Haymaker."
+  hitobituary "%o was hammered by a Haymaker."
+  health 3500 //Change: Upped from 2500 to match tier better
+  speed 14
+  painchance 35
+  seesound "haymaker/sight"
+  deathsound "haymaker/death"
+  states
+  {
+  Spawn:
+    HMKR A 10 A_Look
+    loop
+  See:
+    HMKR ABCD 2 A_Chase
+    loop
+  Missile:
+    HMKR E 6 A_FaceTarget
+    HMKR F 0 A_FatAttack1
+    HMKR F 0 A_FatAttack2
+    HMKR F 6 A_FatAttack3 //Change: Added to fit the cyberdemon tier better
+    HMKR G 6
+    goto See
+  Pain:
+    HMKR H 10 A_Pain
+    goto See
+  Death:
+    HMKR I 6 A_Scream
+    HMKR JKL 6
+    HMKR M 6 A_NoBlocking
+    HMKR NOPQRSTUV 6
+    HMKR V -1 A_BossDeath
+    stop
+  }
+}

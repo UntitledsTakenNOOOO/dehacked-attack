@@ -3,6 +3,7 @@
 #include "decorate/scythex.dec"
 #include "decorate/jenesis.dec"
 #include "decorate/ndcp.dec"
+#include "decorate/uacultra.dec"
 #include "decorate/lunatic.dec"
 #include "decorate/valiant.dec"
 #include "decorate/eviternity.dec"
@@ -178,9 +179,10 @@ ACTOR DHArchvile : Archvile {}
 
 ACTOR DehackedCyberSpawner : RandomSpawner replaces Cyberdemon
 {
-	DropItem "DHCyberdemon", 256, 60
-	DropItem "GridlockCardinal", 256, 20
-	DropItem "HellSmith", 256, 20
+	DropItem "DHCyberdemon", 256, 50
+	DropItem "Haymaker", 256, 25
+	DropItem "GridlockCardinal", 256, 10
+	DropItem "HellSmith", 256, 10
 }
 ACTOR DHCyberdemon : Cyberdemon {}
 

@@ -69,8 +69,9 @@ STRUGGLE: ANTARESIAN LEGACY:
 * Reliquary Arachnotron: A variant of the arachnotron that uses the energy bolts used by the former ranger and plasma elite.
 
 BOSSES:
+* Haymaker (UAC Ultra): A minotaur-like creature with a cyberdemon's head, this foe can unleash a wave of manucubus fireballs all at once, so be careful around it.
 * Gridlock Cardinal (Gridlock 64): A darker, flying variant of the cyberdemon that cycles between different monster attacks. If flinched, it retaliates with a rocket.
-* Avatar of Hell (Survive in Hell): This guy unleashes a powerful wave of 12 fireballs at once as his attack, and has a lot of health. He spawns in the cyberdemon slot.
+* Hell Smith (Survive in Hell): This guy unleashes a powerful wave of 12 fireballs at once as his attack, and has a LOT of health. He spawns in the cyberdemon slot.
 * Indomitable Mastermind (Struggle: Antaresian Legacy): A variant of the spidermastermind that uses both a super-chaingun AND a plasma rifle at the same time.
 * Angry Spiderdemon (Going Down): Her brain's red for some reason. Guess you made her REALLY mad at you. Retaliates with fireballs when hurt, and has more health.
-* Super Archvile (Valiant): Good luck. You'll need it if this M-F-er spawns.
+* Super Archvile (Valiant): Good luck. You'll need it if this M-F-er spawns, spawning uncommonly with the Spider Mastermind.
