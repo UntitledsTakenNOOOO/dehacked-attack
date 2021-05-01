@@ -61,12 +61,12 @@ ANTARESIAN RELIQUARY:
 * Former Ranger: Possessing an energy blaster instead of a rifle, these guys are a bit scarier than the ordinary zombie that they spawn with.
 * Plasma Elite: A variant of the former captain up above; these guys shoot blue energy bolts in volleys of three instead, and spawn with the chaingunner.
 * Antaresia: A serpent-like creature that has a strange firing pattern. Spawns with Hell Knights.
+* Reliquary Arachnotron: A variant of the arachnotron that uses the energy bolts used by the former ranger and plasma elite.
 
 STRUGGLE: ANTARESIAN LEGACY:
 * Antaresia Elite: A more powerful variant of the Antaresia that spawns with the Archvile. Has more HP, less pain chance, and moves much faster.
 * Afriest: A flying priest with a powerful triple attack. Spawns with Cacodemons rarely.
 * Antaresian Arachnotron: A variant of the arachnotron that moves faster and uses a chaingun instead of a plasma rifle.
-* Reliquary Arachnotron: A variant of the arachnotron that uses the energy bolts used by the former ranger and plasma elite.
 
 BOSSES:
 * Haymaker (UAC Ultra): A minotaur-like creature with a cyberdemon's head, this foe can unleash a wave of manucubus fireballs all at once, so be careful around it.
