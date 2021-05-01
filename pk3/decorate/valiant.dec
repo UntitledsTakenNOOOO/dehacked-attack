@@ -423,7 +423,7 @@ States
 
 ACTOR ValiantSuperVile : Archvile
 {
-	Health 7500
+	Health 6000 //Change: 7500 --> 6000 health for balance reasons
 	Radius 20
 	Height 56
 	Mass 500

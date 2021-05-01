@@ -70,8 +70,12 @@ STRUGGLE: ANTARESIAN LEGACY:
 
 BOSSES:
 * Haymaker (UAC Ultra): A minotaur-like creature with a cyberdemon's head, this foe can unleash a wave of manucubus fireballs all at once, so be careful around it.
+	* Change: Health increased from 2500 -> 3600, added +NORADIUSDMG, to fit the Cyberdemon slot. Inherits from the Cyberdemon to prevent infighting.
 * Gridlock Cardinal (Gridlock 64): A darker, flying variant of the cyberdemon that cycles between different monster attacks. If flinched, it retaliates with a rocket.
 * Hell Smith (Survive in Hell): This guy unleashes a powerful wave of 12 fireballs at once as his attack, and has a LOT of health. He spawns in the cyberdemon slot.
+	* Change: Fires slower for balance reasons, but fires more often. Health reduced from 20000 to 8000.
 * Indomitable Mastermind (Struggle: Antaresian Legacy): A variant of the spidermastermind that uses both a super-chaingun AND a plasma rifle at the same time.
 * Angry Spiderdemon (Going Down): Her brain's red for some reason. Retaliates with fireballs when hurt, and has 50% more health than the ordinary Spider Mastermind.
+	* Change: Health reduced from 12000 to 4500.
 * Super Archvile (Valiant): Good luck. You'll need it if this M-F-er spawns, spawning uncommonly with the Spider Mastermind.
+	* Change: Health reduced from 7500 to 6000. Remember that it does NOT have +NORADIUSDMG.

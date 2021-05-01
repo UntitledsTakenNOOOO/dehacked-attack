@@ -2,7 +2,7 @@ actor Haymaker : Cyberdemon //Inheritence used to prevent infighting
 {
   obituary "%o was floored by a Haymaker."
   hitobituary "%o was hammered by a Haymaker."
-  health 3500 //Change: Upped from 2500 to match tier better
+  health 3600 //Change: Upped from 2500 to match tier better
   speed 14
   painchance 35
   seesound "haymaker/sight"

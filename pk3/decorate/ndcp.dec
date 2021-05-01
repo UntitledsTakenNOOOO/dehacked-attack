@@ -25,8 +25,8 @@ ACTOR Slomnibus
     NDCP AABBCCDD 3 A_Chase
     Loop
   Melee:
-	NDCP F 6 A_VileAttack
-	NDCP F 0 A_Die
+	NDCP F 3 A_VileAttack
+	NDCP G 3 A_Die
 	Goto Death
   Pain:
     NDCP E 3
@@ -34,10 +34,9 @@ ACTOR Slomnibus
     NDCP E 6
     Goto See
   Death:
-    NDCP F 0 A_ScreamAndUnblock
-	NDCP G 8 A_Explode
-    NDCP H 8
-    MISL B 8
+    NDCP H 3 A_ScreamAndUnblock
+	MISL A 0 A_PlaySound("weapons/rocklx", 0, 1.0, 0, ATTN_NORM)
+    MISL B 8 A_Explode
 	MISL C 6
 	MISL D 4
     Stop

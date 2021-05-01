@@ -85,7 +85,7 @@ States
 
 ACTOR HellSmith
 {
-  Health 10000 //Change: 20000 --> 10000 health for balance reasons
+  Health 8000 //Change: 20000 --> 8000 health for balance reasons
   Radius 40
   Height 110
   Mass 1000
