@@ -93,6 +93,7 @@ Actor Antaresia : BaronOfHell
 	SeeSound "antaresia/sight"
 	PainSound "antaresia/pain"
 	DeathSound "antaresia/death"
+	ActiveSound "antaresia/active"
 	Obituary "An Antaresia took %o's soul again."
 	HitObituary "%o was perforated by an Antaresia."
 	Tag "Antaresia"
@@ -134,9 +135,6 @@ Actor AntaresiaElite : Antaresia
 {
 	Health 800
 	PainChance 10
-	SeeSound "antaresia/sight"
-	PainSound "antaresia/pain"
-	DeathSound "antaresia/death"
 	Obituary "An Antaresia elite took %o's soul again."
 	HitObituary "%o was perforated by an Antaresia elite."
 	Tag "Antaresia Elite"
@@ -169,7 +167,7 @@ ACTOR Afriest
   SeeSound "afriest/sight"
   PainSound "afriest/pain"
   DeathSound "afirest/death"
-  ActiveSound ""
+  ActiveSound "antaresia/active"
   Obituary "%o succumbed to an Afriest's dark power."
   States
   {
@@ -284,5 +282,130 @@ ACTOR IndomitableMastermind : SpiderMastermind
     SPID S 30
     SPID S -1 A_BossDeath
     Stop
+  }
+}
+
+ACTOR Leviathan
+{
+  Health 4000 //Change: 10000 --> 4000 health for balance reasons
+  Radius 40
+  Height 110
+  Mass 1000
+  Speed 24
+  PainChance 0
+  Monster
+  MinMissileChance 160
+  +BOSS //Added
+  +FLOORCLIP
+  +DONTMORPH
+  +BOSSDEATH
+  Obituary "%o was incinerated by a Leviathan."
+  SeeSound "leviathan/sight"
+  PainSound "afriest/pain"
+  DeathSound "leviathan/death"
+  ActiveSound "antaresia/active"
+  Tag "Leviathan"
+  States
+  {
+  Spawn:
+    ALEV A 10 A_Look
+    ALEV A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossTargetCount") > 0, "Summoner")
+    Goto Idle
+  Idle:
+    ALEV A 10 A_Look
+    Loop
+  Summoner:
+    TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+    ALEV A 0 A_SpawnItemEx("SummonerLeviathan", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+    Stop
+  See:
+    ALEV AABBCCDD 2 A_Chase
+    Loop
+  Pain:
+    ALEV G 2
+    ALEV G 8 A_Pain
+    Goto See
+  Missile:
+    ALEV F 10 Bright A_FaceTarget
+    ALEV E 0 Bright A_FatAttack1
+    ALEV E 0 Bright A_FatAttack2
+    ALEV E 6 Bright A_FatAttack3
+    Goto See
+  Death:
+    ALEV H 5 Bright
+    ALEV I 5 Bright A_FaceTarget
+    ALEV J 5 Bright A_Scream
+    ALEV KLMNOPQRST 5 Bright
+    ALEV U 5 Bright A_NoBlocking
+    ALEV VWXY 5 Bright
+    ALEV Z -1 Bright
+    Stop
+  }
+}
+
+ACTOR SpectralLeviathan : Leviathan
+{
+  +SHADOW
+  RenderStyle OptFuzzy
+  Alpha 0.5
+  Health 2800
+  Speed 16 //Yeah, they actually move slower.
+  Obituary "%o was incinerated by a Spectral Leviathan."
+  Tag "Spectral Leviathan"
+}
+
+ACTOR SummonerLeviathan : Leviathan
+{
+  PainChance 16
+  Health 5000
+  Tag "Summoner Leviathan"
+  States
+  {
+  Spawn:
+    ALEV A 10 A_Look
+	Goto Idle
+  Idle:
+    ALEV A 10 A_Look
+	Loop
+  Pain:
+    ALEV G 2
+    ALEV G 8 A_Pain
+    ALEV F 8 Bright A_FaceTarget
+    ALEV E 0 Bright A_BrainSpit("AntaresianSpawnShot")
+    ALEV E 4 Bright A_BrainSpit("AntaresianSpawnShot")
+    Goto See
+  }
+}
+
+ACTOR AntaresianSpawnShot : SpawnShot
+{
+  DropItem "DEHDoomImp" 	255 50
+  DropItem "FormerRanger"	255 40
+  DropItem "PlasmaElite"	255 30
+  DropItem "DEHPainElemental"	255 10
+  DropItem "DEHCacodemon"		255 25
+  DropItem "AntaresianArachnotron"	255 10
+  DropItem "ReliquaryArachnotron"	255 20
+  DropItem "DEHFatso"		255 30
+  DropItem "Antaresia"		255 24
+  DropItem "Afriest"		255 15
+  DropItem "AntaresiaElite"	255 2
+  Speed 20
+  SeeSound "leviathan/spit"
+  DeathSound "brain/cubeboom"
+  States
+  {
+  Spawn:
+    ABSF A 3 Bright A_SpawnFly("AntaresianSpawnFire")
+	Loop
+  }
+}
+ACTOR AntaresianSpawnFire : SpawnFire
+{
+  States
+  {
+  Spawn:
+    ABSF BCD 4 Bright A_Fire
+	Stop
   }
 }

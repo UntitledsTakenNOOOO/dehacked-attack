@@ -18,9 +18,8 @@ actor Haymaker : Cyberdemon //Inheritence used to prevent infighting
   Missile:
     HMKR E 6 A_FaceTarget
     HMKR F 0 A_FatAttack1
-    HMKR F 0 A_FatAttack2
-    HMKR F 6 A_FatAttack3 //Change: Added to fit the cyberdemon tier better
-    HMKR G 6
+    HMKR F 6 A_FatAttack2
+    HMKR G 6 A_FatAttack3 //Change: Added to fit the cyberdemon tier better
     goto See
   Pain:
     HMKR H 10 A_Pain

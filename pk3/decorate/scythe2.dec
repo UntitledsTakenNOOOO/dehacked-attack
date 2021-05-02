@@ -73,9 +73,10 @@ actor Afrit : BaronOfHell
   See:
     FRIT AABBCCDD 3 Bright A_Chase
     Loop
+  Melee:
   Missile:
-	FRIT S 8 A_FaceTarget
-	FRIT T 8 A_FaceTarget
+	FRIT S 8 Bright A_FaceTarget
+	FRIT T 8 Bright A_FaceTarget
     FRIT U 1 Bright A_FatAttack1
 	FRIT U 1 Bright A_FatAttack2
 	FRIT U 1 Bright A_FatAttack3

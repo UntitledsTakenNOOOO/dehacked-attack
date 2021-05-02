@@ -1,0 +1,2 @@
+server int deh_finalboss = 1;
+server int deh_finalbossmusic = 1;

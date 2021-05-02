@@ -17,6 +17,13 @@ monster/brusit dsbrusit
 monster/brudth dsbrudth
 monster/bruwlk dsbruwlk
 
+monster/ar2sit dsar2sit
+monster/ar2dth dsar2dth
+weapons/firbfi dsfirbfi
+
+aracnorb/sight		dsaracst
+aracnorb/death		dsaracdt
+
 nightmaredemon/sight	EVSGSIT
 nightmaredemon/attack	EVSGATK
 nightmaredemon/active	EVSGACT
@@ -28,22 +35,27 @@ astralcaco/active	DSASTACT
 astralcaco/death	DSASTRDT
 astralcaco/pain		DSASTRPN
 
-monster/ar2sit dsar2sit
-monster/ar2dth dsar2dth
-weapons/firbfi dsfirbfi
-
-aracnorb/sight		dsaracst
-aracnorb/death		dsaracdt
-
 eviternity/plasma	EVSKLDTH
+
+archangelus/sight	ANGELSIT
+archangelus/pain	ANGELPN
+archangelus/death	ANGELDTH
+archangelus/spit	ANGELPIT
+archangelus/cube	ANGELCUB
+
 antaresia/plasma	ARPLASMA
 antaresia/sight		ARBRSSIT
 antaresia/pain		ARBOSCUB
+antaresia/active	ARBOSACT
 antaresia/death		ARBRSDTH
 
 afriest/death		ABISDTH
 afriest/sight		ABISSIT
 afriest/pain		ABISPAI
+
+leviathan/sight		ANLEVSIT
+leviathan/death		ANLEVDTH
+leviathan/spit		ALEVSPIT
 
 slomnibus/sight		SLOMNSIT
 slomnibus/pain		SLOMNIPA

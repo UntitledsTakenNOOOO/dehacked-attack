@@ -153,5 +153,3 @@ ACTOR ShadowElemental : PainElemental
     Goto See
   }
 }
-
-#include "decorate/secret.dec"

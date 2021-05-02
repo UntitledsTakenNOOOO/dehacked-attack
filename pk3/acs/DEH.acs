@@ -1,0 +1,92 @@
+#library "DEH"
+#include "zcommon.acs"
+
+int BossSelection = 0;
+Script "Dehacked_BossSelect" OPEN
+{
+	BossSelection = 0;
+	if(GetCVar("deh_finalboss") <= 0 && ThingCountName("BossTarget", 0) > 0)
+	{
+		BossSelection = random(1, 6);
+	} else if(ThingCountName("BossTarget", 0) > 0) {
+		BossSelection = GetCVar("deh_finalboss");
+	}
+}
+
+Script "Dehacked_BossSpawn" (void)
+{
+	if(BossSelection <= 1)
+	{
+		SetActorState(0, "NormalFinalBoss", 0);
+	}
+	else if(BossSelection == 2)
+	{
+		SetActorState(0, "GridlockCardinal", 0);
+	}
+	else if(BossSelection == 3)
+	{
+		SetActorState(0, "HellSmith", 0);
+	}
+	else if(BossSelection == 4)
+	{
+		SetActorState(0, "SpiderMastermind", 0);
+	}
+	else if(BossSelection == 5)
+	{
+		SetActorState(0, "SuperArchvile", 0);
+	}
+	else if(BossSelection == 6)
+	{
+		SetActorState(0, "Archangelus", 0);
+	}
+}
+
+Script "Dehacked_BossCheck" (void)
+{
+	SetResultValue(BossSelection);
+}
+
+Script "Dehacked_BossTargetCount" (void)
+{
+	SetResultValue(ThingCountName("BossTarget", 0));
+}
+
+Script "Dehacked_BossMusic" (int music)
+{
+	if(GetCVar("deh_finalbossmusic"))
+	{
+		switch(music)
+		{
+		Case 0:
+			SetMusic("");
+			break;
+		Case 1:
+			SetMusic("GRIDLOCK");
+			break;
+		Case 2:
+			SetMusic("SURVIVE");
+			break;
+		Case 3:
+			SetMusic("GOINDOWN");
+			break;
+		Case 4:
+			SetMusic("VALIANT");
+			break;
+		Case 5:
+			SetMusic("ARCANGEL");
+			break;
+		}
+	}
+}
+
+//From Eviternity's ACS
+bool buffState = FALSE;
+Script "AngelTag" (void) {
+	if(buffState == FALSE) {
+		int AngelHealth = GetActorProperty(0, APROP_HEALTH);
+		if(PlayerCount() > 1) {
+			SetActorProperty(0, APROP_HEALTH, PlayerCount() * AngelHealth);
+		}
+		buffState = TRUE;
+	}
+}

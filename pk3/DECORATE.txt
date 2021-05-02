@@ -15,82 +15,82 @@
 
 ACTOR DehackedZombieSpawner : RandomSpawner replaces Zombieman
 {
-	DropItem "DHZombieman", 256, 90
+	DropItem "DEHZombieman", 256, 90
 	DropItem "FormerRanger", 256, 10
 }
-ACTOR DHZombieman : Zombieman {}
+ACTOR DEHZombieman : Zombieman {}
 
 ACTOR DehackedShotgunguySpawner : RandomSpawner replaces Shotgunguy
 {
-	DropItem "DHShotgunguy", 256, 70
+	DropItem "DEHShotgunguy", 256, 70
 	DropItem "PlasmaZombie", 256, 20
 	DropItem "JenesisMutant", 256, 10
 }
-ACTOR DHShotgunguy : Shotgunguy {}
+ACTOR DEHShotgunguy : Shotgunguy {}
 
 ACTOR DehackedChaingunguySpawner : RandomSpawner replaces Chaingunguy
 {
-	DropItem "DHChaingunguy", 256, 60
+	DropItem "DEHChaingunguy", 256, 60
 	DropItem "RevMissileGuy", 256, 15
 	DropItem "PlasmaElite", 256, 15
 	DropItem "FormerCaptain", 256, 10
 }
-ACTOR DHChaingunGuy : ChaingunGuy {}
+ACTOR DEHChaingunGuy : ChaingunGuy {}
 
 ACTOR DehackedImpSpawner : RandomSpawner replaces DoomImp
 {
-	DropItem "DHDoomImp", 256, 70
+	DropItem "DEHDoomImp", 256, 70
 	DropItem "ValiantImp", 256, 20
 	DropItem "ShadowImp", 256, 10
 }
-ACTOR DHDoomImp : DoomImp {}
+ACTOR DEHDoomImp : DoomImp {}
 
 ACTOR DehackedDemonSpawner : RandomSpawner replaces Demon
 {
-	DropItem "DHDemon", 256, 70
+	DropItem "DEHDemon", 256, 70
 	DropItem "ValiantDemon", 256, 20
 	DropItem "NightmareDemon", 256, 10
 }
-ACTOR DHDemon : Demon {}
+ACTOR DEHDemon : Demon {}
 
 ACTOR DehackedSpectreSpawner : RandomSpawner replaces Spectre
 {
-	DropItem "DHSpectre", 256, 70
+	DropItem "DEHSpectre", 256, 70
 	DropItem "ValiantSpectre", 256, 20
 	DropItem "NightmareSpectre", 256, 10
 }
-ACTOR DHSpectre : Spectre {}
+ACTOR DEHSpectre : Spectre {}
 
 ACTOR DehackedRevSpawner : RandomSpawner replaces Revenant
 {
-	DropItem "DHRevenant", 256, 75
+	DropItem "DEHRevenant", 256, 75
 	DropItem "HellCleric", 256, 25
 }
-ACTOR DHRevenant : Revenant {}
+ACTOR DEHRevenant : Revenant {}
 
 ACTOR DehackedCacoSpawner : RandomSpawner replaces Cacodemon
 {
-	DropItem "DHCacodemon", 256, 70
+	DropItem "DEHCacodemon", 256, 70
 	DropItem "AstralCaco", 256, 10
 	DropItem "Afriest", 256, 10
 	DropItem "Slomnibus", 256, 10
 }
-ACTOR DHCacodemon : Cacodemon {}
+ACTOR DEHCacodemon : Cacodemon {}
 
 ACTOR DehackedSoulSpawner : RandomSpawner replaces LostSoul
 {
-	DropItem "DHLostSoul", 256, 70
+	DropItem "DEHLostSoul", 256, 70
 	DropItem "ValiantArachnorb", 256, 30
 }
-ACTOR DHLostSoul : LostSoul {}
+ACTOR DEHLostSoul : LostSoul {}
 
 ACTOR DehackedPainSpawner : RandomSpawner replaces PainElemental
 {
-	DropItem "DHPainElemental", 256, 48
+	DropItem "DEHPainElemental", 256, 48
 	DropItem "ShadowElemental", 256, 32
 	DropItem "PoisonSoul", 256, 20
 }
-ACTOR DHPainElemental : PainElemental
+ACTOR DEHPainElemental : PainElemental
 {
 	States
 	{
@@ -98,13 +98,13 @@ ACTOR DHPainElemental : PainElemental
 		PAIN D 5 A_FaceTarget
 		PAIN E 5 A_FaceTarget
 		PAIN F 5 Bright A_FaceTarget
-		PAIN F 0 Bright A_PainAttack("DHLostSoul")
+		PAIN F 0 Bright A_PainAttack("DEHLostSoul")
 		Goto See
 	Death:
 		PAIN H 8 Bright
 		PAIN I 8 Bright A_Scream
 		PAIN JK 8 Bright
-		PAIN L 8 Bright A_PainDie("DHLostSoul")
+		PAIN L 8 Bright A_PainDie("DEHLostSoul")
 		PAIN M 8 Bright
 		Stop
 	}
@@ -112,38 +112,38 @@ ACTOR DHPainElemental : PainElemental
 
 ACTOR DehackedKnightSpawner : RandomSpawner replaces HellKnight
 {
-	DropItem "DHHellKnight", 256, 70
+	DropItem "DEHHellKnight", 256, 70
 	DropItem "Antaresia", 256, 12
 	DropItem "ValiantPyroDemon", 256, 12
 	DropItem "Cybruiser", 256, 6
 }
-ACTOR DHHellKnight : HellKnight {}
+ACTOR DEHHellKnight : HellKnight {}
 
 ACTOR DehackedBaronSpawner : RandomSpawner replaces BaronOfHell
 {
-	DropItem "DHBaronOfHell", 256, 70
+	DropItem "DEHBaronOfHell", 256, 70
 	DropItem "Belphegor", 256, 14
 	DropItem "Afrit", 256, 8
 	DropItem "EviternityAnnihilator", 256, 8
 }
-ACTOR DHBaronOfHell : BaronOfHell {}
+ACTOR DEHBaronOfHell : BaronOfHell {}
 
 ACTOR DehackedFatsoSpawner : RandomSpawner replaces Fatso
 {
-	DropItem "DHFatso", 256, 90
+	DropItem "DEHFatso", 256, 90
 	DropItem "SuperMancubus", 256, 10
 }
-ACTOR DHFatso : Fatso {}
+ACTOR DEHFatso : Fatso {}
 
 ACTOR DehackedArachSpawner : RandomSpawner replaces Arachnotron
 {
-	DropItem "DHArachnotron", 256, 30
+	DropItem "DEHArachnotron", 256, 30
 	DropItem "ValiantArachnotron", 256, 30
 	DropItem "EviternityArachnotron", 256, 20
 	DropItem "ReliquaryArachnotron", 256, 15
 	DropItem "AntaresianArachnotron", 256, 10
 }
-ACTOR DHArachnotron : Arachnotron {}
+ACTOR DEHArachnotron : Arachnotron {}
 ACTOR EviternityArachnotron : Arachnotron
 {
 	States
@@ -171,26 +171,342 @@ ACTOR ReliquaryArachnotron : Arachnotron
 
 ACTOR DehackedArchSpawner : RandomSpawner replaces Archvile
 {
-	DropItem "DHArchvile", 256, 60
+	DropItem "DEHArchvile", 256, 60
 	DropItem "AntaresiaElite", 256, 30
 	DropItem "EvilMarine", 256, 10
 }
-ACTOR DHArchvile : Archvile {}
+ACTOR DEHArchvile : Archvile {}
 
 ACTOR DehackedCyberSpawner : RandomSpawner replaces Cyberdemon
 {
-	DropItem "DHCyberdemon", 256, 50
-	DropItem "Haymaker", 256, 30
+	DropItem "DEHCyberdemon", 256, 40
+	DropItem "Haymaker", 256, 25
+	DropItem "Leviathan", 256, 15
 	DropItem "GridlockCardinal", 256, 10
 	DropItem "HellSmith", 256, 10
 }
-ACTOR DHCyberdemon : Cyberdemon {}
+ACTOR DEHCyberdemon : Cyberdemon {}
 
 ACTOR DehackedSpiderSpawner : RandomSpawner replaces SpiderMastermind
 {
-	DropItem "DHSpiderMastermind", 256, 50
-	DropItem "IndomitableMastermind", 256, 25
+	DropItem "DEHSpiderMastermind", 256, 40
+	DropItem "IndomitableMastermind", 256, 20
+	DropItem "SpectralLeviathan", 256, 15
 	DropItem "AngryMastermind", 256, 15
 	DropItem "ValiantSuperVile", 256, 10
 }
-ACTOR DHSpiderMastermind : SpiderMastermind {}
+ACTOR DEHSpiderMastermind : SpiderMastermind {}
+
+//////////////////
+// FINAL BOSSES //
+//////////////////
+
+ACTOR DEHLeviathanSpawnShot : SpawnShot
+{
+  DropItem "SummonerLeviathan", 256, 1
+}
+ACTOR DEHGridlockCardinalPhase2SpawnShot : SpawnShot
+{
+  DropItem "GridlockCardinalPhase2", 256, 1
+}
+ACTOR DEHAfritSpawnShot : SpawnShot
+{
+  DropItem "Afrit", 256, 1
+}
+
+ACTOR DEHFinalBossSpawner : SpecialSpot replaces BossEye
+{
+  Height 32
+  +NOBLOCKMAP
+  +NOSECTOR
+  States
+  {
+  Spawn:
+    TNT1 A 10 A_Look
+    Loop
+  See:
+	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossSpawn")
+	TNT1 A 1
+	Wait
+  NormalFinalBoss:
+	TNT1 A 0 A_SpawnItemEx("DEHBossEye", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+	Stop
+  GridlockCardinal:
+	TNT1 A 0 A_SpawnSingleItem("DEHGridlockCardinalSpawner", 0, 0, 256)
+	Stop
+  HellSmith:
+	TNT1 A 0 A_SpawnSingleItem("DEHHellSmithSpawner", 0, 0, 256)
+	Stop
+  SpiderMastermind:
+	TNT1 A 0 A_SpawnSingleItem("DEHAngryMastermindSpawner", 0, 0, 256)
+	Stop
+  SuperArchvile:
+	TNT1 A 0 A_SpawnSingleItem("DEHSuperArchvileSpawner", 0, 0, 256)
+	Stop
+  Archangelus:
+	TNT1 A 0 A_SpawnSingleItem("DEHArchangelusSpawner", 0, 0, 256)
+	Stop
+  }
+}
+ACTOR DEHBossEye : BossEye
+{
+}
+
+ACTOR DEHGridlockCardinalSpawner
+{
+  Height 32
+  +NOBLOCKMAP
+  +NOSECTOR
+  States
+  {
+  Spawn:
+    TNT1 A 10 A_Look
+    Loop
+  See:
+	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 0)
+	TNT1 A 181 A_BrainAwake
+	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 1)
+	TNT1 A 0 A_PlaySound("brain/spit", 0, 1.0, 0, ATTN_NONE)
+	TNT1 AAAA 0 A_BrainSpit("DEHArchvileSpawnShot")
+	TNT1 AA 0 A_BrainSpit("DEHSpiderMastermindSpawnShot")
+    TNT1 A 1050
+	TNT1 A 0 A_PlaySound("brain/spit", 0, 1.0, 0, ATTN_NONE)
+	TNT1 A 0 A_BrainSpit("DEHBlankShot")
+	TNT1 A 0 A_BrainSpit("DEHGridlockCardinalFinalPhase1SpawnShot")
+    Stop
+  }
+}
+ACTOR DEHBlankShot : SpawnShot //Dummy so that custom bosses don't break on Skill 1/2
+{
+  DropItem "None", 256, 1
+  States
+  {
+  Spawn:
+    TNT1 AA 3
+	Stop
+  }
+}
+ACTOR DEHTeleportSpawnShot : SpawnShot
+{
+  Speed 20
+  States
+  {
+  Spawn:
+    TNT1 A 0 BRIGHT A_SpawnItemEx("TeleportFog",0,0,0,frandom(-1,1),frandom(-1,1),frandom(-1,1),0,SXF_NOCHECKPOSITION,0)
+    TNT1 A 3 BRIGHT A_SpawnFly("TeleportFog")
+    Loop
+  }
+}
+ACTOR DEHArchvileSpawnShot : DEHTeleportSpawnShot
+{
+  DropItem "DEHArchvile", 256, 1
+}
+ACTOR DEHSpiderMastermindSpawnShot : DEHTeleportSpawnShot
+{
+  DropItem "DEHSpiderMastermind", 256, 1
+}
+ACTOR DEHGridlockCardinalFinalPhase1SpawnShot : SpawnShot
+{
+  DropItem "GridlockCardinalFinalPhase1", 256, 1
+}
+
+ACTOR DEHHellSmithSpawner
+{
+  Height 32
+  +NOBLOCKMAP
+  +NOSECTOR
+  var int user_count;
+  var int user_wave;
+  States
+  {
+  Spawn:
+    TNT1 A 10 A_Look
+    Loop
+  See:
+	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 0)
+	TNT1 A 181 A_BrainAwake
+	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 2)
+	Goto SpawnerSequence+1
+  SpawnerSequence:
+    TNT1 A 175
+	TNT1 A 0 A_PlaySound("brain/spit", 0, 1.0, 0, ATTN_NONE)
+	TNT1 A 0 A_SetUserVar("user_count", ACS_NamedExecuteWithResult("Dehacked_BossTargetCount"))
+	TNT1 A 0 A_SetUserVar("user_wave", user_wave + 1)
+	TNT1 A 0 A_JumpIf(user_wave <= 10, "Phase1Loop")
+	TNT1 A 0 A_JumpIf(user_wave == 11, "FlyerLoop")
+	TNT1 A 0 A_JumpIf(user_wave == 12, "Phase1Loop")
+	TNT1 A 0 A_JumpIf(user_wave == 13, "FlyerLoop")
+	TNT1 A 0 A_JumpIf(user_wave == 14, "Phase1Loop")
+	TNT1 A 0 A_JumpIf(user_wave == 15, "FlyerLoop")
+	TNT1 A 0 A_JumpIf(user_wave == 16, "Phase1Loop")
+	TNT1 A 0 A_JumpIf(user_wave == 17, "FlyerLoop")
+	TNT1 A 0 A_JumpIf(user_wave == 18, "Phase1Loop")
+	TNT1 A 0 A_JumpIf(user_wave >= 19, "FinalSpawn")
+	Goto FinalSpawn
+  Phase1Loop:
+	TNT1 A 0 A_BrainSpit("DEHPhase1SpawnShot")
+	TNT1 A 0 A_SetUserVar("user_count", user_count - 1)
+	TNT1 A 0 A_JumpIf(user_count <= 0, "SpawnerSequence")
+	Loop
+  FlyerLoop:
+	TNT1 A 0 A_BrainSpit("DEHFlyerSpawnShot")
+	TNT1 A 0 A_SetUserVar("user_count", user_count - 1)
+	TNT1 A 0 A_JumpIf(user_count <= 0, "SpawnerSequence")
+	Loop
+  FinalSpawn:
+	TNT1 A 0 A_PlaySound("brain/spit", 0, 1.0, 0, ATTN_NONE)
+	TNT1 A 0 A_BrainSpit("DEHBlankShot")
+	TNT1 A 0 A_BrainSpit("DEHHellSmithSpawnShot")
+    Stop
+  }
+}
+ACTOR DEHPhase1SpawnShot : DEHTeleportSpawnShot
+{
+  DropItem "DEHDoomImp", 256, 7
+  DropItem "HellCleric", 256, 3
+  DropItem "DEHRevenant", 256, 4
+  DropItem "DEHHellKnight", 256, 3
+  DropItem "DEHBaronOfHell", 256, 2
+  DropItem "Belphegor", 256, 1
+}
+ACTOR DEHFlyerSpawnShot : DEHTeleportSpawnShot
+{
+  DropItem "DEHCacodemon", 256, 12
+  DropItem "AstralCaco", 256, 4
+  DropItem "DEHPainElemental", 256, 2
+  DropItem "PoisonSoul", 256, 1
+  DropItem "Afrit", 256, 1
+}
+ACTOR DEHHellSmithSpawnShot : SpawnShot
+{
+  DropItem "HellSmithFinal", 256, 1
+}
+ACTOR DEHAngryMastermindSpawner
+{
+  Height 32
+  +NOBLOCKMAP
+  +NOSECTOR
+  var int user_count;
+  States
+  {
+  Spawn:
+    TNT1 A 10 A_Look
+    Loop
+  See:
+	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 0)
+	TNT1 A 181 A_BrainAwake
+	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 3)
+	TNT1 A 0 A_SetUserVar("user_count", ACS_NamedExecuteWithResult("Dehacked_BossTargetCount"))
+	TNT1 A 0 A_PlaySound("brain/spit", 0, 1.0, 0, ATTN_NONE)
+	Goto ZombieSpawnLoop
+  ZombieSpawnLoop:
+	TNT1 A 0 A_BrainSpit("GDSpawnShot")
+	TNT1 A 0 A_SetUserVar("user_count", user_count - 1)
+	TNT1 A 0 A_JumpIf(user_count <= 0, "DemonSpawn")
+	Loop
+  DemonSpawn:
+	TNT1 A 175 A_SetUserVar("user_count", ACS_NamedExecuteWithResult("Dehacked_BossTargetCount"))
+	TNT1 A 0 A_PlaySound("brain/spit", 0, 1.0, 0, ATTN_NONE)
+	Goto DemonSpawnLoop
+  DemonSpawnLoop:
+	TNT1 A 0 A_BrainSpit("DEHDemonSpawnShot")
+	TNT1 A 0 A_SetUserVar("user_count", user_count - 1)
+	TNT1 A 0 A_JumpIf(user_count <= 0, "DemonSpawn2")
+	Loop
+  DemonSpawn2:
+	TNT1 A 175 A_SetUserVar("user_count", ACS_NamedExecuteWithResult("Dehacked_BossTargetCount"))
+	TNT1 A 0 A_PlaySound("brain/spit", 0, 1.0, 0, ATTN_NONE)
+	Goto DemonSpawnLoop2
+  DemonSpawnLoop2:
+	TNT1 A 0 A_BrainSpit("DEHDemonSpawnShot")
+	TNT1 A 0 A_SetUserVar("user_count", user_count - 1)
+	TNT1 A 0 A_JumpIf(user_count <= 0, "RevenantSpawn")
+	Loop
+  RevenantSpawn:
+	TNT1 A 175 A_SetUserVar("user_count", ACS_NamedExecuteWithResult("Dehacked_BossTargetCount"))
+	TNT1 A 0 A_PlaySound("brain/spit", 0, 1.0, 0, ATTN_NONE)
+	Goto RevenantSpawnLoop
+  RevenantSpawnLoop:
+	TNT1 A 0 A_BrainSpit("DEHRevenantSpawnShot")
+	TNT1 A 0 A_SetUserVar("user_count", user_count - 1)
+	TNT1 A 0 A_JumpIf(user_count <= 1, "MastermindSpawn")
+	Loop
+  MastermindSpawn:
+	TNT1 A 0 A_BrainSpit("DEHAngryMastermindSpawnShot")
+    Stop
+  }
+}
+ACTOR DEHDemonSpawnShot : DEHTeleportSpawnShot
+{
+  DropItem "Demon", 256, 1
+}
+ACTOR DEHRevenantSpawnShot : DEHTeleportSpawnShot
+{
+  DropItem "Revenant", 256, 1
+}
+ACTOR DEHAngryMastermindSpawnShot : DEHTeleportSpawnShot
+{
+  DropItem "AngryMastermindFinalPhase1", 256, 1
+}
+
+ACTOR DEHSuperArchvileSpawner
+{
+  Height 32
+  +NOBLOCKMAP
+  +NOSECTOR
+  var int user_count;
+  States
+  {
+  Spawn:
+    TNT1 A 10 A_Look
+    Loop
+  See:
+	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 0)
+	TNT1 A 181 A_BrainAwake
+	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 4)
+	TNT1 A 0 A_SetUserVar("user_count", ACS_NamedExecuteWithResult("Dehacked_BossTargetCount"))
+	TNT1 A 0 A_BrainSpit("DEHBlankShot")
+	TNT1 A 0 A_BrainSpit("DEHSuperArchvileSpawnShot")
+	Goto ArachnorbSpawnLoop
+  ArachnorbSpawnLoop:
+	TNT1 A 0 A_BrainSpit("DEHArachnorbSpawnShot")
+	TNT1 A 0 A_SetUserVar("user_count", user_count - 1)
+	TNT1 A 0 A_JumpIf(user_count <= 0, "StopSpawning")
+	Loop
+  StopSpawning:
+	TNT1 A 0 A_PlaySound("brain/spit", 0, 1.0, 0, ATTN_NONE)
+    Stop
+  }
+}
+ACTOR DEHArachnorbSpawnShot : DEHTeleportSpawnShot
+{
+  DropItem "ValiantArachnorb", 256, 1
+}
+ACTOR DEHSuperArchvileSpawnShot : SpawnShot
+{
+  DropItem "ValiantSuperVileFinal", 256, 1
+}
+
+ACTOR DEHArchangelusSpawner
+{
+  Height 32
+  +NOBLOCKMAP
+  +NOSECTOR
+  States
+  {
+  Spawn:
+    TNT1 A 10 A_Look
+    Loop
+  See:
+	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 5)
+	TNT1 A 181 A_BrainAwake
+	TNT1 A 0 A_PlaySound("brain/spit", 0, 1.0, 0, ATTN_NONE)
+	TNT1 A 0 A_BrainSpit("DEHBlankShot")
+	TNT1 A 0 A_BrainSpit("DEHArchangelusSpawnShot")
+	Stop
+  }
+}
+ACTOR DEHArchangelusSpawnShot : SpawnShot
+{
+  DropItem "Archangelus", 256, 1
+}

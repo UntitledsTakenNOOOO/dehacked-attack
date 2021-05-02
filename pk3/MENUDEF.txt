@@ -1,0 +1,53 @@
+OptionMenu "OptionsMenu"
+{
+	Title "OPTIONS"
+	SubMenu "Dehacked Attack Options",	"DehackedAttackOptions"
+	StaticText " "
+	Submenu "Customize Controls",		"CustomizeControls"
+	Submenu "Mouse options",			"MouseOptions"
+	Submenu "Joystick options",			"JoystickOptions"
+	StaticText " "
+	Submenu "Player Setup",				"PlayerMenu"
+	Submenu "Gameplay Options",			"GameplayOptions"
+	Submenu "Compatibility Options",	"CompatibilityOptions"
+	Submenu "Automap Options",			"AutomapOptions"
+	Submenu "HUD Options",				"HUDOptions"
+	Submenu "Miscellaneous Options",	"MiscOptions"
+	Submenu "Network Options",			"NetworkOptions"
+	Submenu "Sound Options",			"SoundOptions"
+	Submenu "Display Options",			"VideoOptions"
+	Submenu "Set video mode",			"VideoModeMenu"
+	StaticText " "
+	SafeCommand "Reset to defaults",	"reset2defaults"
+	SafeCommand	"Reset to last saved",	"reset2saved"
+	Command "Go to console",			"menuconsole"
+}
+OptionValue "DehackedFinalBoss"
+{
+	0, "Select at Random"
+	1, "Icon of Sin"
+	2, "Gridlock Cardinal"
+	3, "Hell Smith"
+	4, "Spider Mastermind?"
+	5, "Super Archvile"
+	6, "Archangelus"
+}
+OptionValue "DehackedFinalBossMusic"
+{
+	0, "Boss Music Enabled"
+	1, "Boss Music Enabled"
+}
+OptionMenu "DehackedAttackOptions"
+{
+	Title "Dehacked Attack Options"
+	StaticText ""
+	StaticText "Final Boss Selection", 1
+	StaticText "Choose one from multiple final bosses."
+	StaticText "WARNING: Most of these are not very well balanced."
+	Option "Final Boss Selection:", "deh_finalboss", "DehackedFinalBoss"
+	StaticText ""
+	StaticText "Final Boss Music:", 1
+	StaticText "Switch Music at the start of the final boss fight, if applicable."
+	Option "Final Boss Music:", "deh_finalbossmusic", "DehackedFinalBossMusic"
+	StaticText ""
+}
