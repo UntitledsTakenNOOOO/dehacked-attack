@@ -1,6 +1,7 @@
 ACTOR SubvertedGuard : Chaingunguy
 {
   Obituary "%o was perforated by a subverted guard."
+  Tag "Subverted Guard"
   States
   {
   Spawn:
@@ -44,6 +45,7 @@ ACTOR StrainFastImp : DoomImp
   SeeSound "fastimp/sight"
   HitObituary "%o was shredded by a class-2 fast imp."
   Obituary "%o let a class-2 fast imp get him."
+  Tag "Class-2 Fast Imp"
   States
   {
   See:
@@ -61,6 +63,7 @@ ACTOR StrainFastImp : DoomImp
 ACTOR StrainDemon : Demon
 {
   Obituary "%o was bit by a skinless demon."
+  Tag "Skinless Demon"
   Health 217 // I've always found it weird how it has exactly 217 health.
   States // Maybe there's something about the number I'm missing, but's strange.
   {
@@ -97,6 +100,7 @@ ACTOR Doppleganger : LostSoul //Where do the get these names from?
 {
   Obituary "%o was spooked by a doppleganger."
   Damage 2
+  Tag "Doppleganger"
   PainChance 200
   Height 48 //Don't ask me why it's shorter - it's like that in STRAIN.
   States
@@ -109,11 +113,11 @@ ACTOR Doppleganger : LostSoul //Where do the get these names from?
     Loop
   Missile:
     SKU2 C 10 Bright A_FaceTarget
-    SKU2 D 4 Bright A_TroopAttack
+    SKU2 D 10 Bright A_TroopAttack
     SKU2 C 10 Bright A_FaceTarget
     SKU2 D 4 Bright A_SkullAttack
     SKU2 CD 4 Bright
-    Goto Missile+2
+    Goto Missile+4
   Pain:
     SKU2 E 3 Bright
     SKU2 E 3 Bright A_Pain
@@ -144,6 +148,7 @@ ACTOR MinisterOfHate
   PainSound "cyber/pain"
   DeathSound "cyber/death"
   ActiveSound "cyber/active"
+  Tag "MinisterOfHate"
   Obituary "%o was splattered by a minister of hate."
   States
   {
@@ -181,6 +186,7 @@ ACTOR StrainDemonLord : BaronOfHell
   Health 1400
   Obituary "%o was flattened by a demon lord."
   HitObituary "%o was ripped apart by a demon lord."
+  Tag "Demon Lord"
   States //Note that he doesn't actually have a melee attack, though.
   {
   Spawn:

@@ -56,6 +56,12 @@ VALIANT (2015):
 * Valiant Arachnotron: Identical to the normal Arachnotron except for color scheme until you kill it, where it has a 2/3 chance to spawn an arachnorb.
 	* Change: In the original valiant, it was 1/2 instead of 2/3. The chance was increased because they're rarer outside of valiant.
 
+ANCIENT ALIENS (2016):
+* Stealth Plasma Alien: A 30 HP alien (actually a zombie) with an alien plasma rifle that is nearly invisible until it becomes active. Spawns with shotgunners.
+* Alien Guardian: A flying construct that fires salvos of revenant missiles. Spawns with lost souls, so be very careful.
+* Alien Mancubus: A re-skin of the mancubus with a unique look.
+* Alien Arachnotron: A re-skin of the arachnotron that fires the purple-ish alien plasma used by the stealth plasma alien.
+
 EVITERNITY (2018):
 * Former Captain: These nasty zombies shoot out yellow energy bolts in volleys of five. Spawns with chaingunners.
 * Nightmare Demon: These guys are faster than the ordinary pinky demon and have 300 HP.

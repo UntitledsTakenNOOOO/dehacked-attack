@@ -275,10 +275,9 @@ ACTOR ValiantArachnotron : Arachnotron
 		VSPI I 3
 		VSPI I 3 A_Pain
 		Goto See+1
-		//Goto See
 	Death:
 		VSPI I 11 A_Scream
-		VSPI A 0 A_Jump(170,"Death2")
+		VSPI A 0 A_Jump(192,"Death2") //Change: Upped to 75% (originally 50%)
 		VSPI J 7 A_Fall
 		VSPI KLM 7
 		VSPI N 7
@@ -300,6 +299,7 @@ ACTOR ValiantArachnotron : Arachnotron
 }
 ACTOR ValiantArachnotronPlasma : ArachnotronPlasma
 {
+  SeeSound "valiant/plasma"
   States
   {
   Spawn:

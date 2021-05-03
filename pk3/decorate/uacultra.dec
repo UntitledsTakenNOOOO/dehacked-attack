@@ -7,6 +7,7 @@ actor Haymaker : Cyberdemon //Inheritence used to prevent infighting
   painchance 35
   seesound "haymaker/sight"
   deathsound "haymaker/death"
+  Tag "Haymaker"
   states
   {
   Spawn:

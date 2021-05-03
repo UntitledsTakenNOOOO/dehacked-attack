@@ -23,6 +23,12 @@ weapons/firbfi dsfirbfi
 
 aracnorb/sight		dsaracst
 aracnorb/death		dsaracdt
+valiant/plasma		vaplasma
+
+stealthalien/sight		aasssit
+stealthalien/death		aassdth
+guardian/sight			aagarsit
+guardian/death			aagardth
 
 nightmaredemon/sight	EVSGSIT
 nightmaredemon/attack	EVSGATK

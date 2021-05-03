@@ -1,0 +1,191 @@
+ACTOR AlienPlasma : ArachnotronPlasma
+{
+  Renderstyle normal
+  SeeSound "valiant/plasma"
+  States
+  {
+  Spawn:
+    AAPL AB 5 Bright
+    Loop
+  Death:
+    AAPX ABCDE 5 Bright
+    Stop
+  }
+}
+
+ACTOR StealthPlasmaAlien
+{
+  Health 30
+  Radius 20
+  Height 56
+  Speed 14
+  PainChance 170
+  Monster
+  +FLOORCLIP
+  SeeSound "stealthalien/sight"
+  PainSound "grunt/pain"
+  DeathSound "stealthalien/death"
+  ActiveSound ""
+  AttackSound "valiant/plasma"
+  Obituary "%o met an alien."
+  Dropitem "Cell" //Change: Drops cell for consistency
+  Tag "Stealth Plasma Alien"
+  States
+  {
+  Spawn:
+    AASS NO 10 A_Look
+    Loop
+  See:
+    AASS AABBCCDD 2 A_Chase
+    Loop
+  Missile:
+    AASS E 10 A_FaceTarget
+    AASS F 10 A_FaceTarget
+    AASS G 4 Bright A_CustomMissile("AlienPlasma", 32)
+    AASS F 4 A_FaceTarget
+    AASS G 4 Bright A_CustomMissile("AlienPlasma", 32)
+    Goto See
+  Pain:
+    AASS H 3
+    AASS H 3 A_Pain
+    Goto See
+  Death:
+    AASS I 5
+    AASS J 5 A_Scream
+    AASS K 5 A_NoBlocking
+    AASS L 5
+    AASS M -1
+    Stop
+  Raise:
+    AASS M 5
+    AASS LKJI 5
+    Goto See 
+  }
+}
+
+ACTOR AlienArachnotron : Arachnotron
+{
+  Tag "Robo-alien"
+  Obituary "%o let an alien get %h."
+  States
+  {
+  Spawn:
+    AASP AB 10 A_Look
+    Loop
+  See:
+    AASP A 20
+    AASP A 3 A_BabyMetal
+    AASP ABBCC 3 A_Chase
+    AASP D 3 A_BabyMetal
+    AASP DEEFF 3 A_Chase
+    Goto See+1
+  Missile:
+    AASP A 20 Bright A_FaceTarget
+    AASP G 4 Bright A_CustomMissile("AlienPlasma", 32)
+    AASP H 4 Bright
+    AASP H 1 Bright A_SpidRefire
+    Goto Missile+1
+  Pain:
+    AASP I 3
+    AASP I 3 A_Pain
+    Goto See+1
+  Death:
+    AASP J 20 A_Scream
+    AASP K 7 A_NoBlocking
+    AASP LMNO 7
+    AASP P -1 A_BossDeath
+    Stop
+  Raise:
+    AASP P 5
+    AASP ONMLKJ 5
+    Goto See+1
+  }
+}
+
+ACTOR AlienFatso : Fatso
+{
+  Tag "Alien Pastry Chef"
+  Obituary "%o was squashed by an alien."
+  States
+  {
+  Spawn:
+    AAFT AB 15 A_Look
+    Loop
+  See:
+    AAFT AABBCCDDEEFF 4 A_Chase
+    Loop
+  Missile:
+    AAFT G 20 A_FatRaise
+    AAFT H 10 Bright A_FatAttack1
+    AAFT IG 5 A_FaceTarget
+    AAFT H 10 Bright A_FatAttack2
+    AAFT IG 5 A_FaceTarget
+    AAFT H 10 Bright A_FatAttack3
+    AAFT IG 5 A_FaceTarget
+    Goto See
+  Pain:
+    AAFT J 3
+    AAFT J 3 A_Pain
+    Goto See
+  Death:
+    AAFT K 6
+    AAFT L 6 A_Scream
+    AAFT M 6 A_NoBlocking
+    AAFT NOPQRS 6
+    AAFT T -1 A_BossDeath
+    Stop
+  Raise:
+    AAFT R 5
+    AAFT QPONMLK 5
+    Goto See
+  }
+}
+
+ACTOR AlienGuardian
+{
+  Health 100
+  Radius 24
+  Height 56
+  Mass 400
+  Speed 8
+  PainChance 64
+  Monster
+  +FLOAT
+  +NOGRAVITY
+  SeeSound "guardian/sight"
+  PainSound "skull/pain"
+  DeathSound "guardian/death"
+  ActiveSound "skull/active"
+  Tag "Alien Guardian"
+  Obituary "%o was fried by an alien guardian."
+  States
+  {
+  Spawn:
+    AAGC ABCDEF 3 A_Look
+    Loop
+  See:
+    AAGC ABCDEF 3 A_Chase
+    Loop
+  Missile:
+    AAGC G 8 A_FaceTarget
+    AAGC H 6 Bright A_FaceTarget
+    AAGC I 6 Bright A_SkelMissile
+    AAGC H 6 Bright A_FaceTarget
+    AAGC I 6 Bright A_SkelMissile
+    AAGC H 6 Bright A_FaceTarget
+    AAGC I 6 Bright A_SkelMissile
+    AAGC H 6 Bright A_FaceTarget
+    AAGC G 14 A_FaceTarget
+    Goto See
+  Pain:
+    AAGC J 3
+    AAGC J 3 A_Pain
+    Goto See
+  Death:
+    AAGC K 4 A_Fall
+    AAGC L 4 A_Scream
+    AAGC M 4 A_Explode(128, 128)
+    AAGC NOPQ 4
+    Stop
+  }
+}

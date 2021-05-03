@@ -169,6 +169,7 @@ ACTOR Afriest
   DeathSound "afirest/death"
   ActiveSound "antaresia/active"
   Obituary "%o succumbed to an Afriest's dark power."
+  Tag "Afriest"
   States
   {
   Spawn:

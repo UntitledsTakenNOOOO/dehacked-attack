@@ -9,6 +9,7 @@
 #include "decorate/surviveinhell.dec"
 #include "decorate/goingdown.dec"
 #include "decorate/valiant.dec"
+#include "decorate/ancientaliens.dec"
 #include "decorate/gridlock.dec"
 #include "decorate/eviternity.dec"
 #include "decorate/antaresian.dec"
@@ -25,7 +26,8 @@ ACTOR DEHZombieman : Zombieman {}
 ACTOR DehackedShotgunguySpawner : RandomSpawner replaces Shotgunguy
 {
 	DropItem "DEHShotgunguy", 256, 70
-	DropItem "PlasmaZombie", 256, 20
+	DropItem "PlasmaZombie", 256, 10
+	DropItem "StealthPlasmaAlien", 256, 10
 	DropItem "JenesisMutant", 256, 10
 	//DropItem "StealthFighter", 256, 15
 	//DropItem "RocketGuy", 256, 10
@@ -80,7 +82,8 @@ ACTOR DEHRevenant : Revenant {}
 
 ACTOR DehackedCacoSpawner : RandomSpawner replaces Cacodemon
 {
-	DropItem "DEHCacodemon", 256, 70
+	DropItem "DEHCacodemon", 256, 60
+	DropItem "AlienGuardian", 256, 10
 	DropItem "AstralCaco", 256, 10
 	DropItem "Afriest", 256, 10
 	DropItem "Slomnibus", 256, 10
@@ -142,18 +145,20 @@ ACTOR DEHBaronOfHell : BaronOfHell {}
 
 ACTOR DehackedFatsoSpawner : RandomSpawner replaces Fatso
 {
-	DropItem "DEHFatso", 256, 90
+	DropItem "DEHFatso", 256, 60
+	DropItem "AlienFatso", 256, 30
 	DropItem "SuperMancubus", 256, 10
 }
 ACTOR DEHFatso : Fatso {}
 
 ACTOR DehackedArachSpawner : RandomSpawner replaces Arachnotron
 {
-	DropItem "DEHArachnotron", 256, 30
-	DropItem "ValiantArachnotron", 256, 30
+	DropItem "DEHArachnotron", 256, 20
+	DropItem "AlienArachnotron", 256, 20
+	DropItem "ValiantArachnotron", 256, 20
 	DropItem "EviternityArachnotron", 256, 20
-	DropItem "ReliquaryArachnotron", 256, 15
 	DropItem "AntaresianArachnotron", 256, 10
+	DropItem "ReliquaryArachnotron", 256, 10
 }
 ACTOR DEHArachnotron : Arachnotron {}
 ACTOR EviternityArachnotron : Arachnotron
@@ -389,7 +394,8 @@ ACTOR DEHSIHPhase1SpawnShot : DEHTeleportSpawnShot
 {
   DropItem "DEHDoomImp", 256, 8
   DropItem "HellCleric", 256, 3
-  DropItem "DEHRevenant", 256, 4
+  DropItem "DEHRevenant", 256, 3
+  DropItem "MinisterOfHate", 256, 1
   DropItem "DEHHellKnight", 256, 3
   DropItem "DEHBaronOfHell", 256, 2
   DropItem "Belphegor", 256, 1
