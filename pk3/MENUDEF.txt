@@ -34,7 +34,7 @@ OptionValue "DehackedFinalBoss"
 }
 OptionValue "DehackedFinalBossMusic"
 {
-	0, "Boss Music Enabled"
+	0, "Boss Music Disabled"
 	1, "Boss Music Enabled"
 }
 OptionMenu "DehackedAttackOptions"
