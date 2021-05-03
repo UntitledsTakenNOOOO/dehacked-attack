@@ -1,0 +1,221 @@
+ACTOR SubvertedGuard : Chaingunguy
+{
+  Obituary "%o was perforated by a subverted guard."
+  States
+  {
+  Spawn:
+    GPOS AB 10 A_Look
+    Loop
+  See:
+    GPOS AABBCCDD 3 A_Chase
+    Loop
+  Missile:
+    GPOS E 10 A_FaceTarget
+    GPOS FE 4 Bright A_CPosAttack
+    GPOS F 1 A_CPosRefire
+    Goto Missile+1
+  Pain:
+    GPOS G 3
+    GPOS G 3 A_Pain
+    Goto See
+  Death:
+    GPOS H 5
+    GPOS I 5 A_Scream
+    GPOS J 5 A_NoBlocking
+    GPOS KLM 5
+    GPOS N -1
+    Stop
+  XDeath:
+    GPOS O 5 
+    GPOS P 5 A_XScream
+    GPOS Q 5 A_NoBlocking
+    GPOS RS 5
+    GPOS T -1
+    Stop
+  Raise:
+    GPOS N 5
+    GPOS MLKJIH 5
+    Goto See
+  }
+}
+
+ACTOR StrainFastImp : DoomImp
+{
+  SeeSound "fastimp/sight"
+  HitObituary "%o was shredded by a class-2 fast imp."
+  Obituary "%o let a class-2 fast imp get him."
+  States
+  {
+  See:
+    TROO AAAABBBBCCCCDDDD 1 A_Chase
+    Loop
+  Melee:
+  Missile:
+    TROO EF 8 A_FaceTarget
+    TROO G 6 A_TroopAttack
+	TROO G 0 A_SpidRefire
+    Loop
+  }
+}
+
+ACTOR StrainDemon : Demon
+{
+  Obituary "%o was bit by a skinless demon."
+  Health 217 // I've always found it weird how it has exactly 217 health.
+  States // Maybe there's something about the number I'm missing, but's strange.
+  {
+  Spawn:
+    SAR2 AB 10 A_Look
+    Loop
+  See:
+    SAR2 AABBCCDD 2 Fast A_Chase
+    Loop
+  Melee:
+    SAR2 EF 8 Fast A_FaceTarget
+    SAR2 G 8 Fast A_SargAttack
+    Goto See
+  Pain:
+    SAR2 H 2 Fast
+    SAR2 H 2 Fast A_Pain
+    Goto See
+  Death:
+    SAR2 I 8
+    SAR2 J 8 A_Scream
+    SAR2 K 4
+    SAR2 L 4 A_NoBlocking
+    SAR2 M 4
+    SAR2 N -1
+    Stop
+  Raise:
+    SAR2 N 5
+    SAR2 MLKJI 5
+    Goto See
+  }
+}
+
+ACTOR Doppleganger : LostSoul //Where do the get these names from?
+{
+  Obituary "%o was spooked by a doppleganger."
+  Damage 2
+  PainChance 200
+  Height 48 //Don't ask me why it's shorter - it's like that in STRAIN.
+  States
+  {
+  Spawn:
+    SKU2 AB 10 Bright A_Look
+    Loop
+  See:
+    SKU2 AB 6 Bright A_Chase
+    Loop
+  Missile:
+    SKU2 C 10 Bright A_FaceTarget
+    SKU2 D 4 Bright A_TroopAttack
+    SKU2 C 10 Bright A_FaceTarget
+    SKU2 D 4 Bright A_SkullAttack
+    SKU2 CD 4 Bright
+    Goto Missile+2
+  Pain:
+    SKU2 E 3 Bright
+    SKU2 E 3 Bright A_Pain
+    Goto See
+  Death:
+    SKU2 F 6 Bright
+    SKU2 G 6 Bright A_Scream
+    SKU2 H 6 Bright
+    SKU2 I 6 Bright A_NoBlocking
+    SKU2 J 6
+    SKU2 K 6
+    Stop
+  }
+}
+
+ACTOR MinisterOfHate
+{
+  Health 300
+  Radius 20
+  Height 55
+  Mass 300
+  Speed 9
+  PainChance 40
+  Monster
+  +FLOORCLIP
+  +NORADIUSDMG
+  SeeSound "cyber/sight"
+  PainSound "cyber/pain"
+  DeathSound "cyber/death"
+  ActiveSound "cyber/active"
+  Obituary "%o was splattered by a minister of hate."
+  States
+  {
+  Spawn:
+    CYBJ AB 10 A_Look
+    Loop
+  See:
+    CYBJ A 3 A_Hoof
+    CYBJ ABBCC 3 A_Chase
+    CYBJ D 3 A_Metal
+    CYBJ D 3 A_Chase
+    Loop
+  Missile:
+    CYBJ E 6 A_FaceTarget
+    CYBJ F 12 A_CyberAttack
+    Goto See
+  Pain:
+    CYBJ G 10 A_Pain
+    Goto See
+  Death:
+    CYBJ H 5
+    CYBJ I 5 A_Scream
+    CYBJ JKL 5
+    CYBJ M 5 A_NoBlocking
+    CYBJ NO 5
+    CYBJ P -1
+    Stop
+  }
+}
+
+ACTOR StrainDemonLord : BaronOfHell
+{
+  SeeSound "demonlord/sight"
+  DeathSound "demonlord/death"
+  Health 1400
+  Obituary "%o was flattened by a demon lord."
+  HitObituary "%o was ripped apart by a demon lord."
+  States //Note that he doesn't actually have a melee attack, though.
+  {
+  Spawn:
+    BOSS AB 10 A_Look
+    Loop
+  See:
+    BOSS AABBCCDD 3 A_Chase
+    Loop
+  Melee: //Change: fixed the animation so he attacks at the right speed.
+  Missile:
+    BOSS EF 8 A_FaceTarget
+    BOSS G 1 A_FatAttack1("DemonLordBall")
+    BOSS G 1 A_FatAttack2("DemonLordBall")
+    BOSS G 6 A_FatAttack3("DemonLordBall")
+    Goto See
+  Pain:
+    BOSS H 2
+    BOSS H 2 A_Pain
+    Goto See
+  Death:
+    BOSS I 8
+    BOSS J 8 A_Scream
+    BOSS K 8
+    BOSS L 8 A_NoBlocking
+    BOSS MN 8
+    BOSS O -1 A_BossDeath
+    Stop
+  Raise:
+    BOSS O 8
+    BOSS NMLKJI 8
+    Goto See
+  }
+}
+ACTOR DemonLordBall : BaronBall
+{
+  Speed 15
+  Damage 5
+}

@@ -107,7 +107,7 @@ ACTOR GDSpawnShot : SpawnShot
   States
   {
   Spawn:
-    TNT1 A 1 BRIGHT A_SpawnItemEx("DEHSpawnShotFog",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
+    TNT1 A 0 BRIGHT A_SpawnItemEx("DEHSpawnShotFog",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
     TNT1 A 1 BRIGHT A_SpawnFly("TeleportFog")
     Loop
   }

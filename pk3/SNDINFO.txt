@@ -65,7 +65,9 @@ slomnibus/active	SLOMNIAT
 haymaker/sight 		HMKRSIT
 haymaker/death		HMKRDTH
 
-//Suicidde Bomber
-suicide/scream dssuscrm
-suicide/sit dssusit
+suicide/scream 		DSSUSCRM
+suicide/sit 		DSSUSIT
 
+fastimp/sight		STIMPSIT
+demonlord/sight		STLRDSIT
+demonlord/death		STLRDDTH
