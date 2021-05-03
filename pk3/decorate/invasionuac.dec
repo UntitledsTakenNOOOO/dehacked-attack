@@ -1,3 +1,20 @@
+/*
+A FORWARD ON INVASION UAC'S INCLUSION & EXCLUSION
+
+Invasion UAC is a ZDoom wad, released in 2008 to the best of my knowledge.
+
+In a strange twist, despite being made in ZDoom, a port that uses DECORATE/ACS,
+XSnake chose to implement his monsters with DEHACKED instead, in a weird twist.
+As a result, Invasion UAC is a bit weird in being included, since it's not really
+a 'traditional' use of DEHACKED, relative to the others.
+
+As a result, I am not considering it 'mainline' accepted, however, due to the...
+strange circumstances surrounding it, I'm including two of its custom monsters
+in the archive, while leaving the code that actually spawns them commented out.
+
+If you wish, free free to uncomment them.
+*/
+
 ACTOR DarkCyberdemon : Cyberdemon
 {
   Health 5000 //Lowered from 10000

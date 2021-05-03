@@ -1,0 +1,139 @@
+/*
+A FORWARD ON OBITUARY'S INCLUSION & EXCLUSION
+
+Obiturary, not well-known, is a 1995 doom wad that is likely the first implementation of custom monsters in DEHACKED.
+
+The three monsters featured in it were originally implemented in the confines of DEHACKED.
+However, they were later re-implemented in the ZDoom Monster Resource Wad (and later Realm667).
+
+Due to a combination of obscurity and the fact that the most famous versions of these monsters are DECORATE
+(and not DEHACKED) I am not considering them part of the mainline DEHACKED Attack.
+
+That being said, in respect for the legacy of this wad, I am including them in the wad, though unused.
+
+The spawners have code that is commented out to spawn them. If you wish, feel free to uncomment.
+*/
+
+ACTOR SuperImp : DoomImp
+{
+	PainChance 50
+	Obituary "%o was shocked by the imp's superior firepower."
+	States
+	{
+	Melee:
+	Missile:
+		IMP3 A 8 A_FaceTarget
+		IMP3 B 8 A_FaceTarget
+		TROO G 8 A_BruisAttack
+		Goto See
+	}
+}
+
+ACTOR RocketGuy
+{ 
+   Health 50 
+   Radius 20 
+   Height 56 
+   Mass 100 
+   Speed 8 
+   PainChance 200 
+   Monster 
+   +FLOORCLIP 
+   SeeSound "grunt/sight" 
+   PainSound "grunt/pain" 
+   Deathsound "grunt/death" 
+   ActiveSound "grunt/active"
+   DropItem "RocketAmmo"
+   Obituary "%o was splattered by the zombie's rocket." 
+   States 
+   { 
+   Spawn: 
+      MPOS AB 10 A_Look 
+      Loop 
+   See: 
+      MPOS AABBCCDD 3 A_Chase 
+      Loop 
+   Missile: 
+      MPOS EE 10 A_FaceTarget 
+      MPOS F 5 
+      MPOS G 13 A_CyberAttack 
+      Goto See 
+   Pain: 
+      MPOS H 2 
+      MPOS H 2 A_Pain 
+      Goto See 
+   Death: 
+      MPOS I 5 
+      MPOS J 5 A_Scream 
+      MPOS K 5 
+      MPOS L 5 A_Fall 
+      MPOS M -1 
+      Stop 
+   XDeath: 
+      MPOS N 5 
+      MPOS O 5 A_XScream 
+      MPOS P 5 
+      MPOS Q 5 A_Fall 
+      MPOS RSTU 5 
+      MPOS V -1    
+      Stop 
+   Raise: 
+      MPOS MJKJI 5 
+      Goto See 
+   } 
+}
+
+ACTOR StealthFighter
+{
+	Health 60
+	Radius 22
+	Height 56
+	PainChance 150
+	ReactionTime 6
+	Speed 8
+	Monster 
+	+FLOORCLIP
+	+NOBLOOD
+	SeeSound "shadow/sight"
+	DeathSound "shadow/death"
+	Attacksound "shotguy/attack"
+	Obituary "%o never got a clear picture of his killer."
+	States
+	{
+	Spawn:
+		GMAN AB 10 A_Look
+		Loop
+	See:
+		GMAN AABBCCDD 1 A_Chase
+		Loop
+	Missile:
+		GMAN E 7 A_FaceTarget
+		GMAN F 7 A_FaceTarget
+		GMAN G 1 A_CPosAttack
+		GMAN F 3 A_FaceTarget
+		GMAN G 3 A_CPosAttack
+		GMAN F 1 A_CPosRefire
+		Loop
+	Pain:
+		GMAN H 3
+		GMAN H 3 A_Pain
+		Goto See
+	Death:
+		GMAN I 5
+		GMAN J 5 A_Scream
+		GMAN K 5 A_Fall
+		GMAN L 5
+		GMAN M -1
+		Stop
+	XDeath:
+		GMAN N 5 
+		GMAN O 5 A_XScream
+		GMAN QRSTU 5
+		GMAN V -1
+		Stop
+	Raise:
+		GMAN M 5
+		GMAN LKJI 5
+		Goto See 
+	}
+}

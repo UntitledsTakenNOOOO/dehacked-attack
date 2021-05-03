@@ -71,3 +71,6 @@ suicide/sit 		DSSUSIT
 fastimp/sight		STIMPSIT
 demonlord/sight		STLRDSIT
 demonlord/death		STLRDDTH
+
+shadow/sight dsgssit
+shadow/death dsgsdth

@@ -12,7 +12,8 @@
 #include "decorate/gridlock.dec"
 #include "decorate/eviternity.dec"
 #include "decorate/antaresian.dec"
-//#include "decorate/invasionuac.dec"
+#include "decorate/obituary.dec"
+#include "decorate/invasionuac.dec"
 
 ACTOR DehackedZombieSpawner : RandomSpawner replaces Zombieman
 {
@@ -26,6 +27,8 @@ ACTOR DehackedShotgunguySpawner : RandomSpawner replaces Shotgunguy
 	DropItem "DEHShotgunguy", 256, 70
 	DropItem "PlasmaZombie", 256, 20
 	DropItem "JenesisMutant", 256, 10
+	//DropItem "StealthFighter", 256, 15
+	//DropItem "RocketGuy", 256, 10
 }
 ACTOR DEHShotgunguy : Shotgunguy {}
 
@@ -45,6 +48,7 @@ ACTOR DehackedImpSpawner : RandomSpawner replaces DoomImp
 	DropItem "ValiantImp", 256, 25
 	DropItem "ShadowImp", 256, 10
 	DropItem "StrainFastImp", 256, 10
+	//DropItem "SuperImp", 256, 25
 }
 ACTOR DEHDoomImp : DoomImp {}
 
@@ -192,6 +196,7 @@ ACTOR DehackedCyberSpawner : RandomSpawner replaces Cyberdemon
 	DropItem "Leviathan", 256, 15
 	DropItem "GridlockCardinal", 256, 10
 	DropItem "HellSmith", 256, 10
+	//DropItem "DarkCyberdemon", 256, 25
 }
 ACTOR DEHCyberdemon : Cyberdemon {}
 
@@ -202,6 +207,7 @@ ACTOR DehackedSpiderSpawner : RandomSpawner replaces SpiderMastermind
 	DropItem "SpectralLeviathan", 256, 15
 	DropItem "AngryMastermind", 256, 15
 	DropItem "ValiantSuperVile", 256, 10
+	//DropItem "WarlordOfHell", 256, 25
 }
 ACTOR DEHSpiderMastermind : SpiderMastermind {}
 
