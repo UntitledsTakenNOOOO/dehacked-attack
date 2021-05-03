@@ -1,16 +1,16 @@
 #include "decorate/scythe2.dec"
 #include "decorate/dv2.dec"
 #include "decorate/scythex.dec"
-#include "decorate/jenesis.dec"
 #include "decorate/ndcp.dec"
 #include "decorate/uacultra.dec"
+#include "decorate/jenesis.dec"
 #include "decorate/lunatic.dec"
-#include "decorate/valiant.dec"
-#include "decorate/eviternity.dec"
-#include "decorate/antaresian.dec"
-#include "decorate/gridlock.dec"
 #include "decorate/surviveinhell.dec"
 #include "decorate/goingdown.dec"
+#include "decorate/valiant.dec"
+#include "decorate/gridlock.dec"
+#include "decorate/eviternity.dec"
+#include "decorate/antaresian.dec"
 #include "decorate/invasionuac.dec"
 
 ACTOR DehackedZombieSpawner : RandomSpawner replaces Zombieman
@@ -47,8 +47,9 @@ ACTOR DEHDoomImp : DoomImp {}
 
 ACTOR DehackedDemonSpawner : RandomSpawner replaces Demon
 {
-	DropItem "DEHDemon", 256, 70
+	DropItem "DEHDemon", 256, 60
 	DropItem "ValiantDemon", 256, 20
+	DropItem "SuicideBomber", 256, 10
 	DropItem "NightmareDemon", 256, 10
 }
 ACTOR DEHDemon : Demon {}
@@ -235,6 +236,7 @@ ACTOR DEHFinalBossSpawner : SpecialSpot replaces BossEye
 	TNT1 A 0 A_SpawnSingleItem("DEHGridlockCardinalSpawner", 0, 0, 256)
 	Stop
   HellSmith:
+	TNT1 A 0 A_SpawnItemEx("DEHSurviveInHellBossEye", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
 	TNT1 A 0 A_SpawnSingleItem("DEHHellSmithSpawner", 0, 0, 256)
 	Stop
   SpiderMastermind:
@@ -292,10 +294,23 @@ ACTOR DEHTeleportSpawnShot : SpawnShot
   States
   {
   Spawn:
-    TNT1 A 0 BRIGHT A_SpawnItemEx("TeleportFog",0,0,0,frandom(-1,1),frandom(-1,1),frandom(-1,1),0,SXF_NOCHECKPOSITION,0)
-    TNT1 A 3 BRIGHT A_SpawnFly("TeleportFog")
+    TNT1 A 1 BRIGHT A_SpawnItemEx("DEHSpawnShotFog",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
+    TNT1 A 1 BRIGHT A_SpawnFly("TeleportFog")
     Loop
   }
+}
+ACTOR DEHSpawnShotFog
+{
+  +NOBLOCKMAP
+  +NOTELEPORT
+  +NOGRAVITY
+  RenderStyle Add
+  States
+  {
+  Spawn:
+    APBX ABCDE 6 Bright
+    Stop
+  }	
 }
 ACTOR DEHArchvileSpawnShot : DEHTeleportSpawnShot
 {
@@ -310,13 +325,38 @@ ACTOR DEHGridlockCardinalFinalPhase1SpawnShot : SpawnShot
   DropItem "GridlockCardinalFinalPhase1", 256, 1
 }
 
+ACTOR DEHSurviveInHellBossEye
+{
+  Height 32
+  +NOBLOCKMAP
+  +NOSECTOR
+  States
+  {
+  Spawn:
+    TNT1 A 10 A_Look
+    Loop
+  See:
+	TNT1 A 181
+	TNT1 A 175 A_BrainSpit("DEHPhase1SpawnShot") //Wave 1
+	Stop
+  SpawnerSequence:
+    TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 35 A_BrainSpit("DEHPhase1SpawnShot")
+	TNT1 AAAA 35 A_BrainSpit("DEHFlyerSpawnShot")
+	TNT1 AAAAA 35 A_BrainSpit("DEHPhase1SpawnShot")
+	TNT1 AAAA 35 A_BrainSpit("DEHFlyerSpawnShot")
+	TNT1 AAAAA 35 A_BrainSpit("DEHPhase1SpawnShot")
+	TNT1 AAAA 35 A_BrainSpit("DEHFlyerSpawnShot")
+	TNT1 AAAAA 35 A_BrainSpit("DEHPhase1SpawnShot")
+	TNT1 AAAA 35 A_BrainSpit("DEHFlyerSpawnShot")
+	TNT1 AAAAA 35 A_BrainSpit("DEHPhase1SpawnShot")
+    Stop
+  }
+}
 ACTOR DEHHellSmithSpawner
 {
   Height 32
   +NOBLOCKMAP
   +NOSECTOR
-  var int user_count;
-  var int user_wave;
   States
   {
   Spawn:
@@ -326,34 +366,7 @@ ACTOR DEHHellSmithSpawner
 	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 0)
 	TNT1 A 181 A_BrainAwake
 	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 2)
-	Goto SpawnerSequence+1
-  SpawnerSequence:
-    TNT1 A 175
-	TNT1 A 0 A_PlaySound("brain/spit", 0, 1.0, 0, ATTN_NONE)
-	TNT1 A 0 A_SetUserVar("user_count", ACS_NamedExecuteWithResult("Dehacked_BossTargetCount"))
-	TNT1 A 0 A_SetUserVar("user_wave", user_wave + 1)
-	TNT1 A 0 A_JumpIf(user_wave <= 10, "Phase1Loop")
-	TNT1 A 0 A_JumpIf(user_wave == 11, "FlyerLoop")
-	TNT1 A 0 A_JumpIf(user_wave == 12, "Phase1Loop")
-	TNT1 A 0 A_JumpIf(user_wave == 13, "FlyerLoop")
-	TNT1 A 0 A_JumpIf(user_wave == 14, "Phase1Loop")
-	TNT1 A 0 A_JumpIf(user_wave == 15, "FlyerLoop")
-	TNT1 A 0 A_JumpIf(user_wave == 16, "Phase1Loop")
-	TNT1 A 0 A_JumpIf(user_wave == 17, "FlyerLoop")
-	TNT1 A 0 A_JumpIf(user_wave == 18, "Phase1Loop")
-	TNT1 A 0 A_JumpIf(user_wave >= 19, "FinalSpawn")
-	Goto FinalSpawn
-  Phase1Loop:
-	TNT1 A 0 A_BrainSpit("DEHPhase1SpawnShot")
-	TNT1 A 0 A_SetUserVar("user_count", user_count - 1)
-	TNT1 A 0 A_JumpIf(user_count <= 0, "SpawnerSequence")
-	Loop
-  FlyerLoop:
-	TNT1 A 0 A_BrainSpit("DEHFlyerSpawnShot")
-	TNT1 A 0 A_SetUserVar("user_count", user_count - 1)
-	TNT1 A 0 A_JumpIf(user_count <= 0, "SpawnerSequence")
-	Loop
-  FinalSpawn:
+	TNT1 A 3150 //90 seconds
 	TNT1 A 0 A_PlaySound("brain/spit", 0, 1.0, 0, ATTN_NONE)
 	TNT1 A 0 A_BrainSpit("DEHBlankShot")
 	TNT1 A 0 A_BrainSpit("DEHHellSmithSpawnShot")
@@ -362,7 +375,7 @@ ACTOR DEHHellSmithSpawner
 }
 ACTOR DEHPhase1SpawnShot : DEHTeleportSpawnShot
 {
-  DropItem "DEHDoomImp", 256, 7
+  DropItem "DEHDoomImp", 256, 8
   DropItem "HellCleric", 256, 3
   DropItem "DEHRevenant", 256, 4
   DropItem "DEHHellKnight", 256, 3

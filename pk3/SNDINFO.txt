@@ -65,5 +65,7 @@ slomnibus/active	SLOMNIAT
 haymaker/sight 		HMKRSIT
 haymaker/death		HMKRDTH
 
-diablo2/goatman/sight	011sit
-Goat/Pain				goath2
+//Suicidde Bomber
+suicide/scream dssuscrm
+suicide/sit dssusit
+

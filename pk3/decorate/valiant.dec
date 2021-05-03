@@ -118,6 +118,48 @@ ACTOR ValiantSpectre : ValiantDemon
   Tag "Valiant Spectre"
 }
 
+actor SuicideBomber
+{
+  obituary "%o hugged a suicide bomber."
+  health 60
+  radius 20
+  height 56
+  mass 100
+  speed 10
+  painchance 5
+  seesound "suicide/sit"
+  attacksound "shotguy/death"
+  painsound "shotguy/pain"
+  deathsound "shotguy/death"
+  MONSTER
+  +FLOORCLIP
+  states
+  {
+  Spawn:
+    BMBE AB 10 A_Look
+    loop
+  See:
+    BMBE AAABBBCCCDDD 2 A_Chase
+    BMBE A 0 A_PlaySound("suicide/scream")
+    loop
+  Pain:
+    BMBE A 3
+    BMBE A 3 A_Pain
+    goto See
+  Melee:
+    Goto Death
+  Death:
+    BMBE M 0 bright A_Explode(96, 96)
+    BMBE M 5 bright A_PlaySound("weapons/rocklx")
+    BMBE N 5 bright A_XScream
+    BMBE O 5 A_NoBlocking
+    BMBE PQRST 5
+    BMBE U -1
+    stop
+  }
+}
+
+
 ACTOR ValiantBaronBall
 {
   Game Doom
@@ -559,10 +601,8 @@ ACTOR ValiantRevenantSpawnShot : SpawnShot
   States
   {
   Spawn:
-    TNT1 A 0 BRIGHT A_SpawnItemEx("TeleportFog",0,0,0,frandom(-1,1),frandom(-1,1),frandom(-1,1),0,SXF_NOCHECKPOSITION,0)
-    TNT1 AA 3 BRIGHT A_SpawnFly("TeleportFog")
-    TNT1 A 0 BRIGHT A_SpawnItemEx("TeleportFog",0,0,0,frandom(-1,1),frandom(-1,1),frandom(-1,1),0,SXF_NOCHECKPOSITION,0)
-    TNT1 AA 3 BRIGHT A_SpawnFly("TeleportFog")
+    TNT1 A 1 BRIGHT A_SpawnItemEx("DEHSpawnShotFog",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
+    TNT1 A 1 BRIGHT A_SpawnFly("TeleportFog")
     Loop
   }
 }
