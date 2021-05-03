@@ -134,7 +134,7 @@ ACTOR DehackedBaronSpawner : RandomSpawner replaces BaronOfHell
 {
 	DropItem "DEHBaronOfHell", 256, 60
 	DropItem "Belphegor", 256, 12
-	DropItem "DemonLord", 256, 12
+	DropItem "StrainDemonLord", 256, 12
 	DropItem "Afrit", 256, 8
 	DropItem "EviternityAnnihilator", 256, 8
 }
