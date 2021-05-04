@@ -109,7 +109,7 @@ ACTOR ShadowSoul
     SHSP A 0 Bright A_BruisAttack
 	Goto See
   Pain:
-    SHSP AB 3
+    SHSP AB 3 Bright
     Goto See
   Death:
     SHSP EFGH 3 Bright A_NoBlocking

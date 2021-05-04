@@ -182,10 +182,10 @@ ACTOR AlienGuardian
     AAGC J 3 A_Pain
     Goto See
   Death:
-    AAGC K 4 A_Fall
-    AAGC L 4 A_Scream
-    AAGC M 4 A_Explode(128, 128)
-    AAGC NOPQ 4
+    AAGC K 4 Bright A_Fall
+    AAGC L 4 Bright A_Scream
+    AAGC M 4 Bright A_Explode(128, 128)
+    AAGC NOPQ 4 Bright
     Stop
   }
 }

@@ -163,7 +163,7 @@ ACTOR MinisterOfHate
     Loop
   Missile:
     CYBJ E 6 A_FaceTarget
-    CYBJ F 12 A_CyberAttack
+    CYBJ F 12 Bright A_CyberAttack
     Goto See
   Pain:
     CYBJ G 10 A_Pain

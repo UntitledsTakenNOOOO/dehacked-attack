@@ -58,7 +58,7 @@ ACTOR RocketGuy
    Missile: 
       MPOS EE 10 A_FaceTarget 
       MPOS F 5 
-      MPOS G 13 A_CyberAttack 
+      MPOS G 13 Bright A_CyberAttack 
       Goto See 
    Pain: 
       MPOS H 2 
@@ -112,9 +112,9 @@ ACTOR StealthFighter
 	Missile:
 		GMAN E 7 A_FaceTarget
 		GMAN F 7 A_FaceTarget
-		GMAN G 1 A_CPosAttack
+		GMAN G 1 Bright A_CPosAttack
 		GMAN F 3 A_FaceTarget
-		GMAN G 3 A_CPosAttack
+		GMAN G 3 Bright A_CPosAttack
 		GMAN F 1 A_CPosRefire
 		Loop
 	Pain:

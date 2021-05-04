@@ -203,7 +203,7 @@ ACTOR ValiantPyroDemon : HellKnight
 		PYRO AB 10 Bright A_Look
 		Loop
 	See:
-		PYRO AABBCCDD 3  Bright A_Chase
+		PYRO AABBCCDD 3 Bright A_Chase
 		Loop
 	Missile:
 		PYRO A 0 A_Jump(128,"AltMissile")

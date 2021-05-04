@@ -31,19 +31,19 @@ ACTOR GridlockCardinal : Cyberdemon
     GCRD C 6 A_FaceTarget
     GCRD D 0 A_FatAttack1
     GCRD D 0 A_FatAttack2
-    GCRD D 6 A_FatAttack3
+    GCRD D 6 Bright A_FatAttack3
     GCRD C 6 A_FaceTarget
-    GCRD D 6 A_SkelMissile
+    GCRD D 6 Bright A_SkelMissile
     GCRD C 10 A_FaceTarget
 	Goto MissileLoop
   MissileLoop:
-    GCRD D 2 A_BSpiAttack
+    GCRD D 2 Bright A_BSpiAttack
 	GCRD C 2 A_SpidRefire
     Loop
   Pain:
     GCRD E 10 A_Pain
     GCRD C 6 A_FaceTarget
-    GCRD D 6 A_CyberAttack
+    GCRD D 6 Bright A_CyberAttack
     Goto See
   Death:
     GCRD F 10
@@ -72,7 +72,7 @@ ACTOR GridlockCardinalPhase2 : GridlockCardinal
     GCRD E 10 A_Pain
     GCRD C 6 A_FaceTarget
     GCRD D 0 A_BrainSpit
-    GCRD D 6 A_BrainSpit
+    GCRD D 6 Bright A_BrainSpit
     Goto See
   }
 }
@@ -124,20 +124,20 @@ ACTOR GridlockCardinalFinalPhase2 : GridlockCardinal
     GCRD C 6 A_FaceTarget
     GCRD D 0 A_FatAttack1
     GCRD D 0 A_FatAttack2
-    GCRD D 6 A_FatAttack3
+    GCRD D 6 Bright A_FatAttack3
     GCRD C 6 A_FaceTarget
-    GCRD D 6 A_SkelMissile
+    GCRD D 6 Bright A_SkelMissile
     GCRD C 10 A_FaceTarget
 	Goto MissileLoop
   MissileLoop:
-    GCRD D 2 A_BSpiAttack
+    GCRD D 2 Bright A_BSpiAttack
 	GCRD C 2 A_SpidRefire
     Loop
   Pain:
     GCRD E 10 A_Pain
     GCRD C 6 A_FaceTarget
     GCRD D 0 A_BrainSpit
-    GCRD D 6 A_BrainSpit
+    GCRD D 6 Bright A_BrainSpit
     Goto See
   Death:
     GCRD F 10 A_PlaySound("brain/death", 0, 1.0, 0, ATTN_NONE)

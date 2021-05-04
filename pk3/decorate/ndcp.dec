@@ -25,7 +25,7 @@ ACTOR Slomnibus
     NDCP AABBCCDD 3 A_Chase
     Loop
   Melee:
-	NDCP F 3 A_VileAttack
+	NDCP F 3 Bright A_VileAttack
 	NDCP G 3 Bright A_Die
 	Goto Death
   Pain:

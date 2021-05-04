@@ -66,8 +66,8 @@ States
        SKLL A 3 A_Chase
        Loop
    Missile:
-       SKLL B 10 A_FaceTarget
-       SKLL B 4 A_BruisAttack
+       SKLL B 10 Bright A_FaceTarget
+       SKLL B 4 Bright A_BruisAttack
        Goto See
    Pain:
        SKLL C 3
@@ -134,9 +134,9 @@ ACTOR HellSmith
     Goto See
   Death:
     AVTR G 5 A_Scream
-    AVTR HIJK 5
-    AVTR L 5 A_NoBlocking
-    AVTR MNO 5
+    AVTR HIJK 5 Bright
+    AVTR L 5 Bright A_NoBlocking
+    AVTR MNO 5 Bright
     AVTR P 75
     AVTR P -1 A_BossDeath
     Stop
@@ -161,9 +161,9 @@ ACTOR HellSmithFinal : HellSmith
     Goto See
   Death:
     AVTR G 5 A_PlaySound("brain/death", 0, 1.0, 0, ATTN_NONE)
-    AVTR HIJK 5
-    AVTR L 5 A_NoBlocking
-    AVTR MNO 5
+    AVTR HIJK 5 Bright
+    AVTR L 5 Bright A_NoBlocking
+    AVTR MNO 5 Bright
     AVTR P 75
     AVTR P -1 A_BrainDie
     Stop

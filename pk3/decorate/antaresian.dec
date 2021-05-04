@@ -186,7 +186,7 @@ ACTOR Afriest
     ABIS DE 7 A_FaceTarget //Change: Extra attack frame because we have one
     ABIS F 0 A_HeadAttack
     ABIS F 0 A_BruisAttack
-    ABIS F 5 A_CustomMissile("AntaresianPlasma",32,0,0)
+    ABIS F 5 Bright A_CustomMissile("AntaresianPlasma",32,0,0)
     Goto See
   Death:
     ABIS G 6
