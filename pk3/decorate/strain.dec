@@ -114,10 +114,10 @@ ACTOR Doppleganger : LostSoul //Where do the get these names from?
   Missile:
     SKU2 C 10 Bright A_FaceTarget
     SKU2 D 10 Bright A_TroopAttack
-    SKU2 C 10 Bright A_FaceTarget
+    SKU2 CDC 10 Bright A_FaceTarget
     SKU2 D 4 Bright A_SkullAttack
     SKU2 CD 4 Bright
-    Goto Missile+4
+    Goto Missile+6
   Pain:
     SKU2 E 3 Bright
     SKU2 E 3 Bright A_Pain
@@ -187,7 +187,7 @@ ACTOR StrainDemonLord : BaronOfHell
   Obituary "%o was flattened by a demon lord."
   HitObituary "%o was ripped apart by a demon lord."
   Tag "Demon Lord"
-  States //Note that he doesn't actually have a melee attack, though.
+  States //He doesn't actually have a melee attack, interestingly enough.
   {
   Spawn:
     BOS4 AB 10 A_Look

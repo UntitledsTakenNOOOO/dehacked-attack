@@ -26,11 +26,12 @@ OptionValue "DehackedFinalBoss"
 {
 	0, "Select at Random"
 	1, "Icon of Sin"
-	2, "Gridlock Cardinal"
-	3, "Hell Smith"
-	4, "Spider Mastermind?"
-	5, "Super Archvile"
-	6, "Archangelus"
+	2, "Gridlock Cardinal (Gridlock 64)"
+	3, "Hell Smith (Survive in Hell)"
+	4, "Spider Mastermind? (Going Down)"
+	5, "Super Archvile (Valiant)"
+	6, "Archangelus (Eviternity)"
+	7, "The Inquisitor (Struggle: Antaresian Legacy)"
 }
 OptionValue "DehackedFinalBossMusic"
 {

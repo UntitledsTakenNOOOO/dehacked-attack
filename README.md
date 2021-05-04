@@ -53,8 +53,8 @@ VALIANT (2015):
 * Pyro Knight: These guys can unless powerful volleys of fireballs; be careful! Thankfully they only have 500 HP. They spawn with Hell Knights.
 * Cybruiser: Although they only possess 500 HP, these guys can shoot rockets, and are even immune to splash damage! They spawn with Hell Knights.
 * Super Mancubus: Unleashing a mancubus' entire set of six fireballs in a single volley, these guys are tough, especially with their 1000 HP. Spawns with mancubi.
-* Valiant Arachnotron: Identical to the normal Arachnotron except for color scheme until you kill it, where it has a 2/3 chance to spawn an arachnorb.
-	* Change: In the original valiant, it was 1/2 instead of 2/3. The chance was increased because they're rarer outside of valiant.
+* Valiant Arachnotron: Identical to the normal Arachnotron except for color scheme until you kill it, where it has a 3/4 chance to spawn an arachnorb.
+	* Change: In the original valiant, it was 1/2 instead of 3/4. The chance was increased because they're rarer outside of valiant.
 
 ANCIENT ALIENS (2016):
 * Stealth Plasma Alien: A 30 HP alien (actually a zombie) with an alien plasma rifle that is nearly invisible until it becomes active. Spawns with shotgunners.
@@ -90,7 +90,7 @@ BOSSES:
 	* Change: Health increased from 2500 -> 3600 and added +NORADIUSDMG to fit the Cyberdemon slot. Inherits from the Cyberdemon to prevent infighting.
 * Leviathan (Struggle: Antaresian Legacy): A fast-moving monster who attacks with an entire mancubus volley simutaneously. Spawns with cyberdemons.
 	* Change: Reduced health from 10000 down to 4000.
-* Phase I Gridlock Cardinal (Gridlock 64): A darker, flying variant of the cyberdemon that cycles between different monster attacks. If flinched, it retaliates with a rocket.
+* Gridlock Cardinal (Gridlock 64): A darker, flying variant of the cyberdemon that cycles between different monster attacks. If flinched, it retaliates with a rocket.
 	* Change: Reduced health from 8000 down to 4000.
 * Hell Smith (Survive in Hell): This guy unleashes a powerful wave of 12 fireballs at once as his attack, and has a LOT of health. He spawns in the cyberdemon slot.
 	* Change: Health reduced from 20000 to 8000, because he isn't the final boss of the game anymore.
@@ -100,12 +100,13 @@ BOSSES:
 	* Change: Health reduced from 12000 to 6000.
 * Super Archvile (Valiant): Good luck. This thing attacks with a archvile combo-attack, and can resurrect monsters. It spawns uncommonly with the Spider Mastermind.
 	* Change: Health reduced from 7500 to 3750, because it isn't the final boss of the game anymore.
-* Gridlock Cardinal [Phase II]: Same as the Phase I, except it has 6000 health, and if flinched, will spawn monsters icon-of-sin style. Replaces Cardinal if Spawn Targets are present.
+* Gridlock Cardinal [Phase II]: Same as the Phase I, except if flinched, will spawn monsters icon-of-sin style. Replaces the Gridlock Cardinal if Spawn Targets are present.
 * Leviathan [Summoner Variant]: He CAN be flinched, but doing so will result in him spawning monsters icon-of-sin style. Replaces either Leviathan if Spawn Targets are present.
 
 FINAL BOSSES (enabled by CVar or selected in place of Icon of Sin):
-* Gridlock Cardinal [Final Boss Form]: This monstrosity has both phases and moves faster, and in phase two it even now has the ability to teleport. Good luck.
-* Hell Smith: More aggressive than his ordinary counterpart. With his full 20000 health, this thing is hard to take down, and spawns AFTER a large army of other monsters.
-* Spider Mastermind: A totally ordinary spider mastermind with nothing weird about it (ha, yeah right). Spawns with some zombies, imps, demons and revenants.
-* Super Archvile: Spawns with a swarm of arachnorbs. Has 7500 health, and spawns revenants and pyro-knights if fliched, adding deadlier monsters if flinched more than four times.
+* Hell Smith (Survive in Hell): More aggressive than his ordinary counterpart. With his full 20000 health, this thing is hard to take down, and spawns AFTER a large army of other monsters.
+* Spider Mastermind (Going Down): A totally ordinary spider mastermind with nothing weird about it (ha, yeah right). Spawns with some zombies, imps, demons and revenants.
+* Super Archvile (Valiant): Spawns with a swarm of arachnorbs. Has 7500 health, and spawns revenants and pyro-knights if fliched, adding deadlier monsters if flinched more than four times.
+* Gridlock Cardinal [Final Boss Form] (Gridlock 64): This monstrosity has both phases and moves faster, and in phase two it even now has the ability to teleport. Good luck.
 * Archangelus (Eviternity): Descending from the realm opposite Hell, this guy is insane. One might wish for good luck; but truth be told, it won't save you.
+* The Inquisitor (Struggle: Antaresian Legacy): This guy will unleash an absolute firestorm whenever you're in his line of sight, and spawns with a swarm of Afriests.

@@ -63,6 +63,10 @@ leviathan/sight		ANLEVSIT
 leviathan/death		ANLEVDTH
 leviathan/spit		ALEVSPIT
 
+inquisitor/sight	ANINQSIT
+inquisitor/pain		ANINQPN
+inquisitor/death	ANINQDTH
+
 slomnibus/sight		SLOMNSIT
 slomnibus/pain		SLOMNIPA
 slomnibus/deaeth	SLOMNDTH
@@ -78,5 +82,5 @@ fastimp/sight		STIMPSIT
 demonlord/sight		STLRDSIT
 demonlord/death		STLRDDTH
 
-shadow/sight dsgssit
-shadow/death dsgsdth
+shadow/sight		dsgssit
+shadow/death		dsgsdth

@@ -358,7 +358,6 @@ ACTOR SpectralLeviathan : Leviathan
 ACTOR SummonerLeviathan : Leviathan
 {
   PainChance 16
-  Health 5000
   Tag "Summoner Leviathan"
   States
   {
@@ -408,5 +407,69 @@ ACTOR AntaresianSpawnFire : SpawnFire
   Spawn:
     ABSF BCD 4 Bright A_Fire
 	Stop
+  }
+}
+
+ACTOR TheInquisitor
+{
+  Health 22400
+  Radius 64
+  Height 96
+  Mass 100000
+  Speed 5 //Change: originally speed 25, which only works in a gigantic arena.
+  PainChance 4
+  Monster
+  +BOSS
+  +FLOAT
+  +NOGRAVITY
+  +MISSILEMORE
+  +MISSILEEVENMORE
+  MinMissileChance 160
+  Obituary "%o was hopeless against the inquisitor."
+  SeeSound "inquisitor/sight"
+  PainSound "inquisitor/pain"
+  DeathSound "inquisitor/death"
+  ActiveSound "antaresia/active"
+  States
+  {
+  Spawn:
+    AINQ A 10 Bright A_Look
+    Loop
+  See:
+    AINQ A 1 Bright A_Chase
+    Loop
+/*
+	Change:
+	So, the original version of the fight unleashes an absurd torrent of
+	A_FatAttack1 and A_FatAttack2 calls. The thing is, it ALSO forces pickup of
+	everyone's favourite powerup, the Partial Invisibility, which makes the fire
+	stream look a lot more chaotic and good-looking.
+
+	The thing is, forcing a partial invisibility pickup is terrible, so instead
+	I'm forcing the angle deviation into the attack itself via A_CustomMissile.
+*/
+  Missile:
+    AINQ B 1 Bright A_Chase //Change: There was originally two fireballs per tic
+	AINQ B 0 Bright A_CustomMissile("FatShot", 32, 0, 0 + frandom(-22.5, 22.5))
+    AINQ B 1 Bright A_Wander //But that was just way too much in smaller arenas
+	AINQ B 0 Bright A_CustomMissile("FatShot", 32, 0, 11.25 + frandom(-22.5, 22.5))
+    AINQ B 1 Bright A_Wander //Change: 75% of A_Chase calls changed to A_Wander
+	AINQ B 0 Bright A_CustomMissile("FatShot", 32, 0, 0 + frandom(-22.5, 22.5))
+    AINQ B 1 Bright A_Wander //This should make it possible to fight in smaller arenas.
+	AINQ B 0 Bright A_CustomMissile("FatShot", 32, 0, -11.25 + frandom(-22.5, 22.5))
+	AINQ B 0 Bright A_SpidRefire
+    Loop
+  Pain:
+    AINQ A 20 Bright A_PlaySound("inquisitory/pain", 0, 1.0, 0, ATTN_NONE)
+    Goto See
+  Death:
+    AINQ C 7
+    AINQ D 7 A_Scream
+    AINQ EF 7
+    AINQ G 7 A_NoBlocking
+    AINQ H 7
+    AINQ I 85
+	AINQ I -1 A_BrainDie
+    Stop
   }
 }

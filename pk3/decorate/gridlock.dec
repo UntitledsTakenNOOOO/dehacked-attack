@@ -59,7 +59,6 @@ ACTOR GridlockCardinal : Cyberdemon
 
 ACTOR GridlockCardinalPhase2 : GridlockCardinal
 {
-  Health 6000
   Tag "Gridlock Cardinal Mark II"
   States
   {
