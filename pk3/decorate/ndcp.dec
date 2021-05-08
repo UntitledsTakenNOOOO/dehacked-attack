@@ -1,14 +1,8 @@
-ACTOR Slomnibus
+ACTOR Slomnibus : Cacodemon
 {
   Health 150
-  Radius 31
-  Height 56
-  Mass 400
   Speed 30
-  PainChance 128
   Monster
-  +FLOAT
-  +NOGRAVITY
   SeeSound "slomnibus/sight"
   PainSound "slomnibus/pain"
   DeathSound "slomnibus/death"

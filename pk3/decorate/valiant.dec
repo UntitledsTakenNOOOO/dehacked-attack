@@ -122,6 +122,7 @@ actor SuicideBomber
 {
   obituary "%o hugged a suicide bomber."
   health 60
+  Damage 96
   radius 20
   height 56
   mass 100
@@ -149,7 +150,7 @@ actor SuicideBomber
   Melee:
     Goto Death
   Death:
-    BMBE M 0 bright A_Explode(96, 96)
+    BMBE M 0 bright A_Detonate
     BMBE M 5 bright A_PlaySound("weapons/rocklx")
     BMBE N 5 bright A_XScream
     BMBE O 5 A_NoBlocking
@@ -314,7 +315,7 @@ ACTOR ValiantArachnorb
 {
 	Health 120
 	Speed 12
-	Radius 16 //Change to fit in lost soul spaces
+	Radius 24
 	Height 56
 	Damage 0
 	ReactionTime 8
@@ -358,7 +359,12 @@ ACTOR ValiantArachnorb
 	}
 }
 
-Actor SuperMancubus : Fatso
+ACTOR ValiantArachnorbSmaller : ValiantArachnorb
+{
+	Radius 16 //Change to fit in lost soul spaces
+}
+
+Actor ValiantSuperMancubus : Fatso
 {
    Health 1000
    PainChance 80
@@ -405,7 +411,7 @@ Actor SuperMancubus : Fatso
    }
 }
 
-ACTOR Cybruiser : BaronOfHell
+ACTOR ValiantCybruiser : BaronOfHell
 { 
 Health 500 
 Radius 24 
@@ -487,15 +493,18 @@ ACTOR ValiantSuperVile : Archvile
 	States
 	{
 	Spawn:
-		DIA2 AB 10 Bright A_Look
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossCheck") == 5, "Reset")
-		Goto Idle
+		DIA2 AB 10 A_Look
+		DIA2 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossTargetCount") > 0, "Summoner")
 	Idle:
-		DIA2 AB 10 Bright A_Look
+		DIA2 AB 10 A_Look
 		Loop
-	Reset:
+	Summoner:
 		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
-		TNT1 A 0 A_SpawnItemEx("SpiderMastermind", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossCheck") == 5, "Reset")
+		TNT1 A 0 A_SpawnItemEx("ValiantSuperVileSummoner", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+		Stop
+	Reset:
+		TNT1 A 0 A_SpawnItemEx("SpiderMastermind", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
 		Stop
 	See:
 		DIAB AABBCCDDEEFF 2 A_VileChase
@@ -533,6 +542,26 @@ ACTOR ValiantSuperVile : Archvile
 	}
 }
 
+ACTOR ValiantSuperVileSummoner : ValiantSuperVile
+{
+	States
+	{
+	Spawn:
+		DIA2 AB 10 Bright A_Look
+		Goto Idle
+	Idle:
+		DIA2 AB 10 Bright A_Look
+		Loop
+	Pain:
+		DIAB Q 5 //Change: Spawns these guys on flinch since I don't have access
+		DIAB Q 5 A_Pain //to map geometry needed to remake the fight perfectly
+		DIA2 A 16 Bright
+		DIAB AAAAAAAA 0 A_BrainSpit("ValiantArachnorbSpawnShot")
+		DIA2 BC 16 Bright
+		Goto See
+	}
+}
+
 ACTOR ValiantSuperVileFinal : ValiantSuperVile
 {
 	Health 7500
@@ -548,39 +577,47 @@ ACTOR ValiantSuperVileFinal : ValiantSuperVile
 	Pain:
 		DIAB Q 5 //Change: Spawns these guys on flinch since I don't have access
 		DIAB Q 5 A_Pain //to map geometry needed to remake the fight perfectly
-		DIAB Q 0 A_SetUserVar("user_spawned", user_spawned + 1)
-		DIAB Q 0 A_JumpIf(user_spawned <= 4, "SpawnShot1")
-		DIAB Q 0 A_JumpIf(user_spawned <= 6, "SpawnShot2")
-		DIAB Q 0 A_JumpIf(user_spawned <= 8, "SpawnShot3") //from valve.wad
-		DIAB Q 0 A_JumpIf(user_spawned <= 12, "SpawnShot4") //
-		DIAB Q 0 A_JumpIf(user_spawned <= 15, "SpawnShot5") //
-		DIAB Q 0 A_JumpIf(user_spawned <= 16, "SpawnShot6") //
-		DIAB Q 0 A_BrainSpit //Generic, will probably never get this far
+		DIA2 A 16 Bright
+		DIA2 A 0 A_SetUserVar("user_spawned", user_spawned + 1)
+		DIA2 A 0 A_JumpIf(user_spawned <= 4, "SpawnShot1")
+		DIA2 A 0 A_JumpIf(user_spawned <= 6, "SpawnShot2")
+		DIA2 A 0 A_JumpIf(user_spawned <= 8, "SpawnShot3") //from valve.wad
+		DIA2 A 0 A_JumpIf(user_spawned <= 12, "SpawnShot4") //
+		DIA2 A 0 A_JumpIf(user_spawned <= 15, "SpawnShot5") //
+		DIA2 A 0 A_JumpIf(user_spawned <= 16, "SpawnShot6") //
+		DIA2 A 0 A_BrainSpit //Generic, will probably never get this far
+		DIA2 BC 16 Bright
 		Goto See
 	SpawnShot1:
-		DIAB QQQQ 0 A_BrainSpit("ValiantRevenantSpawnShot")
-		DIAB QQ 0 A_BrainSpit("ValiantPyroDemonSpawnShot")
+		DIA2 AAAA 0 A_BrainSpit("ValiantRevenantSpawnShot")
+		DIA2 AA 0 A_BrainSpit("ValiantPyroDemonSpawnShot")
+		DIA2 BC 16 Bright
 		Goto See
 	SpawnShot2:
-		DIAB QQQQQ 0 A_BrainSpit("ValiantRevenantSpawnShot")
-		DIAB Q 0 A_BrainSpit("ValiantFatsoSpawnShot")
-		DIAB QQ 0 A_BrainSpit("ValiantCybruiserSpawnShot")
+		DIA2 AAAAA 0 A_BrainSpit("ValiantRevenantSpawnShot")
+		DIA2 A 0 A_BrainSpit("ValiantFatsoSpawnShot")
+		DIA2 AA 0 A_BrainSpit("ValiantCybruiserSpawnShot")
+		DIA2 BC 16 Bright
 		Goto See
 	SpawnShot3:
-		DIAB QQQQ 0 A_BrainSpit("ValiantRevenantSpawnShot")
-		DIAB QQ 0 A_BrainSpit("ValiantHellKnightSpawnShot")
+		DIA2 AAAA 0 A_BrainSpit("ValiantRevenantSpawnShot")
+		DIA2 AA 0 A_BrainSpit("ValiantHellKnightSpawnShot")
+		DIA2 BC 16 Bright
 		Goto See
 	SpawnShot4:
-		DIAB QQQQQ 0 A_BrainSpit("ValiantRevenantSpawnShot")
-		DIAB Q 0 A_BrainSpit("ValiantFatsoSpawnShot")
-		DIAB Q 0 A_BrainSpit("ValiantBaronOfHellSpawnShot")
+		DIA2 AAAAA 0 A_BrainSpit("ValiantRevenantSpawnShot")
+		DIA2 A 0 A_BrainSpit("ValiantFatsoSpawnShot")
+		DIA2 A 0 A_BrainSpit("ValiantBaronOfHellSpawnShot")
+		DIA2 BC 16 Bright
 		Goto See
 	SpawnShot5:
-		DIAB QQ 0 A_BrainSpit("ValiantBaronOfHellSpawnShot")
-		DIAB QQ 0 A_BrainSpit("ValiantArchvileSpawnShot")
+		DIA2 AA 0 A_BrainSpit("ValiantBaronOfHellSpawnShot")
+		DIA2 AA 0 A_BrainSpit("ValiantArchvileSpawnShot")
+		DIA2 BC 16 Bright
 		Goto See
 	SpawnShot6:
-		DIAB Q 0 A_BrainSpit("ValiantCyberdemonSpawnShot")
+		DIA2 A 0 A_BrainSpit("ValiantCyberdemonSpawnShot")
+		DIA2 BC 16 Bright
 		Goto See
 	Death:
 		DIAB R 7 A_PlaySound("brain/death", 0, 1.0, 0, ATTN_NONE)
@@ -594,10 +631,10 @@ ACTOR ValiantSuperVileFinal : ValiantSuperVile
 		Stop
 	}
 }
-ACTOR ValiantRevenantSpawnShot : SpawnShot
+ACTOR ValiantArachnorbSpawnShot : SpawnShot
 {
   Speed 20
-  DropItem "DEHRevenant", 256, 1
+  DropItem "ValiantArachnorb", 256, 1
   States
   {
   Spawn:
@@ -605,6 +642,10 @@ ACTOR ValiantRevenantSpawnShot : SpawnShot
     TNT1 A 1 BRIGHT A_SpawnFly("TeleportFog")
     Loop
   }
+}
+ACTOR ValiantRevenantSpawnShot : ValiantArachnorbSpawnShot
+{
+  DropItem "DEHRevenant", 256, 1
 }
 ACTOR ValiantPyroDemonSpawnShot : ValiantRevenantSpawnShot
 {
@@ -616,7 +657,7 @@ ACTOR ValiantFatsoSpawnShot : ValiantRevenantSpawnShot
 }
 ACTOR ValiantCybruiserSpawnShot : ValiantRevenantSpawnShot
 {
-  DropItem "Cybruiser", 256, 1
+  DropItem "ValiantCybruiser", 256, 1
 }
 ACTOR ValiantHellKnightSpawnShot : ValiantRevenantSpawnShot
 {

@@ -172,6 +172,19 @@ Actor AstralCaco : Cacodemon
 	}
 }
 
+ACTOR EviternityArachnotron : Arachnotron
+{
+	States
+	{
+	Missile:
+		BSPI A 20 Bright A_FaceTarget
+		BSPI G 4 Bright A_CustomMissile("EviternityPlasma")
+		BSPI H 4 Bright
+		BSPI H 1 Bright A_SpidRefire
+		Goto Missile+1
+	}
+}
+
 Actor EviternityAnnihilator : BaronOfHell
 {
 	Health 1100

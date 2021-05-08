@@ -5,11 +5,13 @@ CURRENTLY INCLUDED MONSTERS:
 STRAIN (1997):
 * Subverted Guard: A simple re-skin of the chaingunner.
 * Class 2 Imp: Moving much faster than normal imps, these guys also fire on repeat.
-* Skinless Demon: These guys are colored red and are more durable than normal demons, with the odd amount of exactly 217 health.
+* Holobot: A flying drone that fires slow moving revenant missiles. Spawns with cacodemons.
+* Invisible Holobot: A spectral variant of the previous monsters. Spawns with pain elementals.
 * Doppleganger: A variant of the lost soul, these guys will use an imp's attack before charging.
-* Minister of Hate: A miniture cyberdemon with 300 health, firing singular rockets. Spawns in the revenant slot on rare occasions.
+* Skinless Demon: These guys are colored red and are more durable than normal demons, with the odd amount of exactly 217 health.
+* Minister of Hate: A miniture cyberdemon with 300 health, firing singular rockets. Spawns in the revenant slot on rare occasions, and has +NORADIUSDMG.
 * Demon Lord: A white hell noble with 1400 health that fires baron balls in mancubus-like spreads. Spawns with barons, and is potentially very deadly.
-	* Change: The animation is broken in the original STRAIN, causing it to fire faster than intended. This has been corrected.
+	* Change: The attack animation is broken in the original STRAIN, causing it to fire faster than intended. This has been corrected.
 
 SCYTHE II (2005):
 * Evil Marine: He's an absolute terror to be up against due to his plasma rifle and high movement speed. Spawns in the archvile slot.
@@ -19,7 +21,7 @@ SCYTHE II (2005):
 
 DEUS VULT II (2008):
 * Hell Cleric: Fires imp fireballs rapidly. Spawns commonly with revenants.
-	* Change: Has 300 health instead of 200, due to being in a slot with 300 base health.
+	* Change: Has 250 health instead of 200, due to being in a slot with 300 base health.
 
 SCYTHE X (2009):
 * Shadow Imp: These mysterious monsters shoot fireballs that summon strange spiritual creatures. Spawns with imps uncommonly, but imps are VERY common.
@@ -43,13 +45,16 @@ SURVIVE IN HELL (2012):
 * Belphegor: A tougher variant of the baron that fires in sets of two fireballs.
 * Poison Soul: A small, yet very tanky flying enemy that fires baron fireballs. Spawns in the pain elemental slot.
 
+RESURGENCE (2014):
+* Evil Marine (Slower Variant): A variant of the evil marine that moves at less than 20% of the speed. Spawns rarely with revenants, and is still very deadly.
+
 VALIANT (2015):
 * Valiant Imp: This variant on the imp shoots faster fireballs in sets of two.
 * Valiant Demon: These guys bite MUCH faster than ordinary pinky demons.
 * Valiant Spectre: Guess.
 * Suicide Bomber: These screaming zombies have but one passion in life, and that is exploding, with the intent of being next to their target. Spawns with pinkies.
 * Arachnorb: Floating brain-like creatures that fire red plasma bolts at you. Spawns with Lost Souls, and are a bit skinnier than they were in Valiant.
-	* Change: These guys are slightly smaller so they fit in the lost soul position.
+	* Change: Arachnorbs spawned in the lost soul postion have smaller radius (24 -> 16) so they fit. Other arachnorbs are still full size.
 * Pyro Knight: These guys can unless powerful volleys of fireballs; be careful! Thankfully they only have 500 HP. They spawn with Hell Knights.
 * Cybruiser: Although they only possess 500 HP, these guys can shoot rockets, and are even immune to splash damage! They spawn with Hell Knights.
 * Super Mancubus: Unleashing a mancubus' entire set of six fireballs in a single volley, these guys are tough, especially with their 1000 HP. Spawns with mancubi.
@@ -58,7 +63,8 @@ VALIANT (2015):
 
 ANCIENT ALIENS (2016):
 * Stealth Plasma Alien: A 30 HP alien (actually a zombie) with an alien plasma rifle that is nearly invisible until it becomes active. Spawns with shotgunners.
-* Alien Guardian: A flying construct that fires salvos of revenant missiles. Spawns with lost souls, so be very careful.
+* Alien Guardian: A flying construct that fires salvos of revenant missiles, and can even self destruction. Spawns with cacodemons, though is very fragile.
+	* Change: HP upped from 100 to 200.
 * Alien Mancubus: A re-skin of the mancubus with a unique look.
 * Alien Arachnotron: A re-skin of the arachnotron that fires the purple-ish alien plasma used by the stealth plasma alien.
 
@@ -86,25 +92,28 @@ ANTARESIAN RELIQUARY (2020):
 * Reliquary Arachnotron: A variant of the arachnotron that uses the energy bolts used by the former ranger and plasma elite.
 
 BOSSES:
-* Haymaker (UAC Ultra): A minotaur-like creature with a cyberdemon's head, this foe can unleash a wave of manucubus fireballs all at once, so be careful around it.
+* Haymaker (UAC Ultra): A minotaur-like creature with a cyberdemon's head, this foe can unleash a wave of manucubus fireballs, so be careful around it.
 	* Change: Health increased from 2500 -> 3600 and added +NORADIUSDMG to fit the Cyberdemon slot. Inherits from the Cyberdemon to prevent infighting.
 * Leviathan (Struggle: Antaresian Legacy): A fast-moving monster who attacks with an entire mancubus volley simutaneously. Spawns with cyberdemons.
-	* Change: Reduced health from 10000 down to 4000.
+	* Change: Reduced health from 10000 down to 4200.
 * Gridlock Cardinal (Gridlock 64): A darker, flying variant of the cyberdemon that cycles between different monster attacks. If flinched, it retaliates with a rocket.
 	* Change: Reduced health from 8000 down to 4000.
 * Hell Smith (Survive in Hell): This guy unleashes a powerful wave of 12 fireballs at once as his attack, and has a LOT of health. He spawns in the cyberdemon slot.
 	* Change: Health reduced from 20000 to 8000, because he isn't the final boss of the game anymore.
 * Indomitable Mastermind (Struggle: Antaresian Legacy): A variant of the spidermastermind that uses both a super-chaingun AND a plasma rifle at the same time.
 * Spectral Leviathan (Struggle: Antaresian Legacy): Less health and moves slower than the Leviathan, but he's partially invisible. Spawns with Spider Masterminds.
-* Angry Spiderdemon (Going Down): Her brain's red for some reason. Retaliates with fireballs when hurt, and has 50% more health than the ordinary Spider Mastermind.
+* Angry Spiderdemon (Going Down): Her brain's red for some reason. Retaliates with fireballs when hurt, and has twice as much health as the ordinary Spider Mastermind.
 	* Change: Health reduced from 12000 to 6000.
 * Super Archvile (Valiant): Good luck. This thing attacks with a archvile combo-attack, and can resurrect monsters. It spawns uncommonly with the Spider Mastermind.
 	* Change: Health reduced from 7500 to 3750, because it isn't the final boss of the game anymore.
 * Gridlock Cardinal [Phase II]: Same as the Phase I, except if flinched, will spawn monsters icon-of-sin style. Replaces the Gridlock Cardinal if Spawn Targets are present.
+	* Change: Reduced health from 6000 down to 4000.
 * Leviathan [Summoner Variant]: He CAN be flinched, but doing so will result in him spawning monsters icon-of-sin style. Replaces either Leviathan if Spawn Targets are present.
+	* Change: Reduced health from 10000 down to 4200.
+* Super Archvile [Summoner Variant]: Summons a swarm of arachnorbs on flinch. Replaces the Super Archvile if Spawn Targets are present.
 
-FINAL BOSSES (enabled by CVar or selected in place of Icon of Sin):
-* Hell Smith (Survive in Hell): More aggressive than his ordinary counterpart. With his full 20000 health, this thing is hard to take down, and spawns AFTER a large army of other monsters.
+FINAL BOSSES (enabled by CVar and then selected in place of Icon of Sin):
+* Hell Smith (Survive in Hell): More aggressive than his ordinary counterpart. With his full 20000 health, he's is hard to take down, and spawns AFTER a large army of other monsters.
 * Spider Mastermind (Going Down): A totally ordinary spider mastermind with nothing weird about it (ha, yeah right). Spawns with some zombies, imps, demons and revenants.
 * Super Archvile (Valiant): Spawns with a swarm of arachnorbs. Has 7500 health, and spawns revenants and pyro-knights if fliched, adding deadlier monsters if flinched more than four times.
 * Gridlock Cardinal [Final Boss Form] (Gridlock 64): This monstrosity has both phases and moves faster, and in phase two it even now has the ability to teleport. Good luck.

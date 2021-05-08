@@ -82,5 +82,13 @@ fastimp/sight		STIMPSIT
 demonlord/sight		STLRDSIT
 demonlord/death		STLRDDTH
 
+cyberjr/sight		CBJRSIT
+cyberjr/hoof		CBJRHOOF
+
+holobot/sight		FBOTSIT
+holobot/active		FBOTACT
+holobot/melee		FBOTPCH
+holobot/death		FBOTDTH
+
 shadow/sight		dsgssit
 shadow/death		dsgsdth

@@ -243,6 +243,19 @@ ACTOR AntaresianArachnotron : Arachnotron
   }
 }
 
+ACTOR ReliquaryArachnotron : Arachnotron
+{
+	States
+	{
+	Missile:
+		BSPI A 20 Bright A_FaceTarget
+		BSPI G 3 Bright A_CustomMissile("AntaresianPlasma")
+		BSPI H 3 Bright
+		BSPI H 1 Bright A_SpidRefire
+		Goto Missile+1
+	}
+}
+
 ACTOR IndomitableMastermind : SpiderMastermind
 {
   Health 3300
@@ -288,7 +301,7 @@ ACTOR IndomitableMastermind : SpiderMastermind
 
 ACTOR Leviathan
 {
-  Health 4000 //Change: 10000 --> 4000 health for balance reasons
+  Health 4200 //Change: 10000 --> 4200 health for balance reasons
   Radius 40
   Height 110
   Mass 1000

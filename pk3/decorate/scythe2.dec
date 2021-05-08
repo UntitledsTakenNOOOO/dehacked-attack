@@ -5,7 +5,7 @@ actor EvilMarine
   radius 20
   height 56
   mass 100
-  speed 16 //Change: slowed down from Scythe II incarnation for balance reasons
+  speed 16
   painchance 160
   SeeSound "shotguy/sight"
   PainSound "shotguy/pain"
@@ -57,6 +57,13 @@ actor EvilMarine
   }
 }
 
+//Resurgence's variant of the Evil Marine
+actor ResurgenceEvilMarine : EvilMarine
+{
+  Speed 3
+  PainChance 30
+}
+
 actor Afrit : BaronOfHell
 {
   Health 1500 //Deus Vult II's health pool (Scythe II is 2500)
@@ -96,4 +103,18 @@ actor Afrit : BaronOfHell
 	FRIT R 4 Bright A_BossDeath
     Stop
   }
+}
+
+ACTOR AfritBoss : Afrit
+{
+  Health 2500 //As per their apperance in Scythe II.
+  +DoHarmSpecies //Deliberately used so it can infight with barons
+  /*
+  So, the thing is, in any DEHACKED implementation, afrits can infight species
+  because they aren't actually the same species. But, because afrits spawn with
+  barons here, that's bad, so normally I make sure they can't infight.
+  
+  However, in separated context, they SHOULD infight, so hence why I went and
+  made a separate infighting-capable version.
+  */
 }

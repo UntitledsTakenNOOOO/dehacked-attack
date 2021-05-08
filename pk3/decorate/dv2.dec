@@ -1,7 +1,7 @@
 Actor HellCleric //Deus Vult II
 {
 	MONSTER
-	Health 300 //Change: 200 --> 300 Health to fit the revenant slot
+	Health 250 //Change: 200 --> 250 Health to fit the revenant slot
 	Radius 20
 	Height 56
 	Mass 500

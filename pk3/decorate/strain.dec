@@ -55,44 +55,8 @@ ACTOR StrainFastImp : DoomImp
   Missile:
     TROO EF 8 A_FaceTarget
     TROO G 6 A_TroopAttack
-	TROO G 0 A_SpidRefire
+    TROO G 0 A_SpidRefire
     Loop
-  }
-}
-
-ACTOR StrainDemon : Demon
-{
-  Obituary "%o was bit by a skinless demon."
-  Tag "Skinless Demon"
-  Health 217 // I've always found it weird how it has exactly 217 health.
-  States // Maybe there's something about the number I'm missing, but's strange.
-  {
-  Spawn:
-    SAR2 AB 10 A_Look
-    Loop
-  See:
-    SAR2 AABBCCDD 2 Fast A_Chase
-    Loop
-  Melee:
-    SAR2 EF 8 Fast A_FaceTarget
-    SAR2 G 8 Fast A_SargAttack
-    Goto See
-  Pain:
-    SAR2 H 2 Fast
-    SAR2 H 2 Fast A_Pain
-    Goto See
-  Death:
-    SAR2 I 8
-    SAR2 J 8 A_Scream
-    SAR2 K 4
-    SAR2 L 4 A_NoBlocking
-    SAR2 M 4
-    SAR2 N -1
-    Stop
-  Raise:
-    SAR2 N 5
-    SAR2 MLKJI 5
-    Goto See
   }
 }
 
@@ -133,6 +97,99 @@ ACTOR Doppleganger : LostSoul //Where do the get these names from?
   }
 }
 
+ACTOR Holobot : Cacodemon
+{
+  Health 200
+  Speed 10
+  PainSound ""
+  ActiveSound "holobot/active"
+  SeeSound "holobot/sight"
+  DeathSound "holobot/death"
+  MeleeSound ""
+  Obituary "%o was unable to hide from a holobot."
+  Tag "Holobot"
+  States
+  {
+  Spawn:
+    FBOT A 3 A_Look
+    Loop
+  See:
+    FBOT ABCDEF 3 A_Chase
+    Loop
+  Melee:
+    FBOT A 20 A_FaceTarget
+    FBOT G 6 A_CustomMeleeAttack(random(1, 10) * 6, "holobot/melee", "holobot/melee")
+    Goto See
+  Missile:
+    FBOT AA 5 A_FaceTarget
+    FBOT A 5 Bright A_CustomMissile("HolobotRevenantTracer", 32)
+    Goto See
+  Pain:
+    FBOT A 3
+    FBOT A 3 A_Pain
+    FBOT A 6
+    Goto See
+  Death:
+    FBOT H 10 Bright
+    FBOT I 10 Bright A_Scream
+    FBOT J 10 Bright A_NoBlocking
+    FBOT K 10 Bright
+    FBOT L 10 Bright
+    FBOT M 10 Bright
+    Stop
+  Raise:
+    Stop
+  }
+}
+ACTOR HolobotRevenantTracer : RevenantTracer
+{
+  Speed 4
+}
+ACTOR InvisibleHolobot : HoloBot
+{
+  +SHADOW
+  RenderStyle "OptFuzzy"
+  Alpha 0.5
+  Obituary "%o was lost sight of an invisible holobot."
+  Tag "Invisible Holobot"
+}
+
+ACTOR StrainDemon : Demon
+{
+  Obituary "%o was bit by a skinless demon."
+  Tag "Skinless Demon"
+  Health 217 // I've always found it weird how it has exactly 217 health.
+  States // Maybe there's something about the number I'm missing, but's strange.
+  {
+  Spawn:
+    SAR2 AB 10 A_Look
+    Loop
+  See:
+    SAR2 AABBCCDD 2 Fast A_Chase
+    Loop
+  Melee:
+    SAR2 EF 8 Fast A_FaceTarget
+    SAR2 G 8 Fast A_SargAttack
+    Goto See
+  Pain:
+    SAR2 H 2 Fast
+    SAR2 H 2 Fast A_Pain
+    Goto See
+  Death:
+    SAR2 I 8
+    SAR2 J 8 A_Scream
+    SAR2 K 4
+    SAR2 L 4 A_NoBlocking
+    SAR2 M 4
+    SAR2 N -1
+    Stop
+  Raise:
+    SAR2 N 5
+    SAR2 MLKJI 5
+    Goto See
+  }
+}
+
 ACTOR MinisterOfHate
 {
   Health 300
@@ -144,19 +201,19 @@ ACTOR MinisterOfHate
   Monster
   +FLOORCLIP
   +NORADIUSDMG
-  SeeSound "cyber/sight"
+  SeeSound "cyberjr/sight"
   PainSound "cyber/pain"
   DeathSound "cyber/death"
   ActiveSound "cyber/active"
-  Tag "MinisterOfHate"
-  Obituary "%o was splattered by a minister of hate."
+  Tag "Minister of Hate"
+  Obituary "%o was splattered by a Minister of Hate."
   States
   {
   Spawn:
     CYBJ AB 10 A_Look
     Loop
   See:
-    CYBJ A 3 A_Hoof
+    CYBJ A 3 A_PlaySound("cyberjr/hoof", CHAN_BODY, 1.0, 0, ATTN_NORM)
     CYBJ ABBCC 3 A_Chase
     CYBJ D 3 A_Metal
     CYBJ D 3 A_Chase
@@ -184,8 +241,8 @@ ACTOR StrainDemonLord : BaronOfHell
   SeeSound "demonlord/sight"
   DeathSound "demonlord/death"
   Health 1400
-  Obituary "%o was flattened by a demon lord."
-  HitObituary "%o was ripped apart by a demon lord."
+  Obituary "%o was flattened by a Demon Lord."
+  HitObituary "%o was ripped apart by a Demon Lord."
   Tag "Demon Lord"
   States //He doesn't actually have a melee attack, interestingly enough.
   {
