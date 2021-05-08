@@ -18,6 +18,8 @@ ACTOR Slomnibus : Cacodemon
   See:
     NDCP AABBCCDD 3 A_Chase
     Loop
+  Missile:
+	Goto See
   Melee:
 	NDCP F 3 Bright A_VileAttack
 	NDCP G 3 Bright A_Die
