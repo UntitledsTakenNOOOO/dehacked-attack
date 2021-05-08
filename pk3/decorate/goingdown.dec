@@ -1,7 +1,6 @@
 ACTOR AngryMastermind : SpiderMastermind
 {
   Health 6000 //Change: 12000 --> 6000 health for balance reasons
-  -NORADIUSDMG //Deliberate decision to keep defensive ability thematic
   Obituary "%o stood in awe of the angry spiderdemon."
   Tag "Angry Spiderdemon"
   PainSound "brain/pain"

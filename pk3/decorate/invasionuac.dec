@@ -60,19 +60,18 @@ ACTOR DarkCyberdemon : Cyberdemon
 
 ACTOR WarlordOfHell : BaronOfHell
 {
-    Health 5000 //Lowered from 30000
+    Health 6000 //Lowered from 30000
     Radius 36
     Height 96
     Speed 18 //Lowered from 24
     PainChance 10
     Scale 1.5
-	Mass 1500
+    Mass 1500
     BloodColor "39 59 9F" //Added
-	+FLOORCLIP
-	+NORADIUSDMG
-	+BOSS
+    +FLOORCLIP
+    +BOSS
     Obituary "%o was extuingished by the warlord of hell."
-	Tag "Warlord Of Hell"
+    Tag "Warlord Of Hell"
     States
     {
     Spawn:
@@ -81,8 +80,9 @@ ACTOR WarlordOfHell : BaronOfHell
     See:
         BOS6 AABBCCDD 4 A_Chase
         Loop
+    Melee:
     Missile:
-		BOS6 E 0 A_VileStart
+        BOS6 E 0 A_VileStart
         BOS6 E 8 Bright A_VileTarget
         BOS6 F 8 Bright A_FaceTarget
         BOS6 G 8 Bright A_VileAttack
