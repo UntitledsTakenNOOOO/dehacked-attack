@@ -7,7 +7,7 @@ Script "Dehacked_BossSelect" OPEN
 	BossSelection = 0;
 	if(GetCVar("deh_finalboss") <= 0 && ThingCountName("BossTarget", 0) > 0)
 	{
-		BossSelection = random(1, 9);
+		BossSelection = random(1, 8);
 	} else if(ThingCountName("BossTarget", 0) > 0) {
 		BossSelection = GetCVar("deh_finalboss");
 	}
@@ -21,33 +21,29 @@ Script "Dehacked_BossSpawn" (void)
 	}
 	else if(BossSelection == 2)
 	{
-		SetActorState(0, "AfritSwarm", 0);
+		SetActorState(0, "FinalCountdown", 0);
 	}
 	else if(BossSelection == 3)
 	{
-		SetActorState(0, "FinalCountdown", 0);
+		SetActorState(0, "HellSmith", 0);
 	}
 	else if(BossSelection == 4)
 	{
-		SetActorState(0, "HellSmith", 0);
+		SetActorState(0, "SpiderMastermind", 0);
 	}
 	else if(BossSelection == 5)
 	{
-		SetActorState(0, "SpiderMastermind", 0);
+		SetActorState(0, "SuperArchvile", 0);
 	}
 	else if(BossSelection == 6)
 	{
-		SetActorState(0, "SuperArchvile", 0);
+		SetActorState(0, "GridlockCardinal", 0);
 	}
 	else if(BossSelection == 7)
 	{
-		SetActorState(0, "GridlockCardinal", 0);
-	}
-	else if(BossSelection == 8)
-	{
 		SetActorState(0, "Archangelus", 0);
 	}
-	else if(BossSelection == 9)
+	else if(BossSelection == 8)
 	{
 		SetActorState(0, "TheInquisitor", 0);
 	}
@@ -78,27 +74,24 @@ Script "Dehacked_BossMusic" (int music)
 			SetMusic("");
 			break;
 		Case 1:
-			SetMusic("SCYTHE2");
-			break;
-		Case 2:
 			SetMusic("FINCOUNT");
 			break;
-		Case 3:
+		Case 2:
 			SetMusic("SURVIVE");
 			break;
-		Case 4:
+		Case 3:
 			SetMusic("GOINDOWN");
 			break;
-		Case 5:
+		Case 4:
 			SetMusic("VALIANT");
 			break;
-		Case 6:
+		Case 5:
 			SetMusic("GRIDLOCK");
 			break;
-		Case 7:
+		Case 6:
 			SetMusic("ARCANGEL");
 			break;
-		Case 8:
+		Case 7:
 			SetMusic("ANTARES");
 			break;
 		}
@@ -110,15 +103,6 @@ Script "Dehacked_BossExitHandler" (int boss)
 	switch(boss)
 	{
 	Case 1:
-		while(ThingCountName("AfritBoss", 0) > 0)
-		{
-			Delay(1);
-		}
-		AmbientSound("brain/death", 127);
-		Delay(120);
-		Exit_Normal(0);
-		break;
-	Case 2:
 		SetMusic("FINCOUNT"); //This one is deliberately forced
 		Delay(181); //Intro
 		SetFont("BIGFONT");

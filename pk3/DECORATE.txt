@@ -218,10 +218,6 @@ ACTOR DEHFinalBossSpawner : SpecialSpot replaces BossEye
   NormalFinalBoss:
 	TNT1 A 0 A_SpawnItemEx("DEHBossEye", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
 	Stop
-  AfritSwarm:
-	TNT1 A 0 A_SpawnSingleItem("DEHScythe2AfritSpawner", 0, 0, 256)
-	TNT1 A 0 A_SpawnItemEx("DEHScythe2BossEye", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
-	Stop
   FinalCountdown:
 	TNT1 A 0 A_SpawnSingleItem("DEHFinalCountdownExitHandler", 0, 0, 256)
 	TNT1 A 0 A_SpawnItemEx("DEHFinalCountdownBossEye", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
@@ -322,81 +318,6 @@ ACTOR DEHSpawnShotFog
   }
 }
 
-ACTOR DEHScythe2BossEye
-{
-  Height 32
-  +NOBLOCKMAP
-  +NOSECTOR
-  States
-  {
-  Spawn:
-    TNT1 A 10 A_Look
-    Loop
-  See:
-	TNT1 A 181
-    TNT1 AAAAAAAAAAAAAAA 35 A_BrainSpit("DEHScythe2Wave1SpawnShot")
-	TNT1 A 575
-    TNT1 AAAAAAAAAAAAAAA 35 A_BrainSpit("DEHScythe2Wave2SpawnShot")
-	TNT1 A 575
-    TNT1 AAAAAAAAAAAAAAA 35 A_BrainSpit("DEHScythe2Wave3SpawnShot")
-	TNT1 A 575
-    TNT1 AAAAAAAAAAAAAAA 35 A_BrainSpit("DEHScythe2Wave4SpawnShot")
-	TNT1 A 575
-    Stop
-  }
-}
-ACTOR DEHScythe2Wave1SpawnShot : DEHTeleportSpawnShot
-{
-  DropItem "DEHCacodemon", 256, 12
-  DropItem "AstralCaco", 256, 2
-  DropItem "Slomnibus", 256, 1
-}
-ACTOR DEHScythe2Wave2SpawnShot : DEHTeleportSpawnShot
-{
-  DropItem "DEHHellKnight", 256, 12
-  DropItem "ValiantPyroDemon", 256, 2
-  DropItem "ValiantCybruiser", 256, 1
-}
-ACTOR DEHScythe2Wave3SpawnShot : DEHTeleportSpawnShot
-{
-  DropItem "DEHRevenant", 256, 8
-  DropItem "HellCleric", 256, 5
-  DropItem "MinisterOfHate", 256, 2
-}
-ACTOR DEHScythe2Wave4SpawnShot : DEHTeleportSpawnShot
-{
-  DropItem "DEHBaronOfHell", 256, 12
-  DropItem "Belphegor", 256, 2
-  DropItem "DEHArchvile", 256, 1
-}
-
-ACTOR DEHScythe2AfritSpawner
-{
-  Height 32
-  +NOBLOCKMAP
-  +NOSECTOR
-  States
-  {
-  Spawn:
-    TNT1 A 10 A_Look
-    Loop
-  See:
-	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 0)
-	TNT1 A 181 A_BrainAwake
-	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 1)
-	TNT1 A 4200
-	TNT1 A 0 A_PlaySound("brain/spit", 0, 1.0, 0, ATTN_NONE)
-    TNT1 AAAAAAAAAAA 35 A_BrainSpit("DEHScythe2AfritSpawnShot")
-	TNT1 A 350
-	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossExitHandler", 0, 1)
-    Stop
-  }
-}
-ACTOR DEHScythe2AfritSpawnShot : SpawnShot
-{
-  DropItem "AfritBoss", 256, 1
-}
-
 ACTOR DEHFinalCountdownExitHandler
 {
   Height 32
@@ -408,8 +329,8 @@ ACTOR DEHFinalCountdownExitHandler
     TNT1 A 10 A_Look
     Loop
   See:
-	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 2)
-	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossExitHandler", 0, 2)
+	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 1)
+	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossExitHandler", 0, 1)
 	TNT1 A 181 A_BrainAwake
 	Stop
   }
@@ -459,24 +380,25 @@ ACTOR DEHFinalCountdownBossEye
     Stop
   }
 }
+//These values are slightly changed from their actual values.
+//Anything from Lunatic is randomized except plasma and rev missile zombies,
+//Anything from Valiant is kept as-is.
+
 ACTOR DEHFinalCountdownWave1SpawnShot : DEHTeleportSpawnShot
 {
   //Lunatic
   DropItem "Zombieman", 256, 4
-  DropItem "ShotgunGuy", 256, 7
-  DropItem "ChaingunGuy", 256, 1
+  DropItem "ShotgunGuy", 256, 8
   DropItem "DoomImp", 256, 3
   DropItem "Demon", 256, 3
   DropItem "Cacodemon", 256, 2
   DropItem "HellKnight", 256, 2
   //Valiant
   DropItem "ValiantCybruiser", 256, 2
-  DropItem "SuicideBomber", 256, 2
-  DropItem "ValiantDemon", 256, 1
-  DropItem "ValiantImp", 256, 4
+  DropItem "SuicideBomber", 256, 4
+  DropItem "ValiantImp", 256, 5
   DropItem "DEHZombieman", 256, 4
-  DropItem "DEHShotgunGuy", 256, 5
-  DropItem "DEHChaingunGuy", 256, 1
+  DropItem "DEHShotgunGuy", 256, 4
   DropItem "DEHDoomImp", 256, 4
   DropItem "DEHCacodemon", 256, 2
   DropItem "ValiantPyroDemon", 256, 2
@@ -503,8 +425,8 @@ ACTOR DEHFinalCountdownWave3SpawnShot : DEHTeleportSpawnShot
 {
   //Lunatic
   DropItem "Zombieman", 256, 10
-  DropItem "ShotgunGuy", 256, 13
-  DropItem "ChaingunGuy", 256, 3
+  DropItem "ShotgunGuy", 256, 12
+  DropItem "ChaingunGuy", 256, 4
   DropItem "DoomImp", 256, 6
   DropItem "Demon", 256, 8
   DropItem "Revenant", 256, 4
@@ -521,49 +443,49 @@ ACTOR DEHFinalCountdownWave4SpawnShot : DEHTeleportSpawnShot
   //Lunatic
   DropItem "DoomImp", 256, 64
   //Valiant
-  DropItem "DEHRevenant", 256, 16
+  DropItem "Revenant", 256, 16
+  //EXCEPTION: Revenants are random here, just to increase variety.
 }
 ACTOR DEHFinalCountdownWave5SpawnShot : DEHTeleportSpawnShot
 {
   //Lunatic
-  DropItem "Zombieman", 256, 11
+  DropItem "Zombieman", 256, 10
   DropItem "ChaingunGuy", 256, 4
   DropItem "HellKnight", 256, 5
   DropItem "Demon" 256, 4
   DropItem "Arachnotron", 256, 4
-  DropItem "PainElemental", 256, 1
+  DropItem "PainElemental", 256, 2
   //Valiant
-  DropItem "ValiantDemon", 256, 11
+  DropItem "ValiantDemon", 256, 10
   DropItem "ValiantPyroDemon", 256, 2
   DropItem "ValiantArachnotron", 256, 8
   DropItem "DEHDemon", 256, 4
-  DropItem "DEHCacodemon", 256, 23
+  DropItem "DEHCacodemon", 256, 24
   DropItem "DEHPainElemental", 256, 2
 }
 ACTOR DEHFinalCountdownWave6SpawnShot : DEHTeleportSpawnShot
 {
   //Lunatic
   DropItem "Demon", 256, 48
-  DropItem "BaronOfHell", 256, 22
-  DropItem "DEHCyberdemon", 256, 1
-  DropItem "Haymaker", 256, 1
+  DropItem "BaronOfHell", 256, 16 //Originally 22
+  DropItem "Haymaker", 256, 4 //Change: Just for fun
+  DropItem "AfritBoss", 256, 2 //2500 HP + infights with other barons
+  DropItem "DEHCyberdemon", 256, 2
   //Valiant
   DropItem "ValiantImp", 256, 32
   DropItem "ValiantSuperMancubus", 256, 12
-  DropItem "SummonerLeviathan", 256, 1
-  DropItem "GridlockCardinalPhase2", 256, 1
+  DropItem "SummonerLeviathan", 256, 1 //Oh, and screw you
+  DropItem "GridlockCardinalPhase2", 256, 1 //Just for MORE fun!
 }
 ACTOR DEHFinalCountdownWave7SpawnShot : DEHTeleportSpawnShot
 {
   //Lunatic
-  DropItem "DoomImp", 256, 1
-  DropItem "ShotgunGuy", 256, 15
+  DropItem "ShotgunGuy", 256, 16
   DropItem "HellKnight", 256, 8
   DropItem "Fatso", 256, 8
   DropItem "Arachnotron", 256, 8
   //Valiant
-  DropItem "ValiantImp", 256, 1
-  DropItem "DEHShotgunGuy", 256, 15
+  DropItem "DEHShotgunGuy", 256, 16
   DropItem "ValiantPyroDemon", 256, 8
   DropItem "DEHFatso", 256, 8
   DropItem "ValiantArachnotron", 256, 8
@@ -597,10 +519,14 @@ ACTOR DEHFinalCountdownWave9SpawnShot : DEHTeleportSpawnShot
 ACTOR DEHFinalCountdownWave10SpawnShot : DEHTeleportSpawnShot
 {
   //Lunatic
-  DropItem "RevMissileGuy", 256, 12
-  DropItem "Archvile", 256, 1
+  DropItem "PlasmaZombie", 256, 8 //Just for extra chaos
+  DropItem "RevMissileGuy", 256, 16
+  DropItem "Archvile", 256, 2
   //Valiant
-  DropItem "ValiantCybruiser", 256, 12
+  DropItem "ValiantArachnorb", 256, 8 //Like so
+  DropItem "ValiantCybruiser", 256, 16
+  DropItem "Haymaker", 256, 1 //WHOOPS
+  DropItem "AfritBoss", 256, 1
 }
 
 ACTOR DEHSurviveInHellBossEye
@@ -640,7 +566,7 @@ ACTOR DEHHellSmithSpawner
   See:
 	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 0)
 	TNT1 A 181 A_BrainAwake
-	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 3)
+	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 2)
 	TNT1 A 3150 //90 seconds
 	TNT1 A 0 A_PlaySound("brain/spit", 0, 1.0, 0, ATTN_NONE)
 	TNT1 A 0 A_BrainSpit("DEHBlankShot")
@@ -664,8 +590,8 @@ ACTOR DEHSIHFlyerSpawnShot : DEHTeleportSpawnShot
   DropItem "AstralCaco", 256, 4
   DropItem "DEHPainElemental", 256, 2
   DropItem "PoisonSoul", 256, 1
-  DropItem "Afrit", 256, 1
-}
+  DropItem "AfritBoss", 256, 1 //This isn't accurate (SIH Afrit has 1500 HP)
+} //But I wanted to introduce some extra infighting if possible.
 ACTOR DEHHellSmithSpawnShot : SpawnShot
 {
   DropItem "HellSmithFinal", 256, 1
@@ -684,7 +610,7 @@ ACTOR DEHAngryMastermindSpawner
   See:
 	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 0)
 	TNT1 A 181 A_BrainAwake
-	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 4)
+	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 3)
 	TNT1 A 0 A_SetUserVar("user_count", ACS_NamedExecuteWithResult("Dehacked_BossTargetCount"))
 	TNT1 A 0 A_PlaySound("brain/spit", 0, 1.0, 0, ATTN_NONE)
 	Goto ZombieSpawnLoop
@@ -752,7 +678,7 @@ ACTOR DEHSuperArchvileSpawner
   See:
 	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 0)
 	TNT1 A 181 A_BrainAwake
-	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 5)
+	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 4)
 	TNT1 A 0 A_SetUserVar("user_count", ACS_NamedExecuteWithResult("Dehacked_BossTargetCount"))
 	TNT1 A 0 A_BrainSpit("DEHBlankShot")
 	TNT1 A 0 A_BrainSpit("DEHSuperArchvileSpawnShot")
@@ -789,7 +715,7 @@ ACTOR DEHGridlockCardinalSpawner
   See:
 	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 0)
 	TNT1 A 181 A_BrainAwake
-	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 6)
+	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 5)
 	TNT1 A 0 A_PlaySound("brain/spit", 0, 1.0, 0, ATTN_NONE)
 	TNT1 AAAA 0 A_BrainSpit("DEHArchvileSpawnShot")
 	TNT1 AA 0 A_BrainSpit("DEHSpiderMastermindSpawnShot")
@@ -826,7 +752,7 @@ ACTOR DEHArchangelusSpawner
     TNT1 A 10 A_Look
     Loop
   See:
-	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 7)
+	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 6)
 	TNT1 A 181 A_BrainAwake
 	TNT1 A 0 A_PlaySound("brain/spit", 0, 1.0, 0, ATTN_NONE)
 	TNT1 A 0 A_BrainSpit("DEHBlankShot")
@@ -853,7 +779,7 @@ ACTOR DEHTheInquisitorSpawner
   See:
 	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 0)
 	TNT1 A 181 A_BrainAwake
-	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 8)
+	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 7)
 	TNT1 A 0 A_SetUserVar("user_count", ACS_NamedExecuteWithResult("Dehacked_BossTargetCount"))
   AfriestSpawnLoop:
 	TNT1 A 0 A_BrainSpit("DEHAfriestSpawnShot")
