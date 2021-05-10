@@ -7,7 +7,7 @@ ACTOR RemnantCardinal : Cyberdemon
   +FLOAT
   +NOGRAVITY
   Obituary "%o was splattered by a Remnant Cardinal."
-  SeeSound "cardinal/see"
+  SeeSound "cardinal/sight"
   DeathSound "cardinal/death"
   Tag "Remnant Cardinal"
   States
@@ -27,7 +27,7 @@ ACTOR RemnantCardinal : Cyberdemon
     RCRD D 4 Bright A_CyberAttack
     RCRD C 4 A_FaceTarget
     RCRD D 4 Bright A_CyberAttack
-    Loop
+    Goto See
   Pain:
     RCRD E 10 A_Pain
     Goto See
