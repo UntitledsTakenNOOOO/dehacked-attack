@@ -13,6 +13,7 @@
 #include "decorate/gridlock.dec"
 #include "decorate/eviternity.dec"
 #include "decorate/antaresian.dec"
+#include "decorate/remnant.dec"
 #include "decorate/obituary.dec"
 #include "decorate/invasionuac.dec"
 
@@ -150,7 +151,7 @@ ACTOR DehackedFatsoSpawner : RandomSpawner replaces Fatso
 {
 	DropItem "DEHFatso", 256, 60
 	DropItem "AlienFatso", 256, 30
-	DropItem "SuperMancubus", 256, 10
+	DropItem "ValiantSuperMancubus", 256, 10
 }
 ACTOR DEHFatso : Fatso {}
 
@@ -175,23 +176,24 @@ ACTOR DEHArchvile : Archvile {}
 
 ACTOR DehackedCyberSpawner : RandomSpawner replaces Cyberdemon
 {
-	DropItem "DEHCyberdemon", 256, 40
-	DropItem "Haymaker", 256, 25
-	DropItem "Leviathan", 256, 15
-	DropItem "GridlockCardinal", 256, 10
-	DropItem "HellSmith", 256, 10
-	//DropItem "DarkCyberdemon", 256, 20
+	DropItem "DEHCyberdemon", 256, 4
+	DropItem "RemnantCardinal", 256, 2
+	DropItem "Leviathan", 256, 2
+	DropItem "GridlockCardinal", 256, 1
+	DropItem "HellSmith", 256, 1
+	//DropItem "DarkCyberdemon", 256, 2
 }
 ACTOR DEHCyberdemon : Cyberdemon {}
 
 ACTOR DehackedSpiderSpawner : RandomSpawner replaces SpiderMastermind
 {
-	DropItem "DEHSpiderMastermind", 256, 40
-	DropItem "IndomitableMastermind", 256, 20
-	DropItem "SpectralLeviathan", 256, 15
-	DropItem "AngryMastermind", 256, 15
-	DropItem "ValiantSuperVile", 256, 10
-	//DropItem "WarlordOfHell", 256, 20
+	DropItem "DEHSpiderMastermind", 256, 8
+	DropItem "IndomitableMastermind", 256, 4
+	DropItem "SpectralLeviathan", 256, 4
+	DropItem "RemnantMaster", 256, 3
+	DropItem "AngryMastermind", 256, 3
+	DropItem "ValiantSuperVile", 256, 2
+	//DropItem "WarlordOfHell", 256, 4
 }
 ACTOR DEHSpiderMastermind : SpiderMastermind {}
 
@@ -245,8 +247,45 @@ ACTOR DEHFinalBossSpawner : SpecialSpot replaces BossEye
 	Stop
   }
 }
+ACTOR DEHBossBrain : BossBrain
+{
+  var int user_count;
+  States
+  {
+  Pain:
+	TNT1 A 0 A_SetUserVar("user_count", ACS_NamedExecuteWithResult("Dehacked_BossEyeCount"))
+	TNT1 A 0 A_PlaySound("brain/spit", 0, 1.0, 0, ATTN_NONE)
+	Goto SpawnLoop
+  SpawnLoop:
+	TNT1 A 0 A_BrainSpit("DEHHaymakerSpawnShot")
+	TNT1 A 0 A_SetUserVar("user_count", user_count - 1)
+	TNT1 A 0 A_JumpIf(user_count <= 0, "Super::Pain")
+	Loop
+  }
+}
+ACTOR DEHHaymakerSpawnShot : SpawnShot
+{
+  DropItem "Haymaker", 256, 1
+}
+
 ACTOR DEHBossEye : BossEye
 {
+  DropItem "Zombieman" 		255 10
+  DropItem "Shotgunguy" 	255  9
+  DropItem "Chaingunguy" 	255  6
+  DropItem "DoomImp" 		255 15
+  DropItem "Demon"			255  9
+  DropItem "Spectre"		255  6
+  DropItem "LostSoul"		255 10
+  DropItem "Cacodemon"		255  6
+  DropItem "PainElemental"	255  2
+  DropItem "Revenant"		255  6
+  DropItem "HellKnight"		255  6
+  DropItem "Arachnotron"	255  5
+  DropItem "Fatso"			255  5
+  DropItem "BaronOfHell"	255  3
+  DropItem "Archvile"		255  1
+  DropItem "Haymaker"		255  1
 }
 ACTOR DEHBlankShot : SpawnShot //Dummy so that custom bosses don't break on Skill 1/2
 {
@@ -458,7 +497,7 @@ ACTOR DEHFinalCountdownWave2SpawnShot : DEHTeleportSpawnShot
   DropItem "ValiantDemon", 256, 3
   DropItem "ValiantPyroDemon", 256, 4
   DropItem "DEHFatso", 256, 2
-  DropItem "SuperMancubus", 256, 2
+  DropItem "ValiantSuperMancubus", 256, 2
 }
 ACTOR DEHFinalCountdownWave3SpawnShot : DEHTeleportSpawnShot
 {
@@ -510,7 +549,7 @@ ACTOR DEHFinalCountdownWave6SpawnShot : DEHTeleportSpawnShot
   DropItem "Haymaker", 256, 1
   //Valiant
   DropItem "ValiantImp", 256, 32
-  DropItem "SuperMancubus", 256, 12
+  DropItem "ValiantSuperMancubus", 256, 12
   DropItem "SummonerLeviathan", 256, 1
   DropItem "GridlockCardinalPhase2", 256, 1
 }

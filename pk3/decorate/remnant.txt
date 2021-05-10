@@ -1,0 +1,106 @@
+ACTOR RemnantCardinal : Cyberdemon
+{
+  Health 5000
+  Speed 16
+  PainChance 20
+  -NORADIUSDMG //Deliberate
+  +FLOAT
+  +NOGRAVITY
+  Obituary "%o was splattered by a Remnant Cardinal."
+  SeeSound "cardinal/see"
+  DeathSound "cardinal/death"
+  Tag "Remnant Cardinal"
+  States
+  {
+  Spawn:
+    RCRD AB 3 A_Look
+	Loop
+  See:
+    RCRD AB 3 A_Chase
+    Loop
+  Missile:
+    RCRD C 4 A_FaceTarget
+    RCRD D 4 Bright A_CyberAttack
+    RCRD C 4 A_FaceTarget
+    RCRD D 4 Bright A_CyberAttack
+    RCRD C 4 A_FaceTarget
+    RCRD D 4 Bright A_CyberAttack
+    RCRD C 4 A_FaceTarget
+    RCRD D 4 Bright A_CyberAttack
+    Loop
+  Pain:
+    RCRD E 10 A_Pain
+    Goto See
+  Death:
+    RCRD F 10
+    RCRD G 10 A_Scream
+    RCRD HIJ 10
+    RCRD K 10 A_NoBlocking
+    RCRD L 10
+    TNT1 A 30
+    TNT1 A -1 A_BossDeath
+    Stop
+  }
+}
+
+ACTOR RemnantMaster
+{
+  Health 6000
+  Radius 60
+  Height 60
+  Mass 1000
+  Speed 18
+  PainChance 10
+  Monster
+  MinMissileChance 160
+  +BOSS
+  +MISSILEMORE
+  +FLOORCLIP
+  +NORADIUSDMG
+  +DONTMORPH
+  +BOSSDEATH
+  +FLOAT
+  +NOGRAVITY
+  SeeSound "master/sight"
+  AttackSound ""
+  PainSound "master/pain"
+  DeathSound "master/death"
+  ActiveSound ""
+  Obituary "%o stood in awe of the Remnant Master."
+  Tag "Remnant Master"
+  States
+  {
+  Spawn:
+    UNMB AB 15 A_Look
+    Loop
+  See:
+    UNMB AABB 3 A_Chase
+    Loop
+  Missile:
+    UNMB D 6 A_FaceTarget
+    UNMB E 10 Bright A_SkelMissile
+    UNMB E 5 Bright A_SkelMissile
+    UNMB E 20 Bright A_FatAttack3
+    UNMB D 20 A_FaceTarget
+    UNMB E 10 Bright A_SkelMissile
+    UNMB E 5 Bright A_SkelMissile
+    UNMB E 20 Bright A_FatAttack3
+    Goto See
+  Pain:
+    UNMB F 12 A_Pain
+	UNMB O 0 A_VileStart
+	UNMB O 10 Bright A_FaceTarget
+	UNMB P 10 Bright A_VileTarget
+	UNMB Q 10 Bright A_FaceTarget 
+	UNMB R 6 Bright A_VileAttack
+    Goto See
+  Death:
+    UNMB G 10
+    UNMB H 10 A_Scream
+    UNMB I 10 A_Fall
+    UNMB JKLM 10
+	UNMB N 30 A_SetFloorClip
+    UNMB N -1 A_BossDeath
+    Stop
+  }
+}

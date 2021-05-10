@@ -90,5 +90,12 @@ holobot/active		FBOTACT
 holobot/melee		FBOTPCH
 holobot/death		FBOTDTH
 
+cardinal/sight		RMCRDSIT
+cardinal/death		RMCRDDTH
+
+master/sight		RMMASSIT
+master/pain			RMMASPAI
+master/death		RMMASDTH
+
 shadow/sight		dsgssit
 shadow/death		dsgsdth

@@ -58,6 +58,11 @@ Script "Dehacked_BossCheck" (void)
 	SetResultValue(BossSelection);
 }
 
+Script "Dehacked_BossEyeCount" (void)
+{
+	SetResultValue(ThingCountName("DEHBossEye", 0));
+}
+
 Script "Dehacked_BossTargetCount" (void)
 {
 	SetResultValue(ThingCountName("BossTarget", 0));
