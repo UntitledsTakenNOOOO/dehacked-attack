@@ -85,7 +85,7 @@ States
 
 ACTOR HellSmith
 {
-  Health 10000 //Change: 20000 --> 8000 health for balance reasons
+  Health 8000 //Change: 20000 --> 8000 health for balance reasons
   Radius 40
   Height 110
   Mass 1000
@@ -141,6 +141,66 @@ ACTOR HellSmith
     AVTR P -1 A_BossDeath
     Stop
   }
+}
+
+ACTOR SIHCybruiser
+{ 
+Health 1300 
+Radius 24 
+Height 64 
+Mass 1000 
+Speed 8 
+PainChance 20 
+MONSTER
+MeleeDamage 10
+Obituary "%o was blown away by a Cybruiser."
+HitObituary "%o was smashed by a Cybruiser."
+Tag "Cybruiser"
++BOSS
++FLOORCLIP
++NORADIUSDMG
+SeeSound "monster/brusit" 
+PainSound "baron/pain" 
+DeathSound "monster/brudth"
+MeleeSound "baron/melee"
+States 
+   { 
+   Spawn: 
+       BRUS AB 10 A_Look 
+       Loop 
+   See:
+       BRUS A 1 A_Playsound("monster/bruwlk")
+       BRUS A 2 A_Chase
+       BRUS A 3 A_Chase
+       BRUS BB 3 A_Chase
+       BRUS C 1 A_Playsound("monster/bruwlk")
+       BRUS C 2 A_Chase
+       BRUS C 3 A_Chase 
+       BRUS DD 3 A_Chase
+       Loop 
+   Missile:
+       BRUS E 4 Bright A_FaceTarget
+       BRUS F 4 Bright A_CyberAttack
+       BRUS E 4 A_FaceTarget
+       BRUS E 4 Bright A_FaceTarget
+       BRUS F 4 Bright A_CyberAttack
+       Goto See
+   Melee:
+       BRUS GH 8 A_FaceTarget
+       BRUS I 8 A_MeleeAttack
+       Goto See
+   Pain: 
+       BRUS J 2 
+       BRUS J 2 A_Pain 
+       Goto See 
+   Death: 
+       BRUS K 6 Bright A_Scream
+       BRUS LMN 6 Bright
+       BRUS O 6 Bright A_NoBlocking
+       BRUS QRS 6 Bright
+       BRUS T -1
+       Stop
+   } 
 }
 
 ACTOR HellSmithFinal : HellSmith

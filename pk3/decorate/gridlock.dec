@@ -1,6 +1,6 @@
 ACTOR GridlockCardinal : Cyberdemon
 {
-  Health 6000 //Change: Health lowered from 8000 to 6000
+  Health 4800 //Change: Health lowered from 8000 to 4800
   Speed 16
   PainChance 32
   +FLOAT

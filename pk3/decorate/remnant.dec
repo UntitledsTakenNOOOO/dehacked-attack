@@ -1,6 +1,6 @@
 ACTOR RemnantCardinal : Cyberdemon
 {
-  Health 5000
+  Health 4500 //Change: Lowered health from 5000 to 4500
   Speed 16
   PainChance 20
   -NORADIUSDMG //Deliberate
@@ -19,14 +19,14 @@ ACTOR RemnantCardinal : Cyberdemon
     RCRD AB 3 A_Chase
     Loop
   Missile:
-    RCRD C 4 A_FaceTarget
-    RCRD D 4 Bright A_CyberAttack
-    RCRD C 4 A_FaceTarget
-    RCRD D 4 Bright A_CyberAttack
-    RCRD C 4 A_FaceTarget
-    RCRD D 4 Bright A_CyberAttack
-    RCRD C 4 A_FaceTarget
-    RCRD D 4 Bright A_CyberAttack
+    RCRD C 6 A_FaceTarget
+    RCRD D 6 Bright A_CyberAttack
+    RCRD C 6 A_FaceTarget
+    RCRD D 6 Bright A_CyberAttack
+    RCRD C 6 A_FaceTarget
+    RCRD D 6 Bright A_CyberAttack
+    RCRD C 6 A_FaceTarget
+    RCRD D 6 Bright A_CyberAttack
     Goto See
   Pain:
     RCRD E 10 A_Pain

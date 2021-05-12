@@ -41,9 +41,6 @@ LUNATIC (2011):
 * Revenant Missile Zombie: A 75 HP Zombie that fires revenant missiles. Spawns with chaingunners.
 	* Change: Drops a single rocket, because why not.
 
-UAC ULTRA (2012):
-* Haymaker: A minotaur-like creature with a cyberdemon's head that shoots mancubus fireballs from its hammer. Spawned by the Icon of Sin, does not spawn naturally.
-
 SURVIVE IN HELL (2012):
 * Belphegor: A tougher variant of the baron that fires in sets of two fireballs.
 * Poison Soul: A small, yet very tanky flying enemy that fires baron fireballs. Spawns in the pain elemental slot.
@@ -95,25 +92,31 @@ ANTARESIAN RELIQUARY (2020):
 * Reliquary Arachnotron: A variant of the arachnotron that uses the energy bolts used by the former ranger and plasma elite.
 
 BOSSES:
-* Leviathan (Struggle: Antaresian Legacy): A fast-moving monster who attacks with an entire mancubus volley simutaneously. Spawns with cyberdemons.
+* Leviathan (Struggle: Antaresian Legacy, 2018): A fast-moving monster who attacks with an entire mancubus volley simutaneously. Spawns with cyberdemons.
 	* Change: Reduced health from 10000 down to 4200.
-* Remnant Cardinal (Remnant): A darker, red flying variant of the cyberdemon that fires rockets much faster in salvos of four.
-* Gridlock Cardinal (Gridlock 64): A darker, green flying variant of the cyberdemon that cycles between different attacks. If flinched, it retaliates with a rocket.
-	* Change: Reduced health from 8000 down to 6000.
-* Hell Smith (Survive in Hell): This guy unleashes a powerful wave of 12 fireballs at once as his attack, and has a LOT of health. He spawns in the cyberdemon slot.
-	* Change: Health reduced from 20000 to 10000, because he isn't the final boss of the game anymore.
-* Indomitable Mastermind (Struggle: Antaresian Legacy): A variant of the spidermastermind that uses both a super-chaingun AND a plasma rifle at the same time.
-* Spectral Leviathan (Struggle: Antaresian Legacy): Less health and moves slower than the Leviathan, but he's partially invisible. Spawns with Spider Masterminds.
-* Angry Spiderdemon (Going Down): Her brain's red for some reason. Retaliates with fireballs when hurt, and has twice as much health as the ordinary Spider Mastermind.
+* Remnant Cardinal (Remnant, 2019): A darker, red flying variant of the cyberdemon that fires rockets much faster in salvos of four.
+	* Change: It fires more slowly than in Remnant, and only has 4500 health (it can fly, which is its defensive ability).
+* Gridlock Cardinal (Gridlock 64, 2017): A darker, green flying variant of the cyberdemon that cycles between different attacks. If flinched, it retaliates with a rocket.
+	* Change: Reduced health from 8000 down to 4800.
+* Hell Smith (Survive in Hell, 2012): This guy unleashes a powerful wave of 12 fireballs at once as his attack, and has a LOT of health. He spawns in the cyberdemon slot.
+	* Change: Health reduced from 20000 to 8000, because he isn't the final boss of the game anymore.
+* Indomitable Mastermind (Struggle: Antaresian Legacy, 2018): A variant of the spidermastermind that uses both a super-chaingun AND a plasma rifle at the same time.
+* Spectral Leviathan (Struggle: Antaresian Legacy, 2018): Less health and moves slower than the Leviathan, but he's partially invisible. Spawns with Spider Masterminds.
+* Angry Spiderdemon (Going Down, 2014): Her brain's red for some reason. Retaliates with fireballs when hurt, and has twice as much health as the ordinary Spider Mastermind.
 	* Change: Health reduced from 12000 to 6000.
-* Super Archvile (Valiant): Good luck. This thing attacks with a archvile combo-attack, and can resurrect monsters. It spawns uncommonly with the Spider Mastermind.
+* Super Archvile (Valiant, 2015): Good luck. This thing attacks with a archvile combo-attack, and can resurrect monsters. It spawns uncommonly with the Spider Mastermind.
 	* Change: Health reduced from 7500 to 3750, because it isn't the final boss of the game anymore.
-* Remnant Master (Remnant): This thing looks like a flying mancubus, but it's far nastier. It can fire revenant missiles and uses an archvile attack if flinched.
+* Remnant Master (Remnant, 2019): This thing looks like a flying mancubus, but it's far nastier. It can fire revenant missiles and uses an archvile attack if flinched.
 * Gridlock Cardinal [Phase II]: Same as the Phase I, except if flinched, will spawn monsters icon-of-sin style. Replaces the Gridlock Cardinal if Spawn Targets are present.
 	* Change: Reduced health from 6000 down to 4000.
 * Leviathan [Summoner Variant]: He CAN be flinched, but doing so will result in him spawning monsters icon-of-sin style. Replaces either Leviathan if Spawn Targets are present.
 	* Change: Reduced health from 10000 down to 4200.
 * Super Archvile [Summoner Variant]: Summons a swarm of arachnorbs on flinch. Replaces the Super Archvile if Spawn Targets are present.
+
+ICON OF SIN SPECIAL:
+All of these are only spawned by the Icon of Sin, and do not spawn naturally:
+* Haymaker (UAC Ultra, 2012): A minotaur-like creature with 2500 health that has a cyberdemon's head. It shoots mancubus fireballs from its hammer.
+* Cybruiser (Survive in Hell, 2012): This variant has 1300 health, and fires rockets in sets of two.
 
 FINAL BOSSES (enabled by CVar and then selected in place of Icon of Sin):
 * Hell Smith (Survive in Hell): More aggressive than his ordinary counterpart. With his full 20000 health, he's is hard to take down, and spawns AFTER a large army of other monsters.

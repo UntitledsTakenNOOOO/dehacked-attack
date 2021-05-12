@@ -5,11 +5,14 @@ int BossSelection = 0;
 Script "Dehacked_BossSelect" OPEN
 {
 	BossSelection = 0;
-	if(GetCVar("deh_finalboss") <= 0 && ThingCountName("BossTarget", 0) > 0)
+	if(ThingCountName("BossTarget", 0) > 0 && ThingCountName("DEHFinalBossSpawner", 0) > 0 && ThingCountName("DEHBossBrain", 0) > 0)
 	{
-		BossSelection = random(1, 8);
-	} else if(ThingCountName("BossTarget", 0) > 0) {
-		BossSelection = GetCVar("deh_finalboss");
+		if(GetCVar("deh_finalboss") <= 0)
+		{
+			BossSelection = random(1, 8);
+		} else {
+			BossSelection = GetCVar("deh_finalboss");
+		}
 	}
 }
 

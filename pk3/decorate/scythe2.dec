@@ -108,6 +108,7 @@ actor Afrit : BaronOfHell
 ACTOR AfritBoss : Afrit
 {
   Health 2500 //As per their apperance in Scythe II.
+  +Boss //Added just because I felt like it.
   +DoHarmSpecies //Deliberately used so it can infight with barons
   /*
   So, the thing is, in any DEHACKED implementation, afrits can infight species

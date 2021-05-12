@@ -243,7 +243,7 @@ ACTOR DEHFinalBossSpawner : SpecialSpot replaces BossEye
 	Stop
   }
 }
-ACTOR DEHBossBrain : BossBrain
+ACTOR DEHBossBrain : BossBrain replaces BossBrain
 {
   var int user_count;
   States
@@ -277,11 +277,13 @@ ACTOR DEHBossEye : BossEye
   DropItem "PainElemental"	255  2
   DropItem "Revenant"		255  6
   DropItem "HellKnight"		255  6
-  DropItem "Arachnotron"	255  5
-  DropItem "Fatso"			255  5
+  DropItem "Arachnotron"	255  4
+  DropItem "Fatso"			255  4
   DropItem "BaronOfHell"	255  3
   DropItem "Archvile"		255  1
   DropItem "Haymaker"		255  1
+  DropItem "AfritBoss"		255  1
+  DropItem "SIHCybruiser"	255  1
 }
 ACTOR DEHBlankShot : SpawnShot //Dummy so that custom bosses don't break on Skill 1/2
 {
@@ -519,12 +521,12 @@ ACTOR DEHFinalCountdownWave9SpawnShot : DEHTeleportSpawnShot
 ACTOR DEHFinalCountdownWave10SpawnShot : DEHTeleportSpawnShot
 {
   //Lunatic
-  DropItem "PlasmaZombie", 256, 8 //Just for extra chaos
-  DropItem "RevMissileGuy", 256, 16
+  DropItem "RevMissileGuy", 256, 24
   DropItem "Archvile", 256, 2
   //Valiant
   DropItem "ValiantArachnorb", 256, 8 //Like so
-  DropItem "ValiantCybruiser", 256, 16
+  DropItem "ValiantCybruiser", 256, 8
+  DropItem "EviternityAnnihilator", 256, 8
   DropItem "Haymaker", 256, 1 //WHOOPS
   DropItem "AfritBoss", 256, 1
 }
@@ -581,7 +583,8 @@ ACTOR DEHSIHPhase1SpawnShot : DEHTeleportSpawnShot
   DropItem "DEHRevenant", 256, 3
   DropItem "MinisterOfHate", 256, 1
   DropItem "DEHHellKnight", 256, 3
-  DropItem "DEHBaronOfHell", 256, 2
+  DropItem "DEHBaronOfHell", 256, 1
+  DropItem "SIHCybruiser", 256, 1
   DropItem "Belphegor", 256, 1
 }
 ACTOR DEHSIHFlyerSpawnShot : DEHTeleportSpawnShot
@@ -732,9 +735,10 @@ ACTOR DEHArchvileSpawnShot : DEHTeleportSpawnShot
 }
 ACTOR DEHSpiderMastermindSpawnShot : DEHTeleportSpawnShot
 {
-	DropItem "DEHSpiderMastermind", 256, 2
-	DropItem "IndomitableMastermind", 256, 1
-	DropItem "SummonerLeviathan", 256, 1
+	DropItem "DEHSpiderMastermind", 256, 5
+	DropItem "IndomitableMastermind", 256, 2
+	DropItem "SummonerLeviathan", 256, 2
+	DropItem "RemnantMaster", 256, 1
 }
 ACTOR DEHGridlockCardinalFinalPhase1SpawnShot : SpawnShot
 {
