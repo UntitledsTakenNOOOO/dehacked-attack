@@ -452,7 +452,7 @@ States
        Goto See
    Melee:
        BRUS GH 8 A_FaceTarget
-       BRUS I 8 A_MeleeAttack
+       BRUS I 8 A_BruisAttack
        Goto See
    Pain: 
        BRUS J 2 

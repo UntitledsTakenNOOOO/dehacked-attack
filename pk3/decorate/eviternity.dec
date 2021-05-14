@@ -209,6 +209,7 @@ Actor EviternityAnnihilator : BaronOfHell
 		EBOS J 3 
 		EBOS J 3 A_Pain
 		goto See
+	Melee:
 	Missile:
 		EBOS E 8 A_FaceTarget
 		EBOS F 12 Bright A_CyberAttack
