@@ -39,6 +39,11 @@ OptionValue "DehackedFinalBossMusic"
 	0, "Boss Music Disabled"
 	1, "Boss Music Enabled"
 }
+OptionValue "DehackedFinalBossPreview"
+{
+	0, "Boss is revealed"
+	1, "Boss is not revealed"
+}
 OptionMenu "DehackedAttackOptions"
 {
 	Title "Dehacked Attack Options"
@@ -51,5 +56,9 @@ OptionMenu "DehackedAttackOptions"
 	StaticText "Final Boss Music:", 1
 	StaticText "Switch Music at the start of the final boss fight, if applicable."
 	Option "Final Boss Music:", "deh_finalbossmusic", "DehackedFinalBossMusic"
+	StaticText ""
+	StaticText "Final Boss Preview:", 1
+	StaticText "Reveals which boss has been selected at the start of the level, if enabled."
+	Option "Final Boss Preview:", "deh_finalbosspreview", "DehackedFinalBossPreview"
 	StaticText ""
 }

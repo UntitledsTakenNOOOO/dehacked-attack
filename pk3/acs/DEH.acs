@@ -5,7 +5,7 @@ int BossSelection = 0;
 Script "Dehacked_BossSelect" OPEN
 {
 	BossSelection = 0;
-	if(ThingCountName("BossTarget", 0) > 0 && ThingCountName("DEHFinalBossSpawner", 0) > 0 && ThingCountName("DEHBossBrain", 0) > 0)
+	if(ThingCountName("BossTarget", 0) > 0 && ThingCountName("DEHFinalBossSpawner", 0) > 0)
 	{
 		if(GetCVar("deh_finalboss") <= 0)
 		{
@@ -13,6 +13,38 @@ Script "Dehacked_BossSelect" OPEN
 		} else {
 			BossSelection = GetCVar("deh_finalboss");
 		}
+	}
+	if(BossSelection == 1)
+	{
+		PrintBold(s:"The Icon of Sin awaits you!");
+	}
+	else if(BossSelection == 2)
+	{
+		PrintBold(s:"The countdown has been set...");
+	}
+	else if(BossSelection == 3)
+	{
+		PrintBold(s:"The Hell Smith calls forth his legion!");
+	}
+	else if(BossSelection == 4)
+	{
+		PrintBold(s:"This Spider Mastermind's going down!");
+	}
+	else if(BossSelection == 5)
+	{
+		PrintBold(s:"A valiant final battle with the Super Archvile approaches!");
+	}
+	else if(BossSelection == 6)
+	{
+		PrintBold(s:"The Cardinal of Gridlock wishes to battle!");
+	}
+	else if(BossSelection == 7)
+	{
+		PrintBold(s:"You are a fool to challenge Archangelus!");
+	}
+	else if(BossSelection == 8)
+	{
+		PrintBold(s:"The Inquisitor awaits your challenge!");
 	}
 }
 
