@@ -66,10 +66,11 @@ actor ResurgenceEvilMarine : EvilMarine
 
 actor Afrit : BaronOfHell
 {
-  Health 1500 //Deus Vult II's health pool (Scythe II is 2500)
+  Health 2500
   PainChance 30
   +NoGravity
   +Float
+  +DoHarmSpecies
   Obituary "%o was scorched by an Afrit."
   Tag "Afrit"
   States
@@ -103,19 +104,4 @@ actor Afrit : BaronOfHell
 	FRIT R 4 Bright A_BossDeath
     Stop
   }
-}
-
-ACTOR AfritBoss : Afrit
-{
-  Health 2500 //As per their apperance in Scythe II.
-  +Boss //Added just because I felt like it.
-  +DoHarmSpecies //Deliberately used so it can infight with barons
-  /*
-  So, the thing is, in any DEHACKED implementation, afrits can infight species
-  because they aren't actually the same species. But, because afrits spawn with
-  barons here, that's bad, so normally I make sure they can't infight.
-  
-  However, in separated context, they SHOULD infight, so hence why I went and
-  made a separate infighting-capable version.
-  */
 }

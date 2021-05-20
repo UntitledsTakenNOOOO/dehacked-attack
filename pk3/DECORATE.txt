@@ -46,10 +46,10 @@ ACTOR DEHChaingunGuy : ChaingunGuy {}
 
 ACTOR DehackedImpSpawner : RandomSpawner replaces DoomImp
 {
-	DropItem "DEHDoomImp", 256, 55
-	DropItem "ValiantImp", 256, 25
-	DropItem "ShadowImp", 256, 10
-	DropItem "StrainFastImp", 256, 10
+	DropItem "DEHDoomImp", 256, 60
+	DropItem "ValiantImp", 256, 24
+	DropItem "ShadowImp", 256, 8
+	DropItem "StrainFastImp", 256, 8
 	//DropItem "SuperImp", 256, 10
 }
 ACTOR DEHDoomImp : DoomImp {}
@@ -129,19 +129,18 @@ ACTOR DEHPainElemental : PainElemental
 ACTOR DehackedKnightSpawner : RandomSpawner replaces HellKnight
 {
 	DropItem "DEHHellKnight", 256, 70
-	DropItem "Antaresia", 256, 12
-	DropItem "ValiantPyroDemon", 256, 12
+	DropItem "ValiantPyroDemon", 256, 14
+	DropItem "Antaresia", 256, 10
 	DropItem "ValiantCybruiser", 256, 6
 }
 ACTOR DEHHellKnight : HellKnight {}
 
 ACTOR DehackedBaronSpawner : RandomSpawner replaces BaronOfHell
 {
-	DropItem "DEHBaronOfHell", 256, 60
-	DropItem "Belphegor", 256, 12
-	DropItem "StrainDemonLord", 256, 12
-	DropItem "Afrit", 256, 8
-	DropItem "EviternityAnnihilator", 256, 8
+	DropItem "DEHBaronOfHell", 256, 70
+	DropItem "Belphegor", 256, 14
+	DropItem "StrainDemonLord", 256, 10
+	DropItem "EviternityAnnihilator", 256, 6
 }
 ACTOR DEHBaronOfHell : BaronOfHell {}
 
@@ -191,7 +190,7 @@ ACTOR DehackedSpiderSpawner : RandomSpawner replaces SpiderMastermind
 	DropItem "RemnantMaster", 256, 10
 	DropItem "AngryMastermind", 256, 10
 	DropItem "ValiantSuperVile", 256, 5
-	//DropItem "WarlordOfHell", 256, 5
+	//DropItem "WarlordOfHell", 256, 10
 }
 ACTOR DEHSpiderMastermind : SpiderMastermind {}
 
@@ -259,7 +258,9 @@ ACTOR DEHBossBrain : BossBrain replaces BossBrain
 }
 ACTOR DEHHaymakerSpawnShot : SpawnShot
 {
-  DropItem "Haymaker", 256, 1
+  DropItem "Haymaker", 256, 50
+  DropItem "Afrit", 256, 30
+  DropItem "SIHCybruiser", 256, 20
 }
 
 ACTOR DEHBossEye : BossEye
@@ -280,7 +281,7 @@ ACTOR DEHBossEye : BossEye
   DropItem "BaronOfHell"	255  3
   DropItem "Archvile"		255  1
   DropItem "Haymaker"		255  1
-  DropItem "AfritBoss"		255  1
+  DropItem "Afrit"			255  1
   DropItem "SIHCybruiser"	255  1
 }
 ACTOR DEHBlankShot : SpawnShot //Dummy so that custom bosses don't break on Skill 1/2
@@ -469,7 +470,7 @@ ACTOR DEHFinalCountdownWave6SpawnShot : DEHTeleportSpawnShot
   DropItem "Demon", 256, 48
   DropItem "BaronOfHell", 256, 16 //Originally 22
   DropItem "Haymaker", 256, 4 //Change: Just for fun
-  DropItem "AfritBoss", 256, 2 //2500 HP + infights with other barons
+  DropItem "Afrit", 256, 2
   DropItem "DEHCyberdemon", 256, 2
   //Valiant
   DropItem "ValiantImp", 256, 32
@@ -526,7 +527,7 @@ ACTOR DEHFinalCountdownWave10SpawnShot : DEHTeleportSpawnShot
   DropItem "ValiantCybruiser", 256, 8
   DropItem "EviternityAnnihilator", 256, 8
   DropItem "Haymaker", 256, 1 //WHOOPS
-  DropItem "AfritBoss", 256, 1
+  DropItem "Afrit", 256, 1
 }
 
 ACTOR DEHSurviveInHellBossEye
@@ -591,8 +592,8 @@ ACTOR DEHSIHFlyerSpawnShot : DEHTeleportSpawnShot
   DropItem "AstralCaco", 256, 4
   DropItem "DEHPainElemental", 256, 2
   DropItem "PoisonSoul", 256, 1
-  DropItem "AfritBoss", 256, 1 //This isn't accurate (SIH Afrit has 1500 HP)
-} //But I wanted to introduce some extra infighting if possible.
+  DropItem "Afrit", 256, 1
+}
 ACTOR DEHHellSmithSpawnShot : SpawnShot
 {
   DropItem "HellSmithFinal", 256, 1

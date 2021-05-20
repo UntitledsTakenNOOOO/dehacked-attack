@@ -10,11 +10,9 @@ actor Haymaker
   PainChance 35
   Monster
   MinMissileChance 160
-  +BOSS
   +MISSILEMORE
   +FLOORCLIP
   +DONTMORPH
-  +BOSSDEATH
   SeeSound "haymaker/sight"
   PainSound "cyber/pain"
   DeathSound "haymaker/death"
@@ -42,7 +40,7 @@ actor Haymaker
     HMKR JKL 6
     HMKR M 6 A_NoBlocking
     HMKR NOPQRSTUV 6
-    HMKR V -1 A_BossDeath
+    HMKR V -1
     stop
   }
 }

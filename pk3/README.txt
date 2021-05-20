@@ -17,8 +17,6 @@ STRAIN (1997):
 SCYTHE II (2005):
 * Evil Marine: He's an absolute terror to be up against due to his plasma rifle and high movement speed. Spawns in the archvile slot.
 	* Change: Drops a Cell instead of a Clip, because DEHACKED doesn't let you change drops but DECORATE does and the inconsistency bothered me.
-* (Also from Deus Vult II) Afrit: It's volley of fireballs is very deadly; if you get too close, you're toast. Spawns with barons.
-	* Change: As per Deus Vult II, it only has 1500 health, rather than 2500 as in Scythe II.
 
 DEUS VULT II (2008):
 * Hell Cleric: Fires imp fireballs rapidly. Spawns commonly with revenants.
@@ -113,6 +111,7 @@ BOSSES:
 
 ICON OF SIN SPECIAL:
 All of these are only spawned by the Icon of Sin, and do not spawn naturally:
+* Afrit (Scythe II, Deus Vult II, Survive in Hell, Resurgence): Its volley of fireballs is very deadly; if you get too close, you're toast. Has 2500 HP and flies.
 * Haymaker (UAC Ultra, 2012): A minotaur-like creature with 2500 health that has a cyberdemon's head. It shoots mancubus fireballs from its hammer.
 * Cybruiser (Survive in Hell, 2012): This variant has 1300 health, and fires rockets very quickly in sets of two.
 
