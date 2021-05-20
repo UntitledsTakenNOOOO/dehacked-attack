@@ -2,7 +2,6 @@
 #include "decorate/scythe2.dec"
 #include "decorate/dv2.dec"
 #include "decorate/scythex.dec"
-#include "decorate/ndcp.dec"
 #include "decorate/uacultra.dec"
 #include "decorate/jenesis.dec"
 #include "decorate/lunatic.dec"
@@ -84,12 +83,11 @@ ACTOR DEHRevenant : Revenant {}
 
 ACTOR DehackedCacoSpawner : RandomSpawner replaces Cacodemon
 {
-	DropItem "DEHCacodemon", 256, 50
+	DropItem "DEHCacodemon", 256, 70
 	DropItem "AstralCaco", 256, 10
-	DropItem "Slomnibus", 256, 10
 	DropItem "Holobot", 256, 10
-	DropItem "AlienGuardian", 256, 10
-	DropItem "Afriest", 256, 10
+	DropItem "AlienGuardian", 256, 5
+	DropItem "Afriest", 256, 5
 }
 ACTOR DEHCacodemon : Cacodemon {}
 
@@ -176,24 +174,24 @@ ACTOR DEHArchvile : Archvile {}
 
 ACTOR DehackedCyberSpawner : RandomSpawner replaces Cyberdemon
 {
-	DropItem "DEHCyberdemon", 256, 4
-	DropItem "RemnantCardinal", 256, 2
-	DropItem "Leviathan", 256, 2
-	DropItem "GridlockCardinal", 256, 1
-	DropItem "HellSmith", 256, 1
-	//DropItem "DarkCyberdemon", 256, 2
+	DropItem "DEHCyberdemon", 256, 50
+	DropItem "RemnantCardinal", 256, 20
+	DropItem "Leviathan", 256, 20
+	DropItem "GridlockCardinal", 256, 5
+	DropItem "HellSmith", 256, 5
+	//DropItem "DarkCyberdemon", 256, 25
 }
 ACTOR DEHCyberdemon : Cyberdemon {}
 
 ACTOR DehackedSpiderSpawner : RandomSpawner replaces SpiderMastermind
 {
-	DropItem "DEHSpiderMastermind", 256, 8
-	DropItem "IndomitableMastermind", 256, 4
-	DropItem "SpectralLeviathan", 256, 4
-	DropItem "RemnantMaster", 256, 3
-	DropItem "AngryMastermind", 256, 3
-	DropItem "ValiantSuperVile", 256, 2
-	//DropItem "WarlordOfHell", 256, 4
+	DropItem "DEHSpiderMastermind", 256, 40
+	DropItem "IndomitableMastermind", 256, 20
+	DropItem "SpectralLeviathan", 256, 15
+	DropItem "RemnantMaster", 256, 10
+	DropItem "AngryMastermind", 256, 10
+	DropItem "ValiantSuperVile", 256, 5
+	//DropItem "WarlordOfHell", 256, 5
 }
 ACTOR DEHSpiderMastermind : SpiderMastermind {}
 

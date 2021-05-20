@@ -29,9 +29,6 @@ SCYTHE X (2009):
 * Shadow Elemental: A variant of the Pain Elemental; this variant shoots out spirits-summing projectiles fast, and release more spirits when they die.
 * Shadow Spirit: The aforementioned spiritual creatures summoned by the Shadow Imp. They do not spawn naturally.
 
-NDCP 2 (2009):
-* Slomnibus: A kamikaze cacodemon; this monster flies up to you and then explodes, so keep your distance. Spawns with cacodemons.
-
 JENESIS (2011):
 * Mutant Gateway Technician: Possessing a whole 90 HP, these are rather durable variants of the shotgunner.
 	* Change: Drops a shotgun (it drops only a clip in the original Jenesis) to maintain consistency with it's weapon of choice.
