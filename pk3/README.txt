@@ -10,6 +10,7 @@ STRAIN (1997):
 * Doppleganger: A variant of the lost soul, these guys will use an imp's attack before charging.
 * Skinless Demon: These guys are colored red and are more durable than normal demons, with the odd amount of exactly 217 health.
 * Minister of Hate: A miniture cyberdemon with 300 health, firing singular rockets. Spawns in the revenant slot on rare occasions, and has +NORADIUSDMG.
+	* Change: It takes longer to wind-up its attack than in STRAIN, because rockets are very deadly, making these things horrific reaction-time checks.
 * Demon Lord: A white hell noble with 1400 health that fires baron balls in mancubus-like spreads. Spawns with barons, and is potentially very deadly.
 	* Change: The attack animation is broken in the original STRAIN, causing it to fire faster than intended. This has been corrected.
 
@@ -21,12 +22,12 @@ SCYTHE II (2005):
 
 DEUS VULT II (2008):
 * Hell Cleric: Fires imp fireballs rapidly. Spawns commonly with revenants.
-	* Change: Has 250 health instead of 200, due to being in a slot with 300 base health.
+	* Change: Has 300 health instead of 200, due to being in a slot with 300 base health.
 
 SCYTHE X (2009):
 * Shadow Imp: These mysterious monsters shoot fireballs that summon strange spiritual creatures. Spawns with imps uncommonly, but imps are VERY common.
 * Shadow Elemental: A variant of the Pain Elemental; this variant shoots out spirits-summing projectiles fast, and release more spirits when they die.
-* Shadow Spirit: The aforementioned spiritual creatures summoned by the Shadow Imp. Does not spawn naturally.
+* Shadow Spirit: The aforementioned spiritual creatures summoned by the Shadow Imp. They do not spawn naturally.
 
 NDCP 2 (2009):
 * Slomnibus: A kamikaze cacodemon; this monster flies up to you and then explodes, so keep your distance. Spawns with cacodemons.
@@ -46,7 +47,7 @@ SURVIVE IN HELL (2012):
 * Poison Soul: A small, yet very tanky flying enemy that fires baron fireballs. Spawns in the pain elemental slot.
 
 RESURGENCE (2014):
-* Evil Marine (Slower Variant): A variant of the evil marine that moves at less than 20% of the speed. Spawns rarely with revenants, and is still very deadly.
+* Evil Marine (Slow Variant): A variant of the evil marine that moves at less than 20% of the speed. Spawns very rarely with revenants, and is still very deadly.
 
 VALIANT (2015):
 * Valiant Imp: This variant on the imp shoots faster fireballs in sets of two.
@@ -107,7 +108,7 @@ BOSSES:
 * Super Archvile (Valiant, 2015): Good luck. This thing attacks with a archvile combo-attack, and can resurrect monsters. It spawns uncommonly with the Spider Mastermind.
 	* Change: Health reduced from 7500 to 3750, because it isn't the final boss of the game anymore.
 * Remnant Master (Remnant, 2019): This thing looks like a flying mancubus, but it's far nastier. It can fire revenant missiles and uses an archvile attack if flinched.
-* Gridlock Cardinal [Phase II]: Same as the Phase I, except if flinched, will spawn monsters icon-of-sin style. Replaces the Gridlock Cardinal if Spawn Targets are present.
+* Gridlock Cardinal [Phase II]: Same as the Phase I, except if flinched, he'll spawn monsters icon-of-sin style. Replaces the Gridlock Cardinal if Spawn Targets are present.
 	* Change: Reduced health from 6000 down to 4000.
 * Leviathan [Summoner Variant]: He CAN be flinched, but doing so will result in him spawning monsters icon-of-sin style. Replaces either Leviathan if Spawn Targets are present.
 	* Change: Reduced health from 10000 down to 4200.
@@ -116,7 +117,7 @@ BOSSES:
 ICON OF SIN SPECIAL:
 All of these are only spawned by the Icon of Sin, and do not spawn naturally:
 * Haymaker (UAC Ultra, 2012): A minotaur-like creature with 2500 health that has a cyberdemon's head. It shoots mancubus fireballs from its hammer.
-* Cybruiser (Survive in Hell, 2012): This variant has 1300 health, and fires rockets in sets of two.
+* Cybruiser (Survive in Hell, 2012): This variant has 1300 health, and fires rockets very quickly in sets of two.
 
 FINAL BOSSES (enabled by CVar and then selected in place of Icon of Sin):
 * Hell Smith (Survive in Hell): More aggressive than his ordinary counterpart. With his full 20000 health, he's is hard to take down, and spawns AFTER a large army of other monsters.

@@ -3,9 +3,9 @@ ACTOR RemnantCardinal : Cyberdemon
   Health 4500 //Change: Lowered health from 5000 to 4500
   Speed 16
   PainChance 20
-  -NORADIUSDMG //Deliberate
   +FLOAT
   +NOGRAVITY
+  -NORADIUSDMG //Deliberate
   Obituary "%o was splattered by a Remnant Cardinal."
   SeeSound "cardinal/sight"
   DeathSound "cardinal/death"

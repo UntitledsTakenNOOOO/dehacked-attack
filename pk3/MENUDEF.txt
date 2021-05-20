@@ -41,8 +41,8 @@ OptionValue "DehackedFinalBossMusic"
 }
 OptionValue "DehackedFinalBossPreview"
 {
-	0, "Boss is revealed"
-	1, "Boss is not revealed"
+	0, "Boss is not revealed"
+	1, "Boss is revealed"
 }
 OptionMenu "DehackedAttackOptions"
 {

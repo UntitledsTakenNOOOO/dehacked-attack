@@ -30,7 +30,7 @@ ACTOR AngryMastermind : SpiderMastermind
     RSPD EG 4 Bright A_SPosAttackUseAtkSound
     RSPD E 1 Bright A_SpidRefire
     Goto Missile+1
-  Pain: //Change: I don't know the frame numbers, so these are probably wrong.
+  Pain:
     RSPD H 3
     RSPD H 3 A_Pain
     RSPD A 10 Bright A_FaceTarget
