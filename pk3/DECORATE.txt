@@ -1,3 +1,23 @@
+const int DEH_OBITUARY = 1;
+const int DEH_STRAIN = 2;
+const int DEH_SCYTHE = 3;
+const int DEH_DEUS_VULT = 4;
+const int DEH_INVASION_UAC = 5;
+const int DEH_SCYTHEX = 6;
+const int DEH_UAC_ULTRA = 7;
+const int DEH_JENESIS = 8;
+const int DEH_LUNATIC = 9;
+const int DEH_SURVIVE_IN_HELL = 10;
+const int DEH_GOING_DOWN = 11;
+const int DEH_VALIANT = 12;
+const int DEH_PSX_DOOM = 13;
+const int DEH_ANCIENT_ALIENS = 14;
+const int DEH_GRIDLOCK = 15;
+const int DEH_EVITERNITY = 16;
+const int DEH_ANTARES = 17;
+const int DEH_REMNANT = 18;
+const int DEH_SUNDER = 19;
+
 #include "decorate/strain.dec"
 #include "decorate/scythe2.dec"
 #include "decorate/dv2.dec"
@@ -26,12 +46,12 @@ ACTOR DEHZombieman : Zombieman {}
 
 ACTOR DehackedShotgunguySpawner : RandomSpawner replaces Shotgunguy
 {
-	DropItem "DEHShotgunguy", 256, 70
-	DropItem "PlasmaZombie", 256, 10
-	DropItem "StealthPlasmaAlien", 256, 10
-	DropItem "JenesisMutant", 256, 10
-	//DropItem "StealthFighter", 256, 10
-	//DropItem "RocketGuy", 256, 10
+	DropItem "DEHShotgunguy", 256, 60
+	DropItem "PlasmaZombie", 256, 8
+	DropItem "StealthPlasmaAlien", 256, 8
+	DropItem "JenesisMutant", 256, 8
+	DropItem "StealthFighter", 256, 8
+	DropItem "RocketGuy", 256, 8
 }
 ACTOR DEHShotgunguy : Shotgunguy {}
 
@@ -47,11 +67,11 @@ ACTOR DEHChaingunGuy : ChaingunGuy {}
 
 ACTOR DehackedImpSpawner : RandomSpawner replaces DoomImp
 {
-	DropItem "DEHDoomImp", 256, 60
-	DropItem "ValiantImp", 256, 24
-	DropItem "ShadowImp", 256, 8
-	DropItem "StrainFastImp", 256, 8
-	//DropItem "SuperImp", 256, 10
+	DropItem "DEHDoomImp", 256, 55
+	DropItem "ValiantImp", 256, 20
+	DropItem "StrainFastImp", 256, 10
+	DropItem "ShadowImp", 256, 10
+	DropItem "SuperImp", 256, 5
 }
 ACTOR DEHDoomImp : DoomImp {}
 
@@ -175,24 +195,24 @@ ACTOR DEHArchvile : Archvile {}
 
 ACTOR DehackedCyberSpawner : RandomSpawner replaces Cyberdemon
 {
-	DropItem "DEHCyberdemon", 256, 50
-	DropItem "RemnantCardinal", 256, 20
-	DropItem "Leviathan", 256, 20
+	DropItem "DEHCyberdemon", 256, 45
+	DropItem "DarkCyberdemon", 256, 15
+	DropItem "RemnantCardinal", 256, 15
+	DropItem "Leviathan", 256, 15
 	DropItem "GridlockCardinal", 256, 5
 	DropItem "HellSmith", 256, 5
-	//DropItem "DarkCyberdemon", 256, 25
 }
 ACTOR DEHCyberdemon : Cyberdemon {}
 
 ACTOR DehackedSpiderSpawner : RandomSpawner replaces SpiderMastermind
 {
-	DropItem "DEHSpiderMastermind", 256, 40
-	DropItem "IndomitableMastermind", 256, 20
+	DropItem "DEHSpiderMastermind", 256, 35
+	DropItem "IndomitableMastermind", 256, 15
 	DropItem "SpectralLeviathan", 256, 15
+	DropItem "WarlordOfHell", 256, 10
 	DropItem "RemnantMaster", 256, 10
 	DropItem "AngryMastermind", 256, 10
 	DropItem "ValiantSuperVile", 256, 5
-	//DropItem "WarlordOfHell", 256, 10
 }
 ACTOR DEHSpiderMastermind : SpiderMastermind {}
 
@@ -260,8 +280,8 @@ ACTOR DEHBossBrain : BossBrain replaces BossBrain
 }
 ACTOR DEHHaymakerSpawnShot : SpawnShot
 {
-  DropItem "Haymaker", 256, 40
-  DropItem "Afrit", 256, 30
+  DropItem "Afrit", 256, 40
+  DropItem "Haymaker", 256, 30
   DropItem "SIHCybruiser", 256, 20
   DropItem "HiveMother", 256, 10
 }

@@ -9,9 +9,7 @@ However, they were later re-implemented in the ZDoom Monster Resource Wad (and l
 Due to a combination of obscurity and the fact that the most famous versions of these monsters are DECORATE
 (and not DEHACKED) I am not considering them part of the mainline DEHACKED Attack.
 
-That being said, in respect for the legacy of this wad, I am including them in the wad, though unused.
-
-The spawners have code that is commented out to spawn them. If you wish, feel free to uncomment.
+That being said, in respect for the legacy of this wad, I am including them in the mod.
 */
 
 ACTOR SuperImp : DoomImp
@@ -21,6 +19,14 @@ ACTOR SuperImp : DoomImp
 	Tag "Harder Imp"
 	States
 	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_OBITUARY, 1), "Reset")
+		Goto "Super::Spawn"
+	Reset:
+		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		TNT1 A 0 A_SpawnItemEx("DoomImp", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+		Stop
 	Melee:
 	Missile:
 		IMP3 A 8 A_FaceTarget
@@ -49,7 +55,15 @@ ACTOR RocketGuy
    Tag "Bazooka Guy"
    States 
    { 
-   Spawn: 
+  Spawn:
+    TNT1 A 0
+	TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_OBITUARY, 1), "Reset")
+    Goto Idle
+  Reset:
+	TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+	TNT1 A 0 A_SpawnItemEx("Shotgunguy", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+	Stop
+   Idle:
       MPOS AB 10 A_Look 
       Loop 
    See: 
@@ -104,6 +118,14 @@ ACTOR StealthFighter
 	States
 	{
 	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_OBITUARY, 1), "Reset")
+		Goto Idle
+	Reset:
+		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		TNT1 A 0 A_SpawnItemEx("Shotgunguy", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+		Stop
+	Idle:
 		GMAN AB 10 A_Look
 		Loop
 	See:

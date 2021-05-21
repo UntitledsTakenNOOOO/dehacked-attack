@@ -1,6 +1,106 @@
 #library "DEH"
 #include "zcommon.acs"
 
+#define DEH_OBITUARY 1
+#define DEH_STRAIN 2
+#define DEH_SCYTHE 3
+#define DEH_DEUS_VULT 4
+#define DEH_INVASION_UAC 5
+#define DEH_SCYTHEX 6
+#define DEH_UAC_ULTRA 7
+#define DEH_JENESIS 8
+#define DEH_LUNATIC 9
+#define DEH_SURVIVE_IN_HELL 10
+#define DEH_GOING_DOWN 11
+#define DEH_VALIANT 12
+#define DEH_PSX_DOOM 13
+#define DEH_ANCIENT_ALIENS 14
+#define DEH_GRIDLOCK 15
+#define DEH_EVITERNITY 16
+#define DEH_ANTARES 17
+#define DEH_REMNANT 18
+#define DEH_SUNDER 19
+
+Script "Dehacked_MonsterReset" (int mapset, int level)
+{
+	bool keep_spawn = TRUE;
+
+	switch(mapset)
+	{
+	default:
+		break;
+	case DEH_OBITUARY:
+		keep_spawn = GetCVar("deh_enable_obituary");
+		break;
+	case DEH_STRAIN:
+		keep_spawn = GetCVar("deh_enable_strain");
+		break;
+	case DEH_SCYTHE:
+		keep_spawn = GetCVar("deh_enable_scythe2");
+		break;
+	case DEH_DEUS_VULT:
+		keep_spawn = GetCVar("deh_enable_deusvult2");
+		break;
+	case DEH_INVASION_UAC:
+		keep_spawn = GetCVar("deh_enable_invasionuac");
+		break;
+	case DEH_OBITUARY:
+		keep_spawn = GetCVar("deh_enable_scythex");
+		break;
+	case DEH_UAC_ULTRA:
+		keep_spawn = GetCVar("deh_enable_uacultra");
+		break;
+	case DEH_JENESIS:
+		keep_spawn = GetCVar("deh_enable_jenesis");
+		break;
+	case DEH_LUNATIC:
+		keep_spawn = GetCVar("deh_enable_lunatic");
+		break;
+	case DEH_SURVIVE_IN_HELL:
+		keep_spawn = GetCVar("deh_enable_survive_in_hell");
+		break;
+	case DEH_GOING_DOWN:
+		keep_spawn = GetCVar("deh_enable_going_down");
+		break;
+	case DEH_VALIANT:
+		keep_spawn = GetCVar("deh_enable_valiant");
+		break;
+	case DEH_PSX_DOOM:
+		keep_spawn = GetCVar("deh_enable_psx_doom");
+		break;
+	case DEH_ANCIENT_ALIENS:
+		keep_spawn = GetCVar("deh_enable_ancient_aliens");
+		break;
+	case DEH_GRIDLOCK:
+		keep_spawn = GetCVar("deh_enable_gridlock");
+		break;
+	case DEH_EVITERNITY:
+		keep_spawn = GetCVar("deh_enable_eviternity");
+		break;
+	case DEH_ANTARES:
+		keep_spawn = GetCVar("deh_enable_antares");
+		break;
+	case DEH_REMNANT:
+		keep_spawn = GetCVar("deh_enable_remnant");
+		break;
+	case DEH_SUNDER:
+		keep_spawn = GetCVar("deh_enable_sunder");
+		break;
+	}
+	
+	if(GetCVar("deh_level_scaling") && GetLevelInfo(LEVELINFO_LEVELNUM) < level)
+	{
+		keep_spawn = FALSE;
+	}
+	
+	if(keep_spawn)
+	{
+		SetResultValue(0); //Keep the spawn
+	} else {
+		SetResultValue(1); //Reset
+	}
+}
+
 int BossSelection = 0;
 Script "Dehacked_BossSelect" OPEN
 {

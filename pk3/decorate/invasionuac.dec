@@ -8,11 +8,9 @@ XSnake chose to implement his monsters with DEHACKED instead, weirdly enough.
 As a result, Invasion UAC is a bit weird in being included, since it's not really
 a 'traditional' use of DEHACKED, relative to the others.
 
-As a result, I am not considering it 'mainline' accepted, however, due to the...
+As a result, I am not considering it 'mainline' accepted, however, due to the
 strange circumstances surrounding it, I'm including two of its custom monsters
-in the archive, while leaving the code that actually spawns them commented out.
-
-If you wish, free free to uncomment them.
+in the archive, while leaving their inclusion off by default.
 */
 
 ACTOR DarkCyberdemon : Cyberdemon
@@ -25,6 +23,14 @@ ACTOR DarkCyberdemon : Cyberdemon
   States
   {
   Spawn:
+    TNT1 A 0
+	TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_INVASION_UAC, 11), "Reset")
+    Goto Idle
+  Reset:
+	TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+	TNT1 A 0 A_SpawnItemEx("Cyberdemon", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+	Stop
+  Idle:
     DCYB AB 10 A_Look
     Loop
   See:
@@ -74,7 +80,15 @@ ACTOR WarlordOfHell : BaronOfHell
     Tag "Warlord Of Hell"
     States
     {
-    Spawn:
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_INVASION_UAC, 18), "Reset")
+		Goto Idle
+	Reset:
+		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		TNT1 A 0 A_SpawnItemEx("SpiderMastermind", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+		Stop
+	Idle:
         BOS6 AB 10 A_Look
         Loop
     See:

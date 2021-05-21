@@ -5,7 +5,15 @@ ACTOR ValiantImp : DoomImp
 	Tag "Valiant Imp"
 	States
 	{
-	Spawn:
+   Spawn:
+       TNT1 A 0
+       TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_VALIANT, 1), "Reset")
+       Goto Idle
+   Reset:
+       TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+       TNT1 A 0 A_SpawnItemEx("DoomImp", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+       Stop
+   Idle:
 		TRO2 AB 10 A_Look
 		Loop
 	  See:
@@ -76,6 +84,14 @@ ACTOR ValiantDemon : Demon
   States
   {
   Spawn:
+    TNT1 A 0
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_VALIANT, 1), "Reset")
+    Goto Idle
+  Reset:
+    TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+    TNT1 A 0 A_SpawnItemEx("DEHDemon", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+    Stop
+  Idle:
     VSRG AB 10 A_Look
     Loop
   See:
@@ -116,6 +132,20 @@ ACTOR ValiantSpectre : ValiantDemon
   ActiveSound "spectre/active"
   HitObituary "%o was eaten by a valiant spectre."
   Tag "Valiant Spectre"
+  States
+  {
+  Spawn:
+    TNT1 A 0
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_VALIANT, 1), "Reset")
+    Goto Idle
+  Reset:
+    TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+    TNT1 A 0 A_SpawnItemEx("DEHSpectre", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+    Stop
+  Idle:
+    VSRG AB 10 A_Look
+    Loop
+  }
 }
 
 actor SuicideBomber
@@ -137,6 +167,14 @@ actor SuicideBomber
   states
   {
   Spawn:
+    TNT1 A 0
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_VALIANT, 14), "Reset")
+    Goto Idle
+  Reset:
+    TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+    TNT1 A 0 A_SpawnItemEx("DEHDemon", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+    Stop
+  Idle:
     BMBE AB 10 A_Look
     loop
   See:
@@ -200,7 +238,15 @@ ACTOR ValiantPyroDemon : HellKnight
   Tag "Pyro Knight"
   States
   {
-    Spawn:
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_VALIANT, 9), "Reset")
+		Goto Idle
+	Reset:
+		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		TNT1 A 0 A_SpawnItemEx("HellKnight", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+		Stop
+	Idle:
 		PYRO AB 10 Bright A_Look
 		Loop
 	See:
@@ -258,6 +304,14 @@ ACTOR ValiantArachnotron : Arachnotron
 	States
 	{
 	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_VALIANT, 4), "Reset")
+		Goto Idle
+	Reset:
+		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		TNT1 A 0 A_SpawnItemEx("DEHArachnotron", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+		Stop
+	Idle:
 		VSPI AB 10 A_Look
 		Loop
 	See:
@@ -334,6 +388,14 @@ ACTOR ValiantArachnorb
 	States
 	{
 	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_VALIANT, 4), "Reset")
+		Goto Idle
+	Reset:
+		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		TNT1 A 0 A_SpawnItemEx("LostSoul", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+		Stop
+	Idle:
 		VACB A 10 A_Look
 		Goto Spawn
 	See:
@@ -379,6 +441,14 @@ Actor ValiantSuperMancubus : Fatso
    States
    {
    Spawn:
+      TNT1 A 0
+	  TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_VALIANT, 19), "Reset")
+      Goto Idle
+   Reset:
+      TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+      TNT1 A 0 A_SpawnItemEx("DEHFatso", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+      Stop
+   Idle:
       DAED AB 15 A_Look
       Loop
    See:
@@ -434,7 +504,15 @@ DeathSound "monster/brudth"
 MeleeSound "baron/melee"
 States 
    { 
-   Spawn: 
+   Spawn:
+       TNT1 A 0
+	   TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_VALIANT, 25), "Reset")
+       Goto Idle
+   Reset:
+       TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+       TNT1 A 0 A_SpawnItemEx("DEHFatso", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+       Stop
+   Idle:
        BRUS AB 10 A_Look 
        Loop 
    See:
@@ -494,8 +572,9 @@ ACTOR ValiantSuperVile : Archvile
 	States
 	{
 	Spawn:
-		DIA2 AB 10 A_Look
-		DIA2 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossTargetCount") > 0, "Summoner")
+		TNT1 A 0
+	    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_VALIANT, 30), "Reset")
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossTargetCount") > 0, "Summoner")
 	Idle:
 		DIA2 AB 10 A_Look
 		Loop

@@ -7,8 +7,9 @@ ACTOR AngryMastermind : SpiderMastermind
   States
   {
   Spawn:
-    RSPD AB 10 Bright A_Look
+    TNT1 A 0
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossCheck") == 4, "Reset")
+	TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_GOING_DOWN, 30), "Reset")
     Goto Idle
   Idle:
     RSPD AB 10 Bright A_Look

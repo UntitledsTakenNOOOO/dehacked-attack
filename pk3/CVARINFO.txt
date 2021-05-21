@@ -1,3 +1,25 @@
 server int deh_finalboss = 1;
 server int deh_finalbossmusic = 1;
 server int deh_finalbosspreview = 1;
+
+server bool deh_level_scaling = false;
+
+server bool deh_enable_obituary = false;
+server bool deh_enable_strain = true;
+server bool deh_enable_scythe2 = true;
+server bool deh_enable_deusvult2 = true;
+server bool deh_enable_invasionuac = false;
+server bool deh_enable_scythex = true;
+server bool deh_enable_uacultra = true;
+server bool deh_enable_jenesis = true;
+server bool deh_enable_lunatic = true;
+server bool deh_enable_survive_in_hell = true;
+server bool deh_enable_going_down = true;
+server bool deh_enable_valiant = true;
+server bool deh_enable_psx_doom = true;
+server bool deh_enable_ancient_aliens = true;
+server bool deh_enable_gridlock = true;
+server bool deh_enable_eviternity = true;
+server bool deh_enable_antares = true;
+server bool deh_enable_remnant = true;
+server bool deh_enable_sunder = true;

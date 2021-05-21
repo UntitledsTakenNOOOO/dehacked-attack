@@ -6,7 +6,15 @@ ACTOR Belphegor : BaronOfHell
    Tag "Belphegor"
    States
    {
-   Spawn:
+  Spawn:
+    TNT1 A 0
+	TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SURVIVE_IN_HELL, 2), "Reset")
+    Goto Idle
+  Reset:
+    TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+	TNT1 A 0 A_SpawnItemEx("BaronOfHell", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+	Stop
+   Idle:
       BOS3 AB 10 A_Look
       Loop
    See:
@@ -60,6 +68,14 @@ HitObituary "%o was chomped on by a Poison Soul."
 States
    {
    Spawn:
+       TNT1 A 0
+       TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SURVIVE_IN_HELL, 11), "Reset")
+       Goto Idle
+   Reset:
+       TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+       TNT1 A 0 A_SpawnItemEx("ShadowElemental", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+       Stop
+   Idle:
        SKLL A 10 A_Look
        Loop
    See:
@@ -107,8 +123,8 @@ ACTOR HellSmith
   {
   Spawn:
     TNT1 A 0
-    AVTR A 10 A_Look
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossCheck") == 3, "Reset")
+	TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SURVIVE_IN_HELL, 30), "Reset")
     Goto Idle
   Idle:
     AVTR A 10 A_Look
@@ -156,7 +172,6 @@ MeleeDamage 10
 Obituary "%o was blown away by a Cybruiser."
 HitObituary "%o was smashed by a Cybruiser."
 Tag "Cybruiser"
-+BOSS
 +FLOORCLIP
 +NORADIUSDMG
 SeeSound "monster/brusit" 
@@ -165,7 +180,15 @@ DeathSound "monster/brudth"
 MeleeSound "baron/melee"
 States 
    { 
-   Spawn: 
+   Spawn:
+       TNT1 A 0
+       TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SURVIVE_IN_HELL, 23), "Reset")
+       Goto Idle
+   Reset:
+       TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+       TNT1 A 0 A_SpawnItemEx("Afrit", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+       Stop
+   Idle:
        BRUS AB 10 A_Look 
        Loop 
    See:

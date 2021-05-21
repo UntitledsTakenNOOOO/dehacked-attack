@@ -12,7 +12,8 @@ ACTOR GridlockCardinal : Cyberdemon
   States
   {
   Spawn:
-    GCRD AB 3 A_Look
+    TNT1 A 0
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_GRIDLOCK, 30), "Reset")
 	GCRD A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossTargetCount") > 0, "Phase2")
   Idle:
     GCRD AB 3 A_Look

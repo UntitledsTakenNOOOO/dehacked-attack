@@ -10,6 +10,14 @@ Actor ShadowImp : DoomImp
   States
   {
   Spawn:
+    TNT1 A 0
+	TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SCYTHEX, 10), "Reset")
+    Goto Idle
+  Reset:
+	TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+	TNT1 A 0 A_SpawnItemEx("DoomImp", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+	Stop
+  Idle:
     SHTR A 3 A_Look
     Loop
   See:
@@ -126,6 +134,14 @@ ACTOR ShadowElemental : PainElemental
   States
   {
   Spawn:
+    TNT1 A 0
+	TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SCYTHEX, 10), "Reset")
+    Goto Idle
+  Reset:
+	TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+	TNT1 A 0 A_SpawnItemEx("DEHPainElemental", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+	Stop
+  Idle:
     SHPA A 10 A_Look
     Loop
   See:

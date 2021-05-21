@@ -1,5 +1,7 @@
 A doom monster randomizer centered around recreating DEHACKED monsters. No, I don't know why either.
 
+You can use the options in the menu to control which WADs' monster sets are enabled or disabled.
+
 CURRENTLY INCLUDED MONSTERS:
 
 STRAIN (1997):
@@ -53,6 +55,7 @@ VALIANT (2015):
 	* Change: Arachnorbs spawned in the lost soul postion have smaller radius (24 -> 16) so they fit. Other arachnorbs are still full size.
 * Pyro Knight: These guys can unless powerful volleys of fireballs; be careful! Thankfully they only have 500 HP. They spawn with Hell Knights.
 * Cybruiser: Although they only possess 500 HP, these guys can shoot rockets, and are even immune to splash damage! They spawn with Hell Knights.
+	* Change: They no longer have a wake-up sound that is audible over the entire map.
 * Super Mancubus: Unleashing a mancubus' entire set of six fireballs in a single volley, these guys are tough, especially with their 1000 HP. Spawns with mancubi.
 * Valiant Arachnotron: Identical to the normal Arachnotron except for color scheme until you kill it, where it has a 3/4 chance to spawn an arachnorb.
 	* Change: In the original valiant, it was 1/2 instead of 3/4. The chance was increased because they're rarer outside of valiant.
@@ -85,6 +88,7 @@ STRUGGLE: ANTARESIAN LEGACY (2018):
 ANTARESIAN RELIQUARY (2020):
 * Former Ranger: Possessing an energy blaster instead of a rifle, these guys are a bit scarier than the ordinary zombie that they spawn with.
 * Plasma Elite: A variant of the former captain up above; these guys shoot blue energy bolts in volleys of three instead, and spawn with the chaingunner.
+	* Change: Uses a blue color scheme more remniscent of Struggle, to make it visually distinct from the Former Captain.
 * Reliquary Arachnotron: A variant of the arachnotron that uses the energy bolts used by the former ranger and plasma elite.
 
 BOSSES:
@@ -104,22 +108,22 @@ BOSSES:
 	* Change: Health reduced from 7500 to 3750, because it isn't the final boss of the game anymore.
 * Remnant Master (Remnant, 2019): This thing looks like a flying mancubus, but it's far nastier. It can fire revenant missiles and uses an archvile attack if flinched.
 * Gridlock Cardinal [Phase II]: Same as the Phase I, except if flinched, he'll spawn monsters icon-of-sin style. Replaces the Gridlock Cardinal if Spawn Targets are present.
-	* Change: Reduced health from 6000 down to 4000.
+	* Change: Reduced health from 6000 down to 4800.
 * Leviathan [Summoner Variant]: He CAN be flinched, but doing so will result in him spawning monsters icon-of-sin style. Replaces either Leviathan if Spawn Targets are present.
 	* Change: Reduced health from 10000 down to 4200.
 * Super Archvile [Summoner Variant]: Summons a swarm of arachnorbs on flinch. Replaces the Super Archvile if Spawn Targets are present.
 
 ICON OF SIN SPECIAL:
-All of these are only spawned by the Icon of Sin, and do not spawn naturally:
-* Afrit (Scythe II, Deus Vult II, Survive in Hell, Resurgence): Its volley of fireballs is very deadly; if you get too close, you're toast. Has 2500 HP and flies.
-* Haymaker (UAC Ultra, 2012): A minotaur-like creature with 2500 health that has a cyberdemon's head. It shoots mancubus fireballs from its hammer.
-* Cybruiser (Survive in Hell, 2012): This variant has 1300 health, and fires rockets very quickly in sets of two.
-* Hive Mother (Sunder, 2019): This insectoid demon can both fire mancubus fireballs very quickly AND retaliate with sets of three rockets.
+All of these are only spawned by the Icon of Sin (or as part of another final boss fight that utilizes the monster spawner), and do not spawn naturally:
+* Afrit (Scythe II, Deus Vult II, Survive in Hell, Resurgence): Its volley of fireballs is deadly; You're toast if you get too close. It has 2500 HP and flies.
+* Haymaker (UAC Ultra, 2012): A minotaur-like creature that also has 2500 health that has a cyberdemon's head. It shoots mancubus fireballs from its hammer.
+* Cybruiser (Survive in Hell, 2012): This variant of the cybruiser has 1300 health, and attacks by firing rockets very quickly in sets of two.
+* Hive Mother (Sunder, 2019): This insectoid demon can both fire mancubus fireballs very quickly AND retaliates with a set of three rockets.
 
 FINAL BOSSES (enabled by CVar and then selected in place of Icon of Sin):
 * Hell Smith (Survive in Hell): More aggressive than his ordinary counterpart. With his full 20000 health, he's is hard to take down, and spawns AFTER a large army of other monsters.
 * Spider Mastermind (Going Down): A totally ordinary spider mastermind with nothing weird about it (ha, yeah right). Spawns with some zombies, imps, demons and revenants.
-* Super Archvile (Valiant): Spawns with a swarm of arachnorbs. Has 7500 health, and spawns revenants and pyro-knights if fliched, adding deadlier monsters if flinched more than four times.
+* Super Archvile [Final Boss Form] (Valiant): Spawns with a swarm of arachnorbs. Has 7500 health, and summons monsters when flinched, which get deadlier if flinched more than four times.
 * Gridlock Cardinal [Final Boss Form] (Gridlock 64): This monstrosity has both phases and moves faster, and in phase two it even now has the ability to teleport. Good luck.
 * Archangelus (Eviternity): Descending from the realm opposite Hell, this guy is insane. One might wish for good luck; but truth be told, it won't save you.
 * The Inquisitor (Struggle: Antaresian Legacy): This guy will unleash an absolute firestorm whenever you're in his line of sight, and spawns with a swarm of Afriests.
