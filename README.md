@@ -114,6 +114,7 @@ All of these are only spawned by the Icon of Sin, and do not spawn naturally:
 * Afrit (Scythe II, Deus Vult II, Survive in Hell, Resurgence): Its volley of fireballs is very deadly; if you get too close, you're toast. Has 2500 HP and flies.
 * Haymaker (UAC Ultra, 2012): A minotaur-like creature with 2500 health that has a cyberdemon's head. It shoots mancubus fireballs from its hammer.
 * Cybruiser (Survive in Hell, 2012): This variant has 1300 health, and fires rockets very quickly in sets of two.
+* Hive Mother (Sunder, 2019): This insectoid demon can both fire mancubus fireballs very quickly AND retaliate with sets of three rockets.
 
 FINAL BOSSES (enabled by CVar and then selected in place of Icon of Sin):
 * Hell Smith (Survive in Hell): More aggressive than his ordinary counterpart. With his full 20000 health, he's is hard to take down, and spawns AFTER a large army of other monsters.

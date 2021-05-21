@@ -254,6 +254,7 @@ ACTOR ValiantPyroDemon : HellKnight
 
 ACTOR ValiantArachnotron : Arachnotron
 {
+	Tag "Valiant Arachnotron"
 	States
 	{
 	Spawn:

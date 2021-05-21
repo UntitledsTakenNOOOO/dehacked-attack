@@ -11,8 +11,9 @@
 #include "decorate/ancientaliens.dec"
 #include "decorate/gridlock.dec"
 #include "decorate/eviternity.dec"
-#include "decorate/antaresian.dec"
+#include "decorate/antares.dec"
 #include "decorate/remnant.dec"
+#include "decorate/sunder.dec"
 #include "decorate/obituary.dec"
 #include "decorate/invasionuac.dec"
 
@@ -83,7 +84,8 @@ ACTOR DEHRevenant : Revenant {}
 
 ACTOR DehackedCacoSpawner : RandomSpawner replaces Cacodemon
 {
-	DropItem "DEHCacodemon", 256, 70
+	DropItem "DEHCacodemon", 256, 60
+	DropItem "SpectralCaco", 256, 10
 	DropItem "AstralCaco", 256, 10
 	DropItem "Holobot", 256, 10
 	DropItem "AlienGuardian", 256, 5
@@ -258,9 +260,10 @@ ACTOR DEHBossBrain : BossBrain replaces BossBrain
 }
 ACTOR DEHHaymakerSpawnShot : SpawnShot
 {
-  DropItem "Haymaker", 256, 50
+  DropItem "Haymaker", 256, 40
   DropItem "Afrit", 256, 30
   DropItem "SIHCybruiser", 256, 20
+  DropItem "HiveMother", 256, 10
 }
 
 ACTOR DEHBossEye : BossEye
@@ -272,7 +275,7 @@ ACTOR DEHBossEye : BossEye
   DropItem "Demon"			255  9
   DropItem "Spectre"		255  6
   DropItem "LostSoul"		255 10
-  DropItem "Cacodemon"		255  6
+  DropItem "Cacodemon"		255  5
   DropItem "PainElemental"	255  2
   DropItem "Revenant"		255  6
   DropItem "HellKnight"		255  6
@@ -283,6 +286,7 @@ ACTOR DEHBossEye : BossEye
   DropItem "Haymaker"		255  1
   DropItem "Afrit"			255  1
   DropItem "SIHCybruiser"	255  1
+  DropItem "HiveMother"		255  1
 }
 ACTOR DEHBlankShot : SpawnShot //Dummy so that custom bosses don't break on Skill 1/2
 {

@@ -1,0 +1,503 @@
+Actor AntaresianPlasma : ArachnotronPlasma
+{
+  Damage 4
+  Speed 28
+  SeeSound "antaresia/plasma"
+  States
+  {
+  Spawn:
+    RPLS A 5 Bright
+    Loop
+  Death:
+    RPBX ABC 5 Bright
+    Stop
+  }
+}
+
+Actor FormerRanger
+{
+	Health 25
+	Speed 8
+	Radius 20
+	Height 56
+	ReactionTime 8
+	PainChance 200
+	Mass 100
+	Monster
+	+FLOORCLIP
+	SeeSound "grunt/sight"
+	PainSound "grunt/pain"
+	DeathSound "grunt/death"
+	ActiveSound "grunt/active"
+	Obituary "%o was killed by a former ranger."
+	Tag "Former Ranger"
+	Dropitem "Cell" //Changed for consistency
+	States
+	{
+	Spawn:
+		APOS AABB 10 A_Look
+		goto Spawn
+	See:
+		APOS AABBCCDD 3 A_Chase
+		goto See
+	Pain:
+		APOS G 3 
+		APOS G 3 A_Pain
+		goto See
+	Missile:
+		APOS E 10 A_FaceTarget
+		APOS F 8 Bright A_CustomMissile("AntaresianPlasma",32,0,0)
+		APOS E 8
+		goto See
+	Death:
+		APOS H 5 
+		APOS I 5 A_Scream
+		APOS J 5 A_Fall
+		APOS K 5 
+		APOS L -1 
+		stop
+	XDeath:
+		APOS M 5 
+		APOS N 5 A_XScream
+		APOS O 5 A_Fall
+		APOS PQRST 5 
+		APOS U -1
+		stop
+	Raise:
+		APOS KJIH 5 
+		goto See
+	}
+}
+
+Actor PlasmaElite : FormerCaptain
+{
+	Health 65
+	PainChance 100
+	Obituary "%o was destroyed by a plasma elite."
+	Tag "Plasma Elite" //Name changed for consistency reasons
+	Translation "116:123=192:207", "124:127=240:247"
+	States //Uses Struggle colors to differentiate from Former Captain
+	{
+	Missile:
+		EVWV E 16 A_FaceTarget
+		EVWV FEF 4 Bright A_CustomMissile("AntaresianPlasma",32,0,0)
+		EVWV E 8 A_FaceTarget
+		goto See
+	}
+}
+
+Actor Antaresia : BaronOfHell
+{
+	Health 575 //575 in DECORATE, 650 in DEHACKED
+	Speed 16
+	PainChance 50 //50 in DECORATE, 30 in DEHACKED
+	SeeSound "antaresia/sight"
+	PainSound "antaresia/pain"
+	DeathSound "antaresia/death"
+	ActiveSound "antaresia/active"
+	Obituary "An Antaresia took %o's soul again."
+	HitObituary "%o was perforated by an Antaresia."
+	Tag "Antaresia"
+	States
+	{
+	Spawn:
+		ANTR A 10 A_Look
+		goto Spawn
+	See:
+		ANTR ABCD 3 A_Chase
+		goto See
+	Pain:
+		ANTR E 2 
+		ANTR E 2 A_Pain
+		goto See
+	Melee:
+	Missile:
+		ANTR E 12 Bright A_FaceTarget
+		ANTR FFF 4 Bright A_HeadAttack
+		ANTR F 8 Bright A_FaceTarget
+		ANTR FF 0 Bright A_CustomMissile("AntaresianPlasma",32,0,0)
+		ANTR F 6 Bright A_CustomMissile("AntaresianPlasma",32,0,0)
+		goto See
+	Death:
+		ANTR G 5 
+		ANTR H 5 A_Scream
+		ANTR I 5
+		ANTR J 5 A_Fall
+		ANTR KL 5
+		ANTR M -1 
+		stop
+	Raise:
+		ANTR MLKJIHG 2 
+		goto See
+	}
+}
+
+Actor AntaresiaElite : Antaresia
+{
+	Health 800
+	PainChance 10
+	Obituary "An Antaresia elite took %o's soul again."
+	HitObituary "%o was perforated by an Antaresia elite."
+	Tag "Antaresia Elite"
+	Translation "16:47=192:207", "48:79=192:207", "80:111=192:207", "168:191=192:207", "3:3=203:203"
+	+NOINFIGHTING //As I found out, they can't infight in the original either.
+	States
+	{
+	See:
+		ANTR ABCD 2 A_Chase
+		goto See
+	Melee:
+	Missile:
+		ANTR E 12 Bright A_FaceTarget
+		ANTR FFFF 1 Bright A_CustomMissile("AntaresianPlasma",32,0,0)
+		goto See
+	}
+}
+
+ACTOR Afriest
+{
+  Health 500
+  Radius 20
+  Height 56
+  Speed 12
+  PainChance 48
+  Monster
+  +FLOAT
+  +NOGRAVITY
+  +NOBLOOD
+  SeeSound "afriest/sight"
+  PainSound "afriest/pain"
+  DeathSound "afirest/death"
+  ActiveSound "antaresia/active"
+  Obituary "%o succumbed to an Afriest's dark power."
+  Tag "Afriest"
+  States
+  {
+  Spawn:
+    ABIS A 10 A_Look
+    Loop
+  See:
+    ABIS AB 3 A_Chase //Change: 2 -> 3 tics to be more in line with Cacodemon
+    Loop
+  Pain:
+    ABIS C 6
+    ABIS C 6 A_Pain
+    Goto See
+  Missile:
+    ABIS DE 7 A_FaceTarget //Change: Extra attack frame because we have one
+    ABIS F 0 A_HeadAttack
+    ABIS F 0 A_BruisAttack
+    ABIS F 5 Bright A_CustomMissile("AntaresianPlasma",32,0,0)
+    Goto See
+  Death:
+    ABIS G 6
+    ABIS H 6 Bright A_Scream
+    ABIS I 5 Bright A_NoBlocking
+    ABIS J 5 Bright
+    ABIS K 5 Bright
+    ABIS LM 4 Bright
+    ABIS N 4
+    ABIS O 4
+    ABIS P -1
+    Stop
+  }
+}
+
+ACTOR SpectralCaco : Cacodemon
+{
+  +SHADOW
+  RenderStyle OptFuzzy
+  Alpha 0.5
+  Tag "Spectral Cacodemon"
+  Obituary "%o was smitten by a spectral cacodemon."
+  HitObituary "%o got too close to a spectral cacodemon."
+  Health 240
+  PainChance 48
+  Speed 12
+}
+
+ACTOR AntaresianArachnotron : Arachnotron
+{
+  Radius 56
+  Speed 14
+  AttackSound "chainguy/attack"
+  Tag "Antaresian Arachnotron"
+  States
+  {
+  Spawn:
+    ASPI AB 10 A_Look
+    Loop
+  See:
+    ASPI A 20
+    ASPI A 3 A_BabyMetal
+    ASPI ABBCC 3 A_Chase
+    ASPI D 3 A_BabyMetal
+    ASPI DEEFF 3 A_Chase
+    Goto See+1
+  Missile:
+    ASPI A 20 Bright A_FaceTarget
+    ASPI G 2 Bright A_CPosAttack
+    ASPI H 2 Bright A_FaceTarget
+    ASPI H 0 Bright A_CPosRefire
+    Goto Missile+1
+  Pain:
+    ASPI I 3
+    ASPI I 3 A_Pain
+    Goto See+1
+  Death:
+    ASPI J 20 A_Scream
+    ASPI K 7 A_NoBlocking
+    ASPI L 7
+	BSPI MNO 7
+    BSPI P -1 A_BossDeath
+    Stop
+  Raise:
+    BSPI PNOM 5
+    ASPI LKJ 5
+    Goto See+1
+  }
+}
+
+ACTOR ReliquaryArachnotron : Arachnotron
+{
+	States
+	{
+	Missile:
+		BSPI A 20 Bright A_FaceTarget
+		BSPI G 3 Bright A_CustomMissile("AntaresianPlasma")
+		BSPI H 3 Bright
+		BSPI H 1 Bright A_SpidRefire
+		Goto Missile+1
+	}
+}
+
+ACTOR IndomitableMastermind : SpiderMastermind
+{
+  Health 3300
+  PainChance 10
+  Speed 8
+  Obituary "%o stood in awe of the Indomitable Mastermind."
+  ReactionTime 4
+  States
+  {
+  Spawn:
+    ANSP AB 10 A_Look
+    Loop
+  See:
+    ANSP A 2 A_Metal
+    ANSP ABB 2 A_Chase
+    ANSP C 2 A_Metal
+    ANSP CDD 2 A_Chase
+    ANSP E 2 A_Metal
+    ANSP EFF 2 A_Chase
+    Loop
+  Missile:
+    ANSP A 20 Bright A_FaceTarget
+    ANSP G 0 Bright A_CustomMissile("AntaresianPlasma",32,0,0)
+    ANSP G 4 Bright A_SPosAttackUseAtkSound
+    ANSP H 0 Bright A_CustomMissile("AntaresianPlasma",32,0,0)
+    ANSP H 4 Bright A_SPosAttackUseAtkSound
+    ANSP H 1 Bright A_SpidRefire
+    Goto Missile+1
+  Pain:
+    ANSP I 3
+    ANSP I 3 A_Pain
+    Goto See
+  Death:
+    ANSP J 20 A_Scream
+    ANSP K 10 A_NoBlocking
+    ANSP L 10
+	SPID MNOPQR 10
+    SPID S 30
+    SPID S -1 A_BossDeath
+    Stop
+  }
+}
+
+ACTOR Leviathan
+{
+  Health 4200 //Change: 10000 --> 4200 health for balance reasons
+  Radius 40
+  Height 110
+  Mass 1000
+  Speed 24
+  PainChance 0
+  Monster
+  MinMissileChance 160
+  +BOSS //Added
+  +FLOORCLIP
+  +DONTMORPH
+  +BOSSDEATH
+  Obituary "%o was incinerated by a Leviathan."
+  SeeSound "leviathan/sight"
+  PainSound "afriest/pain"
+  DeathSound "leviathan/death"
+  ActiveSound "antaresia/active"
+  Tag "Leviathan"
+  States
+  {
+  Spawn:
+    ALEV A 10 A_Look
+    ALEV A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossTargetCount") > 0, "Summoner")
+    Goto Idle
+  Idle:
+    ALEV A 10 A_Look
+    Loop
+  Summoner:
+    TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+    ALEV A 0 A_SpawnItemEx("SummonerLeviathan", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+    Stop
+  See:
+    ALEV AABBCCDD 2 A_Chase
+    Loop
+  Pain:
+    ALEV G 2
+    ALEV G 8 A_Pain
+    Goto See
+  Missile:
+    ALEV F 10 Bright A_FaceTarget
+    ALEV E 0 Bright A_FatAttack1
+    ALEV E 0 Bright A_FatAttack2
+    ALEV E 6 Bright A_FatAttack3
+    Goto See
+  Death:
+    ALEV H 5 Bright
+    ALEV I 5 Bright A_FaceTarget
+    ALEV J 5 Bright A_Scream
+    ALEV KLMNOPQRST 5 Bright
+    ALEV U 5 Bright A_NoBlocking
+    ALEV VWXY 5 Bright
+    ALEV Z -1 Bright
+    Stop
+  }
+}
+
+ACTOR SpectralLeviathan : Leviathan
+{
+  +SHADOW
+  RenderStyle OptFuzzy
+  Alpha 0.5
+  Health 2800
+  Speed 16 //Yeah, they actually move slower.
+  Obituary "%o was incinerated by a Spectral Leviathan."
+  Tag "Spectral Leviathan"
+}
+
+ACTOR SummonerLeviathan : Leviathan
+{
+  PainChance 16
+  Tag "Summoner Leviathan"
+  States
+  {
+  Spawn:
+    ALEV A 10 A_Look
+	Goto Idle
+  Idle:
+    ALEV A 10 A_Look
+	Loop
+  Pain:
+    ALEV G 2
+    ALEV G 8 A_Pain
+    ALEV F 8 Bright A_FaceTarget
+    ALEV E 0 Bright A_BrainSpit("AntaresianSpawnShot")
+    ALEV E 4 Bright A_BrainSpit("AntaresianSpawnShot")
+    Goto See
+  }
+}
+
+ACTOR AntaresianSpawnShot : SpawnShot
+{
+  DropItem "DEHDoomImp" 	255 50
+  DropItem "FormerRanger"	255 40
+  DropItem "PlasmaElite"	255 30
+  DropItem "DEHPainElemental"	255 10
+  DropItem "DEHCacodemon"		255 25
+  DropItem "AntaresianArachnotron"	255 10
+  DropItem "ReliquaryArachnotron"	255 20
+  DropItem "DEHFatso"		255 30
+  DropItem "Antaresia"		255 24
+  DropItem "Afriest"		255 15
+  DropItem "AntaresiaElite"	255 2
+  Speed 20
+  SeeSound "leviathan/spit"
+  DeathSound "brain/cubeboom"
+  States
+  {
+  Spawn:
+    ABSF A 3 Bright A_SpawnFly("AntaresianSpawnFire")
+	Loop
+  }
+}
+ACTOR AntaresianSpawnFire : SpawnFire
+{
+  States
+  {
+  Spawn:
+    ABSF BCD 4 Bright A_Fire
+	Stop
+  }
+}
+
+ACTOR TheInquisitor
+{
+  Health 22400
+  Radius 64
+  Height 96
+  Mass 100000
+  Speed 5 //Change: originally speed 25, which only works in a gigantic arena.
+  PainChance 4
+  Monster
+  +BOSS
+  +FLOAT
+  +NOGRAVITY
+  +MISSILEMORE
+  +MISSILEEVENMORE
+  MinMissileChance 160
+  Obituary "%o was hopeless against the inquisitor."
+  SeeSound "inquisitor/sight"
+  PainSound "inquisitor/pain"
+  DeathSound "inquisitor/death"
+  ActiveSound "antaresia/active"
+  States
+  {
+  Spawn:
+    AINQ A 10 Bright A_Look
+    Loop
+  See:
+    AINQ A 1 Bright A_Chase
+    Loop
+/*
+	Change:
+	So, the original version of the fight unleashes an absurd torrent of
+	A_FatAttack1 and A_FatAttack2 calls. The thing is, it ALSO forces pickup of
+	everyone's favourite powerup, the Partial Invisibility, which makes the fire
+	stream look a lot more chaotic and good-looking.
+
+	The thing is, forcing a partial invisibility pickup is terrible, so instead
+	I'm forcing the angle deviation into the attack itself via A_CustomMissile.
+*/
+  Missile:
+    AINQ B 1 Bright A_Chase //Change: There was originally two fireballs per tic
+	AINQ B 0 Bright A_CustomMissile("FatShot", 32, 0, 0 + frandom(-22.5, 22.5))
+    AINQ B 1 Bright A_Wander //But that was just way too much in smaller arenas
+	AINQ B 0 Bright A_CustomMissile("FatShot", 32, 0, 11.25 + frandom(-22.5, 22.5))
+    AINQ B 1 Bright A_Wander //Change: 75% of A_Chase calls changed to A_Wander
+	AINQ B 0 Bright A_CustomMissile("FatShot", 32, 0, 0 + frandom(-22.5, 22.5))
+    AINQ B 1 Bright A_Wander //This should make it possible to fight in smaller arenas.
+	AINQ B 0 Bright A_CustomMissile("FatShot", 32, 0, -11.25 + frandom(-22.5, 22.5))
+	AINQ B 0 Bright A_SpidRefire
+    Loop
+  Pain:
+    AINQ A 20 Bright A_PlaySound("inquisitory/pain", 0, 1.0, 0, ATTN_NONE)
+    Goto See
+  Death:
+    AINQ C 7
+    AINQ D 7 A_Scream
+    AINQ EF 7
+    AINQ G 7 A_NoBlocking
+    AINQ H 7
+    AINQ I 85
+	AINQ I -1 A_BrainDie
+    Stop
+  }
+}

@@ -99,3 +99,8 @@ master/death		RMMASDTH
 
 shadow/sight		dsgssit
 shadow/death		dsgsdth
+
+hivemother/sight	HIVEMSIT
+hivemother/death	HIVEMDTH
+hivemother/pain		HIVEMPAI
+hivemother/active	HIVEMACT

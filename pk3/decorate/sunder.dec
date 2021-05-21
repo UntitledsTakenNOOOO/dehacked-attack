@@ -1,0 +1,63 @@
+ACTOR HiveMother
+{
+  Health 2000
+  Radius 60
+  Height 110
+  Mass 5000
+  Speed 18
+  PainChance 10
+  Monster
+  +FLOORCLIP
+  +DONTMORPH
+  +BOSSDEATH
+  SeeSound "hivemother/sight"
+  PainSound "hivemother/pain"
+  DeathSound "hivemother/death"
+  ActiveSound "hivemother/active"
+  Obituary "%o was shredded by a hive mother."
+  States
+  {
+  Spawn:
+    HVMM AB 10 A_Look
+    Loop
+  See:
+    HVMM ABCDEF 3 A_Chase
+    Loop
+  See2:
+    HVMM AABBCCDDEEFF 1 A_Chase
+    Loop
+  Missile:
+    HVMM GH 4 A_FaceTarget
+    HVMM H 1 Bright A_FatAttack3
+    HVMM I 1 Bright A_FatAttack2
+    HVMM H 1 Bright A_FatAttack1
+    HVMM I 1 Bright A_FatAttack3
+    HVMM H 1 Bright A_FatAttack2
+    HVMM I 1 Bright A_FatAttack1
+    HVMM H 3 Bright A_FatAttack3
+	HVMM KLM 4 A_FaceTarget
+    Goto See
+  Pain:
+	HVMM Y 3
+	HVMM Y 3 A_Pain
+	HVMM Z 6
+    HVMM NOPQ 3 A_FaceTarget
+    HVMM R 3 Bright A_CyberAttack
+    HVMM S 3 Bright A_FaceTarget
+    HVMM R 3 Bright A_CyberAttack
+    HVMM S 3 Bright A_FaceTarget
+    HVMM R 3 Bright A_CyberAttack
+    HVMM S 3 Bright A_FaceTarget
+    HVMM TUVWX 3 A_FaceTarget
+    Goto See
+  Death:
+    HVM2 A 10
+    HVM2 B 10 A_Scream
+    HVM2 C 10
+    HVM2 D 10 A_NoBlocking
+    HVM2 EF 10
+    HVM2 GHIJ 5
+    HVM2 K -1 A_BossDeath
+    Stop
+  }
+}
