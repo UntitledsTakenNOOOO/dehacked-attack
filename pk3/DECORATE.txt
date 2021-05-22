@@ -645,6 +645,24 @@ ACTOR DEHAngryMastermindSpawner
   ZombieSpawnLoop:
 	TNT1 A 0 A_BrainSpit("GDSpawnShot")
 	TNT1 A 0 A_SetUserVar("user_count", user_count - 1)
+	TNT1 A 0 A_JumpIf(user_count <= 0, "ZombieSpawn2")
+	Loop
+  ZombieSpawn2:
+	TNT1 A 175 A_SetUserVar("user_count", ACS_NamedExecuteWithResult("Dehacked_BossTargetCount"))
+	TNT1 A 0 A_PlaySound("brain/spit", 0, 1.0, 0, ATTN_NONE)
+	Goto DemonSpawnLoop
+  ZombieSpawnLoop2:
+	TNT1 A 0 A_BrainSpit("GDSpawnShot")
+	TNT1 A 0 A_SetUserVar("user_count", user_count - 1)
+	TNT1 A 0 A_JumpIf(user_count <= 0, "ZombieSpawn3")
+	Loop
+  ZombieSpawn3:
+	TNT1 A 175 A_SetUserVar("user_count", ACS_NamedExecuteWithResult("Dehacked_BossTargetCount"))
+	TNT1 A 0 A_PlaySound("brain/spit", 0, 1.0, 0, ATTN_NONE)
+	Goto DemonSpawnLoop
+  ZombieSpawnLoop3:
+	TNT1 A 0 A_BrainSpit("GDSpawnShot")
+	TNT1 A 0 A_SetUserVar("user_count", user_count - 1)
 	TNT1 A 0 A_JumpIf(user_count <= 0, "DemonSpawn")
 	Loop
   DemonSpawn:
@@ -815,15 +833,17 @@ ACTOR DEHTheInquisitorSpawner
 	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 0)
 	TNT1 A 181 A_BrainAwake
 	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 7)
+	TNT1 A 0 A_BrainSpit("DEHBlankShot")
+	TNT1 A 0 A_BrainSpit("DEHTheInquisitorSpawnShot")
 	TNT1 A 0 A_SetUserVar("user_count", ACS_NamedExecuteWithResult("Dehacked_BossTargetCount"))
   AfriestSpawnLoop:
 	TNT1 A 0 A_BrainSpit("DEHAfriestSpawnShot")
 	TNT1 A 0 A_SetUserVar("user_count", user_count - 1)
-	TNT1 A 0 A_JumpIf(user_count <= 1, "TheInquisitorSpawn")
+	TNT1 A 0 A_JumpIf(user_count <= 1, "EndLoop")
 	Loop
-  TheInquisitorSpawn:
-	TNT1 A 0 A_BrainSpit("DEHTheInquisitorSpawnShot")
-    Stop
+  EndLoop:
+	TNT1 A 0
+	Stop
   }
 }
 ACTOR DEHAfriestSpawnShot : AntaresianSpawnShot
