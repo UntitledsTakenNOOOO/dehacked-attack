@@ -4,7 +4,7 @@ You can use the options in the menu to control which WADs' monster sets are enab
 
 CURRENTLY INCLUDED MONSTERS:
 
-STRAIN (1997):
+STRAIN (Alpha Dog Alliance, 1997):
 * Subverted Guard: A simple re-skin of the chaingunner.
 * Class 2 Imp: Moving much faster than normal imps, these guys also fire on repeat.
 * Holobot: A flying drone that fires slow moving revenant missiles. Spawns with cacodemons.
@@ -16,39 +16,39 @@ STRAIN (1997):
 * Demon Lord: A white hell noble with 1400 health that fires baron balls in mancubus-like spreads. Spawns with barons, and is potentially very deadly.
 	* Change: The attack animation is broken in the original STRAIN, causing it to fire faster than intended. This has been corrected.
 
-SCYTHE II (2005):
+SCYTHE II (Erik Alm, 2005):
 * Evil Marine: He's an absolute terror to be up against due to his plasma rifle and high movement speed. Spawns in the archvile slot.
 	* Change: Drops a Cell instead of a Clip, because DEHACKED doesn't let you change drops but DECORATE does and the inconsistency bothered me.
 
-DEUS VULT II (2008):
+DEUS VULT II (Huy Pham, 2008):
 * Hell Cleric: Fires imp fireballs rapidly. Spawns commonly with revenants.
 	* Change: Has 300 health instead of 200, due to being in a slot with 300 base health.
 
-SCYTHE X (2009):
+SCYTHE X (Erik Alm, 2009):
 * Shadow Imp: These mysterious monsters shoot fireballs that summon strange spiritual creatures. Spawns with imps uncommonly, but imps are VERY common.
 * Shadow Elemental: A variant of the Pain Elemental; this variant shoots out spirits-summing projectiles fast, and release more spirits when they die.
 * Shadow Spirit: The aforementioned spiritual creatures summoned by the Shadow Imp. They do not spawn naturally.
 
-JENESIS (2011):
+JENESIS (Jimmy, 2011):
 * Mutant Gateway Technician: Possessing a whole 90 HP, these are rather durable variants of the shotgunner.
 	* Change: Drops a shotgun (it drops only a clip in the original Jenesis) to maintain consistency with it's weapon of choice.
 
-LUNATIC (2011):
+LUNATIC (skillsaw, 2011):
 * Plasma Zombie: A Zombie that can fire arachnotron plasma in bursts of three. Spawns with shotgunners.
 	* Change: Drops a cell rather than clip for consistency reasons.
 * Revenant Missile Zombie: A 75 HP Zombie that fires revenant missiles. Spawns with chaingunners.
 	* Change: Drops a single rocket, because why not.
 
-SURVIVE IN HELL (2012):
+SURVIVE IN HELL (JC Dorne, 2012):
 * Belphegor: A tougher variant of the baron that fires in sets of two fireballs.
 * Poison Soul: A small, yet very tanky flying enemy that fires baron fireballs. Spawns in the pain elemental slot.
 * Cybruiser (Double-Fire Variant): This variant of the cybruiser has 1300 health, and attacks by firing rockets very quickly in sets of two.
 	* The Double-Fire Cybruiser can only be summoned by the Icon of Sin (or other final bosses) and does not spawn naturally.
 
-RESURGENCE (2014):
+RESURGENCE (Joshy, 2014):
 * Evil Marine (Slow Variant): A variant of the evil marine that moves at less than 20% of the speed. Spawns very rarely with revenants, and is still very deadly.
 
-VALIANT (2015):
+VALIANT (skillsaw, 2015):
 * Valiant Imp: This variant on the imp shoots faster fireballs in sets of two.
 * Valiant Demon: These guys bite MUCH faster than ordinary pinky demons.
 * Valiant Spectre: Guess.
@@ -62,14 +62,14 @@ VALIANT (2015):
 * Valiant Arachnotron: Identical to the normal Arachnotron except for color scheme until you kill it, where it has a 3/4 chance to spawn an arachnorb.
 	* Change: In the original valiant, it was 1/2 instead of 3/4. The chance was increased because they're rarer outside of valiant.
 
-ANCIENT ALIENS (2016):
+ANCIENT ALIENS (skillaw, 2016):
 * Stealth Plasma Alien: A 30 HP alien (actually a zombie) with an alien plasma rifle that is nearly invisible until it becomes active. Spawns with shotgunners.
 * Alien Guardian: A flying construct that fires salvos of revenant missiles, and can even self destruction. Spawns with cacodemons, though is very fragile.
 	* Change: HP upped from 100 to 200.
 * Alien Mancubus: A re-skin of the mancubus with a unique look.
 * Alien Arachnotron: A re-skin of the arachnotron that fires the purple-ish alien plasma used by the stealth plasma alien.
 
-EVITERNITY (2018):
+EVITERNITY (Dragonfly, 2018):
 * Former Captain: These nasty zombies shoot out yellow energy bolts in volleys of five. Spawns with chaingunners.
 * Nightmare Demon: These guys are faster than the ordinary pinky demon and have 300 HP.
 * Astral Cacodemon: These guys unleash a pair of mancubi fireballs in addition to their cacodemon fireball.
@@ -80,14 +80,14 @@ PSX DOOM:
 * Nightmare Spectre: Faster moving and much tougher variant of the spectre. Has 300 HP and spawns with spectres, naturally.
 	* Note: This is not a DEHACKED original, but I felt like giving tribute to a rather different version of Doom and its one original monster.
 
-STRUGGLE: ANTARESIAN LEGACY (2018):
+STRUGGLE: ANTARESIAN LEGACY (antares, 2018):
 * Antaresia: A serpent-like creature that has a strange firing pattern. Spawns with Hell Knights.
 	* Change: Uses the Antaresian Reliquary variant instead of the original, for variety's sake (I liked the red better).
 * Antaresia Elite: A more powerful variant of the Antaresia that spawns with the Archvile. Has more HP, less pain chance, and moves much faster.
 * Afriest: A flying priest with a powerful triple attack. Spawns with Cacodemons.
 * Antaresian Arachnotron: A variant of the arachnotron that moves faster and uses a chaingun instead of a plasma rifle.
 
-ANTARESIAN RELIQUARY (2020):
+ANTARESIAN RELIQUARY (antares, 2020):
 * Former Ranger: Possessing an energy blaster instead of a rifle, these guys are a bit scarier than the ordinary zombie that they spawn with.
 * Plasma Elite: A variant of the former captain up above; these guys shoot blue energy bolts in volleys of three instead, and spawn with the chaingunner.
 	* Change: Uses a blue color scheme more remniscent of Struggle, to make it visually distinct from the Former Captain.
@@ -96,7 +96,7 @@ ANTARESIAN RELIQUARY (2020):
 BOSSES:
 * Afrit (Scythe II, Deus Vult II, Survive in Hell, Resurgence): Its volley of fireballs is deadly; you're toast if you get too close. It has 2500 HP and can fly.
 	* Spawns with cyberdemons under special circumstances, otherwise it is limited to being summoned by the Icon of Sin and other final bosses.
-* Haymaker: A minotaur-like creature that also has 2500 health that has a cyberdemon's head. It shoots mancubus fireballs from its hammer.
+* Haymaker (UAC Ultra, 2012): A minotaur-like creature that also has 2500 health that has a cyberdemon's head. It shoots mancubus fireballs from its hammer.
 	* Spawns with cyberdemons under special circumstances, otherwise it is limited to being summoned by the Icon of Sin and other final bosses.
 * Leviathan (Struggle: Antaresian Legacy, 2018): A fast-moving monster who attacks with an entire mancubus volley simutaneously. Spawns with cyberdemons.
 	* Change: Reduced health from 10000 down to 4200.
