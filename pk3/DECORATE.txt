@@ -116,9 +116,9 @@ ACTOR DEHCacodemon : Cacodemon {}
 
 ACTOR DehackedSoulSpawner : RandomSpawner replaces LostSoul
 {
-	DropItem "DEHLostSoul", 256, 50
-	DropItem "Doppleganger", 256, 25
-	DropItem "ValiantArachnorbSmaller", 256, 25
+	DropItem "DEHLostSoul", 256, 52
+	DropItem "Doppleganger", 256, 32
+	DropItem "ValiantArachnorbSmaller", 256, 16
 }
 ACTOR DEHLostSoul : LostSoul {}
 
@@ -209,14 +209,14 @@ ACTOR DEHCyberdemon : Cyberdemon {}
 
 ACTOR DehackedSpiderSpawner : RandomSpawner replaces SpiderMastermind
 {
-	DropItem "DEHSpiderMastermind", 256, 15
-	DropItem "HiveMother", 256, 15
-	DropItem "IndomitableMastermind", 256, 15
-	DropItem "SpectralLeviathan", 256, 15
-	DropItem "WarlordOfHell", 256, 15
+	DropItem "DEHSpiderMastermind", 256, 16
+	DropItem "HiveMother", 256, 16
+	DropItem "IndomitableMastermind", 256, 16
+	DropItem "SpectralLeviathan", 256, 16
+	DropItem "WarlordOfHell", 256, 10
 	DropItem "RemnantMaster", 256, 10
 	DropItem "AngryMastermind", 256, 10
-	DropItem "ValiantSuperVile", 256, 5
+	DropItem "ValiantSuperVile", 256, 6
 }
 ACTOR DEHSpiderMastermind : SpiderMastermind {}
 
