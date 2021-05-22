@@ -72,7 +72,7 @@ actor ResurgenceEvilMarine : EvilMarine
   {
   Spawn:
     TNT1 A 0
-	TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SCYTHE, 21), "Reset")
+	TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_RESURGENCE, 21), "Reset")
     Goto Idle
   Reset:
 	TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
@@ -95,11 +95,33 @@ actor Afrit : BaronOfHell
   +NoGravity
   +Float
   +DoHarmSpecies
+  +Boss //CHANGE: Added to be more in line with the other minibosses.
   Obituary "%o was scorched by an Afrit."
   Tag "Afrit"
   States
   {
   Spawn:
+    TNT1 A 0
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SURVIVE_IN_HELL, 15), "Spawn2")
+    Goto CheckCyberCount
+  Spawn2:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_RESURGENCE, 21), "Spawn3")
+    Goto CheckCyberCount
+  Spawn3:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_DEUS_VULT, 21), "Spawn4")
+    Goto CheckCyberCount
+  Spawn4:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SCYTHE, 26), "Reset")
+    Goto CheckCyberCount
+  Reset:
+    TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+    TNT1 A 0 A_SpawnItemEx("DEHCyberdemon", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+    Stop
+  CheckCyberCount:
+	TNT1 A 1
+	TNT1 A 1 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_CyberCount"), "Reset")
+	Goto Idle
+  Idle:
     FRIT AABB 10 Bright A_Look
     Loop
   See:
@@ -126,6 +148,31 @@ actor Afrit : BaronOfHell
     FRIT J 5 Bright A_NoBlocking
     FRIT KLMNOPQ 4 Bright
 	FRIT R 4 Bright A_BossDeath
+    Stop
+  }
+}
+
+actor AfritSummon : Afrit
+{
+  -Boss
+  States
+  {
+  Spawn:
+    TNT1 A 0
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SURVIVE_IN_HELL, 15), "Spawn2")
+    Goto Idle
+  Spawn2:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_RESURGENCE, 21), "Spawn3")
+    Goto Idle
+  Spawn3:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_DEUS_VULT, 21), "Spawn4")
+    Goto Idle
+  Spawn4:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SCYTHE, 26), "Reset")
+    Goto Idle
+  Reset:
+    TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+    TNT1 A 0 A_SpawnItemEx("BaronOfHell", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
     Stop
   }
 }

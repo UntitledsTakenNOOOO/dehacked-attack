@@ -181,12 +181,12 @@ MeleeSound "baron/melee"
 States 
    { 
    Spawn:
-       TNT1 A 0
-       TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SURVIVE_IN_HELL, 23), "Reset")
+       TNT1 A 0 //This is only spawned by Icon of Sin, so don't level-scale it.
+       TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SURVIVE_IN_HELL, 1), "Reset")
        Goto Idle
    Reset:
        TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
-       TNT1 A 0 A_SpawnItemEx("Afrit", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+       TNT1 A 0 A_SpawnItemEx("HaymakerSummon", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
        Stop
    Idle:
        BRUS AB 10 A_Look 

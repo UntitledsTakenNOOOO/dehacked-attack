@@ -12,14 +12,15 @@
 #define DEH_LUNATIC 9
 #define DEH_SURVIVE_IN_HELL 10
 #define DEH_GOING_DOWN 11
-#define DEH_VALIANT 12
+#define DEH_RESURGENCE 12
 #define DEH_PSX_DOOM 13
-#define DEH_ANCIENT_ALIENS 14
-#define DEH_GRIDLOCK 15
-#define DEH_EVITERNITY 16
-#define DEH_ANTARES 17
-#define DEH_REMNANT 18
-#define DEH_SUNDER 19
+#define DEH_VALIANT 14
+#define DEH_ANCIENT_ALIENS 15
+#define DEH_GRIDLOCK 16
+#define DEH_EVITERNITY 17
+#define DEH_ANTARES 18
+#define DEH_REMNANT 19
+#define DEH_SUNDER 20
 
 Script "Dehacked_MonsterReset" (int mapset, int level)
 {
@@ -62,11 +63,14 @@ Script "Dehacked_MonsterReset" (int mapset, int level)
 	case DEH_GOING_DOWN:
 		keep_spawn = GetCVar("deh_enable_going_down");
 		break;
-	case DEH_VALIANT:
-		keep_spawn = GetCVar("deh_enable_valiant");
+	case DEH_RESURGENCE:
+		keep_spawn = GetCVar("deh_enable_resurgence");
 		break;
 	case DEH_PSX_DOOM:
 		keep_spawn = GetCVar("deh_enable_psx_doom");
+		break;
+	case DEH_VALIANT:
+		keep_spawn = GetCVar("deh_enable_valiant");
 		break;
 	case DEH_ANCIENT_ALIENS:
 		keep_spawn = GetCVar("deh_enable_ancient_aliens");
@@ -98,6 +102,46 @@ Script "Dehacked_MonsterReset" (int mapset, int level)
 		SetResultValue(0); //Keep the spawn
 	} else {
 		SetResultValue(1); //Reset
+	}
+}
+
+Script "Dehacked_CyberCount" (void)
+{
+	int a, b, c, d, e, f, g, h;
+	a = ThingCountName("DEHCyberdemon", 0);
+	b = ThingCountName("Afrit", 0);
+	c = ThingCountName("Haymaker", 0);
+	d = ThingCountName("DarkCyberdemon", 0);
+	e = ThingCountName("RemnantCardinal", 0);
+	f = ThingCountName("Leviathan", 0);
+	g = ThingCountName("GridlockCardinal", 0);
+	h = ThingCountName("HellSmith", 0);
+	int result = a + b + c + d + e + f + g + h;
+	if(result > 6)
+	{ //Keep the spawn
+		SetResultValue(0);
+	} else { //Reset
+		SetResultValue(1);
+	}
+}
+
+Script "Dehacked_SpiderCount" (void)
+{
+	int a, b, c, d, e, f, g, h;
+	a = ThingCountName("DEHSpiderMastermind", 0);
+	b = ThingCountName("HiveMother", 0);
+	c = ThingCountName("IndomitableMastermind", 0);
+	d = ThingCountName("SpectralLeviathan", 0);
+	e = ThingCountName("WarlordOfHell", 0);
+	f = ThingCountName("RemnantMaster", 0);
+	g = ThingCountName("AngryMastermind", 0);
+	h = ThingCountName("ValiantSuperVile", 0);
+	int result = a + b + c + d + e + f + g + h;
+	if(result > 3)
+	{ //Keep the spawn
+		SetResultValue(0);
+	} else { //Reset
+		SetResultValue(1);
 	}
 }
 

@@ -42,6 +42,8 @@ LUNATIC (2011):
 SURVIVE IN HELL (2012):
 * Belphegor: A tougher variant of the baron that fires in sets of two fireballs.
 * Poison Soul: A small, yet very tanky flying enemy that fires baron fireballs. Spawns in the pain elemental slot.
+* Cybruiser (Double-Fire Variant): This variant of the cybruiser has 1300 health, and attacks by firing rockets very quickly in sets of two.
+	* The Double-Fire Cybruiser can only be summoned by the Icon of Sin (or other final bosses) and does not spawn naturally.
 
 RESURGENCE (2014):
 * Evil Marine (Slow Variant): A variant of the evil marine that moves at less than 20% of the speed. Spawns very rarely with revenants, and is still very deadly.
@@ -92,6 +94,10 @@ ANTARESIAN RELIQUARY (2020):
 * Reliquary Arachnotron: A variant of the arachnotron that uses the energy bolts used by the former ranger and plasma elite.
 
 BOSSES:
+* Afrit (Scythe II, Deus Vult II, Survive in Hell, Resurgence): Its volley of fireballs is deadly; you're toast if you get too close. It has 2500 HP and can fly.
+	* Spawns with cyberdemons under special circumstances, otherwise it is limited to being summoned by the Icon of Sin and other final bosses.
+* Haymaker: A minotaur-like creature that also has 2500 health that has a cyberdemon's head. It shoots mancubus fireballs from its hammer.
+	* Spawns with cyberdemons under special circumstances, otherwise it is limited to being summoned by the Icon of Sin and other final bosses.
 * Leviathan (Struggle: Antaresian Legacy, 2018): A fast-moving monster who attacks with an entire mancubus volley simutaneously. Spawns with cyberdemons.
 	* Change: Reduced health from 10000 down to 4200.
 * Remnant Cardinal (Remnant, 2019): A darker, red flying variant of the cyberdemon that fires rockets much faster in salvos of four.
@@ -100,7 +106,9 @@ BOSSES:
 	* Change: Reduced health from 8000 down to 4800.
 * Hell Smith (Survive in Hell, 2012): This guy unleashes a powerful wave of 12 fireballs at once as his attack, and has a LOT of health. He spawns in the cyberdemon slot.
 	* Change: Health reduced from 20000 to 8000, because he isn't the final boss of the game anymore.
-* Indomitable Mastermind (Struggle: Antaresian Legacy, 2018): A variant of the spidermastermind that uses both a super-chaingun AND a plasma rifle at the same time.
+* Hive Mother (Sunder, 2019): This insectoid demon can both fire mancubus fireballs very quickly AND retaliates with a set of three rockets.
+	* Spawns with spider masterminds under special circumstances, otherwise it is limited to being summoned by the Icon of Sin and other final bosses.
+* Indomitable Mastermind (Struggle: Antaresian Legacy, 2018): A variant of the spider mastermind that uses both a super-chaingun AND a plasma rifle at the same time.
 * Spectral Leviathan (Struggle: Antaresian Legacy, 2018): Less health and moves slower than the Leviathan, but he's partially invisible. Spawns with Spider Masterminds.
 * Angry Spiderdemon (Going Down, 2014): Her brain's red for some reason. Retaliates with fireballs when hurt, and has twice as much health as the ordinary Spider Mastermind.
 	* Change: Health reduced from 12000 to 6000.
@@ -112,13 +120,6 @@ BOSSES:
 * Leviathan [Summoner Variant]: He CAN be flinched, but doing so will result in him spawning monsters icon-of-sin style. Replaces either Leviathan if Spawn Targets are present.
 	* Change: Reduced health from 10000 down to 4200.
 * Super Archvile [Summoner Variant]: Summons a swarm of arachnorbs on flinch. Replaces the Super Archvile if Spawn Targets are present.
-
-ICON OF SIN SPECIAL:
-All of these are only spawned by the Icon of Sin (or as part of another final boss fight that utilizes the monster spawner), and do not spawn naturally:
-* Afrit (Scythe II, Deus Vult II, Survive in Hell, Resurgence): Its volley of fireballs is deadly; You're toast if you get too close. It has 2500 HP and flies.
-* Haymaker (UAC Ultra, 2012): A minotaur-like creature that also has 2500 health that has a cyberdemon's head. It shoots mancubus fireballs from its hammer.
-* Cybruiser (Survive in Hell, 2012): This variant of the cybruiser has 1300 health, and attacks by firing rockets very quickly in sets of two.
-* Hive Mother (Sunder, 2019): This insectoid demon can both fire mancubus fireballs very quickly AND retaliates with a set of three rockets.
 
 FINAL BOSSES (enabled by CVar and then selected in place of Icon of Sin):
 * Hell Smith (Survive in Hell): More aggressive than his ordinary counterpart. With his full 20000 health, he's is hard to take down, and spawns AFTER a large army of other monsters.

@@ -9,6 +9,7 @@ ACTOR HiveMother
   Monster
   +FLOORCLIP
   +DONTMORPH
+  +BOSS //CHANGE: Added to be more in line with the other minibosses.
   SeeSound "hivemother/sight"
   PainSound "hivemother/pain"
   DeathSound "hivemother/death"
@@ -19,11 +20,15 @@ ACTOR HiveMother
   Spawn:
     TNT1 A 0
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SUNDER, 18), "Reset")
-    Goto Idle
+    Goto CheckSpiderCount
   Reset:
     TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
-    TNT1 A 0 A_SpawnItemEx("Afrit", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+    TNT1 A 0 A_SpawnItemEx("DEHSpiderMastermind", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
     Stop
+  CheckSpiderCount:
+	TNT1 A 1
+	TNT1 A 1 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_SpiderCount"), "Reset")
+	Goto Idle
   Idle:
     HVMM AB 10 A_Look
     Loop
@@ -64,5 +69,23 @@ ACTOR HiveMother
     HVM2 GHIJ 5
     HVM2 K -1
     Stop
+  }
+}
+
+ACTOR HiveMotherSummon : HiveMother
+{
+  States
+  {
+  Spawn:
+    TNT1 A 0
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SUNDER, 18), "Reset")
+    Goto Idle
+  Reset:
+    TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+    TNT1 A 0 A_SpawnItemEx("HaymakerSummon", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+    Stop
+  Idle:
+    HVMM AB 10 A_Look
+    Loop
   }
 }

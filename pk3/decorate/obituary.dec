@@ -9,7 +9,8 @@ However, they were later re-implemented in the ZDoom Monster Resource Wad (and l
 Due to a combination of obscurity and the fact that the most famous versions of these monsters are DECORATE
 (and not DEHACKED) I am not considering them part of the mainline DEHACKED Attack.
 
-That being said, in respect for the legacy of this wad, I am including them in the mod.
+That being said, in respect for the legacy of this wad, I am including them in the mod,
+however, they will be turned off by default, though the option to turn them on exists.
 */
 
 ACTOR SuperImp : DoomImp
