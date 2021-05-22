@@ -14,7 +14,7 @@ actor Haymaker : Cyberdemon
   states
   {
   Spawn:
-    TNT1 A 0
+    HMKR A 0
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_UAC_ULTRA, 7), "Reset")
     Goto CheckCyberCount
   Reset:
@@ -55,7 +55,7 @@ actor HaymakerSummon : Haymaker
   states
   {
   Spawn:
-    TNT1 A 0
+    HMKR A 0
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_UAC_ULTRA, 1), "Reset")
     Goto Idle
   Reset:

@@ -12,14 +12,14 @@ ACTOR GridlockCardinal : Cyberdemon
   States
   {
   Spawn:
-    TNT1 A 0
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_GRIDLOCK, 30), "Reset")
+    GCRD A 0
+    GCRD A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_GRIDLOCK, 30), "Reset")
 	GCRD A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossTargetCount") > 0, "Phase2")
   Idle:
     GCRD AB 3 A_Look
     Loop
   Phase2:
-	TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+	GCRD A 0 A_ChangeFlag("COUNTKILL", 0)
 	GCRD A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossCheck") == 2, "Reset")
 	GCRD A 0 A_SpawnItemEx("GridlockCardinalPhase2", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
 	Stop

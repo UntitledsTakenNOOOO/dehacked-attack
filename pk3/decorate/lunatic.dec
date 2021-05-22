@@ -18,7 +18,7 @@ ACTOR PlasmaZombie
   States 
   {
   Spawn:
-    TNT1 A 0
+    RPZM A 0
 	TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_LUNATIC, 2), "Reset")
     Goto Idle
   Reset:
@@ -87,7 +87,7 @@ ACTOR RevMissileGuy
   states
   {
   Spawn:
-    TNT1 A 0
+    DEVZ A 0
 	TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_LUNATIC, 2), "Reset")
     Goto Idle
   Reset:

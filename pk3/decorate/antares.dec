@@ -35,7 +35,7 @@ Actor FormerRanger
 	States
 	{
 	Spawn:
-		TNT1 A 0
+		APOS A 0
 		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_ANTARES, 1), "Reset")
 		Goto Idle
 	Reset:
@@ -87,7 +87,7 @@ Actor PlasmaElite : FormerCaptain
 	States //Uses Struggle colors to differentiate from Former Captain
 	{ //But this is, for all intents and purposes, the version from Antaresian Reliquary.
 	Spawn:
-		TNT1 A 0
+		EVWV A 0
 		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_ANTARES, 1), "Reset")
 		Goto "Super::Idle"
 	Reset:
@@ -117,7 +117,7 @@ Actor Antaresia : BaronOfHell
 	States
 	{
 	Spawn:
-		TNT1 A 0
+		ANTR A 0
 		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_ANTARES, 2), "Reset")
 		Goto Idle
 	Reset:
@@ -168,7 +168,7 @@ Actor AntaresiaElite : Antaresia
 	States
 	{
 	Spawn:
-		TNT1 A 0
+		ANTR A 0
 		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_ANTARES, 24), "Reset")
 		Goto "Super::Spawn"
 	Reset:
@@ -206,7 +206,7 @@ ACTOR Afriest
   States
   {
   Spawn:
-    TNT1 A 0
+    ABIS A 0
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_ANTARES, 6), "Reset")
     Goto Idle
   Reset:
@@ -257,7 +257,7 @@ ACTOR SpectralCaco : Cacodemon
   States
   {
   Spawn:
-    TNT1 A 0
+    HEAD A 0
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_ANTARES, 1), "Reset")
     Goto "Super::Spawn"
   Reset:
@@ -276,7 +276,7 @@ ACTOR AntaresianArachnotron : Arachnotron
   States
   {
   Spawn:
-    TNT1 A 0
+    ASPI A 0
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_ANTARES, 2), "Reset")
     Goto Idle
   Reset:
@@ -322,7 +322,7 @@ ACTOR ReliquaryArachnotron : Arachnotron
 	States
 	{
 	Spawn:
-		TNT1 A 0
+		BSPI A 0
 		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_ANTARES, 1), "Reset")
 		Goto "Super::Spawn"
 	Reset:
@@ -348,7 +348,7 @@ ACTOR IndomitableMastermind : SpiderMastermind
   States
   {
   Spawn:
-    TNT1 A 0
+    ANSP A 0
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_ANTARES, 11), "Reset")
     Goto Idle
   Reset:
@@ -412,7 +412,7 @@ ACTOR Leviathan
   States
   {
   Spawn:
-    TNT1 A 0
+    ALEV A 0
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_ANTARES, 19), "Reset")
     ALEV A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossTargetCount") > 0, "Summoner")
     Goto Idle
@@ -464,7 +464,7 @@ ACTOR SpectralLeviathan : Leviathan
   States
   {
   Spawn:
-    TNT1 A 0
+    ALEV A 0
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_ANTARES, 20), "Reset")
     ALEV A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossTargetCount") > 0, "Summoner")
     Goto Idle
@@ -489,11 +489,16 @@ ACTOR SummonerLeviathan : Leviathan
   States
   {
   Spawn:
-    ALEV A 10 A_Look
-	Goto Idle
+    ALEV A 0
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_ANTARES, 19), "Reset")
+    Goto Idle
   Idle:
     ALEV A 10 A_Look
-	Loop
+    Loop
+  Reset:
+    TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+    TNT1 A 0 A_SpawnItemEx("Cyberdemon", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+    Loop
   Pain:
     ALEV G 2
     ALEV G 8 A_Pain

@@ -497,14 +497,14 @@ ACTOR DEHFinalCountdownWave6SpawnShot : DEHTeleportSpawnShot
   //Lunatic
   DropItem "Demon", 256, 48
   DropItem "BaronOfHell", 256, 16 //Originally 22
-  DropItem "Haymaker", 256, 4 //Change: Just for fun
-  DropItem "Afrit", 256, 2
+  DropItem "HaymakerSummon", 256, 4 //Change: Just for fun
+  DropItem "AfritSummon", 256, 2
   DropItem "DEHCyberdemon", 256, 2
   //Valiant
   DropItem "ValiantImp", 256, 32
   DropItem "ValiantSuperMancubus", 256, 12
-  DropItem "SummonerLeviathan", 256, 1 //Oh, and screw you
-  DropItem "GridlockCardinalPhase2", 256, 1 //Just for MORE fun!
+  DropItem "HiveMotherSummon", 256, 1 //Just for MORE fun
+  DropItem "SummonerLeviathan", 256, 1 //Just for MORE fun
 }
 ACTOR DEHFinalCountdownWave7SpawnShot : DEHTeleportSpawnShot
 {

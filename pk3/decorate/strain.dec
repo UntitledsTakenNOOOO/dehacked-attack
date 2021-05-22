@@ -5,7 +5,7 @@ ACTOR SubvertedGuard : Chaingunguy
   States
   {
   Spawn:
-    TNT1 A 0
+    GPOS A 0
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_STRAIN, 1), "Reset")
     Goto Idle
   Reset:
@@ -57,7 +57,7 @@ ACTOR StrainFastImp : DoomImp
   States
   {
   Spawn:
-    TNT1 A 0
+    TROO A 0
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_STRAIN, 3), "Reset")
     Goto "Super::Spawn"
   Reset:
@@ -86,7 +86,7 @@ ACTOR Doppleganger : LostSoul //Where do the get these names from?
   States
   {
   Spawn:
-    TNT1 A 0
+    SKU2 A 0
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_STRAIN, 4), "Reset")
     Goto Idle
   Reset:
@@ -135,7 +135,7 @@ ACTOR Holobot : Cacodemon
   States
   {
   Spawn:
-    TNT1 A 0
+    FBOT A 0
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_STRAIN, 6), "Reset")
     Goto Idle
   Reset:
@@ -187,7 +187,7 @@ ACTOR InvisibleHolobot : HoloBot
   States
   {
   Spawn:
-    TNT1 A 0
+    FBOT A 0
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_STRAIN, 11), "Reset")
     Goto Idle
   Reset:
@@ -205,7 +205,7 @@ ACTOR StrainDemon : Demon
   States // Maybe there's something about the number I'm missing, but's strange.
   {
   Spawn:
-    TNT1 A 0
+    SAR2 A 0
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_STRAIN, 2), "Reset")
     Goto Idle
   Reset:
@@ -261,7 +261,7 @@ ACTOR MinisterOfHate
   States
   {
   Spawn:
-    TNT1 A 0
+    CYBJ A 0
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_STRAIN, 13), "Reset")
     Goto Idle
   Reset:
@@ -306,7 +306,7 @@ ACTOR StrainDemonLord : BaronOfHell
   States //He doesn't actually have a melee attack, interestingly enough.
   {
   Spawn:
-    TNT1 A 0
+    BOS4 A 0
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_STRAIN, 15), "Reset")
     Goto Idle
   Reset:

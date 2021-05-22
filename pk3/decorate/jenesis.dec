@@ -20,7 +20,7 @@ ACTOR JenesisMutant
   States
   {
   Spawn:
-    TNT1 A 0
+    GTCH A 0
 	TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_JENESIS, 20), "Reset")
     Goto Idle
   Reset:

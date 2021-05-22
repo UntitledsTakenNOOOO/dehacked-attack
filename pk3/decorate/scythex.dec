@@ -10,7 +10,7 @@ Actor ShadowImp : DoomImp
   States
   {
   Spawn:
-    TNT1 A 0
+    SHTR A 0
 	TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SCYTHEX, 10), "Reset")
     Goto Idle
   Reset:
@@ -134,7 +134,7 @@ ACTOR ShadowElemental : PainElemental
   States
   {
   Spawn:
-    TNT1 A 0
+    SHPA A 0
 	TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SCYTHEX, 10), "Reset")
     Goto Idle
   Reset:

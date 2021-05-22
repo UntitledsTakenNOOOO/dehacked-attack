@@ -7,7 +7,7 @@ ACTOR Belphegor : BaronOfHell
    States
    {
   Spawn:
-    TNT1 A 0
+    BOS3 A 0
 	TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SURVIVE_IN_HELL, 2), "Reset")
     Goto Idle
   Reset:
@@ -68,7 +68,7 @@ HitObituary "%o was chomped on by a Poison Soul."
 States
    {
    Spawn:
-       TNT1 A 0
+       SKLL A 0
        TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SURVIVE_IN_HELL, 11), "Reset")
        Goto Idle
    Reset:

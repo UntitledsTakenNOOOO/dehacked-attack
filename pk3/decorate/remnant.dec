@@ -13,7 +13,7 @@ ACTOR RemnantCardinal : Cyberdemon
   States
   {
   Spawn:
-    TNT1 A 0
+    RCRD A 0
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_REMNANT, 1), "Reset")
     Goto Idle
   Reset:
@@ -79,7 +79,7 @@ ACTOR RemnantMaster
   States
   {
   Spawn:
-    TNT1 A 0
+    UNMB A 0
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_REMNANT, 1), "Reset")
     Goto Idle
   Reset:

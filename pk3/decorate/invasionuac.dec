@@ -23,7 +23,7 @@ ACTOR DarkCyberdemon : Cyberdemon
   States
   {
   Spawn:
-    TNT1 A 0
+    DCYB A 0
 	TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_INVASION_UAC, 11), "Reset")
     Goto Idle
   Reset:
@@ -81,7 +81,7 @@ ACTOR WarlordOfHell : BaronOfHell
     States
     {
 	Spawn:
-		TNT1 A 0
+		BOS6 A 0
 		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_INVASION_UAC, 18), "Reset")
 		Goto Idle
 	Reset:

@@ -34,7 +34,7 @@ Actor FormerCaptain
 	States
 	{
 	Spawn:
-		TNT1 A 0
+		EVWV A 0
 		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_EVITERNITY, 11), "Reset")
 		Goto Idle
 	Reset:
@@ -96,7 +96,7 @@ Actor NightmareDemon
 	States
 	{
 	Spawn:
-		TNT1 A 0
+		EVSG A 0
 		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_EVITERNITY, 5), "Reset")
 		Goto Idle
 	Reset:
@@ -167,7 +167,7 @@ Actor AstralCaco : Cacodemon
 	States
 	{
 	Spawn:
-		TNT1 A 0
+		ASTR A 0
 		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_EVITERNITY, 11), "Reset")
 		Goto Idle
 	Reset:
@@ -212,7 +212,7 @@ ACTOR EviternityArachnotron : Arachnotron
 	States
 	{
 	Spawn:
-		TNT1 A 0
+		BSPI A 0
 		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_EVITERNITY, 1), "Reset")
 		Goto "Super::Spawn"
 	Reset:
@@ -243,7 +243,7 @@ Actor EviternityAnnihilator : BaronOfHell
 	States
 	{
 	Spawn:
-		TNT1 A 0
+		EBOS A 0
 		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_EVITERNITY, 10), "Reset")
 		Goto Idle
 	Reset:
