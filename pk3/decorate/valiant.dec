@@ -3,6 +3,7 @@ ACTOR ValiantImp : DoomImp
 	Obituary "%o was scorched by a valiant imp."
 	HitObituary "%o got scratched by a valiant imp."
 	Tag "Valiant Imp"
+	DamageFactor "Extinguishing", 3.0
 	States
 	{
    Spawn:
@@ -81,6 +82,7 @@ ACTOR ValiantDemon : Demon
   Speed 12
   Obituary "%o was bit by a valiant demon."
   Tag "Valiant Demon"
+  DamageFactor "Wrangler", 3.0
   States
   {
   Spawn:
@@ -132,6 +134,7 @@ ACTOR ValiantSpectre : ValiantDemon
   ActiveSound "spectre/active"
   HitObituary "%o was eaten by a valiant spectre."
   Tag "Valiant Spectre"
+  DamageFactor "Wrangler", 3.0
   States
   {
   Spawn:
@@ -164,6 +167,8 @@ actor SuicideBomber
   deathsound "shotguy/death"
   MONSTER
   +FLOORCLIP
+  DamageFactor "Extinguishing", 3.0
+  DamageFactor "Wrangler", 3.0
   states
   {
   Spawn:
@@ -236,6 +241,8 @@ ACTOR ValiantPyroDemon : HellKnight
   Obituary "%o was burned to cinders by a Pyro Knight."
   HitObituary "%o got ripped to shreds by a Pyro Knight."
   Tag "Pyro Knight"
+  DamageFactor "Blessed", 3.0
+  DamageFactor "Extinguishing", 2.0
   States
   {
 	Spawn:
@@ -301,6 +308,7 @@ ACTOR ValiantPyroDemon : HellKnight
 ACTOR ValiantArachnotron : Arachnotron
 {
 	Tag "Valiant Arachnotron"
+	DamageFactor "Scrapper", 3.0
 	States
 	{
 	Spawn:
@@ -385,6 +393,7 @@ ACTOR ValiantArachnorb
 	ActiveSound "baby/active"
 	Obituary "%o got blasted by an Arachnorb."
 	Tag "Arachnorb"
+	DamageFactor "Antiair", 3.0
 	States
 	{
 	Spawn:
@@ -437,6 +446,7 @@ Actor ValiantSuperMancubus : Fatso
    ActiveSound "fatso/Active"
    Obituary "%o was torched by a super mancubus."
    Tag "Super Mancubus"
+   DamageFactor "Scrapper", 3.0
    States
    {
    Spawn:
@@ -501,6 +511,8 @@ SeeSound "monster/brusit"
 PainSound "baron/pain" 
 DeathSound "monster/brudth"
 MeleeSound "baron/melee"
+DamageFactor "Blessed", 3.0
+DamageFactor "Scrapper", 2.0
 States 
    { 
    Spawn:
@@ -568,6 +580,8 @@ ACTOR ValiantSuperVile : Archvile
 	MeleeSound "vile/stop"
 	Obituary "%o couldn't avoid the super archvile's fire."
 	Tag "Super Archvile"
+	DamageFactor "Extinguishing", 3.0
+	DamageFactor "Heroic", 3.0
 	States
 	{
 	Spawn:

@@ -31,6 +31,7 @@ Actor FormerCaptain
 	Obituary "%o was destroyed by a former captain."
 	Tag "Former Captain"
 	Dropitem "Cell" //Changed for consistency
+	DamageFactor "Exorcist", 3.0
 	States
 	{
 	Spawn:
@@ -93,6 +94,7 @@ Actor NightmareDemon
 	ActiveSound "nightmaredemon/active"
 	Obituary "%o was crushed by a nightmare demon."
 	Tag "Nightmare Demon"
+	DamageFactor "Wrangler", 3.0
 	States
 	{
 	Spawn:
@@ -142,6 +144,7 @@ Actor NightmareSpectre : Demon //PSX Doom, not Eviternity, but included anyway!
   	Alpha 0.95
   	Obituary "%o was eaten by a nightmare spectre."
 	Tag "Nightmare Spectre"
+	DamageFactor "Wrangler", 3.0
 	States
 	{
 	Spawn:
@@ -164,6 +167,7 @@ Actor AstralCaco : Cacodemon
 	DeathSound "astralcaco/death"
 	Obituary "%o was burned down by an Astral Cacodemon."
 	Tag "Astral Cacodemon"
+	DamageFactor "Antiair", 3.0
 	States
 	{
 	Spawn:
@@ -209,6 +213,7 @@ Actor AstralCaco : Cacodemon
 
 ACTOR EviternityArachnotron : Arachnotron
 {
+	DamageFactor "Scrapper", 3.0
 	States
 	{
 	Spawn:
@@ -240,6 +245,8 @@ Actor EviternityAnnihilator : BaronOfHell
 	MeleeSound "baron/melee"
 	Obituary "%o underestimated the firepower of an Annihilator."
 	Tag "Annihilator"
+	DamageFactor "Scrapper", 3.0
+	DamageFactor "Blessed", 2.0
 	States
 	{
 	Spawn:
@@ -324,6 +331,8 @@ Actor ArchangelusA
 	DeathSound ""
 	Obituary "%o was destroyed by Archangelus."
 	Tag "Archangelus (Phase I)"
+	DamageFactor "Scrapper", 3.0
+	DamageFactor "Antiair", 2.0
 	States
 	{
 	Spawn:
@@ -382,6 +391,8 @@ Actor ArchangelusB
 	DeathSound "archangelus/death"
 	Obituary "%o was ripped and torn by the Archangelus."
 	Tag "Archangelus (Phase II)"
+	DamageFactor "Scrapper", 3.0
+	DamageFactor "Antiair", 2.0
 	States
 	{
 	Spawn:

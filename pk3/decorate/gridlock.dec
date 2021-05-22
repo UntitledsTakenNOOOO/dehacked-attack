@@ -9,6 +9,8 @@ ACTOR GridlockCardinal : Cyberdemon
   Obituary "%o was splattered by a Gridlock Cardinal."
   PainSound "brain/pain"
   Tag "Gridlock Cardinal"
+  DamageFactor "Heroic", 3.0
+  DamageFactor "Antiair", 2.0
   States
   {
   Spawn:

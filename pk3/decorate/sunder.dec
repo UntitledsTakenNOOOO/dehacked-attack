@@ -15,6 +15,7 @@ ACTOR HiveMother
   DeathSound "hivemother/death"
   ActiveSound "hivemother/active"
   Obituary "%o was shredded by a hive mother."
+  DamageFactor "Heroic", 3.0
   States
   {
   Spawn:

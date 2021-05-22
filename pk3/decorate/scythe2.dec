@@ -15,6 +15,9 @@ actor EvilMarine
   translation 2
   Tag "Evil Marine"
   Monster
+  DamageFactor "Exorcist", 2.0
+  DamageFactor "Scrapper", 2.0
+  DamageFactor "Extinguishing", 2.0
   States
   {
   Spawn:
@@ -98,6 +101,10 @@ actor Afrit : BaronOfHell
   +Boss //CHANGE: Added to be more in line with the other minibosses.
   Obituary "%o was scorched by an Afrit."
   Tag "Afrit"
+  DamageFactor "Heroic", 2.0
+  DamageFactor "Blessed", 2.0
+  DamageFactor "Antiair", 2.0
+  DamageFactor "Extinguishing", 2.0
   States
   {
   Spawn:
@@ -155,6 +162,7 @@ actor Afrit : BaronOfHell
 actor AfritSummon : Afrit
 {
   -Boss
+  DamageFactor "Heroic", 1.0
   States
   {
   Spawn:

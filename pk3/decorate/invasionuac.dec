@@ -20,6 +20,7 @@ ACTOR DarkCyberdemon : Cyberdemon
   PainChance 10
   Obituary "%o got exterminated by a dark cyberdemon."
   Tag "Dark Cyberdemon"
+  DamageFactor "Heroic", 3.0
   States
   {
   Spawn:
@@ -78,6 +79,8 @@ ACTOR WarlordOfHell : BaronOfHell
     +BOSS
     Obituary "%o was extuingished by the warlord of hell."
     Tag "Warlord Of Hell"
+	DamageFactor "Blessed", 3.0
+	DamageFactor "Heroic", 3.0
     States
     {
 	Spawn:

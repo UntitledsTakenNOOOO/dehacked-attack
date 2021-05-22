@@ -4,6 +4,7 @@ ACTOR AngryMastermind : SpiderMastermind
   Obituary "%o stood in awe of the angry spiderdemon."
   Tag "Angry Spiderdemon"
   PainSound "brain/pain"
+  DamageFactor "Heroic", 3.0
   States
   {
   Spawn:
@@ -54,6 +55,7 @@ ACTOR AngryMastermindFinalPhase1 : SpiderMastermind
 {
   DropItem "AngryMastermindFinalPhase2"
   var int user_count;
+  DamageFactor "Heroic", 3.0
   States
   {
   Death:

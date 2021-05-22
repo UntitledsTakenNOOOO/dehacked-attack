@@ -17,6 +17,7 @@ ACTOR JenesisMutant
   DropItem "Clip"
   DropItem "Shotgun" //Change: Drops shotgun as well to be more consistent
   Tag "Mutant Gateway Technician"
+  DamageFactor "Exorcist", 3.0
   States
   {
   Spawn:

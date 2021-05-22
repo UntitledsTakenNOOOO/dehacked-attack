@@ -15,6 +15,7 @@ however, they will be turned off by default, though the option to turn them on e
 
 ACTOR SuperImp : DoomImp
 {
+	DamageFactor "Extinguishing", 3.0
 	PainChance 50
 	Obituary "%o was shocked by the imp's superior firepower."
 	Tag "Harder Imp"
@@ -38,7 +39,8 @@ ACTOR SuperImp : DoomImp
 }
 
 ACTOR RocketGuy
-{ 
+{
+   DamageFactor "Exorcist", 3.0
    Health 50 
    Radius 20 
    Height 56 
@@ -102,6 +104,7 @@ ACTOR RocketGuy
 
 ACTOR StealthFighter
 {
+	DamageFactor "Exorcist", 3.0
 	Health 60
 	Radius 22
 	Height 56

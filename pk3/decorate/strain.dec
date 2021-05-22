@@ -1,5 +1,6 @@
 ACTOR SubvertedGuard : Chaingunguy
 {
+  DamageFactor "Exorcist", 3.0
   Obituary "%o was perforated by a subverted guard."
   Tag "Subverted Guard"
   States
@@ -50,6 +51,7 @@ ACTOR SubvertedGuard : Chaingunguy
 
 ACTOR StrainFastImp : DoomImp
 {
+  DamageFactor "Extinguishing", 3.0
   SeeSound "fastimp/sight"
   HitObituary "%o was shredded by a class-2 fast imp."
   Obituary "%o let a class-2 fast imp get him."
@@ -78,6 +80,7 @@ ACTOR StrainFastImp : DoomImp
 
 ACTOR Doppleganger : LostSoul //Where do the get these names from?
 {
+  DamageFactor "Antiair", 3.0
   Obituary "%o was spooked by a doppleganger."
   Damage 2
   Tag "Doppleganger"
@@ -123,6 +126,7 @@ ACTOR Doppleganger : LostSoul //Where do the get these names from?
 
 ACTOR Holobot : Cacodemon
 {
+  DamageFactor "Antiair", 3.0
   Health 200
   Speed 10
   PainSound ""
@@ -179,6 +183,7 @@ ACTOR HolobotRevenantTracer : RevenantTracer
 }
 ACTOR InvisibleHolobot : HoloBot
 {
+  DamageFactor "Antiair", 3.0
   +SHADOW
   RenderStyle "OptFuzzy"
   Alpha 0.5
@@ -199,6 +204,7 @@ ACTOR InvisibleHolobot : HoloBot
 
 ACTOR StrainDemon : Demon
 {
+  DamageFactor "Wrangler", 3.0
   Obituary "%o was bit by a skinless demon."
   Tag "Skinless Demon"
   Health 217 // I've always found it weird how it has exactly 217 health.
@@ -243,6 +249,7 @@ ACTOR StrainDemon : Demon
 
 ACTOR MinisterOfHate
 {
+  DamageFactor "Scrapper", 3.0
   Health 300
   Radius 20
   Height 55
@@ -297,6 +304,7 @@ ACTOR MinisterOfHate
 
 ACTOR StrainDemonLord : BaronOfHell
 {
+  DamageFactor "Blessed", 3.0
   SeeSound "demonlord/sight"
   DeathSound "demonlord/death"
   Health 1400

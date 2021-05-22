@@ -10,6 +10,8 @@ ACTOR RemnantCardinal : Cyberdemon
   SeeSound "cardinal/sight"
   DeathSound "cardinal/death"
   Tag "Remnant Cardinal"
+  DamageFactor "Heroic", 3.0
+  DamageFactor "Antiair", 2.0
   States
   {
   Spawn:
@@ -76,6 +78,8 @@ ACTOR RemnantMaster
   ActiveSound ""
   Obituary "%o stood in awe of the Remnant Master."
   Tag "Remnant Master"
+  DamageFactor "Heroic", 3.0
+  DamageFactor "Antiair", 2.0
   States
   {
   Spawn:

@@ -4,6 +4,7 @@ ACTOR Belphegor : BaronOfHell
    Obituary "%o was incinerated by a Belphegor."
    HitObituary "the last thing %o saw was the Belphegor's abs."
    Tag "Belphegor"
+   DamageFactor "Blessed", 3.0
    States
    {
   Spawn:
@@ -65,6 +66,7 @@ ActiveSound "skull/active"
 Tag "Poison Soul"
 Obituary "%o was poisoned by a Poison Soul."
 HitObituary "%o was chomped on by a Poison Soul."
+DamageFactor "Antiair", 3.0
 States
    {
    Spawn:
@@ -119,6 +121,7 @@ ACTOR HellSmith
   DeathSound "leviathan/death"
   ActiveSound "cyber/active"
   Tag "Hell Smith"
+  DamageFactor "Heroic", 3.0
   States
   {
   Spawn:
@@ -178,6 +181,8 @@ SeeSound "monster/brusit"
 PainSound "baron/pain" 
 DeathSound "monster/brudth"
 MeleeSound "baron/melee"
+DamageFactor "Blessed", 3.0
+DamageFactor "Scrapper", 3.0
 States 
    { 
    Spawn:

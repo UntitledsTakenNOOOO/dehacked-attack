@@ -11,6 +11,7 @@ actor Haymaker : Cyberdemon
   SeeSound "haymaker/sight"
   DeathSound "haymaker/death"
   Tag "Haymaker"
+  DamageFactor "Heroic", 3.0
   states
   {
   Spawn:
@@ -52,6 +53,8 @@ actor Haymaker : Cyberdemon
 
 actor HaymakerSummon : Haymaker
 {
+  -NORADIUSDMG
+  -BOSS
   states
   {
   Spawn:
