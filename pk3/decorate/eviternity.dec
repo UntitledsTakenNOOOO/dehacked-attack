@@ -43,7 +43,7 @@ Actor FormerCaptain
 		Stop
 	Idle:
 		EVWV AABB 10 A_Look
-		goto Spawn
+		loop
 	See:
 		EVWV AABBCCDD 2 A_Chase
 		goto See
