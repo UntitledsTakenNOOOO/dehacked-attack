@@ -45,7 +45,7 @@ Script "Dehacked_MonsterReset" (int mapset, int level)
 	case DEH_INVASION_UAC:
 		keep_spawn = GetCVar("deh_enable_invasionuac");
 		break;
-	case DEH_OBITUARY:
+	case DEH_SCYTHEX:
 		keep_spawn = GetCVar("deh_enable_scythex");
 		break;
 	case DEH_UAC_ULTRA:
