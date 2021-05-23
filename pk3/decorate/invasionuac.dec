@@ -41,6 +41,7 @@ ACTOR DarkCyberdemon : Cyberdemon
     DCYB D 3 A_Chase
     Loop
   Missile:
+    TNT1 A 0 A_JumpIfInventory("LDLegendaryMonsterTransformed", 1, "LegendaryMissile")
     DCYB E 6 A_FaceTarget
     DCYB F 12 Bright A_CyberAttack
     DCYB E 0 A_BruisAttack
@@ -48,6 +49,19 @@ ACTOR DarkCyberdemon : Cyberdemon
     DCYB E 0 A_FatAttack1
     DCYB E 0 A_FatAttack2
     DCYB E 0 A_FatAttack3
+    DCYB E 12 A_FaceTarget
+    Goto See
+  LegendaryMissile:
+    DCYB E 6 A_FaceTarget
+    DCYB E 0 A_TroopAttack
+    DCYB E 0 A_HeadAttack
+    DCYB E 0 A_BSpiAttack
+    DCYB E 0 A_BruisAttack
+    DCYB E 0 A_SkelMissile
+    DCYB E 0 A_FatAttack1
+    DCYB E 0 A_FatAttack2
+    DCYB E 0 A_FatAttack3
+    DCYB F 12 Bright A_CyberAttack
     DCYB E 12 A_FaceTarget
     Goto See
   Pain:
@@ -99,7 +113,7 @@ ACTOR WarlordOfHell : BaronOfHell
         Loop
     Melee:
     Missile:
-        BOS6 E 0 A_VileStart
+        BOS6 E 8 A_VileStart //Change: Added 8 frames of delay before attack on A_VileStart call
         BOS6 E 8 Bright A_VileTarget
         BOS6 F 8 Bright A_FaceTarget
         BOS6 G 8 Bright A_VileAttack

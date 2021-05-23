@@ -64,8 +64,8 @@ VALIANT (skillsaw, 2015):
 
 ANCIENT ALIENS (skillaw, 2016):
 * Stealth Plasma Alien: A 30 HP alien (actually a zombie) with an alien plasma rifle that is nearly invisible until it becomes active. Spawns with shotgunners.
-* Alien Guardian: A flying construct that fires salvos of revenant missiles, and can even self destruction. Spawns with cacodemons, though is very fragile.
-	* Change: HP upped from 100 to 200.
+* Alien Guardian: A flying construct that fires salvos of revenant missiles, and even self destructs upon death. Spawns with cacodemons.
+	* Change: HP raised from 100 to 200.
 * Alien Mancubus: A re-skin of the mancubus with a unique look.
 * Alien Arachnotron: A re-skin of the arachnotron that fires the purple-ish alien plasma used by the stealth plasma alien.
 
@@ -73,17 +73,17 @@ EVITERNITY (Dragonfly, 2018):
 * Former Captain: These nasty zombies shoot out yellow energy bolts in volleys of five. Spawns with chaingunners.
 * Nightmare Demon: These guys are faster than the ordinary pinky demon and have 300 HP.
 * Astral Cacodemon: These guys unleash a pair of mancubi fireballs in addition to their cacodemon fireball.
-* Annihilator: An upgrade to the cybruiser, these guys have both a rocket launcher and a very powerful chaingun, and spawn with barons.
 * Eviternity Arachnotron: A variant of the arachnotron that uses the energy bolts used by the former captain.
+* Annihilator: An upgrade to the cybruiser, these guys have both a rocket launcher and a very powerful chaingun, and spawn with barons.
 
 PSX DOOM:
-* Nightmare Spectre: Faster moving and much tougher variant of the spectre. Has 300 HP and spawns with spectres, naturally.
+* Nightmare Spectre: A faster moving and much tougher variant of the spectre. Has 300 HP and spawns with spectres, naturally.
 	* Note: This is not a DEHACKED original, but I felt like giving tribute to a rather different version of Doom and its one original monster.
 
 STRUGGLE: ANTARESIAN LEGACY (antares, 2018):
 * Antaresia: A serpent-like creature that has a strange firing pattern. Spawns with Hell Knights.
 	* Change: Uses the Antaresian Reliquary variant instead of the original, for variety's sake (I liked the red better).
-* Antaresia Elite: A more powerful variant of the Antaresia that spawns with the Archvile. Has more HP, less pain chance, and moves much faster.
+* Antaresia Elite: A more powerful variant of the Antaresia that spawns with the Archvile. Has more HP, a lower pain chance, and moves much faster.
 * Afriest: A flying priest with a powerful triple attack. Spawns with Cacodemons.
 * Antaresian Arachnotron: A variant of the arachnotron that moves faster and uses a chaingun instead of a plasma rifle.
 
@@ -101,7 +101,7 @@ BOSSES:
 * Leviathan (Struggle: Antaresian Legacy, 2018): A fast-moving monster who attacks with an entire mancubus volley simutaneously. Spawns with cyberdemons.
 	* Change: Reduced health from 10000 down to 4200.
 * Remnant Cardinal (Remnant, 2019): A darker, red flying variant of the cyberdemon that fires rockets much faster in salvos of four.
-	* Change: It fires more slowly than in Remnant, and only has 4500 health (it can fly, which is its defensive ability).
+	* Change: It fires more slowly than in Remnant (4 tics/frame state --> 6), and only has 4500 health.
 * Gridlock Cardinal (Gridlock 64, 2017): A darker, green flying variant of the cyberdemon that cycles between different attacks. If flinched, it retaliates with a rocket.
 	* Change: Reduced health from 8000 down to 4800.
 * Hell Smith (Survive in Hell, 2012): This guy unleashes a powerful wave of 12 fireballs at once as his attack, and has a LOT of health. He spawns in the cyberdemon slot.

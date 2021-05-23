@@ -97,8 +97,14 @@ Actor PlasmaElite : FormerCaptain
 		TNT1 A 0 A_SpawnItemEx("DEHChaingunguy", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
 		Stop
 	Missile:
+		TNT1 A 0 A_JumpIfInventory("LDLegendaryMonsterTransformed", 1, "LegendaryMissile")
 		EVWV E 16 A_FaceTarget
 		EVWV FEF 4 Bright A_CustomMissile("AntaresianPlasma",32,0,0)
+		EVWV E 8 A_FaceTarget
+		goto See
+	Missile:
+		EVWV E 16 A_FaceTarget
+		EVWV FEFEF 4 Bright A_CustomMissile("AntaresianPlasma",32,0,0)
 		EVWV E 8 A_FaceTarget
 		goto See
 	}
@@ -230,10 +236,10 @@ ACTOR Afriest
     ABIS C 6 A_Pain
     Goto See
   Missile:
-    ABIS DE 7 A_FaceTarget //Change: Extra attack frame because we have one
-    ABIS F 0 A_HeadAttack
-    ABIS F 0 A_BruisAttack
-    ABIS F 5 Bright A_CustomMissile("AntaresianPlasma",32,0,0)
+	ABIS DE 7 A_FaceTarget //Change: Extra attack frame because we have one
+    ABIS F 0 Bright A_HeadAttack
+    ABIS F 0 Bright A_CustomMissile("AntaresianPlasma",32,0,0)
+    ABIS F 5 Bright A_BruisAttack
     Goto See
   Death:
     ABIS G 6
@@ -246,6 +252,31 @@ ACTOR Afriest
     ABIS O 4
     ABIS P -1
     Stop
+  }
+}
+
+//Special Variant, does not spawn normally.
+//This variant uses a more diffuse attack pattern,
+//and spawns a monster Icon-of-Sin style upon death.
+//It's designed to reference the Afriest statues.
+ACTOR AfriestSpecial : Afriest
+{
+  +NOPAIN
+  States
+  {
+  Missile:
+	ABIS DE 7 A_FaceTarget
+    ABIS F 6 Bright A_HeadAttack
+	ABIS DE 7 A_FaceTarget
+    ABIS F 6 Bright A_CustomMissile("AntaresianPlasma",32,0,0)
+	ABIS DE 7 A_FaceTarget
+    ABIS F 6 Bright A_BruisAttack
+	ABIS A 0 A_SpidRefire
+    Loop
+  Death:
+	TNT1 A 0 A_BrainSpit("AntaresianSpawnShot")
+	ABSF BCD 4 Bright
+	Stop
   }
 }
 
@@ -532,8 +563,9 @@ ACTOR AntaresianSpawnShot : SpawnShot
   DropItem "ReliquaryArachnotron"	255 20
   DropItem "DEHFatso"		255 30
   DropItem "Antaresia"		255 24
-  DropItem "Afriest"		255 15
-  DropItem "AntaresiaElite"	255 2
+  DropItem "Afriest"		255 12
+  DropItem "AntaresiaElite"	255 3
+  DropItem "AfriestSpecial"	255 2
   Speed 20
   SeeSound "leviathan/spit"
   DeathSound "brain/cubeboom"

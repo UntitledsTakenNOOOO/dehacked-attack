@@ -35,6 +35,7 @@ Actor HellCleric //Deus Vult II
 		CLER AABBCCDD 4 A_Chase
 		Loop
 	Missile:
+		TNT1 A 0 A_JumpIfInventory("LDLegendaryMonsterTransformed", 1, "LegendaryMissile")
 		CLER E 4 A_FaceTarget
 		CLER E 0 A_PlaySound("ClericSwing",CHAN_WEAPON)
 		CLER F 2 A_TroopAttack
@@ -47,6 +48,20 @@ Actor HellCleric //Deus Vult II
 		CLER E 0 A_PlaySound("ClericSwing",CHAN_WEAPON)
 		CLER F 2 A_TroopAttack
 		CLER G 4 A_FaceTarget
+		Goto See
+	LegendaryMissile:
+		CLER E 3 A_FaceTarget
+		CLER E 0 A_PlaySound("ClericSwing",CHAN_WEAPON)
+		CLER F 2 A_TroopAttack
+		CLER G 3 A_FaceTarget
+		CLER E 3 A_FaceTarget
+		CLER E 0 A_PlaySound("ClericSwing",CHAN_WEAPON)
+		CLER F 2 A_TroopAttack
+		CLER G 3 A_FaceTarget
+		CLER E 3 A_FaceTarget
+		CLER E 0 A_PlaySound("ClericSwing",CHAN_WEAPON)
+		CLER F 2 A_TroopAttack
+		CLER G 3 A_FaceTarget
 		Goto See
 	Pain:
 		CLER H 2

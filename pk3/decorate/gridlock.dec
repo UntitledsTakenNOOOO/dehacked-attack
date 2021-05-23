@@ -32,7 +32,8 @@ ACTOR GridlockCardinal : Cyberdemon
     GCRD AB 3 A_Chase
     Loop
   Missile:
-    GCRD C 6 A_FaceTarget
+    TNT1 A 0 A_JumpIfInventory("LDLegendaryMonsterTransformed", 1, "LegendaryMissile")
+	GCRD C 6 A_FaceTarget
     GCRD D 0 A_FatAttack1
     GCRD D 0 A_FatAttack2
     GCRD D 6 Bright A_FatAttack3
@@ -46,6 +47,28 @@ ACTOR GridlockCardinal : Cyberdemon
     Loop
   Pain:
     GCRD E 10 A_Pain
+    GCRD C 6 A_FaceTarget
+    GCRD D 6 Bright A_CyberAttack
+    Goto See
+  LegendaryMissile:
+    GCRD C 6 A_FaceTarget
+    GCRD D 0 A_FatAttack1
+    GCRD D 0 A_FatAttack2
+    GCRD D 6 Bright A_FatAttack3
+    GCRD C 6 A_FaceTarget
+    GCRD D 6 Bright A_SkelMissile
+    GCRD C 6 A_FaceTarget
+    GCRD D 6 Bright A_SkelMissile
+    GCRD C 10 A_FaceTarget
+	Goto LegendaryMissileLoop
+  LegendaryMissileLoop:
+    TNT1 A 0 A_Jump(8, "LegendaryRocket")
+    GCRD D 2 Bright A_BSpiAttack
+	GCRD C 1 A_SpidRefire
+    Loop
+  LegendaryRocket:
+    GCRD C 6 A_FaceTarget
+    GCRD D 6 Bright A_CyberAttack
     GCRD C 6 A_FaceTarget
     GCRD D 6 Bright A_CyberAttack
     Goto See
@@ -72,6 +95,45 @@ ACTOR GridlockCardinalPhase2 : GridlockCardinal
   Idle:
     GCRD AB 3 A_Look
     Loop
+  Missile:
+    TNT1 A 0 A_JumpIfInventory("LDLegendaryMonsterTransformed", 1, "LegendaryMissile")
+	GCRD C 6 A_FaceTarget
+    GCRD D 0 A_FatAttack1
+    GCRD D 0 A_FatAttack2
+    GCRD D 6 Bright A_FatAttack3
+    GCRD C 6 A_FaceTarget
+    GCRD D 6 Bright A_SkelMissile
+    GCRD C 10 A_FaceTarget
+	Goto MissileLoop
+  MissileLoop:
+    GCRD D 2 Bright A_BSpiAttack
+	GCRD C 2 A_SpidRefire
+    Loop
+  LegendaryMissile:
+    GCRD C 6 A_FaceTarget
+    GCRD D 0 A_FatAttack1
+    GCRD D 0 A_FatAttack2
+    GCRD D 6 Bright A_FatAttack3
+    GCRD C 6 A_FaceTarget
+    GCRD D 6 Bright A_SkelMissile
+    GCRD C 6 A_FaceTarget
+    GCRD D 6 Bright A_SkelMissile
+    GCRD C 10 A_FaceTarget
+	Goto LegendaryMissileLoop
+  LegendaryMissileLoop:
+    TNT1 A 0 A_Jump(8, "LegendaryRocket")
+    GCRD D 2 Bright A_BSpiAttack
+	GCRD C 1 A_SpidRefire
+    Loop
+  LegendaryRocket:
+    GCRD C 6 A_FaceTarget
+    GCRD D 6 Bright A_CyberAttack
+    GCRD C 6 A_FaceTarget
+    GCRD D 6 Bright A_CyberAttack
+    GCRD C 6 A_FaceTarget
+    GCRD D 0 A_BrainSpit
+    GCRD D 6 Bright A_BrainSpit
+    Goto See
   Pain:
     GCRD E 10 A_Pain
     GCRD C 6 A_FaceTarget
@@ -132,8 +194,9 @@ ACTOR GridlockCardinalFinalPhase2 : GridlockCardinal
 	GCRD A 0 A_SpawnItemEx("TeleportFog",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
     Goto See
   Missile:
-	GRCD A 0 A_Jump(85, "Teleport")
-    GCRD C 6 A_FaceTarget
+    TNT1 A 0 A_Jump(85, "Teleport")
+    TNT1 A 0 A_JumpIfInventory("LDLegendaryMonsterTransformed", 1, "LegendaryMissile")
+	GCRD C 6 A_FaceTarget
     GCRD D 0 A_FatAttack1
     GCRD D 0 A_FatAttack2
     GCRD D 6 Bright A_FatAttack3
@@ -145,6 +208,31 @@ ACTOR GridlockCardinalFinalPhase2 : GridlockCardinal
     GCRD D 2 Bright A_BSpiAttack
 	GCRD C 2 A_SpidRefire
     Loop
+  LegendaryMissile:
+    GCRD C 6 A_FaceTarget
+    GCRD D 0 A_FatAttack1
+    GCRD D 0 A_FatAttack2
+    GCRD D 6 Bright A_FatAttack3
+    GCRD C 6 A_FaceTarget
+    GCRD D 6 Bright A_SkelMissile
+    GCRD C 6 A_FaceTarget
+    GCRD D 6 Bright A_SkelMissile
+    GCRD C 10 A_FaceTarget
+	Goto LegendaryMissileLoop
+  LegendaryMissileLoop:
+    TNT1 A 0 A_Jump(8, "LegendaryRocket")
+    GCRD D 2 Bright A_BSpiAttack
+	GCRD C 1 A_SpidRefire
+    Loop
+  LegendaryRocket:
+    GCRD C 6 A_FaceTarget
+    GCRD D 6 Bright A_CyberAttack
+    GCRD C 6 A_FaceTarget
+    GCRD D 6 Bright A_CyberAttack
+    GCRD C 6 A_FaceTarget
+    GCRD D 0 A_BrainSpit
+    GCRD D 6 Bright A_BrainSpit
+    Goto See
   Pain:
     GCRD E 10 A_Pain
     GCRD C 6 A_FaceTarget

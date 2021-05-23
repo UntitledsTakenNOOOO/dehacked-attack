@@ -71,8 +71,14 @@ ACTOR StrainFastImp : DoomImp
     Loop
   Melee:
   Missile:
+    TNT1 A 0 A_JumpIfInventory("LDLegendaryMonsterTransformed", 1, "LegendaryMissile")
     TROO EF 8 A_FaceTarget
     TROO G 6 A_TroopAttack
+    TROO G 0 A_SpidRefire
+    Loop
+  LegendaryMissile:
+    TROO EF 5 A_FaceTarget
+    TROO G 5 A_TroopAttack
     TROO G 0 A_SpidRefire
     Loop
   }
@@ -157,8 +163,13 @@ ACTOR Holobot : Cacodemon
     FBOT G 6 A_CustomMeleeAttack(random(1, 10) * 6, "holobot/melee", "holobot/melee")
     Goto See
   Missile:
+    TNT1 A 0 A_JumpIfInventory("LDLegendaryMonsterTransformed", 1, "LegendaryMissile")
     FBOT AA 5 A_FaceTarget
     FBOT A 5 Bright A_CustomMissile("HolobotRevenantTracer", 32)
+    Goto See
+  LegendaryMissile:
+    FBOT AA 5 A_FaceTarget
+    FBOT A 5 Bright A_CustomMissile("RevenantTracer", 32)
     Goto See
   Pain:
     FBOT A 3

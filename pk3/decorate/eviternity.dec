@@ -189,12 +189,21 @@ Actor AstralCaco : Cacodemon
 		ASTR I 3 A_Pain
 		goto See
 	Missile:
+		TNT1 A 0 A_JumpIfInventory("LDLegendaryMonsterTransformed", 1, "LegendaryMissile")
 		ASTR A 1 A_FaceTarget
 		ASTR E 1 A_PlaySoundEx ("astralcaco/active", Auto, False, 0)
 		ASTR EEEEEEE 1 A_Chase
 		ASTR F 5 Bright A_FaceTarget
 		ASTR G 0 Bright A_FatAttack3
 		ASTR G 3 Bright A_HeadAttack
+		goto See
+	LegendaryMissile:
+		ASTR A 1 A_FaceTarget
+		ASTR E 1 A_PlaySoundEx ("astralcaco/active", Auto, False, 0)
+		ASTR EEEEEEE 1 A_Chase
+		ASTR F 5 Bright A_FaceTarget
+		ASTR G 0 Bright A_FatAttack1
+		ASTR G 3 Bright A_FatAttack2
 		goto See
 	Death:
 		ASTR J 8 
@@ -225,11 +234,18 @@ ACTOR EviternityArachnotron : Arachnotron
 		TNT1 A 0 A_SpawnItemEx("DEHArachnotron", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
 		Stop
 	Missile:
+		TNT1 A 0 A_JumpIfInventory("LDLegendaryMonsterTransformed", 1, "LegendaryMissile")
 		BSPI A 20 Bright A_FaceTarget
 		BSPI G 4 Bright A_CustomMissile("EviternityPlasma")
 		BSPI H 4 Bright
 		BSPI H 1 Bright A_SpidRefire
-		Goto Missile+1
+		Goto Missile+2
+	LegendaryMissile:
+		BSPI A 20 Bright A_FaceTarget
+		BSPI G 3 Bright A_CustomMissile("EviternityPlasma")
+		BSPI H 3 Bright
+		BSPI H 1 Bright A_SpidRefire
+		Goto LegendaryMissile+1
 	}
 }
 
@@ -269,9 +285,17 @@ Actor EviternityAnnihilator : BaronOfHell
 		goto See
 	Melee:
 	Missile:
+		TNT1 A 0 A_JumpIfInventory("LDLegendaryMonsterTransformed", 1, "LegendaryMissile")
 		EBOS E 8 A_FaceTarget
 		EBOS F 12 Bright A_CyberAttack
 		EBOS GS 10 A_FaceTarget
+		EBOS IHIHIHI 4 Bright A_SPosAttack
+		EBOS S 10 Bright A_FaceTarget
+		goto See
+	LegendaryMissile:
+		EBOS E 8 A_FaceTarget
+		EBOS F 12 Bright A_CyberAttack
+		EBOS GS 8 A_FaceTarget
 		EBOS IHIHIHI 4 Bright A_SPosAttack
 		EBOS S 10 Bright A_FaceTarget
 		goto See
