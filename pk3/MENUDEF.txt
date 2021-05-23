@@ -54,6 +54,8 @@ OptionMenu "DehackedAttackOptions"
 	Title "Dehacked Attack Options"
 	StaticText "Dehacked Attack Monster Selection", 1
 	StaticText "Choose which monster sets are enabled or disabled."
+	Command "Enable All", "deh_enableall"
+	Command "Disable All", "deh_disableall"
 	Option "PSX Doom:", "deh_enable_psx_doom", "DehackedMonsterSelection"
 	Option "Obituary:", "deh_enable_obituary", "DehackedMonsterSelection"
 	Option "STRAIN:", "deh_enable_strain", "DehackedMonsterSelection"
