@@ -8,6 +8,7 @@ actor Haymaker : Cyberdemon
   Monster
   +FLOORCLIP
   +DONTMORPH
+  +DONTHARMSPECIES
   SeeSound "haymaker/sight"
   DeathSound "haymaker/death"
   Tag "Haymaker"
@@ -60,6 +61,8 @@ actor Haymaker : Cyberdemon
 
 actor HaymakerSummon : Haymaker
 {
+  +DOHARMSPECIES
+  -DONTHARMSPECIES
   -NORADIUSDMG
   -BOSS
   states

@@ -21,6 +21,7 @@ ACTOR DarkCyberdemon : Cyberdemon
   Obituary "%o got exterminated by a dark cyberdemon."
   Tag "Dark Cyberdemon"
   DamageFactor "Heroic", 3.0
+  +DONTHARMSPECIES
   States
   {
   Spawn:
@@ -91,6 +92,7 @@ ACTOR WarlordOfHell : BaronOfHell
     BloodColor "39 59 9F" //Added
     +FLOORCLIP
     +BOSS
+	+DOHARMSPECIES //Not that it matters, since arch-vile attack.
     Obituary "%o was extuingished by the warlord of hell."
     Tag "Warlord Of Hell"
 	DamageFactor "Blessed", 3.0

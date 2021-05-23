@@ -5,6 +5,7 @@ ACTOR RemnantCardinal : Cyberdemon
   PainChance 20
   +FLOAT
   +NOGRAVITY
+  +DONTHARMSPECIES
   -NORADIUSDMG //Deliberate
   Obituary "%o was splattered by a Remnant Cardinal."
   SeeSound "cardinal/sight"

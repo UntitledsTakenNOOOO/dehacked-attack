@@ -5,6 +5,7 @@ ACTOR GridlockCardinal : Cyberdemon
   PainChance 32
   +FLOAT
   +NOGRAVITY
+  +DONTHARMSPECIES
   -NORADIUSDMG
   Obituary "%o was splattered by a Gridlock Cardinal."
   PainSound "brain/pain"
@@ -58,7 +59,7 @@ ACTOR GridlockCardinal : Cyberdemon
     GCRD C 6 A_FaceTarget
     GCRD D 6 Bright A_SkelMissile
     GCRD C 6 A_FaceTarget
-    GCRD D 6 Bright A_SkelMissile
+    GCRD D 6 Bright A_BruisAttack
     GCRD C 10 A_FaceTarget
 	Goto LegendaryMissileLoop
   LegendaryMissileLoop:
