@@ -102,7 +102,7 @@ Actor PlasmaElite : FormerCaptain
 		EVWV FEF 4 Bright A_CustomMissile("AntaresianPlasma",32,0,0)
 		EVWV E 8 A_FaceTarget
 		goto See
-	Missile:
+	LegendaryMissile:
 		EVWV E 16 A_FaceTarget
 		EVWV FEFEF 4 Bright A_CustomMissile("AntaresianPlasma",32,0,0)
 		EVWV E 8 A_FaceTarget
@@ -255,15 +255,28 @@ ACTOR Afriest
   }
 }
 
-//Special Variant, does not spawn normally.
-//This variant uses a more diffuse attack pattern,
-//and spawns a monster Icon-of-Sin style upon death.
+//Special Variant, extremely rare (except for special circumstances)
+//This variant uses a more diffuse attack pattern.
 //It's designed to reference the Afriest statues.
 ACTOR AfriestSpecial : Afriest
 {
   +NOPAIN
+  +MISSILEMORE
+  +MISSILEEVENMORE
+  MinMissileChance 160
   States
   {
+  Spawn:
+    ABIS A 0
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_ANTARES, 19), "Reset")
+    Goto Idle
+  Reset:
+    TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+    TNT1 A 0 A_SpawnItemEx("Afriest", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+    Stop
+  Idle:
+    ABIS A 10 A_Look
+    Loop
   Missile:
 	ABIS DE 7 A_FaceTarget
     ABIS F 6 Bright A_HeadAttack
@@ -273,8 +286,33 @@ ACTOR AfriestSpecial : Afriest
     ABIS F 6 Bright A_BruisAttack
 	ABIS A 0 A_SpidRefire
     Loop
-  Death:
-	TNT1 A 0 A_BrainSpit("AntaresianSpawnShot")
+  }
+}
+
+//Statue variant, does not spawn normally.
+//Spawns a monster Icon of Sin style upon seeing a player.
+//Refernce to the other Afriest Statue variant.
+ACTOR AfriestStatue
+{
+  Radius 20
+  Height 56
+  +SOLID
+  +LOOKALLAROUND
+  States
+  {
+  Spawn:
+    ABIS A 0
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossTargetCount") == 0, "Reset")
+    Goto Idle
+  Reset:
+    TNT1 A 0 A_SpawnItemEx("Afriest", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+    Stop
+  Idle:
+    ABIS Q 10 A_Look
+    Loop
+  See:
+	ABIS S 105 Bright A_PlaySound("afriest/summon", CHAN_BODY, 1.0, 0, ATTN_NONE)
+	ABSF A 0 Bright A_BrainSpit("AntaresianSpawnShot")
 	ABSF BCD 4 Bright
 	Stop
   }
@@ -558,14 +596,15 @@ ACTOR AntaresianSpawnShot : SpawnShot
   DropItem "FormerRanger"	255 40
   DropItem "PlasmaElite"	255 30
   DropItem "DEHPainElemental"	255 10
-  DropItem "DEHCacodemon"		255 25
+  DropItem "DEHCacodemon"		255 15
+  DropItem "SpectralCaco"		255 10
   DropItem "AntaresianArachnotron"	255 10
   DropItem "ReliquaryArachnotron"	255 20
   DropItem "DEHFatso"		255 30
-  DropItem "Antaresia"		255 24
-  DropItem "Afriest"		255 12
+  DropItem "Antaresia"		255 20
+  DropItem "Afriest"		255 9
+  DropItem "AfriestSpecial"	255 9
   DropItem "AntaresiaElite"	255 3
-  DropItem "AfriestSpecial"	255 2
   Speed 20
   SeeSound "leviathan/spit"
   DeathSound "brain/cubeboom"

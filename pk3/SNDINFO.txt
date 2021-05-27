@@ -58,6 +58,7 @@ antaresia/death		ARBRSDTH
 afriest/death		ABISDTH
 afriest/sight		ABISSIT
 afriest/pain		ABISPAI
+afriest/summon		ABISSUMM
 
 leviathan/sight		ANLEVSIT
 leviathan/death		ANLEVDTH

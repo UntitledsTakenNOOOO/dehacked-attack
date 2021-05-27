@@ -138,7 +138,8 @@ ACTOR DehackedCacoSpawner : RandomSpawner replaces Cacodemon
 	DropItem "AstralCaco", 256, 10
 	DropItem "Holobot", 256, 10
 	DropItem "AlienGuardian", 256, 5
-	DropItem "Afriest", 256, 5
+	DropItem "Afriest", 256, 4
+	DropItem "AfriestSpecial", 256, 1
 }
 ACTOR DEHCacodemon : Cacodemon
 {
@@ -295,40 +296,54 @@ ACTOR DEHFinalBossSpawner : SpecialSpot replaces BossEye
   Height 32
   +NOBLOCKMAP
   +NOSECTOR
+  var int user_count;
   States
   {
   Spawn:
-    TNT1 A 10 A_Look
-    Loop
-  See:
-	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossSpawn")
-	TNT1 A 1
+	TNT1 A 0
+	TNT1 A 3
+	TNT1 A 1 ACS_NamedExecuteAlways("Dehacked_BossSpawn")
 	Wait
   NormalFinalBoss:
 	TNT1 A 0 A_SpawnItemEx("DEHBossEye", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+	TNT1 A 0 A_SetUserVar("user_count", ACS_NamedExecuteWithResult("Dehacked_BossTargetCount"))
+  AfriestSpawnLoop:
+	TNT1 A 0 A_BrainSpit("DEHAfriestStatueSpawnShot")
+	TNT1 A 0 A_SetUserVar("user_count", user_count - 1)
+	TNT1 A 0 A_JumpIf(user_count <= 0, "EndLoop")
+	Loop
+  EndLoop:
+	TNT1 A 35
 	Stop
   FinalCountdown:
 	TNT1 A 0 A_SpawnSingleItem("DEHFinalCountdownExitHandler", 0, 0, 256)
 	TNT1 A 0 A_SpawnItemEx("DEHFinalCountdownBossEye", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+	TNT1 A 35
 	Stop
   HellSmith:
 	TNT1 A 0 A_SpawnSingleItem("DEHHellSmithSpawner", 0, 0, 256)
 	TNT1 A 0 A_SpawnItemEx("DEHSurviveInHellBossEye", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+	TNT1 A 35
 	Stop
   SpiderMastermind:
 	TNT1 A 0 A_SpawnSingleItem("DEHAngryMastermindSpawner", 0, 0, 256)
+	TNT1 A 35
 	Stop
   SuperArchvile:
 	TNT1 A 0 A_SpawnSingleItem("DEHSuperArchvileSpawner", 0, 0, 256)
+	TNT1 A 35
 	Stop
   GridlockCardinal:
 	TNT1 A 0 A_SpawnSingleItem("DEHGridlockCardinalSpawner", 0, 0, 256)
+	TNT1 A 35
 	Stop
   Archangelus:
 	TNT1 A 0 A_SpawnSingleItem("DEHArchangelusSpawner", 0, 0, 256)
+	TNT1 A 35
 	Stop
   TheInquisitor:
 	TNT1 A 0 A_SpawnSingleItem("DEHTheInquisitorSpawner", 0, 0, 256)
+	TNT1 A 35
 	Stop
   }
 }
@@ -350,10 +365,10 @@ ACTOR DEHBossBrain : BossBrain replaces BossBrain
 }
 ACTOR DEHMinibossSpawnShot : SpawnShot
 {
-  DropItem "Afrit", 256, 40
-  DropItem "Haymaker", 256, 30
+  DropItem "AfritSummon", 256, 40
+  DropItem "HaymakerSummon", 256, 30
   DropItem "SIHCybruiser", 256, 20
-  DropItem "HiveMother", 256, 10
+  DropItem "HiveMotherSummon", 256, 10
 }
 
 ACTOR DEHBossEye : BossEye
@@ -911,6 +926,10 @@ ACTOR DEHTheInquisitorSpawner
 	TNT1 A 0
 	Stop
   }
+}
+ACTOR DEHAfriestStatueSpawnShot : AntaresianSpawnShot
+{
+  DropItem "AfriestStatue", 256, 1
 }
 ACTOR DEHAfriestSpecialSpawnShot : AntaresianSpawnShot
 {
