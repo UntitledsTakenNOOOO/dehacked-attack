@@ -21,6 +21,7 @@
 #define DEH_ANTARES 18
 #define DEH_REMNANT 19
 #define DEH_SUNDER 20
+#define DEH_DOOM64 21
 
 Script "Dehacked_MonsterReset" (int mapset, int level)
 {
@@ -90,6 +91,9 @@ Script "Dehacked_MonsterReset" (int mapset, int level)
 	case DEH_SUNDER:
 		keep_spawn = GetCVar("deh_enable_sunder");
 		break;
+	case DEH_DOOM64:
+		keep_spawn = GetCVar("deh_enable_doom64");
+		break;
 	}
 	
 	if(GetCVar("deh_level_scaling") && GetLevelInfo(LEVELINFO_LEVELNUM) < level)
@@ -105,18 +109,24 @@ Script "Dehacked_MonsterReset" (int mapset, int level)
 	}
 }
 
+Script "Dehacked_SubtractiveReset" (void)
+{
+	SetResultValue(GetCVar("deh_subtractive_rendering"));
+}
+
 Script "Dehacked_CyberCount" (void)
 {
-	int a, b, c, d, e, f, g, h;
+	int a, b, c, d, e, f, g, h, i;
 	a = ThingCountName("DEHCyberdemon", 0);
 	b = ThingCountName("Afrit", 0);
 	c = ThingCountName("Haymaker", 0);
 	d = ThingCountName("DarkCyberdemon", 0);
-	e = ThingCountName("RemnantCardinal", 0);
 	f = ThingCountName("Leviathan", 0);
+	e = ThingCountName("RemnantCardinal", 0);
 	g = ThingCountName("GridlockCardinal", 0);
-	h = ThingCountName("HellSmith", 0);
-	int result = a + b + c + d + e + f + g + h;
+	h = ThingCountName("Motherdemon", 0);
+	i = ThingCountName("HellSmith", 0);
+	int result = a + b + c + d + e + f + g + h + i;
 	if(result > 6)
 	{ //Keep the spawn
 		SetResultValue(0);
@@ -153,7 +163,7 @@ Script "Dehacked_BossSelect" OPEN
 	{
 		if(GetCVar("deh_finalboss") <= 0)
 		{
-			BossSelection = random(1, 8);
+			BossSelection = random(1, 9);
 		} else {
 			BossSelection = GetCVar("deh_finalboss");
 		}
@@ -176,7 +186,7 @@ Script "Dehacked_BossSelect" OPEN
 		}
 		else if(BossSelection == 4)
 		{
-			HudMessageBold(s:"VS. Spider Mastermind?";HUDMSG_FADEINOUT,0,CR_BRICK,256.0,144.1,3.0,1.0,1.0);
+			HudMessageBold(s:"VS. Spider Mastermind?";HUDMSG_FADEINOUT,0,CR_TAN,256.0,144.1,3.0,1.0,1.0);
 		}
 		else if(BossSelection == 5)
 		{
@@ -188,9 +198,13 @@ Script "Dehacked_BossSelect" OPEN
 		}
 		else if(BossSelection == 7)
 		{
-			HudMessageBold(s:"VS. Archangelus";HUDMSG_FADEINOUT,0,CR_YELLOW,256.0,144.1,3.0,1.0,1.0);
+			HudMessageBold(s:"VS. Motherdemon";HUDMSG_FADEINOUT,0,CR_BRICK,256.0,144.1,3.0,1.0,1.0);
 		}
 		else if(BossSelection == 8)
+		{
+			HudMessageBold(s:"VS. Archangelus";HUDMSG_FADEINOUT,0,CR_YELLOW,256.0,144.1,3.0,1.0,1.0);
+		}
+		else if(BossSelection == 9)
 		{
 			HudMessageBold(s:"VS. The Inquisitor";HUDMSG_FADEINOUT,0,CR_BLUE,256.0,144.1,3.0,1.0,1.0);
 		}
@@ -225,9 +239,13 @@ Script "Dehacked_BossSpawn" (void)
 	}
 	else if(BossSelection == 7)
 	{
-		SetActorState(0, "Archangelus", 0);
+		SetActorState(0, "Motherdemon", 0);
 	}
 	else if(BossSelection == 8)
+	{
+		SetActorState(0, "Archangelus", 0);
+	}
+	else if(BossSelection == 9)
 	{
 		SetActorState(0, "TheInquisitor", 0);
 	}
@@ -273,9 +291,12 @@ Script "Dehacked_BossMusic" (int music)
 			SetMusic("GRIDLOCK");
 			break;
 		Case 6:
-			SetMusic("ARCANGEL");
+			SetMusic("64MOTHER");
 			break;
 		Case 7:
+			SetMusic("ARCANGEL");
+			break;
+		Case 8:
 			SetMusic("ANTARES");
 			break;
 		}

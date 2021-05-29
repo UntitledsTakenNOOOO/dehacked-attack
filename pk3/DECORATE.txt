@@ -18,6 +18,7 @@ const int DEH_EVITERNITY = 17;
 const int DEH_ANTARES = 18;
 const int DEH_REMNANT = 19;
 const int DEH_SUNDER = 20;
+const int DEH_DOOM64 = 21;
 
 #include "decorate/strain.dec"
 #include "decorate/scythe2.dec"
@@ -31,6 +32,7 @@ const int DEH_SUNDER = 20;
 #include "decorate/valiant.dec"
 #include "decorate/ancientaliens.dec"
 #include "decorate/gridlock.dec"
+#include "decorate/d64d2.dec"
 #include "decorate/eviternity.dec"
 #include "decorate/antares.dec"
 #include "decorate/remnant.dec"
@@ -80,8 +82,9 @@ ACTOR DEHChaingunGuy : ChaingunGuy
 
 ACTOR DehackedImpSpawner : RandomSpawner replaces DoomImp
 {
-	DropItem "DEHDoomImp", 256, 50
-	DropItem "ValiantImp", 256, 25
+	DropItem "DEHDoomImp", 256, 40
+	DropItem "ValiantImp", 256, 20
+	DropItem "NightmareImp", 256, 15
 	DropItem "StrainFastImp", 256, 10
 	DropItem "ShadowImp", 256, 10
 	DropItem "SuperImp", 256, 5
@@ -133,7 +136,8 @@ ACTOR DEHRevenant : Revenant
 
 ACTOR DehackedCacoSpawner : RandomSpawner replaces Cacodemon
 {
-	DropItem "DEHCacodemon", 256, 60
+	DropItem "DEHCacodemon", 256, 50
+	DropItem "NightmareCacodemon", 256, 50
 	DropItem "SpectralCaco", 256, 10
 	DropItem "AstralCaco", 256, 10
 	DropItem "Holobot", 256, 10
@@ -255,13 +259,14 @@ ACTOR DEHArchvile : Archvile
 
 ACTOR DehackedCyberSpawner : RandomSpawner replaces Cyberdemon
 {
-	DropItem "DEHCyberdemon", 256, 15
+	DropItem "DEHCyberdemon", 256, 20
 	DropItem "Afrit", 256, 15
 	DropItem "Haymaker", 256, 15
 	DropItem "DarkCyberdemon", 256, 15
-	DropItem "RemnantCardinal", 256, 15
-	DropItem "Leviathan", 256, 15
+	DropItem "Leviathan", 256, 10
+	DropItem "RemnantCardinal", 256, 10
 	DropItem "GridlockCardinal", 256, 5
+	DropItem "Motherdemon", 256, 5
 	DropItem "HellSmith", 256, 5
 }
 ACTOR DEHCyberdemon : Cyberdemon
@@ -272,14 +277,14 @@ ACTOR DEHCyberdemon : Cyberdemon
 
 ACTOR DehackedSpiderSpawner : RandomSpawner replaces SpiderMastermind
 {
-	DropItem "DEHSpiderMastermind", 256, 16
-	DropItem "HiveMother", 256, 16
-	DropItem "IndomitableMastermind", 256, 16
-	DropItem "SpectralLeviathan", 256, 16
+	DropItem "DEHSpiderMastermind", 256, 20
+	DropItem "HiveMother", 256, 20
+	DropItem "IndomitableMastermind", 256, 15
+	DropItem "SpectralLeviathan", 256, 10
 	DropItem "WarlordOfHell", 256, 10
 	DropItem "RemnantMaster", 256, 10
 	DropItem "AngryMastermind", 256, 10
-	DropItem "ValiantSuperVile", 256, 6
+	DropItem "ValiantSuperVile", 256, 5
 }
 ACTOR DEHSpiderMastermind : SpiderMastermind
 {
@@ -335,6 +340,11 @@ ACTOR DEHFinalBossSpawner : SpecialSpot replaces BossEye
 	Stop
   GridlockCardinal:
 	TNT1 A 0 A_SpawnSingleItem("DEHGridlockCardinalSpawner", 0, 0, 256)
+	TNT1 A 35
+	Stop
+  Motherdemon:
+	TNT1 A 0 A_SpawnSingleItem("DEHMotherdemonSpawner", 0, 0, 256)
+	TNT1 A 0 A_SpawnItemEx("DEHMotherdemonBossEye", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
 	TNT1 A 35
 	Stop
   Archangelus:
@@ -875,7 +885,32 @@ ACTOR DEHCardinalMastermindSpawnShot : DEHTeleportSpawnShot
 	DropItem "RemnantMaster", 256, 1
 }
 
-ACTOR DEHArchangelusSpawner
+ACTOR DEHMotherdemonBossEye
+{
+  Height 32
+  +NOBLOCKMAP
+  +NOSECTOR
+  States
+  {
+  Spawn:
+    TNT1 A 10 A_Look
+    Loop
+  See:
+	TNT1 A 181
+    TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 50 A_BrainSpit("DEHMotherdemonBossEyeShot")
+    Stop
+  }
+}
+ACTOR DEHMotherdemonBossEyeShot : DEHTeleportSpawnShot
+{
+	DropItem "DoomImp", 256, 3
+	DropItem "Cacodemon", 256, 2
+	DropItem "HellKnight", 256, 3
+	DropItem "Arachnotron", 256, 2
+	DropItem "PainElemental", 256, 4
+	DropItem "Fatso", 256, 2
+}
+ACTOR DEHMotherdemonSpawner
 {
   Height 32
   +NOBLOCKMAP
@@ -887,6 +922,31 @@ ACTOR DEHArchangelusSpawner
     Loop
   See:
 	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 6)
+	TNT1 A 181 A_BrainAwake
+	TNT1 A 2450 //70 seconds
+	TNT1 A 0 A_PlaySound("brain/spit", 0, 1.0, 0, ATTN_NONE)
+	TNT1 A 0 A_BrainSpit("DEHBlankShot")
+	TNT1 A 0 A_BrainSpit("DEHMotherdemonSpawnShot")
+    Stop
+  }
+}
+ACTOR DEHMotherdemonSpawnShot : SpawnShot
+{
+  DropItem "MotherdemonFinal", 256, 1
+}
+
+ACTOR DEHArchangelusSpawner
+{
+  Height 32
+  +NOBLOCKMAP
+  +NOSECTOR
+  States
+  {
+  Spawn:
+    TNT1 A 10 A_Look
+    Loop
+  See:
+	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 7)
 	TNT1 A 181 A_BrainAwake
 	TNT1 A 0 A_PlaySound("brain/spit", 0, 1.0, 0, ATTN_NONE)
 	TNT1 A 0 A_BrainSpit("DEHBlankShot")
@@ -913,7 +973,7 @@ ACTOR DEHTheInquisitorSpawner
   See:
 	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 0)
 	TNT1 A 181 A_BrainAwake
-	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 7)
+	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 8)
 	TNT1 A 0 A_BrainSpit("DEHBlankShot")
 	TNT1 A 0 A_BrainSpit("DEHTheInquisitorSpawnShot")
 	TNT1 A 0 A_SetUserVar("user_count", ACS_NamedExecuteWithResult("Dehacked_BossTargetCount"))

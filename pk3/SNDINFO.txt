@@ -105,3 +105,8 @@ hivemother/sight	HIVEMSIT
 hivemother/death	HIVEMDTH
 hivemother/pain		HIVEMPAI
 hivemother/active	HIVEMACT
+
+mother/sight		64MOMSIT
+mother/active		64MOMACT
+mother/pain			64MOMPAI
+mother/death		64MOMDTH

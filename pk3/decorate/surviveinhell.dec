@@ -92,6 +92,11 @@ States
    See:
        SKLL A 3 A_Chase
        Loop
+   Melee: //Change: Added melee attack to make this thing slightly more interesting
+       SKLL B 10 Bright A_FaceTarget
+       SKLL B 4 Bright A_SkullAttack
+       SKLL B 4 Bright
+       Goto Melee+2
    Missile:
        SKLL B 10 Bright A_FaceTarget
        SKLL B 4 Bright A_BruisAttack

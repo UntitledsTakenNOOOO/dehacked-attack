@@ -84,7 +84,7 @@ ACTOR StrainFastImp : DoomImp
   }
 }
 
-ACTOR Doppleganger : LostSoul //Where do the get these names from?
+ACTOR Doppleganger : LostSoul //Where do they get these names from?
 {
   DamageFactor "Antiair", 3.0
   Obituary "%o was spooked by a doppleganger."

@@ -36,8 +36,9 @@ OptionValue "DehackedFinalBoss"
 	4, "Spider Mastermind? (Going Down)"
 	5, "Super Archvile (Valiant)"
 	6, "Gridlock Cardinal (Gridlock 64)"
-	7, "Archangelus (Eviternity)"
-	8, "The Inquisitor (Struggle: Antaresian Legacy)"
+	7, "Motherdemon (Doom 64 for Doom 2)"
+	8, "Archangelus (Eviternity)"
+	9, "The Inquisitor (Struggle: Antaresian Legacy)"
 }
 OptionValue "DehackedFinalBossMusic"
 {
@@ -48,6 +49,11 @@ OptionValue "DehackedFinalBossPreview"
 {
 	0, "Boss is not revealed"
 	1, "Boss is revealed"
+}
+OptionValue "DehackedNightmareRendering"
+{
+	0, "OptFuzzy (Spectre)"
+	1, "Subtractive"
 }
 OptionMenu "DehackedAttackOptions"
 {
@@ -72,6 +78,7 @@ OptionMenu "DehackedAttackOptions"
 	Option "Valiant:", "deh_enable_valiant", "DehackedMonsterSelection"
 	Option "Ancient Aliens:", "deh_enable_ancient_aliens", "DehackedMonsterSelection"
 	Option "Gridlock 64:", "deh_enable_gridlock", "DehackedMonsterSelection"
+	Option "Doom 64 for Doom 2:", "deh_enable_doom64", "DehackedMonsterSelection"
 	Option "Eviternity:", "deh_enable_eviternity", "DehackedMonsterSelection"
 	Option "Antares:", "deh_enable_antares", "DehackedMonsterSelection"
 	Option "Remnant:", "deh_enable_remnant", "DehackedMonsterSelection"
@@ -80,6 +87,10 @@ OptionMenu "DehackedAttackOptions"
 	StaticText "Dehacked Attack Level Scaling", 1
 	StaticText "If enabled, custom monsters cannot spawn earlier than in their source wads."
 	Option "Level Scaling:", "deh_level_scaling", "DehackedMonsterSelection"
+	StaticText ""
+	StaticText "Nightmare Monster Rendering", 1
+	StaticText "Render nightmare monsters fuzzy (like spectres), or subtractively."
+	Option "Nightmare Monster Rendering:", "deh_subtractive_rendering", "DehackedNightmareRendering"
 	StaticText ""
 	StaticText "Final Boss Selection", 1
 	StaticText "Choose one from multiple final bosses."

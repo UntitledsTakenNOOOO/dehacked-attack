@@ -80,6 +80,10 @@ PSX DOOM:
 * Nightmare Spectre: A faster moving and much tougher variant of the spectre. Has 300 HP and spawns with spectres, naturally.
 	* Note: This is not a DEHACKED original, but I felt like giving tribute to a rather different version of Doom and its one original monster.
 
+DOOM 64 FOR DOOM 2 (2018):
+* Nightmare Imp: A spectral (or subtractively rendered, check the options menu for the settings) imp with a cacodemon's fireball attack.
+* Nightmare Cacodemon: A spectral (or subtractively rendered) cacodemon with a triple fireball.
+
 STRUGGLE: ANTARESIAN LEGACY (antares, 2018):
 * Antaresia: A serpent-like creature that has a strange firing pattern. Spawns with Hell Knights.
 	* Change: Uses the Antaresian Reliquary variant instead of the original, for variety's sake (I liked the red better).
@@ -106,6 +110,8 @@ BOSSES:
 	* Change: Reduced health from 8000 down to 4800.
 * Hell Smith (Survive in Hell, 2012): This guy unleashes a powerful wave of 12 fireballs at once as his attack, and has a LOT of health. He spawns in the cyberdemon slot.
 	* Change: Health reduced from 20000 to 8000, because he isn't the final boss of the game anymore.
+* Motherdemon (Doom 64 for Doom 2, 2018): A terrifying flying boss monster that shoots mancubus fireballs and revenant missiles in large quantities that spawns rarely with cyberdemons.
+	* Change: Removed the archvile attack, made it slower, reduced health from 9000 to 5300, and upped its pain chance, all changes remniscent of the original Doom 64.
 * Hive Mother (Sunder, 2019): This insectoid demon can both fire mancubus fireballs very quickly AND retaliates with a set of three rockets.
 	* Spawns with spider masterminds under special circumstances, otherwise it is limited to being summoned by the Icon of Sin and other final bosses.
 * Indomitable Mastermind (Struggle: Antaresian Legacy, 2018): A variant of the spider mastermind that uses both a super-chaingun AND a plasma rifle at the same time.
@@ -126,5 +132,6 @@ FINAL BOSSES (enabled by CVar and then selected in place of Icon of Sin):
 * Spider Mastermind (Going Down): A totally ordinary spider mastermind with nothing weird about it (ha, yeah right). Spawns with some zombies, imps, demons and revenants.
 * Super Archvile [Final Boss Form] (Valiant): Spawns with a swarm of arachnorbs. Has 7500 health, and summons monsters when flinched, which get deadlier if flinched more than four times.
 * Gridlock Cardinal [Final Boss Form] (Gridlock 64): This monstrosity has both phases and moves faster, and in phase two it even now has the ability to teleport. Good luck.
+* Motherdemon [Final Boss Form] (Doom 64 for Doom 2): With 9000 HP, an archvile attack, and an army of other monsters at its disposal, good luck; you'll need it here.
 * Archangelus (Eviternity): Descending from the realm opposite Hell, this guy is insane. One might wish for good luck; but truth be told, it won't save you.
 * The Inquisitor (Struggle: Antaresian Legacy): This guy will unleash an absolute firestorm whenever you're in his line of sight, and spawns with a swarm of Afriests.
