@@ -122,6 +122,7 @@ BOSSES:
 * Spectral Leviathan (Struggle: Antaresian Legacy, 2018): Less health and moves slower than the Leviathan, but he's partially invisible. Spawns with Spider Masterminds.
 * Angry Spiderdemon (Going Down, 2014): Her brain's red for some reason. Retaliates with fireballs when hurt, and has twice as much health as the ordinary Spider Mastermind.
 	* Change: Health reduced from 12000 to 6000.
+* Gate Master (Counterattack, 2017): A super arachnorb with 8000 HP and an Afrit-like attack.
 * Super Archvile (Valiant, 2015): Good luck. This thing attacks with a archvile combo-attack, and can resurrect monsters. It spawns uncommonly with the Spider Mastermind.
 	* Change: Health reduced from 7500 to 3750, because it isn't the final boss of the game anymore.
 * Remnant Master (Remnant, 2019): This thing looks like a flying mancubus, but it's far nastier. It can fire revenant missiles and uses an archvile attack if flinched.

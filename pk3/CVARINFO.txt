@@ -22,6 +22,7 @@ server bool deh_enable_psx_doom = false;
 server bool deh_enable_valiant = true;
 server bool deh_enable_ancient_aliens = true;
 server bool deh_enable_gridlock = true;
+server bool deh_enable_counterattack = true;
 server bool deh_enable_doom64 = true;
 server bool deh_enable_eviternity = true;
 server bool deh_enable_antares = true;

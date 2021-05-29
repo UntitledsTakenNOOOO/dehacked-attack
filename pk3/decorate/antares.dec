@@ -305,7 +305,7 @@ ACTOR AfriestStatue
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossTargetCount") == 0, "Reset")
     Goto Idle
   Reset:
-    TNT1 A 0 A_SpawnItemEx("Afriest", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+    TNT1 A 0
     Stop
   Idle:
     ABIS Q 10 A_Look
@@ -658,6 +658,7 @@ ACTOR TheInquisitor
   +NOGRAVITY
   +MISSILEMORE
   +MISSILEEVENMORE
+  +NOTELESTOMP
   MinMissileChance 160
   Obituary "%o was hopeless against the inquisitor."
   SeeSound "inquisitor/sight"
@@ -683,15 +684,21 @@ ACTOR TheInquisitor
 
 	The thing is, forcing a partial invisibility pickup is terrible, so instead
 	I'm forcing the angle deviation into the attack itself via A_CustomMissile.
+	
+	I've also slowed down the fire rate and swapped some of the mancubus balls
+	for imp and cacodemon fireballs instead, just to nerf him further.
+	
+	His original "call A_FatAttack1 and 2 every single frame" doesn't really
+	work outside of the largest of arenas.
 */
   Missile:
-    AINQ B 1 Bright A_Chase //Change: There was originally four fireballs per tic
-	AINQ BB 0 Bright A_CustomMissile("DoomImpBall", 32, 0, 0 + frandom(-22.5, 22.5))
-    AINQ B 1 Bright A_Wander //But that was just way too much in smaller arenas
+    AINQ B 1 Bright A_Chase
+	AINQ B 0 Bright A_CustomMissile("DoomImpBall", 32, 0, 0 + frandom(-22.5, 22.5))
+    AINQ B 1 Bright A_Wander
 	AINQ B 0 Bright A_CustomMissile("FatShot", 32, 0, 11.25 + frandom(-22.5, 22.5))
-    AINQ B 1 Bright A_Wander //Change: 75% of A_Chase calls changed to A_Wander
-	AINQ BB 0 Bright A_CustomMissile("DoomImpBall", 32, 0, 0 + frandom(-22.5, 22.5))
-    AINQ B 1 Bright A_Wander //This should make it possible to fight in smaller arenas.
+    AINQ B 1 Bright A_Wander
+	AINQ B 0 Bright A_CustomMissile("CacodemonBall", 32, 0, 0 + frandom(-22.5, 22.5))
+    AINQ B 1 Bright A_Wander
 	AINQ B 0 Bright A_CustomMissile("FatShot", 32, 0, -11.25 + frandom(-22.5, 22.5))
 	AINQ B 0 Bright A_SpidRefire
     Loop

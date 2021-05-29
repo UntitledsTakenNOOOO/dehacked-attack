@@ -115,3 +115,11 @@ cyberbaron/sight	CYBOSSIT
 cyberbaron/pain		CYBOSPAI
 cyberbaron/death	CYBOSDTH
 cyberbaron/active	CYBOSACT
+
+gatemaster/death	GTMASDTH
+gatemaster/active	GTMASACT
+gatemaster/pain		GTMASPAI
+gatemaster/sight	GTMASSIT
+
+bubbleship/death	BUBBDTH
+bubbleship/active	BUBBSIT

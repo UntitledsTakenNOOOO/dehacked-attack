@@ -1,0 +1,159 @@
+// Counterattack beasties
+// Mechadon 2017
+
+ACTOR GateMaster
+{
+	Health 8000
+	Radius 50
+	Height 100
+	Mass 2000
+	Speed 20
+	PainChance 20
+	Monster
+	+BOSS
+	+DONTMORPH
+	+BOSSDEATH
+	+FLOAT
+	+NOGRAVITY
+	SeeSound "gatemaster/sight"
+	PainSound "gatemaster/pain"
+	DeathSound "gatemaster/death"
+	ActiveSound "gatemaster/active"
+	Obituary "%o was vaporized by a Gate Master."
+	States
+	{
+	Spawn:
+		ARNQ A 0
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_COUNTERATTACK, 5), "Reset")
+		Goto Idle
+	Reset:
+		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		TNT1 A 0 A_SpawnItemEx("SpiderMastermind", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+		Stop
+	Idle:
+		ARNQ A 10 A_Look
+		Loop
+	See:
+		ARNQ A 2 A_Chase
+		Loop
+	Missile:
+		ARNQ BCD 4 A_FaceTarget
+		ARNQ E 4 Bright A_FatAttack3
+		ARNQ E 4 Bright A_FatAttack2
+		ARNQ E 4 Bright A_FatAttack1
+		ARNQ E 4 Bright A_SkelMissile
+		ARNQ E 4 Bright A_SkelMissile
+		Goto See
+	Pain:
+		ARNQ F 6 A_Pain
+		Goto See
+	Death:
+		ARNQ G 9 A_ScreamAndUnblock
+		ARNQ H 9
+		ARNQ IJKL 9
+		ARNQ M -1
+		Stop
+	}
+}
+
+ACTOR SkullTurret
+{
+	Health 400
+	Radius 16
+	Height 72
+	Mass 10000000
+	Speed 0
+	PainChance 112
+	Monster
+	+FLOORCLIP
+	+DONTMORPH
+	SeeSound "brain/cube"
+	DeathSound "world/barrelx"
+	ActiveSound "brain/cube"
+	Obituary "%o was melted by a Skull Turret."
+	States
+	{
+	Spawn:
+		SKTR A 0
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_COUNTERATTACK, 5), "Reset")
+		Goto Idle
+	Reset:
+		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		Stop
+	Idle:
+		SKTR ABCD 4 A_Look
+		Loop
+	See:
+		SKTR ABCD 4 A_Chase
+		Loop
+	Missile:
+		SKTR A 6 A_FaceTarget
+		SKTR EF 6 Bright A_BspiAttack
+		SKTR F 1 Bright A_SpidRefire
+		Goto Missile+1
+	Pain:
+		SKTR A 16 A_Pain
+		Goto See
+	Death:
+		SKTR A 8 Bright A_Scream
+		SKTR G 8 Bright A_Explode
+		SKTR H 6 Bright A_Fall
+		SKTR I 4 Bright
+		SKTR J -1
+		Stop
+	}
+}
+
+ACTOR BubbleShip
+{
+	Health 14000
+	Radius 64
+	Height 56
+	Mass 10000
+	Speed 18
+	PainChance 10
+	+BOSS
+	+DONTMORPH
+	+BOSSDEATH
+	+FLOAT
+	+NOGRAVITY
+	+QUICKTORETALIATE
+	Monster
+	SeeSound "bubbleship/sight"
+	PainSound "wolfss/pain"
+	DeathSound "world/barrelx"
+	ActiveSound "bubbleship/death"
+	Obituary "%o was nuked by the Bubble Ship Boss."
+	States
+	{
+	Spawn:
+		BUBS ABCD 2 A_Look
+		Loop
+	See:
+		BUBS ABCD 2 A_Chase
+		Loop
+	Missile:
+		BUBS A 4 A_FaceTarget //Change: Reordered the attacks
+		BUBS F 1 Bright A_FaceTarget
+		BUBS F 1 Bright A_TroopAttack
+		BUBS E 1 Bright A_FatAttack1
+		BUBS F 1 Bright A_BspiAttack
+		BUBS F 1 Bright A_HeadAttack
+		BUBS E 1 Bright A_FatAttack2
+		BUBS E 1 Bright A_BruisAttack
+		BUBS F 1 Bright A_SkelMissile
+		BUBS F 1 Bright A_FatAttack3
+		BUBS E 1 Bright A_CyberAttack
+		BUBS E 1 Bright A_SpidRefire
+		Goto Missile+1
+	Pain:
+		BUBS A 10 A_BrainPain
+		Goto See
+	Death:
+		BUBS G 8 Bright A_PlaySound("brain/death", 0, 1.0, 0, ATTN_NONE)
+		BUBS H 8 Bright A_ScreamAndUnblock
+		BUBS I 8 Bright
+		BUBS JK 8 Bright
+		Stop
+	}
+}

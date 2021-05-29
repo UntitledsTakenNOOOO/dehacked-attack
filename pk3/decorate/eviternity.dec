@@ -343,6 +343,7 @@ Actor Archangelus
 	Height 80
 	Mass 1000
 	+SOLID
+	+NOTELESTOMP
 	States
 	{
 	Spawn:
@@ -374,13 +375,14 @@ Actor ArchangelusA
 	Monster
 	+NOGRAVITY
 	+FLOAT
+	+NOTELESTOMP
 	BloodColor 255 221 000
 	SeeSound ""
 	PainSound ""
 	DeathSound ""
 	Obituary "%o was destroyed by Archangelus."
 	Tag "Archangelus (Phase I)"
-	DamageFactor "Scrapper", 3.0
+	DamageFactor "Heroic", 3.0
 	DamageFactor "Antiair", 2.0
 	States
 	{
@@ -436,11 +438,12 @@ Actor ArchangelusB
 	+NOGRAVITY
 	+FLOAT
 	+BOSS
+	+NOTELESTOMP
 	BloodColor 255 221 000
 	DeathSound "archangelus/death"
 	Obituary "%o was ripped and torn by the Archangelus."
 	Tag "Archangelus (Phase II)"
-	DamageFactor "Scrapper", 3.0
+	DamageFactor "Heroic", 3.0
 	DamageFactor "Antiair", 2.0
 	States
 	{
@@ -468,6 +471,7 @@ Actor ArchangelusB
 		ANGL H 2 Bright A_FatAttack1
 		ANGL H 2 Bright A_FatAttack3
 		ANGL H 2 Bright A_FatAttack2
+		ANGL H 2 Bright A_FatAttack3
 		ANGL I 0 A_Jump (176, "Missile2")
 		goto Missile3
 	Missile3:

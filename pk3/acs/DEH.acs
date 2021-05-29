@@ -23,6 +23,7 @@
 #define DEH_SUNDER 20
 #define DEH_DOOM64 21
 #define DEH_MAYANMISHAP 22
+#define DEH_COUNTERATTACK 23
 
 Script "Dehacked_MonsterReset" (int mapset, int level)
 {
@@ -97,6 +98,9 @@ Script "Dehacked_MonsterReset" (int mapset, int level)
 		break;
 	case DEH_MAYANMISHAP:
 		keep_spawn = GetCVar("deh_enable_mayanmishap");
+		break;
+	case DEH_COUNTERATTACK:
+		keep_spawn = GetCVar("deh_enable_counterattack");
 		break;
 	}
 	
