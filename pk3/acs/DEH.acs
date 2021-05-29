@@ -171,7 +171,7 @@ Script "Dehacked_BossSelect" OPEN
 	{
 		if(GetCVar("deh_finalboss") <= 0)
 		{
-			BossSelection = random(1, 9);
+			BossSelection = random(1, 10);
 		} else {
 			BossSelection = GetCVar("deh_finalboss");
 		}
@@ -214,6 +214,10 @@ Script "Dehacked_BossSelect" OPEN
 		}
 		else if(BossSelection == 9)
 		{
+			HudMessageBold(s:"VS. The Leviathan";HUDMSG_FADEINOUT,0,CR_BLUE,256.0,144.1,3.0,1.0,1.0);
+		}
+		else if(BossSelection == 10)
+		{
 			HudMessageBold(s:"VS. The Inquisitor";HUDMSG_FADEINOUT,0,CR_BLUE,256.0,144.1,3.0,1.0,1.0);
 		}
 	}
@@ -254,6 +258,10 @@ Script "Dehacked_BossSpawn" (void)
 		SetActorState(0, "Archangelus", 0);
 	}
 	else if(BossSelection == 9)
+	{
+		SetActorState(0, "Leviathan", 0);
+	}
+	else if(BossSelection == 10)
 	{
 		SetActorState(0, "TheInquisitor", 0);
 	}

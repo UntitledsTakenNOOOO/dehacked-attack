@@ -65,6 +65,7 @@ ACTOR AngryMastermind : SpiderMastermind
 
 ACTOR AngryMastermindFinalPhase1 : SpiderMastermind
 {
+  +NOTELESTOMP
   DropItem "AngryMastermindFinalPhase2"
   var int user_count;
   DamageFactor "Heroic", 3.0
@@ -130,6 +131,7 @@ ACTOR AngryMastermindFinalPhase2 : AngryMastermind
 {
   Health 12000
   +MISSILEEVENMORE
+  +NOTELESTOMP
   States
   {
   Spawn:

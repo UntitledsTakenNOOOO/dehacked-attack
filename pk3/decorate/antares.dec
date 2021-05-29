@@ -571,6 +571,7 @@ ACTOR SummonerLeviathan : Leviathan
   {
   Spawn:
     ALEV A 0
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossCheck") == 9, "Reset")
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_ANTARES, 19), "Reset")
     Goto Idle
   Idle:
@@ -609,21 +610,75 @@ ACTOR SummonerLeviathan : Leviathan
   }
 }
 
+ACTOR LeviathanFinal : Leviathan
+{
+  Health 10000
+  +NOTELESTOMP
+  PainChance 16
+  Speed 12
+  Tag "The Final Leviathan"
+  States
+  {
+  Spawn:
+    ALEV A 10 A_Look
+    Loop
+  See:
+    ALEV AAAABBBBCCCCDDDD 1 A_Chase
+    Loop
+  Missile:
+    TNT1 A 0 A_JumpIfInventory("LDLegendaryMonsterTransformed", 1, "LegendaryMissile")
+    ALEV F 10 Bright A_FaceTarget
+    ALEV E 0 Bright A_FatAttack1
+    ALEV E 0 Bright A_FatAttack2
+    ALEV E 6 Bright A_FatAttack3
+    Goto See
+  LegendaryMissile:
+    TNT1 A 0 A_Jump(51, "LegendaryMissile2")
+    ALEV F 10 Bright A_FaceTarget
+    ALEV E 0 Bright A_FatAttack1
+    ALEV E 0 Bright A_FatAttack2
+    ALEV E 6 Bright A_FatAttack3
+    Goto See
+  LegendaryMissile2:
+    ALEV F 8 Bright A_FaceTarget
+    ALEV EEEE 0 Bright A_BrainSpit("DEHAfriestStatueSpawnShot")
+    ALEV E 0 Bright A_BrainSpit("AntaresianSpawnShot")
+    ALEV E 4 Bright A_BrainSpit("AntaresianSpawnShot")
+    Goto See
+  Pain:
+    ALEV G 2 A_BrainPain
+    ALEV G 8 A_Pain
+    ALEV F 8 Bright A_FaceTarget
+    ALEV EEE 0 Bright A_BrainSpit("DEHAfriestStatueSpawnShot")
+    ALEV E 4 Bright A_BrainSpit("DEHAfriestStatueSpawnShot")
+    Goto See
+  Death:
+    ALEV H 5 Bright A_PlaySound("brain/death", 0, 1.0, 0, ATTN_NONE)
+    ALEV I 5 Bright A_FaceTarget
+    ALEV J 5 Bright A_Scream
+    ALEV KLMNOPQRST 5 Bright
+    ALEV U 5 Bright A_NoBlocking
+    ALEV VWXY 5 Bright
+    ALEV Z -1 Bright A_BrainDie
+    Stop
+  }
+}
+
 ACTOR AntaresianSpawnShot : SpawnShot
 {
   DropItem "DEHDoomImp" 	255 50
   DropItem "FormerRanger"	255 40
   DropItem "PlasmaElite"	255 30
   DropItem "DEHPainElemental"	255 10
-  DropItem "DEHCacodemon"		255 15
-  DropItem "SpectralCaco"		255 10
+  DropItem "DEHCacodemon"		255 20
+  DropItem "SpectralCaco"		255 16
   DropItem "AntaresianArachnotron"	255 10
-  DropItem "ReliquaryArachnotron"	255 20
-  DropItem "DEHFatso"		255 30
+  DropItem "ReliquaryArachnotron"	255 15
+  DropItem "DEHFatso"		255 25
   DropItem "Antaresia"		255 20
-  DropItem "Afriest"		255 9
-  DropItem "AfriestSpecial"	255 9
-  DropItem "AntaresiaElite"	255 3
+  DropItem "Afriest"		255 8
+  DropItem "AfriestSpecial"	255 8
+  DropItem "AntaresiaElite"	255 4
   Speed 20
   SeeSound "leviathan/spit"
   DeathSound "brain/cubeboom"
@@ -704,9 +759,10 @@ ACTOR TheInquisitor
     Loop
   Pain:
     AINQ A 20 Bright A_PlaySound("inquisitory/pain", 0, 1.0, 0, ATTN_NONE)
-    Goto See
+    ALEV EEEE 0 Bright A_BrainSpit("DEHAfriestSpecialSpawnShot")
+	Goto See
   Death:
-    AINQ C 7
+    AINQ C 7 A_PlaySound("brain/death", 0, 1.0, 0, ATTN_NONE)
     AINQ D 7 A_Scream
     AINQ EF 7
     AINQ G 7 A_NoBlocking

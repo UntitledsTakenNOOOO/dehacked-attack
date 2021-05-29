@@ -250,6 +250,8 @@ ACTOR HellSmithFinal : HellSmith
   Health 20000
   +MISSILEMORE
   +MISSILEEVENMORE
+  +NOPAIN
+  +NOTELESTOMP
   States
   {
   Spawn:

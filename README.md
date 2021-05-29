@@ -48,6 +48,10 @@ SURVIVE IN HELL (JC Dorne, 2012):
 RESURGENCE (Joshy, 2014):
 * Evil Marine (Slow Variant): A variant of the evil marine that moves at less than 20% of the speed. Spawns very rarely with revenants, and is still very deadly.
 
+MAYAN MISHAP (Tango, 2014):
+* Greater Mancubus: A variant of the mancubus that can fly and has a slightly deadlier attack pattern.
+* Cyber Baron: A cybernetic baron that occasionally fires rockets from its one cybernetic arm.
+
 VALIANT (skillsaw, 2015):
 * Valiant Imp: This variant on the imp shoots faster fireballs in sets of two.
 * Valiant Demon: These guys bite MUCH faster than ordinary pinky demons.
@@ -62,7 +66,7 @@ VALIANT (skillsaw, 2015):
 * Valiant Arachnotron: Identical to the normal Arachnotron except for color scheme until you kill it, where it has a 3/4 chance to spawn an arachnorb.
 	* Change: In the original valiant, it was 1/2 instead of 3/4. The chance was increased because they're rarer outside of valiant.
 
-ANCIENT ALIENS (skillaw, 2016):
+ANCIENT ALIENS (skillaw et al, 2016):
 * Stealth Plasma Alien: A 30 HP alien (actually a zombie) with an alien plasma rifle that is nearly invisible until it becomes active. Spawns with shotgunners.
 * Alien Guardian: A flying construct that fires salvos of revenant missiles, and even self destructs upon death. Spawns with cacodemons.
 	* Change: HP raised from 100 to 200.
@@ -79,6 +83,10 @@ EVITERNITY (Dragonfly, 2018):
 PSX DOOM:
 * Nightmare Spectre: A faster moving and much tougher variant of the spectre. Has 300 HP and spawns with spectres, naturally.
 	* Note: This is not a DEHACKED original, but I felt like giving tribute to a rather different version of Doom and its one original monster.
+
+DOOM 64 FOR DOOM 2 (Mechadon et al, 2018):
+* Nightmare Imp: A spectral (or subtractively rendered, check the options menu for the settings) imp with a cacodemon's fireball attack.
+* Nightmare Cacodemon: A spectral (or subtractively rendered) cacodemon with a triple fireball.
 
 STRUGGLE: ANTARESIAN LEGACY (antares, 2018):
 * Antaresia: A serpent-like creature that has a strange firing pattern. Spawns with Hell Knights.
@@ -106,12 +114,15 @@ BOSSES:
 	* Change: Reduced health from 8000 down to 4800.
 * Hell Smith (Survive in Hell, 2012): This guy unleashes a powerful wave of 12 fireballs at once as his attack, and has a LOT of health. He spawns in the cyberdemon slot.
 	* Change: Health reduced from 20000 to 8000, because he isn't the final boss of the game anymore.
+* Motherdemon (Doom 64 for Doom 2, 2018): A terrifying flying boss monster that shoots mancubus fireballs and revenant missiles in large quantities that spawns rarely with cyberdemons.
+	* Change: Removed the archvile attack, made it slower, reduced health from 9000 to 5300, and upped its pain chance, all changes remniscent of the original Doom 64.
 * Hive Mother (Sunder, 2019): This insectoid demon can both fire mancubus fireballs very quickly AND retaliates with a set of three rockets.
 	* Spawns with spider masterminds under special circumstances, otherwise it is limited to being summoned by the Icon of Sin and other final bosses.
 * Indomitable Mastermind (Struggle: Antaresian Legacy, 2018): A variant of the spider mastermind that uses both a super-chaingun AND a plasma rifle at the same time.
 * Spectral Leviathan (Struggle: Antaresian Legacy, 2018): Less health and moves slower than the Leviathan, but he's partially invisible. Spawns with Spider Masterminds.
 * Angry Spiderdemon (Going Down, 2014): Her brain's red for some reason. Retaliates with fireballs when hurt, and has twice as much health as the ordinary Spider Mastermind.
 	* Change: Health reduced from 12000 to 6000.
+* Gate Master (Counterattack, 2017): A super arachnorb with 8000 HP and an Afrit-like attack.
 * Super Archvile (Valiant, 2015): Good luck. This thing attacks with a archvile combo-attack, and can resurrect monsters. It spawns uncommonly with the Spider Mastermind.
 	* Change: Health reduced from 7500 to 3750, because it isn't the final boss of the game anymore.
 * Remnant Master (Remnant, 2019): This thing looks like a flying mancubus, but it's far nastier. It can fire revenant missiles and uses an archvile attack if flinched.
@@ -126,5 +137,7 @@ FINAL BOSSES (enabled by CVar and then selected in place of Icon of Sin):
 * Spider Mastermind (Going Down): A totally ordinary spider mastermind with nothing weird about it (ha, yeah right). Spawns with some zombies, imps, demons and revenants.
 * Super Archvile [Final Boss Form] (Valiant): Spawns with a swarm of arachnorbs. Has 7500 health, and summons monsters when flinched, which get deadlier if flinched more than four times.
 * Gridlock Cardinal [Final Boss Form] (Gridlock 64): This monstrosity has both phases and moves faster, and in phase two it even now has the ability to teleport. Good luck.
+* Motherdemon [Final Boss Form] (Doom 64 for Doom 2): With 9000 HP, an archvile attack, and an army of other monsters at its disposal, good luck; you'll need it here.
 * Archangelus (Eviternity): Descending from the realm opposite Hell, this guy is insane. One might wish for good luck; but truth be told, it won't save you.
+* Leviathan [Final Boss Form] (Struggle: Antaresian Legacy): Now smart enough to avoid infighting, and with 10000 health, and summoned with many other monsters, this guy's tough.
 * The Inquisitor (Struggle: Antaresian Legacy): This guy will unleash an absolute firestorm whenever you're in his line of sight, and spawns with a swarm of Afriests.

@@ -38,7 +38,8 @@ OptionValue "DehackedFinalBoss"
 	6, "Gridlock Cardinal (Gridlock 64)"
 	7, "Motherdemon (Doom 64 for Doom 2)"
 	8, "Archangelus (Eviternity)"
-	9, "The Inquisitor (Struggle: Antaresian Legacy)"
+	9, "The Leviathan (Struggle: Antaresian Legacy)"
+	10, "The Inquisitor (Struggle: Antaresian Legacy)"
 }
 OptionValue "DehackedFinalBossMusic"
 {

@@ -341,10 +341,6 @@ ACTOR DEHFinalBossSpawner : SpecialSpot replaces BossEye
 	TNT1 A 0 A_SpawnSingleItem("DEHGridlockCardinalSpawner", 0, 0, 256)
 	TNT1 A 35
 	Stop
-  BubbleShip:
-	TNT1 A 0 A_SpawnSingleItem("DEHBubbleShipSpawner", 0, 0, 256)
-	TNT1 A 35
-	Stop
   Motherdemon:
 	TNT1 A 0 A_SpawnSingleItem("DEHMotherdemonSpawner", 0, 0, 256)
 	TNT1 A 0 A_SpawnItemEx("DEHMotherdemonBossEye", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
@@ -966,7 +962,7 @@ ACTOR DEHArchangelusSpawnShot : SpawnShot
   DropItem "Archangelus", 256, 1
 }
 
-ACTOR DEHTheInquisitorSpawner
+ACTOR DEHLeviathanSpawner
 {
   Height 32
   +NOBLOCKMAP
@@ -982,10 +978,10 @@ ACTOR DEHTheInquisitorSpawner
 	TNT1 A 181 A_BrainAwake
 	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 8)
 	TNT1 A 0 A_BrainSpit("DEHBlankShot")
-	TNT1 A 0 A_BrainSpit("DEHTheInquisitorSpawnShot")
+	TNT1 A 0 A_BrainSpit("DEHLeviathanSpawnShot")
 	TNT1 A 0 A_SetUserVar("user_count", ACS_NamedExecuteWithResult("Dehacked_BossTargetCount"))
   AfriestSpawnLoop:
-	TNT1 A 0 A_BrainSpit("DEHAfriestSpecialSpawnShot")
+	TNT1 A 0 A_BrainSpit("DEHAfriestStatueSpawnShot")
 	TNT1 A 0 A_SetUserVar("user_count", user_count - 1)
 	TNT1 A 0 A_JumpIf(user_count <= 1, "EndLoop")
 	Loop
@@ -994,37 +990,41 @@ ACTOR DEHTheInquisitorSpawner
 	Stop
   }
 }
-ACTOR DEHTheInquisitorSpawner
+ACTOR DEHLeviathanSpawnShot : AntaresianSpawnShot
 {
-  Height 32
-  +NOBLOCKMAP
-  +NOSECTOR
-  var int user_count;
-  States
-  {
-  Spawn:
-    TNT1 A 10 A_Look
-    Loop
-  See:
-	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 0)
-	TNT1 A 181 A_BrainAwake
-	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 8)
-	TNT1 A 0 A_BrainSpit("DEHBlankShot")
-	TNT1 A 0 A_BrainSpit("DEHTheInquisitorSpawnShot")
-	TNT1 A 0 A_SetUserVar("user_count", ACS_NamedExecuteWithResult("Dehacked_BossTargetCount"))
-  AfriestSpawnLoop:
-	TNT1 A 0 A_BrainSpit("DEHAfriestSpecialSpawnShot")
-	TNT1 A 0 A_SetUserVar("user_count", user_count - 1)
-	TNT1 A 0 A_JumpIf(user_count <= 1, "EndLoop")
-	Loop
-  EndLoop:
-	TNT1 A 0
-	Stop
-  }
+  DropItem "LeviathanFinal", 256, 1
 }
 ACTOR DEHAfriestStatueSpawnShot : AntaresianSpawnShot
 {
   DropItem "AfriestStatue", 256, 1
+}
+ACTOR DEHTheInquisitorSpawner
+{
+  Height 32
+  +NOBLOCKMAP
+  +NOSECTOR
+  var int user_count;
+  States
+  {
+  Spawn:
+    TNT1 A 10 A_Look
+    Loop
+  See:
+	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 0)
+	TNT1 A 181 A_BrainAwake
+	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 8)
+	TNT1 A 0 A_BrainSpit("DEHBlankShot")
+	TNT1 A 0 A_BrainSpit("DEHTheInquisitorSpawnShot")
+	TNT1 A 0 A_SetUserVar("user_count", ACS_NamedExecuteWithResult("Dehacked_BossTargetCount"))
+  AfriestSpawnLoop:
+	TNT1 A 0 A_BrainSpit("DEHAfriestSpecialSpawnShot")
+	TNT1 A 0 A_SetUserVar("user_count", user_count - 1)
+	TNT1 A 0 A_JumpIf(user_count <= 1, "EndLoop")
+	Loop
+  EndLoop:
+	TNT1 A 0
+	Stop
+  }
 }
 ACTOR DEHAfriestSpecialSpawnShot : AntaresianSpawnShot
 {

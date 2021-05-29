@@ -679,6 +679,7 @@ ACTOR ValiantSuperVileSummoner : ValiantSuperVile
 
 ACTOR ValiantSuperVileFinal : ValiantSuperVile
 {
+	+NOTELESTOMP
 	Health 7500
 	var int user_spawned;
 	States
