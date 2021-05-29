@@ -580,6 +580,25 @@ ACTOR SummonerLeviathan : Leviathan
     TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
     TNT1 A 0 A_SpawnItemEx("Cyberdemon", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
     Loop
+  Missile:
+    TNT1 A 0 A_JumpIfInventory("LDLegendaryMonsterTransformed", 1, "LegendaryMissile")
+    ALEV F 10 Bright A_FaceTarget
+    ALEV E 0 Bright A_FatAttack1
+    ALEV E 0 Bright A_FatAttack2
+    ALEV E 6 Bright A_FatAttack3
+    Goto See
+  LegendaryMissile:
+    TNT1 A 0 A_Jump(51, "LegendaryMissile2")
+    ALEV F 10 Bright A_FaceTarget
+    ALEV E 0 Bright A_FatAttack1
+    ALEV E 0 Bright A_FatAttack2
+    ALEV E 6 Bright A_FatAttack3
+    Goto See
+  LegendaryMissile2:
+    ALEV F 8 Bright A_FaceTarget
+    ALEV E 0 Bright A_BrainSpit("AntaresianSpawnShot")
+    ALEV E 4 Bright A_BrainSpit("AntaresianSpawnShot")
+    Goto See
   Pain:
     ALEV G 2
     ALEV G 8 A_Pain
@@ -666,12 +685,12 @@ ACTOR TheInquisitor
 	I'm forcing the angle deviation into the attack itself via A_CustomMissile.
 */
   Missile:
-    AINQ B 1 Bright A_Chase //Change: There was originally two fireballs per tic
-	AINQ B 0 Bright A_CustomMissile("FatShot", 32, 0, 0 + frandom(-22.5, 22.5))
+    AINQ B 1 Bright A_Chase //Change: There was originally four fireballs per tic
+	AINQ BB 0 Bright A_CustomMissile("DoomImpBall", 32, 0, 0 + frandom(-22.5, 22.5))
     AINQ B 1 Bright A_Wander //But that was just way too much in smaller arenas
 	AINQ B 0 Bright A_CustomMissile("FatShot", 32, 0, 11.25 + frandom(-22.5, 22.5))
     AINQ B 1 Bright A_Wander //Change: 75% of A_Chase calls changed to A_Wander
-	AINQ B 0 Bright A_CustomMissile("FatShot", 32, 0, 0 + frandom(-22.5, 22.5))
+	AINQ BB 0 Bright A_CustomMissile("DoomImpBall", 32, 0, 0 + frandom(-22.5, 22.5))
     AINQ B 1 Bright A_Wander //This should make it possible to fight in smaller arenas.
 	AINQ B 0 Bright A_CustomMissile("FatShot", 32, 0, -11.25 + frandom(-22.5, 22.5))
 	AINQ B 0 Bright A_SpidRefire

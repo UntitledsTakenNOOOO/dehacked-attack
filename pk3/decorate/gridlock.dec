@@ -118,7 +118,7 @@ ACTOR GridlockCardinalPhase2 : GridlockCardinal
     GCRD C 6 A_FaceTarget
     GCRD D 6 Bright A_SkelMissile
     GCRD C 6 A_FaceTarget
-    GCRD D 6 Bright A_SkelMissile
+    GCRD D 6 Bright A_BruisAttack
     GCRD C 10 A_FaceTarget
 	Goto LegendaryMissileLoop
   LegendaryMissileLoop:

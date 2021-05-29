@@ -115,10 +115,10 @@ ACTOR WarlordOfHell : BaronOfHell
         Loop
     Melee:
     Missile:
-        BOS6 E 8 A_VileStart //Change: Added 8 frames of delay before attack on A_VileStart call
-        BOS6 E 8 Bright A_VileTarget
-        BOS6 F 8 Bright A_FaceTarget
-        BOS6 G 8 Bright A_VileAttack
+        BOS6 E 12 A_VileStart //Change: Added 8 frames of delay before attack on A_VileStart call
+        BOS6 E 12 Bright A_VileTarget
+        BOS6 F 12 Bright A_FaceTarget
+        BOS6 G 12 Bright A_VileAttack
         Goto See
     Pain:
         BOS6 H 2

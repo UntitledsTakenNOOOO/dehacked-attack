@@ -48,6 +48,10 @@ SURVIVE IN HELL (JC Dorne, 2012):
 RESURGENCE (Joshy, 2014):
 * Evil Marine (Slow Variant): A variant of the evil marine that moves at less than 20% of the speed. Spawns very rarely with revenants, and is still very deadly.
 
+MAYAN MISHAP (Tango, 2014):
+* Greater Mancubus: A variant of the mancubus that can fly and has a slightly deadlier attack pattern.
+* Cyber Baron: A cybernetic baron that occasionally fires rockets from its one cybernetic arm.
+
 VALIANT (skillsaw, 2015):
 * Valiant Imp: This variant on the imp shoots faster fireballs in sets of two.
 * Valiant Demon: These guys bite MUCH faster than ordinary pinky demons.
@@ -62,7 +66,7 @@ VALIANT (skillsaw, 2015):
 * Valiant Arachnotron: Identical to the normal Arachnotron except for color scheme until you kill it, where it has a 3/4 chance to spawn an arachnorb.
 	* Change: In the original valiant, it was 1/2 instead of 3/4. The chance was increased because they're rarer outside of valiant.
 
-ANCIENT ALIENS (skillaw, 2016):
+ANCIENT ALIENS (skillaw et al, 2016):
 * Stealth Plasma Alien: A 30 HP alien (actually a zombie) with an alien plasma rifle that is nearly invisible until it becomes active. Spawns with shotgunners.
 * Alien Guardian: A flying construct that fires salvos of revenant missiles, and even self destructs upon death. Spawns with cacodemons.
 	* Change: HP raised from 100 to 200.
@@ -80,7 +84,7 @@ PSX DOOM:
 * Nightmare Spectre: A faster moving and much tougher variant of the spectre. Has 300 HP and spawns with spectres, naturally.
 	* Note: This is not a DEHACKED original, but I felt like giving tribute to a rather different version of Doom and its one original monster.
 
-DOOM 64 FOR DOOM 2 (2018):
+DOOM 64 FOR DOOM 2 (Mechadon et al, 2018):
 * Nightmare Imp: A spectral (or subtractively rendered, check the options menu for the settings) imp with a cacodemon's fireball attack.
 * Nightmare Cacodemon: A spectral (or subtractively rendered) cacodemon with a triple fireball.
 

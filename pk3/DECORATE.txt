@@ -19,6 +19,7 @@ const int DEH_ANTARES = 18;
 const int DEH_REMNANT = 19;
 const int DEH_SUNDER = 20;
 const int DEH_DOOM64 = 21;
+const int DEH_MAYANMISHAP = 22;
 
 #include "decorate/strain.dec"
 #include "decorate/scythe2.dec"
@@ -29,6 +30,7 @@ const int DEH_DOOM64 = 21;
 #include "decorate/lunatic.dec"
 #include "decorate/surviveinhell.dec"
 #include "decorate/goingdown.dec"
+#include "decorate/mayanmishap.dec"
 #include "decorate/valiant.dec"
 #include "decorate/ancientaliens.dec"
 #include "decorate/gridlock.dec"
@@ -137,7 +139,7 @@ ACTOR DEHRevenant : Revenant
 ACTOR DehackedCacoSpawner : RandomSpawner replaces Cacodemon
 {
 	DropItem "DEHCacodemon", 256, 50
-	DropItem "NightmareCacodemon", 256, 50
+	DropItem "NightmareCacodemon", 256, 10
 	DropItem "SpectralCaco", 256, 10
 	DropItem "AstralCaco", 256, 10
 	DropItem "Holobot", 256, 10
@@ -195,9 +197,9 @@ ACTOR DEHPainElemental : PainElemental
 ACTOR DehackedKnightSpawner : RandomSpawner replaces HellKnight
 {
 	DropItem "DEHHellKnight", 256, 70
-	DropItem "ValiantPyroDemon", 256, 14
+	DropItem "ValiantPyroDemon", 256, 12
 	DropItem "Antaresia", 256, 10
-	DropItem "ValiantCybruiser", 256, 6
+	DropItem "ValiantCybruiser", 256, 8
 }
 ACTOR DEHHellKnight : HellKnight
 {
@@ -207,10 +209,11 @@ ACTOR DEHHellKnight : HellKnight
 
 ACTOR DehackedBaronSpawner : RandomSpawner replaces BaronOfHell
 {
-	DropItem "DEHBaronOfHell", 256, 70
-	DropItem "Belphegor", 256, 14
-	DropItem "StrainDemonLord", 256, 10
-	DropItem "EviternityAnnihilator", 256, 6
+	DropItem "DEHBaronOfHell", 256, 60
+	DropItem "CyberBaron", 256, 12
+	DropItem "Belphegor", 256, 12
+	DropItem "StrainDemonLord", 256, 8
+	DropItem "EviternityAnnihilator", 256, 8
 }
 ACTOR DEHBaronOfHell : BaronOfHell
 {
@@ -220,8 +223,9 @@ ACTOR DEHBaronOfHell : BaronOfHell
 
 ACTOR DehackedFatsoSpawner : RandomSpawner replaces Fatso
 {
-	DropItem "DEHFatso", 256, 60
+	DropItem "DEHFatso", 256, 50
 	DropItem "AlienFatso", 256, 30
+	DropItem "GreaterMancubus", 256, 10
 	DropItem "ValiantSuperMancubus", 256, 10
 }
 ACTOR DEHFatso : Fatso

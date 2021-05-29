@@ -110,3 +110,8 @@ mother/sight		64MOMSIT
 mother/active		64MOMACT
 mother/pain			64MOMPAI
 mother/death		64MOMDTH
+
+cyberbaron/sight	CYBOSSIT
+cyberbaron/pain		CYBOSPAI
+cyberbaron/death	CYBOSDTH
+cyberbaron/active	CYBOSACT

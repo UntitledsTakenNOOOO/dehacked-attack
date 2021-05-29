@@ -660,7 +660,7 @@ ACTOR ValiantSuperVileSummoner : ValiantSuperVile
 		TNT1 A 0 A_JumpIfInventory("LDLegendaryMonsterTransformed", 1, "LegendaryMissile")
 		Goto "Super::Missile"
 	LegendaryMissile:
-		TNT1 A 0 A_Jump(64, "LegendaryMissile2")
+		TNT1 A 0 A_Jump(32, "LegendaryMissile2")
 		Goto "Super::Missile"
 	LegendaryMissile2:
 		DIA2 A 16 Bright
