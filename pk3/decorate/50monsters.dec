@@ -21,7 +21,6 @@ ActiveSound "monster/ovlact"
 +BOSS
 +DONTMORPH
 +NOTELESTOMP
-+NOTARGET
 +MISSILEEVENMORE
 +FLOAT
 +NOGRAVITY
@@ -43,20 +42,16 @@ ActiveSound "monster/ovlact"
   Pain:
     OVER H 6
     OVER H 6 A_Pain
-	OVER BC 4 A_FaceTarget
-	OVER D 8 A_PainAttack
-	OVER C 4 A_FaceTarget
-	OVER D 8 A_PainAttack
+    Goto SummonAttack
+  SummonAttack:
+    OVER BC 4 A_FaceTarget
+    OVER D 8 A_PainAttack
+    OVER C 4 A_FaceTarget
+    OVER D 8 A_PainAttack
     goto See
   LegendaryMissile:
-	OVER A 0 A_Jump(85, "LegendaryMissile2")
+	OVER A 0 A_Jump(85, "SummonAttack")
 	Goto Missile+1
-  LegendaryMissile2:
-	OVER BC 4 A_FaceTarget
-	OVER D 8 A_PainAttack
-	OVER C 4 A_FaceTarget
-	OVER D 8 A_PainAttack
-    goto See
   Death:
     OVER I 0 bright A_NoBlocking
     OVER I 8 bright A_Scream
@@ -81,33 +76,30 @@ Translation 2
   Pain:
     OVER H 6
     OVER H 6 A_Pain
-	OVER BC 4 A_FaceTarget
-	OVER D 8 A_PainAttack
-	OVER C 4 A_FaceTarget
-	OVER D 8 A_PainAttack
+    Goto SummonAttack
+  SummonAttack:
+    OVER BC 4 A_FaceTarget
+    OVER D 8 A_PainAttack
+    OVER C 4 A_FaceTarget
+    OVER D 8 A_PainAttack
     goto See
   LegendaryMissile:
-	OVER A 0 A_Jump(85, "LegendaryMissile2")
+	OVER A 0 A_Jump(85, "SummonAttack")
 	Goto Missile+1
-  LegendaryMissile2:
-	OVER BC 4 A_FaceTarget
-	OVER D 8 A_PainAttack
-	OVER C 4 A_FaceTarget
-	OVER D 8 A_PainAttack
-    goto See
   Death:
     TFOG ABABCDEFGHIJ 6 Bright
 	TNT1 A 35
 	TNT1 A 0 A_SetUserVar("user_count", 12 * ACS_NamedExecuteWithResult("Dehacked_BossEyeCount"))
   DeathLoop:
+	TNT1 A 35 A_SetTics(35 / ACS_NamedExecuteWithResult("Dehacked_BossEyeCount") + 1)
 	TNT1 A 0 A_BrainSpit("OverLordMinionSpawnShot")
-	TNT1 A 35 A_BrainSpit("OverLordFakeSpawnShot")
+	TNT1 A 0 A_BrainSpit("OverLordFakeSpawnShot")
 	TNT1 A 0 A_SetUserVar("user_count", user_count - 1)
 	TNT1 A 0 A_JumpIf(user_count <= 1, "Death2")
 	Loop
   Death2:
-	TNT1 A 0 A_BrainSpit("OverLordMinionSpawnShot")
-	TNT1 A 35 A_BrainSpit("OverLordRealSpawnShot")
+	TNT1 A 0 A_SpawnItemEx("TeleportFog", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+	TNT1 A 35 A_SpawnItemEx("OverLord", 0, 0, 0, 0, 0, 0, 0, SXF_TELEFRAG|SXF_TRANSFERPOINTERS, 0)
 	Stop
   }
 }

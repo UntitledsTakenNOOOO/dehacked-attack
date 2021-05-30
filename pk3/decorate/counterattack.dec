@@ -67,6 +67,7 @@ ACTOR SkullTurret
 	Monster
 	+FLOORCLIP
 	+DONTMORPH
+	+LOOKALLAROUND //Change: Added for consistency in behavior
 	SeeSound "brain/cube"
 	DeathSound "world/barrelx"
 	ActiveSound "brain/cube"
@@ -122,7 +123,7 @@ ACTOR BubbleShip
 	SeeSound "bubbleship/sight"
 	PainSound "wolfss/pain"
 	DeathSound "world/barrelx"
-	ActiveSound "bubbleship/death"
+	ActiveSound "bubbleship/active"
 	Obituary "%o was nuked by the Bubble Ship Boss."
 	States
 	{
@@ -132,9 +133,22 @@ ACTOR BubbleShip
 	See:
 		BUBS ABCD 2 A_Chase
 		Loop
-	Missile:
-		BUBS A 4 A_FaceTarget //Change: Reordered the attacks
-		BUBS F 1 Bright A_FaceTarget
+	Missile: //Change: doubled length for all attack frames
+		TNT1 A 0 Bright A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossEyeCount") > 10, "SuperMissile")
+		BUBS A 10 Bright A_FaceTarget //Change: Reordered the attacks
+		BUBS F 2 Bright A_TroopAttack
+		BUBS E 2 Bright A_FatAttack1
+		BUBS F 2 Bright A_BspiAttack
+		BUBS F 2 Bright A_HeadAttack
+		BUBS E 2 Bright A_FatAttack2
+		BUBS E 2 Bright A_BruisAttack
+		BUBS F 2 Bright A_SkelMissile
+		BUBS F 2 Bright A_FatAttack3
+		BUBS E 2 Bright A_CyberAttack
+		BUBS E 2 Bright A_SpidRefire
+		Goto Missile+2
+	SuperMissile:
+		BUBS A 4 Bright A_FaceTarget
 		BUBS F 1 Bright A_TroopAttack
 		BUBS E 1 Bright A_FatAttack1
 		BUBS F 1 Bright A_BspiAttack
@@ -145,15 +159,17 @@ ACTOR BubbleShip
 		BUBS F 1 Bright A_FatAttack3
 		BUBS E 1 Bright A_CyberAttack
 		BUBS E 1 Bright A_SpidRefire
-		Goto Missile+1
+		Goto SuperMissile+1
 	Pain:
-		BUBS A 10 A_BrainPain
+		BUBS A 10 A_Pain
 		Goto See
 	Death:
 		BUBS G 8 Bright A_PlaySound("brain/death", 0, 1.0, 0, ATTN_NONE)
 		BUBS H 8 Bright A_ScreamAndUnblock
 		BUBS I 8 Bright
 		BUBS JK 8 Bright
+		TNT1 A 80
+		TNT1 A -1 A_BrainDie
 		Stop
 	}
 }

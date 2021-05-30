@@ -66,11 +66,26 @@ ACTOR MotherdemonFinal
 		Goto See
 	Pain:
 		64MT K 40 A_Pain
+		Goto Summon
+	Summon:
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossEyeCount") > 10, "SuperSummon")
 		64MT H 4 Bright A_FaceTarget
 		64MT I 6 Bright A_FaceTarget
 		64MT JJ 4 Bright A_DualPainAttack("DEHLostSoul") //CHANGE: Ahahahahahaha
 		64MT J 4 Bright A_DualPainAttack("Doppleganger")
 		64MT J 4 Bright A_PainAttack("PoisonSoul")
+		Goto See
+	SuperSummon:
+		64MT H 10 Bright A_FaceTarget
+		64MT H 8 Bright A_PainAttack("DEHCacodemon")
+		64MT H 8 Bright A_PainAttack("NightmareCacodemon")
+		64MT H 8 Bright A_PainAttack("AstralCaco")
+		64MT I 8 Bright A_PainAttack("Holobot")
+		64MT I 8 Bright A_PainAttack("AlienGuardian")
+		64MT I 8 Bright A_PainAttack("Afriest")
+		64MT I 8 Bright A_PainAttack("DEHPainElemental")
+		64MT J 8 Bright A_PainAttack("ShadowElemental")
+		64MT J 20 Bright A_PainAttack("PoisonSoul")
 		Goto See
 	LegendaryMissile:
 		64MT E 10 A_FaceTarget
@@ -80,7 +95,7 @@ ACTOR MotherdemonFinal
 		64MT G 0 Bright A_FatAttack3
 		64MT G 1 Bright A_FatAttack1
 		64MT G 1 Bright A_FatAttack2
-		TNT1 A 0 Bright A_Jump(96, "LegendaryMissile2")
+		TNT1 A 0 Bright A_Jump(96, "Summon")
 		64MT H 0 Bright A_VileStart
 		64MT H 10 Bright A_FaceTarget
 		64MT H 8 Bright A_VileTarget
@@ -88,13 +103,6 @@ ACTOR MotherdemonFinal
 		64MT IIII 8 Bright A_FaceTarget
 		64MT J 8 Bright A_VileAttack
 		64MT J 20 Bright
-		Goto See
-	LegendaryMissile2:
-		64MT H 4 Bright A_FaceTarget
-		64MT I 6 Bright A_FaceTarget
-		64MT JJ 4 Bright A_DualPainAttack("DEHLostSoul")
-		64MT J 4 Bright A_DualPainAttack("Doppleganger")
-		64MT J 4 Bright A_PainAttack("PoisonSoul")
 		Goto See
 	Death:
 		64MT L 0 A_PlaySound("brain/death", 0, 1.0, 0, ATTN_NONE)

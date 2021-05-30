@@ -10,7 +10,7 @@ ACTOR AngryMastermind : SpiderMastermind
   Spawn:
     RSPD A 0
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossCheck") == 4, "Reset")
-	TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_GOING_DOWN, 29), "Reset")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_GOING_DOWN, 29), "Reset")
     Goto Idle
   Idle:
     RSPD AB 10 Bright A_Look
@@ -34,25 +34,19 @@ ACTOR AngryMastermind : SpiderMastermind
     RSPD E 1 Bright A_SpidRefire
     Goto Missile+2
   LegendaryMissile:
-    TNT1 A 0 A_Jump(128, "LegendaryMissile2")
+    TNT1 A 0 A_Jump(128, "PainMissile")
     Goto Missile+1
-  LegendaryMissile2:
-    RSPD A 10 Bright A_FaceTarget
-    RSPD E 4 Bright A_FatAttack1
-    RSPD G 4 Bright A_SkelMissile
-    RSPD E 4 Bright A_FatAttack2
-    RSPD G 4 Bright A_SkelMissile
-    RSPD E 4 Bright A_FatAttack3
-    Goto See
-  Pain:
-    RSPD H 3
-    RSPD H 3 A_Pain
+  PainMissile:
     RSPD A 10 Bright A_FaceTarget
     RSPD E 4 Bright A_FatAttack1
     RSPD G 4 Bright A_FatAttack2
     RSPD E 4 Bright A_SkelMissile
     RSPD G 4 Bright A_SkelMissile
     Goto See
+  Pain:
+    RSPD H 3
+    RSPD H 3 A_Pain
+    Goto PainMissile
   Death:
     RSPD I 20 A_Scream
     RSPD N 10 A_NoBlocking
@@ -66,7 +60,6 @@ ACTOR AngryMastermind : SpiderMastermind
 ACTOR AngryMastermindFinalPhase1 : SpiderMastermind
 {
   +NOTELESTOMP
-  DropItem "AngryMastermindFinalPhase2"
   var int user_count;
   DamageFactor "Heroic", 3.0
   States
@@ -88,9 +81,10 @@ ACTOR AngryMastermindFinalPhase1 : SpiderMastermind
 	SPID A 0 A_SetUserVar("user_count", ACS_NamedExecuteWithResult("Dehacked_BossTargetCount"))
 	Goto SpawnerLoop4
   DeathFinal:
-    SPID S 10 A_NoBlocking
-	SPID S -1
-    Stop
+	SPID S 10 A_NoBlocking
+	SPID S 0 A_SpawnItemEx("TeleportFog", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+	SPID S -1 A_SpawnItemEx("AngryMastermindFinalPhase2", 0, 0, 0, 0, 0, 0, 0, SXF_TELEFRAG|SXF_TRANSFERPOINTERS, 0)
+	Stop
   SpawnerLoop1:
 	TNT1 A 0 A_BrainSpit("GDSpawnShot")
 	TNT1 A 0 A_SetUserVar("user_count", user_count - 1)
@@ -136,18 +130,63 @@ ACTOR AngryMastermindFinalPhase2 : AngryMastermind
   {
   Spawn:
     RSPD AB 10 Bright A_Look
-	Goto Idle
+    Goto Idle
   Idle:
     RSPD AB 10 Bright A_Look
     Loop
   Pain: //Change: I don't know the frame numbers, so these are probably wrong.
     RSPD H 3
     RSPD H 3 A_BrainPain
+    Goto PainMissile
+  Missile:
+    TNT1 A 0 A_JumpIfInventory("LDLegendaryMonsterTransformed", 1, "LegendaryMissile")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossEyeCount") > 10, "SuperPainMissile")
+    RSPD A 10 Bright A_FaceTarget
+    RSPD EG 4 Bright A_SPosAttackUseAtkSound
+    RSPD E 1 Bright A_SpidRefire
+    Goto Missile+3
+  SuperMissile:
+    RSPD A 10 Bright A_FaceTarget
+    RSPD E 2 Bright A_SPosAttackUseAtkSound
+    RSPD E 2 Bright A_FatAttack1
+    RSPD G 2 Bright A_SPosAttackUseAtkSound
+    RSPD G 2 Bright A_SkelMissile
+    RSPD E 2 Bright A_SPosAttackUseAtkSound
+    RSPD E 2 Bright A_FatAttack2
+    RSPD G 2 Bright A_SPosAttackUseAtkSound
+    RSPD G 2 Bright A_SkelMissile
+    RSPD E 1 Bright A_SpidRefire
+    Goto SuperMissile+1
+  LegendaryMissile:
+    TNT1 A 0 A_Jump(128, "PainMissile")
+    Goto Missile+1
+  PainMissile:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossEyeCount") > 10, "SuperPainMissile")
     RSPD A 10 Bright A_FaceTarget
     RSPD E 4 Bright A_FatAttack1
-    RSPD G 4 Bright A_FatAttack2
-    RSPD E 4 Bright A_SkelMissile
     RSPD G 4 Bright A_SkelMissile
+    RSPD E 4 Bright A_FatAttack2
+    RSPD G 4 Bright A_SkelMissile
+    RSPD E 4 Bright A_FatAttack3
+    Goto See
+  SuperPainMissile:
+    RSPD A 10 Bright A_FaceTarget
+    RSPD E 2 Bright A_FatAttack1
+    RSPD G 2 Bright A_SkelMissile
+    RSPD E 2 Bright A_FatAttack3
+    RSPD G 2 Bright A_SkelMissile
+    RSPD E 2 Bright A_FatAttack2
+    RSPD G 2 Bright A_SkelMissile
+    RSPD E 2 Bright A_FatAttack3
+    RSPD G 2 Bright A_SkelMissile
+    RSPD E 2 Bright A_FatAttack1
+    RSPD G 2 Bright A_SkelMissile
+    RSPD E 2 Bright A_FatAttack3
+    RSPD G 2 Bright A_SkelMissile
+    RSPD E 2 Bright A_FatAttack2
+    RSPD G 2 Bright A_SkelMissile
+    RSPD E 2 Bright A_FatAttack3
+    RSPD G 2 Bright A_SkelMissile
     Goto See
   Death:
     RSPD I 20 A_PlaySound("brain/death", 0, 1.0, 0, ATTN_NONE)

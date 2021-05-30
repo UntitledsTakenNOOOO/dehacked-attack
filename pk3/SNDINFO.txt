@@ -121,8 +121,8 @@ gatemaster/active	GTMASACT
 gatemaster/pain		GTMASPAI
 gatemaster/sight	GTMASSIT
 
-bubbleship/death	BUBBDTH
-bubbleship/active	BUBBSIT
+bubbleship/sight	BUBBSIT
+bubbleship/active	BUBBACT
 
 monster/ovlsit                  dsovlsit
 monster/ovlact                  dsovlact

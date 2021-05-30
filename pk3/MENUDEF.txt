@@ -41,6 +41,7 @@ OptionValue "DehackedFinalBoss"
 	9, "Archangelus (Eviternity)"
 	10, "The Leviathan (Struggle: Antaresian Legacy)"
 	11, "The Inquisitor (Struggle: Antaresian Legacy)"
+	12, "Bubble Ship (Counterattack)"
 }
 OptionValue "DehackedFinalBossMusic"
 {
