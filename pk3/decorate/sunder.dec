@@ -38,14 +38,14 @@ ACTOR HiveMother
     Loop
   Missile:
     TNT1 A 0 A_JumpIfInventory("LDLegendaryMonsterTransformed", 1, "LegendaryMissile")
-    HVMM GH 4 A_FaceTarget //CHANGE: The A_FatAttack order goes 3-2-1-3-2-1-3 to make it symmetrical,
-    HVMM H 1 Bright A_FatAttack3 //as the original 1-2-3-1-2-3-1 was biased to the right.
-    HVMM I 1 Bright A_FatAttack2
-    HVMM H 1 Bright A_FatAttack1
+    HVMM GH 4 A_FaceTarget //CHANGE: The A_FatAttack order goes 1-3-2-3-1-3-2 to make it symmetrical,
+    HVMM H 1 Bright A_FatAttack1 //as the original 1-2-3-1-2-3-1 was biased to the right.
     HVMM I 1 Bright A_FatAttack3
     HVMM H 1 Bright A_FatAttack2
-    HVMM I 1 Bright A_FatAttack1
-    HVMM H 3 Bright A_FatAttack3
+    HVMM I 1 Bright A_FatAttack3
+    HVMM H 1 Bright A_FatAttack1
+    HVMM I 1 Bright A_FatAttack3
+    HVMM H 3 Bright A_FatAttack2
     HVMM KLM 4 A_FaceTarget
     Goto See
   LegendaryMissile:

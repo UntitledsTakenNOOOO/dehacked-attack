@@ -516,7 +516,7 @@ DamageFactor "Scrapper", 2.0
 States 
    { 
    Spawn:
-       BRUS A 0
+       CBRU A 0
 	   TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_VALIANT, 25), "Reset")
        Goto Idle
    Reset:
@@ -524,36 +524,36 @@ States
        TNT1 A 0 A_SpawnItemEx("DEHHellKnight", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
        Stop
    Idle:
-       BRUS AB 10 A_Look 
+       CBRU AB 10 A_Look 
        Loop 
    See:
-       BRUS A 1 A_Playsound("monster/bruwlk")
-       BRUS A 2 A_Chase
-       BRUS A 3 A_Chase
-       BRUS BB 3 A_Chase
-       BRUS C 1 A_Playsound("monster/bruwlk")
-       BRUS C 2 A_Chase
-       BRUS C 3 A_Chase 
-       BRUS DD 3 A_Chase
+       CBRU A 1 A_Playsound("monster/bruwlk")
+       CBRU A 2 A_Chase
+       CBRU A 3 A_Chase
+       CBRU BB 3 A_Chase
+       CBRU C 1 A_Playsound("monster/bruwlk")
+       CBRU C 2 A_Chase
+       CBRU C 3 A_Chase 
+       CBRU DD 3 A_Chase
        Loop 
    Missile:
-       BRUS E 8 A_FaceTarget 
-       BRUS F 12 Bright A_CyberAttack
+       CBRU E 8 A_FaceTarget 
+       CBRU F 12 Bright A_CyberAttack
        Goto See
    Melee:
-       BRUS GH 8 A_FaceTarget
-       BRUS I 8 A_BruisAttack
+       CBRU GH 8 A_FaceTarget
+       CBRU I 8 A_BruisAttack
        Goto See
    Pain: 
-       BRUS J 2 
-       BRUS J 2 A_Pain 
+       CBRU J 2 
+       CBRU J 2 A_Pain 
        Goto See 
    Death: 
-       BRUS K 6 Bright A_Scream
-       BRUS LMN 6 Bright
-       BRUS O 6 Bright A_NoBlocking
-       BRUS QRS 6 Bright
-       BRUS T -1
+       CBRU K 6 Bright A_Scream
+       CBRU LMN 6 Bright
+       CBRU O 6 Bright A_NoBlocking
+       CBRU QRS 6 Bright
+       CBRU T -1
        Stop
    } 
 }

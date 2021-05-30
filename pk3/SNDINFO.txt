@@ -123,3 +123,8 @@ gatemaster/sight	GTMASSIT
 
 bubbleship/death	BUBBDTH
 bubbleship/active	BUBBSIT
+
+monster/ovlsit                  dsovlsit
+monster/ovlact                  dsovlact
+monster/ovlpai                  dsovlpai
+monster/ovldth                  dsovldth

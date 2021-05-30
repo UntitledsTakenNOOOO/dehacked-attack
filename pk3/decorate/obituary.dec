@@ -31,8 +31,7 @@ ACTOR SuperImp : DoomImp
 		Stop
 	Melee:
 	Missile:
-		IMP3 A 8 A_FaceTarget
-		IMP3 B 8 A_FaceTarget
+		IMP3 AB 8 A_FaceTarget
 		TROO G 8 A_BruisAttack
 		Goto See
 	}

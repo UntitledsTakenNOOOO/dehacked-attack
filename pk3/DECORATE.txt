@@ -36,6 +36,7 @@ const int DEH_COUNTERATTACK = 23;
 #include "decorate/ancientaliens.dec"
 #include "decorate/gridlock.dec"
 #include "decorate/counterattack.dec"
+#include "decorate/50monsters.dec"
 #include "decorate/d64d2.dec"
 #include "decorate/eviternity.dec"
 #include "decorate/antares.dec"
@@ -322,41 +323,45 @@ ACTOR DEHFinalBossSpawner : SpecialSpot replaces BossEye
   FinalCountdown:
 	TNT1 A 0 A_SpawnSingleItem("DEHFinalCountdownExitHandler", 0, 0, 256)
 	TNT1 A 0 A_SpawnItemEx("DEHFinalCountdownBossEye", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
-	TNT1 A 35
+	TNT1 A -1
 	Stop
   HellSmith:
 	TNT1 A 0 A_SpawnSingleItem("DEHHellSmithSpawner", 0, 0, 256)
 	TNT1 A 0 A_SpawnItemEx("DEHSurviveInHellBossEye", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
-	TNT1 A 35
+	TNT1 A -1
 	Stop
   SpiderMastermind:
 	TNT1 A 0 A_SpawnSingleItem("DEHAngryMastermindSpawner", 0, 0, 256)
-	TNT1 A 35
+	TNT1 A -1
 	Stop
   SuperArchvile:
 	TNT1 A 0 A_SpawnSingleItem("DEHSuperArchvileSpawner", 0, 0, 256)
-	TNT1 A 35
+	TNT1 A -1
 	Stop
   GridlockCardinal:
 	TNT1 A 0 A_SpawnSingleItem("DEHGridlockCardinalSpawner", 0, 0, 256)
-	TNT1 A 35
+	TNT1 A -1
+	Stop
+  Overlord:
+	TNT1 A 0 A_SpawnSingleItem("DEHOverLordBossSpawner", 0, 0, 256)
+	TNT1 A -1
 	Stop
   Motherdemon:
 	TNT1 A 0 A_SpawnSingleItem("DEHMotherdemonSpawner", 0, 0, 256)
 	TNT1 A 0 A_SpawnItemEx("DEHMotherdemonBossEye", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
-	TNT1 A 35
+	TNT1 A -1
 	Stop
   Archangelus:
 	TNT1 A 0 A_SpawnSingleItem("DEHArchangelusSpawner", 0, 0, 256)
-	TNT1 A 35
+	TNT1 A -1
 	Stop
   Leviathan:
 	TNT1 A 0 A_SpawnSingleItem("DEHLeviathanSpawner", 0, 0, 256)
-	TNT1 A 35
+	TNT1 A -1
 	Stop
   TheInquisitor:
 	TNT1 A 0 A_SpawnSingleItem("DEHTheInquisitorSpawner", 0, 0, 256)
-	TNT1 A 35
+	TNT1 A -1
 	Stop
   }
 }
@@ -888,6 +893,39 @@ ACTOR DEHCardinalMastermindSpawnShot : DEHTeleportSpawnShot
 	DropItem "RemnantMaster", 256, 1
 }
 
+actor DEHOverLordBossSpawner
+{
+  Height 32
+  +NOBLOCKMAP
+  +NOSECTOR
+  States
+  {
+  Spawn:
+    TNT1 A 10 A_Look
+    Loop
+  See:
+	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 0)
+	TNT1 A 181 A_BrainAwake
+	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 6)
+	TNT1 A 0 A_PlaySound("brain/spit", 0, 1.0, 0, ATTN_NONE)
+	TNT1 A 0 A_BrainSpit("DEHBlankShot")
+	TNT1 A 0 A_BrainSpit("DEHOverLordBossSpawnShot")
+    Stop
+  }
+}
+actor DEHOverLordBossSpawnShot : SpawnShot
+{
+DropItem "OverLordPhase1", 256, 1
+}
+actor OverLordMinionSpawnShot : DEHTeleportSpawnShot
+{
+DropItem "Revenant", 256, 8
+DropItem "PainElemental", 256, 4
+DropItem "Archvile", 256, 2
+DropItem "SIHCybruiser", 256, 1
+DropItem "AfritSummon", 256, 1
+}
+
 ACTOR DEHMotherdemonBossEye
 {
   Height 32
@@ -924,7 +962,7 @@ ACTOR DEHMotherdemonSpawner
     TNT1 A 10 A_Look
     Loop
   See:
-	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 6)
+	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 7)
 	TNT1 A 181 A_BrainAwake
 	TNT1 A 2450 //70 seconds
 	TNT1 A 0 A_PlaySound("brain/spit", 0, 1.0, 0, ATTN_NONE)
@@ -949,7 +987,7 @@ ACTOR DEHArchangelusSpawner
     TNT1 A 10 A_Look
     Loop
   See:
-	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 7)
+	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 8)
 	TNT1 A 181 A_BrainAwake
 	TNT1 A 0 A_PlaySound("brain/spit", 0, 1.0, 0, ATTN_NONE)
 	TNT1 A 0 A_BrainSpit("DEHBlankShot")
@@ -976,7 +1014,7 @@ ACTOR DEHLeviathanSpawner
   See:
 	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 0)
 	TNT1 A 181 A_BrainAwake
-	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 8)
+	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 9)
 	TNT1 A 0 A_BrainSpit("DEHBlankShot")
 	TNT1 A 0 A_BrainSpit("DEHLeviathanSpawnShot")
 	TNT1 A 0 A_SetUserVar("user_count", ACS_NamedExecuteWithResult("Dehacked_BossTargetCount"))
@@ -1012,7 +1050,7 @@ ACTOR DEHTheInquisitorSpawner
   See:
 	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 0)
 	TNT1 A 181 A_BrainAwake
-	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 8)
+	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 9)
 	TNT1 A 0 A_BrainSpit("DEHBlankShot")
 	TNT1 A 0 A_BrainSpit("DEHTheInquisitorSpawnShot")
 	TNT1 A 0 A_SetUserVar("user_count", ACS_NamedExecuteWithResult("Dehacked_BossTargetCount"))

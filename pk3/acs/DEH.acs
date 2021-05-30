@@ -206,17 +206,21 @@ Script "Dehacked_BossSelect" OPEN
 		}
 		else if(BossSelection == 7)
 		{
-			HudMessageBold(s:"VS. Motherdemon";HUDMSG_FADEINOUT,0,CR_BRICK,256.0,144.1,3.0,1.0,1.0);
+			HudMessageBold(s:"VS. Overlord";HUDMSG_FADEINOUT,0,CR_DARKRED,256.0,144.1,3.0,1.0,1.0);
 		}
 		else if(BossSelection == 8)
 		{
-			HudMessageBold(s:"VS. Archangelus";HUDMSG_FADEINOUT,0,CR_YELLOW,256.0,144.1,3.0,1.0,1.0);
+			HudMessageBold(s:"VS. Motherdemon";HUDMSG_FADEINOUT,0,CR_BRICK,256.0,144.1,3.0,1.0,1.0);
 		}
 		else if(BossSelection == 9)
 		{
-			HudMessageBold(s:"VS. The Leviathan";HUDMSG_FADEINOUT,0,CR_BLUE,256.0,144.1,3.0,1.0,1.0);
+			HudMessageBold(s:"VS. Archangelus";HUDMSG_FADEINOUT,0,CR_YELLOW,256.0,144.1,3.0,1.0,1.0);
 		}
 		else if(BossSelection == 10)
+		{
+			HudMessageBold(s:"VS. The Leviathan";HUDMSG_FADEINOUT,0,CR_BLUE,256.0,144.1,3.0,1.0,1.0);
+		}
+		else if(BossSelection == 11)
 		{
 			HudMessageBold(s:"VS. The Inquisitor";HUDMSG_FADEINOUT,0,CR_BLUE,256.0,144.1,3.0,1.0,1.0);
 		}
@@ -251,17 +255,21 @@ Script "Dehacked_BossSpawn" (void)
 	}
 	else if(BossSelection == 7)
 	{
-		SetActorState(0, "Motherdemon", 0);
+		SetActorState(0, "Overlord", 0);
 	}
 	else if(BossSelection == 8)
 	{
-		SetActorState(0, "Archangelus", 0);
+		SetActorState(0, "Motherdemon", 0);
 	}
 	else if(BossSelection == 9)
 	{
-		SetActorState(0, "Leviathan", 0);
+		SetActorState(0, "Archangelus", 0);
 	}
 	else if(BossSelection == 10)
+	{
+		SetActorState(0, "Leviathan", 0);
+	}
+	else if(BossSelection == 11)
 	{
 		SetActorState(0, "TheInquisitor", 0);
 	}
@@ -274,7 +282,7 @@ Script "Dehacked_BossCheck" (void)
 
 Script "Dehacked_BossEyeCount" (void)
 {
-	SetResultValue(ThingCountName("DEHBossEye", 0));
+	SetResultValue(ThingCountName("DEHFinalBossSpawner", 0));
 }
 
 Script "Dehacked_BossTargetCount" (void)
@@ -307,12 +315,15 @@ Script "Dehacked_BossMusic" (int music)
 			SetMusic("GRIDLOCK");
 			break;
 		Case 6:
-			SetMusic("64MOTHER");
+			SetMusic("OVERLORD");
 			break;
 		Case 7:
-			SetMusic("ARCANGEL");
+			SetMusic("64MOTHER");
 			break;
 		Case 8:
+			SetMusic("ARCANGEL");
+			break;
+		Case 9:
 			SetMusic("ANTARES");
 			break;
 		}

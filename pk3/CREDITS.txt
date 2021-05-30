@@ -15,7 +15,8 @@ RESURGENCE (2014)					Josh Sealy (a.k.a. Joshy), both monsters adapted from Scyt
 MAYAN MISHAP (2014)					Tango
 VALIANT (2015)						Paul DeBruyne (a.k.a. skillsaw), many monsters adapted from Realm667
 ANCIENT ALIENS (2016)				Paul DeBruyne (a.k.a. skillsaw) et al.
-GRIDLOCK 64 (2017)					Team Leader: FractalXX, MAP30 by Beed28
+50 MONSTERS (2017)					Brayden Hart (a.k.a. AD_79) et al.
+GRIDLOCK 64 (2017)					Team Leader: FractalXX, MAP30 and DEHACKED work by Beed28
 COUNTERATTACK (2017)				Mechadon
 DOOM 64 FOR DOOM 2 (2018)			Mechadon et al.
 STRUGGLE: ANTARESIAN LEGACY (2018)	Seongbae Park (antares031), many base sprites from Heretic/Hexen

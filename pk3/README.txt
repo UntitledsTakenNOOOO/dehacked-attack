@@ -137,6 +137,7 @@ FINAL BOSSES (enabled by CVar and then selected in place of Icon of Sin):
 * Spider Mastermind (Going Down): A totally ordinary spider mastermind with nothing weird about it (ha, yeah right). Spawns with some zombies, imps, demons and revenants.
 * Super Archvile [Final Boss Form] (Valiant): Spawns with a swarm of arachnorbs. Has 7500 health, and summons monsters when flinched, which get deadlier if flinched more than four times.
 * Gridlock Cardinal [Final Boss Form] (Gridlock 64): This monstrosity has both phases and moves faster, and in phase two it even now has the ability to teleport. Good luck.
+* Overlord (50 Monsters): A flying demon with a triple cacodemon attack and an ability to summon lost souls. This doesn't seem too bad at first...and then you enter phase 2.
 * Motherdemon [Final Boss Form] (Doom 64 for Doom 2): With 9000 HP, an archvile attack, and an army of other monsters at its disposal, good luck; you'll need it here.
 * Archangelus (Eviternity): Descending from the realm opposite Hell, this guy is insane. One might wish for good luck; but truth be told, it won't save you.
 * Leviathan [Final Boss Form] (Struggle: Antaresian Legacy): With 10000 health, and summoned with many other monster-spawning statue, this guy's tough.

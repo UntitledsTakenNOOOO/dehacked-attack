@@ -1,0 +1,140 @@
+//The Overlord
+actor OverLord
+{
+Health 9001 //Now THAT's an old meme.
+Radius 43
+Height 90
+Mass 1000
+Speed 13
+PainChance 15
+MONSTER
+Obituary "%o was smitten by the Overlord."
+HitObituary "The overlord ate %o for lunch."
+Tag "Overlord"
+DamageFactor "Heroic", 2.0
+DamageFactor "Antiair", 2.0
+SeeSound "monster/ovlsit" 
+PainSound "monster/ovlpai" 
+DeathSound "monster/ovldth" 
+ActiveSound "monster/ovlact"
++FLOORCLIP
++BOSS
++DONTMORPH
++NOTELESTOMP
++NOTARGET
++MISSILEEVENMORE
++FLOAT
++NOGRAVITY
+  states
+  {
+  Spawn:
+    OVER A 10 A_Look
+    loop
+  See:
+    OVER A 3 A_Chase
+    goto See
+  Missile:
+    TNT1 A 0 A_JumpIfInventory("LDLegendaryMonsterTransformed", 1, "LegendaryMissile")
+    OVER EF 5 Bright A_FaceTarget
+    OVER G 2 Bright A_FatAttack1
+    OVER G 2 Bright A_FatAttack2
+    OVER G 2 Bright A_FatAttack3
+    goto See
+  Pain:
+    OVER H 6
+    OVER H 6 A_Pain
+	OVER BC 4 A_FaceTarget
+	OVER D 8 A_PainAttack
+	OVER C 4 A_FaceTarget
+	OVER D 8 A_PainAttack
+    goto See
+  LegendaryMissile:
+	OVER A 0 A_Jump(85, "LegendaryMissile2")
+	Goto Missile+1
+  LegendaryMissile2:
+	OVER BC 4 A_FaceTarget
+	OVER D 8 A_PainAttack
+	OVER C 4 A_FaceTarget
+	OVER D 8 A_PainAttack
+    goto See
+  Death:
+    OVER I 0 bright A_NoBlocking
+    OVER I 8 bright A_Scream
+    OVER JKLMNOPQRS 8 bright
+	TNT1 A 32
+	TNT1 A 0 A_BrainDie
+    stop
+  }
+}
+actor OverLordPhase1 : OverLord
+{
+Health 1350
+var int user_count;
+Translation 2
+  States
+  {
+  Missile:
+    TNT1 A 0 A_JumpIfInventory("LDLegendaryMonsterTransformed", 1, "LegendaryMissile")
+    OVER EF 5 Bright A_FaceTarget
+    OVER GGG 2 Bright A_HeadAttack
+    goto See
+  Pain:
+    OVER H 6
+    OVER H 6 A_Pain
+	OVER BC 4 A_FaceTarget
+	OVER D 8 A_PainAttack
+	OVER C 4 A_FaceTarget
+	OVER D 8 A_PainAttack
+    goto See
+  LegendaryMissile:
+	OVER A 0 A_Jump(85, "LegendaryMissile2")
+	Goto Missile+1
+  LegendaryMissile2:
+	OVER BC 4 A_FaceTarget
+	OVER D 8 A_PainAttack
+	OVER C 4 A_FaceTarget
+	OVER D 8 A_PainAttack
+    goto See
+  Death:
+    TFOG ABABCDEFGHIJ 6 Bright
+	TNT1 A 35
+	TNT1 A 0 A_SetUserVar("user_count", 12 * ACS_NamedExecuteWithResult("Dehacked_BossEyeCount"))
+  DeathLoop:
+	TNT1 A 0 A_BrainSpit("OverLordMinionSpawnShot")
+	TNT1 A 35 A_BrainSpit("OverLordFakeSpawnShot")
+	TNT1 A 0 A_SetUserVar("user_count", user_count - 1)
+	TNT1 A 0 A_JumpIf(user_count <= 1, "Death2")
+	Loop
+  Death2:
+	TNT1 A 0 A_BrainSpit("OverLordMinionSpawnShot")
+	TNT1 A 35 A_BrainSpit("OverLordRealSpawnShot")
+	Stop
+  }
+}
+actor OverLordFake : OverLord
+{
+Health 300
+Translation 0
+  States
+  {
+  Missile:
+    OVER EF 5 Bright A_FaceTarget
+    OVER GGG 2 Bright A_HeadAttack
+    goto See
+  Pain:
+    OVER H 6
+    OVER H 6 A_Pain
+    goto See
+  Death:
+    BFE1 ABCDEF 8 Bright
+    stop
+  }
+}
+actor OverLordFakeSpawnShot : SpawnShot
+{
+DropItem "OverLordFake"
+}
+actor OverLordRealSpawnShot : SpawnShot
+{
+DropItem "OverLord"
+}

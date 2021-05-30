@@ -571,7 +571,7 @@ ACTOR SummonerLeviathan : Leviathan
   {
   Spawn:
     ALEV A 0
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossCheck") == 9, "Reset")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossCheck") == 10, "Reset")
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_ANTARES, 19), "Reset")
     Goto Idle
   Idle:
