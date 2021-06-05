@@ -19,6 +19,8 @@ ANCIENT ALIENS (2016)				Paul DeBruyne (a.k.a. skillsaw) et al.
 GRIDLOCK 64 (2017)					Team Leader: FractalXX, MAP30 and DEHACKED work by Beed28
 COUNTERATTACK (2017)				Mechadon
 DOOM 64 FOR DOOM 2 (2018)			Mechadon et al.
+AVACTOR (2018)						Eradrop
+MASKIM XUL (2018)					Obsidian
 STRUGGLE: ANTARESIAN LEGACY (2018)	Seongbae Park (antares031), many base sprites from Heretic/Hexen
 EVITERNITY (2018)					Joshua O'Sullivan (Dragonfly) et al.
 REMNANT (2019)						Aurelius

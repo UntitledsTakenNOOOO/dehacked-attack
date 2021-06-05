@@ -80,6 +80,7 @@ ACTOR SkullTurret
 		Goto Idle
 	Reset:
 		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		TNT1 A 0 A_SpawnItemEx("DEHRandomSpawner", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
 		Stop
 	Idle:
 		SKTR ABCD 4 A_Look

@@ -24,6 +24,8 @@
 #define DEH_DOOM64 21
 #define DEH_MAYANMISHAP 22
 #define DEH_COUNTERATTACK 23
+#define DEH_AVACTOR 24
+#define DEH_MASKIMXUL 25
 
 Script "Dehacked_MonsterReset" (int mapset, int level)
 {
@@ -102,6 +104,12 @@ Script "Dehacked_MonsterReset" (int mapset, int level)
 	case DEH_COUNTERATTACK:
 		keep_spawn = GetCVar("deh_enable_counterattack");
 		break;
+	case DEH_AVACTOR:
+		keep_spawn = GetCVar("deh_enable_avactor");
+		break;
+	case DEH_MASKIMXUL:
+		keep_spawn = GetCVar("deh_enable_maskimxul");
+		break;
 	}
 	
 	if(GetCVar("deh_level_scaling") && GetLevelInfo(LEVELINFO_LEVELNUM) < level)
@@ -145,16 +153,18 @@ Script "Dehacked_CyberCount" (void)
 
 Script "Dehacked_SpiderCount" (void)
 {
-	int a, b, c, d, e, f, g, h;
+	int a, b, c, d, e, f, g, h, i, j;
 	a = ThingCountName("DEHSpiderMastermind", 0);
 	b = ThingCountName("HiveMother", 0);
-	c = ThingCountName("IndomitableMastermind", 0);
-	d = ThingCountName("SpectralLeviathan", 0);
-	e = ThingCountName("WarlordOfHell", 0);
-	f = ThingCountName("RemnantMaster", 0);
+	c = ThingCountName("AvactorBrain", 0);
+	d = ThingCountName("IndomitableMastermind", 0);
+	e = ThingCountName("SpectralLeviathan", 0);
+	f = ThingCountName("WarlordOfHell", 0);
 	g = ThingCountName("AngryMastermind", 0);
-	h = ThingCountName("ValiantSuperVile", 0);
-	int result = a + b + c + d + e + f + g + h;
+	h = ThingCountName("GateMaster", 0);
+	i = ThingCountName("RemnantMaster", 0);
+	j = ThingCountName("ValiantSuperVile", 0);
+	int result = a + b + c + d + e + f + g + h + i + j;
 	if(result > 3)
 	{ //Keep the spawn
 		SetResultValue(0);

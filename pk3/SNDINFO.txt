@@ -124,7 +124,33 @@ gatemaster/sight	GTMASSIT
 bubbleship/sight	BUBBSIT
 bubbleship/active	BUBBACT
 
-monster/ovlsit                  dsovlsit
-monster/ovlact                  dsovlact
-monster/ovlpai                  dsovlpai
-monster/ovldth                  dsovldth
+monster/ovlsit		dsovlsit
+monster/ovlact		dsovlact
+monster/ovlpai		dsovlpai
+monster/ovldth		dsovldth
+
+avactordemon/sight	AVSGSIT
+avactorbrain/sight	AVBOSSIT
+avactorbrain/death	AVBOSDTH
+avactortank/sight	AVBSPSIT
+avactortank/walk	AVBSPWLK
+avactortank/act		AVBSPACT
+avactortank/pain	AVKEENPN
+avactortank/death	AVKEENDT
+
+CacoLich/Sight INSSIT
+CacoLich/Active DSTRTACT
+CacoLich/Pain NESSPN
+CacoLich/Death DSDMDETH
+
+monster/incsit                dsincsit
+monster/incdth                dsincdth
+monster/incact                dsincact
+monster/incatk                dsincatk
+
+LordOfHeresy/sight DSLOHSIT
+LordOfHeresy/act DSLOHACT
+LordOfHeresy/death DSLOHDTH
+
+satyr/sight dssatsit
+satyr/death dssatdth

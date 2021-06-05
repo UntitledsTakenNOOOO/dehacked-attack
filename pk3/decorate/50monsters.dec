@@ -71,7 +71,7 @@ Translation 2
   Missile:
     TNT1 A 0 A_JumpIfInventory("LDLegendaryMonsterTransformed", 1, "LegendaryMissile")
     OVER EF 5 Bright A_FaceTarget
-    OVER GGG 2 Bright A_HeadAttack
+    OVER GGG 2 Bright A_BruisAttack
     goto See
   Pain:
     OVER H 6

@@ -99,6 +99,7 @@ actor Afrit : BaronOfHell
   +Float
   +DoHarmSpecies
   +Boss //CHANGE: Added to be more in line with the other minibosses.
+  +NoRadiusDMG //Added for similar reasons
   Obituary "%o was scorched by an Afrit."
   Tag "Afrit"
   DamageFactor "Heroic", 2.0
@@ -162,6 +163,7 @@ actor Afrit : BaronOfHell
 actor AfritSummon : Afrit
 {
   -Boss
+  -NoRadiusDMG
   DamageFactor "Heroic", 1.0
   States
   {

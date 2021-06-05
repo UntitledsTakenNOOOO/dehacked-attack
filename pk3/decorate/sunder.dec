@@ -9,6 +9,7 @@ ACTOR HiveMother
   Monster
   +FLOORCLIP
   +DONTMORPH
+  +NORADIUSDMG
   +BOSS //CHANGE: Added to be more in line with the other minibosses.
   SeeSound "hivemother/sight"
   PainSound "hivemother/pain"
@@ -89,6 +90,8 @@ ACTOR HiveMother
 
 ACTOR HiveMotherSummon : HiveMother
 {
+  -NORADIUSDMG
+  -BOSS
   States
   {
   Spawn:

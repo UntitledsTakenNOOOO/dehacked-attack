@@ -1,0 +1,267 @@
+ACTOR AvactorDemon : Demon
+{
+  Health 200
+  PainChance 120
+  Speed 12
+  Mass 600
+  SeeSound "avactordemon/sight"
+  Obituary "%o was bit by a horned demon."
+  Tag "Horned Demon"
+  DamageFactor "Wrangler", 3.0
+  States
+  {
+  Spawn:
+    WSRG A 0
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_AVACTOR, 5), "Reset")
+    Goto Idle
+  Reset:
+    TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+    TNT1 A 0 A_SpawnItemEx("DEHDemon", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+    Stop
+  Idle:
+    WSRG AB 10 A_Look
+    Loop
+  See:
+    WSRG AABBCCDD 2 Fast A_Chase
+    Loop
+  Melee:
+    WSRG EF 8 Fast A_FaceTarget
+    WSRG G 8 Fast A_SargAttack
+    Goto See
+  Pain:
+    WSRG H 2 Fast
+    WSRG H 2 Fast A_Pain
+    Goto See
+  Death:
+    WSRG I 8
+    WSRG J 8 A_Scream
+    WSRG K 4
+    WSRG L 4 A_NoBlocking
+    WSRG M 4
+    WSRG N -1
+    Stop
+  Raise:
+    WSRG N 5
+    WSRG MLKJI 5
+    Goto See
+  }
+}
+
+ACTOR AvactorStatue
+{
+  Health 350
+  Radius 32
+  Height 72
+  Mass 10000000
+  PainChance 25
+  Monster
+  SeeSound "avactortank/sight"
+  PainSound "avactortank/pain"
+  DeathSound "avactortank/death"
+  ActiveSound "avactortank/act"
+  Obituary "%o stood in the way of a chaingun statue."
+  Speed 0
+  Tag "Chaingun Statue"
+  DamageFactor "Scrapper", 3.0
+  States
+  {
+  Spawn:
+    AVKN A 0
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_AVACTOR, 2), "Reset")
+    Goto Idle
+  Reset:
+    TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+    TNT1 A 0 A_SpawnItemEx("DEHRandomSpawner", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+    Stop
+  Idle:
+    AVKN A 10 A_Look
+    Loop
+  See:
+    AVKN A 3 A_Chase
+    Loop
+  Missile:
+    AVKN B 3 Bright
+    AVKN C 3 Bright A_CPosAttack
+	AVKN B 3 Bright A_CPosRefire
+	Goto Missile+1
+  Pain:
+    AVKN D 6 A_Pain
+    AVKN EF 6
+    Goto Spawn
+  Death:
+    AVKN G 7
+    AVKN H 7 Bright A_Scream
+    AVKN I 7 Bright A_NoBlocking
+    AVKN JKLM 7 Bright
+    AVKN NOPQ 7
+    AVKN R -1
+    Stop
+  }
+}
+
+ACTOR PlasmaTank : Arachnotron
+{
+	Health 500
+	Radius 48
+	Height 64
+	Mass 100000
+	Speed 10
+	PainChance 75
+	Monster
+	+FLOORCLIP
+	+BOSSDEATH
+	SeeSound "avactortank/sight"
+	PainSound "avactortank/pain"
+	DeathSound "avactortank/death"
+	ActiveSound "avactortank/act"
+	Obituary "%o let a plasma tank get %h."
+	Tag "Plasma Tank"
+	DamageFactor "Scrapper", 3.0
+	States
+	{
+	Spawn:
+		ARNQ A 0
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_AVACTOR, 3), "Reset")
+		Goto Idle
+	Reset:
+		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		TNT1 A 0 A_SpawnItemEx("ValiantArachnotron", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+		Stop
+	Idle:
+		AVSP A 3 A_Look
+		Loop
+	See:
+		AVSP A 3 A_Chase
+		AVSP B 0 A_PlaySound("avactortank/walk", CHAN_BODY, 1.0, 0, ATTN_NORM)
+		AVSP B 3 A_Chase
+		AVSP C 3 A_Chase
+		Goto See
+	Missile:
+		AVSP D 2 Bright A_FaceTarget
+		AVSP E 2 Bright A_CustomMissile("PlasmaTankPlasma", 68, 20)
+		AVSP F 5 Bright A_FaceTarget
+		AVSP G 2 Bright A_FaceTarget
+		AVSP H 2 Bright A_FaceTarget
+		AVSP I 5 Bright A_CustomMissile("PlasmaTankPlasma", 68, -20)
+		AVSP J 2 Bright A_SpidRefire
+		Goto Missile
+	Pain:
+		AVSP K 5
+		AVSP L 5 A_Pain
+		AVSP M 4
+		Goto See
+	Death:
+		AVSP N 5
+		AVSP O 5 Bright A_Scream
+		AVSP P 7 Bright
+		AVSP Q 4 Bright
+		AVSP R 6 Bright
+		AVSP S 6 Bright
+		AVSP T 7 Bright
+		AVSP U 9 Bright
+		AVSP V 6 Bright
+		AVSP W 6 Bright A_NoBlocking
+		AVSP X 6
+		AVSP Y 7
+		AVSP Z -1
+		Stop
+	}
+}
+
+ACTOR PlasmaTankPlasma : ArachnotronPlasma
+{
+  Damage 4
+  SeeSound "caco/attack"
+  States
+  {
+  Spawn:
+    AVLS AB 5 Bright
+    Loop
+  Death:
+    AVBX ABCDE 5 Bright
+    Stop
+  }
+}
+
+ACTOR AvactorBrain
+{
+	Health 2200
+	Radius 40
+	Height 96
+	Mass 2000
+	Speed 15
+	PainChance 90
+	Monster
+	+BOSS
+	+NORADIUSDMG
+	+DONTMORPH
+	+BOSSDEATH
+	+FLOAT
+	+NOGRAVITY
+	SeeSound "avactorbrain/sight"
+	PainSound "spider/pain"
+	DeathSound "avactorbrain/death"
+	ActiveSound "spider/active"
+	Obituary "%o was vaporized by an avactor brain."
+	Tag "Avactor Brain"
+	DamageFactor "Antiair", 2.0
+	DamageFactor "Heroic", 2.0
+	States
+	{
+	Spawn:
+		AVBB A 0
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_AVACTOR, 5), "Reset")
+		Goto CheckSpiderCount
+	Reset:
+		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		TNT1 A 0 A_SpawnItemEx("DEHSpiderMastermind", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+		Stop
+	CheckSpiderCount:
+		TNT1 A 1
+		TNT1 A 1 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_SpiderCount"), "Reset")
+		Goto Idle
+	Idle:
+		AVBB A 10 A_Look
+		Loop
+	See:
+		AVBB A 3 A_Chase
+		Loop
+	Missile:
+		AVBB B 5 Bright A_FaceTarget
+		AVBB C 6 Bright A_FaceTarget
+		AVBB D 11 Bright A_FaceTarget
+		AVBB E 13 Bright A_CustomComboAttack("BFGBall", 32, 10 * random(1, 8), "baron/melee")
+		AVBB E 6 Bright A_FaceTarget
+		Goto See
+	Pain:
+		AVBB F 6
+		AVBB F 6 A_Pain
+		Goto See
+	Death:
+		AVBB G 8 A_ScreamAndUnblock
+		AVBB HIJ 8
+		AVBB K 6
+		AVBB L -1
+		Stop
+	}
+}
+
+ACTOR AvactorBrainSummon : AvactorBrain
+{
+  -NORADIUSDMG
+  -BOSS
+  States
+  {
+  Spawn:
+    TNT1 A 0
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_AVACTOR, 5), "Reset")
+    Goto Idle
+  Reset:
+    TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+    TNT1 A 0 A_SpawnItemEx("HiveMotherSummon", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+    Stop
+  Idle:
+    HVMM AB 10 A_Look
+    Loop
+  }
+}

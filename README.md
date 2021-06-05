@@ -58,13 +58,13 @@ VALIANT (skillsaw, 2015):
 * Valiant Spectre: Guess.
 * Suicide Bomber: These screaming zombies have but one passion in life, and that is exploding, with the intent of being next to their target. Spawns with pinkies.
 * Arachnorb: Floating brain-like creatures that fire red plasma bolts at you. Spawns with Lost Souls, and are a bit skinnier than they were in Valiant.
-	* Change: Arachnorbs spawned in the lost soul postion have smaller radius (24 -> 16) so they fit. Other arachnorbs are still full size.
+	* Change: Arachnorbs spawned in the lost soul position have smaller radii (24 -> 16) so they fit. Other arachnorbs are still full size.
 * Pyro Knight: These guys can unless powerful volleys of fireballs; be careful! Thankfully they only have 500 HP. They spawn with Hell Knights.
 * Cybruiser: Although they only possess 500 HP, these guys can shoot rockets, and are even immune to splash damage! They spawn with Hell Knights.
 	* Change: They no longer have a wake-up sound that is audible over the entire map.
 * Super Mancubus: Unleashing a mancubus' entire set of six fireballs in a single volley, these guys are tough, especially with their 1000 HP. Spawns with mancubi.
-* Valiant Arachnotron: Identical to the normal Arachnotron except for color scheme until you kill it, where it has a 3/4 chance to spawn an arachnorb.
-	* Change: In the original valiant, it was 1/2 instead of 3/4. The chance was increased because they're rarer outside of valiant.
+* Valiant Arachnotron: Identical to the normal Arachnotron except for color scheme until you kill it, where it has a 2/3 chance to spawn an arachnorb.
+	* Change: In the original valiant, it was 1/2 instead of 2/3. The chance was increased because they're rarer outside of valiant.
 
 ANCIENT ALIENS (skillaw et al, 2016):
 * Stealth Plasma Alien: A 30 HP alien (actually a zombie) with an alien plasma rifle that is nearly invisible until it becomes active. Spawns with shotgunners.
@@ -87,6 +87,19 @@ PSX DOOM:
 DOOM 64 FOR DOOM 2 (Mechadon et al, 2018):
 * Nightmare Imp: A spectral (or subtractively rendered, check the options menu for the settings) imp with a cacodemon's fireball attack.
 * Nightmare Cacodemon: A spectral (or subtractively rendered) cacodemon with a triple fireball.
+
+AVACTOR: END OF THE FIFTH CIRCLE (Eradrop, 2018):
+* Horned Demon: A variant of the pinky demon with 200 HP and a lesser pain chance.
+* Plasma Tank: A knight-like figure on top of treads that fires alternating fireballs like an arachnotron, and spawns with said arachnotrons.
+
+MASKIM XUL (Obsidian, 2018):
+* WILL 'O WISP: A 5 HP green lost soul that retaliates when killed with a triple baron attack.
+* DAMNED SOUL: A 50 HP gray lost soul that explodes when killed and self-destructs to attack.
+* SATYR: A 400 HP Weak Hell Noble with only a deadly melee attack. Spawns with Hell Knights.
+* CACOLICH: A Cacodemon variant that shoots green homing projectiles and retaliates with a string of imp fireballs.
+* DEATH INCARNATE: A re-skin of the revenant, to help visual variety in the slot.
+* LORD OF HERESY: A 1250 HP Hell Noble that can fire a three-way baron ball spread. Spawns with barons.
+	* Change: The latter four monsters are re-based from Realm667, so there may be minor differences in frames and sounds.
 
 STRUGGLE: ANTARESIAN LEGACY (antares, 2018):
 * Antaresia: A serpent-like creature that has a strange firing pattern. Spawns with Hell Knights.

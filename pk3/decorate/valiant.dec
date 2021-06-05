@@ -341,7 +341,7 @@ ACTOR ValiantArachnotron : Arachnotron
 		Goto See+1
 	Death:
 		VSPI I 11 A_Scream
-		VSPI A 0 A_Jump(192,"Death2") //Change: Upped to 75% (originally 50%)
+		VSPI A 0 A_Jump(170,"Death2") //Change: Upped to 67% (originally 50%)
 		VSPI J 7 A_Fall
 		VSPI KLM 7
 		VSPI N 7
