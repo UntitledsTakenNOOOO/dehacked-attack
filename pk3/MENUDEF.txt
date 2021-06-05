@@ -27,6 +27,12 @@ OptionValue "DehackedMonsterSelection"
 	0, "Disabled"
 	1, "Enabled"
 }
+OptionValue "DehackedLevelScalingSelection"
+{
+	0, "No Level Scaling"
+	1, "Scale by Original WADs"
+	2, "Scale by Monster Tier"
+}
 OptionValue "DehackedFinalBoss"
 {
 	0, "Select at Random"
@@ -91,9 +97,9 @@ OptionMenu "DehackedAttackOptions"
 	Option "Remnant:", "deh_enable_remnant", "DehackedMonsterSelection"
 	Option "Sunder:", "deh_enable_sunder", "DehackedMonsterSelection"
 	StaticText ""
-	StaticText "Dehacked Attack Level Scaling", 1
-	StaticText "If enabled, custom monsters cannot spawn earlier than in their source wads."
-	Option "Level Scaling:", "deh_level_scaling", "DehackedMonsterSelection"
+	StaticText "Dehacked Monster Level Scaling", 1
+	StaticText "If enabled, more powerful monsters don't spawn in early maps."
+	Option "Level Scaling:", "deh_level_scaling", "DehackedLevelScalingSelection"
 	StaticText ""
 	StaticText "Nightmare Monster Rendering", 1
 	StaticText "Render nightmare monsters fuzzy (like spectres), or subtractively."

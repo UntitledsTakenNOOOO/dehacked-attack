@@ -26,7 +26,7 @@ ACTOR DarkCyberdemon : Cyberdemon
   {
   Spawn:
     DCYB A 0
-	TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_INVASION_UAC, 11), "Reset")
+	TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_INVASION_UAC, 11, 7), "Reset")
     Goto Idle
   Reset:
 	TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
@@ -101,7 +101,7 @@ ACTOR WarlordOfHell : BaronOfHell
     {
 	Spawn:
 		BOS6 A 0
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_INVASION_UAC, 18), "Reset")
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_INVASION_UAC, 18, 12), "Reset")
 		Goto Idle
 	Reset:
 		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)

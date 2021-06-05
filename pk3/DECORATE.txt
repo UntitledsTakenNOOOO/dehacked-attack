@@ -66,8 +66,8 @@ ACTOR DehackedShotgunguySpawner : RandomSpawner replaces Shotgunguy
 	DropItem "PlasmaZombie", 256, 8
 	DropItem "StealthPlasmaAlien", 256, 8
 	DropItem "JenesisMutant", 256, 8
-	DropItem "StealthFighter", 256, 8
 	DropItem "RocketGuy", 256, 8
+	DropItem "StealthFighter", 256, 8
 }
 ACTOR DEHShotgunguy : Shotgunguy
 {
@@ -106,11 +106,11 @@ ACTOR DEHDoomImp : DoomImp
 
 ACTOR DehackedDemonSpawner : RandomSpawner replaces Demon
 {
-	DropItem "DEHDemon", 256, 45
-	DropItem "ValiantDemon", 256, 15
-	DropItem "SuicideBomber", 256, 10
+	DropItem "DEHDemon", 256, 40
+	DropItem "ValiantDemon", 256, 20
 	DropItem "StrainDemon", 256, 10
 	DropItem "AvactorDemon", 256, 10
+	DropItem "SuicideBomber", 256, 10
 	DropItem "NightmareDemon", 256, 10
 }
 ACTOR DEHDemon : Demon
@@ -148,12 +148,12 @@ ACTOR DEHRevenant : Revenant
 ACTOR DehackedCacoSpawner : RandomSpawner replaces Cacodemon
 {
 	DropItem "DEHCacodemon", 256, 50
-	DropItem "SpectralCaco", 256, 10
-	DropItem "NightmareCacodemon", 256, 5
-	DropItem "Cacolich", 256, 10
-	DropItem "AstralCaco", 256, 5
 	DropItem "Holobot", 256, 10
+	DropItem "SpectralCaco", 256, 10
+	DropItem "Cacolich", 256, 10
 	DropItem "AlienGuardian", 256, 5
+	DropItem "NightmareCacodemon", 256, 5
+	DropItem "AstralCaco", 256, 5
 	DropItem "Afriest", 256, 4
 	DropItem "AfriestSpecial", 256, 1
 }
@@ -166,8 +166,8 @@ ACTOR DEHCacodemon : Cacodemon
 ACTOR DehackedSoulSpawner : RandomSpawner replaces LostSoul
 {
 	DropItem "DEHLostSoul", 256, 20
-	DropItem "Doppleganger", 256, 20
 	DropItem "ValiantArachnorbSmaller", 256, 20
+	DropItem "Doppleganger", 256, 20
 	DropItem "WillOWisp", 256, 20
 	DropItem "DamnedSoul", 256, 20
 }
@@ -179,10 +179,11 @@ ACTOR DEHLostSoul : LostSoul
 
 ACTOR DehackedPainSpawner : RandomSpawner replaces PainElemental
 {
-	DropItem "DEHPainElemental", 256, 40
+	DropItem "DEHPainElemental", 256, 30
 	DropItem "ShadowElemental", 256, 25
 	DropItem "InvisibleHolobot", 256, 20
 	DropItem "PoisonSoul", 256, 15
+	//DropItem "NightwatchCacodemon", 256, 10 //In preparation
 }
 ACTOR DEHPainElemental : PainElemental
 {
@@ -223,11 +224,11 @@ ACTOR DEHHellKnight : HellKnight
 ACTOR DehackedBaronSpawner : RandomSpawner replaces BaronOfHell
 {
 	DropItem "DEHBaronOfHell", 256, 48
-	DropItem "LordOfHeresy", 256, 12
-	DropItem "Belphegor", 256, 12
 	DropItem "CyberBaron", 256, 12
-	DropItem "StrainDemonLord", 256, 8
+	DropItem "Belphegor", 256, 12
+	DropItem "LordOfHeresy", 256, 12
 	DropItem "EviternityAnnihilator", 256, 8
+	DropItem "StrainDemonLord", 256, 8
 }
 ACTOR DEHBaronOfHell : BaronOfHell
 {
@@ -278,15 +279,16 @@ ACTOR DEHArchvile : Archvile
 
 ACTOR DehackedCyberSpawner : RandomSpawner replaces Cyberdemon
 {
-	DropItem "DEHCyberdemon", 256, 20
+	DropItem "DEHCyberdemon", 256, 15
 	DropItem "Afrit", 256, 15
 	DropItem "Haymaker", 256, 15
-	DropItem "DarkCyberdemon", 256, 15
+	DropItem "DarkCyberdemon", 256, 10
 	DropItem "Leviathan", 256, 10
 	DropItem "RemnantCardinal", 256, 10
+	//DropItem "VivreHeresiarch", 256, 10 //In preparation
 	DropItem "GridlockCardinal", 256, 5
-	DropItem "Motherdemon", 256, 5
 	DropItem "HellSmith", 256, 5
+	DropItem "Motherdemon", 256, 5
 }
 ACTOR DEHCyberdemon : Cyberdemon
 {
@@ -298,13 +300,13 @@ ACTOR DehackedSpiderSpawner : RandomSpawner replaces SpiderMastermind
 {
 	DropItem "DEHSpiderMastermind", 256, 15
 	DropItem "HiveMother", 256, 15
-	DropItem "AvactorBrain", 256, 15
+	DropItem "AvactorBrain", 256, 10
 	DropItem "IndomitableMastermind", 256, 10
 	DropItem "SpectralLeviathan", 256, 10
 	DropItem "WarlordOfHell", 256, 10
-	DropItem "AngryMastermind", 256, 10
 	DropItem "GateMaster", 256, 10
 	DropItem "RemnantMaster", 256, 10
+	DropItem "AngryMastermind", 256, 5
 	DropItem "ValiantSuperVile", 256, 5
 }
 ACTOR DEHSpiderMastermind : SpiderMastermind

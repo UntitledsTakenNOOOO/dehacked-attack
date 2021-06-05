@@ -9,7 +9,7 @@ ACTOR Belphegor : BaronOfHell
    {
   Spawn:
     BOS3 A 0
-	TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SURVIVE_IN_HELL, 2), "Reset")
+	TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SURVIVE_IN_HELL, 7, 11), "Reset")
     Goto Idle
   Reset:
     TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
@@ -80,7 +80,7 @@ States
    {
    Spawn:
        SKLL A 0
-       TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SURVIVE_IN_HELL, 11), "Reset")
+       TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SURVIVE_IN_HELL, 11, 16), "Reset")
        Goto Idle
    Reset:
        TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
@@ -141,7 +141,7 @@ ACTOR HellSmith
   Spawn:
     TNT1 A 0
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossCheck") == 3, "Reset")
-	TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SURVIVE_IN_HELL, 30), "Reset")
+	TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SURVIVE_IN_HELL, 30, 20), "Reset")
     Goto Idle
   Idle:
     AVTR A 10 A_Look
@@ -201,7 +201,7 @@ States
    { 
    Spawn:
        TNT1 A 0 //This is only spawned by Icon of Sin, so don't level-scale it.
-       TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SURVIVE_IN_HELL, 1), "Reset")
+       TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SURVIVE_IN_HELL, 23, 1), "Reset")
        Goto Idle
    Reset:
        TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)

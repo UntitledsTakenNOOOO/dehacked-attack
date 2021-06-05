@@ -24,7 +24,7 @@ ACTOR GateMaster
 	{
 	Spawn:
 		ARNQ A 0
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_COUNTERATTACK, 5), "Reset")
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_COUNTERATTACK, 5, 15), "Reset")
 		Goto Idle
 	Reset:
 		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
@@ -76,7 +76,7 @@ ACTOR SkullTurret
 	{
 	Spawn:
 		SKTR A 0
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_COUNTERATTACK, 5), "Reset")
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_COUNTERATTACK, 5, 1), "Reset")
 		Goto Idle
 	Reset:
 		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)

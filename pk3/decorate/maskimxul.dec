@@ -8,7 +8,7 @@ ACTOR WillOWisp : LostSoul
   {
   Spawn:
     MXSK A 0
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_MASKIMXUL, 2), "Reset")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_MASKIMXUL, 2, 11), "Reset")
     Goto Idle
   Reset:
     TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
@@ -51,7 +51,7 @@ ACTOR DamnedSoul : LostSoul
   {
   Spawn:
     MXSK A 0
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_MASKIMXUL, 2), "Reset")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_MASKIMXUL, 2, 12), "Reset")
     Goto Idle
   Reset:
     TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
@@ -258,12 +258,7 @@ ACTOR IncarnateTracer
 actor Satyr : HellKnight
 {
 	//$Category Monsters
-    Health 400
-    Radius 18
-    Height 48
-    Speed 8
-    PainChance 50
-    Mass 350
+    Health 500 //Change: Upped from 400 to 500 HP
     MONSTER 
     +FLOORCLIP
     SeeSound "satyr/sight"
@@ -272,14 +267,14 @@ actor Satyr : HellKnight
     ActiveSound "knight/active"
     MeleeSound "baron/melee"
     HitObituary "%o was mauled by a satyr."
-    MeleeDamage 8
+    MeleeDamage 10
 	Tag "Satyr"
 	DamageFactor "Blessed", 3.0
     States
     {
 	Spawn:
 		STYR A 0
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_MASKIMXUL, 2), "Reset")
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_MASKIMXUL, 2, 1), "Reset")
 		Goto Idle
 	Reset:
 		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
@@ -297,6 +292,8 @@ actor Satyr : HellKnight
         STYR PQ 5 A_FaceTarget
         STYR R 6 A_MeleeAttack
         Goto See
+	Missile:
+		Goto See
     Pain:
         STYR H 2
         STYR H 2 A_Pain
@@ -334,7 +331,7 @@ ACTOR LordOfHeresy : BaronOfHell
     { 
 	Spawn:
 		LOHS A 0
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_MASKIMXUL, 2), "Reset")
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_MASKIMXUL, 2, 12), "Reset")
 		Goto Idle
 	Reset:
 		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)

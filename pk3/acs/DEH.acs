@@ -27,7 +27,7 @@
 #define DEH_AVACTOR 24
 #define DEH_MASKIMXUL 25
 
-Script "Dehacked_MonsterReset" (int mapset, int level)
+Script "Dehacked_MonsterReset" (int mapset, int origLevel, int tierLevel)
 {
 	bool keep_spawn = TRUE;
 
@@ -112,8 +112,10 @@ Script "Dehacked_MonsterReset" (int mapset, int level)
 		break;
 	}
 	
-	if(GetCVar("deh_level_scaling") && GetLevelInfo(LEVELINFO_LEVELNUM) < level)
+	if(GetCVar("deh_level_scaling") == 1 && GetLevelInfo(LEVELINFO_LEVELNUM) < origLevel)
 	{
+		keep_spawn = FALSE;
+	} else if(GetCVar("deh_level_scaling") == 2 && GetLevelInfo(LEVELINFO_LEVELNUM) < tierLevel) {
 		keep_spawn = FALSE;
 	}
 	

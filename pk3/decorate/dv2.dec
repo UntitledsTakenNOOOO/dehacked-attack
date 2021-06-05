@@ -22,7 +22,7 @@ Actor HellCleric //Deus Vult II
 	{
 	Spawn:
 		CLER A 0
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_DEUS_VULT, 21), "Reset")
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_DEUS_VULT, 21, 7), "Reset")
 		Goto Idle
 	Reset:
 		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)

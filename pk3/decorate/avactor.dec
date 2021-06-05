@@ -12,7 +12,7 @@ ACTOR AvactorDemon : Demon
   {
   Spawn:
     WSRG A 0
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_AVACTOR, 5), "Reset")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_AVACTOR, 5, 7), "Reset")
     Goto Idle
   Reset:
     TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
@@ -47,7 +47,7 @@ ACTOR AvactorDemon : Demon
   }
 }
 
-ACTOR AvactorStatue
+ACTOR ChaingunStatue
 {
   Health 350
   Radius 32
@@ -67,7 +67,7 @@ ACTOR AvactorStatue
   {
   Spawn:
     AVKN A 0
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_AVACTOR, 2), "Reset")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_AVACTOR, 2, 1), "Reset")
     Goto Idle
   Reset:
     TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
@@ -121,7 +121,7 @@ ACTOR PlasmaTank : Arachnotron
 	{
 	Spawn:
 		ARNQ A 0
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_AVACTOR, 3), "Reset")
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_AVACTOR, 3, 11), "Reset")
 		Goto Idle
 	Reset:
 		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
@@ -210,7 +210,7 @@ ACTOR AvactorBrain
 	{
 	Spawn:
 		AVBB A 0
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_AVACTOR, 5), "Reset")
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_AVACTOR, 5, 6), "Reset")
 		Goto CheckSpiderCount
 	Reset:
 		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)

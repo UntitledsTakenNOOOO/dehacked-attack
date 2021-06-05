@@ -35,7 +35,7 @@ ACTOR StealthPlasmaAlien
   {
   Spawn:
     AASS A 0
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_ANCIENT_ALIENS, 11), "Reset")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_ANCIENT_ALIENS, 11, 11), "Reset")
     Goto Idle
   Reset:
     TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
@@ -80,7 +80,7 @@ ACTOR AlienArachnotron : Arachnotron
   {
   Spawn:
     AASP A 0
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_ANCIENT_ALIENS, 1), "Reset")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_ANCIENT_ALIENS, 1, 1), "Reset")
     Goto Idle
   Reset:
     TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
@@ -127,7 +127,7 @@ ACTOR AlienFatso : Fatso
   {
   Spawn:
     AAFT A 0
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_ANCIENT_ALIENS, 1), "Reset")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_ANCIENT_ALIENS, 1, 1), "Reset")
     Goto Idle
   Reset:
     TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)

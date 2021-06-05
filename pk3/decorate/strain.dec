@@ -7,7 +7,7 @@ ACTOR SubvertedGuard : Chaingunguy
   {
   Spawn:
     GPOS A 0
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_STRAIN, 1), "Reset")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_STRAIN, 1, 1), "Reset")
     Goto Idle
   Reset:
     TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
@@ -60,7 +60,7 @@ ACTOR StrainFastImp : DoomImp
   {
   Spawn:
     TROO A 0
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_STRAIN, 3), "Reset")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_STRAIN, 3, 6), "Reset")
     Goto "Super::Spawn"
   Reset:
     TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
@@ -96,7 +96,7 @@ ACTOR Doppleganger : LostSoul //Where do they get these names from?
   {
   Spawn:
     SKU2 A 0
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_STRAIN, 4), "Reset")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_STRAIN, 4, 7), "Reset")
     Goto Idle
   Reset:
     TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
@@ -146,7 +146,7 @@ ACTOR Holobot : Cacodemon
   {
   Spawn:
     FBOT A 0
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_STRAIN, 6), "Reset")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_STRAIN, 6, 6), "Reset")
     Goto Idle
   Reset:
     TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
@@ -204,7 +204,7 @@ ACTOR InvisibleHolobot : HoloBot
   {
   Spawn:
     FBOT A 0
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_STRAIN, 11), "Reset")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_STRAIN, 11, 12), "Reset")
     Goto Idle
   Reset:
     TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
@@ -223,7 +223,7 @@ ACTOR StrainDemon : Demon
   {
   Spawn:
     SAR2 A 0
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_STRAIN, 2), "Reset")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_STRAIN, 2, 6), "Reset")
     Goto Idle
   Reset:
     TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
@@ -280,7 +280,7 @@ ACTOR MinisterOfHate
   {
   Spawn:
     CYBJ A 0
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_STRAIN, 13), "Reset")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_STRAIN, 13, 15), "Reset")
     Goto Idle
   Reset:
     TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
@@ -326,7 +326,7 @@ ACTOR StrainDemonLord : BaronOfHell
   {
   Spawn:
     BOS4 A 0
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_STRAIN, 15), "Reset")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_STRAIN, 15, 21), "Reset")
     Goto Idle
   Reset:
     TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)

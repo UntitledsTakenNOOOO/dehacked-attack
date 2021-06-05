@@ -21,7 +21,7 @@ ACTOR HiveMother
   {
   Spawn:
     HVMM A 0
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SUNDER, 18), "Reset")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SUNDER, 18, 1), "Reset")
     Goto CheckSpiderCount
   Reset:
     TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
@@ -96,7 +96,7 @@ ACTOR HiveMotherSummon : HiveMother
   {
   Spawn:
     TNT1 A 0
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SUNDER, 18), "Reset")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SUNDER, 18, 1), "Reset")
     Goto Idle
   Reset:
     TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
