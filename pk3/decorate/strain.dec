@@ -60,7 +60,7 @@ ACTOR StrainFastImp : DoomImp
   {
   Spawn:
     TROO A 0
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_STRAIN, 3, 6), "Reset")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_STRAIN, 3, 11), "Reset")
     Goto "Super::Spawn"
   Reset:
     TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)

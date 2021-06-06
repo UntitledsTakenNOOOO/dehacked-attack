@@ -26,6 +26,7 @@
 #define DEH_COUNTERATTACK 23
 #define DEH_AVACTOR 24
 #define DEH_MASKIMXUL 25
+#define DEH_180_MINUTES_POUR_VIVRE 26
 
 Script "Dehacked_MonsterReset" (int mapset, int origLevel, int tierLevel)
 {
@@ -109,6 +110,9 @@ Script "Dehacked_MonsterReset" (int mapset, int origLevel, int tierLevel)
 		break;
 	case DEH_MASKIMXUL:
 		keep_spawn = GetCVar("deh_enable_maskimxul");
+		break;
+	case DEH_180_MINUTES_POUR_VIVRE:
+		keep_spawn = GetCVar("deh_enable_180_minutes_pour_vivre");
 		break;
 	}
 	

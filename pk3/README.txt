@@ -73,12 +73,8 @@ ANCIENT ALIENS (skillaw et al, 2016):
 * Alien Mancubus: A re-skin of the mancubus with a unique look.
 * Alien Arachnotron: A re-skin of the arachnotron that fires the purple-ish alien plasma used by the stealth plasma alien.
 
-EVITERNITY (Dragonfly, 2018):
-* Former Captain: These nasty zombies shoot out yellow energy bolts in volleys of five. Spawns with chaingunners.
-* Nightmare Demon: These guys are faster than the ordinary pinky demon and have 300 HP.
-* Astral Cacodemon: These guys unleash a pair of mancubi fireballs in addition to their cacodemon fireball.
-* Eviternity Arachnotron: A variant of the arachnotron that uses the energy bolts used by the former captain.
-* Annihilator: An upgrade to the cybruiser, these guys have both a rocket launcher and a very powerful chaingun, and spawn with barons.
+180 MINUTES POUR VIVRE (French Doom Community, 2018)
+* Nightwatch Cacodemon: A very deadly 4-eyed monstronsity with 600 HP that thankfully spawns with pain elementals.
 
 PSX DOOM:
 * Nightmare Spectre: A faster moving and much tougher variant of the spectre. Has 300 HP and spawns with spectres, naturally.
@@ -95,11 +91,18 @@ AVACTOR: END OF THE FIFTH CIRCLE (Eradrop, 2018):
 MASKIM XUL (Obsidian, 2018):
 * WILL 'O WISP: A 5 HP green lost soul that retaliates when killed with a triple baron attack.
 * DAMNED SOUL: A 50 HP gray lost soul that explodes when killed and self-destructs to attack.
-* SATYR: A 400 HP Weak Hell Noble with only a deadly melee attack. Spawns with Hell Knights.
+* SATYR: A 500 HP Weak Hell Noble with only a deadly melee attack. Spawns with Hell Knights.
 * CACOLICH: A Cacodemon variant that shoots green homing projectiles and retaliates with a string of imp fireballs.
 * DEATH INCARNATE: A re-skin of the revenant, to help visual variety in the slot.
 * LORD OF HERESY: A 1250 HP Hell Noble that can fire a three-way baron ball spread. Spawns with barons.
 	* Change: The latter four monsters are re-based from Realm667, so there may be minor differences in frames and sounds.
+
+EVITERNITY (Dragonfly, 2018):
+* Former Captain: These nasty zombies shoot out yellow energy bolts in volleys of five. Spawns with chaingunners.
+* Nightmare Demon: These guys are faster than the ordinary pinky demon and have 300 HP.
+* Astral Cacodemon: These guys unleash a pair of mancubi fireballs in addition to their cacodemon fireball.
+* Eviternity Arachnotron: A variant of the arachnotron that uses the energy bolts used by the former captain.
+* Annihilator: An upgrade to the cybruiser, these guys have both a rocket launcher and a very powerful chaingun, and spawn with barons.
 
 STRUGGLE: ANTARESIAN LEGACY (antares, 2018):
 * Antaresia: A serpent-like creature that has a strange firing pattern. Spawns with Hell Knights.
@@ -127,18 +130,21 @@ BOSSES:
 	* Change: Reduced health from 8000 down to 4800.
 * Hell Smith (Survive in Hell, 2012): This guy unleashes a powerful wave of 12 fireballs at once as his attack, and has a LOT of health. He spawns in the cyberdemon slot.
 	* Change: Health reduced from 20000 to 8000, because he isn't the final boss of the game anymore.
+* Heresiarch (180 Minutes Pour Vivre): A powerful sorcerer that unleashes a torrent of fire and plasma when it attacks.
 * Motherdemon (Doom 64 for Doom 2, 2018): A terrifying flying boss monster that shoots mancubus fireballs and revenant missiles in large quantities that spawns rarely with cyberdemons.
 	* Change: Removed the archvile attack, made it slower, reduced health from 9000 to 5300, and upped its pain chance, all changes remniscent of the original Doom 64.
 * Hive Mother (Sunder, 2019): This insectoid demon can both fire mancubus fireballs very quickly AND retaliates with a set of three rockets.
 	* Spawns with spider masterminds under special circumstances, otherwise it is limited to being summoned by the Icon of Sin and other final bosses.
+* Avactor Brain (Avactor, 2018): A floating giant arachnorb-like brain monster that fires BFG shots.
+	* Spawns with spider masterminds under special circumstances, otherwise it is limited to being summoned by the Icon of Sin and other final bosses.
 * Indomitable Mastermind (Struggle: Antaresian Legacy, 2018): A variant of the spider mastermind that uses both a super-chaingun AND a plasma rifle at the same time.
 * Spectral Leviathan (Struggle: Antaresian Legacy, 2018): Less health and moves slower than the Leviathan, but he's partially invisible. Spawns with Spider Masterminds.
+* Gate Master (Counterattack, 2017): A super arachnorb with 8000 HP and an Afrit-like attack.
+* Remnant Master (Remnant, 2019): This thing looks like a flying mancubus, but it's far nastier. It can fire revenant missiles and uses an archvile attack if flinched.
 * Angry Spiderdemon (Going Down, 2014): Her brain's red for some reason. Retaliates with fireballs when hurt, and has twice as much health as the ordinary Spider Mastermind.
 	* Change: Health reduced from 12000 to 6000.
-* Gate Master (Counterattack, 2017): A super arachnorb with 8000 HP and an Afrit-like attack.
 * Super Archvile (Valiant, 2015): Good luck. This thing attacks with a archvile combo-attack, and can resurrect monsters. It spawns uncommonly with the Spider Mastermind.
 	* Change: Health reduced from 7500 to 3750, because it isn't the final boss of the game anymore.
-* Remnant Master (Remnant, 2019): This thing looks like a flying mancubus, but it's far nastier. It can fire revenant missiles and uses an archvile attack if flinched.
 * Gridlock Cardinal [Phase II]: Same as the Phase I, except if flinched, he'll spawn monsters icon-of-sin style. Replaces the Gridlock Cardinal if Spawn Targets are present.
 	* Change: Reduced health from 6000 down to 4800.
 * Leviathan [Summoner Variant]: He CAN be flinched, but doing so will result in him spawning monsters icon-of-sin style. Replaces either Leviathan if Spawn Targets are present.

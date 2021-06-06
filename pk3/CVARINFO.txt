@@ -26,6 +26,7 @@ server bool deh_enable_counterattack = true;
 server bool deh_enable_doom64 = true;
 server bool deh_enable_avactor = true;
 server bool deh_enable_maskimxul = true;
+server bool deh_enable_180_minutes_pour_vivre = true;
 server bool deh_enable_eviternity = true;
 server bool deh_enable_antares = true;
 server bool deh_enable_remnant = true;

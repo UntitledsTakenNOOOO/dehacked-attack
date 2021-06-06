@@ -23,6 +23,7 @@ const int DEH_MAYANMISHAP = 22;
 const int DEH_COUNTERATTACK = 23;
 const int DEH_AVACTOR = 24;
 const int DEH_MASKIMXUL = 25;
+const int DEH_180_MINUTES_POUR_VIVRE = 26;
 
 #include "decorate/strain.dec"
 #include "decorate/scythe2.dec"
@@ -42,6 +43,7 @@ const int DEH_MASKIMXUL = 25;
 #include "decorate/d64d2.dec"
 #include "decorate/maskimxul.dec"
 #include "decorate/avactor.dec"
+#include "decorate/180minutes.dec"
 #include "decorate/eviternity.dec"
 #include "decorate/antares.dec"
 #include "decorate/remnant.dec"
@@ -94,8 +96,8 @@ ACTOR DehackedImpSpawner : RandomSpawner replaces DoomImp
 	DropItem "DEHDoomImp", 256, 40
 	DropItem "ValiantImp", 256, 20
 	DropItem "NightmareImp", 256, 15
-	DropItem "StrainFastImp", 256, 10
 	DropItem "ShadowImp", 256, 10
+	DropItem "StrainFastImp", 256, 10
 	DropItem "SuperImp", 256, 5
 }
 ACTOR DEHDoomImp : DoomImp
@@ -183,7 +185,7 @@ ACTOR DehackedPainSpawner : RandomSpawner replaces PainElemental
 	DropItem "ShadowElemental", 256, 25
 	DropItem "InvisibleHolobot", 256, 20
 	DropItem "PoisonSoul", 256, 15
-	//DropItem "NightwatchCacodemon", 256, 10 //In preparation
+	DropItem "NightwatchCacodemon", 256, 10
 }
 ACTOR DEHPainElemental : PainElemental
 {
@@ -285,7 +287,7 @@ ACTOR DehackedCyberSpawner : RandomSpawner replaces Cyberdemon
 	DropItem "DarkCyberdemon", 256, 10
 	DropItem "Leviathan", 256, 10
 	DropItem "RemnantCardinal", 256, 10
-	//DropItem "VivreHeresiarch", 256, 10 //In preparation
+	DropItem "VivreHeresiarch", 256, 10
 	DropItem "GridlockCardinal", 256, 5
 	DropItem "HellSmith", 256, 5
 	DropItem "Motherdemon", 256, 5

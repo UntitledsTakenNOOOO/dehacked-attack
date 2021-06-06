@@ -154,3 +154,9 @@ LordOfHeresy/death DSLOHDTH
 
 satyr/sight dssatsit
 satyr/death dssatdth
+
+nightcaco/sight		NWCDSIT
+heresiarch/sight	HERESSIT
+heresiarch/active	HERESACT
+heresiarch/pain		HERESPAI
+heresiarch/death	HERESDTH
