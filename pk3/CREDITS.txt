@@ -1,29 +1,30 @@
 LIST OF WADS AND ORIGINAL DEHACKED MONSTER CREATORS:
 
-OBITUARY (1995)						The Innocent Crew (Denis and Thomas Moller)
-STRAIN (1997)						Alpha Dog Alliance (led by Charlie Patterson)
-SCYTHE II (2005, then 2009)			Erik Alm
-DEUS VULT II (2008)					Huy Pham (a.k.a. Doom Marine)
-INVASION UAC (2008)					Xsnake
-SCYTHE X (2009, unfinished)			Erik Alm
-UAC ULTRA (2010)					Super Jamie and Jon "40oz" Vail
-JENESIS (2011)						James Paddock (a.k.a. Jimmy)
-LUNATIC (2011)						Paul DeBruyne (a.k.a. skillsaw)
-SURVIVE IN HELL (2012)				JC Dorne
-GOING DOWN (2014)					mouldy (a.k.a. Cyriak)
-RESURGENCE (2014)					Josh Sealy (a.k.a. Joshy), both monsters adapted from Scythe II
-MAYAN MISHAP (2014)					Tango
-VALIANT (2015)						Paul DeBruyne (a.k.a. skillsaw), many monsters adapted from Realm667
-ANCIENT ALIENS (2016)				Paul DeBruyne (a.k.a. skillsaw) et al.
-50 MONSTERS (2017)					Brayden Hart (a.k.a. AD_79) et al.
-GRIDLOCK 64 (2017)					Team Leader: FractalXX, MAP30 and DEHACKED work by Beed28
-COUNTERATTACK (2017)				Mechadon
-DOOM 64 FOR DOOM 2 (2018)			Mechadon et al.
-AVACTOR (2018)						Eradrop
-MASKIM XUL (2018)					Obsidian
-180 MINUTES POUR VIVRE (2018)		French Doom Community
-STRUGGLE: ANTARESIAN LEGACY (2018)	Seongbae Park (antares031), many base sprites from Heretic/Hexen
-EVITERNITY (2018)					Joshua O'Sullivan (Dragonfly) et al.
-REMNANT (2019)						Aurelius
-SUNDER (2009-2019, still ongoing)	Insane_Gazebo, Hive Mother by TheMisterCat
-ANTARESIAN RELIQUARY (2020)			Seongbae Park (antares031)
+OBITUARY (1995)                     The Innocent Crew (Denis and Thomas Moller)
+STRAIN (1997)                       Alpha Dog Alliance (led by Charlie Patterson)
+SCYTHE II (2005, then 2009)         Erik Alm
+SCIMITAR (2006)                     Richard Hardacre (Cycloid)
+DEUS VULT II (2008)                 Huy Pham (a.k.a. Doom Marine)
+INVASION UAC (2008)                 Xsnake
+SCYTHE X (2009, unfinished)         Erik Alm
+UAC ULTRA (2010)                    Super Jamie and Jon "40oz" Vail
+JENESIS (2011)                      James Paddock (a.k.a. Jimmy)
+LUNATIC (2011)                      Paul DeBruyne (a.k.a. skillsaw)
+SURVIVE IN HELL (2012)              JC Dorne
+GOING DOWN (2014)                   mouldy (a.k.a. Cyriak)
+RESURGENCE (2014)                   Josh Sealy (a.k.a. Joshy), both monsters adapted from Scythe II
+MAYAN MISHAP (2014)                 Tango, Cyber Baron adapted from Realm667
+VALIANT (2015)                      Paul DeBruyne (a.k.a. skillsaw), many monsters adapted from Realm667
+ANCIENT ALIENS (2016)               Paul DeBruyne (a.k.a. skillsaw) et al.
+50 MONSTERS (2017)                  Brayden Hart (a.k.a. AD_79) et al, overlord base adapted from Realm667
+GRIDLOCK 64 (2017)                  Team Leader: FractalXX, MAP30 and DEHACKED work by Beed28
+COUNTERATTACK (2017)                Mechadon
+DOOM 64 FOR DOOM 2 (2018)           Mechadon et al.
+AVACTOR (2018)                      Eradrop
+MASKIM XUL (2018)                   Obsidian
+180 MINUTES POUR VIVRE (2018)       French Doom Community, Heresiarch base sprites from Hexen
+STRUGGLE: ANTARESIAN LEGACY (2018)  Seongbae Park (antares031), many base sprites from Heretic/Hexen
+EVITERNITY (2018)                   Joshua O'Sullivan (Dragonfly) et al.
+REMNANT (2019)                      Aurelius
+SUNDER (2009-2019, still ongoing)   Insane_Gazebo, Hive Mother by TheMisterCat
+ANTARESIAN RELIQUARY (2020)         Seongbae Park (antares031)

@@ -63,7 +63,7 @@ ACTOR RocketGuy
     Goto Idle
   Reset:
 	TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
-	TNT1 A 0 A_SpawnItemEx("Shotgunguy", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+	TNT1 A 0 A_SpawnItemEx("Zombieman", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
 	Stop
    Idle:
       MPOS AB 10 A_Look 
@@ -118,6 +118,7 @@ ACTOR StealthFighter
 	Attacksound "shotguy/attack"
 	Obituary "%o never got a clear picture of his killer."
 	Tag "High-tech Guy"
+	DropItem "Clip" //Added
 	States
 	{
 	Spawn:
@@ -137,9 +138,9 @@ ACTOR StealthFighter
 	Missile:
 		GMAN E 7 A_FaceTarget
 		GMAN F 7 A_FaceTarget
-		GMAN G 1 Bright A_CPosAttack
+		GMAN G 1 A_CPosAttack
 		GMAN F 3 A_FaceTarget
-		GMAN G 3 Bright A_CPosAttack
+		GMAN G 3 A_CPosAttack
 		GMAN F 1 A_CPosRefire
 		Loop
 	Pain:

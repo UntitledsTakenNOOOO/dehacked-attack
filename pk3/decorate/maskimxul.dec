@@ -115,13 +115,16 @@ ACTOR CacoLich : Cacodemon
          Loop
 	  Melee:
       Missile:
-         CALI B 6 A_FaceTarget
+		 CALI B 6 A_FaceTarget
          CALI C 6 A_CustomComboAttack("CacoLichBall", 32, 10 * random(1, 6))
          CALI D 6 A_FaceTarget
+         TNT1 A 0 A_JumpIfInventory("LDLegendaryMonsterTransformed", 1, "PainMissile")
          Goto See
-	Pain:
+    Pain:
          CALI H 3
          CALI I 6 A_Pain
+		 Goto See
+    PainMissile:
          CALI EF 5 A_FaceTarget
          CALI G 2 A_TroopAttack
          CALI F 2 A_FaceTarget
@@ -319,39 +322,42 @@ ACTOR LordOfHeresy : BaronOfHell
     Speed 13 
     PainChance 10
     MONSTER 
-	+FLOORCLIP
+    +FLOORCLIP
     Obituary "%o was annihilated by a heresy lord." 
     SeeSound "LordOfHeresy/sight" 
     PainSound "baron/pain" 
     DeathSound "LordOfHeresy/death" 
     ActiveSound "LordOfHeresy/act"  
-	Tag "Satyr"
-	DamageFactor "Blessed", 3.0
+    Tag "Heresy Lord"
+    DamageFactor "Blessed", 3.0
     States 
     { 
-	Spawn:
-		LOHS A 0
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_MASKIMXUL, 2, 12), "Reset")
-		Goto Idle
-	Reset:
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
-		TNT1 A 0 A_SpawnItemEx("DEHBaronOfHell", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
-		Stop
-	Idle:
+    Spawn:
+        LOHS A 0
+        TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_MASKIMXUL, 2, 12), "Reset")
+        Goto Idle
+    Reset:
+        TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+        TNT1 A 0 A_SpawnItemEx("DEHBaronOfHell", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+        Stop
+    Idle:
         LOHS AB 10 A_Look 
         Loop 
     See: 
         LOHS AABBCCDD 4 A_Chase
+        Goto WalkMissile
+    WalkMissile:
         LOHS E 8 A_FaceTarget
         LOHS F 8 A_FaceTarget
         LOHS G 1 A_BruisAttack
         LOHS G 7 A_FatAttack3("BaronBall")
         Loop
-	Melee:
+    Melee:
     Missile:
         LOHS E 8 A_FaceTarget
         LOHS F 8 A_FaceTarget
         LOHS G 8 A_BruisAttack
+        TNT1 A 0 A_JumpIfInventory("LDLegendaryMonsterTransformed", 1, "WalkMissile")
         Goto See
     Pain: 
         LOHS H 5 

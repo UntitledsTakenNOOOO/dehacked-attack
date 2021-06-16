@@ -20,6 +20,18 @@ SCYTHE II (Erik Alm, 2005):
 * Evil Marine: He's an absolute terror to be up against due to his plasma rifle and high movement speed. Spawns in the archvile slot.
 	* Change: Drops a Cell instead of a Clip, because DEHACKED doesn't let you change drops but DECORATE does and the inconsistency bothered me.
 
+SCIMITAR (Cycloid, 2006):
+* SSG trooper: A zombieman wielding a super shotgun with 40 hit points, spawning with zombieman very rarely.
+	* Change: It was originally 90 HP, and also repeat-fired, and it does neither of those now.
+* Calfdemon: A white baby cacodemon with 100 hit points, spawning with the lost soul.
+* Cacodemoness: A green cacodemon variant emitting green fireballs.
+* Mancubus II: A mancubus with a slightly different attack pattern.
+* Arachnogunner: An arachnotron with green eyes that uses a spiderdemon-like attack, though it fires slower.
+	* Change: Has more firing frames, so it animates better.
+* Arachnorocketeer: An arachnotron with red eyes that fires rockets, though it does not fire them on repeat.
+* Red baron: A baron of Hell that throws faster and more deadly red fireballs.
+	* Change: Red fireballs are much brighter for visibility reasons; you should always be able to see these guys.
+
 DEUS VULT II (Huy Pham, 2008):
 * Hell Cleric: Fires imp fireballs rapidly. Spawns commonly with revenants.
 	* Change: Has 300 health instead of 200, due to being in a slot with 300 base health.

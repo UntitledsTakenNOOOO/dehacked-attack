@@ -354,7 +354,7 @@ ACTOR AntaresianArachnotron : Arachnotron
   {
   Spawn:
     ASPI A 0
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_ANTARES, 2, 15), "Reset")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_ANTARES, 2, 16), "Reset")
     Goto Idle
   Reset:
     TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
@@ -401,11 +401,11 @@ ACTOR ReliquaryArachnotron : Arachnotron
 	{
 	Spawn:
 		BSPI A 0
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_ANTARES, 1, 12), "Reset")
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_ANTARES, 1, 15), "Reset")
 		Goto "Super::Spawn"
 	Reset:
 		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
-		TNT1 A 0 A_SpawnItemEx("DEHArachnotron", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+		TNT1 A 0 A_SpawnItemEx("EviternityArachnotron", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
 		Stop
 	Missile:
 		BSPI A 20 Bright A_FaceTarget

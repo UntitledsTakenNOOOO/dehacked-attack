@@ -8,6 +8,7 @@ server bool deh_subtractive_rendering = true;
 server bool deh_enable_obituary = false;
 server bool deh_enable_strain = true;
 server bool deh_enable_scythe2 = true;
+server bool deh_enable_scimitar = true;
 server bool deh_enable_deusvult2 = true;
 server bool deh_enable_invasionuac = false;
 server bool deh_enable_scythex = true;

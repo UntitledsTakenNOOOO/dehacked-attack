@@ -160,3 +160,6 @@ heresiarch/sight	HERESSIT
 heresiarch/active	HERESACT
 heresiarch/pain		HERESPAI
 heresiarch/death	HERESDTH
+
+arachnogunner/walk		SCARGUNM
+arachnorocketeer/walk	SCARROCM

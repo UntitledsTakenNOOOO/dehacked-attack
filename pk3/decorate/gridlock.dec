@@ -1,4 +1,3 @@
-
 ACTOR GridlockCardinal : Cyberdemon
 {
   Health 4800 //Change: Health lowered from 8000 to 4800

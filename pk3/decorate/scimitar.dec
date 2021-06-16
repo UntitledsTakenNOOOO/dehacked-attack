@@ -1,0 +1,280 @@
+ACTOR SSGZombieMan
+{
+  Health 40 //Change: Health lowered from 90 down to 40
+  Radius 20
+  Height 56
+  Speed 11
+  PainChance 130
+  Monster
+  +FLOORCLIP
+  SeeSound "grunt/sight"
+  AttackSound "weapons/sshotf"
+  PainSound "grunt/pain"
+  DeathSound "grunt/death"
+  ActiveSound "grunt/active"
+  Obituary "%o was killed by a super shotgun zombie."
+  DropItem "SuperShotgun" //Changed to drop SSG just for consistency and balance
+  Tag "Super Shotgun Zombie"
+  DamageFactor "Exorcist", 3.0
+  States
+  {
+  Spawn:
+    PSSG A 0
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SCIMITAR, 8, 21), "Reset")
+    Goto Idle
+  Reset:
+    TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+    TNT1 A 0 A_SpawnItemEx("Zombieman", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+    Stop
+  Idle:
+    PSSG AB 10 A_Look
+    Loop
+  See:
+    PSSG AABBCCDD 4 A_Chase
+    Loop
+  Missile: //Change: no longer repeat-fires because REALLY?
+    PSSG E 10 A_FaceTarget
+	PSSG F 0 A_SPosAttackUseAtkSound
+	PSSG F 0 A_SPosAttackUseAtkSound
+    PSSG F 10 Bright A_SPosAttackUseAtkSound
+    PSSG E 10
+    Goto See
+  Pain:
+    PSSG G 3
+    PSSG G 3 A_Pain
+    Goto See
+  Death:
+    PSSG H 5
+    PSSG I 5 A_Scream
+    PSSG J 5 A_NoBlocking
+    PSSG K 5
+    PSSG L -1
+    Stop
+  XDeath:
+    PSSG M 5
+    PSSG N 5 A_XScream
+    PSSG O 5 A_NoBlocking
+    PSSG PQRST 5
+    PSSG U -1
+    Stop
+  Raise:
+    PSSG K 5
+    PSSG JIH 5
+    Goto See
+  }
+}
+
+ACTOR Calfdemon : Cacodemon
+{
+  Health 100
+  Radius 16
+  Height 52
+  Mass 50
+  PainChance 256
+  Obituary "%o was smitten by a calfdemon."
+  HitObituary "%o got too close to a calfdemon."
+  Tag "Calfdemon"
+  DamageFactor "Antiair", 3.0
+  States
+  {
+  Spawn:
+    H3AD A 0
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SCIMITAR, 11, 1), "Reset")
+    Goto Idle
+  Reset:
+    TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+    TNT1 A 0 A_SpawnItemEx("LostSoul", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+    Stop
+  Idle:
+    H3AD A 10 A_Look
+    Loop
+  See:
+    H3AD A 3 A_Chase
+    Loop
+  Missile:
+    H3AD BC 5 A_FaceTarget
+    H3AD D 5 Bright A_TroopAttack
+    Goto See
+  Pain:
+    H3AD E 3
+    H3AD E 3 A_Pain
+    H3AD F 6
+    Goto See
+  Death:
+    H3AD G 8
+    H3AD H 8 A_Scream
+    H3AD IJ 8
+    H3AD K 8 A_NoBlocking
+    H3AD L -1 A_SetFloorClip
+    Stop
+  Raise:
+    H3AD L 8 A_UnSetFloorClip
+    H3AD KJIHG 8
+    Goto See
+  }
+}
+
+ACTOR Cacodemoness : Cacodemon
+{
+  Translation "172:191=112:127"
+  Obituary "%o was smitten by a cacodemoness."
+  HitObituary "%o got too close to a cacodemoness."
+  Tag "Cacodemoness"
+  DamageFactor "Antiair", 3.0
+  States
+  {
+  Spawn:
+    HEAD A 0
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SCIMITAR, 10, 1), "Reset")
+    Goto Idle
+  Reset:
+    TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+    TNT1 A 0 A_SpawnItemEx("Cacodemon", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+    Stop
+  Idle:
+    HEAD A 10 A_Look
+    Loop
+  Missile:
+    HEAD BC 5 A_FaceTarget
+    HEAD D 5 Bright A_BruisAttack
+    Goto See
+  }
+}
+
+ACTOR FatsoII : Fatso
+{
+  Obituary "%o was squashed by a type II mancubus."
+  Tag "Mancubus II"
+  DamageFactor "Scrapper", 3.0
+  States
+  {
+  Spawn:
+    FATT A 0
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SCIMITAR, 7, 1), "Reset")
+    Goto Idle
+  Reset:
+    TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+    TNT1 A 0 A_SpawnItemEx("Fatso", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+    Stop
+  Idle:
+    FATT AB 15 A_Look
+    Loop
+  Missile:
+    FATT G 20 A_FatRaise
+    FATT H 10 Bright A_FatAttack3
+    FATT IG 5 A_FaceTarget
+    FATT H 10 Bright A_FatAttack3
+    FATT IG 5 A_FaceTarget
+    FATT H 10 Bright A_FatAttack3
+    FATT IG 5 A_FaceTarget
+    Goto See
+  }
+}
+
+ACTOR ArachnoGunner : Arachnotron
+{
+  Health 600
+  Obituary "%o let an arachnogunner get %h."
+  Tag "Arachnogunner"
+  DamageFactor "Scrapper", 3.0
+  Translation "192:207=112:127"
+  States
+  {
+  Spawn:
+    BSPI A 0
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SCIMITAR, 14, 20), "Reset")
+    Goto Idle
+  Reset:
+    TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+    TNT1 A 0 A_SpawnItemEx("Arachnotron", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+    Stop
+  Idle:
+    BSPI AB 10 A_Look
+    Loop
+  See:
+    BSPI A 20
+    BSPI A 0 A_PlaySound("arachnogunner/walk", CHAN_BODY, 1.0, 0, ATTN_NORM)
+    BSPI AABBCC 4 A_Chase
+    BSPI D 0 A_PlaySound("arachnogunner/walk", CHAN_BODY, 1.0, 0, ATTN_NORM)
+    BSPI DDEEFF 4 A_Chase
+    Goto See+1
+  Missile:
+    BSPI A 20 Bright A_FaceTarget
+    BSPI G 4 Bright A_SPosAttack
+    BSPI H 4 Bright //Change: added the extra frame for consistency.
+    BSPI H 1 Bright A_SpidRefire
+    Goto Missile+1
+  }
+}
+
+ACTOR ArachnoRocketeer : Arachnotron
+{
+  Health 700
+  Obituary "%o let an arachno rocketeer get %h."
+  Tag "Arachno Rocketeer"
+  DamageFactor "Scrapper", 3.0
+  Translation "192:207=176:191"
+  States
+  {
+  Spawn:
+    BSPI A 0
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SCIMITAR, 15, 21), "Reset")
+    Goto Idle
+  Reset:
+    TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+    TNT1 A 0 A_SpawnItemEx("Arachnotron", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+    Stop
+  See:
+    BSPI A 20
+    BSPI A 3 A_PlaySound("arachnorocketeer/walk", CHAN_BODY, 1.0, 0, ATTN_NORM)
+    BSPI AABBCC 3 A_Chase
+    BSPI D 3 A_PlaySound("arachnorocketeer/walk", CHAN_BODY, 1.0, 0, ATTN_NORM)
+    BSPI DDEEFF 3 A_Chase
+    Goto See+1
+  Idle:
+    BSPI AB 10 A_Look
+    Loop
+  Missile:
+    BSPI A 20 Bright A_FaceTarget
+    BSPI G 4 Bright A_CyberAttack
+    BSPI H 4 Bright A_FaceTarget
+    Goto See
+  }
+}
+
+//CHANGE: Brighter red colours for better visibility than in original scimitar
+ACTOR RedBaron : BaronOfHell
+{ 
+  Translation "112:127=168:191"
+  Obituary "%o was splayed by a Red Baron."
+  HitObituary "%o was ripped open by a Red Baron."
+  Tag "Red Baron"
+  DamageFactor "Blessed", 3.0
+  States
+  {
+  Spawn:
+    BOSS A 0
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SCIMITAR, 6, 6), "Reset")
+    Goto Idle
+  Reset:
+    TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+    TNT1 A 0 A_SpawnItemEx("BaronOfHell", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+    Stop
+  Idle:
+    BOSS AB 10 A_Look
+    Loop
+  Melee:
+  Missile:
+    BOSS EF 8 A_FaceTarget
+    BOSS G 8 A_CustomComboAttack("RedBaronBall", 32, 10 * random(1, 8), "baron/melee")
+    Goto See
+  }
+}
+
+ACTOR RedBaronBall : BaronBall
+{
+  Speed 20
+  FastSpeed 25
+  Damage 12
+  Translation "112:127=168:191"
+}
