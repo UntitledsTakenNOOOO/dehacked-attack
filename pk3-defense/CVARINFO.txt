@@ -1,0 +1,24 @@
+server int deh_def_randomizer = 1;
+server int deh_def_level_scaling = 1;
+
+server bool deh_def_enable_strain = true;
+server bool deh_def_enable_deusvult2 = true;
+server bool deh_def_enable_valiant = true;
+server bool deh_def_enable_maskimxul = true;
+server bool deh_def_enable_struggle = true;
+server bool deh_def_enable_reliquary = true;
+
+server bool deh_def_chainsawstart = false;
+server bool deh_def_shotgunstart = false;
+server bool deh_def_supershotgunstart = false;
+server bool deh_def_chaingunstart = false;
+server bool deh_def_rocketlauncherstart = false;
+server bool deh_def_plasmariflestart = false;
+server bool deh_def_bfg9000start = false;
+
+server int deh_def_starthealth = 0;
+server int deh_def_startarmor = 0;
+server bool deh_def_backpackstart = false;
+server bool deh_def_berserkstart = false;
+server bool deh_def_invulnstart = false;
+server bool deh_def_invisstart = false;

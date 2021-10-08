@@ -1,0 +1,408 @@
+#library "DEHDEF"
+#include "zcommon.acs"
+
+#define DEH_STRAIN 1
+#define DEH_DEUS_VULT 2
+#define DEH_VALIANT 3
+#define DEH_MASKIMXUL 4
+#define DEH_STRUGGLE 5
+#define DEH_RELIQUARY 6
+
+Script "Dehacked_Defense_Enter" ENTER
+{
+	if(GetActorClass(0) == "JohnValiant")
+	{
+		if(CheckInventory("DummyBackpackItem"))
+		{
+			SetAmmoCapacity("Clip", 600);
+			SetAmmoCapacity("Shell", 100);
+			SetAmmoCapacity("RocketAmmo", 100);
+		} else {
+			SetAmmoCapacity("Clip", 300);
+			SetAmmoCapacity("Shell", 50);
+			SetAmmoCapacity("RocketAmmo", 50);
+		}
+	}
+	else if(GetActorClass(0) == "JohnStruggle")
+	{
+		if(CheckInventory("DummyBackpackItem"))
+		{
+			SetAmmoCapacity("Clip", 360);
+			SetAmmoCapacity("Shell", 72);
+			SetAmmoCapacity("RocketAmmo", 36);
+		} else {
+			SetAmmoCapacity("Clip", 180);
+			SetAmmoCapacity("Shell", 36);
+			SetAmmoCapacity("RocketAmmo", 18);
+		}
+	}
+	else if(GetActorClass(0) == "JohnReliquary")
+	{
+		if(CheckInventory("DummyBackpackItem"))
+		{
+			SetAmmoCapacity("Clip", 480);
+			SetAmmoCapacity("Shell", 80);
+			SetAmmoCapacity("RocketAmmo", 80);
+		} else {
+			SetAmmoCapacity("Clip", 240);
+			SetAmmoCapacity("Shell", 40);
+			SetAmmoCapacity("RocketAmmo", 40);
+		}
+	}
+	else //Just Vanilla Ammo
+	{
+		if(CheckInventory("DummyBackpackItem"))
+		{
+			SetAmmoCapacity("Clip", 400);
+			SetAmmoCapacity("Shell", 100);
+			SetAmmoCapacity("RocketAmmo", 100);
+		} else {
+			SetAmmoCapacity("Clip", 200);
+			SetAmmoCapacity("Shell", 50);
+			SetAmmoCapacity("RocketAmmo", 50);
+		}
+	}
+	
+	//And now all of the start settings, this giant mess
+	if((GetCVar("sv_shotgunstart") > 0 || GetCVar("deh_def_shotgunstart") > 0) && !CheckInventory("DEHShotgun") && !CheckInventory("StrainSawedOff") && !CheckInventory("StruggleShotgun") && !CheckInventory("ReliquaryShotgun"))
+	{
+		TakeInventory("Shotgun", 1);
+		TakeInventory("Shell", 50);
+		if(GetActorClass(0) == "JohnStrain")
+		{
+			GiveInventory("StrainSawedOff", 1);
+			GiveInventory("Shell", 12);
+		}
+		else if(GetActorClass(0) == "JohnStruggle")
+		{
+			GiveInventory("StruggleShotgun", 1);
+			GiveInventory("Shell", 6);
+		}
+		else if(GetActorClass(0) == "JohnReliquary")
+		{
+			GiveInventory("ReliquaryShotgun", 1);
+			GiveInventory("Shell", 12);
+		}
+		else
+		{
+			GiveInventory("DEHShotgun", 1);
+			GiveInventory("Shell", 12);
+		}
+	}
+	if(GetCVar("deh_def_chainsawstart") > 0 && !CheckInventory("DEHChainsaw") && !CheckInventory("DV2Gauntlets") && !CheckInventory("StruggleDrillMachine") && !CheckInventory("ReliquaryChainsaw"))
+	{
+		if(GetActorClass(0) == "JohnDeusVultII")
+		{
+			GiveInventory("DV2Gauntlets", 1);
+		}
+		else if(GetActorClass(0) == "JohnStruggle")
+		{
+			GiveInventory("StruggleDrillMachine", 1);
+		}
+		else if(GetActorClass(0) == "JohnReliquary")
+		{
+			GiveInventory("ReliquaryChainsaw", 1);
+		}
+		else
+		{
+			GiveInventory("DEHChainsaw", 1);
+		}
+	}
+	if(GetCVar("deh_def_supershotgunstart") > 0 && !CheckInventory("DEHSuperShotgun") && !CheckInventory("StruggleSuperShotgun") && !CheckInventory("ReliquarySuperShotgun"))
+	{
+		if(GetActorClass(0) == "JohnStruggle")
+		{
+			GiveInventory("StruggleSuperShotgun", 1);
+			GiveInventory("Shell", 6);
+		}
+		else if(GetActorClass(0) == "JohnReliquary")
+		{
+			GiveInventory("ReliquarySuperShotgun", 1);
+			GiveInventory("Shell", 12);
+		}
+		else
+		{
+			GiveInventory("DEHSuperShotgun", 1);
+			GiveInventory("Shell", 12);
+		}
+	}
+	if(GetCVar("deh_def_chaingunstart") > 0 && !CheckInventory("DEHChaingun") && !CheckInventory("ValiantChaingun") && !CheckInventory("StruggleDualPistols") && !CheckInventory("ReliquaryChaingun"))
+	{
+		if(GetActorClass(0) == "JohnValiant")
+		{
+			GiveInventory("ValiantChaingun", 1);
+			GiveInventory("Clip", 45);
+		}
+		else if(GetActorClass(0) == "JohnStruggle")
+		{
+			GiveInventory("StruggleDualPistols", 1);
+			GiveInventory("Clip", 36);
+		}
+		else if(GetActorClass(0) == "JohnReliquary")
+		{
+			GiveInventory("ReliquaryChaingun", 1);
+			GiveInventory("Clip", 36);
+		}
+		else
+		{
+			GiveInventory("DEHChaingun", 1);
+			GiveInventory("Clip", 30);
+		}
+	}
+	if(GetCVar("deh_def_rocketlauncherstart") > 0 && !CheckInventory("DEHRocketLauncher") && !CheckInventory("MaskimXulHandOfAfrit") && !CheckInventory("StruggleGrenadeLauncher") && !CheckInventory("ReliquaryRocketLauncher"))
+	{
+		if(GetActorClass(0) == "JohnMaskimXul")
+		{
+			GiveInventory("MaskimXulHandOfAfrit", 1);
+			GiveInventory("MaskimXulDemonHeart", 2);
+		}
+		else if(GetActorClass(0) == "JohnStruggle")
+		{
+			GiveInventory("StruggleGrenadeLauncher", 1);
+			GiveInventory("RocketAmmo", 2);
+		}
+		else if(GetActorClass(0) == "JohnReliquary")
+		{
+			GiveInventory("ReliquaryRocketLauncher", 1);
+			GiveInventory("RocketAmmo", 2);
+		}
+		else
+		{
+			GiveInventory("DEHRocketLauncher", 1);
+			GiveInventory("RocketAmmo", 2);
+		}
+	}
+	if(GetCVar("deh_def_plasmariflestart") > 0 && !CheckInventory("DEHPlasmaRifle") && !CheckInventory("StrainNFG") && !CheckInventory("MaskimXulJackBombs") && !CheckInventory("StruggleAssaultRifle") && !CheckInventory("ReliquaryPlasmaRifle"))
+	{
+		if(GetActorClass(0) == "JohnStrain")
+		{
+			GiveInventory("StrainNFG", 1);
+			GiveInventory("NFGBattery", 12);
+		}
+		else if(GetActorClass(0) == "JohnMaskimXul")
+		{
+			GiveInventory("MaskimXulJackBombs", 1);
+			GiveInventory("JackBombAmmo", 2);
+		}
+		else if(GetActorClass(0) == "JohnStruggle")
+		{
+			GiveInventory("StruggleAssaultRifle", 1);
+			GiveInventory("223CaliberMagazine", 40);
+		}
+		else if(GetActorClass(0) == "JohnReliquary")
+		{
+			GiveInventory("ReliquaryPlasmaRifle", 1);
+			GiveInventory("AntaresianCell", 32);
+		}
+		else
+		{
+			GiveInventory("DEHPlasmaRifle", 1);
+			GiveInventory("Cell", 40);
+		}
+	}
+	if(GetCVar("deh_def_bfg9000start") > 0 && !CheckInventory("DEHBFG9000") && !CheckInventory("StrainPsychicBlaster") && !CheckInventory("MaskimXulGrimoireExcidium") && !CheckInventory("StruggleLeichenfaust") && !CheckInventory("ReliquaryBFG9000"))
+	{
+		if(GetActorClass(0) == "JohnStrain")
+		{
+			GiveInventory("StrainPsychicBlaster", 1);
+			GiveInventory("RocketAmmo", 2);
+			GiveInventory("NFGBattery", 12);
+		}
+		else if(GetActorClass(0) == "MaskimXulGrimoireExcidium")
+		{
+			GiveInventory("JackBombAmmo", 2);
+			GiveInventory("Health", 50);
+		}
+		else if(GetActorClass(0) == "JohnStruggle")
+		{
+			GiveInventory("StruggleLeichenfaust", 1);
+			GiveInventory("RocketAmmo", 4);
+		}
+		else if(GetActorClass(0) == "JohnReliquary")
+		{
+			GiveInventory("ReliquaryBFG9000", 1);
+			GiveInventory("AntaresianCell", 64);
+		}
+		else
+		{
+			GiveInventory("DEHBFG9000", 1);
+			GiveInventory("Cell", 80);
+		}
+	}
+	//Whew. Now for health, armor, and powerups, which thankfully aren't determined by class, so:
+	if(GetCVar("deh_def_starthealth") > 0)
+	{
+		SetActorProperty(0, APROP_Health, GetCVar("deh_def_starthealth") * 100);
+	}
+	if(GetCVar("deh_def_startarmor") == 1)
+	{
+		TakeInventory("Armor", 0x7FFFFFFF);
+		GiveInventory("GreenArmor", 1);
+	}
+	else if(GetCVar("deh_def_startarmor") == 2)
+	{
+		TakeInventory("Armor", 0x7FFFFFFF);
+		GiveInventory("DEHBlueArmor", 1);
+	}
+	else if(GetCVar("deh_def_startarmor") == 3)
+	{
+		TakeInventory("Armor", 0x7FFFFFFF);
+		GiveInventory("StrainRedArmor", 1);
+	}
+	
+	if(GetCVar("deh_def_backpackstart") > 0)
+	{
+		for(int i = 0; i < GetCVar("deh_def_backpackstart"); i++)
+		{
+			ACS_NamedExecuteAlways("Dehacked_BackpackHandler", 0);
+		}
+	}
+	if(GetCVar("deh_def_berserkstart") > 0)
+	{
+		GiveInventory("Berserk", 1);
+	}
+	if(GetCVar("deh_def_invulnstart") > 0)
+	{
+		GiveInventory("InvulnerabilitySphere", 1);
+	}
+	if(GetCVar("deh_def_invisstart") > 0)
+	{
+		GiveInventory("BlurSphere", 1);
+	}
+}
+
+Script "Dehacked_BackpackHandler" (void)
+{
+	GiveInventory("DummyBackpackItem", 1);
+	SetAmmoCapacity("Cell", 600);
+	SetAmmoCapacity("NFGBattery", 200);
+	SetAmmoCapacity("JackBombAmmo", 20);
+	SetAmmoCapacity("223CaliberMagazine", 320);
+	SetAmmoCapacity("AntaresianCell", 480);
+	if(GetActorClass(0) == "JohnValiant")
+	{
+		GiveInventory("Clip", 15);
+		GiveInventory("Shell", 4);
+		GiveInventory("RocketAmmo", 1);
+		GiveInventory("MaskimXulDemonHeart", 1);
+		GiveInventory("Cell", 20);
+		GiveInventory("NFGBattery", 6);
+		GiveInventory("JackBombAmmo", 1);
+		GiveInventory("223CaliberMagazine", 20);
+		GiveInventory("AntaresianCell", 16);
+		SetAmmoCapacity("Clip", 600);
+		SetAmmoCapacity("Shell", 100);
+		SetAmmoCapacity("RocketAmmo", 100);
+		SetAmmoCapacity("MaskimXulDemonHeart", 100);
+	}
+	else if(GetActorClass(0) == "JohnStruggle")
+	{
+		GiveInventory("Clip", 12);
+		GiveInventory("Shell", 2);
+		GiveInventory("RocketAmmo", 1);
+		GiveInventory("MaskimXulDemonHeart", 1);
+		GiveInventory("Cell", 20);
+		GiveInventory("NFGBattery", 6);
+		GiveInventory("JackBombAmmo", 1);
+		GiveInventory("223CaliberMagazine", 20);
+		GiveInventory("AntaresianCell", 16);
+		SetAmmoCapacity("Clip", 360);
+		SetAmmoCapacity("Shell", 72);
+		SetAmmoCapacity("RocketAmmo", 36);
+		SetAmmoCapacity("MaskimXulDemonHeart", 36);
+	}
+	else if(GetActorClass(0) == "JohnReliquary")
+	{
+		GiveInventory("Clip", 12);
+		GiveInventory("Shell", 4);
+		GiveInventory("RocketAmmo", 1);
+		GiveInventory("MaskimXulDemonHeart", 1);
+		GiveInventory("Cell", 20);
+		GiveInventory("NFGBattery", 6);
+		GiveInventory("JackBombAmmo", 1);
+		GiveInventory("223CaliberMagazine", 20);
+		GiveInventory("AntaresianCell", 16);
+		SetAmmoCapacity("Clip", 480);
+		SetAmmoCapacity("Shell", 80);
+		SetAmmoCapacity("RocketAmmo", 80);
+		SetAmmoCapacity("MaskimXulDemonHeart", 80);
+	}
+	else //Just Vanilla Ammo
+	{
+		GiveInventory("Clip", 10);
+		GiveInventory("Shell", 4);
+		GiveInventory("RocketAmmo", 1);
+		GiveInventory("MaskimXulDemonHeart", 1);
+		GiveInventory("Cell", 20);
+		GiveInventory("NFGBattery", 6);
+		GiveInventory("JackBombAmmo", 1);
+		GiveInventory("223CaliberMagazine", 20);
+		GiveInventory("AntaresianCell", 16);
+		SetAmmoCapacity("Clip", 400);
+		SetAmmoCapacity("Shell", 100);
+		SetAmmoCapacity("RocketAmmo", 100);
+		SetAmmoCapacity("MaskimXulDemonHeart", 100);
+	}
+}
+
+Script "Dehacked_MapNumber" (void)
+{
+	int x = GetLevelInfo(LEVELINFO_LEVELNUM);
+	SetResultValue(x);
+}
+Script "Dehacked_RandomizerCheck" (void)
+{
+	int x = GetCVar("deh_def_randomizer");
+	SetResultValue(x);
+}
+Script "Dehacked_LevelScaling" (void)
+{
+	int x = GetCVar("deh_def_level_scaling");
+	SetResultValue(x);
+}
+Script "Dehacked_WeaponStay" (void)
+{
+	int x = GetCVar("sv_weaponstay");
+	SetResultValue(x);
+}
+
+Script "Dehacked_WeaponReset" (int mapset, int tierLevel)
+{
+	bool keep_spawn = TRUE;
+
+	switch(mapset)
+	{
+	default:
+		break;
+	case DEH_STRAIN:
+		keep_spawn = GetCVar("deh_def_enable_strain");
+		break;
+	case DEH_DEUS_VULT:
+		keep_spawn = GetCVar("deh_def_enable_deusvult2");
+		break;
+	case DEH_VALIANT:
+		keep_spawn = GetCVar("deh_def_enable_valiant");
+		break;
+	case DEH_MASKIMXUL:
+		keep_spawn = GetCVar("deh_def_enable_maskimxul");
+		break;
+	case DEH_STRUGGLE:
+		keep_spawn = GetCVar("deh_def_enable_struggle");
+		break;
+	case DEH_RELIQUARY:
+		keep_spawn = GetCVar("deh_def_enable_reliquary");
+		break;
+	}
+	if(GetCVar("deh_def_level_scaling") && GetLevelInfo(LEVELINFO_LEVELNUM) < tierLevel)
+	{
+		keep_spawn = FALSE;
+	}
+	
+	if(keep_spawn)
+	{
+		SetResultValue(0); //Keep the spawn
+	} else {
+		SetResultValue(1); //Reset
+	}
+}
+

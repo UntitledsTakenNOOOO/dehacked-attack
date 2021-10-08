@@ -1,0 +1,105 @@
+actor DEHBlueArmor : BlueArmor {}
+actor BlueArmorReplacer : DEHDefenseWeaponSpawner replaces BlueArmor
+{
+/*
+	DropItem "DEHShell", 256, 5
+	DropItem "StruggleShell", 256, 1
+*/
+  States
+  {
+  Spawn:
+    TNT1 A 1
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_RandomizerCheck"), "RandomizerSpawn")
+    Goto ClassSpawn
+  ClassSpawn:
+    TNT1 A 0 A_SpawnItemEx("DoomClassBlueArmor", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_SpawnItemEx("StrainClassBlueArmor", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+	Stop
+  ClassSpawnDropped:
+    TNT1 A 0 A_DropItem("DoomClassBlueArmor")
+    TNT1 A 0 A_DropItem("StrainClassBlueArmor")
+	Stop
+  RandomizerSpawn:
+    TNT1 A 0 A_CheckFlag("DROPPED", "DroppedSpawn")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_LevelScaling"), "ScaledSpawn")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRAIN, 15), "Spawn1")
+    TNT1 A 0 A_Jump(128, "Spawn2")
+    Goto Spawn1
+  ScaledSpawn:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRAIN, 1), "Spawn1")
+    TNT1 A 0 A_Jump(ACS_NamedExecuteWithResult("Dehacked_MapNumber") * 8, "Spawn2")
+    Goto Spawn1
+  Spawn1:
+    TNT1 A 0 A_SpawnItemEx("DEHBlueArmor", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    Goto Death
+  Spawn2:
+    TNT1 A 0 A_SpawnItemEx("StrainRedArmor", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    Goto Death
+  DroppedSpawn:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_LevelScaling"), "ScaledDroppedSpawn")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRAIN, 15), "DroppedSpawn1")
+    TNT1 A 0 A_Jump(128, "DroppedSpawn2")
+    Goto DroppedSpawn1
+  ScaledDroppedSpawn:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRAIN, 1), "DroppedSpawn1")
+    TNT1 A 0 A_Jump(ACS_NamedExecuteWithResult("Dehacked_MapNumber") * 8, "DroppedSpawn2")
+    Goto DroppedSpawn1
+  DroppedSpawn1:
+    TNT1 A 0 A_DropItem("DEHBlueArmor")
+    Goto Death
+  DroppedSpawn2:
+    TNT1 A 0 A_DropItem("StrainRedArmor")
+    Goto Death
+  }
+}
+
+actor DEHBlurSphere : BlurSphere {}
+actor BlurSphereReplacer : DEHDefenseWeaponSpawner replaces BlurSphere
+{
+/*
+	DropItem "DEHShell", 256, 5
+	DropItem "StruggleShell", 256, 1
+*/
+  States
+  {
+  Spawn:
+    TNT1 A 1
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_RandomizerCheck"), "RandomizerSpawn")
+    Goto ClassSpawn
+  ClassSpawn:
+	TNT1 A 0 A_SpawnItemEx("DEHBlurSphere", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    Goto Death
+  RandomizerSpawn:
+    TNT1 A 0 A_CheckFlag("DROPPED", "DroppedSpawn")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_LevelScaling"), "ScaledSpawn")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_MASKIMXUL, 12), "Spawn1")
+    TNT1 A 0 A_Jump(128, "Spawn2")
+    Goto Spawn1
+  ScaledSpawn:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_MASKIMXUL, 1), "Spawn1")
+    TNT1 A 0 A_Jump(ACS_NamedExecuteWithResult("Dehacked_MapNumber") * 8, "Spawn2")
+    Goto Spawn1
+  Spawn1:
+    TNT1 A 0 A_SpawnItemEx("DEHBlurSphere", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    Goto Death
+  Spawn2:
+    TNT1 A 0 A_SpawnItemEx("MaskimXulRouletteSoulSphere", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    Goto Death
+  DroppedSpawn:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_LevelScaling"), "ScaledDroppedSpawn")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_MASKIMXUL, 12), "DroppedSpawn1")
+    TNT1 A 0 A_Jump(128, "DroppedSpawn2")
+    Goto DroppedSpawn1
+  ScaledDroppedSpawn:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_MASKIMXUL, 1), "DroppedSpawn1")
+    TNT1 A 0 A_Jump(ACS_NamedExecuteWithResult("Dehacked_MapNumber") * 8, "DroppedSpawn2")
+    Goto DroppedSpawn1
+  DroppedSpawn1:
+    TNT1 A 0 A_DropItem("DEHBlurSphere")
+    Goto Death
+  DroppedSpawn2:
+    TNT1 A 0 A_DropItem("MaskimXulRouletteSoulSphere")
+    Goto Death
+  }
+}
+

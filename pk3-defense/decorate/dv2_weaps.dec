@@ -1,0 +1,88 @@
+ACTOR JohnDeusVultII : DoomPlayer
+{
+  Player.DisplayName "Deus Vult 2 Marine"
+  Player.StartItem "DV2DualPistols"
+  Player.StartItem "Clip", 50
+  Player.StartItem "DEHFist"
+/*
+  Player.WeaponSlot 1, DV2Gauntlets, Fist
+  Player.WeaponSlot 2, DV2DualPistols
+  Player.WeaponSlot 3, SuperShotgun, Shotgun
+  Player.WeaponSlot 4, Chaingun
+  Player.WeaponSlot 5, RocketLauncher
+  Player.WeaponSlot 6, PlasmaRifle
+  Player.WeaponSlot 7, BFG9000
+*/
+}
+
+ACTOR DV2Gauntlets : DoomWeapon
+{
+  Weapon.Kickback 0
+  Weapon.SelectionOrder 2200
+  Weapon.UpSound "dv2/sawup"
+  Weapon.ReadySound "dv2/sawidle"
+  Inventory.PickupMessage "Sauron's Gauntlet! Emperor Palpatine's got nothing on this!"
+  Obituary "$OB_MPCHAINSAW"
+  Tag "Sauron's Gauntlet"
+  +WEAPON.MELEEWEAPON
+  States
+  {
+  Spawn:
+    DVSA G -1
+    Stop
+  Ready:
+    DVSA AAAABBBBCCCC 1 A_WeaponReady
+    Loop
+  Deselect:
+    DVSA A 1 A_Lower
+    Loop
+  Select:
+    DVSA A 1 A_Raise
+    Loop
+  Fire:
+    DVSA DEF 1 Bright A_Saw("dv2/sawfull", "dv2/sawhit", 2, "BulletPuff", SF_RANDOMLIGHTBOTH)
+    DVSA C 0 A_ReFire
+    Goto Ready
+  }
+}
+
+ACTOR DV2DualPistols : DoomWeapon
+{
+  Weapon.SelectionOrder 1900
+  Weapon.AmmoUse 1
+  Weapon.AmmoGive 20
+  Weapon.AmmoType "Clip"
+  Obituary "$OB_MPPISTOL"
+  +WEAPON.WIMPY_WEAPON
+  Inventory.Pickupmessage "You got an additional pistol!"
+  Tag "Dual Pistols"
+  States
+  {
+  Ready:
+    DVPG A 1 A_WeaponReady
+    Loop
+  Deselect:
+    DVPG A 1 A_Lower
+    Loop
+  Select:
+    DVPG A 1 A_Raise
+    Loop
+  Fire:
+    DVPG B 0 A_FireBullets(5.6, 0, 1, 5, "BulletPuff")
+    DVPG B 0 A_PlaySound("dv2/pistol", CHAN_WEAPON)
+    DVPG B 7 Bright A_GunFlash
+    DVPG C 0 A_FireBullets(5.6, 0, 1, 5, "BulletPuff")
+    DVPG C 0 A_PlaySound("dv2/pistol", CHAN_WEAPON)
+    DVPG C 7 Bright A_GunFlash
+    DVPG A 5 A_ReFire
+    Goto Ready
+  Flash:
+    DVPF A 7 Bright A_Light1
+    Goto LightDone
+    DVPF A 7 Bright A_Light1
+    Goto LightDone
+  Spawn:
+    PIST A -1
+    Stop
+  }
+}

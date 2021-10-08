@@ -1,0 +1,473 @@
+ACTOR JohnReliquary : DoomPlayer
+{
+  Player.DisplayName "Reliquary Marine"
+  Player.StartItem "ReliquaryMachinegun"
+  Player.StartItem "ReliquaryFist"
+  Player.StartItem "Clip", 60
+/*
+  Player.WeaponSlot 1, ReliquaryChainsaw, ReliquaryFist
+  Player.WeaponSlot 2, ReliquaryMachinegun
+  Player.WeaponSlot 3, ReliquarySuperShotgun, ReliquaryShotgun
+  Player.WeaponSlot 4, ReliquaryChaingun
+  Player.WeaponSlot 5, ReliquaryRocketLauncher
+  Player.WeaponSlot 6, ReliquaryPlasmaRifle
+  Player.WeaponSlot 7, ReliquaryBFG9000
+*/
+}
+
+ACTOR ReliquaryFist : DoomWeapon
+{
+  Weapon.SelectionOrder 3700
+  Weapon.Kickback 100
+  Obituary "$OB_MPFIST"
+  Tag "$TAG_FIST"
+  +WEAPON.WIMPY_WEAPON
+  +WEAPON.MELEEWEAPON
+  States
+  {
+  Ready:
+    PUNG A 1 A_WeaponReady
+    Loop
+  Deselect:
+    PUNG AAA 0 A_Lower
+    PUNG A 1 A_Lower
+    Loop
+  Select:
+    PUNG AAA 0 A_Raise
+    PUNG A 1 A_Raise
+    Loop
+  Fire:
+    PUNG B 2
+    PUNG C 0 A_Punch
+    PUNG C 2 A_Punch
+    PUNG D 9
+    PUNG C 4
+    PUNG B 5 A_ReFire
+    Goto Ready
+  }
+}
+
+ACTOR ReliquaryChainsaw : DoomWeapon
+{
+  Weapon.Kickback 0
+  Weapon.SelectionOrder 2200
+  Weapon.UpSound "weapons/sawup"
+  Weapon.ReadySound "weapons/sawidle"
+  Inventory.PickupMessage "$GOTCHAINSAW"
+  Obituary "$OB_MPCHAINSAW"
+  Tag "$TAG_CHAINSAW"
+  +WEAPON.MELEEWEAPON
+  States
+  {
+  Ready:
+    SAWG CD 4 A_WeaponReady
+    Loop
+  Deselect:
+    SAWG CCC 0 A_Lower
+    SAWG C 1 A_Lower
+    Loop
+  Select:
+    SAWG CCC 0 A_Raise
+    SAWG C 1 A_Raise
+    Loop
+  Fire:
+    SAWG AB 3 A_Saw
+    SAWG B 0 A_ReFire
+    Goto Ready
+  Spawn:
+    CSAW A -1
+    Stop
+  }
+}
+
+ACTOR ReliquaryMachinegun : DoomWeapon
+{
+  Weapon.SelectionOrder 1900
+  Weapon.AmmoUse 1
+  Weapon.AmmoGive 24
+  Weapon.AmmoType "Clip"
+  Obituary "$OB_MPPISTOL"
+  +WEAPON.WIMPY_WEAPON
+  Inventory.Pickupmessage "$PICKUP_PISTOL_DROPPED"
+  Tag "Machinegun"
+  States
+  {
+  Ready:
+    RQPG A 1 A_WeaponReady
+    Loop
+  Deselect:
+    RQPG AAA 0 A_Lower
+    RQPG A 1 A_Lower
+    Loop
+  Select:
+    RQPG AAA 0 A_Raise
+    RQPG A 1 A_Raise
+    Loop
+  Fire:
+    RQPG A 1
+    RQPG B 0 A_FireBullets(0, 0, 1, 5, "BulletPuff")
+    RQPG B 0 A_PlaySound("reliquary/pistol", CHAN_WEAPON)
+    RQPG B 1 A_GunFlash
+    RQPG C 1
+    RQPG D 1
+    RQPG C 1
+    RQPG B 1
+    RQPG A 3 A_ReFire
+    Goto Ready
+  Flash:
+    RQPF A 2 Bright A_Light1
+    RQPF B 1 Bright A_Light1
+    Goto LightDone
+  Spawn:
+    PIST A -1
+    Stop
+  }
+}
+
+ACTOR ReliquaryShotgun : DoomWeapon
+{
+  Weapon.SelectionOrder 1300
+  Weapon.AmmoUse 1
+  Weapon.AmmoGive 8
+  Weapon.AmmoType "Shell"
+  Inventory.PickupMessage "$GOTSHOTGUN"
+  Obituary "$OB_MPSHOTGUN"
+  Tag "$TAG_SHOTGUN"
+  States
+  {
+  Ready:
+    RSHG A 1 A_WeaponReady
+    Loop
+  Deselect:
+    RSHG AAA 0 A_Lower
+    RSHG A 1 A_Lower
+    Loop
+  Select:
+    RSHG AAA 0 A_Raise
+    RSHG A 1 A_Raise
+    Loop
+  Fire:
+    RSHG A 0 A_FireBullets(5.6, 0, 7, 5, "BulletPuff")
+    RSHG A 0 A_PlaySound("reliquary/shotgf", CHAN_WEAPON)
+    RSHG A 3 A_GunFlash
+    RSHG B 2
+    RSHG A 11
+    RSHG B 1
+    RSHG C 2
+    RSHG D 6
+    RSHG C 2
+    RSHG B 1
+    RSHG A 2
+    RSHG A 4 A_ReFire
+    Goto Ready
+  Flash:
+    RSHF A 2 Bright A_Light1
+    RSHF B 2 Bright A_Light2
+    Goto LightDone
+  Spawn:
+    RSHT A -1
+    Stop
+  }
+}
+
+ACTOR ReliquarySuperShotgun : DoomWeapon
+{
+  Weapon.SelectionOrder 400
+  Weapon.AmmoUse 2
+  Weapon.AmmoGive 8
+  Weapon.AmmoType "Shell"
+  Inventory.PickupMessage "$GOTSHOTGUN2"
+  Obituary "$OB_MPSSHOTGUN"
+  Tag "$TAG_SUPERSHOTGUN"
+  States
+  {
+  Ready:
+    RSH2 A 1 A_WeaponReady
+    Loop
+  Deselect:
+    RSH2 AAA 0 A_Lower
+    RSH2 A 1 A_Lower
+    Loop
+  Select:
+    RSH2 AAA 0 A_Raise
+    RSH2 A 1 A_Raise
+    Loop
+  Fire:
+    RSH2 A 0 A_FireBullets(11.2, 7.1, 20, 5, "BulletPuff")
+    RSH2 A 0 A_PlaySound("reliquary/shotgf", CHAN_WEAPON)
+    RSH2 A 3 A_GunFlash
+    RSH2 BCB 1
+    RSH2 A 15 A_CheckReload
+    RSH2 D 2
+    RSH2 E 13
+    RSH2 F 2
+    RSH2 G 2
+    RSH2 A 9 A_ReFire
+    Goto Ready
+  Flash:
+    RSH2 I 2 Bright A_Light1
+    RSH2 J 2 Bright A_Light2
+    Goto LightDone
+  Spawn:
+    RSG2 A -1
+    Stop
+  }
+}
+
+ACTOR ReliquaryChaingun : DoomWeapon
+{
+   Weapon.SelectionOrder 700
+   Weapon.AmmoUse 1
+   Weapon.AmmoGive 24
+   Weapon.AmmoType "Clip"
+   Inventory.PickupMessage "$GOTCHAINGUN" // "You got the chaingun"
+   Obituary "$OB_MPCHAINGUN" // "%o was mowed down by %k's chaingun."
+   Tag "$TAG_CHAINGUN"
+   States
+   {
+   Ready:
+     RCGG A 1 A_WeaponReady
+     Loop
+   Deselect:
+     RCGG AAA 0 A_Lower
+     RCGG A 1 A_Lower
+     Loop
+   Select:
+     RCGG AAA 0 A_Raise
+     RCGG A 1 A_Raise
+     Loop
+  Fire:
+     RCGG A 0 A_PlaySound("reliquary/chngun", CHAN_WEAPON)
+     RCGG A 0 A_GunFlash
+     RCGG A 1 A_FireBullets(5.6, 0, 1, 5, "BulletPuff")
+     RCGG B 1
+     RCGG C 0 A_PlaySound("reliquary/chngun", CHAN_WEAPON)
+     RCGG C 0 A_GunFlash("Flash2")
+     RCGG C 1 A_FireBullets(5.6, 0, 1, 5, "BulletPuff")
+     RCGG D 1
+     RCGG D 0 A_ReFire
+     RCGG ABCDABCDABCDABCD 1
+     RCGG ABCDABCD 2
+     RCGG ABCD 3
+     Goto Ready
+  Flash:
+     RCGF A 2 Bright A_Light1
+     Goto LightDone
+  Flash2:
+     RCGF B 2 Bright A_Light2
+     Goto LightDone
+   Spawn:
+     RMGN A -1
+     Stop
+   }
+}
+
+ACTOR ReliquaryRocketLauncher : DoomWeapon
+{
+  Weapon.SelectionOrder 2500
+  Weapon.AmmoUse 1
+  Weapon.AmmoGive 2
+  Weapon.AmmoType "RocketAmmo"
+  +WEAPON.NOAUTOFIRE
+  Inventory.PickupMessage "$GOTLAUNCHER"
+  Tag "$TAG_ROCKETLAUNCHER"
+  States
+  {
+  Ready:
+    RQMG A 1 A_WeaponReady
+    Loop
+  Deselect:
+    RQMG AAA 0 A_Lower
+    RQMG A 1 A_Lower
+    Loop
+  Select:
+    RQMG AAA 0 A_Raise
+    RQMG A 1 A_Raise
+    Loop
+  Fire:
+    RQMG A 2 A_GunFlash
+    RQMG A 1 A_FireCustomMissile("ReliquaryRocket", 0, 1)
+    RQMG BCD 1
+    RQMG CB 2
+    RQMG A 10
+    RQMG A 0 A_Refire
+    Goto Ready
+  Flash:
+    RQMF A 4 Bright A_Light1
+    RQMF BC 2 Bright A_Light2
+    Goto LightDone
+  Spawn:
+    RQLN A -1
+    Stop
+  }
+}
+ACTOR ReliquaryRocket : Rocket
+{
+  SeeSound "reliquary/rocklf"
+  Radius 13
+  Damage 22
+  Speed 26
+  States
+  {
+  Spawn:
+    RQML A 1 Bright
+    Loop
+  }
+}
+
+ACTOR ReliquaryPlasmaRifle : DoomWeapon
+{
+  Weapon.SelectionOrder 100
+  Weapon.AmmoUse 1
+  Weapon.AmmoGive 32
+  Weapon.AmmoType "AntaresianCell"
+  Inventory.PickupMessage "$GOTPLASMA"
+  Tag "$TAG_PLASMARIFLE"
+  States
+  {
+  Ready:
+    RPLG A 1 A_WeaponReady
+    Loop
+  Deselect:
+    RPLG AAA 0 A_Lower
+    RPLG A 1 A_Lower
+    Loop
+  Select:
+    RPLG AAA 0 A_Raise
+    RPLG A 1 A_Raise
+    Loop
+  Fire:
+    RPLG A 0 A_GunFlash
+    RPLG A 2 A_FireCustomMissile("ReliquaryPlasmaBall", 0, 1)
+    RPLG BC 1
+    RPLG B 2
+    RPLG A 2 A_Refire
+    Goto Ready
+  Flash:
+    PLSF D 1 Bright A_Light2
+    PLSF E 1 Bright A_Light1
+    Goto LightDone
+  Spawn:
+    RQPL A -1
+    Stop
+  }
+}
+ACTOR ReliquaryPlasmaBall : PlasmaBall
+{
+  Speed 30
+  Radius 15
+  Damage 12
+  SeeSound "reliquary/plasmaf"
+  DeathSound "reliquary/plasmax"
+  States
+  {
+  Spawn:
+    RPLS A 1 Bright
+    Loop
+  Death:
+    RPLE ABCDE 4 Bright
+    Stop
+  }
+}
+
+ACTOR ReliquaryBFG9000 : DoomWeapon
+{
+  Height 20
+  Weapon.SelectionOrder 2800
+  Weapon.AmmoUse 30
+  Weapon.AmmoGive 32
+  Weapon.AmmoType "AntaresianCell"
+  +WEAPON.NOAUTOFIRE
+  Inventory.PickupMessage "$GOTBFG9000"
+  Tag "$TAG_BFG9000"
+  States
+  {
+  Ready:
+    RBFG A 1 A_WeaponReady
+    Loop
+  Deselect:
+    RBFG AAA 0 A_Lower
+    RBFG A 1 A_Lower
+    Loop
+  Select:
+    RBFG AAA 0 A_Raise
+    RBFG A 1 A_Raise
+    Loop
+  Fire:
+    RBFG A 20 A_PlaySound("reliquary/bfgf", CHAN_WEAPON)
+	RBFG B 0 A_GunFlash
+    RBFG B 0 A_FireCustomMissile("ReliquaryBFGBall", 0, 1)
+    RBFG BCB 2
+    RBFG D 14
+    RBFG A 1 A_Refire
+    Goto Ready
+  Flash:
+    RBFF A 2 Bright A_Light1
+    RBFF B 2 Bright A_Light2
+    Goto LightDone
+  Spawn:
+    RQBF A -1
+    Stop
+  }
+}
+ACTOR ReliquaryBFGBall : BFGBall
+{
+  Damage 80
+  DeathSound "reliquary/bfgx"
+  States
+  {
+  Death:
+    BFE1 AB 4 Bright
+    BFE1 C 4 Bright A_BFGSpray
+    BFE1 DEF 4 Bright
+    Stop
+  }
+}
+
+ACTOR ReliquaryClip : Clip
+{
+  Inventory.Amount 12
+  States
+  {
+  Spawn:
+    RCLI A -1
+    Stop
+  }
+}
+ACTOR ReliquaryClipBox : Clip
+{
+  Inventory.Amount 60
+  States
+  {
+  Spawn:
+    RAMO A -1
+    Stop
+  }
+}
+ACTOR AntaresianCell : Ammo
+{
+  Inventory.PickupMessage "Picked up an antaresian cell."
+  Inventory.Amount 16
+  Inventory.MaxAmount 240
+  Ammo.BackpackAmount 16
+  Ammo.BackpackMaxAmount 480
+  Inventory.Amount 16
+  Inventory.Icon "RCELA0"
+  States
+  {
+  Spawn:
+    RCEL A -1
+    Stop
+  }
+}
+ACTOR AntaresianCellPack : AntaresianCell
+{
+  Inventory.PickupMessage "Picked up an antaresian cell pack."
+  Inventory.Amount 80
+  States
+  {
+  Spawn:
+    RCLP A -1
+    Stop
+  }
+}

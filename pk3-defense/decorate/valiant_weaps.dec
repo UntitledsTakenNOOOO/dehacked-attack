@@ -1,0 +1,122 @@
+ACTOR JohnValiant : DoomPlayer
+{
+  Player.DisplayName "Valiant Doomguy"
+  Player.StartItem "ValiantPistol"
+  Player.StartItem "DEHFist"
+  Player.StartItem "Clip", 50
+/*
+  Player.WeaponSlot 1, Chainsaw, Fist
+  Player.WeaponSlot 2, ValiantPistol
+  Player.WeaponSlot 3, SuperShotgun, Shotgun
+  Player.WeaponSlot 4, ValiantChaingun
+  Player.WeaponSlot 5, RocketLauncher
+  Player.WeaponSlot 6, PlasmaRifle
+  Player.WeaponSlot 7, BFG9000
+*/
+}
+
+ACTOR ValiantClip : Clip
+{
+  Inventory.PickupMessage "Picked up an extended clip."
+  Inventory.Amount 15
+  States
+  {
+  Spawn:
+    CLIP A -1
+    Stop
+  }
+}
+ACTOR ValiantClipBox : Clip
+{
+  Inventory.PickupMessage "Picked up a packed box of bullets."
+  Inventory.Amount 75
+  States
+  {
+  Spawn:
+    AMMO A -1
+    Stop
+  }
+}
+
+ACTOR ValiantPistol : Doomweapon
+{
+  Weapon.SelectionOrder 1900
+  Weapon.SlotNumber 2
+  Weapon.AmmoUse 1
+  Weapon.AmmoGive 30
+  Weapon.AmmoType "Clip"
+  Obituary "$OB_MPPISTOL"
+  +WEAPON.WIMPY_WEAPON
+  Inventory.Pickupmessage "$PICKUP_PISTOL_DROPPED"
+  Tag "Super Pistol"
+  States
+  {
+  Ready:
+    VPSG A 1 A_WeaponReady
+    Loop
+  Deselect:
+    VPSG A 1 A_Lower
+    Loop
+  Select:
+    VPSG A 1 A_Raise
+    Loop
+  Fire:
+    VPSG C 3
+    VPSG D 0 Bright A_FireBullets (5.6, 0, 1, 5, "BulletPuff")
+	VPSG D 0 A_PlaySound("valiant/pistol", CHAN_WEAPON)
+	VPSG D 3 A_GunFlash
+    VPSG E 3
+    VPSG B 2 Bright A_ReFire
+    Goto Ready
+  Flash:
+    VPSF A 3 Bright A_Light1
+    Goto LightDone
+  Spawn:
+    PIST A -1
+    Stop
+  }
+}
+
+ACTOR ValiantChaingun : Doomweapon
+{
+	Weapon.SelectionOrder 700
+	Weapon.SlotNumber 4
+	Weapon.AmmoUse 1
+	Weapon.AmmoGive 30
+	Weapon.AmmoType "Clip"
+	Inventory.PickupMessage "You got the super chaingun!"
+	Obituary "%o was mowed down by %k's chaingun."
+	Tag "Super Chaingun"
+	States
+	{
+		Ready:
+			VCGG A 1 A_WeaponReady
+			Loop
+		Deselect:
+			 VCGG A 1 A_Lower
+			 Loop
+		Select:
+			 VCGG A 1 A_Raise
+			 Loop
+		Fire:
+			VCGG A 0 A_PlaySound("valiant/chngun", CHAN_WEAPON)
+			VCGG A 0 A_GunFlash("Flash")
+			VCGG A 2 Bright A_FireBullets(5.6, 0, 1, 5, "BulletPuff")
+			VCGG B 0 A_PlaySound("valiant/chngun", CHAN_WEAPON)
+			VCGG B 0 A_GunFlash("Flash2")
+			VCGG B 2 Bright A_FireBullets(5.6, 0, 1, 5, "BulletPuff")
+			VCGG B 0 A_Refire
+			VCGG AB 3 A_Refire
+			VCGG AB 6 A_Refire
+			Goto Ready
+		Flash:
+			 VCGF A 2 Bright A_Light1
+			 Goto LightDone
+		Flash2:
+			 VCGF B 2 Bright A_Light1
+			 Goto LightDone
+		Spawn:
+			 VMGN A -1
+			 Stop
+	}
+}

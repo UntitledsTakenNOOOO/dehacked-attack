@@ -1,0 +1,1575 @@
+//I should do this the same way that Samsara does because it's the only proper
+//class-based weapon pickup system that actually respects sv_weaponstay.
+//But I'm too lazy to do that, so have this horribly hacky solution instead.
+//The Chainsaws, at least, are fairly simple, as none of them use ammo.
+
+Actor DehackedWeaponGiver : CustomInventory
+{
+  -INVBAR
+  Inventory.PickupMessage ""
+}
+
+//////////////
+// CHAINSAW //
+//////////////
+Actor DoomChainsawGiver : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnDoom"
+  VisibleToPlayerClass "JohnDoom"
+  States
+  {
+  Spawn:
+    CSAW A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("DEHChainsaw", 1, "PickupFail")
+    TNT1 A 0 A_SpawnItemEx("DEHChainsaw", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    Stop
+  PickupFail:
+    CSAW A 1
+    Fail
+  }
+}
+Actor DoomChainsawGiverDropped : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnDoom"
+  VisibleToPlayerClass "JohnDoom"
+  States
+  {
+  Spawn:
+    CSAW A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("DEHChainsaw", 1, "PickupFail")
+    TNT1 A 0 A_SpawnItemEx("DEHChainsaw", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    Stop
+  PickupFail:
+    CSAW A 1
+    Fail
+  }
+}
+Actor StrainChainsawGiver : DoomChainsawGiver
+{
+  Inventory.RestrictedTo "JohnStrain"
+  VisibleToPlayerClass "JohnStrain"
+}
+Actor StrainChainsawGiverDropped : DoomChainsawGiverDropped
+{
+  Inventory.RestrictedTo "JohnStrain"
+  VisibleToPlayerClass "JohnStrain"
+}
+Actor DV2ChainsawGiver : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnDeusVultII"
+  VisibleToPlayerClass "JohnDeusVultII"
+  States
+  {
+  Spawn:
+    DVSA G -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("DV2Gauntlets", 1, "PickupFail")
+    TNT1 A 0 A_SpawnItemEx("DV2Gauntlets", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    Stop
+  PickupFail:
+    DSVA G 1
+    Fail
+  }
+}
+Actor DV2ChainsawGiverDropped : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnDeusVultII"
+  VisibleToPlayerClass "JohnDeusVultII"
+  States
+  {
+  Spawn:
+    DVSA G -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("DV2Gauntlets", 1, "PickupFail")
+    TNT1 A 0 A_SpawnItemEx("DV2Gauntlets", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    Stop
+  PickupFail:
+    DSVA G 1
+    Fail
+  }
+}
+Actor ValiantChainsawGiver : DoomChainsawGiver
+{
+  Inventory.RestrictedTo "JohnValiant"
+  VisibleToPlayerClass "JohnValiant"
+}
+Actor ValiantChainsawGiverDropped : DoomChainsawGiverDropped
+{
+  Inventory.RestrictedTo "JohnValiant"
+  VisibleToPlayerClass "JohnValiant"
+}
+Actor MaskimXulChainsawGiver : DoomChainsawGiver
+{
+  Inventory.RestrictedTo "JohnMaskimXul"
+  VisibleToPlayerClass "JohnMaskimXul"
+}
+Actor MaskimXulChainsawGiverDropped : DoomChainsawGiverDropped
+{
+  Inventory.RestrictedTo "JohnMaskimXul"
+  VisibleToPlayerClass "JohnMaskimXul"
+}
+Actor StruggleChainsawGiver : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnStruggle"
+  VisibleToPlayerClass "JohnStruggle"
+  States
+  {
+  Spawn:
+    STCS A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("StruggleDrillMachine", 1, "PickupFail")
+    TNT1 A 0 A_SpawnItemEx("StruggleDrillMachine", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    Stop
+  PickupFail:
+    STCS A 1
+    Fail
+  }
+}
+Actor StruggleChainsawGiverDropped : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnStruggle"
+  VisibleToPlayerClass "JohnStruggle"
+  States
+  {
+  Spawn:
+    STCS A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("StruggleDrillMachine", 1, "PickupFail")
+    TNT1 A 0 A_SpawnItemEx("StruggleDrillMachine", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    Stop
+  PickupFail:
+    STCS A 1
+    Fail
+  }
+}
+Actor ReliquaryChainsawGiver : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnReliquary"
+  VisibleToPlayerClass "JohnReliquary"
+  States
+  {
+  Spawn:
+    CSAW A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("ReliquaryChainsaw", 1, "PickupFail")
+    TNT1 A 0 A_SpawnItemEx("ReliquaryChainsaw", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    Stop
+  PickupFail:
+    CSAW A 1
+    Fail
+  }
+}
+Actor ReliquaryChainsawGiverDropped : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnReliquary"
+  VisibleToPlayerClass "JohnReliquary"
+  States
+  {
+  Spawn:
+    CSAW A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("ReliquaryChainsaw", 1, "PickupFail")
+    TNT1 A 0 A_SpawnItemEx("ReliquaryChainsaw", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    Stop
+  PickupFail:
+    CSAW A 1
+    Fail
+  }
+}
+
+/////////////
+// SHOTGUN //
+/////////////
+Actor DoomShotgunGiver : DehackedWeaponGiver //And here's where things get bad
+{
+  Inventory.RestrictedTo "JohnDoom"
+  VisibleToPlayerClass "JohnDoom"
+  States
+  {
+  Spawn:
+    SHOT A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("DEHShotgun", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    TNT1 A 0 A_JumpIfInventory("Shell", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_SpawnItemEx("DEHShotgun", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    Stop
+  PickupFail:
+    SHOT A 1
+    Fail
+  }
+}
+Actor DoomShotgunGiverDropped : DehackedWeaponGiver //pls don't look at this code
+{
+  Inventory.RestrictedTo "JohnDoom"
+  VisibleToPlayerClass "JohnDoom"
+  States
+  {
+  Spawn:
+    SHOT A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("DEHShotgun", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIfInventory("Shell", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_DropItem("DEHShotgun")
+    Stop
+  PickupFail:
+    SHOT A 1
+    Fail
+  }
+}
+Actor StrainShotgunGiver : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnStrain"
+  VisibleToPlayerClass "JohnStrain"
+  States
+  {
+  Spawn:
+    SG3G A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("StrainSawedOff", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    TNT1 A 0 A_JumpIfInventory("Shell", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_SpawnItemEx("StrainSawedOff", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    Stop
+  PickupFail:
+    SG3G A 1
+    Fail
+  }
+}
+Actor StrainShotgunGiverDropped : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnStrain"
+  VisibleToPlayerClass "JohnStrain"
+  States
+  {
+  Spawn:
+    SG3G A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("StrainSawedOff", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIfInventory("Shell", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_DropItem("StrainSawedOff")
+    Stop
+  PickupFail:
+    SG3G A 1
+    Fail
+  }
+}
+Actor DV2ShotgunGiver : DoomShotgunGiver
+{
+  Inventory.RestrictedTo "JohnDeusVultII"
+  VisibleToPlayerClass "JohnDeusVultII"
+}
+Actor DV2ShotgunGiverDropped : DoomShotgunGiverDropped
+{
+  Inventory.RestrictedTo "JohnDeusVultII"
+  VisibleToPlayerClass "JohnDeusVultII"
+}
+Actor ValiantShotgunGiver : DoomShotgunGiver
+{
+  Inventory.RestrictedTo "JohnValiant"
+  VisibleToPlayerClass "JohnValiant"
+}
+Actor ValiantShotgunGiverDropped : DoomShotgunGiverDropped
+{
+  Inventory.RestrictedTo "JohnValiant"
+  VisibleToPlayerClass "JohnValiant"
+}
+Actor MaskimXulShotgunGiver : DoomShotgunGiver
+{
+  Inventory.RestrictedTo "JohnMaskimXul"
+  VisibleToPlayerClass "JohnMaskimXul"
+}
+Actor MaskimXulShotgunGiverDropped : DoomShotgunGiverDropped
+{
+  Inventory.RestrictedTo "JohnMaskimXul"
+  VisibleToPlayerClass "JohnMaskimXul"
+}
+Actor StruggleShotgunGiver : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnStruggle"
+  VisibleToPlayerClass "JohnStruggle"
+  States
+  {
+  Spawn:
+    STSO A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("StruggleShotgun", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    TNT1 A 0 A_JumpIfInventory("Shell", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_SpawnItemEx("StruggleShotgun", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    Stop
+  PickupFail:
+    STSO A 1
+    Fail
+  }
+}
+Actor StruggleShotgunGiverDropped : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnStruggle"
+  VisibleToPlayerClass "JohnStruggle"
+  States
+  {
+  Spawn:
+    STSO A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("StruggleShotgun", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIfInventory("Shell", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_DropItem("StruggleShotgun")
+    Stop
+  PickupFail:
+    STSO A 1
+    Fail
+  }
+}
+Actor ReliquaryShotgunGiver : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnReliquary"
+  VisibleToPlayerClass "JohnReliquary"
+  States
+  {
+  Spawn:
+    RSHT A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("ReliquaryShotgun", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    TNT1 A 0 A_JumpIfInventory("Shell", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_SpawnItemEx("ReliquaryShotgun", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    Stop
+  PickupFail:
+    RSHT A 1
+    Fail
+  }
+}
+Actor ReliquaryShotgunGiverDropped : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnReliquary"
+  VisibleToPlayerClass "JohnReliquary"
+  States
+  {
+  Spawn:
+    RSHT A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("ReliquaryShotgun", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIfInventory("Shell", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_DropItem("ReliquaryShotgun")
+    Stop
+  PickupFail:
+    RSHT A 1
+    Fail
+  }
+}
+
+///////////////////
+// SUPER SHOTGUN //
+///////////////////
+Actor DoomSuperShotgunGiver : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnDoom"
+  VisibleToPlayerClass "JohnDoom"
+  States
+  {
+  Spawn:
+    SGN2 A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("DEHSuperShotgun", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    TNT1 A 0 A_JumpIfInventory("Shell", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_SpawnItemEx("DEHSuperShotgun", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    Stop
+  PickupFail:
+    SGN2 A 1
+    Fail
+  }
+}
+Actor DoomSuperShotgunGiverDropped : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnDoom"
+  VisibleToPlayerClass "JohnDoom"
+  States
+  {
+  Spawn:
+    SGN2 A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("DEHSuperShotgun", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIfInventory("Shell", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_DropItem("DEHSuperShotgun")
+    Stop
+  PickupFail:
+    SGN2 A 1
+    Fail
+  }
+}
+Actor StrainSuperShotgunGiver : DoomSuperShotgunGiver
+{
+  Inventory.RestrictedTo "JohnStrain"
+  VisibleToPlayerClass "JohnStrain"
+}
+Actor StrainSuperShotgunGiverDropped : DoomSuperShotgunGiver
+{
+  Inventory.RestrictedTo "JohnStrain"
+  VisibleToPlayerClass "JohnStrain"
+}
+Actor DV2SuperShotgunGiver : DoomSuperShotgunGiver
+{
+  Inventory.RestrictedTo "JohnDeusVultII"
+  VisibleToPlayerClass "JohnDeusVultII"
+}
+Actor DV2SuperShotgunGiverDropped : DoomSuperShotgunGiverDropped
+{
+  Inventory.RestrictedTo "JohnDeusVultII"
+  VisibleToPlayerClass "JohnDeusVultII"
+}
+Actor ValiantSuperShotgunGiver : DoomSuperShotgunGiver
+{
+  Inventory.RestrictedTo "JohnValiant"
+  VisibleToPlayerClass "JohnValiant"
+}
+Actor ValiantSuperShotgunGiverDropped : DoomSuperShotgunGiverDropped
+{
+  Inventory.RestrictedTo "JohnValiant"
+  VisibleToPlayerClass "JohnValiant"
+}
+Actor MaskimXulSuperShotgunGiver : DoomSuperShotgunGiver
+{
+  Inventory.RestrictedTo "JohnMaskimXul"
+  VisibleToPlayerClass "JohnMaskimXul"
+}
+Actor MaskimXulSuperShotgunGiverDropped : DoomSuperShotgunGiverDropped
+{
+  Inventory.RestrictedTo "JohnMaskimXul"
+  VisibleToPlayerClass "JohnMaskimXul"
+}
+Actor StruggleSuperShotgunGiver : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnStruggle"
+  VisibleToPlayerClass "JohnStruggle"
+  States
+  {
+  Spawn:
+    SGN2 A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("StruggleSuperShotgun", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    TNT1 A 0 A_JumpIfInventory("Shell", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_SpawnItemEx("StruggleSuperShotgun", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    Stop
+  PickupFail:
+    SGN2 A 1
+    Fail
+  }
+}
+Actor StruggleSuperShotgunGiverDropped : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnStruggle"
+  VisibleToPlayerClass "JohnStruggle"
+  States
+  {
+  Spawn:
+    SGN2 A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("StruggleSuperShotgun", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIfInventory("Shell", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_DropItem("StruggleSuperShotgun")
+    Stop
+  PickupFail:
+    SGN2 A 1
+    Fail
+  }
+}
+Actor ReliquarySuperShotgunGiver : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnReliquary"
+  VisibleToPlayerClass "JohnReliquary"
+  States
+  {
+  Spawn:
+    RSG2 A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("ReliquarySuperShotgun", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    TNT1 A 0 A_JumpIfInventory("Shell", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_SpawnItemEx("ReliquarySuperShotgun", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    Stop
+  PickupFail:
+    RSG2 A 1
+    Fail
+  }
+}
+Actor ReliquarySuperShotgunGiverDropped : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnReliquary"
+  VisibleToPlayerClass "JohnReliquary"
+  States
+  {
+  Spawn:
+    RSG2 A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("ReliquarySuperShotgun", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIfInventory("Shell", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_DropItem("ReliquarySuperShotgun")
+    Stop
+  PickupFail:
+    RSG2 A 1
+    Fail
+  }
+}
+
+//////////////
+// CHAINGUN //
+//////////////
+Actor DoomChaingunGiver : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnDoom"
+  VisibleToPlayerClass "JohnDoom"
+  States
+  {
+  Spawn:
+    MGUN A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("DEHChaingun", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    TNT1 A 0 A_JumpIfInventory("Clip", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_SpawnItemEx("DEHChaingun", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    Stop
+  PickupFail:
+    MGUN A 1
+    Fail
+  }
+}
+Actor DoomChaingunGiverDropped : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnDoom"
+  VisibleToPlayerClass "JohnDoom"
+  States
+  {
+  Spawn:
+    MGUN A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("DEHChaingun", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIfInventory("Clip", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_DropItem("DEHChaingun")
+    Stop
+  PickupFail:
+    MGUN A 1
+    Fail
+  }
+}
+Actor StrainChaingunGiver : DoomChaingunGiver
+{
+  Inventory.RestrictedTo "JohnStrain"
+  VisibleToPlayerClass "JohnStrain"
+}
+Actor StrainChaingunGiverDropped : DoomChaingunGiver
+{
+  Inventory.RestrictedTo "JohnStrain"
+  VisibleToPlayerClass "JohnStrain"
+}
+Actor DV2ChaingunGiver : DoomChaingunGiver
+{
+  Inventory.RestrictedTo "JohnDeusVultII"
+  VisibleToPlayerClass "JohnDeusVultII"
+}
+Actor DV2ChaingunGiverDropped : DoomChaingunGiverDropped
+{
+  Inventory.RestrictedTo "JohnDeusVultII"
+  VisibleToPlayerClass "JohnDeusVultII"
+}
+Actor ValiantChaingunGiver : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnValiant"
+  VisibleToPlayerClass "JohnValiant"
+  States
+  {
+  Spawn:
+    VMGN A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("ValiantChaingun", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    TNT1 A 0 A_JumpIfInventory("Clip", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_SpawnItemEx("ValiantChaingun", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    Stop
+  PickupFail:
+    VMGN A 1
+    Fail
+  }
+}
+Actor ValiantChaingunGiverDropped : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnValiant"
+  VisibleToPlayerClass "JohnValiant"
+  States
+  {
+  Spawn:
+    VMGN A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("ValiantChaingun", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIfInventory("Clip", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_DropItem("ValiantChaingun")
+    Stop
+  PickupFail:
+    VMGN A 1
+    Fail
+  }
+}
+Actor MaskimXulChaingunGiver : DoomChaingunGiver
+{
+  Inventory.RestrictedTo "JohnMaskimXul"
+  VisibleToPlayerClass "JohnMaskimXul"
+}
+Actor MaskimXulChaingunGiverDropped : DoomChaingunGiverDropped
+{
+  Inventory.RestrictedTo "JohnMaskimXul"
+  VisibleToPlayerClass "JohnMaskimXul"
+}
+Actor StruggleChaingunGiver : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnStruggle"
+  VisibleToPlayerClass "JohnStruggle"
+  States
+  {
+  Spawn:
+    STCH A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("StruggleDualPistols", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    TNT1 A 0 A_JumpIfInventory("Clip", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_SpawnItemEx("StruggleDualPistols", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    Stop
+  PickupFail:
+    STCH A 1
+    Fail
+  }
+}
+Actor StruggleChaingunGiverDropped : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnStruggle"
+  VisibleToPlayerClass "JohnStruggle"
+  States
+  {
+  Spawn:
+    STCH A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("StruggleDualPistols", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIfInventory("Clip", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_DropItem("StruggleDualPistols")
+    Stop
+  PickupFail:
+    STCH A 1
+    Fail
+  }
+}
+Actor ReliquaryChaingunGiver : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnReliquary"
+  VisibleToPlayerClass "JohnReliquary"
+  States
+  {
+  Spawn:
+    RMGN A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("ReliquaryChaingun", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    TNT1 A 0 A_JumpIfInventory("Clip", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_SpawnItemEx("ReliquaryChaingun", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    Stop
+  PickupFail:
+    RMGN A 1
+    Fail
+  }
+}
+Actor ReliquaryChaingunGiverDropped : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnReliquary"
+  VisibleToPlayerClass "JohnReliquary"
+  States
+  {
+  Spawn:
+    RMGN A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("ReliquaryChaingun", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIfInventory("Clip", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_DropItem("ReliquaryChaingun")
+    Stop
+  PickupFail:
+    RMGN A 1
+    Fail
+  }
+}
+
+/////////////////////
+// ROCKET LAUNCHER //
+/////////////////////
+Actor DoomRocketLauncherGiver : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnDoom"
+  VisibleToPlayerClass "JohnDoom"
+  States
+  {
+  Spawn:
+    LAUN A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("DEHRocketLauncher", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    TNT1 A 0 A_JumpIfInventory("RocketAmmo", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_SpawnItemEx("DEHRocketLauncher", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    Stop
+  PickupFail:
+    LAUN A 1
+    Fail
+  }
+}
+Actor DoomRocketLauncherGiverDropped : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnDoom"
+  VisibleToPlayerClass "JohnDoom"
+  States
+  {
+  Spawn:
+    LAUN A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("DEHRocketLauncher", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIfInventory("RocketAmmo", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_DropItem("DEHRocketLauncher")
+    Stop
+  PickupFail:
+    LAUN A 1
+    Fail
+  }
+}
+Actor StrainRocketLauncherGiver : DoomRocketLauncherGiver
+{
+  Inventory.RestrictedTo "JohnStrain"
+  VisibleToPlayerClass "JohnStrain"
+}
+Actor StrainRocketLauncherGiverDropped : DoomRocketLauncherGiver
+{
+  Inventory.RestrictedTo "JohnStrain"
+  VisibleToPlayerClass "JohnStrain"
+}
+Actor DV2RocketLauncherGiver : DoomRocketLauncherGiver
+{
+  Inventory.RestrictedTo "JohnDeusVultII"
+  VisibleToPlayerClass "JohnDeusVultII"
+}
+Actor DV2RocketLauncherGiverDropped : DoomRocketLauncherGiverDropped
+{
+  Inventory.RestrictedTo "JohnDeusVultII"
+  VisibleToPlayerClass "JohnDeusVultII"
+}
+Actor ValiantRocketLauncherGiver : DoomRocketLauncherGiver
+{
+  Inventory.RestrictedTo "JohnValiant"
+  VisibleToPlayerClass "JohnValiant"
+}
+Actor ValiantRocketLauncherGiverDropped : DoomRocketLauncherGiverDropped
+{
+  Inventory.RestrictedTo "JohnValiant"
+  VisibleToPlayerClass "JohnValiant"
+}
+Actor MaskimXulRocketLauncherGiver : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnMaskimXul"
+  VisibleToPlayerClass "JohnMaskimXul"
+  States
+  {
+  Spawn:
+    MXLN ABCDCB 4
+    Loop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("MaskimXulHandOfAfrit", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    TNT1 A 0 A_JumpIfInventory("MaskimXulDemonHeart", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_SpawnItemEx("MaskimXulHandOfAfrit", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    Stop
+  PickupFail:
+    MXLN A 1
+    Fail
+  }
+}
+Actor MaskimXulRocketLauncherGiverDropped : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnMaskimXul"
+  VisibleToPlayerClass "JohnMaskimXul"
+  States
+  {
+  Spawn:
+    MXLN ABCDCB 4
+    Loop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("MaskimXulHandOfAfrit", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIfInventory("MaskimXulDemonHeart", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_DropItem("MaskimXulHandOfAfrit")
+    Stop
+  PickupFail:
+    MXLN A 1
+    Fail
+  }
+}
+Actor StruggleRocketLauncherGiver : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnStruggle"
+  VisibleToPlayerClass "JohnStruggle"
+  States
+  {
+  Spawn:
+    STLN A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("StruggleGrenadeLauncher", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    TNT1 A 0 A_JumpIfInventory("RocketAmmo", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_SpawnItemEx("StruggleGrenadeLauncher", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    Stop
+  PickupFail:
+    STLN A 1
+    Fail
+  }
+}
+Actor StruggleRocketLauncherGiverDropped : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnStruggle"
+  VisibleToPlayerClass "JohnStruggle"
+  States
+  {
+  Spawn:
+    STLN A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("StruggleGrenadeLauncher", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIfInventory("RocketAmmo", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_DropItem("StruggleGrenadeLauncher")
+    Stop
+  PickupFail:
+    STLN A 1
+    Fail
+  }
+}
+Actor ReliquaryRocketLauncherGiver : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnReliquary"
+  VisibleToPlayerClass "JohnReliquary"
+  States
+  {
+  Spawn:
+    RQLN A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("ReliquaryRocketLauncher", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    TNT1 A 0 A_JumpIfInventory("RocketAmmo", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_SpawnItemEx("ReliquaryRocketLauncher", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    Stop
+  PickupFail:
+    RQLN A 1
+    Fail
+  }
+}
+Actor ReliquaryRocketLauncherGiverDropped : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnReliquary"
+  VisibleToPlayerClass "JohnReliquary"
+  States
+  {
+  Spawn:
+    RQLN A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("ReliquaryRocketLauncher", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIfInventory("RocketAmmo", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_DropItem("ReliquaryRocketLauncher")
+    Stop
+  PickupFail:
+    RQLN A 1
+    Fail
+  }
+}
+
+//////////////////
+// PLASMA RIFLE //
+//////////////////
+Actor DoomPlasmaRifleGiver : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnDoom"
+  VisibleToPlayerClass "JohnDoom"
+  States
+  {
+  Spawn:
+    PLAS A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("DEHPlasmaRifle", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    TNT1 A 0 A_JumpIfInventory("Cell", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_SpawnItemEx("DEHPlasmaRifle", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    Stop
+  PickupFail:
+    PLAS A 1
+    Fail
+  }
+}
+Actor DoomPlasmaRifleGiverDropped : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnDoom"
+  VisibleToPlayerClass "JohnDoom"
+  States
+  {
+  Spawn:
+    PLAS A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("DEHPlasmaRifle", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIfInventory("Cell", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_DropItem("DEHPlasmaRifle")
+    Stop
+  PickupFail:
+    PLAS A 1
+    Fail
+  }
+}
+Actor StrainPlasmaRifleGiver : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnStrain"
+  VisibleToPlayerClass "JohnStrain"
+  States
+  {
+  Spawn:
+    FFGL A -1
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("StrainNFG", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    TNT1 A 0 A_JumpIfInventory("NFGBattery", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_SpawnItemEx("StrainNFG", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    Stop
+  PickupFail:
+    FFGL A 1
+    Fail
+  }
+}
+Actor StrainPlasmaRifleGiverDropped : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnStrain"
+  VisibleToPlayerClass "JohnStrain"
+  States
+  {
+  Spawn:
+    FFGL A -1
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("StrainNFG", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIfInventory("NFGBattery", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_DropItem("StrainNFG")
+    Stop
+  PickupFail:
+    FFGL A 1
+    Fail
+  }
+}
+Actor DV2PlasmaRifleGiver : DoomPlasmaRifleGiver
+{
+  Inventory.RestrictedTo "JohnDeusVultII"
+  VisibleToPlayerClass "JohnDeusVultII"
+}
+Actor DV2PlasmaRifleGiverDropped : DoomPlasmaRifleGiverDropped
+{
+  Inventory.RestrictedTo "JohnDeusVultII"
+  VisibleToPlayerClass "JohnDeusVultII"
+}
+Actor ValiantPlasmaRifleGiver : DoomPlasmaRifleGiver
+{
+  Inventory.RestrictedTo "JohnValiant"
+  VisibleToPlayerClass "JohnValiant"
+}
+Actor ValiantPlasmaRifleGiverDropped : DoomPlasmaRifleGiverDropped
+{
+  Inventory.RestrictedTo "JohnValiant"
+  VisibleToPlayerClass "JohnValiant"
+}
+Actor MaskimXulPlasmaRifleGiver : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnMaskimXul"
+  VisibleToPlayerClass "JohnMaskimXul"
+  States
+  {
+  Spawn:
+    MXPA A -1
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("MaskimXulJackBombs", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    TNT1 A 0 A_JumpIfInventory("JackBombAmmo", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_SpawnItemEx("MaskimXulJackBombs", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    Stop
+  PickupFail:
+    MXPA A 1
+    Fail
+  }
+}
+Actor MaskimXulPlasmaRifleGiverDropped : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnMaskimXul"
+  VisibleToPlayerClass "JohnMaskimXul"
+  States
+  {
+  Spawn:
+    MXPA A -1
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("MaskimXulJackBombs", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIfInventory("JackBombAmmo", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_DropItem("MaskimXulJackBombs")
+    Stop
+  PickupFail:
+    MXPA A 1
+    Fail
+  }
+}
+Actor StrugglePlasmaRifleGiver : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnStruggle"
+  VisibleToPlayerClass "JohnStruggle"
+  States
+  {
+  Spawn:
+    STPL A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("StruggleAssaultRifle", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    TNT1 A 0 A_JumpIfInventory("223CaliberMagazine", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_SpawnItemEx("StruggleAssaultRifle", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    Stop
+  PickupFail:
+    STPL A 1
+    Fail
+  }
+}
+Actor StrugglePlasmaRifleGiverDropped : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnStruggle"
+  VisibleToPlayerClass "JohnStruggle"
+  States
+  {
+  Spawn:
+    STPL A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("StruggleAssaultRifle", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIfInventory("223CaliberMagazine", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_DropItem("StruggleAssaultRifle")
+    Stop
+  PickupFail:
+    STPL A 1
+    Fail
+  }
+}
+Actor ReliquaryPlasmaRifleGiver : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnReliquary"
+  VisibleToPlayerClass "JohnReliquary"
+  States
+  {
+  Spawn:
+    RQPL A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("ReliquaryPlasmaRifle", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    TNT1 A 0 A_JumpIfInventory("AntaresianCell", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_SpawnItemEx("ReliquaryPlasmaRifle", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    Stop
+  PickupFail:
+    RQPL A 1
+    Fail
+  }
+}
+Actor ReliquaryPlasmaRifleGiverDropped : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnReliquary"
+  VisibleToPlayerClass "JohnReliquary"
+  States
+  {
+  Spawn:
+    RQPL A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("ReliquaryPlasmaRifle", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIfInventory("AntaresianCell", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_DropItem("ReliquaryPlasmaRifle")
+    Stop
+  PickupFail:
+    RQPL A 1
+    Fail
+  }
+}
+
+//////////////
+// BFG 9000 //
+//////////////
+Actor DoomBFG9000Giver : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnDoom"
+  VisibleToPlayerClass "JohnDoom"
+  States
+  {
+  Spawn:
+    BFUG A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("DEHBFG9000", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    TNT1 A 0 A_JumpIfInventory("Cell", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_SpawnItemEx("DEHBFG9000", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    Stop
+  PickupFail:
+    BFUG A 1
+    Fail
+  }
+}
+Actor DoomBFG9000GiverDropped : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnDoom"
+  VisibleToPlayerClass "JohnDoom"
+  States
+  {
+  Spawn:
+    BFUG A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("DEHBFG9000", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIfInventory("Cell", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_DropItem("DEHBFG9000")
+    Stop
+  PickupFail:
+    BFUG A 1
+    Fail
+  }
+}
+Actor StrainBFG9000Giver : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnStrain"
+  VisibleToPlayerClass "JohnStrain"
+  States
+  {
+  Spawn:
+    PSYG A -1
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("StrainPsychicBlaster", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    TNT1 A 0 A_JumpIfInventory("RocketAmmo", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_SpawnItemEx("StrainPsychicBlaster", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    Stop
+  PickupFail:
+    PSYG A 1
+    Fail
+  }
+}
+Actor StrainBFG9000GiverDropped : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnStrain"
+  VisibleToPlayerClass "JohnStrain"
+  States
+  {
+  Spawn:
+    PSYG A -1
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("StrainPsychicBlaster", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIfInventory("RocketAmmo", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_DropItem("StrainPsychicBlaster")
+    Stop
+  PickupFail:
+    PSYG A 1
+    Fail
+  }
+}
+Actor DV2BFG9000Giver : DoomBFG9000Giver
+{
+  Inventory.RestrictedTo "JohnDeusVultII"
+  VisibleToPlayerClass "JohnDeusVultII"
+}
+Actor DV2BFG9000GiverDropped : DoomBFG9000GiverDropped
+{
+  Inventory.RestrictedTo "JohnDeusVultII"
+  VisibleToPlayerClass "JohnDeusVultII"
+}
+Actor ValiantBFG9000Giver : DoomBFG9000Giver
+{
+  Inventory.RestrictedTo "JohnValiant"
+  VisibleToPlayerClass "JohnValiant"
+}
+Actor ValiantBFG9000GiverDropped : DoomBFG9000GiverDropped
+{
+  Inventory.RestrictedTo "JohnValiant"
+  VisibleToPlayerClass "JohnValiant"
+}
+Actor MaskimXulBFG9000Giver : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnMaskimXul"
+  VisibleToPlayerClass "JohnMaskimXul"
+  States
+  {
+  Spawn:
+    MXBF A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("MaskimXulGrimoireExcidium", 1, "PickupFail")
+    TNT1 A 0 A_SpawnItemEx("MaskimXulGrimoireExcidium", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    Stop
+  PickupFail:
+    MXBF A 1
+    Fail
+  }
+}
+Actor MaskimXulBFG9000GiverDropped : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnMaskimXul"
+  VisibleToPlayerClass "JohnMaskimXul"
+  States
+  {
+  Spawn:
+    MXBF A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("MaskimXulGrimoireExcidium", 1, "PickupFail")
+    TNT1 A 0 A_SpawnItemEx("MaskimXulGrimoireExcidium", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    Stop
+  PickupFail:
+    MXBF A 1
+    Fail
+  }
+}
+Actor StruggleBFG9000Giver : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnStruggle"
+  VisibleToPlayerClass "JohnStruggle"
+  States
+  {
+  Spawn:
+    STBU A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("StruggleLeichenfaust", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    TNT1 A 0 A_JumpIfInventory("RocketAmmo", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_SpawnItemEx("StruggleLeichenfaust", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    Stop
+  PickupFail:
+    STBU A 1
+    Fail
+  }
+}
+Actor StruggleBFG9000GiverDropped : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnStruggle"
+  VisibleToPlayerClass "JohnStruggle"
+  States
+  {
+  Spawn:
+    STBU A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("StruggleLeichenfaust", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIfInventory("RocketAmmo", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_DropItem("StruggleLeichenfaust")
+    Stop
+  PickupFail:
+    STBU A 1
+    Fail
+  }
+}
+Actor ReliquaryBFG9000Giver : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnReliquary"
+  VisibleToPlayerClass "JohnReliquary"
+  States
+  {
+  Spawn:
+    RQBF A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("ReliquaryBFG9000", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    TNT1 A 0 A_JumpIfInventory("AntaresianCell", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_SpawnItemEx("ReliquaryBFG9000", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    Stop
+  PickupFail:
+    RQBF A 1
+    Fail
+  }
+}
+Actor ReliquaryBFG9000GiverDropped : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnReliquary"
+  VisibleToPlayerClass "JohnReliquary"
+  States
+  {
+  Spawn:
+    RQBF A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("ReliquaryBFG9000", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIfInventory("RocketAmmo", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_DropItem("ReliquaryBFG9000")
+    Stop
+  PickupFail:
+    RQBF A 1
+    Fail
+  }
+}

@@ -1,0 +1,96 @@
+OptionMenu "OptionsMenu"
+{
+	Title "OPTIONS"
+	SubMenu "Dehacked Defense Options",	"DehackedDefenseOptions"
+	StaticText " "
+	Submenu "Customize Controls",		"CustomizeControls"
+	Submenu "Mouse options",			"MouseOptions"
+	Submenu "Joystick options",			"JoystickOptions"
+	StaticText " "
+	Submenu "Player Setup",				"PlayerMenu"
+	Submenu "Gameplay Options",			"GameplayOptions"
+	Submenu "Compatibility Options",	"CompatibilityOptions"
+	Submenu "Automap Options",			"AutomapOptions"
+	Submenu "HUD Options",				"HUDOptions"
+	Submenu "Miscellaneous Options",	"MiscOptions"
+	Submenu "Network Options",			"NetworkOptions"
+	Submenu "Sound Options",			"SoundOptions"
+	Submenu "Display Options",			"VideoOptions"
+	Submenu "Set video mode",			"VideoModeMenu"
+	StaticText " "
+	SafeCommand "Reset to defaults",	"reset2defaults"
+	SafeCommand	"Reset to last saved",	"reset2saved"
+	Command "Go to console",			"menuconsole"
+}
+OptionValue "DehackedDefenseRandomizerSelection"
+{
+	0, "Class-based"
+	1, "Randomizer-based"
+}
+OptionValue "DehackedDefenseWeaponSelection"
+{
+	0, "Disabled"
+	1, "Enabled"
+}
+OptionValue "DehackedDefenseStartingWeapon"
+{
+	0, "Don't start with it"
+	1, "Start with this"
+}
+OptionValue "DehackedDefenseStartingHealth"
+{
+	0, "Don't change"
+	1, "100"
+	2, "200"
+	3, "300 (Welp)"
+}
+OptionValue "DehackedDefenseStartingArmor"
+{
+	0, "Don't change"
+	1, "Reset up to 100% (Green)"
+	2, "Reset up to 200% (Blue)"
+	3, "Reset up to 300% (Red)"
+}
+OptionMenu "DehackedDefenseOptions"
+{
+	Title "Dehacked Defense Options"
+	StaticText "Dehacked Weapon Selection Mechanism", 1
+	StaticText "Controls whether or not weapons are spawned randomly or strictly by class."
+	Option "Randomizer:", "deh_def_randomizer", "DehackedDefenseRandomizerSelection"
+	StaticText ""
+	StaticText "Dehacked Weapon Level Scaling", 1
+	StaticText "If enabled, more powerful weapons don't spawn in early maps."
+	StaticText "Only has an effect if the weapon selection is randomizer-based."
+	Option "Level Scaling:", "deh_def_level_scaling", "DehackedDefenseWeaponSelection"
+	StaticText ""
+	StaticText "Dehacked Defense Weapon Selection", 1
+	StaticText "Choose which weapon sets are enabled or disabled."
+	StaticText "Only has an effect if the weapon selection is randomizer-based."
+	StaticText "Will NOT affect what weapons you start with in any manner."
+	Option "STRAIN:", "deh_def_enable_strain", "DehackedDefenseWeaponSelection"
+	Option "Deus Vult II:", "deh_def_enable_deusvult2", "DehackedDefenseWeaponSelection"
+	Option "Valiant:", "deh_def_enable_valiant", "DehackedDefenseWeaponSelection"
+	Option "Maskim Xul:", "deh_def_enable_maskimxul", "DehackedDefenseWeaponSelection"
+	Option "Struggle: Antaresian Legacy:", "deh_def_enable_struggle", "DehackedDefenseWeaponSelection"
+	Option "Antaresian Reliquary:", "deh_def_enable_reliquary", "DehackedDefenseWeaponSelection"
+	StaticText ""
+	StaticText "Dehacked Defense Start Settings", 1
+	StaticText "Start with some additional firepower, if you wish."
+	StaticText "Starting weapons will always be determined by class selection."
+	StaticText "Health and powerups are not."
+	Option "Chainsaw:", "deh_def_chainsawstart", "DehackedDefenseStartingWeapon"
+	Option "Shotgun:", "deh_def_shotgunstart", "DehackedDefenseStartingWeapon"
+	Option "Super Shotgun:", "deh_def_supershotgunstart", "DehackedDefenseStartingWeapon"
+	Option "Chaingun:", "deh_def_chaingunstart", "DehackedDefenseStartingWeapon"
+	Option "Rocket Launcher:", "deh_def_rocketlauncherstart", "DehackedDefenseStartingWeapon"
+	Option "Plasma Rifle:", "deh_def_plasmariflestart", "DehackedDefenseStartingWeapon"
+	Option "BFG 9000:", "deh_def_bfg9000start", "DehackedDefenseStartingWeapon"
+	StaticText ""
+	Option "Health:", "deh_def_starthealth", "DehackedDefenseStartingHealth"
+	Option "Armor:", "deh_def_startarmor", "DehackedDefenseStartingArmor"
+	Option "Backpack:", "deh_def_backpackstart", "DehackedDefenseStartingWeapon"
+	Option "Berserk:", "deh_def_berserkstart", "DehackedDefenseStartingWeapon"
+	Option "Invulnerability:", "deh_def_invulnstart", "DehackedDefenseStartingWeapon"
+	Option "Partial Invisibility:", "deh_def_invisstart", "DehackedDefenseStartingWeapon"
+	StaticText ""
+}

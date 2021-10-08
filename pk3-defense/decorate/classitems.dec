@@ -1,0 +1,327 @@
+//Oh my god, this hack.
+ACTOR DummyBackpackItem : Inventory
+{
+  Inventory.Amount 1
+  Inventory.MaxAmount 1
+  -INVENTORY.INVBAR
+}
+ACTOR NewBackpack : CustomInventory replaces Backpack
+{
+  Height 26
+  Inventory.PickupMessage "$GOTBACKPACK" // "Picked up a backpack full of ammo!"
+  +INVENTORY.ALWAYSPICKUP
+  States
+  {
+  Spawn:
+    BPAK A -1
+    Stop
+  Pickup:
+	TNT1 A 0 A_GiveInventory("DummyBackpackItem", 1)
+    TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BackpackHandler", 0)
+    stop
+  }
+}
+
+ACTOR DoomClassClip : Clip
+{
+	Inventory.RestrictedTo "JohnDoom"
+	VisibleToPlayerClass "JohnDoom"
+}
+ACTOR StrainClassClip : Clip
+{
+	Inventory.RestrictedTo "JohnStrain"
+	VisibleToPlayerClass "JohnStrain"
+}
+ACTOR DV2ClassClip : Clip
+{
+	Inventory.RestrictedTo "JohnDeusVultII"
+	VisibleToPlayerClass "JohnDeusVultII"
+}
+ACTOR ValiantClassClip : ValiantClip
+{
+	Inventory.RestrictedTo "JohnValiant"
+	VisibleToPlayerClass "JohnValiant"
+}
+ACTOR MaskimXulClassClip : Clip
+{
+	Inventory.RestrictedTo "JohnMaskimXul"
+	VisibleToPlayerClass "JohnMaskimXul"
+}
+ACTOR StruggleClassClip : StruggleClip
+{
+	Inventory.RestrictedTo "JohnStruggle"
+	VisibleToPlayerClass "JohnStruggle"
+}
+ACTOR ReliquaryClassClip : ReliquaryClip
+{
+	Inventory.RestrictedTo "JohnReliquary"
+	VisibleToPlayerClass "JohnReliquary"
+}
+
+ACTOR DoomClassClipBox : ClipBox
+{
+	Inventory.RestrictedTo "JohnDoom"
+	VisibleToPlayerClass "JohnDoom"
+}
+ACTOR StrainClassClipBox : ClipBox
+{
+	Inventory.RestrictedTo "JohnStrain"
+	VisibleToPlayerClass "JohnStrain"
+}
+ACTOR DV2ClassClipBox : ClipBox
+{
+	Inventory.RestrictedTo "JohnDeusVultII"
+	VisibleToPlayerClass "JohnDeusVultII"
+}
+ACTOR ValiantClassClipBox : ValiantClipBox
+{
+	Inventory.RestrictedTo "JohnValiant"
+	VisibleToPlayerClass "JohnValiant"
+}
+ACTOR MaskimXulClassClipBox : ClipBox
+{
+	Inventory.RestrictedTo "JohnMaskimXul"
+	VisibleToPlayerClass "JohnMaskimXul"
+}
+ACTOR StruggleClassClipBox : StruggleClipBox
+{
+	Inventory.RestrictedTo "JohnStruggle"
+	VisibleToPlayerClass "JohnStruggle"
+}
+ACTOR ReliquaryClassClipBox : ReliquaryClipBox
+{
+	Inventory.RestrictedTo "JohnReliquary"
+	VisibleToPlayerClass "JohnReliquary"
+}
+
+ACTOR DoomClassShell : Shell
+{
+	Inventory.RestrictedTo "JohnDoom"
+	VisibleToPlayerClass "JohnDoom"
+}
+ACTOR StrainClassShell : Shell
+{
+	Inventory.RestrictedTo "JohnStrain"
+	VisibleToPlayerClass "JohnStrain"
+}
+ACTOR DV2ClassShell : Shell
+{
+	Inventory.RestrictedTo "JohnDeusVultII"
+	VisibleToPlayerClass "JohnDeusVultII"
+}
+ACTOR ValiantClassShell : Shell
+{
+	Inventory.RestrictedTo "JohnValiant"
+	VisibleToPlayerClass "JohnValiant"
+}
+ACTOR MaskimXulClassShell : Shell
+{
+	Inventory.RestrictedTo "JohnMaskimXul"
+	VisibleToPlayerClass "JohnMaskimXul"
+}
+ACTOR StruggleClassShell : StruggleShell
+{
+	Inventory.RestrictedTo "JohnStruggle"
+	VisibleToPlayerClass "JohnStruggle"
+}
+ACTOR ReliquaryClassShell : Shell
+{
+	Inventory.RestrictedTo "JohnReliquary"
+	VisibleToPlayerClass "JohnReliquary"
+}
+
+ACTOR DoomClassShellBox : ShellBox
+{
+	Inventory.RestrictedTo "JohnDoom"
+	VisibleToPlayerClass "JohnDoom"
+}
+ACTOR StrainClassShellBox : ShellBox
+{
+	Inventory.RestrictedTo "JohnStrain"
+	VisibleToPlayerClass "JohnStrain"
+}
+ACTOR DV2ClassShellBox : ShellBox
+{
+	Inventory.RestrictedTo "JohnDeusVultII"
+	VisibleToPlayerClass "JohnDeusVultII"
+}
+ACTOR ValiantClassShellBox : ShellBox
+{
+	Inventory.RestrictedTo "JohnValiant"
+	VisibleToPlayerClass "JohnValiant"
+}
+ACTOR MaskimXulClassShellBox : ShellBox
+{
+	Inventory.RestrictedTo "JohnMaskimXul"
+	VisibleToPlayerClass "JohnMaskimXul"
+}
+ACTOR StruggleClassShellBox : StruggleShellBox
+{
+	Inventory.RestrictedTo "JohnStruggle"
+	VisibleToPlayerClass "JohnStruggle"
+}
+ACTOR ReliquaryClassShellBox : ShellBox
+{
+	Inventory.RestrictedTo "JohnReliquary"
+	VisibleToPlayerClass "JohnReliquary"
+}
+
+ACTOR DoomClassRocketAmmo : RocketAmmo
+{
+	Inventory.RestrictedTo "JohnDoom"
+	VisibleToPlayerClass "JohnDoom"
+}
+ACTOR StrainClassRocketAmmo : RocketAmmo
+{
+	Inventory.RestrictedTo "JohnStrain"
+	VisibleToPlayerClass "JohnStrain"
+}
+ACTOR DV2ClassRocketAmmo : RocketAmmo
+{
+	Inventory.RestrictedTo "JohnDeusVultII"
+	VisibleToPlayerClass "JohnDeusVultII"
+}
+ACTOR ValiantClassRocketAmmo : RocketAmmo
+{
+	Inventory.RestrictedTo "JohnValiant"
+	VisibleToPlayerClass "JohnValiant"
+}
+ACTOR MaskimXulClassRocketAmmo : MaskimXulDemonHeart
+{
+	Inventory.RestrictedTo "JohnMaskimXul"
+	VisibleToPlayerClass "JohnMaskimXul"
+}
+ACTOR StruggleClassRocketAmmo : StruggleRocketAmmo
+{
+	Inventory.RestrictedTo "JohnStruggle"
+	VisibleToPlayerClass "JohnStruggle"
+}
+ACTOR ReliquaryClassRocketAmmo : RocketAmmo
+{
+	Inventory.RestrictedTo "JohnReliquary"
+	VisibleToPlayerClass "JohnReliquary"
+}
+
+ACTOR DoomClassRocketBox : RocketBox
+{
+	Inventory.RestrictedTo "JohnDoom"
+	VisibleToPlayerClass "JohnDoom"
+}
+ACTOR StrainClassRocketBox : RocketBox
+{
+	Inventory.RestrictedTo "JohnStrain"
+	VisibleToPlayerClass "JohnStrain"
+}
+ACTOR DV2ClassRocketBox : RocketBox
+{
+	Inventory.RestrictedTo "JohnDeusVultII"
+	VisibleToPlayerClass "JohnDeusVultII"
+}
+ACTOR ValiantClassRocketBox : RocketBox
+{
+	Inventory.RestrictedTo "JohnValiant"
+	VisibleToPlayerClass "JohnValiant"
+}
+ACTOR MaskimXulClassRocketBox : MaskimXulDemonSoul
+{
+	Inventory.RestrictedTo "JohnMaskimXul"
+	VisibleToPlayerClass "JohnMaskimXul"
+}
+ACTOR StruggleClassRocketBox : StruggleRocketBox
+{
+	Inventory.RestrictedTo "JohnStruggle"
+	VisibleToPlayerClass "JohnStruggle"
+}
+ACTOR ReliquaryClassRocketBox : RocketBox
+{
+	Inventory.RestrictedTo "JohnReliquary"
+	VisibleToPlayerClass "JohnReliquary"
+}
+
+ACTOR DoomClassCell : Cell
+{
+	Inventory.RestrictedTo "JohnDoom"
+	VisibleToPlayerClass "JohnDoom"
+}
+ACTOR StrainClassCell : NFGBattery
+{
+	Inventory.RestrictedTo "JohnStrain"
+	VisibleToPlayerClass "JohnStrain"
+}
+ACTOR DV2ClassCell : Cell
+{
+	Inventory.RestrictedTo "JohnDeusVultII"
+	VisibleToPlayerClass "JohnDeusVultII"
+}
+ACTOR ValiantClassCell : Cell
+{
+	Inventory.RestrictedTo "JohnValiant"
+	VisibleToPlayerClass "JohnValiant"
+}
+ACTOR MaskimXulClassCell : JackBombAmmo
+{
+	Inventory.RestrictedTo "JohnMaskimXul"
+	VisibleToPlayerClass "JohnMaskimXul"
+}
+ACTOR StruggleClassCell : 223CaliberMagazine
+{
+	Inventory.RestrictedTo "JohnStruggle"
+	VisibleToPlayerClass "JohnStruggle"
+}
+ACTOR ReliquaryClassCell : AntaresianCell
+{
+	Inventory.RestrictedTo "JohnReliquary"
+	VisibleToPlayerClass "JohnReliquary"
+}
+
+ACTOR DoomClassCellPack : CellPack
+{
+	Inventory.RestrictedTo "JohnDoom"
+	VisibleToPlayerClass "JohnDoom"
+}
+ACTOR StrainClassCellPack : NFGBatteryPack
+{
+	Inventory.RestrictedTo "JohnStrain"
+	VisibleToPlayerClass "JohnStrain"
+}
+ACTOR DV2ClassCellPack : CellPack
+{
+	Inventory.RestrictedTo "JohnDeusVultII"
+	VisibleToPlayerClass "JohnDeusVultII"
+}
+ACTOR ValiantClassCellPack : CellPack
+{
+	Inventory.RestrictedTo "JohnValiant"
+	VisibleToPlayerClass "JohnValiant"
+}
+ACTOR MaskimXulClassCellPack : JackBombAmmo
+{
+	Inventory.RestrictedTo "JohnMaskimXul"
+	VisibleToPlayerClass "JohnMaskimXul"
+}
+ACTOR MaskimXulClassMedikit : Medikit
+{
+	Inventory.RestrictedTo "JohnMaskimXul"
+	VisibleToPlayerClass "JohnMaskimXul"
+}
+ACTOR StruggleClassCellPack : 223CaliberMagazineBox
+{
+	Inventory.RestrictedTo "JohnStruggle"
+	VisibleToPlayerClass "JohnStruggle"
+}
+ACTOR ReliquaryClassCellPack : AntaresianCellPack
+{
+	Inventory.RestrictedTo "JohnReliquary"
+	VisibleToPlayerClass "JohnReliquary"
+}
+
+ACTOR DoomClassBlueArmor : BlueArmor
+{
+	Inventory.ForbiddenTo "JohnStrain"
+	VisibleToPlayerClass "JohnDoom", "JohnDeusVultII", "JohnValiant", "JohnMaskimXul", "JohnStruggle", "JohnReliquary"
+}
+ACTOR StrainClassBlueArmor : StrainRedArmor
+{
+	Inventory.RestrictedTo "JohnStrain"
+	VisibleToPlayerClass "JohnStrain"
+}

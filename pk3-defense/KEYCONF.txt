@@ -1,0 +1,57 @@
+weaponsection "DehackedDefense"
+
+addslotdefault 1 DEHFist
+addslotdefault 1 DEHChainsaw
+addslotdefault 2 DEHPistol
+addslotdefault 3 DEHShotgun
+addslotdefault 3 DEHSuperShotgun
+addslotdefault 4 DEHChaingun
+addslotdefault 5 DEHRocketLauncher
+addslotdefault 6 DEHPlasmaRifle
+addslotdefault 7 DEHBFG9000
+
+addslotdefault 1 StrainDoubleFist
+addslotdefault 2 StrainPistol
+addslotdefault 3 StrainSawedOff
+addslotdefault 6 StrainNFG
+addslotdefault 7 StrainPsychicBlaster
+
+addslotdefault 1 DV2Gauntlets
+addslotdefault 2 DV2DualPistols
+
+addslotdefault 2 ValiantPistol
+addslotdefault 4 ValiantChaingun
+
+addslotdefault 2 MaskimXulDualPistols
+addslotdefault 5 MaskimXulHandOfAfrit
+addslotdefault 6 MaskimXulJackBombs
+addslotdefault 7 MaskimXulGrimoireExcidium
+
+addslotdefault 1 StruggleHammer
+addslotdefault 1 StruggleDrillMachine
+addslotdefault 2 StrugglePistol
+addslotdefault 3 StruggleShotgun
+addslotdefault 3 StruggleSuperShotgun
+addslotdefault 4 StruggleDualPistols
+addslotdefault 5 StruggleGrenadeLauncher
+addslotdefault 6 StruggleAssaultRifle
+addslotdefault 7 StruggleLeichenfaust
+
+addslotdefault 1 ReliquaryFist
+addslotdefault 1 ReliquaryChainsaw
+addslotdefault 2 ReliquaryMachinegun
+addslotdefault 3 ReliquaryShotgun
+addslotdefault 3 ReliquarySuperShotgun
+addslotdefault 4 ReliquaryChaingun
+addslotdefault 5 ReliquaryRocketLauncher
+addslotdefault 6 ReliquaryPlasmaRifle
+addslotdefault 7 ReliquaryBFG9000
+
+clearplayerclasses
+addplayerclass JohnDoom
+addplayerclass JohnStrain
+addplayerclass JohnDeusVultII
+addplayerclass JohnValiant
+addplayerclass JohnMaskimXul
+addplayerclass JohnStruggle
+addplayerclass JohnReliquary

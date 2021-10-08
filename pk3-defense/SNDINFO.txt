@@ -1,0 +1,64 @@
+strain/shotgf		SRSHOTGN
+strain/plasmaf		SRPLASMA
+strain/bfgf			SRBFG
+$limit strain/plasmaf 0
+
+dv2/sawfull			DVSAWFUL
+dv2/sawhit			DVSAWHIT
+dv2/sawidle			DVSAWIDL
+dv2/sawup			DVSAWUP
+dv2/pistol			DVPISTOL
+dv2/shotgf			DVSHOTGN
+dv2/chngun			DVPISTOL
+$limit dv2/chngun 0
+
+valiant/pistol		VAPISTOL
+valiant/chngun		VAPISTOL
+$limit valiant/chngun 0
+valiant/plasmaf		VAPLASMA
+$limit valiant/plasmaf 0
+
+maskimxul/jckbx1	MXJCKBX1
+maskimxul/jckbx2	MXJCKBX2
+maskimxul/rocklf	MXRLAUNC
+maskimxul/bfgf		MXBFG
+$limit maskimxul/jckbx1 0
+$limit maskimxul/rocklf 0
+
+struggle/pistol		STPISTOL
+struggle/chngun		STPISTOL
+$limit struggle/chngun 0
+struggle/sawfull	STSAWFUL
+struggle/sawhit		STSAWHIT
+struggle/sawidle	STSAWIDL
+struggle/sawup		STSAWUP
+struggle/shotgf		STSHOTGN
+struggle/sshotf		STDSHTGN
+struggle/sshoto		STDBOPN
+struggle/sshotl		STDBLOAD
+struggle/sshotc		STDBCLS
+struggle/rocklf		STRLAUNC
+struggle/plasmaf	STPLASMA
+struggle/bfgf		STBFG
+struggle/bfgl		STSGCOCK
+struggle/w_pkup		STWPNUP
+$limit struggle/chngun 0
+$limit struggle/rocklf 0
+$limit struggle/plasmaf 0
+
+reliquary/punch		RQPUNCH
+reliquary/pistol	RQPISTOL
+reliquary/shotgf	RQSHOTGN
+reliquary/sshotgf	RQDSHTGN
+reliquary/sshotgo	RQDBLOPN
+reliquary/sshotgl	RQDBLOAD
+reliquary/sshotgc	RQDBCLS
+reliquary/chngun	RQPISTOL
+$limit reliquary/chngun 0
+reliquary/rocklf	RQRLAUNC
+$limit reliquary/rocklf 0
+reliquary/plasmaf	RQPLASMA
+$limit reliquary/plasmaf 0
+reliquary/plasmax	RQSKLDTH
+reliquary/bfgf		RQBFG
+reliquary/bfgx		RQREXPLOD

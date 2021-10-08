@@ -1,0 +1,20 @@
+const int DEH_DEF_STRAIN = 1;
+const int DEH_DEF_DEUS_VULT = 2;
+const int DEH_DEF_VALIANT = 3;
+const int DEH_DEF_MASKIMXUL = 4;
+const int DEH_DEF_STRUGGLE = 5;
+const int DEH_DEF_RELIQUARY = 6;
+
+#include "decorate/replacer_weaps.dec"
+#include "decorate/strain_weaps.dec"
+#include "decorate/dv2_weaps.dec"
+#include "decorate/valiant_weaps.dec"
+#include "decorate/maskimxul_weaps.dec"
+#include "decorate/struggle_weaps.dec"
+#include "decorate/reliquary_weaps.dec"
+
+#include "decorate/classweapons.dec"
+#include "decorate/classitems.dec"
+#include "decorate/weaponspawners.dec"
+#include "decorate/ammospawners.dec"
+#include "decorate/itemspawners.dec"
