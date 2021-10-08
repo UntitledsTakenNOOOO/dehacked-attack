@@ -348,7 +348,8 @@ Actor Archangelus
 	{
 	Spawn:
 		ANGL D 1
-		ANGL D 1 ACS_NamedExecute("AngelTag", 0, 0, 0, 0)
+		ANGL D 1
+		//ANGL D 1 ACS_NamedExecute("AngelTag", 0, 0, 0, 0)
 		goto Idle
 	Idle:
 		ANGL T 2 A_Look
@@ -387,6 +388,10 @@ Actor ArchangelusA
 	States
 	{
 	Spawn:
+		TNT1 A 0
+		TNT1 A 0 ACS_NamedExecute("Dehacked_BossMultiBuff", 0, 0, 0, 0)
+		goto Idle
+	Idle:
 		ANGL A 2 A_Look
 		goto Spawn
 	See:
@@ -449,6 +454,10 @@ Actor ArchangelusB
 	States
 	{
 	Spawn:
+		TNT1 A 0
+		TNT1 A 0 ACS_NamedExecute("Dehacked_BossMultiBuff", 0, 0, 0, 0)
+		goto Idle
+	Idle:
 		ANGL V 1 A_Look
 		goto Spawn
 	See:

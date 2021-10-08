@@ -184,6 +184,10 @@ ACTOR GridlockCardinalFinalPhase2 : GridlockCardinal
   States
   {
   Spawn:
+    TNT1 A 0
+    TNT1 A 0 ACS_NamedExecute("Dehacked_BossMultiBuff", 0, 0, 0, 0)
+    goto Idle
+  Idle:
     GCRD AB 3 A_Look
     Loop
   Idle:

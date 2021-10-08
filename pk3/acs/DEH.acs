@@ -433,17 +433,20 @@ Script "Dehacked_BossExitHandler" (int boss)
 
 Script "Dehacked_Death" DEATH
 {
-	Delay(120);
-	ACS_NamedTerminate("Dehacked_BossExitHandler", 0);
+	if(GameType() == GAME_SINGLE_PLAYER)
+	{
+		Delay(120);
+		ACS_NamedTerminate("Dehacked_BossExitHandler", 0);
+	}
 }
 
 //From Eviternity's ACS
 bool buffState = FALSE;
-Script "AngelTag" (void) {
+Script "Dehacked_BossMultiBuff" (void) {
 	if(buffState == FALSE) {
-		int AngelHealth = GetActorProperty(0, APROP_HEALTH);
+		int BossHealth = GetActorProperty(0, APROP_HEALTH);
 		if(PlayerCount() > 1) {
-			SetActorProperty(0, APROP_HEALTH, PlayerCount() * AngelHealth);
+			SetActorProperty(0, APROP_HEALTH, ((PlayerCount() + 1) * BossHealth) / 2);
 		}
 		buffState = TRUE;
 	}

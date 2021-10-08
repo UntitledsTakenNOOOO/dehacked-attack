@@ -347,22 +347,32 @@ ACTOR LordOfHeresy : BaronOfHell
         LOHS AABBCCDD 4 A_Chase
         Goto WalkMissile
     WalkMissile:
-        LOHS E 8 A_FaceTarget
-        LOHS F 8 A_FaceTarget
+        LOHS EF 8 A_FaceTarget
         LOHS G 1 A_BruisAttack
         LOHS G 7 A_FatAttack3("BaronBall")
         Loop
     Melee:
     Missile:
-        LOHS E 8 A_FaceTarget
-        LOHS F 8 A_FaceTarget
+        TNT1 A 0 A_JumpIfInventory("LDLegendaryMonsterTransformed", 1, "LegendaryMissile")
+		Goto NormalMissile
+    NormalMissile:
+        LOHS EF 8 A_FaceTarget
         LOHS G 8 A_BruisAttack
-        TNT1 A 0 A_JumpIfInventory("LDLegendaryMonsterTransformed", 1, "WalkMissile")
         Goto See
     Pain: 
         LOHS H 5 
-        LOHS H 5 A_Pain 
+        LOHS H 5 A_Pain
+	PainMissile:
+        LOHS EF 8 A_FaceTarget
+        LOHS G 8 A_FatAttack1("BaronBall")
+        LOHS EF 8 A_FaceTarget
+        LOHS G 8 A_FatAttack2("BaronBall")
+        LOHS EF 8 A_FaceTarget
+        LOHS G 8 A_FatAttack3("BaronBall")
         Goto See 
+    LegendaryMissile:
+        LOHS EF 8 A_Jump(256, "NormalMissile", "WalkMissile", "PainMissile")
+        Goto See
     Death: 
         LOHS I 8 
         LOHS J 8 A_Scream 

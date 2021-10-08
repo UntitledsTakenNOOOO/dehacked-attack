@@ -81,7 +81,7 @@ ACTOR RocketGuy
       MPOS H 2 A_Pain 
       Goto See 
    Death: 
-      MPOS I 5 
+      MPOS I 5
       MPOS J 5 A_Scream 
       MPOS K 5 
       MPOS L 5 A_Fall 

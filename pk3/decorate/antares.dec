@@ -145,7 +145,7 @@ Actor Antaresia : BaronOfHell
 		goto See
 	Melee:
 	Missile:
-		ANTR E 12 Bright A_FaceTarget
+		ANTR F 12 Bright A_FaceTarget
 		ANTR FFF 4 Bright A_HeadAttack
 		ANTR F 8 Bright A_FaceTarget
 		ANTR FF 0 Bright A_CustomMissile("AntaresianPlasma",32,0,0)
@@ -191,7 +191,7 @@ Actor AntaresiaElite : Antaresia
 		goto See
 	Melee:
 	Missile:
-		ANTR E 12 Bright A_FaceTarget
+		ANTR F 12 Bright A_FaceTarget
 		ANTR FFFF 1 Bright A_CustomMissile("AntaresianPlasma",32,0,0)
 		goto See
 	}
@@ -621,6 +621,10 @@ ACTOR LeviathanFinal : Leviathan
   States
   {
   Spawn:
+    TNT1 A 0
+    TNT1 A 0 ACS_NamedExecute("Dehacked_BossMultiBuff", 0, 0, 0, 0)
+    goto Idle
+  Idle:
     ALEV A 10 A_Look
     Loop
   See:
@@ -750,6 +754,10 @@ ACTOR TheInquisitor
   States
   {
   Spawn:
+    TNT1 A 0
+    TNT1 A 0 ACS_NamedExecute("Dehacked_BossMultiBuff", 0, 0, 0, 0)
+    goto Idle
+  Idle:
     AINQ A 10 Bright A_Look
     Loop
   See:

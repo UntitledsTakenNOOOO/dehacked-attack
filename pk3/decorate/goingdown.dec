@@ -129,8 +129,9 @@ ACTOR AngryMastermindFinalPhase2 : AngryMastermind
   States
   {
   Spawn:
-    RSPD AB 10 Bright A_Look
-    Goto Idle
+    TNT1 A 0
+    TNT1 A 0 ACS_NamedExecute("Dehacked_BossMultiBuff", 0, 0, 0, 0)
+    goto Idle
   Idle:
     RSPD AB 10 Bright A_Look
     Loop

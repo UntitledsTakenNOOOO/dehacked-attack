@@ -129,6 +129,10 @@ ACTOR BubbleShip
 	States
 	{
 	Spawn:
+		TNT1 A 0
+		TNT1 A 0 ACS_NamedExecute("Dehacked_BossMultiBuff", 0, 0, 0, 0)
+		goto Idle
+	Idle:
 		BUBS ABCD 2 A_Look
 		Loop
 	See:
