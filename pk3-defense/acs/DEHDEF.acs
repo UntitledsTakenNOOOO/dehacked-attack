@@ -406,3 +406,30 @@ Script "Dehacked_WeaponReset" (int mapset, int tierLevel)
 	}
 }
 
+int DehackedDefenseWeapons[7][7] = 
+{
+	//Doom
+	{"DEHChainsaw", "DEHShotgun", "DEHSuperShotgun", "DEHChaingun", "DEHRocketLauncher", "DEHPlasmaRifle", "DEHBFG9000"},
+	//STRAIN
+	{"DEHChainsaw", "StrainSawedOff", "DEHSuperShotgun", "DEHChaingun", "DEHRocketLauncher", "StrainNFG", "StrainPsychicBlaster"},
+	//DV2
+	{"DV2Gauntlets", "DEHShotgun", "DEHSuperShotgun", "DEHChaingun", "DEHRocketLauncher", "DEHPlasmaRifle", "DEHBFG9000"},
+	//Valiant
+	{"DEHChainsaw", "DEHShotgun", "DEHSuperShotgun", "ValiantChaingun", "DEHRocketLauncher", "DEHPlasmaRifle", "DEHBFG9000"},
+	//Maskim Xul
+	{"DEHChainsaw", "DEHShotgun", "DEHSuperShotgun", "DEHChaingun", "MaskimXulHandOfAfrit", "MaskimXulJackBombs", "MaskimXulGrimoireExcidium"},
+	//Stuggle
+	{"StruggleDrillMachine", "StruggleShotgun", "StruggleSuperShotgun", "StruggleDualPistols", "StruggleGrenadeLauncher", "StruggleAssaultRifle", "StruggleLeichenfaust"},
+	//Antaresian Reliquary
+	{"ReliquaryChainsaw", "ReliquaryShotgun", "ReliquarySuperShotgun", "ReliquaryChaingun", "ReliquaryRocketLauncher", "ReliquaryPlasmaRifle", "ReliquaryBFG9000"}
+};
+
+Script "Dehacked_WeaponSpawn" (int class, int slot)
+{
+	int x = GetActorX(0);
+	int y = GetActorY(0);
+	int z = GetActorZ(0);
+	int a = GetActorAngle(0) >> 8;
+	SpawnForced(DehackedDefenseWeapons[class][slot], x, y, z, 573, a);
+	SetActorProperty(573, APROP_Dropped, FALSE);
+}

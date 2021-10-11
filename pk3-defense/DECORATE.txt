@@ -1,3 +1,4 @@
+const int DEH_DEF_VANILLA_DOOM = 0;
 const int DEH_DEF_STRAIN = 1;
 const int DEH_DEF_DEUS_VULT = 2;
 const int DEH_DEF_VALIANT = 3;
