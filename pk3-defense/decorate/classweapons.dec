@@ -249,7 +249,7 @@ Actor StrainShotgunGiver : DehackedWeaponGiver
   States
   {
   Spawn:
-    SG3G A -1 Bright
+    SGN3 A -1 Bright
     Stop
   Pickup:
     TNT1 A 0 A_JumpIfInventory("StrainSawedOff", 1, "AmmoCheck")
@@ -263,7 +263,7 @@ Actor StrainShotgunGiver : DehackedWeaponGiver
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
     Stop
   PickupFail:
-    SG3G A 1
+    SGN3 A 1
     Fail
   }
 }
@@ -274,7 +274,7 @@ Actor StrainShotgunGiverDropped : DehackedWeaponGiver
   States
   {
   Spawn:
-    SG3G A -1 Bright
+    SGN3 A -1 Bright
     Stop
   Pickup:
     TNT1 A 0 A_JumpIfInventory("StrainSawedOff", 1, "AmmoCheck")
@@ -286,7 +286,7 @@ Actor StrainShotgunGiverDropped : DehackedWeaponGiver
     TNT1 A 0 A_DropItem("StrainSawedOff")
     Stop
   PickupFail:
-    SG3G A 1
+    SGN3 A 1
     Fail
   }
 }

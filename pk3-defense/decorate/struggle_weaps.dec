@@ -459,7 +459,7 @@ ACTOR StruggleLeichenfaust : DoomWeapon
   +WEAPON.NOAUTOFIRE
   Inventory.PickupMessage "You got a leichenfaust...oh, yeah!"
   Inventory.PickupSound "struggle/w_pkup"
-  Tag "Leichanfaust"
+  Tag "Leichenfaust"
   States
   {
   Ready:
@@ -500,8 +500,8 @@ ACTOR StruggleLeichenfaustBall : BFGBall
     STBF A 4 Bright
     Loop
   Death:
-    STBX A 4 Bright A_BFGSpray("LechenfaustExtra")
-    STBX BCDE 4 Bright
+    STFE A 4 Bright A_BFGSpray("LechenfaustExtra")
+    STFE BCDE 4 Bright
     Stop
   }
 }
