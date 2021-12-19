@@ -163,3 +163,8 @@ heresiarch/death	HERESDTH
 
 arachnogunner/walk		SCARGUNM
 arachnorocketeer/walk	SCARROCM
+
+slomnibus/sight		NDCPSIT
+slomnibus/death		NDCPDTH
+slomnibus/active	NDCPACT
+slomnibus/pain		NDCPPAI

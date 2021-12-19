@@ -36,6 +36,11 @@ DEUS VULT II (Huy Pham, 2008):
 * Hell Cleric: Fires imp fireballs rapidly. Spawns commonly with revenants.
 	* Change: Has 300 health instead of 200, due to being in a slot with 300 base health.
 
+NEW DOOM COMMUNITY PROJECT 2 (Newdoom Community Team, 2009)
+* Slomnibus: Suicide Cacodemon. Fast moving monster that flies above the ground. Once one of these guys bites down on you, they'll explode.
+* Possessed Clone Marine: These former marines won't charge at you; instead they will crouch for cover and fire without mercy with their powerful machineguns.
+	* Only appears as an Icon of Sin (or other spawn shooter) summon and does not spawn naturally.
+
 SCYTHE X (Erik Alm, 2009):
 * Shadow Imp: These mysterious monsters shoot fireballs that summon strange spiritual creatures. Spawns with imps uncommonly, but imps are VERY common.
 * Shadow Elemental: A variant of the Pain Elemental; this variant shoots out spirits-summing projectiles fast, and release more spirits when they die.
@@ -99,6 +104,7 @@ DOOM 64 FOR DOOM 2 (Mechadon et al, 2018):
 AVACTOR: END OF THE FIFTH CIRCLE (Eradrop, 2018):
 * Horned Demon: A variant of the pinky demon with 200 HP and a lesser pain chance.
 * Plasma Tank: A knight-like figure on top of treads that fires alternating fireballs like an arachnotron, and spawns with said arachnotrons.
+* Chaingun Statue: A knight-like statue armed with dual chainguns. Only appears as an Icon of Sin (or other final boss) summon.
 
 MASKIM XUL (Obsidian, 2018):
 * WILL 'O WISP: A 5 HP green lost soul that retaliates when killed with a triple baron attack.
@@ -145,6 +151,7 @@ BOSSES:
 * Heresiarch (180 Minutes Pour Vivre): A powerful sorcerer that unleashes a torrent of fire and plasma when it attacks.
 * Motherdemon (Doom 64 for Doom 2, 2018): A terrifying flying boss monster that shoots mancubus fireballs and revenant missiles in large quantities that spawns rarely with cyberdemons.
 	* Change: Removed the archvile attack, made it slower, reduced health from 9000 to 5300, and upped its pain chance, all changes remniscent of the original Doom 64.
+
 * Hive Mother (Sunder, 2019): This insectoid demon can both fire mancubus fireballs very quickly AND retaliates with a set of three rockets.
 	* Spawns with spider masterminds under special circumstances, otherwise it is limited to being summoned by the Icon of Sin and other final bosses.
 * Avactor Brain (Avactor, 2018): A floating giant arachnorb-like brain monster that fires BFG shots.
@@ -157,6 +164,7 @@ BOSSES:
 	* Change: Health reduced from 12000 to 6000.
 * Super Archvile (Valiant, 2015): Good luck. This thing attacks with a archvile combo-attack, and can resurrect monsters. It spawns uncommonly with the Spider Mastermind.
 	* Change: Health reduced from 7500 to 3750, because it isn't the final boss of the game anymore.
+
 * Gridlock Cardinal [Phase II]: Same as the Phase I, except if flinched, he'll spawn monsters icon-of-sin style. Replaces the Gridlock Cardinal if Spawn Targets are present.
 	* Change: Reduced health from 6000 down to 4800.
 * Leviathan [Summoner Variant]: He CAN be flinched, but doing so will result in him spawning monsters icon-of-sin style. Replaces either Leviathan if Spawn Targets are present.
@@ -164,7 +172,7 @@ BOSSES:
 * Super Archvile [Summoner Variant]: Summons a swarm of arachnorbs on flinch. Replaces the Super Archvile if Spawn Targets are present.
 
 FINAL BOSSES (enabled by CVar and then selected in place of Icon of Sin):
-* Hell Smith (Survive in Hell): More aggressive than his ordinary counterpart. With his full 20000 health, he's is hard to take down, and spawns AFTER a large army of other monsters.
+* Hell Smith (Survive in Hell): More aggressive than his ordinary counterpart. With his full 20000 health, he is hard to take down, and spawns AFTER a large army of other monsters.
 * Spider Mastermind (Going Down): A totally ordinary spider mastermind with nothing weird about it (ha, yeah right). Spawns with some zombies, imps, demons and revenants.
 * Super Archvile [Final Boss Form] (Valiant): Spawns with a swarm of arachnorbs. Has 7500 health, and summons monsters when flinched, which get deadlier if flinched more than four times.
 * Gridlock Cardinal [Final Boss Form] (Gridlock 64): This monstrosity has both phases and moves faster, and in phase two it even now has the ability to teleport. Good luck.

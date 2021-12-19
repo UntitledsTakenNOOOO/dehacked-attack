@@ -1,0 +1,107 @@
+ACTOR Slomnibus : Cacodemon
+{
+  Health 150
+  Speed 20 //CHANGE: Slowed from 30 --> 20, A_Chase delay 3 --> 2 tics
+  Monster
+  SeeSound "slomnibus/sight"
+  PainSound "slomnibus/pain"
+  DeathSound "slomnibus/death"
+  ActiveSound "slomnibus/active"
+  Obituary "%o was blown up by a Slomnibus."
+  HitObituary "%o was blown up by a Slomnibus."
+  Tag "Slomnibus"
+  DamageFactor "Antiair", 3.0
+  States
+  {
+  Spawn:
+    NDCP A 5 A_Look
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_NDCP2, 2, 12), "Reset")
+    Goto Idle
+  Reset:
+    TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+    TNT1 A 0 A_SpawnItemEx("DEHCacodemon", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+    Stop
+  Idle:
+    NDCP A 5 A_Look
+    NDCP B 4 A_Look
+    goto Spawn
+  See:
+    NDCP AAABBBCCCDDD 2 A_Chase
+    goto See
+  Pain:
+    NDCP H 5 Bright
+    NDCP K 3 Bright A_Pain
+    goto See
+  Melee:
+    NDCP J 3 Bright A_VileAttack //Change: you go flying up more consistently
+    MISL B 8 Bright A_Explode //You're kinda dead if this gets you though
+    MISL C 6 Bright
+    MISL D 4 Bright
+    stop
+  Missile:
+    Goto See
+  Death:
+    NDCP I 5 Bright
+    NDCP J 5 Bright A_Scream
+    MISL B 8 Bright A_Explode
+    MISL C 6 Bright
+    MISL D 4 Bright
+    stop
+  XDeath:
+    NDCP I 5 Bright
+    NDCP J 5 Bright A_Scream
+    MISL B 8 Bright A_Explode
+    MISL C 6 Bright
+    MISL D 4 Bright
+    stop
+  Raise:
+    stop
+  }
+}
+
+Actor PossessedCloneMarine
+{
+	Health 100
+	Radius 16
+	Height 56
+	PainChance 200
+	Mass 100
+	+SOLID
+	+SHOOTABLE
+	+COUNTKILL
+	+NOICEDEATH
+	+ISMONSTER
+	SeeSound "grunt/sight"
+	AttackSound "weapons/shotgf"
+	PainSound "demon/pain"
+	DeathSound "grunt/death"
+	Obituary "%o met face-to-face with a Possessed Clone Marine."
+	DamageFactor "Exorcist", 3.0
+	States
+	{
+	Spawn:
+		NDCP F 10 A_Look
+		goto Spawn
+	See:
+		NDCP F 3 A_FaceTarget
+		NDCP G 2 Bright A_CPosAttack
+		NDCP F 1 A_CPosRefire
+		goto See
+	Pain:
+		NDCP L 3
+		NDCP E 3 A_Pain
+		goto Spawn
+	Missile:
+		NDCP F 3 A_FaceTarget
+		NDCP G 2 Bright A_CPosAttack
+		NDCP F 1 A_CPosRefire
+		goto See
+	Death:
+		NDCP LM 10
+		NDCP N 10 A_Scream
+		NDCP OPQ 10
+		NDCP Q -1 
+		stop
+	}
+}
+
