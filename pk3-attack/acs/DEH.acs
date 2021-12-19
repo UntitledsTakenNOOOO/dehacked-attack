@@ -29,8 +29,8 @@
 #define DEH_180_MINUTES_POUR_VIVRE 26
 #define DEH_SCIMITAR 27
 #define DEH_NDCP2 28
-#define DEH_JUSTAMAPSET 29
-#define DEH_ROWDYRUDY 30
+#define DEH_ROWDYRUDY 29
+#define DEH_DOOMZERO 30
 #define DEH_NEGATIVEONE -1 //I had to.
 
 Script "Dehacked_MonsterReset" (int mapset, int origLevel, int tierLevel)
@@ -125,11 +125,11 @@ Script "Dehacked_MonsterReset" (int mapset, int origLevel, int tierLevel)
 	case DEH_NDCP2:
 		keep_spawn = GetCVar("deh_enable_ndcp2");
 		break;
-	case DEH_JUSTAMAPSET:
-		keep_spawn = GetCVar("deh_enable_justamapset");
-		break;
 	case DEH_ROWDYRUDY:
 		keep_spawn = GetCVar("deh_enable_rowdyrudy");
+		break;
+	case DEH_DOOMZERO:
+		keep_spawn = GetCVar("deh_enable_doomzero");
 		break;
 	case DEH_NEGATIVEONE:
 		keep_spawn = GetCVar("deh_enable_negativeone");

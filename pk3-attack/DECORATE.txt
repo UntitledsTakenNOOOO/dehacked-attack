@@ -27,6 +27,7 @@ const int DEH_180_MINUTES_POUR_VIVRE = 26;
 const int DEH_SCIMITAR = 27;
 const int DEH_NDCP2 = 28;
 const int DEH_ROWDYRUDY = 29;
+const int DEH_DOOMZERO = 30;
 const int DEH_NEGATIVEONE = -1; //I had to.
 
 #include "decorate/strain.dec"
@@ -50,6 +51,7 @@ const int DEH_NEGATIVEONE = -1; //I had to.
 #include "decorate/maskimxul.dec"
 #include "decorate/avactor.dec"
 #include "decorate/180minutes.dec"
+#include "decorate/doomzero.dec"
 #include "decorate/eviternity.dec"
 #include "decorate/antares.dec"
 #include "decorate/remnant.dec"
@@ -105,9 +107,9 @@ ACTOR DehackedImpSpawner : RandomSpawner replaces DoomImp
 	DropItem "DEHDoomImp", 256, 40
 	DropItem "ValiantImp", 256, 20
 	DropItem "NightmareImp", 256, 15
-	DropItem "ShadowImp", 256, 10
+	DropItem "SuperImp", 256, 10
 	DropItem "StrainFastImp", 256, 10
-	DropItem "SuperImp", 256, 5
+	DropItem "ShadowImp", 256, 5
 }
 ACTOR DEHDoomImp : DoomImp
 {
@@ -178,12 +180,13 @@ ACTOR DEHCacodemon : Cacodemon
 
 ACTOR DehackedSoulSpawner : RandomSpawner replaces LostSoul
 {
-	DropItem "DEHLostSoul", 256, 25
+	DropItem "DEHLostSoul", 256, 20
 	DropItem "Calfdemon", 256, 15
-	DropItem "ValiantArachnorbSmaller", 256, 15
 	DropItem "Doppleganger", 256, 15
-	DropItem "WillOWisp", 256, 15
-	DropItem "DamnedSoul", 256, 15
+	DropItem "WillOWisp", 256, 10
+	DropItem "DamnedSoul", 256, 10
+	DropItem "ValiantArachnorbSmaller", 256, 15
+	DropItem "AlphaSoul", 256, 15
 }
 ACTOR DEHLostSoul : LostSoul
 {

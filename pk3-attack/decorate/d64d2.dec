@@ -74,22 +74,23 @@ ACTOR MotherdemonFinal
 	Summon:
 		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossEyeCount") > 10, "SuperSummon")
 		64MT H 4 Bright A_FaceTarget
-		64MT I 6 Bright A_FaceTarget
-		64MT JJ 4 Bright A_DualPainAttack("DEHLostSoul") //CHANGE: Ahahahahahaha
+		64MT I 6 Bright A_DualPainAttack("DEHLostSoul") //CHANGE: Ahahahahahaha
 		64MT J 4 Bright A_DualPainAttack("Doppleganger")
+		64MT J 4 Bright A_DualPainAttack("DEHLostSoul")
+		64MT J 4 Bright A_DualPainAttack("AlphaSoul")
 		64MT J 4 Bright A_PainAttack("PoisonSoul")
 		Goto See
 	SuperSummon:
 		64MT H 10 Bright A_FaceTarget
 		64MT H 8 Bright A_PainAttack("DEHCacodemon")
-		64MT H 8 Bright A_PainAttack("NightmareCacodemon")
-		64MT H 8 Bright A_PainAttack("AstralCaco")
-		64MT I 8 Bright A_PainAttack("Holobot")
-		64MT I 8 Bright A_PainAttack("AlienGuardian")
-		64MT I 8 Bright A_PainAttack("Afriest")
+		64MT H 8 Bright A_PainAttack("Cacodemoness")
+		64MT H 8 Bright A_PainAttack("SpectralCaco")
+		64MT I 8 Bright A_PainAttack("Cacolich")
+		64MT I 8 Bright A_PainAttack("NightmareCacodemon")
+		64MT I 8 Bright A_PainAttack("AstralCaco")
 		64MT I 8 Bright A_PainAttack("DEHPainElemental")
 		64MT J 8 Bright A_PainAttack("ShadowElemental")
-		64MT J 20 Bright A_PainAttack("PoisonSoul")
+		64MT J 20 Bright A_PainAttack("NightwatchCacodemon")
 		Goto See
 	LegendaryMissile:
 		64MT E 10 A_FaceTarget

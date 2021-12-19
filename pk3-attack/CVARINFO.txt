@@ -33,5 +33,6 @@ server bool deh_enable_eviternity = true;
 server bool deh_enable_antares = true;
 server bool deh_enable_remnant = true;
 server bool deh_enable_sunder = true;
+server bool deh_enable_doomzero = true;
 server bool deh_enable_rowdyrudy = true;
 server bool deh_enable_negativeone = true;

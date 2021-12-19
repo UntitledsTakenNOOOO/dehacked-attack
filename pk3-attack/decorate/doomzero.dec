@@ -1,0 +1,59 @@
+Actor AlphaSoul : LostSoul
+{
+	PainChance 40
+	AttackSound "imp/shotx"
+	ActiveSound ""
+	SeeSound "alphasoul/sight"
+	PainSound "alphasoul/pain"
+	DeathSound "alphasoul/death"
+	-MISSILEMORE
+	+DOHARMSPECIES //deliberately induces infighting
+	Renderstyle Normal
+	Tag "Alpha Soul"
+	DamageFactor "Antiair", 3.0
+	States
+	{
+	Spawn:
+		SSKL A 0
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_DOMZERO, 21, 21), "Reset")
+		Goto Idle
+	Reset:
+		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		TNT1 A 0 A_SpawnItemEx("DEHLostSoul", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+		Stop
+	Spawn:
+		SSKL AB 10 A_Chase
+		Loop
+	See:
+		SSKL AABBCCDD 3 A_Chase
+		Loop
+	Pain:
+		SSKL H 3 
+		SSKL H 3 Bright A_Pain
+		goto See
+	Missile:
+		SSKL E 10 A_FaceTarget
+		SSKL F 4 A_FaceTarget
+		SSKL G 4 Bright A_HeadAttack
+		SSKL F 4 A_FaceTarget
+		SSKL E 12 A_Chase
+		SSKL F 1 A_CPosRefire
+		goto Missile+1
+	Death:
+		SSKL I 3 
+		SSKL O 3 Bright A_Scream
+		SSKL P 3 Bright A_Fall
+		SSKL QRSTJKLU 3 Bright 
+		SSKL V -1 
+		stop
+	XDeath:
+		SSKL N 3 
+		SSKL O 3 Bright A_Scream
+		SSKL P 3 Bright A_Fall
+		SSKL QRSTJKLU 3 Bright 
+		SSKL V -1 
+		stop
+	Raise:
+		stop
+	}
+}

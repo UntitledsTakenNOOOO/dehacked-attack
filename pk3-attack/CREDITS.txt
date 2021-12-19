@@ -6,6 +6,7 @@ SCYTHE II (2005, then 2009)         Erik Alm
 SCIMITAR (2006)                     Richard Hardacre (Cycloid)
 DEUS VULT II (2008)                 Huy Pham (a.k.a. Doom Marine)
 INVASION UAC (2008)                 Xsnake
+NDCP 2 (2009)						New Doom Community
 SCYTHE X (2009, unfinished)         Erik Alm
 UAC ULTRA (2010)                    Super Jamie and Jon "40oz" Vail
 JENESIS (2011)                      James Paddock (a.k.a. Jimmy)
@@ -25,6 +26,7 @@ MASKIM XUL (2018)                   Obsidian
 180 MINUTES POUR VIVRE (2018)       French Doom Community, Heresiarch base sprites from Hexen
 STRUGGLE: ANTARESIAN LEGACY (2018)  Seongbae Park (antares031), many base sprites from Heretic/Hexen
 EVITERNITY (2018)                   Joshua O'Sullivan (Dragonfly) et al.
+DOOM ZERO (2019)					Christopher Golden
 REMNANT (2019)                      Aurelius
 SUNDER (2009-2019, still ongoing)   Insane_Gazebo, Hive Mother by TheMisterCat
 ANTARESIAN RELIQUARY (2020)         Seongbae Park (antares031)

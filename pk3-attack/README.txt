@@ -115,6 +115,13 @@ MASKIM XUL (Obsidian, 2018):
 * LORD OF HERESY: A 1250 HP Hell Noble that can fire a three-way baron ball spread. Spawns with barons.
 	* Change: The latter four monsters are re-based from Realm667, so there may be minor differences in frames and sounds.
 
+STRUGGLE: ANTARESIAN LEGACY (antares, 2018):
+* Antaresia: A serpent-like creature that has a strange firing pattern. Spawns with Hell Knights.
+	* Change: Uses the Antaresian Reliquary variant instead of the original, for variety's sake (I liked the red better).
+* Antaresia Elite: A more powerful variant of the Antaresia that spawns with the Archvile. Has more HP, a lower pain chance, and moves much faster.
+* Afriest: A flying priest with a powerful triple attack. Spawns with Cacodemons.
+* Antaresian Arachnotron: A variant of the arachnotron that moves faster and uses a chaingun instead of a plasma rifle.
+
 EVITERNITY (Dragonfly, 2018):
 * Former Captain: These nasty zombies shoot out yellow energy bolts in volleys of five. Spawns with chaingunners.
 * Nightmare Demon: These guys are faster than the ordinary pinky demon and have 300 HP.
@@ -122,12 +129,8 @@ EVITERNITY (Dragonfly, 2018):
 * Eviternity Arachnotron: A variant of the arachnotron that uses the energy bolts used by the former captain.
 * Annihilator: An upgrade to the cybruiser, these guys have both a rocket launcher and a very powerful chaingun, and spawn with barons.
 
-STRUGGLE: ANTARESIAN LEGACY (antares, 2018):
-* Antaresia: A serpent-like creature that has a strange firing pattern. Spawns with Hell Knights.
-	* Change: Uses the Antaresian Reliquary variant instead of the original, for variety's sake (I liked the red better).
-* Antaresia Elite: A more powerful variant of the Antaresia that spawns with the Archvile. Has more HP, a lower pain chance, and moves much faster.
-* Afriest: A flying priest with a powerful triple attack. Spawns with Cacodemons.
-* Antaresian Arachnotron: A variant of the arachnotron that moves faster and uses a chaingun instead of a plasma rifle.
+DOOM ZERO (Christopher Golden, 2019):
+* Alpha Soul: A lost soul variation that shoots cacodemon fireballs instead of charging.
 
 ANTARESIAN RELIQUARY (antares, 2020):
 * Former Ranger: Possessing an energy blaster instead of a rifle, these guys are a bit scarier than the ordinary zombie that they spawn with.
