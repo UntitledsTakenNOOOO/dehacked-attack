@@ -77,9 +77,18 @@ Actor PossessedCloneMarine
 	DeathSound "grunt/death"
 	Obituary "%o met face-to-face with a Possessed Clone Marine."
 	DamageFactor "Exorcist", 3.0
+	Tag "Possessed Clone Marine"
 	States
 	{
 	Spawn:
+		NDCP F 0
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_NDCP2, 14, 1), "Reset")
+		Goto Idle
+	Reset:
+		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		TNT1 A 0 A_SpawnItemEx("DEHRandomSpawner", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+		Stop
+	Idle:
 		NDCP F 10 A_Look
 		goto Spawn
 	See:
@@ -104,4 +113,3 @@ Actor PossessedCloneMarine
 		stop
 	}
 }
-

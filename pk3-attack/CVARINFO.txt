@@ -36,4 +36,3 @@ server bool deh_enable_remnant = true;
 server bool deh_enable_sunder = true;
 server bool deh_enable_doomzero = true;
 server bool deh_enable_negativeone = true;
-server bool deh_enable_rowdyrudy = true;

@@ -173,3 +173,9 @@ monster/hiesit		dshiesit
 monster/hieact		dshieact
 monster/hiepai		dshiepai
 monster/hiedth		dshiedth
+
+negativeone/claw	NGCLAW
+wicked/charge		NGSKLATK
+helldragon/see		NGHDSIT
+helldragon/pain		NGHDPAIN
+helldragon/death	NGHDDTH

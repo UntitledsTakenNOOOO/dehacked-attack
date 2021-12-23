@@ -180,16 +180,15 @@ ACTOR GridlockCardinalFinalPhase2 : GridlockCardinal
   Tag "Gridlock Cardinal (Phase II)"
   Health 6000
   +MISSILEEVENMORE
+  +NOTELEFRAG
   Speed 24
+  var int user_count;
   States
   {
   Spawn:
     TNT1 A 0
     TNT1 A 0 ACS_NamedExecute("Dehacked_BossMultiBuff", 0, 0, 0, 0)
     goto Idle
-  Idle:
-    GCRD AB 3 A_Look
-    Loop
   Idle:
     GCRD AB 3 A_Look
     Loop

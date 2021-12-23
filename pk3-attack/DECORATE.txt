@@ -26,8 +26,8 @@ const int DEH_MASKIMXUL = 25;
 const int DEH_180_MINUTES_POUR_VIVRE = 26;
 const int DEH_SCIMITAR = 27;
 const int DEH_NDCP2 = 28;
-const int DEH_DOOMZERO = 29;
-const int DEH_NOVA2 = 30;
+const int DEH_NOVA2 = 29;
+const int DEH_DOOMZERO = 30;
 const int DEH_NEGATIVEONE = -1; //I had to.
 
 const int FINAL_ICONOFSIN = 1;
@@ -74,7 +74,7 @@ const int FINAL_BUBBLESHIP = 14;
 #include "decorate/sunder.dec"
 #include "decorate/obituary.dec"
 #include "decorate/invasionuac.dec"
-//#include "decorate/negativeone.dec"
+#include "decorate/negativeone.dec"
 
 ACTOR DehackedZombieSpawner : RandomSpawner replaces Zombieman
 {
@@ -119,12 +119,14 @@ ACTOR DEHChaingunGuy : ChaingunGuy
 
 ACTOR DehackedImpSpawner : RandomSpawner replaces DoomImp
 {
-	DropItem "DEHDoomImp", 256, 40
-	DropItem "ValiantImp", 256, 20
-	DropItem "NightmareImp", 256, 15
-	DropItem "SuperImp", 256, 10
+	DropItem "DEHDoomImp", 256, 25
+	DropItem "NegativeImp", 256, 15
+	DropItem "ValiantImp", 256, 10
+	DropItem "NightmareImp", 256, 10
 	DropItem "StrainFastImp", 256, 10
-	DropItem "SpiritImp", 256, 5
+	DropItem "SuperImp", 256, 10
+	DropItem "NegativeDarkImp", 256, 10
+	DropItem "SpiritImp", 256, 10
 }
 ACTOR DEHDoomImp : DoomImp
 {
@@ -195,13 +197,14 @@ ACTOR DEHCacodemon : Cacodemon
 
 ACTOR DehackedSoulSpawner : RandomSpawner replaces LostSoul
 {
-	DropItem "DEHLostSoul", 256, 20
-	DropItem "Calfdemon", 256, 15
-	DropItem "Doppleganger", 256, 15
+	DropItem "DEHLostSoul", 256, 18
+	DropItem "NegativeOneWicked", 256, 14
+	DropItem "Calfdemon", 256, 10
+	DropItem "Doppleganger", 256, 10
 	DropItem "WillOWisp", 256, 10
 	DropItem "DamnedSoul", 256, 10
-	DropItem "ValiantArachnorbSmaller", 256, 15
-	DropItem "AlphaSoul", 256, 15
+	DropItem "ValiantArachnorbSmaller", 256, 14
+	DropItem "AlphaSoul", 256, 14
 }
 ACTOR DEHLostSoul : LostSoul
 {
@@ -211,10 +214,11 @@ ACTOR DEHLostSoul : LostSoul
 
 ACTOR DehackedPainSpawner : RandomSpawner replaces PainElemental
 {
-	DropItem "DEHPainElemental", 256, 30
-	DropItem "SpiritElemental", 256, 25
-	DropItem "InvisibleHolobot", 256, 20
+	DropItem "DEHPainElemental", 256, 25
+	DropItem "SpiritElemental", 256, 20
+	DropItem "InvisibleHolobot", 256, 18
 	DropItem "PoisonSoul", 256, 15
+	DropItem "HellDragon", 256, 12
 	DropItem "NightwatchCacodemon", 256, 10
 }
 ACTOR DEHPainElemental : PainElemental
@@ -932,6 +936,7 @@ ACTOR DEHHierophantSpawner
   Height 32
   +NOBLOCKMAP
   +NOSECTOR
+  var int user_count;
   States
   {
   Spawn:
@@ -944,11 +949,12 @@ ACTOR DEHHierophantSpawner
 	TNT1 A 0 A_PlaySound("brain/spit", 0, 1.0, 0, ATTN_NONE)
 	TNT1 A 0 A_BrainSpit("DEHBlankShot")
 	TNT1 A 0 A_BrainSpit("DEHRealHierophantSpawnShot")
+	TNT1 A 0 A_SetUserVar("user_count", ACS_NamedExecuteWithResult("Dehacked_BossTargetCount"))
 	Goto FakeHierophantSpawnLoop
   FakeHierophantSpawnLoop:
 	TNT1 A 0 A_BrainSpit("DEHFakeHierophantSpawnShot")
 	TNT1 A 0 A_SetUserVar("user_count", user_count - 1)
-	TNT1 A 0 A_JumpIf(user_count <= 0, "StopSpawning")
+	TNT1 A 0 A_JumpIf(user_count <= 1, "StopSpawning")
 	Loop
   StopSpawning:
 	TNT1 A 0 A_PlaySound("brain/spit", 0, 1.0, 0, ATTN_NONE)
@@ -957,11 +963,11 @@ ACTOR DEHHierophantSpawner
 }
 ACTOR DEHFakeHierophantSpawnShot : SpawnShot
 {
-	DropItem "FinalBossHierophant", 256, 1
+	DropItem "Hierophant1", 256, 1
 }
 ACTOR DEHRealHierophantSpawnShot : SpawnShot
 {
-	DropItem "Hierophant1", 256, 1
+	DropItem "FinalBossHierophant", 256, 1
 }
 
 ACTOR DEHSuperArchvileSpawner
@@ -1248,7 +1254,7 @@ ACTOR DEHBaphometSpawner
 	TNT1 A 0 A_BrainSpit("DEHBlankShot")
 	TNT1 A 0 A_BrainSpit("DEHBaphometSpawnerShot")
 	TNT1 A 0 A_SetUserVar("user_count", ACS_NamedExecuteWithResult("Dehacked_BossTargetCount"))
-  SkullTurretSpawnLoop:
+  MinionSpawnLoop:
 	TNT1 A 0 A_BrainSpit("DEHBaphometMinionShot")
 	TNT1 A 0 A_SetUserVar("user_count", user_count - 1)
 	TNT1 A 0 A_JumpIf(user_count <= 1, "EndLoop")

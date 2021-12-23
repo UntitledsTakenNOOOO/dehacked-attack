@@ -103,7 +103,6 @@ OptionMenu "DehackedAttackOptions"
 	Option "Antares:", "deh_enable_antares", "DehackedMonsterSelection"
 	Option "Remnant:", "deh_enable_remnant", "DehackedMonsterSelection"
 	Option "Sunder:", "deh_enable_sunder", "DehackedMonsterSelection"
-	Option "Rowdy Rudy:", "deh_enable_rowdyrudy", "DehackedMonsterSelection"
 	Option "DOOM -1:", "deh_enable_negativeone", "DehackedMonsterSelection"
 	StaticText ""
 	StaticText "Dehacked Monster Level Scaling", 1

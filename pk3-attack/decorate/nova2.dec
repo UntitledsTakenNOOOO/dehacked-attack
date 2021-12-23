@@ -101,7 +101,7 @@ Actor Hierophant2 : Hierophant1 //Replaces BloodyTwitch
     HIER G 4 A_FaceTarget
     HIER H 4 BRIGHT A_BruisAttack
 	HIER G 1 A_CposRefire
-    Goto Missile+1
+    Goto Missile+2
   Pain:
     HIER I 2
     HIER I 2 A_Pain 
@@ -139,6 +139,7 @@ Actor Hierophant2 : Hierophant1 //Replaces BloodyTwitch
 Actor FinalBossHierophant : Hierophant2
 {
   Health 8000
+  +NoTelefrag
   States
   {
   Spawn:

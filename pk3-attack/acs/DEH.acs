@@ -29,8 +29,8 @@
 #define DEH_180_MINUTES_POUR_VIVRE 26
 #define DEH_SCIMITAR 27
 #define DEH_NDCP2 28
-#define DEH_DOOMZERO 29
-#define DEH_NOVA2 30
+#define DEH_NOVA2 29
+#define DEH_DOOMZERO 30
 #define DEH_NEGATIVEONE -1 //I had to.
 
 Script "Dehacked_MonsterReset" (int mapset, int origLevel, int tierLevel)
@@ -125,11 +125,11 @@ Script "Dehacked_MonsterReset" (int mapset, int origLevel, int tierLevel)
 	case DEH_NDCP2:
 		keep_spawn = GetCVar("deh_enable_ndcp2");
 		break;
-	case DEH_DOOMZERO:
-		keep_spawn = GetCVar("deh_enable_doomzero");
-		break;
 	case DEH_NOVA2:
 		keep_spawn = GetCVar("deh_enable_nova2");
+		break;
+	case DEH_DOOMZERO:
+		keep_spawn = GetCVar("deh_enable_doomzero");
 		break;
 	case DEH_NEGATIVEONE:
 		keep_spawn = GetCVar("deh_enable_negativeone");
@@ -268,7 +268,7 @@ Script "Dehacked_BossSelect" OPEN
 		}
 		else if(BossSelection == 13)
 		{
-			HudMessageBold(s:"VS. Baphomet";HUDMSG_FADEINOUT,0,CR_SAPPHIRE,256.0,144.1,3.0,1.0,1.0);
+			HudMessageBold(s:"VS. Baphomet";HUDMSG_FADEINOUT,0,CR_DARKGRAY,256.0,144.1,3.0,1.0,1.0);
 		}
 		else if(BossSelection == 14)
 		{

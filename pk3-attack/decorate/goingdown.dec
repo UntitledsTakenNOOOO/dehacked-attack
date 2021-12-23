@@ -62,6 +62,7 @@ ACTOR AngryMastermindFinalPhase1 : SpiderMastermind
   +NOTELESTOMP
   var int user_count;
   DamageFactor "Heroic", 3.0
+  Tag "Spider Mastermind"
   States
   {
   Death:

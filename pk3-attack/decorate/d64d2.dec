@@ -126,6 +126,7 @@ ACTOR Motherdemon : MotherdemonFinal
 	Health 5300 //Change: 5300 Health, like in original Doom 64
 	Speed 15 //Change: Speed 25 --> 15 for balance reasons
 	PainChance 20 //Change: PainChance 4 --> 20 (Like in original D64)
+	-NOTELEFRAG
 	States
 	{
 	Spawn:

@@ -250,7 +250,6 @@ ACTOR HellSmithFinal : HellSmith
   Health 20000
   +MISSILEMORE
   +MISSILEEVENMORE
-  +NOPAIN
   +NOTELESTOMP
   States
   {
@@ -260,13 +259,13 @@ ACTOR HellSmithFinal : HellSmith
     goto Idle
   Idle:
     AVTR A 10 A_Look
-    Goto Idle
-  Idle:
-    AVTR A 10 A_Look
+    Loop
+  See:
+    AVTR AABB 3 A_Chase
     Loop
   Pain:
     AVTR F 10 A_BrainPain
-    Goto See
+    Goto Missile
   Death:
     AVTR G 5 A_PlaySound("brain/death", 0, 1.0, 0, ATTN_NONE)
     AVTR HIJK 5 Bright

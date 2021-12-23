@@ -1,0 +1,368 @@
+ACTOR NegativeImp : DoomImp
+{
+  DamageFactor "Extinguishing", 3.0
+  Tag "Imp"
+  Translation 1
+  States
+  {
+  Spawn:
+    NGTR A 0
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_NEGATIVEONE, 1, 1), "Reset")
+    Goto Idle
+  Reset:
+    TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+    TNT1 A 0 A_SpawnItemEx("DEHDoomImp", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+    Stop
+  Idle:
+    NGTR AB 10 A_Look
+    Loop
+  See:
+    NGTR AABBCCDD 3 A_Chase
+    Loop
+  Melee:
+  Missile:
+    NGTR EF 8 A_FaceTarget
+    NGTR G 6 A_CustomComboAttack("NegativeImpBall", 32, 3 * random(1, 8), "negativeone/claw")
+    Goto See
+  Pain:
+    NGTR H 2
+    NGTR H 2 A_Pain
+    Goto See
+  Death:
+    NGTR I 8
+    NGTR J 8 A_Scream
+    NGTR K 6
+    NGTR L 6 A_NoBlocking
+    NGTR M -1
+    Stop
+  XDeath:
+    NGTR N 5
+    NGTR O 5 A_XScream
+    NGTR P 5
+    NGTR Q 5 A_NoBlocking
+    NGTR RST 5
+    NGTR U -1
+    Stop
+  Raise:
+    NGTR ML 8
+    NGTR KJI 6
+    Goto See
+  }
+}
+ACTOR NegativeImpBall : DoomImpBall
+{
+  States
+  {
+  Spawn:
+    NGB1 AB 4 Bright
+    Loop
+  Death:
+    NGB1 CDE 6 Bright
+    Stop
+  }
+}
+ACTOR NegativeDarkImp : NegativeImp
+{
+  Translation 0
+  Health 100
+  Speed 10
+  PainChance 180
+  RenderStyle "Translucent"
+  Alpha 0.5
+  Obituary "%o was burned by a dark imp."
+  HitObituary "%o was clawed by a dark imp."
+  Tag "Dark Imp"
+  States
+  {
+  Spawn:
+    NGTR A 0
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_NEGATIVEONE, 3, 11), "Reset")
+    Goto Idle
+  Reset:
+    TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+    TNT1 A 0 A_SpawnItemEx("NightmareImp", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+    Stop
+  Idle:
+    NGTR AB 10 A_Look
+    Loop
+  Melee:
+    TROO EE 8 A_FaceTarget
+    TROO G 6 A_CustomComboAttack("NegativeDarkImpBall", 32, 10 * random(1, 6), "negativeone/claw")
+    goto See
+  Missile:
+    TROO EE 8 A_FaceTarget
+    TROO G 6 A_CustomComboAttack("NegativeDarkImpBall", 32, 10 * random(1, 6), "negativeone/claw")
+    goto See
+  }
+}
+ACTOR NegativeDarkImpBall : CacodemonBall
+{
+  States
+  {
+  Spawn:
+    NGB2 AB 4 Bright
+    Loop
+  Death:
+    NGB2 CDE 6 Bright
+    Stop
+  }
+}
+
+Actor NegativeOneWicked : LostSoul
+{
+  Health 20
+  Speed 10
+  PainChance 65
+  +COUNTKILL
+  DeathSound "world/barrelx"
+  Obituary "%o was spooked by a wicked."
+  Tag "Wicked"
+  DamageFactor "Antiair", 3.0
+  States
+  {
+  Spawn:
+    NGSK A 0
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_NEGATIVEONE, 3, 1), "Reset")
+    Goto Idle
+  Reset:
+    TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+    TNT1 A 0 A_SpawnItemEx("DEHLostSoul", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+    Stop
+  Idle:
+    NGSK AB 10 A_Look
+    Loop
+  See:
+    NGSK AB 6 Bright A_Chase
+    Loop
+  Missile:
+    NGSK C 10 Bright A_FaceTarget
+    NGSK D 4 Bright A_SkullAttack
+    NGSK CD 4 Bright
+    Goto Missile+2
+  Melee:
+    NGSK F 4 Bright A_Explode
+    NGSK G 6 Bright A_Scream
+    NGSK H 6 Bright 
+    NGSK I 6 Bright A_Fall
+    NGSK JK 6 
+    stop
+  Death:
+    NGSK F 4 Bright A_Explode
+    NGSK G 6 Bright A_Scream
+    NGSK H 6 Bright 
+    NGSK I 6 Bright A_Fall
+    NGSK JK 6 
+    stop
+  }
+}
+
+Actor HellDragon
+{
+	Health 500
+	Radius 31
+	Height 56
+	Mass 400
+	Speed 20
+	PainChance 10
+	Monster
+	+FLOAT
+	+NOGRAVITY
+	SeeSound "helldragon/sight"
+	PainSound "helldragon/pain"
+	DeathSound "helldragon/death"
+	ActiveSound "pain/active"
+	Obituary "%o was roasted by a hell dragon."
+	Tag "Hell Dragon"
+	DamageFactor "Antiair", 3.0
+	States
+	{
+	Spawn:
+		NGHD A 0
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_NEGATIVEONE, 4, 15), "Reset")
+		Goto Idle
+	Reset:
+		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		TNT1 A 0 A_SpawnItemEx("DEHPainElemental", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+		Stop
+	Idle:
+		NGHD A 10 A_Look
+		Loop
+	See:
+		NGHD ABCDC 3 A_Chase
+		goto See
+	Pain:
+		NGHD G 6 
+		NGHD G 6 A_Pain
+		goto See
+	Missile:
+		NGHD A 16 A_FaceTarget
+		NGHD B 4 Bright A_FaceTarget
+		NGHD E 8 Bright A_CustomComboAttack("HellDragonBall", 32, 10 * random(1, 8), "negativeone/claw")
+		NGHD B 4 Bright A_FaceTarget
+		NGHD E 8 Bright A_CustomComboAttack("HellDragonBall", 32, 10 * random(1, 8), "negativeone/claw")
+		NGHD B 4 Bright A_FaceTarget
+		NGHD E 8 Bright A_CustomComboAttack("HellDragonBall", 32, 10 * random(1, 8), "negativeone/claw")
+		NGHD B 4 Bright A_FaceTarget
+		NGHD E 8 Bright A_CustomComboAttack("HellDragonBall", 32, 10 * random(1, 8), "negativeone/claw")
+		NGHD B 4 Bright A_FaceTarget
+		NGHD A 16 A_FaceTarget
+		goto See
+	Death:
+		NGHD H 8 A_Scream
+		NGHD I 8 A_Fall
+		NGHD JKL 8
+		NGHD M -1
+		goto See
+	Raise:
+		stop
+	}
+}
+Actor HellDragonBall : BaronBall
+{
+  States
+  {
+  Spawn:
+    NGB7 AB 4 Bright
+    Loop
+  Death:
+    NGB7 CDE 6 Bright
+    Stop
+  }
+}
+Actor NegativeOneRocketTurret
+{
+	Health 350
+	Height 56
+	Radius 20
+	Mass 50000
+	Speed 0
+	PainChance 0
+	Monster
+	+NOBLOOD
+	Obituary "%o was blasted by a rocket turret."
+	Tag "Rocket Turret"
+	DamageFactor "Scrapper", 3.0
+	States
+	{
+	Spawn:
+		NGHD A 0
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_NEGATIVEONE, 5, 1), "Reset")
+		Goto Idle
+	Reset:
+		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		TNT1 A 0 A_SpawnItemEx("DEHRandomSpawner", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+		Stop
+	Idle:
+		NGTR V 2 A_Look
+		goto Spawn
+	See:
+		NGTR V 2 A_Chase
+		goto See
+	Pain:
+		goto See
+	Raise:
+		stop
+	Missile:
+		NGTR V 3 A_FaceTarget
+		NGTR W 2 Bright A_CyberAttack
+		NGTR V 5 A_FaceTarget
+		goto See
+	Death:
+		MISL B 10 Bright A_Explode
+		MISL CD 10 Bright 
+		stop
+	}
+}
+
+Actor NegativeOneBaphomet
+{
+	Health 5000
+	Radius 30
+	Height 64
+	Mass 1000
+	Speed 18
+	PainChance 25
+	ReactionTime 3
+	Monster
+	MinMissileChance 160
+	+BOSS
+	+MISSILEMORE
+	+FLOORCLIP
+	+NORADIUSDMG
+	+DONTMORPH
+	+BOSSDEATH
+	+NOTELEFRAG
+	SeeSound "misc/unused"
+	AttackSound "spider/attack"
+	PainSound "brain/pain"
+	DeathSound "brain/death"
+	ActiveSound "spider/active"
+	Obituary "%o was forced to kneel to Baphomet." //Funnily enough there's no way to see this.
+	Tag "Baphomet"
+	DamageFactor "Heroic", 2.0 //This guy isn't hard enough to warrant a 3.0
+	var int user_count;
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 ACS_NamedExecute("Dehacked_BossMultiBuff", 0, 0, 0, 0)
+		goto Idle
+	Idle:
+		NGBP AB 10 A_Chase
+		goto See
+	See:
+		NGBP ABCB 4 A_Chase
+		goto See
+	Missile:
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossEyeCount") > 10, "SuperMissile")
+		TNT1 A 0 A_JumpIfInventory("LDLegendaryMonsterTransformed", 1, "LegendaryMissile")
+		NGBP E 10 Bright A_FaceTarget
+		NGBP F 4 Bright A_PainAttack("NegativeOneWicked")
+		NGBP E 8 Bright A_FaceTarget
+		NGBP E 8 Bright A_SpidRefire
+		goto Missile+3
+	SuperMissile:
+		NGBP E 10 Bright A_FaceTarget
+		NGBP F 2 Bright A_DualPainAttack("NegativeOneWicked")
+		NGBP EE 4 Bright A_FaceTarget
+		NGBP F 2 Bright A_PainAttack("LostSoul")
+		NGBP E 4 Bright A_FaceTarget
+		NGBP E 4 Bright A_SpidRefire
+		goto SuperMissile+1
+	LegendaryMissile:
+		NGBP E 10 Bright A_FaceTarget
+		NGBP F 4 Bright A_DualPainAttack("NegativeOneWicked")
+		NGBP E 8 Bright A_FaceTarget
+		NGBP E 8 Bright A_FaceTarget
+		NGBP F 4 Bright A_DualPainAttack("NegativeOneWicked")
+		NGBP E 8 Bright A_FaceTarget
+		NGBP E 8 Bright A_FaceTarget
+		NGBP F 4 Bright A_DualPainAttack("LostSoul")
+		NGBP E 8 Bright A_FaceTarget
+		NGBP E 8 Bright A_FaceTarget
+		goto Pain+2
+	Pain:
+		NGBP G 5 
+		NGBP H 20 A_Pain
+		NGBP E 8 A_Chase
+		NGBP E 6 A_StartFire
+		NGBP A 0 A_SetUserVar("user_count", ACS_NamedExecuteWithResult("Dehacked_BossEyeCount"))
+		goto BrainSpitLoop
+	BrainSpitLoop:
+		NGBP A 0 A_BrainSpit
+		NGBP A 0 A_SetUserVar("user_count", user_count - 1)
+		NGBP A 0 A_JumpIf(user_count <= 0, "BrainSpitEnd")
+		loop
+	BrainSpitEnd:
+		NGBP F 3 Bright
+		goto See
+	Death:
+		NGBP G 4 A_BrainScream
+		NGBP H 5
+		NGBP I 5 A_Fall
+		NGBP JKLM 5 
+		NGBP N 100 
+		NGBP N -1 A_BrainDie
+		stop
+	}
+}

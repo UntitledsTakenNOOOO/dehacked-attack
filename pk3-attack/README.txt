@@ -144,9 +144,10 @@ ANTARESIAN RELIQUARY (antares, 2020):
 
 DOOM -1 (Community Project, 2020):
 * Doom -1 Imp: Another imp variant with a visually distinct fireball.
-* Shadow Imp: A stronger, translucent, 100 HP variant of the previous imp.
+* Dark Imp: A stronger, translucent, 100 HP variant of the previous imp.
 * Wicked: A lost soul that has only 20 HP, and self-destructs when in melee range or when killed. Have fun!
-* Death Dragon: A 500 HP flying dragon monster that spawns with Pain Elementals, and fires slews of baron balls.
+* Hell Dragon: A 500 HP flying dragon monster that spawns with Pain Elementals, and fires slews of baron balls.
+* Rocket Turret: A Stationary Turret that fires rockets. Only appears as an Icon of Sin (or other final boss) summon.
 
 BOSSES:
 * Afrit (Scythe II, Deus Vult II, Survive in Hell, Resurgence): Its volley of fireballs is deadly; you're toast if you get too close. It has 2500 HP and can fly.

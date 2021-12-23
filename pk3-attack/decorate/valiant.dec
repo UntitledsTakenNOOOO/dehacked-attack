@@ -687,6 +687,7 @@ ACTOR ValiantSuperVileFinal : ValiantSuperVile
 {
 	+NOTELESTOMP
 	Health 7500
+	var int user_count;
 	var int user_spawned;
 	States
 	{
@@ -751,8 +752,15 @@ ACTOR ValiantSuperVileFinal : ValiantSuperVile
 		DIA2 A 0 A_JumpIf(user_spawned <= 4, "SuperSpawnShot1")
 		DIA2 A 0 A_JumpIf(user_spawned <= 6, "SuperSpawnShot2")
 		DIA2 A 0 A_JumpIf(user_spawned <= 8, "SuperSpawnShot3")
-		DIA2 AAAAAAAA 0 A_BrainSpit //Generic
-		DIA2 BC 8 Bright
+		DIA2 A 0 A_SetUserVar("user_count", ACS_NamedExecuteWithResult("Dehacked_BossEyeCount"))
+		Goto BrainSpitLoop
+	BrainSpitLoop:
+		DIA2 A 0 A_BrainSpit
+		DIA2 A 0 A_SetUserVar("user_count", user_count - 1)
+		DIA2 A 0 A_JumpIf(user_count <= 0, "BrainSpitEnd")
+		Loop
+	BrainSpitEnd:
+		DIA2 BC 16 Bright
 		Goto See
 	SuperSpawnShot1:
 		DIA2 AAAA 0 A_BrainSpit("ValiantRevenantSpawnShot")
