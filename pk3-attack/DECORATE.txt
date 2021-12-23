@@ -26,9 +26,24 @@ const int DEH_MASKIMXUL = 25;
 const int DEH_180_MINUTES_POUR_VIVRE = 26;
 const int DEH_SCIMITAR = 27;
 const int DEH_NDCP2 = 28;
-const int DEH_ROWDYRUDY = 29;
-const int DEH_DOOMZERO = 30;
+const int DEH_DOOMZERO = 29;
+const int DEH_NOVA2 = 30;
 const int DEH_NEGATIVEONE = -1; //I had to.
+
+const int FINAL_ICONOFSIN = 1;
+const int FINAL_COUNTDOWN = 2;
+const int FINAL_HELLSMITH = 3;
+const int FINAL_ANGRYMIND = 4;
+const int FINAL_HIEROPHANT = 5;
+const int FINAL_SUPERVILE = 6;
+const int FINAL_CARDINAL = 7;
+const int FINAL_OVERLORD = 8;
+const int FINAL_MOTHERDEMON = 9;
+const int FINAL_ARCHANGELUS = 10;
+const int FINAL_LEVIATHAN = 11;
+const int FINAL_INQUISITOR = 12;
+const int FINAL_BAPHOMET = 13;
+const int FINAL_BUBBLESHIP = 14;
 
 #include "decorate/strain.dec"
 #include "decorate/scythe2.dec"
@@ -42,6 +57,7 @@ const int DEH_NEGATIVEONE = -1; //I had to.
 #include "decorate/surviveinhell.dec"
 #include "decorate/goingdown.dec"
 #include "decorate/mayanmishap.dec"
+#include "decorate/nova2.dec"
 #include "decorate/valiant.dec"
 #include "decorate/ancientaliens.dec"
 #include "decorate/gridlock.dec"
@@ -59,7 +75,6 @@ const int DEH_NEGATIVEONE = -1; //I had to.
 #include "decorate/obituary.dec"
 #include "decorate/invasionuac.dec"
 //#include "decorate/negativeone.dec"
-//#include "decorate/rowdyrudy.dec"
 
 ACTOR DehackedZombieSpawner : RandomSpawner replaces Zombieman
 {
@@ -109,7 +124,7 @@ ACTOR DehackedImpSpawner : RandomSpawner replaces DoomImp
 	DropItem "NightmareImp", 256, 15
 	DropItem "SuperImp", 256, 10
 	DropItem "StrainFastImp", 256, 10
-	DropItem "ShadowImp", 256, 5
+	DropItem "SpiritImp", 256, 5
 }
 ACTOR DEHDoomImp : DoomImp
 {
@@ -197,7 +212,7 @@ ACTOR DEHLostSoul : LostSoul
 ACTOR DehackedPainSpawner : RandomSpawner replaces PainElemental
 {
 	DropItem "DEHPainElemental", 256, 30
-	DropItem "ShadowElemental", 256, 25
+	DropItem "SpiritElemental", 256, 25
 	DropItem "InvisibleHolobot", 256, 20
 	DropItem "PoisonSoul", 256, 15
 	DropItem "NightwatchCacodemon", 256, 10
@@ -289,7 +304,8 @@ ACTOR DEHArachnotron : Arachnotron
 ACTOR DehackedArchSpawner : RandomSpawner replaces Archvile
 {
 	DropItem "DEHArchvile", 256, 60
-	DropItem "AntaresiaElite", 256, 30
+	DropItem "AntaresiaElite", 256, 20
+	DropItem "Hierophant1", 256, 10
 	DropItem "EvilMarine", 256, 10
 }
 ACTOR DEHArchvile : Archvile
@@ -300,13 +316,14 @@ ACTOR DEHArchvile : Archvile
 
 ACTOR DehackedCyberSpawner : RandomSpawner replaces Cyberdemon
 {
-	DropItem "DEHCyberdemon", 256, 15
-	DropItem "Afrit", 256, 15
-	DropItem "Haymaker", 256, 15
+	DropItem "DEHCyberdemon", 256, 14
+	DropItem "Afrit", 256, 13
+	DropItem "Haymaker", 256, 13
 	DropItem "DarkCyberdemon", 256, 10
 	DropItem "Leviathan", 256, 10
 	DropItem "RemnantCardinal", 256, 10
 	DropItem "VivreHeresiarch", 256, 10
+	DropItem "Hierophant2", 256, 5
 	DropItem "GridlockCardinal", 256, 5
 	DropItem "HellSmith", 256, 5
 	DropItem "Motherdemon", 256, 5
@@ -368,6 +385,11 @@ ACTOR DEHFinalBossSpawner : SpecialSpot replaces BossEye
 	Stop
   SpiderMastermind:
 	TNT1 A 0 A_SpawnSingleItem("DEHAngryMastermindSpawner", 0, 0, 256)
+	TNT1 A -1
+	Stop
+  Hierophant:
+	TNT1 A 0 A_SpawnSingleItem("DEHHierophantSpawner", 0, 0, 256)
+	TNT1 A 0 A_SpawnItemEx("DEHHierophantBossEye", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
 	TNT1 A -1
 	Stop
   SuperArchvile:
@@ -888,6 +910,60 @@ ACTOR DEHAngryMastermindSpawnShot : DEHTeleportSpawnShot
   DropItem "AngryMastermindFinalPhase1", 256, 1
 }
 
+ACTOR DEHHierophantBossEye
+{
+  Height 32
+  +NOBLOCKMAP
+  +NOSECTOR
+  States
+  {
+  Spawn:
+    TNT1 A 10 A_Look
+    Loop
+  See:
+	TNT1 A 181
+    TNT1 A 2100
+	TNT1 A 0 A_SpawnItemEx("DEHBossEye", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+    Stop
+  }
+}
+ACTOR DEHHierophantSpawner
+{
+  Height 32
+  +NOBLOCKMAP
+  +NOSECTOR
+  States
+  {
+  Spawn:
+    TNT1 A 10 A_Look
+    Loop
+  See:
+	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 0)
+	TNT1 A 181 A_BrainAwake
+	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 4)
+	TNT1 A 0 A_PlaySound("brain/spit", 0, 1.0, 0, ATTN_NONE)
+	TNT1 A 0 A_BrainSpit("DEHBlankShot")
+	TNT1 A 0 A_BrainSpit("DEHRealHierophantSpawnShot")
+	Goto FakeHierophantSpawnLoop
+  FakeHierophantSpawnLoop:
+	TNT1 A 0 A_BrainSpit("DEHFakeHierophantSpawnShot")
+	TNT1 A 0 A_SetUserVar("user_count", user_count - 1)
+	TNT1 A 0 A_JumpIf(user_count <= 0, "StopSpawning")
+	Loop
+  StopSpawning:
+	TNT1 A 0 A_PlaySound("brain/spit", 0, 1.0, 0, ATTN_NONE)
+    Stop
+  }
+}
+ACTOR DEHFakeHierophantSpawnShot : SpawnShot
+{
+	DropItem "FinalBossHierophant", 256, 1
+}
+ACTOR DEHRealHierophantSpawnShot : SpawnShot
+{
+	DropItem "Hierophant1", 256, 1
+}
+
 ACTOR DEHSuperArchvileSpawner
 {
   Height 32
@@ -902,7 +978,7 @@ ACTOR DEHSuperArchvileSpawner
   See:
 	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 0)
 	TNT1 A 181 A_BrainAwake
-	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 4)
+	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 5)
 	TNT1 A 0 A_SetUserVar("user_count", ACS_NamedExecuteWithResult("Dehacked_BossTargetCount"))
 	TNT1 A 0 A_BrainSpit("DEHBlankShot")
 	TNT1 A 0 A_BrainSpit("DEHSuperArchvileSpawnShot")
@@ -939,7 +1015,7 @@ ACTOR DEHGridlockCardinalSpawner
   See:
 	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 0)
 	TNT1 A 181 A_BrainAwake
-	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 5)
+	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 6)
 	TNT1 A 0 A_PlaySound("brain/spit", 0, 1.0, 0, ATTN_NONE)
 	TNT1 A 0 A_BrainSpit("DEHBlankShot")
 	TNT1 A 0 A_BrainSpit("DEHGridlockCardinalFinalPhase1SpawnShot")
@@ -986,7 +1062,7 @@ actor DEHOverLordBossSpawner
   See:
 	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 0)
 	TNT1 A 181 A_BrainAwake
-	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 6)
+	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 7)
 	TNT1 A 0 A_PlaySound("brain/spit", 0, 1.0, 0, ATTN_NONE)
 	TNT1 A 0 A_BrainSpit("DEHBlankShot")
 	TNT1 A 0 A_BrainSpit("DEHOverLordBossSpawnShot")
@@ -1042,7 +1118,7 @@ ACTOR DEHMotherdemonSpawner
     TNT1 A 10 A_Look
     Loop
   See:
-	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 7)
+	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 8)
 	TNT1 A 181 A_BrainAwake
 	TNT1 A 2450 //70 seconds
 	TNT1 A 0 A_PlaySound("brain/spit", 0, 1.0, 0, ATTN_NONE)
@@ -1067,7 +1143,7 @@ ACTOR DEHArchangelusSpawner
     TNT1 A 10 A_Look
     Loop
   See:
-	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 8)
+	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 9)
 	TNT1 A 181 A_BrainAwake
 	TNT1 A 0 A_PlaySound("brain/spit", 0, 1.0, 0, ATTN_NONE)
 	TNT1 A 0 A_BrainSpit("DEHBlankShot")
@@ -1094,7 +1170,7 @@ ACTOR DEHLeviathanSpawner
   See:
 	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 0)
 	TNT1 A 181 A_BrainAwake
-	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 9)
+	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 10)
 	TNT1 A 0 A_BrainSpit("DEHBlankShot")
 	TNT1 A 0 A_BrainSpit("DEHLeviathanSpawnShot")
 	TNT1 A 0 A_SetUserVar("user_count", ACS_NamedExecuteWithResult("Dehacked_BossTargetCount"))
@@ -1130,7 +1206,7 @@ ACTOR DEHTheInquisitorSpawner
   See:
 	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 0)
 	TNT1 A 181 A_BrainAwake
-	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 9)
+	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 10)
 	TNT1 A 0 A_BrainSpit("DEHBlankShot")
 	TNT1 A 0 A_BrainSpit("DEHTheInquisitorSpawnShot")
 	TNT1 A 0 A_SetUserVar("user_count", ACS_NamedExecuteWithResult("Dehacked_BossTargetCount"))
@@ -1167,7 +1243,7 @@ ACTOR DEHBaphometSpawner
   See:
 	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 0)
 	TNT1 A 181 A_BrainAwake
-	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 10)
+	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 11)
 	TNT1 A 0 A_PlaySound("brain/spit", 0, 1.0, 0, ATTN_NONE)
 	TNT1 A 0 A_BrainSpit("DEHBlankShot")
 	TNT1 A 0 A_BrainSpit("DEHBaphometSpawnerShot")
@@ -1207,7 +1283,7 @@ ACTOR DEHBubbleShipSpawner
   See:
 	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 0)
 	TNT1 A 181 A_BrainAwake
-	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 11)
+	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 12)
 	TNT1 A 0 A_PlaySound("brain/spit", 0, 1.0, 0, ATTN_NONE)
 	TNT1 A 0 A_BrainSpit("DEHBlankShot")
 	TNT1 A 0 A_BrainSpit("DEHBubbleShipSpawnShot")

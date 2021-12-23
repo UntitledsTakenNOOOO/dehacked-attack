@@ -15,6 +15,7 @@ SURVIVE IN HELL (2012)              JC Dorne
 GOING DOWN (2014)                   mouldy (a.k.a. Cyriak)
 RESURGENCE (2014)                   Josh Sealy (a.k.a. Joshy), both monsters adapted from Scythe II
 MAYAN MISHAP (2014)                 Tango, Cyber Baron adapted from Realm667
+NOVA II (2015)						Various, MAP30 by Cyriak (a.k.a. mouldy), DEHACKED by Obsidian
 VALIANT (2015)                      Paul DeBruyne (a.k.a. skillsaw), many monsters adapted from Realm667
 ANCIENT ALIENS (2016)               Paul DeBruyne (a.k.a. skillsaw) et al.
 50 MONSTERS (2017)                  Brayden Hart (a.k.a. AD_79) et al, overlord base adapted from Realm667
@@ -26,7 +27,7 @@ MASKIM XUL (2018)                   Obsidian
 180 MINUTES POUR VIVRE (2018)       French Doom Community, Heresiarch base sprites from Hexen
 STRUGGLE: ANTARESIAN LEGACY (2018)  Seongbae Park (antares031), many base sprites from Heretic/Hexen
 EVITERNITY (2018)                   Joshua O'Sullivan (Dragonfly) et al.
-DOOM ZERO (2019)					Christopher Golden
+DOOM ZERO (2019)					Christopher Golden, Alpha Soul sprites by id software
 REMNANT (2019)                      Aurelius
 SUNDER (2009-2019, still ongoing)   Insane_Gazebo, Hive Mother by TheMisterCat
 ANTARESIAN RELIQUARY (2020)         Seongbae Park (antares031)

@@ -1,11 +1,11 @@
-Actor ShadowImp : DoomImp
+Actor SpiritImp : DoomImp
 {
   Health 125
   Speed 16
   PainChance 170
   Mass 200
   BloodColor "DarkGreen"
-  Obituary "%o was killed by a Shadow Imp."
+  Obituary "%o was killed by a Spirit Imp."
   Tag "Shadow Imp"
   DamageFactor "Extinguishing", 3.0
   States
@@ -128,9 +128,9 @@ ACTOR ShadowSoul
   }
 }
 
-ACTOR ShadowElemental : PainElemental
+ACTOR SpiritElemental : PainElemental
 {
-  Obituary "%o was killed by a Shadow Elemental."
+  Obituary "%o was killed by a Spirit Elemental."
   BloodColor "DarkGreen"
   Tag "Shadow Elemental"
   DamageFactor "Antiair", 3.0

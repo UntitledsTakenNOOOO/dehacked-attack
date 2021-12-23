@@ -610,7 +610,7 @@ ACTOR ValiantSuperVile : Archvile
 		Loop
 	Summoner:
 		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossCheck") == 5, "Reset")
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossCheck") == FINAL_SUPERVILE, "Reset")
 		TNT1 A 0 A_SpawnItemEx("ValiantSuperVileSummoner", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
 		Stop
 	Reset:

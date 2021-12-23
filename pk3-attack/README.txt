@@ -21,8 +21,8 @@ SCYTHE II (Erik Alm, 2005):
 	* Change: Drops a Cell instead of a Clip, because DEHACKED doesn't let you change drops but DECORATE does and the inconsistency bothered me.
 
 SCIMITAR (Cycloid, 2006):
-* SSG trooper: A zombieman wielding a super shotgun with 40 hit points, spawning with zombieman very rarely.
-	* Change: It was originally 90 HP, and also repeat-fired, and it does neither of those now.
+* SSG Trooper: A zombieman wielding a super shotgun with 40 hit points, spawning with zombieman very rarely.
+	* Change: Reduced HP from 90 down to 45. It also repeat-fired, and it doesn't do that either. It drops a Super Shotgun for consistency reasons.
 * Calfdemon: A white baby cacodemon with 100 hit points, spawning with the lost soul.
 * Cacodemoness: A green cacodemon variant emitting green fireballs.
 * Mancubus II: A mancubus with a slightly different attack pattern.
@@ -42,8 +42,8 @@ NEW DOOM COMMUNITY PROJECT 2 (Newdoom Community Team, 2009)
 	* Only appears as an Icon of Sin (or other spawn shooter) summon and does not spawn naturally.
 
 SCYTHE X (Erik Alm, 2009):
-* Shadow Imp: These mysterious monsters shoot fireballs that summon strange spiritual creatures. Spawns with imps uncommonly, but imps are VERY common.
-* Shadow Elemental: A variant of the Pain Elemental; this variant shoots out spirits-summing projectiles fast, and release more spirits when they die.
+* Spirit Imp: These mysterious monsters shoot fireballs that summon strange spiritual creatures. Spawns with imps uncommonly, but imps are VERY common.
+* Spirit Elemental: A variant of the Pain Elemental; this variant shoots out spirits-summing projectiles fast, and release more spirits when they die.
 * Shadow Spirit: The aforementioned spiritual creatures summoned by the Shadow Imp. They do not spawn naturally.
 
 JENESIS (Jimmy, 2011):
@@ -68,6 +68,9 @@ RESURGENCE (Joshy, 2014):
 MAYAN MISHAP (Tango, 2014):
 * Greater Mancubus: A variant of the mancubus that can fly and has a slightly deadlier attack pattern.
 * Cyber Baron: A cybernetic baron that occasionally fires rockets from its one cybernetic arm.
+
+NOVA II (Various mappers, DEHACKED by Obsidian, 2015):
+* Hierophant Clone: A flying baron-like creature with 750 HP that fires triple revenant missiles. Spawns with Archviles.
 
 VALIANT (skillsaw, 2015):
 * Valiant Imp: This variant on the imp shoots faster fireballs in sets of two.
@@ -119,6 +122,7 @@ STRUGGLE: ANTARESIAN LEGACY (antares, 2018):
 * Antaresia: A serpent-like creature that has a strange firing pattern. Spawns with Hell Knights.
 	* Change: Uses the Antaresian Reliquary variant instead of the original, for variety's sake (I liked the red better).
 * Antaresia Elite: A more powerful variant of the Antaresia that spawns with the Archvile. Has more HP, a lower pain chance, and moves much faster.
+* Spectral Cacodemon: A partially invisible cacodemon. It's faster and less susceptible to pain, but only has 240 HP.
 * Afriest: A flying priest with a powerful triple attack. Spawns with Cacodemons.
 * Antaresian Arachnotron: A variant of the arachnotron that moves faster and uses a chaingun instead of a plasma rifle.
 
@@ -138,6 +142,12 @@ ANTARESIAN RELIQUARY (antares, 2020):
 	* Change: Uses a blue color scheme more remniscent of Struggle, to make it visually distinct from the Former Captain.
 * Reliquary Arachnotron: A variant of the arachnotron that uses the energy bolts used by the former ranger and plasma elite.
 
+DOOM -1 (Community Project, 2020):
+* Doom -1 Imp: Another imp variant with a visually distinct fireball.
+* Shadow Imp: A stronger, translucent, 100 HP variant of the previous imp.
+* Wicked: A lost soul that has only 20 HP, and self-destructs when in melee range or when killed. Have fun!
+* Death Dragon: A 500 HP flying dragon monster that spawns with Pain Elementals, and fires slews of baron balls.
+
 BOSSES:
 * Afrit (Scythe II, Deus Vult II, Survive in Hell, Resurgence): Its volley of fireballs is deadly; you're toast if you get too close. It has 2500 HP and can fly.
 	* Spawns with cyberdemons under special circumstances, otherwise it is limited to being summoned by the Icon of Sin and other final bosses.
@@ -147,17 +157,19 @@ BOSSES:
 	* Change: Reduced health from 10000 down to 4200.
 * Remnant Cardinal (Remnant, 2019): A darker, red flying variant of the cyberdemon that fires rockets much faster in salvos of four.
 	* Change: It fires more slowly than in Remnant (4 tics/frame state --> 6), and only has 4500 health.
+* Heresiarch (180 Minutes Pour Vivre): A powerful sorcerer that unleashes a torrent of fire and plasma when it attacks.
 * Gridlock Cardinal (Gridlock 64, 2017): A darker, green flying variant of the cyberdemon that cycles between different attacks. If flinched, it retaliates with a rocket.
 	* Change: Reduced health from 8000 down to 4800.
+* Hierophant (NOVA II: The Hirth, 2015): A flying afrit-like beast who can fire both a stream of baron projectiles and retaliates with a mancubus volley all at once.
+	* Change: Reduced health from 8000 down to 5400.
 * Hell Smith (Survive in Hell, 2012): This guy unleashes a powerful wave of 12 fireballs at once as his attack, and has a LOT of health. He spawns in the cyberdemon slot.
 	* Change: Health reduced from 20000 to 8000, because he isn't the final boss of the game anymore.
-* Heresiarch (180 Minutes Pour Vivre): A powerful sorcerer that unleashes a torrent of fire and plasma when it attacks.
 * Motherdemon (Doom 64 for Doom 2, 2018): A terrifying flying boss monster that shoots mancubus fireballs and revenant missiles in large quantities that spawns rarely with cyberdemons.
 	* Change: Removed the archvile attack, made it slower, reduced health from 9000 to 5300, and upped its pain chance, all changes remniscent of the original Doom 64.
 
-* Hive Mother (Sunder, 2019): This insectoid demon can both fire mancubus fireballs very quickly AND retaliates with a set of three rockets.
+* Hive Mother (Sunder, 2019): This 2000 HP insectoid demon can both fire mancubus fireballs very quickly AND retaliates with a set of three rockets when flinched.
 	* Spawns with spider masterminds under special circumstances, otherwise it is limited to being summoned by the Icon of Sin and other final bosses.
-* Avactor Brain (Avactor, 2018): A floating giant arachnorb-like brain monster that fires BFG shots.
+* Avactor Brain (Avactor, 2018): A floating giant 2000 HP arachnorb-like brain monster that fires BFG shots.
 	* Spawns with spider masterminds under special circumstances, otherwise it is limited to being summoned by the Icon of Sin and other final bosses.
 * Indomitable Mastermind (Struggle: Antaresian Legacy, 2018): A variant of the spider mastermind that uses both a super-chaingun AND a plasma rifle at the same time.
 * Spectral Leviathan (Struggle: Antaresian Legacy, 2018): Less health and moves slower than the Leviathan, but he's partially invisible. Spawns with Spider Masterminds.
@@ -177,6 +189,7 @@ BOSSES:
 FINAL BOSSES (enabled by CVar and then selected in place of Icon of Sin):
 * Hell Smith (Survive in Hell): More aggressive than his ordinary counterpart. With his full 20000 health, he is hard to take down, and spawns AFTER a large army of other monsters.
 * Spider Mastermind (Going Down): A totally ordinary spider mastermind with nothing weird about it (ha, yeah right). Spawns with some zombies, imps, demons and revenants.
+* Hierophant: With his full 8000 HP, alongside being aided by his many clones and other monsters being spawned in, this guy is tough to take down.
 * Super Archvile [Final Boss Form] (Valiant): Spawns with a swarm of arachnorbs. Has 7500 health, and summons monsters when flinched, which get deadlier if flinched more than four times.
 * Gridlock Cardinal [Final Boss Form] (Gridlock 64): This monstrosity has both phases and moves faster, and in phase two it even now has the ability to teleport. Good luck.
 * Overlord (50 Monsters): A flying demon with a triple cacodemon attack and an ability to summon lost souls. This doesn't seem too bad at first...and then you enter phase 2.
@@ -184,3 +197,4 @@ FINAL BOSSES (enabled by CVar and then selected in place of Icon of Sin):
 * Archangelus (Eviternity): Descending from the realm opposite Hell, this guy is insane. One might wish for good luck; but truth be told, it won't save you.
 * Leviathan [Final Boss Form] (Struggle: Antaresian Legacy): With 10000 health, and summoned with many other monster-spawning statue, this guy's tough.
 * The Inquisitor (Struggle: Antaresian Legacy): This guy will unleash an absolute firestorm whenever you're in his line of sight, and spawns with a swarm of Afriests.
+* Baphomet [Final Boss Form] (DOOM -1): Spawning with a much larger army before appearing on the battlefield himself, this guy's not trivial to take out.

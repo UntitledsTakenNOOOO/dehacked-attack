@@ -130,11 +130,12 @@ ACTOR Motherdemon : MotherdemonFinal
 	{
 	Spawn:
 		64MT A 0
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossCheck") == FINAL_MOTHERDEMON, "Reset")
 		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_DOOM64, 30, 21), "Reset")
 		Goto Idle
 	Reset:
 		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
-		TNT1 A 0 A_SpawnItemEx("Cyberdemon", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+		TNT1 A 0 A_SpawnItemEx("Hierophant2", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
 		Stop
 	Idle:
 		64MT AB 10 A_Look
@@ -153,7 +154,10 @@ ACTOR Motherdemon : MotherdemonFinal
 		64MT J 2 Bright A_FatAttack1
 		64MT J 2 Bright A_FatAttack2
 		64MT E 10 A_FaceTarget
-		64MT FFGG 3 Bright A_SkelMissile
+		64MT F 3 Bright A_FatAttack3
+		64MT FF 3 Bright A_SkelMissile
+		64MT G 3 Bright A_FatAttack3
+		64MT GG 3 Bright A_SkelMissile
 		Goto See
 	Pain:
 		64MT K 40 A_Pain

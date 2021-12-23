@@ -23,11 +23,11 @@ ACTOR GridlockCardinal : Cyberdemon
     Loop
   Phase2:
 	GCRD A 0 A_ChangeFlag("COUNTKILL", 0)
-	GCRD A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossCheck") == 2, "Reset")
+	GCRD A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossCheck") == FINAL_CARDINAL, "Reset")
 	GCRD A 0 A_SpawnItemEx("GridlockCardinalPhase2", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
 	Stop
   Reset:
-	GCRD A 0 A_SpawnItemEx("Cyberdemon", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+	GCRD A 0 A_SpawnItemEx("RemnantCardinal", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
 	Stop
   See:
     GCRD AB 3 A_Chase

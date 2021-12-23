@@ -80,11 +80,11 @@ ACTOR VivreHeresiarch
   {
   Spawn:
     S180 A 0
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_180_MINUTES_POUR_VIVRE, 9, 15), "Reset")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_180_MINUTES_POUR_VIVRE, 9, 12), "Reset")
     Goto Idle
   Reset:
     TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
-    TNT1 A 0 A_SpawnItemEx("Cyberdemon", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+    TNT1 A 0 A_SpawnItemEx("Leviathan", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
     Stop
   Idle:
     S180 A 10 A_Look

@@ -22,7 +22,7 @@ actor EvilMarine
   {
   Spawn:
     PLAY A 0
-	TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SCYTHE, 16, 21), "Reset")
+	TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SCYTHE, 16, 16), "Reset")
     Goto Idle
   Reset:
 	TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)

@@ -26,11 +26,11 @@ ACTOR DarkCyberdemon : Cyberdemon
   {
   Spawn:
     DCYB A 0
-	TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_INVASION_UAC, 11, 7), "Reset")
+	TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_INVASION_UAC, 11, 6), "Reset")
     Goto Idle
   Reset:
 	TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
-	TNT1 A 0 A_SpawnItemEx("Cyberdemon", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+	TNT1 A 0 A_SpawnItemEx("DEHCyberdemon", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
 	Stop
   Idle:
     DCYB AB 10 A_Look

@@ -11,6 +11,8 @@ Actor AlphaSoul : LostSoul
 	Renderstyle Normal
 	Tag "Alpha Soul"
 	DamageFactor "Antiair", 3.0
+	Obituary "%o was spooked by an alpha soul."
+	HitObituary "%o was chewed up by an alpha soul."
 	States
 	{
 	Spawn:

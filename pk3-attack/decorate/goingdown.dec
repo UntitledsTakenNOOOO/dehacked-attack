@@ -9,7 +9,7 @@ ACTOR AngryMastermind : SpiderMastermind
   {
   Spawn:
     RSPD A 0
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossCheck") == 4, "Reset")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossCheck") == FINAL_ANGRYMIND, "Reset")
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_GOING_DOWN, 29, 20), "Reset")
     Goto Idle
   Idle:

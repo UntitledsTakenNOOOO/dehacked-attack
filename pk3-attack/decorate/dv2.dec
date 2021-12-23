@@ -16,8 +16,7 @@ Actor HellCleric //Deus Vult II
 	Tag "Hell Cleric"
 	Obituary "%o was burned by a Hell Cleric."
 	HitObituary "%o was mauled by a Hell Cleric."
-	DamageFactor "Scrapper", 2.0
-	DamageFactor "Extinguishing", 2.0
+	DamageFactor "Extinguishing", 3.0
 	States
 	{
 	Spawn:

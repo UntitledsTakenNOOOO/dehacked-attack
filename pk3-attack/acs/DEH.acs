@@ -29,8 +29,8 @@
 #define DEH_180_MINUTES_POUR_VIVRE 26
 #define DEH_SCIMITAR 27
 #define DEH_NDCP2 28
-#define DEH_ROWDYRUDY 29
-#define DEH_DOOMZERO 30
+#define DEH_DOOMZERO 29
+#define DEH_NOVA2 30
 #define DEH_NEGATIVEONE -1 //I had to.
 
 Script "Dehacked_MonsterReset" (int mapset, int origLevel, int tierLevel)
@@ -125,11 +125,11 @@ Script "Dehacked_MonsterReset" (int mapset, int origLevel, int tierLevel)
 	case DEH_NDCP2:
 		keep_spawn = GetCVar("deh_enable_ndcp2");
 		break;
-	case DEH_ROWDYRUDY:
-		keep_spawn = GetCVar("deh_enable_rowdyrudy");
-		break;
 	case DEH_DOOMZERO:
 		keep_spawn = GetCVar("deh_enable_doomzero");
+		break;
+	case DEH_NOVA2:
+		keep_spawn = GetCVar("deh_enable_nova2");
 		break;
 	case DEH_NEGATIVEONE:
 		keep_spawn = GetCVar("deh_enable_negativeone");
@@ -158,18 +158,20 @@ Script "Dehacked_SubtractiveReset" (void)
 
 Script "Dehacked_CyberCount" (void)
 {
-	int a, b, c, d, e, f, g, h, i;
+	int a, b, c, d, e, f, g, h, i, j, k;
 	a = ThingCountName("DEHCyberdemon", 0);
 	b = ThingCountName("Afrit", 0);
 	c = ThingCountName("Haymaker", 0);
 	d = ThingCountName("DarkCyberdemon", 0);
-	f = ThingCountName("Leviathan", 0);
-	e = ThingCountName("RemnantCardinal", 0);
-	g = ThingCountName("GridlockCardinal", 0);
-	h = ThingCountName("Motherdemon", 0);
-	i = ThingCountName("HellSmith", 0);
-	int result = a + b + c + d + e + f + g + h + i;
-	if(result > 6)
+	e = ThingCountName("Leviathan", 0);
+	f = ThingCountName("RemnantCardinal", 0);
+	g = ThingCountName("VivreHeresiarch", 0);
+	h = ThingCountName("Hierophant2", 0);
+	i = ThingCountName("GridlockCardinal", 0);
+	j = ThingCountName("HellSmith", 0);
+	k = ThingCountName("Motherdemon", 0);
+	int result = a + b + c + d + e + f + g + h + i + j + k;
+	if(result > 4)
 	{ //Keep the spawn
 		SetResultValue(0);
 	} else { //Reset
@@ -191,7 +193,7 @@ Script "Dehacked_SpiderCount" (void)
 	i = ThingCountName("RemnantMaster", 0);
 	j = ThingCountName("ValiantSuperVile", 0);
 	int result = a + b + c + d + e + f + g + h + i + j;
-	if(result > 3)
+	if(result > 2)
 	{ //Keep the spawn
 		SetResultValue(0);
 	} else { //Reset
@@ -234,37 +236,41 @@ Script "Dehacked_BossSelect" OPEN
 		}
 		else if(BossSelection == 5)
 		{
-			HudMessageBold(s:"VS. Super Archvile";HUDMSG_FADEINOUT,0,CR_RED,256.0,144.1,3.0,1.0,1.0);
+			HudMessageBold(s:"VS. Hierophant";HUDMSG_FADEINOUT,0,CR_ORANGE,256.0,144.1,3.0,1.0,1.0);
 		}
 		else if(BossSelection == 6)
 		{
-			HudMessageBold(s:"VS. Gridlock Cardinal";HUDMSG_FADEINOUT,0,CR_DARKGREEN,256.0,144.1,3.0,1.0,1.0);
+			HudMessageBold(s:"VS. Super Archvile";HUDMSG_FADEINOUT,0,CR_RED,256.0,144.1,3.0,1.0,1.0);
 		}
 		else if(BossSelection == 7)
 		{
-			HudMessageBold(s:"VS. Overlord";HUDMSG_FADEINOUT,0,CR_DARKRED,256.0,144.1,3.0,1.0,1.0);
+			HudMessageBold(s:"VS. Gridlock Cardinal";HUDMSG_FADEINOUT,0,CR_DARKGREEN,256.0,144.1,3.0,1.0,1.0);
 		}
 		else if(BossSelection == 8)
 		{
-			HudMessageBold(s:"VS. Motherdemon";HUDMSG_FADEINOUT,0,CR_BRICK,256.0,144.1,3.0,1.0,1.0);
+			HudMessageBold(s:"VS. Overlord";HUDMSG_FADEINOUT,0,CR_DARKRED,256.0,144.1,3.0,1.0,1.0);
 		}
 		else if(BossSelection == 9)
 		{
-			HudMessageBold(s:"VS. Archangelus";HUDMSG_FADEINOUT,0,CR_YELLOW,256.0,144.1,3.0,1.0,1.0);
+			HudMessageBold(s:"VS. Motherdemon";HUDMSG_FADEINOUT,0,CR_BRICK,256.0,144.1,3.0,1.0,1.0);
 		}
 		else if(BossSelection == 10)
 		{
-			HudMessageBold(s:"VS. The Leviathan";HUDMSG_FADEINOUT,0,CR_BLUE,256.0,144.1,3.0,1.0,1.0);
+			HudMessageBold(s:"VS. Archangelus";HUDMSG_FADEINOUT,0,CR_YELLOW,256.0,144.1,3.0,1.0,1.0);
 		}
 		else if(BossSelection == 11)
 		{
-			HudMessageBold(s:"VS. The Inquisitor";HUDMSG_FADEINOUT,0,CR_BLUE,256.0,144.1,3.0,1.0,1.0);
+			HudMessageBold(s:"VS. The Leviathan";HUDMSG_FADEINOUT,0,CR_BLUE,256.0,144.1,3.0,1.0,1.0);
 		}
 		else if(BossSelection == 12)
 		{
-			HudMessageBold(s:"VS. Baphomet";HUDMSG_FADEINOUT,0,CR_SAPPHIRE,256.0,144.1,3.0,1.0,1.0);
+			HudMessageBold(s:"VS. The Inquisitor";HUDMSG_FADEINOUT,0,CR_BLUE,256.0,144.1,3.0,1.0,1.0);
 		}
 		else if(BossSelection == 13)
+		{
+			HudMessageBold(s:"VS. Baphomet";HUDMSG_FADEINOUT,0,CR_SAPPHIRE,256.0,144.1,3.0,1.0,1.0);
+		}
+		else if(BossSelection == 14)
 		{
 			HudMessageBold(s:"VS. The Bubble Ship";HUDMSG_FADEINOUT,0,CR_SAPPHIRE,256.0,144.1,3.0,1.0,1.0);
 		}
@@ -291,37 +297,41 @@ Script "Dehacked_BossSpawn" (void)
 	}
 	else if(BossSelection == 5)
 	{
-		SetActorState(0, "SuperArchvile", 0);
+		SetActorState(0, "Hierophant", 0);
 	}
 	else if(BossSelection == 6)
 	{
-		SetActorState(0, "GridlockCardinal", 0);
+		SetActorState(0, "SuperArchvile", 0);
 	}
 	else if(BossSelection == 7)
 	{
-		SetActorState(0, "Overlord", 0);
+		SetActorState(0, "GridlockCardinal", 0);
 	}
 	else if(BossSelection == 8)
 	{
-		SetActorState(0, "Motherdemon", 0);
+		SetActorState(0, "Overlord", 0);
 	}
 	else if(BossSelection == 9)
 	{
-		SetActorState(0, "Archangelus", 0);
+		SetActorState(0, "Motherdemon", 0);
 	}
 	else if(BossSelection == 10)
 	{
-		SetActorState(0, "Leviathan", 0);
+		SetActorState(0, "Archangelus", 0);
 	}
 	else if(BossSelection == 11)
 	{
-		SetActorState(0, "TheInquisitor", 0);
+		SetActorState(0, "Leviathan", 0);
 	}
 	else if(BossSelection == 12)
 	{
-		SetActorState(0, "Baphomet", 0);
+		SetActorState(0, "TheInquisitor", 0);
 	}
 	else if(BossSelection == 13)
+	{
+		SetActorState(0, "Baphomet", 0);
+	}
+	else if(BossSelection == 14)
 	{
 		SetActorState(0, "BubbleShip", 0);
 	}
@@ -361,27 +371,30 @@ Script "Dehacked_BossMusic" (int music)
 			SetMusic("GOINDOWN");
 			break;
 		Case 4:
-			SetMusic("VALIANT");
+			SetMusic("NOVAHIER");
 			break;
 		Case 5:
-			SetMusic("GRIDLOCK");
+			SetMusic("VALIANT");
 			break;
 		Case 6:
-			SetMusic("OVERLORD");
+			SetMusic("GRIDLOCK");
 			break;
 		Case 7:
-			SetMusic("64MOTHER");
+			SetMusic("OVERLORD");
 			break;
 		Case 8:
-			SetMusic("ARCANGEL");
+			SetMusic("64MOTHER");
 			break;
 		Case 9:
-			SetMusic("ANTARES");
+			SetMusic("ARCANGEL");
 			break;
 		Case 10:
-			SetMusic("BAPHOMET");
+			SetMusic("ANTARES");
 			break;
 		Case 11:
+			SetMusic("BAPHOMET");
+			break;
+		Case 12:
 			SetMusic("MICROMAN");
 			break;
 		}

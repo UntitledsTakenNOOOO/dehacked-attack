@@ -168,3 +168,8 @@ slomnibus/pain		NDCPPAI
 alphasoul/sight		DZSKSIT
 alphasoul/pain		DZSKPAI
 alphasoul/death		DZSKDTH
+
+monster/hiesit		dshiesit
+monster/hieact		dshieact
+monster/hiepai		dshiepai
+monster/hiedth		dshiedth
