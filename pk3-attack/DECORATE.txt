@@ -177,12 +177,12 @@ ACTOR DEHRevenant : Revenant
 
 ACTOR DehackedCacoSpawner : RandomSpawner replaces Cacodemon
 {
-	DropItem "DEHCacodemon", 256, 35
+	DropItem "DEHCacodemon", 256, 33
 	DropItem "Cacodemoness", 256, 10
 	DropItem "Holobot", 256, 10
 	DropItem "SpectralCaco", 256, 10
 	DropItem "Cacolich", 256, 10
-	DropItem "Slomnibus", 256, 5
+	DropItem "Slomnibus", 256, 7
 	DropItem "AlienGuardian", 256, 5
 	DropItem "NightmareCacodemon", 256, 5
 	DropItem "AstralCaco", 256, 5
@@ -214,12 +214,12 @@ ACTOR DEHLostSoul : LostSoul
 
 ACTOR DehackedPainSpawner : RandomSpawner replaces PainElemental
 {
-	DropItem "DEHPainElemental", 256, 25
-	DropItem "SpiritElemental", 256, 20
-	DropItem "InvisibleHolobot", 256, 18
+	DropItem "DEHPainElemental", 256, 20
+	DropItem "InvisibleHolobot", 256, 15
 	DropItem "PoisonSoul", 256, 15
-	DropItem "HellDragon", 256, 12
-	DropItem "NightwatchCacodemon", 256, 10
+	DropItem "SpiritElemental", 256, 20
+	DropItem "HellDragon", 256, 15
+	DropItem "NightwatchCacodemon", 256, 15
 }
 ACTOR DEHPainElemental : PainElemental
 {
@@ -484,9 +484,10 @@ ACTOR DEHRandomSpawner : RandomSpawner
   DropItem "Fatso"			255  5
   DropItem "BaronOfHell"	255  2
   DropItem "Archvile"		255  1
-  DropItem "SkullTurret"	255  8
-  DropItem "ChaingunStatue"	255  8
-  DropItem "PossessedCloneMarine"	255  8
+  DropItem "SkullTurret"	255  6
+  DropItem "ChaingunStatue"	255  6
+  DropItem "PossessedCloneMarine"	255  6
+  DropItem "NegativeOneRocketTurret"	255	6
   DropItem "AfriestStatue"	255  4
   DropItem "AfriestSpecial"	255  4
   DropItem "DEHMiniBossSpawner"	255  1
@@ -508,9 +509,10 @@ ACTOR DEHBossEye : BossEye
   DropItem "Fatso"			255  5
   DropItem "BaronOfHell"	255  2
   DropItem "Archvile"		255  1
-  DropItem "SkullTurret"	255  8
-  DropItem "ChaingunStatue"	255  8
-  DropItem "PossessedCloneMarine"	255  8
+  DropItem "SkullTurret"	255  6
+  DropItem "ChaingunStatue"	255  6
+  DropItem "PossessedCloneMarine"	255  6
+  DropItem "NegativeOneRocketTurret"	255	6
   DropItem "AfriestStatue"	255  4
   DropItem "AfriestSpecial"	255  4
   DropItem "DEHMiniBossSpawner"	255  1

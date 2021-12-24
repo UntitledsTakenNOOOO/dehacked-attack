@@ -195,7 +195,7 @@ ACTOR NightmareImp : DoomImp
 	{
 	Spawn:
 		TROO A 0
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_DOOM64, 3, 6), "Reset")
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_DOOM64, 3, 5), "Reset")
 		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_SubtractiveReset"), "SubtractiveReset")
 		Goto "Super::Spawn"
 	Reset:
@@ -273,12 +273,12 @@ ACTOR NightmareCacodemon : Cacodemon
 	{
 	Spawn:
 		HEAD A 0
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_DOOM64, 32, 16), "Reset")
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_DOOM64, 32, 15), "Reset")
 		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_SubtractiveReset"), "SubtractiveReset")
 		Goto "Super::Spawn"
 	Reset:
 		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
-		TNT1 A 0 A_SpawnItemEx("DEHCacodemon", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+		TNT1 A 0 A_SpawnItemEx("SpectralCaco", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
 		Stop
 	SubtractiveReset:
 		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
@@ -304,7 +304,7 @@ ACTOR NightmareCacodemonSubtract : NightmareCacodemon
 		Goto Idle
 	Reset:
 		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
-		TNT1 A 0 A_SpawnItemEx("DEHCacodemon", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+		TNT1 A 0 A_SpawnItemEx("SpectralCaco", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
 		Stop
 	Idle:
 		HEAD A 10 A_Look
