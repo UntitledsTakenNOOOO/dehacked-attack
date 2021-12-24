@@ -90,7 +90,7 @@ ACTOR ReliquaryMachinegun : DoomWeapon
   Weapon.AmmoType "Clip"
   Obituary "$OB_MPPISTOL"
   +WEAPON.WIMPY_WEAPON
-  Inventory.Pickupmessage "$PICKUP_PISTOL_DROPPED"
+  Inventory.Pickupmessage "You got a machinegun!"
   Tag "Machinegun"
   States
   {

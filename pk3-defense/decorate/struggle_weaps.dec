@@ -181,7 +181,7 @@ ACTOR StrugglePistol : DoomWeapon
   Weapon.AmmoType "Clip"
   Obituary "$OB_MPPISTOL"
   +WEAPON.WIMPY_WEAPON
-  Inventory.PickupMessage "$PICKUP_PISTOL_DROPPED"
+  Inventory.PickupMessage "You got a machine pistol!"
   Inventory.PickupSound "struggle/w_pkup"
   Tag "Machine Pistol"
   States
