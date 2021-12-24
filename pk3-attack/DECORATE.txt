@@ -80,8 +80,8 @@ ACTOR DehackedZombieSpawner : RandomSpawner replaces Zombieman
 {
 	DropItem "DEHZombieman", 256, 60
 	DropItem "FormerRanger", 256, 20
-	DropItem "SSGZombieMan", 256, 10
 	DropItem "RocketGuy", 256, 10
+	DropItem "SSGZombieMan", 256, 10
 }
 ACTOR DEHZombieman : Zombieman
 {
@@ -276,8 +276,8 @@ ACTOR DEHBaronOfHell : BaronOfHell
 ACTOR DehackedFatsoSpawner : RandomSpawner replaces Fatso
 {
 	DropItem "DEHFatso", 256, 40
-	DropItem "FatsoII", 256, 20
 	DropItem "AlienFatso", 256, 20
+	DropItem "FatsoII", 256, 20
 	DropItem "GreaterMancubus", 256, 10
 	DropItem "ValiantSuperMancubus", 256, 10
 }
@@ -307,10 +307,10 @@ ACTOR DEHArachnotron : Arachnotron
 
 ACTOR DehackedArchSpawner : RandomSpawner replaces Archvile
 {
-	DropItem "DEHArchvile", 256, 60
-	DropItem "AntaresiaElite", 256, 20
+	DropItem "DEHArchvile", 256, 70
 	DropItem "Hierophant1", 256, 10
 	DropItem "EvilMarine", 256, 10
+	DropItem "AntaresiaElite", 256, 10
 }
 ACTOR DEHArchvile : Archvile
 {

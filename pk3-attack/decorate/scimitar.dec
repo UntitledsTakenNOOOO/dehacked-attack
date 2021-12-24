@@ -1,6 +1,6 @@
 ACTOR SSGZombieMan
 {
-  Health 40 //Change: Health lowered from 90 down to 40
+  Health 45 //Change: Health lowered from 90 down to 45
   Radius 20
   Height 56
   Speed 11
@@ -20,7 +20,7 @@ ACTOR SSGZombieMan
   {
   Spawn:
     PSSG A 0
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SCIMITAR, 8, 21), "Reset")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SCIMITAR, 8, 22), "Reset")
     Goto Idle
   Reset:
     TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
@@ -150,7 +150,7 @@ ACTOR FatsoII : Fatso
   {
   Spawn:
     FATT A 0
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SCIMITAR, 7, 1), "Reset")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SCIMITAR, 7, 7), "Reset")
     Goto Idle
   Reset:
     TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)

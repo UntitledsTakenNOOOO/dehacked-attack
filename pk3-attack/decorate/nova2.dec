@@ -33,7 +33,7 @@ Actor Hierophant1 //Replaces Meat5
   {
   Spawn:
     HIER A 0
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_NOVA2, 30, 12), "Reset")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_NOVA2, 30, 16), "Reset")
     Goto Idle
   Reset:
     TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
