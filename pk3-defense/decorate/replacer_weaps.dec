@@ -1,9 +1,11 @@
+ACTOR DoomClass : DEHBoolean {}
 ACTOR JohnDoom : DoomPlayer
 {
-  Player.DisplayName "Doomguy"
+  Player.DisplayName "Doomguy (Vanilla)"
   Player.StartItem "DEHPistol"
   Player.StartItem "Clip", 50
   Player.StartItem "DEHFist"
+  Player.StartItem "DoomClass"
 /*
   Player.WeaponSlot 1, Chainsaw, Fist
   Player.WeaponSlot 2, Pistol
@@ -22,6 +24,8 @@ ACTOR DEHPistol : Pistol
   States
   {
   Fire:
+    SHTG A 0 A_JumpIfInventory("StrainClass", 1, "FireStrain")
+    SHTG A 0 A_JumpIfInventory("DV2Class", 1, "FireDV2")
     PISG A 4
     PISG B 0 A_FireBullets(0, 0, 1, 5, "BulletPuff")
     PISG B 0 A_PlaySound("weapons/pistol", CHAN_WEAPON)
@@ -29,6 +33,28 @@ ACTOR DEHPistol : Pistol
     PISG C 4
     PISG B 5 A_ReFire
     Goto Ready
+  FireDV2:
+    PISG A 4
+    PISG B 0 A_FireBullets(0, 0, 1, 5, "BulletPuff")
+    PISG B 0 A_PlaySound("dv2/pistol", CHAN_WEAPON)
+    PISG B 6 A_GunFlash
+    PISG C 4
+    PISG B 5 A_ReFire
+    Goto Ready
+  FireStrain:
+    PISG A 3
+    PISG B 0 A_FireBullets(0, 0, 1, 5, "BulletPuff")
+    PISG B 0 A_PlaySound("weapons/pistol", CHAN_WEAPON)
+    PISG B 5 A_GunFlash("Flash2")
+    PISG C 3
+    PISG B 5 A_ReFire
+    Goto Ready
+  Flash:
+    PISF A 7 Bright A_Light1
+    Goto LightDone
+  Flash2:
+    PISF A 6 Bright A_Light1
+    Goto LightDone
   }
 }
 ACTOR DEHShotgun : Shotgun
@@ -37,7 +63,7 @@ ACTOR DEHShotgun : Shotgun
   {
   Fire:
 	SHTG A 3
-    SHTG A 0 A_JumpIfInventory("DV2DualPistols", 1, "FireDV2")
+    SHTG A 0 A_JumpIfInventory("DV2Class", 1, "FireDV2")
     SHTG A 0 A_FireBullets(5.6, 0, 7, 5, "BulletPuff")
     SHTG A 0 A_PlaySound("weapons/shotgf", CHAN_WEAPON)
     SHTG A 7 A_GunFlash
@@ -62,7 +88,7 @@ ACTOR DEHChaingun : Chaingun
   States
   {
   Fire:
-     CHGG A 0 A_JumpIfInventory("DV2DualPistols", 1, "FireDV2")
+     CHGG A 0 A_JumpIfInventory("DV2Class", 1, "FireDV2")
      CHGG A 0 A_PlaySound("weapons/chngun", CHAN_WEAPON)
      CHGG A 0 A_GunFlash
      CHGG A 4 A_FireBullets(5.6, 0, 1, 5, "BulletPuff")
@@ -94,7 +120,7 @@ ACTOR DEHPlasmaRifle : PlasmaRifle
   States
   {
   Fire:
-    PLSG A 0 A_JumpIfInventory("ValiantPistol", 1, "FireValiant")
+    PLSG A 0 A_JumpIfInventory("ValiantClass", 1, "FireValiant")
     PLSG A 0 A_Jump(128, "Fire2")
     PLSG A 0 A_GunFlash("Flash")
     PLSG A 3 A_FireCustomMissile("PlasmaBall", 0, 1)

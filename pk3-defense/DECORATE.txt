@@ -5,6 +5,14 @@ const int DEH_DEF_VALIANT = 3;
 const int DEH_DEF_MASKIMXUL = 4;
 const int DEH_DEF_STRUGGLE = 5;
 const int DEH_DEF_RELIQUARY = 6;
+const int DEH_DEF_NEGATIVEONE = 7; //No negative joke because it's so much harder to deal with here
+
+actor DEHBoolean : Inventory
+{
+    Inventory.MaxAmount 1
+    +UNDROPPABLE
+    -INVBAR
+}
 
 #include "decorate/replacer_weaps.dec"
 #include "decorate/strain_weaps.dec"
@@ -13,6 +21,7 @@ const int DEH_DEF_RELIQUARY = 6;
 #include "decorate/maskimxul_weaps.dec"
 #include "decorate/struggle_weaps.dec"
 #include "decorate/reliquary_weaps.dec"
+#include "decorate/negativeone_weaps.dec"
 
 #include "decorate/classweapons.dec"
 #include "decorate/classitems.dec"

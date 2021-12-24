@@ -1,18 +1,53 @@
+ACTOR StrainClass : DEHBoolean {}
 ACTOR JohnStrain : DoomPlayer
 {
-  Player.DisplayName "STRAIN Doomguy"
+  Player.DisplayName "Alternate Doomguy (STRAIN)"
   Player.StartItem "StrainDoubleFist"
-  Player.StartItem "StrainPistol"
+  Player.StartItem "DEHPistol"
   Player.StartItem "Clip", 0
+  Player.StartItem "StrainClass"
 /*
   Player.WeaponSlot 1, Chainsaw, StrainDoubleFist
-  Player.WeaponSlot 2, StrainPistol
+  Player.WeaponSlot 2, DEHPistol
   Player.WeaponSlot 3, SuperShotgun, StrainSawedOff
   Player.WeaponSlot 4, Chaingun
   Player.WeaponSlot 5, RocketLauncher
   Player.WeaponSlot 6, StrainNFG
   Player.WeaponSlot 7, StrainPsychicBlaster
 */
+  States
+  {
+  Spawn:
+    PLA2 A -1
+    Loop
+  See:
+    PLA2 ABCD 4 
+    Loop
+  Missile:
+    PLA2 E 12
+    Goto Spawn
+  Melee:
+    PLA2 F 6 BRIGHT
+    Goto Missile
+  Pain:
+    PLA2 G 4 
+    PLA2 G 4 A_Pain
+    Goto Spawn
+  Death:
+    PLA2 H 10
+    PLA2 I 10 A_PlayerScream
+    PLA2 J 10 A_NoBlocking
+    PLA2 KLM 10
+    PLA2 N -1
+    Stop
+  XDeath:
+    PLA2 O 5
+    PLA2 P 5 A_XScream
+    PLA2 Q 5 A_NoBlocking
+    PLA2 RSTUV 5
+    PLA2 W -1
+    Stop
+  }
 }
 
 ACTOR StrainRedArmor : BasicArmorPickup
@@ -61,44 +96,6 @@ ACTOR StrainDoubleFist : Weapon
   }
 }
 
-ACTOR StrainPistol : DoomWeapon
-{
-  Weapon.SelectionOrder 1900
-  Weapon.AmmoUse 1
-  Weapon.AmmoGive 20
-  Weapon.AmmoType "Clip"
-  Obituary "$OB_MPPISTOL"
-  +WEAPON.WIMPY_WEAPON
-  Inventory.Pickupmessage "$PICKUP_PISTOL_DROPPED"
-  Tag "$TAG_PISTOL"
-  States
-  {
-  Ready:
-    PISG A 1 A_WeaponReady
-    Loop
-  Deselect:
-    PISG A 1 A_Lower
-    Loop
-  Select:
-    PISG A 1 A_Raise
-    Loop
-  Fire:
-    PISG A 3
-    PISG B 5 A_FirePistol
-    PISG C 3
-    PISG B 5 A_ReFire
-    Goto Ready
-  Flash:
-    PISF A 6 Bright A_Light1
-    Goto LightDone
-    PISF A 6 Bright A_Light1
-    Goto LightDone
-  Spawn:
-    PIST A -1
-    Stop
-  }
-}
-
 ACTOR StrainSawedOff : DoomWeapon
 {
   Weapon.SelectionOrder 1300
@@ -122,7 +119,7 @@ ACTOR StrainSawedOff : DoomWeapon
   Fire:
     SG3G A 3
     SG3G A 0 A_FireBullets (5.6, 0, 7, 5, "BulletPuff")
-    SG3G A 0 A_PlaySound ("strain/shotgf", CHAN_WEAPON)
+    SG3G A 0 A_PlaySound("strain/shotgf", CHAN_WEAPON)
     SG3G A 4 A_GunFlash
     SG3G B 5
     SG3G C 4

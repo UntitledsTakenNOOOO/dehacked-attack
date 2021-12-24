@@ -1,9 +1,11 @@
+ACTOR ValiantClass : DEHBoolean {}
 ACTOR JohnValiant : DoomPlayer
 {
-  Player.DisplayName "Valiant Doomguy"
+  Player.DisplayName "Doomguy (Valiant)"
   Player.StartItem "ValiantPistol"
   Player.StartItem "DEHFist"
   Player.StartItem "Clip", 50
+  Player.StartItem "ValiantClass"
 /*
   Player.WeaponSlot 1, Chainsaw, Fist
   Player.WeaponSlot 2, ValiantPistol

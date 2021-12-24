@@ -11,18 +11,16 @@ addslotdefault 6 DEHPlasmaRifle
 addslotdefault 7 DEHBFG9000
 
 addslotdefault 1 StrainDoubleFist
-addslotdefault 2 StrainPistol
 addslotdefault 3 StrainSawedOff
 addslotdefault 6 StrainNFG
 addslotdefault 7 StrainPsychicBlaster
 
 addslotdefault 1 DV2Gauntlets
-addslotdefault 2 DV2DualPistols
+addslotdefault 2 DualPistols
 
 addslotdefault 2 ValiantPistol
 addslotdefault 4 ValiantChaingun
 
-addslotdefault 2 MaskimXulDualPistols
 addslotdefault 5 MaskimXulHandOfAfrit
 addslotdefault 6 MaskimXulJackBombs
 addslotdefault 7 MaskimXulGrimoireExcidium
@@ -47,6 +45,15 @@ addslotdefault 5 ReliquaryRocketLauncher
 addslotdefault 6 ReliquaryPlasmaRifle
 addslotdefault 7 ReliquaryBFG9000
 
+addslotdefault 1 NegativeOneGauntlets
+addslotdefault 2 NegativeOnePistol
+addslotdefault 3 NegativeOneShotgun
+addslotdefault 3 NegativeOneSuperShotgun
+addslotdefault 4 NegativeOneUzi
+addslotdefault 5 NegativeOneRocketLauncher
+addslotdefault 6 NegativeOneDarkSceptre
+addslotdefault 7 NegativeOneUnmakyr
+
 clearplayerclasses
 addplayerclass JohnDoom
 addplayerclass JohnStrain
@@ -55,3 +62,4 @@ addplayerclass JohnValiant
 addplayerclass JohnMaskimXul
 addplayerclass JohnStruggle
 addplayerclass JohnReliquary
+addplayerclass JohnNegativeOne

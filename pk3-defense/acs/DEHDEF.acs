@@ -7,6 +7,8 @@
 #define DEH_MASKIMXUL 4
 #define DEH_STRUGGLE 5
 #define DEH_RELIQUARY 6
+#define DEH_ROWDYRUDY 7
+#define DEH_NEGATIVEONE 8
 
 Script "Dehacked_Defense_Enter" ENTER
 {
@@ -83,6 +85,11 @@ Script "Dehacked_Defense_Enter" ENTER
 			GiveInventory("ReliquaryShotgun", 1);
 			GiveInventory("Shell", 12);
 		}
+		else if(GetActorClass(0) == "JohnNegativeOne")
+		{
+			GiveInventory("NegativeOneShotgun", 1);
+			GiveInventory("Shell", 12);
+		}
 		else
 		{
 			GiveInventory("DEHShotgun", 1);
@@ -103,6 +110,10 @@ Script "Dehacked_Defense_Enter" ENTER
 		{
 			GiveInventory("ReliquaryChainsaw", 1);
 		}
+		else if(GetActorClass(0) == "JohnNegativeOne")
+		{
+			GiveInventory("NegativeOneGauntlets", 1);
+		}
 		else
 		{
 			GiveInventory("DEHChainsaw", 1);
@@ -118,6 +129,11 @@ Script "Dehacked_Defense_Enter" ENTER
 		else if(GetActorClass(0) == "JohnReliquary")
 		{
 			GiveInventory("ReliquarySuperShotgun", 1);
+			GiveInventory("Shell", 12);
+		}
+		else if(GetActorClass(0) == "JohnNegativeOne")
+		{
+			GiveInventory("NegativeOneSuperShotgun", 1);
 			GiveInventory("Shell", 12);
 		}
 		else
@@ -143,6 +159,11 @@ Script "Dehacked_Defense_Enter" ENTER
 			GiveInventory("ReliquaryChaingun", 1);
 			GiveInventory("Clip", 36);
 		}
+		else if(GetActorClass(0) == "JohnNegativeOne")
+		{
+			GiveInventory("NegativeOneUzi", 1);
+			GiveInventory("Clip", 30);
+		}
 		else
 		{
 			GiveInventory("DEHChaingun", 1);
@@ -154,22 +175,27 @@ Script "Dehacked_Defense_Enter" ENTER
 		if(GetActorClass(0) == "JohnMaskimXul")
 		{
 			GiveInventory("MaskimXulHandOfAfrit", 1);
-			GiveInventory("MaskimXulDemonHeart", 2);
+			GiveInventory("MaskimXulDemonHeart", 3);
 		}
 		else if(GetActorClass(0) == "JohnStruggle")
 		{
 			GiveInventory("StruggleGrenadeLauncher", 1);
-			GiveInventory("RocketAmmo", 2);
+			GiveInventory("RocketAmmo", 3);
 		}
 		else if(GetActorClass(0) == "JohnReliquary")
 		{
 			GiveInventory("ReliquaryRocketLauncher", 1);
-			GiveInventory("RocketAmmo", 2);
+			GiveInventory("RocketAmmo", 3);
+		}
+		else if(GetActorClass(0) == "JohnNegativeOne")
+		{
+			GiveInventory("NegativeOneRocketLauncher", 1);
+			GiveInventory("RocketAmmo", 3);
 		}
 		else
 		{
 			GiveInventory("DEHRocketLauncher", 1);
-			GiveInventory("RocketAmmo", 2);
+			GiveInventory("RocketAmmo", 3);
 		}
 	}
 	if(GetCVar("deh_def_plasmariflestart") > 0 && !CheckInventory("DEHPlasmaRifle") && !CheckInventory("StrainNFG") && !CheckInventory("MaskimXulJackBombs") && !CheckInventory("StruggleAssaultRifle") && !CheckInventory("ReliquaryPlasmaRifle"))
@@ -193,6 +219,11 @@ Script "Dehacked_Defense_Enter" ENTER
 		{
 			GiveInventory("ReliquaryPlasmaRifle", 1);
 			GiveInventory("AntaresianCell", 32);
+		}
+		else if(GetActorClass(0) == "JohnNegativeOne")
+		{
+			GiveInventory("NegativeOneDarkSceptre", 1);
+			GiveInventory("HellCharge", 40);
 		}
 		else
 		{
@@ -222,6 +253,11 @@ Script "Dehacked_Defense_Enter" ENTER
 		{
 			GiveInventory("ReliquaryBFG9000", 1);
 			GiveInventory("AntaresianCell", 64);
+		}
+		else if(GetActorClass(0) == "JohnNegativeOne")
+		{
+			GiveInventory("NegativeOneUnmakyr", 1);
+			GiveInventory("HellCharge", 80);
 		}
 		else
 		{
@@ -279,17 +315,11 @@ Script "Dehacked_BackpackHandler" (void)
 	SetAmmoCapacity("JackBombAmmo", 20);
 	SetAmmoCapacity("223CaliberMagazine", 320);
 	SetAmmoCapacity("AntaresianCell", 480);
+	SetAmmoCapacity("HellCharge", 600);
 	if(GetActorClass(0) == "JohnValiant")
 	{
 		GiveInventory("Clip", 15);
 		GiveInventory("Shell", 4);
-		GiveInventory("RocketAmmo", 1);
-		GiveInventory("MaskimXulDemonHeart", 1);
-		GiveInventory("Cell", 20);
-		GiveInventory("NFGBattery", 6);
-		GiveInventory("JackBombAmmo", 1);
-		GiveInventory("223CaliberMagazine", 20);
-		GiveInventory("AntaresianCell", 16);
 		SetAmmoCapacity("Clip", 600);
 		SetAmmoCapacity("Shell", 100);
 		SetAmmoCapacity("RocketAmmo", 100);
@@ -299,13 +329,6 @@ Script "Dehacked_BackpackHandler" (void)
 	{
 		GiveInventory("Clip", 12);
 		GiveInventory("Shell", 2);
-		GiveInventory("RocketAmmo", 1);
-		GiveInventory("MaskimXulDemonHeart", 1);
-		GiveInventory("Cell", 20);
-		GiveInventory("NFGBattery", 6);
-		GiveInventory("JackBombAmmo", 1);
-		GiveInventory("223CaliberMagazine", 20);
-		GiveInventory("AntaresianCell", 16);
 		SetAmmoCapacity("Clip", 360);
 		SetAmmoCapacity("Shell", 72);
 		SetAmmoCapacity("RocketAmmo", 36);
@@ -315,13 +338,6 @@ Script "Dehacked_BackpackHandler" (void)
 	{
 		GiveInventory("Clip", 12);
 		GiveInventory("Shell", 4);
-		GiveInventory("RocketAmmo", 1);
-		GiveInventory("MaskimXulDemonHeart", 1);
-		GiveInventory("Cell", 20);
-		GiveInventory("NFGBattery", 6);
-		GiveInventory("JackBombAmmo", 1);
-		GiveInventory("223CaliberMagazine", 20);
-		GiveInventory("AntaresianCell", 16);
 		SetAmmoCapacity("Clip", 480);
 		SetAmmoCapacity("Shell", 80);
 		SetAmmoCapacity("RocketAmmo", 80);
@@ -331,18 +347,19 @@ Script "Dehacked_BackpackHandler" (void)
 	{
 		GiveInventory("Clip", 10);
 		GiveInventory("Shell", 4);
-		GiveInventory("RocketAmmo", 1);
-		GiveInventory("MaskimXulDemonHeart", 1);
-		GiveInventory("Cell", 20);
-		GiveInventory("NFGBattery", 6);
-		GiveInventory("JackBombAmmo", 1);
-		GiveInventory("223CaliberMagazine", 20);
-		GiveInventory("AntaresianCell", 16);
 		SetAmmoCapacity("Clip", 400);
 		SetAmmoCapacity("Shell", 100);
 		SetAmmoCapacity("RocketAmmo", 100);
 		SetAmmoCapacity("MaskimXulDemonHeart", 100);
 	}
+	GiveInventory("RocketAmmo", 1);
+	GiveInventory("MaskimXulDemonHeart", 1);
+	GiveInventory("Cell", 20);
+	GiveInventory("NFGBattery", 6);
+	GiveInventory("JackBombAmmo", 1);
+	GiveInventory("223CaliberMagazine", 20);
+	GiveInventory("AntaresianCell", 16);
+	GiveInventory("HellCharge", 20);
 }
 
 Script "Dehacked_MapNumber" (void)
@@ -358,6 +375,11 @@ Script "Dehacked_RandomizerCheck" (void)
 Script "Dehacked_LevelScaling" (void)
 {
 	int x = GetCVar("deh_def_level_scaling");
+	SetResultValue(x);
+}
+Script "Dehacked_PistolCheck" (void)
+{
+	int x = GetCVar("deh_def_spawn_pistols");
 	SetResultValue(x);
 }
 Script "Dehacked_WeaponStay" (void)
@@ -392,6 +414,9 @@ Script "Dehacked_WeaponReset" (int mapset, int tierLevel)
 	case DEH_RELIQUARY:
 		keep_spawn = GetCVar("deh_def_enable_reliquary");
 		break;
+	case DEH_NEGATIVEONE:
+		keep_spawn = GetCVar("deh_def_enable_negativeone");
+		break;
 	}
 	if(GetCVar("deh_def_level_scaling") && GetLevelInfo(LEVELINFO_LEVELNUM) < tierLevel)
 	{
@@ -406,7 +431,7 @@ Script "Dehacked_WeaponReset" (int mapset, int tierLevel)
 	}
 }
 
-int DehackedDefenseWeapons[7][7] = 
+int DehackedDefenseWeapons[8][7] = 
 {
 	//Doom
 	{"DEHChainsaw", "DEHShotgun", "DEHSuperShotgun", "DEHChaingun", "DEHRocketLauncher", "DEHPlasmaRifle", "DEHBFG9000"},
@@ -421,7 +446,9 @@ int DehackedDefenseWeapons[7][7] =
 	//Stuggle
 	{"StruggleDrillMachine", "StruggleShotgun", "StruggleSuperShotgun", "StruggleDualPistols", "StruggleGrenadeLauncher", "StruggleAssaultRifle", "StruggleLeichenfaust"},
 	//Antaresian Reliquary
-	{"ReliquaryChainsaw", "ReliquaryShotgun", "ReliquarySuperShotgun", "ReliquaryChaingun", "ReliquaryRocketLauncher", "ReliquaryPlasmaRifle", "ReliquaryBFG9000"}
+	{"ReliquaryChainsaw", "ReliquaryShotgun", "ReliquarySuperShotgun", "ReliquaryChaingun", "ReliquaryRocketLauncher", "ReliquaryPlasmaRifle", "ReliquaryBFG9000"},
+	//Antaresian Reliquary
+	{"NegativeOneGauntlets", "NegativeOneShotgun", "NegativeOneSuperShotgun", "NegativeOneUzi", "NegativeOneRocketLauncher", "NegativeOneDarkSceptre", "NegativeOneUnmakyr"}
 };
 
 Script "Dehacked_WeaponSpawn" (int class, int slot)

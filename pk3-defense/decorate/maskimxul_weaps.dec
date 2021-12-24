@@ -1,12 +1,14 @@
+ACTOR MaskimXulClass : DEHBoolean {}
 ACTOR JohnMaskimXul : DoomPlayer
 {
-  Player.DisplayName "Maskim Xul Marine"
+  Player.DisplayName "Doomguy (Maskim Xul)"
   Player.StartItem "DEHFist"
-  Player.StartItem "MaskimXulDualPistols"
+  Player.StartItem "DualPistols"
   Player.StartItem "Clip", 0
+  Player.StartItem "MaskimXulClass"
 /*
   Player.WeaponSlot 1, Chainsaw, Fist
-  Player.WeaponSlot 2, MaskimXulDualPistols
+  Player.WeaponSlot 2, DualPistols
   Player.WeaponSlot 3, SuperShotgun, Shotgun
   Player.WeaponSlot 4, Chaingun
   Player.WeaponSlot 5, MaskimXulHandOfAfrit
@@ -15,7 +17,7 @@ ACTOR JohnMaskimXul : DoomPlayer
 */
 }
 
-//The next four actors are all a gross hack.
+//The next five actors are all a gross hack.
 ACTOR MaskimXulRouletteSoulSphere : SoulSphere
 {
   +INVENTORY.BIGPOWERUP
@@ -76,42 +78,6 @@ ACTOR MaskimXulRouletteBerserkSphere : Berserk
 	PSTR E 6 Bright
 	PSTR E 0 A_ChangeFlag("COUNTITEM", 0)
 	PSTR E 0 A_SpawnItemEx("MaskimXulRouletteSoulSphere", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
-    Stop
-  }
-}
-
-ACTOR MaskimXulDualPistols : DoomWeapon
-{
-  Weapon.SelectionOrder 1900
-  Weapon.AmmoUse 1
-  Weapon.AmmoGive 20
-  Weapon.AmmoType "Clip"
-  Obituary "$OB_MPPISTOL"
-  +WEAPON.WIMPY_WEAPON
-  Inventory.Pickupmessage "You got an additional pistol!"
-  Tag "Dual Pistols"
-  States
-  {
-  Ready:
-    DVPG A 1 A_WeaponReady
-    Loop
-  Deselect:
-    DVPG A 1 A_Lower
-    Loop
-  Select:
-    DVPG A 1 A_Raise
-    Loop
-  Fire:
-    DVPG BC 7 Bright A_FirePistol
-    DVPG A 5 A_ReFire
-    Goto Ready
-  Flash:
-    DVPF A 7 Bright A_Light1
-    Goto LightDone
-    DVPF A 7 Bright A_Light1
-    Goto LightDone
-  Spawn:
-    PIST A -1
     Stop
   }
 }

@@ -1,9 +1,11 @@
+ACTOR ReliquaryClass : DEHBoolean {}
 ACTOR JohnReliquary : DoomPlayer
 {
-  Player.DisplayName "Reliquary Marine"
+  Player.DisplayName "Doomguy (Antaresian Reliquary)"
   Player.StartItem "ReliquaryMachinegun"
   Player.StartItem "ReliquaryFist"
   Player.StartItem "Clip", 60
+  Player.StartItem "ReliquaryClass"
 /*
   Player.WeaponSlot 1, ReliquaryChainsaw, ReliquaryFist
   Player.WeaponSlot 2, ReliquaryMachinegun

@@ -57,6 +57,11 @@ ACTOR ReliquaryClassClip : ReliquaryClip
 	Inventory.RestrictedTo "JohnReliquary"
 	VisibleToPlayerClass "JohnReliquary"
 }
+ACTOR NegativeOneClassClip : NegativeOneClip
+{
+	Inventory.RestrictedTo "JohnNegativeOne"
+	VisibleToPlayerClass "JohnNegativeOne"
+}
 
 ACTOR DoomClassClipBox : ClipBox
 {
@@ -92,6 +97,11 @@ ACTOR ReliquaryClassClipBox : ReliquaryClipBox
 {
 	Inventory.RestrictedTo "JohnReliquary"
 	VisibleToPlayerClass "JohnReliquary"
+}
+ACTOR NegativeOneClassClipBox : ClipBox
+{
+	Inventory.RestrictedTo "JohnNegativeOne"
+	VisibleToPlayerClass "JohnNegativeOne"
 }
 
 ACTOR DoomClassShell : Shell
@@ -129,6 +139,11 @@ ACTOR ReliquaryClassShell : Shell
 	Inventory.RestrictedTo "JohnReliquary"
 	VisibleToPlayerClass "JohnReliquary"
 }
+ACTOR NegativeOneClassShell : Shell
+{
+	Inventory.RestrictedTo "JohnNegativeOne"
+	VisibleToPlayerClass "JohnNegativeOne"
+}
 
 ACTOR DoomClassShellBox : ShellBox
 {
@@ -164,6 +179,11 @@ ACTOR ReliquaryClassShellBox : ShellBox
 {
 	Inventory.RestrictedTo "JohnReliquary"
 	VisibleToPlayerClass "JohnReliquary"
+}
+ACTOR NegativeOneClassShellBox : ShellBox
+{
+	Inventory.RestrictedTo "JohnNegativeOne"
+	VisibleToPlayerClass "JohnNegativeOne"
 }
 
 ACTOR DoomClassRocketAmmo : RocketAmmo
@@ -201,6 +221,11 @@ ACTOR ReliquaryClassRocketAmmo : RocketAmmo
 	Inventory.RestrictedTo "JohnReliquary"
 	VisibleToPlayerClass "JohnReliquary"
 }
+ACTOR NegativeOneClassRocketAmmo : RocketAmmo
+{
+	Inventory.RestrictedTo "JohnNegativeOne"
+	VisibleToPlayerClass "JohnNegativeOne"
+}
 
 ACTOR DoomClassRocketBox : RocketBox
 {
@@ -237,6 +262,11 @@ ACTOR ReliquaryClassRocketBox : RocketBox
 	Inventory.RestrictedTo "JohnReliquary"
 	VisibleToPlayerClass "JohnReliquary"
 }
+ACTOR NegativeOneClassRocketBox : RocketBox
+{
+	Inventory.RestrictedTo "JohnNegativeOne"
+	VisibleToPlayerClass "JohnNegativeOne"
+}
 
 ACTOR DoomClassCell : Cell
 {
@@ -272,6 +302,11 @@ ACTOR ReliquaryClassCell : AntaresianCell
 {
 	Inventory.RestrictedTo "JohnReliquary"
 	VisibleToPlayerClass "JohnReliquary"
+}
+ACTOR NegativeOneClassCell : HellCharge
+{
+	Inventory.RestrictedTo "JohnNegativeOne"
+	VisibleToPlayerClass "JohnNegativeOne"
 }
 
 ACTOR DoomClassCellPack : CellPack
@@ -314,14 +349,35 @@ ACTOR ReliquaryClassCellPack : AntaresianCellPack
 	Inventory.RestrictedTo "JohnReliquary"
 	VisibleToPlayerClass "JohnReliquary"
 }
+ACTOR NegativeOneClassCellPack : LargeHellCharge
+{
+	Inventory.RestrictedTo "JohnNegativeOne"
+	VisibleToPlayerClass "JohnNegativeOne"
+}
+
+ACTOR DoomClassGreenArmor : BlueArmor
+{
+	Inventory.ForbiddenTo "JohnNegativeOne"
+	VisibleToPlayerClass "JohnDoom", "JohnStrain", "JohnDeusVultII", "JohnValiant", "JohnMaskimXul", "JohnStruggle", "JohnReliquary"
+}
+ACTOR NegativeOneClassGreenArmor : NegativeOneGreenArmor
+{
+	Inventory.RestrictedTo "JohnNegativeOne"
+	VisibleToPlayerClass "JohnNegativeOne"
+}
 
 ACTOR DoomClassBlueArmor : BlueArmor
 {
-	Inventory.ForbiddenTo "JohnStrain"
+	Inventory.ForbiddenTo "JohnStrain", "JohnNegativeOne"
 	VisibleToPlayerClass "JohnDoom", "JohnDeusVultII", "JohnValiant", "JohnMaskimXul", "JohnStruggle", "JohnReliquary"
 }
 ACTOR StrainClassBlueArmor : StrainRedArmor
 {
 	Inventory.RestrictedTo "JohnStrain"
 	VisibleToPlayerClass "JohnStrain"
+}
+ACTOR NegativeOneClassBlueArmor : NegativeOneBlueArmor
+{
+	Inventory.RestrictedTo "JohnNegativeOne"
+	VisibleToPlayerClass "JohnNegativeOne"
 }

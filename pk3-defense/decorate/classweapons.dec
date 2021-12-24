@@ -190,6 +190,43 @@ Actor ReliquaryChainsawGiverDropped : DehackedWeaponGiver
     Fail
   }
 }
+Actor NegativeOneChainsawGiver : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnNegativeOne"
+  VisibleToPlayerClass "JohnNegativeOne"
+  States
+  {
+  Spawn:
+    NSAW A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("NegativeOneGauntlets", 1, "PickupFail")
+    TNT1 A 0 A_SpawnItemEx("NegativeOneGauntlets", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    Stop
+  PickupFail:
+    NSAW A 1
+    Fail
+  }
+}
+Actor NegativeOneChainsawGiverDropped : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnNegativeOne"
+  VisibleToPlayerClass "JohnNegativeOne"
+  States
+  {
+  Spawn:
+    NSAW A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("NegativeOneGauntlets", 1, "PickupFail")
+    TNT1 A 0 A_SpawnItemEx("NegativeOneGauntlets", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    Stop
+  PickupFail:
+    NSAW A 1
+    Fail
+  }
+}
 
 /////////////
 // SHOTGUN //
@@ -416,6 +453,54 @@ Actor ReliquaryShotgunGiverDropped : DehackedWeaponGiver
     Fail
   }
 }
+Actor NegativeOneShotgunGiver : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnNegativeOne"
+  VisibleToPlayerClass "JohnNegativeOne"
+  States
+  {
+  Spawn:
+    NSHT A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("NegativeOneShotgun", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    TNT1 A 0 A_JumpIfInventory("Shell", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_SpawnItemEx("NegativeOneShotgun", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    Stop
+  PickupFail:
+    NSHT A 1
+    Fail
+  }
+}
+Actor NegativeOneShotgunGiverDropped : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnNegativeOne"
+  VisibleToPlayerClass "JohnNegativeOne"
+  States
+  {
+  Spawn:
+    NSHT A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("NegativeOneShotgun", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIfInventory("Shell", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_DropItem("NegativeOneShotgun")
+    Stop
+  PickupFail:
+    NSHT A 1
+    Fail
+  }
+}
 
 ///////////////////
 // SUPER SHOTGUN //
@@ -601,6 +686,54 @@ Actor ReliquarySuperShotgunGiverDropped : DehackedWeaponGiver
     Stop
   PickupFail:
     RSG2 A 1
+    Fail
+  }
+}
+Actor NegativeOneSuperShotgunGiver : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnNegativeOne"
+  VisibleToPlayerClass "JohnNegativeOne"
+  States
+  {
+  Spawn:
+    SGN2 A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("NegativeOneSuperShotgun", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    TNT1 A 0 A_JumpIfInventory("Shell", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_SpawnItemEx("NegativeOneSuperShotgun", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    Stop
+  PickupFail:
+    SGN2 A 1
+    Fail
+  }
+}
+Actor NegativeOneSuperShotgunGiverDropped : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnNegativeOne"
+  VisibleToPlayerClass "JohnNegativeOne"
+  States
+  {
+  Spawn:
+    SGN2 A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("NegativeOneSuperShotgun", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIfInventory("Shell", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_DropItem("NegativeOneSuperShotgun")
+    Stop
+  PickupFail:
+    SGN2 A 1
     Fail
   }
 }
@@ -830,6 +963,54 @@ Actor ReliquaryChaingunGiverDropped : DehackedWeaponGiver
     Fail
   }
 }
+Actor NegativeOneChaingunGiver : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnNegativeOne"
+  VisibleToPlayerClass "JohnNegativeOne"
+  States
+  {
+  Spawn:
+    NMGN A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("NegativeOneUzi", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    TNT1 A 0 A_JumpIfInventory("Clip", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_SpawnItemEx("NegativeOneUzi", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    Stop
+  PickupFail:
+    NMGN A 1
+    Fail
+  }
+}
+Actor NegativeOneChaingunGiverDropped : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnNegativeOne"
+  VisibleToPlayerClass "JohnNegativeOne"
+  States
+  {
+  Spawn:
+    NMGN A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("NegativeOneUzi", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIfInventory("Clip", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_DropItem("NegativeOneUzi")
+    Stop
+  PickupFail:
+    NMGN A 1
+    Fail
+  }
+}
 
 /////////////////////
 // ROCKET LAUNCHER //
@@ -1053,6 +1234,54 @@ Actor ReliquaryRocketLauncherGiverDropped : DehackedWeaponGiver
     Stop
   PickupFail:
     RQLN A 1
+    Fail
+  }
+}
+Actor NegativeOneRocketLauncherGiver : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnNegativeOne"
+  VisibleToPlayerClass "JohnNegativeOne"
+  States
+  {
+  Spawn:
+    NLAU A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("NegativeOneRocketLauncher", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    TNT1 A 0 A_JumpIfInventory("RocketAmmo", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_SpawnItemEx("NegativeOneRocketLauncher", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    Stop
+  PickupFail:
+    NLAU A 1
+    Fail
+  }
+}
+Actor NegativeOneRocketLauncherGiverDropped : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnNegativeOne"
+  VisibleToPlayerClass "JohnNegativeOne"
+  States
+  {
+  Spawn:
+    NLAU A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("NegativeOneRocketLauncher", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIfInventory("RocketAmmo", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_DropItem("NegativeOneRocketLauncher")
+    Stop
+  PickupFail:
+    NLAU A 1
     Fail
   }
 }
@@ -1320,6 +1549,54 @@ Actor ReliquaryPlasmaRifleGiverDropped : DehackedWeaponGiver
     Fail
   }
 }
+Actor NegativeOnePlasmaRifleGiver : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnNegativeOne"
+  VisibleToPlayerClass "JohnNegativeOne"
+  States
+  {
+  Spawn:
+    NPLA A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("NegativeOneDarkSceptre", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    TNT1 A 0 A_JumpIfInventory("HellCharge", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_SpawnItemEx("NegativeOneDarkSceptre", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    Stop
+  PickupFail:
+    NPLA A 1
+    Fail
+  }
+}
+Actor NegativeOnePlasmaRifleDropped : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnNegativeOne"
+  VisibleToPlayerClass "JohnNegativeOne"
+  States
+  {
+  Spawn:
+    NPLA A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("NegativeOneDarkSceptre", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIfInventory("HellCharge", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_DropItem("NegativeOneDarkSceptre")
+    Stop
+  PickupFail:
+    NPLA A 1
+    Fail
+  }
+}
 
 //////////////
 // BFG 9000 //
@@ -1570,6 +1847,54 @@ Actor ReliquaryBFG9000GiverDropped : DehackedWeaponGiver
     Stop
   PickupFail:
     RQBF A 1
+    Fail
+  }
+}
+Actor NegativeOneBFG9000Giver : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnNegativeOne"
+  VisibleToPlayerClass "JohnNegativeOne"
+  States
+  {
+  Spawn:
+    NBFU A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("NegativeOneUnmakyr", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    TNT1 A 0 A_JumpIfInventory("HellCharge", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_SpawnItemEx("NegativeOneUnmakyr", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    Stop
+  PickupFail:
+    NBFU A 1
+    Fail
+  }
+}
+Actor NegativeOneBFG9000GiverDropped : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "JohnNegativeOne"
+  VisibleToPlayerClass "JohnNegativeOne"
+  States
+  {
+  Spawn:
+    NBFU A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("NegativeOneUnmakyr", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIfInventory("HellCharge", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_DropItem("NegativeOneUnmakyr")
+    Stop
+  PickupFail:
+    NBFU A 1
     Fail
   }
 }

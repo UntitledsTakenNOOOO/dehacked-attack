@@ -1,12 +1,14 @@
+ACTOR DV2Class : DEHBoolean {}
 ACTOR JohnDeusVultII : DoomPlayer
 {
-  Player.DisplayName "Deus Vult 2 Marine"
-  Player.StartItem "DV2DualPistols"
+  Player.DisplayName "Doomguy (Deus Vult II)"
+  Player.StartItem "DualPistols"
   Player.StartItem "Clip", 50
   Player.StartItem "DEHFist"
+  Player.StartItem "DV2Class"
 /*
   Player.WeaponSlot 1, DV2Gauntlets, Fist
-  Player.WeaponSlot 2, DV2DualPistols
+  Player.WeaponSlot 2, DualPistols
   Player.WeaponSlot 3, SuperShotgun, Shotgun
   Player.WeaponSlot 4, Chaingun
   Player.WeaponSlot 5, RocketLauncher
@@ -46,7 +48,7 @@ ACTOR DV2Gauntlets : DoomWeapon
   }
 }
 
-ACTOR DV2DualPistols : DoomWeapon
+ACTOR DualPistols : DoomWeapon
 {
   Weapon.SelectionOrder 1900
   Weapon.AmmoUse 1
@@ -68,6 +70,16 @@ ACTOR DV2DualPistols : DoomWeapon
     DVPG A 1 A_Raise
     Loop
   Fire:
+    DVPG A 0 A_JumpIfInventory("DV2Class", 1, "FireDV2")
+    DVPG B 0 A_FireBullets(5.6, 0, 1, 5, "BulletPuff")
+    DVPG B 0 A_PlaySound("weapons/pistol", CHAN_WEAPON)
+    DVPG B 7 Bright A_GunFlash
+    DVPG C 0 A_FireBullets(5.6, 0, 1, 5, "BulletPuff")
+    DVPG C 0 A_PlaySound("weapons/pistol", CHAN_WEAPON)
+    DVPG C 7 Bright A_GunFlash
+    DVPG A 5 A_ReFire
+    Goto Ready
+  FireDV2:
     DVPG B 0 A_FireBullets(5.6, 0, 1, 5, "BulletPuff")
     DVPG B 0 A_PlaySound("dv2/pistol", CHAN_WEAPON)
     DVPG B 7 Bright A_GunFlash

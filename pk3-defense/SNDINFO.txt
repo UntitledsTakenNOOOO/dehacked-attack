@@ -1,4 +1,4 @@
-strain/shotgf		SRSHOTGN
+train/shotgf		SRSHOTGN
 strain/plasmaf		SRPLASMA
 strain/bfgf			SRBFG
 $limit strain/plasmaf 0
@@ -62,3 +62,26 @@ $limit reliquary/plasmaf 0
 reliquary/plasmax	RQSKLDTH
 reliquary/bfgf		RQBFG
 reliquary/bfgx		RQREXPLOD
+
+negativeone/sawfull		NGSAWFUL
+negativeone/sawhit		NGSAWHIT
+negativeone/sawidle		NGSAWIDL
+negativeone/sawup		NGSAWUP
+negativeone/pistol		NGPISTOL
+negativeone/shotgf		NGSHOTGN
+negativeone/sshotgf		NGDSHTGN
+negativeone/sshotgo		NGDBLOPN
+negativeone/sshotgl		NGDBLOAD
+negativeone/sshotgc		NGDBCLS
+negativeone/chngun		NGPISTOL
+$limit negativeone/chngun 0
+negativeone/rocklf		NGRLAUNC
+$limit negativeone/rocklf 0
+negativeone/plasmaf		NGPLASMA
+$limit negativeone/plasmaf 0
+negativeone/plasmax		NGSKLDTH
+negativeone/bfgf		NGBFG
+negativeone/bfgx		NGREXPLOD
+negativeone/w_pkup		NGWPNUP
+negativeone/p_pkup		NGGETPOW
+negativeone/i_pkup		NGITEMUP

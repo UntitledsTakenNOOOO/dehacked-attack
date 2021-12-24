@@ -1,9 +1,11 @@
+ACTOR StruggleClass : DEHBoolean {}
 ACTOR JohnStruggle : DoomPlayer
 {
-  Player.DisplayName "Antaresian Doomguy"
+  Player.DisplayName "Doomguy (Struggle: Antaresian Legacy)"
   Player.StartItem "StrugglePistol"
   Player.StartItem "StruggleHammer"
   Player.StartItem "Clip", 42
+  Player.StartItem "StruggleClass"
 /*
   Player.WeaponSlot 1, StruggleDrillMachine, StruggleHammer
   Player.WeaponSlot 2, StrugglePistol
@@ -344,7 +346,7 @@ ACTOR StruggleGrenadeLauncher : DoomWeapon
   Weapon.AmmoGive 2
   Weapon.AmmoType "RocketAmmo"
   +WEAPON.NOAUTOFIRE
-  Inventory.PickupMessage "You got a grenade lunacher!"
+  Inventory.PickupMessage "You got a grenade launcher!"
   Inventory.PickupSound "struggle/w_pkup"
   Tag "Grenade Launcher"
   States

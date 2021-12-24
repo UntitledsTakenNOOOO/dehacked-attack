@@ -36,6 +36,7 @@ actor ChainsawReplacer : DEHDefenseWeaponSpawner replaces Chainsaw
     DropItem "DV2Gauntlets", 256, 1
     DropItem "StruggleDrillMachine", 256, 1
     DropItem "ReliquaryChainsaw", 256, 1
+    DropItem "NegativeOneGauntlets", 256, 1
 */
   States
   {
@@ -52,6 +53,7 @@ actor ChainsawReplacer : DEHDefenseWeaponSpawner replaces Chainsaw
     TNT1 A 0 A_SpawnItemEx("MaskimXulChainsawGiver", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     TNT1 A 0 A_SpawnItemEx("StruggleChainsawGiver", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     TNT1 A 0 A_SpawnItemEx("ReliquaryChainsawGiver", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_SpawnItemEx("NegativeOneChainsawGiver", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     Stop
   ClassSpawnDropped:
     TNT1 A 0 A_DropItem("DoomChainsawGiverDropped")
@@ -61,10 +63,11 @@ actor ChainsawReplacer : DEHDefenseWeaponSpawner replaces Chainsaw
     TNT1 A 0 A_DropItem("MaskimXulChainsawGiverDropped")
     TNT1 A 0 A_DropItem("StruggleChainsawGiverDropped")
     TNT1 A 0 A_DropItem("ReliquaryChainsawGiverDropped")
+    TNT1 A 0 A_DropItem("NegativeOneChainsawGiverDropped")
     Stop
   RandomizerSpawn:
     TNT1 A 0 A_CheckFlag("DROPPED", "DroppedSpawn")
-    TNT1 A 0 A_Jump(256, "Spawn1", "Spawn2", "Spawn3", "Spawn4")
+    TNT1 A 0 A_Jump(256, "Spawn1", "Spawn2", "Spawn3", "Spawn4", "Spawn5")
     Goto Spawn1
   Spawn1: //LOOK AT WHAT YOU FORCED ME TO DO
     TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_WeaponSpawn", 0, DEH_DEF_VANILLA_DOOM, DEH_DEF_SLOT_CHAINSAW)
@@ -81,8 +84,12 @@ actor ChainsawReplacer : DEHDefenseWeaponSpawner replaces Chainsaw
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_RELIQUARY, 7), "Spawn1")
     TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_WeaponSpawn", 0, DEH_DEF_RELIQUARY, DEH_DEF_SLOT_CHAINSAW)
     Goto Death
+  Spawn5:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_NEGATIVEONE, 1), "Spawn1")
+    TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_WeaponSpawn", 0, DEH_DEF_NEGATIVEONE, DEH_DEF_SLOT_CHAINSAW)
+    Goto Death
   DroppedSpawn:
-    TNT1 A 0 A_Jump(256, "DroppedSpawn1", "DroppedSpawn2", "DroppedSpawn3", "DroppedSpawn4")
+    TNT1 A 0 A_Jump(256, "DroppedSpawn1", "DroppedSpawn2", "DroppedSpawn3", "DroppedSpawn4", "DroppedSpawn5")
     Goto DroppedSpawn1
   DroppedSpawn1:
     TNT1 A 0 A_DropItem("DEHChainsaw")
@@ -99,6 +106,10 @@ actor ChainsawReplacer : DEHDefenseWeaponSpawner replaces Chainsaw
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_RELIQUARY, 7), "DroppedSpawn1")
     TNT1 A 0 A_DropItem("ReliquaryChainsaw")
     Goto Death
+  DroppedSpawn5:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_NEGATIVEONE, 1), "DroppedSpawn1")
+    TNT1 A 0 A_DropItem("NegativeOneGauntlets")
+    Goto Death
   }
 }
 
@@ -109,6 +120,7 @@ actor ShotgunReplacer : DEHDefenseWeaponSpawner replaces Shotgun
     DropItem "StrainSawedOff", 256, 1
     DropItem "StruggleShotgun", 256, 1
     DropItem "ReliquaryShotgun", 256, 1
+    DropItem "NegativeOneShotgun", 256, 1
 */
   States
   {
@@ -125,6 +137,7 @@ actor ShotgunReplacer : DEHDefenseWeaponSpawner replaces Shotgun
     TNT1 A 0 A_SpawnItemEx("MaskimXulShotgunGiver", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     TNT1 A 0 A_SpawnItemEx("StruggleShotgunGiver", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     TNT1 A 0 A_SpawnItemEx("ReliquaryShotgunGiver", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_SpawnItemEx("NegativeOneShotgunGiver", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     Stop
   ClassSpawnDropped:
     TNT1 A 0 A_DropItem("DoomShotgunGiverDropped")
@@ -133,7 +146,7 @@ actor ShotgunReplacer : DEHDefenseWeaponSpawner replaces Shotgun
     TNT1 A 0 A_DropItem("ValiantShotgunGiverDropped")
     TNT1 A 0 A_DropItem("MaskimXulShotgunGiverDropped")
     TNT1 A 0 A_DropItem("StruggleShotgunGiverDropped")
-    TNT1 A 0 A_DropItem("ReliquaryShotgunGiverDropped")
+    TNT1 A 0 A_DropItem("NegativeOneShotgunGiverDropped")
     Stop
   RandomizerSpawn:
     TNT1 A 0 A_CheckFlag("DROPPED", "DroppedSpawn")
@@ -143,16 +156,20 @@ actor ShotgunReplacer : DEHDefenseWeaponSpawner replaces Shotgun
     TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_WeaponSpawn", 0, DEH_DEF_VANILLA_DOOM, DEH_DEF_SLOT_SHOTGUN)
     Goto Death
   Spawn2:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRAIN, 2), "Spawn1")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRAIN, 3), "Spawn1")
     TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_WeaponSpawn", 0, DEH_DEF_STRAIN, DEH_DEF_SLOT_SHOTGUN)
     Goto Death
   Spawn3:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRUGGLE, 1), "Spawn1")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRUGGLE, 2), "Spawn1")
     TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_WeaponSpawn", 0, DEH_DEF_STRUGGLE, DEH_DEF_SLOT_SHOTGUN)
     Goto Death
   Spawn4:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_RELIQUARY, 3), "Spawn1")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_RELIQUARY, 4), "Spawn1")
     TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_WeaponSpawn", 0, DEH_DEF_RELIQUARY, DEH_DEF_SLOT_SHOTGUN)
+    Goto Death
+  Spawn5:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_NEGATIVEONE, 1), "Spawn1")
+    TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_WeaponSpawn", 0, DEH_DEF_NEGATIVEONE, DEH_DEF_SLOT_SHOTGUN)
     Goto Death
   DroppedSpawn:
     TNT1 A 0 A_Jump(256, "DroppedSpawn1", "DroppedSpawn2", "DroppedSpawn3", "DroppedSpawn4")
@@ -161,16 +178,20 @@ actor ShotgunReplacer : DEHDefenseWeaponSpawner replaces Shotgun
     TNT1 A 0 A_DropItem("DEHShotgun")
     Goto Death
   DroppedSpawn2:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRAIN, 2), "DroppedSpawn1")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRAIN, 3), "DroppedSpawn1")
     TNT1 A 0 A_DropItem("StrainSawedOff")
     Goto Death
   DroppedSpawn3:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRUGGLE, 1), "DroppedSpawn1")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRUGGLE, 2), "DroppedSpawn1")
     TNT1 A 0 A_DropItem("StruggleShotgun")
     Goto Death
   DroppedSpawn4:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_RELIQUARY, 3), "DroppedSpawn1")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_RELIQUARY, 4), "DroppedSpawn1")
     TNT1 A 0 A_DropItem("ReliquaryShotgun")
+    Goto Death
+  DroppedSpawn5:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_NEGATIVEONE, 1), "DroppedSpawn1")
+    TNT1 A 0 A_DropItem("NegativeOneShotgun")
     Goto Death
   }
 }
@@ -181,6 +202,7 @@ actor SuperShotgunReplacer : DEHDefenseWeaponSpawner replaces SuperShotgun
     DropItem "DEHSuperShotgun", 256, 4
     DropItem "StruggleSuperShotgun", 256, 1
     DropItem "ReliquarySuperShotgun", 256, 1
+    DropItem "NegativeOneSuperShotgun", 256, 1
 */
   States
   {
@@ -197,6 +219,7 @@ actor SuperShotgunReplacer : DEHDefenseWeaponSpawner replaces SuperShotgun
     TNT1 A 0 A_SpawnItemEx("MaskimXulSuperShotgunGiver", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     TNT1 A 0 A_SpawnItemEx("StruggleSuperShotgunGiver", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     TNT1 A 0 A_SpawnItemEx("ReliquarySuperShotgunGiver", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_SpawnItemEx("NegativeOneSuperShotgunGiver", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     Stop
   ClassSpawnDropped:
     TNT1 A 0 A_DropItem("DoomSuperShotgunGiverDropped")
@@ -206,10 +229,11 @@ actor SuperShotgunReplacer : DEHDefenseWeaponSpawner replaces SuperShotgun
     TNT1 A 0 A_DropItem("MaskimXulSuperShotgunGiverDropped")
     TNT1 A 0 A_DropItem("StruggleSuperShotgunGiverDropped")
     TNT1 A 0 A_DropItem("ReliquarySuperShotgunGiverDropped")
+    TNT1 A 0 A_DropItem("NegativeOneSuperShotgunGiverDropped")
     Stop
   RandomizerSpawn:
     TNT1 A 0 A_CheckFlag("DROPPED", "DroppedSpawn")
-    TNT1 A 0 A_Jump(256, "Spawn1", "Spawn2", "Spawn3")
+    TNT1 A 0 A_Jump(256, "Spawn1", "Spawn2", "Spawn3", "Spawn4")
     Goto Spawn1
   Spawn1:
     TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_WeaponSpawn", 0, DEH_DEF_VANILLA_DOOM, DEH_DEF_SLOT_SSG)
@@ -222,8 +246,12 @@ actor SuperShotgunReplacer : DEHDefenseWeaponSpawner replaces SuperShotgun
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_RELIQUARY, 16), "Spawn1")
     TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_WeaponSpawn", 0, DEH_DEF_RELIQUARY, DEH_DEF_SLOT_SSG)
     Goto Death
+  Spawn4:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_NEGATIVEONE, 1), "Spawn1")
+    TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_WeaponSpawn", 0, DEH_DEF_NEGATIVEONE, DEH_DEF_SLOT_SSG)
+    Goto Death
   DroppedSpawn:
-    TNT1 A 0 A_Jump(256, "DroppedSpawn1", "DroppedSpawn2", "DroppedSpawn3")
+    TNT1 A 0 A_Jump(256, "DroppedSpawn1", "DroppedSpawn2", "DroppedSpawn3", "DroppedSpawn4")
     Goto DroppedSpawn1
   DroppedSpawn1:
     TNT1 A 0 A_DropItem("DEHSuperShotgun")
@@ -236,6 +264,10 @@ actor SuperShotgunReplacer : DEHDefenseWeaponSpawner replaces SuperShotgun
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_RELIQUARY, 16), "DroppedSpawn1")
     TNT1 A 0 A_DropItem("ReliquarySuperShotgun")
     Goto Death
+  DroppedSpawn4:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_NEGATIVEONE, 1), "DroppedSpawn1")
+    TNT1 A 0 A_DropItem("NegativeOneSuperShotgun")
+    Goto Death
   }
 }
 
@@ -246,6 +278,7 @@ actor ChaingunReplacer : DEHDefenseWeaponSpawner replaces Chaingun
     DropItem "ValiantChaingun", 256, 1
     DropItem "StruggleDualPistols", 256, 1
     DropItem "ReliquaryChaingun", 256, 1
+    DropItem "NegativeOneUzi", 256, 1
 */
   States
   {
@@ -262,6 +295,7 @@ actor ChaingunReplacer : DEHDefenseWeaponSpawner replaces Chaingun
     TNT1 A 0 A_SpawnItemEx("MaskimXulChaingunGiver", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     TNT1 A 0 A_SpawnItemEx("StruggleChaingunGiver", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     TNT1 A 0 A_SpawnItemEx("ReliquaryChaingunGiver", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_SpawnItemEx("NegativeOneChaingunGiver", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     Stop
   ClassSpawnDropped:
     TNT1 A 0 A_DropItem("DoomChaingunGiverDropped")
@@ -271,43 +305,52 @@ actor ChaingunReplacer : DEHDefenseWeaponSpawner replaces Chaingun
     TNT1 A 0 A_DropItem("MaskimXulChaingunGiverDropped")
     TNT1 A 0 A_DropItem("StruggleChaingunGiverDropped")
     TNT1 A 0 A_DropItem("ReliquaryChaingunGiverDropped")
+    TNT1 A 0 A_DropItem("NegativeOneChaingunGiverDropped")
     Stop
   RandomizerSpawn:
     TNT1 A 0 A_CheckFlag("DROPPED", "DroppedSpawn")
-    TNT1 A 0 A_Jump(256, "Spawn1", "Spawn2", "Spawn3", "Spawn4")
+    TNT1 A 0 A_Jump(256, "Spawn1", "Spawn2", "Spawn3", "Spawn4", "Spawn5")
     Goto Spawn1
   Spawn1:
     TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_WeaponSpawn", 0, DEH_DEF_VANILLA_DOOM, DEH_DEF_SLOT_CHAINGUN)
     Goto Death
   Spawn2:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_VALIANT, 7), "Spawn1")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_VALIANT, 11), "Spawn1")
     TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_WeaponSpawn", 0, DEH_DEF_VALIANT, DEH_DEF_SLOT_CHAINGUN)
     Goto Death
   Spawn3:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRUGGLE, 3), "Spawn1")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRUGGLE, 5), "Spawn1")
     TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_WeaponSpawn", 0, DEH_DEF_STRUGGLE, DEH_DEF_SLOT_CHAINGUN)
     Goto Death
   Spawn4:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_RELIQUARY, 5), "Spawn1")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_RELIQUARY, 7), "Spawn1")
     TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_WeaponSpawn", 0, DEH_DEF_RELIQUARY, DEH_DEF_SLOT_CHAINGUN)
     Goto Death
+  Spawn5:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_NEGATIVEONE, 3), "Spawn1")
+    TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_WeaponSpawn", 0, DEH_DEF_NEGATIVEONE, DEH_DEF_SLOT_CHAINGUN)
+    Goto Death
   DroppedSpawn:
-    TNT1 A 0 A_Jump(256, "DroppedSpawn1", "DroppedSpawn2", "DroppedSpawn3", "DroppedSpawn4")
+    TNT1 A 0 A_Jump(256, "DroppedSpawn1", "DroppedSpawn2", "DroppedSpawn3", "DroppedSpawn4", "DroppedSpawn5")
     Goto DroppedSpawn1
   DroppedSpawn1:
     TNT1 A 0 A_DropItem("DEHChaingun")
     Goto Death
   DroppedSpawn2:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_VALIANT, 7), "DroppedSpawn1")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_VALIANT, 11), "DroppedSpawn1")
     TNT1 A 0 A_DropItem("ValiantChaingun")
     Goto Death
   DroppedSpawn3:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRUGGLE, 3), "DroppedSpawn1")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRUGGLE, 5), "DroppedSpawn1")
     TNT1 A 0 A_DropItem("StruggleDualPistols")
     Goto Death
   DroppedSpawn4:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_RELIQUARY, 5), "DroppedSpawn1")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_RELIQUARY, 7), "DroppedSpawn1")
     TNT1 A 0 A_DropItem("ReliquaryChaingun")
+    Goto Death
+  DroppedSpawn5:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_NEGATIVEONE, 3), "DroppedSpawn1")
+    TNT1 A 0 A_DropItem("NegativeOneUzi")
     Goto Death
   }
 }
@@ -319,6 +362,7 @@ actor RocketLauncherReplacer : DEHDefenseWeaponSpawner replaces RocketLauncher
     DropItem "MaskimXulHandOfAfrit", 256, 1
     DropItem "StruggleGrenadeLauncher", 256, 1
     DropItem "ReliquaryRocketLauncher", 256, 1
+    DropItem "NegativeOneRocketLauncher", 256, 1
 */
   States
   {
@@ -335,6 +379,7 @@ actor RocketLauncherReplacer : DEHDefenseWeaponSpawner replaces RocketLauncher
     TNT1 A 0 A_SpawnItemEx("MaskimXulRocketLauncherGiver", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     TNT1 A 0 A_SpawnItemEx("StruggleRocketLauncherGiver", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     TNT1 A 0 A_SpawnItemEx("ReliquaryRocketLauncherGiver", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_SpawnItemEx("NegativeOneRocketLauncherGiver", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     Stop
   ClassSpawnDropped:
     TNT1 A 0 A_DropItem("DoomRocketLauncherGiverDropped")
@@ -344,6 +389,7 @@ actor RocketLauncherReplacer : DEHDefenseWeaponSpawner replaces RocketLauncher
     TNT1 A 0 A_DropItem("MaskimXulRocketLauncherGiverDropped")
     TNT1 A 0 A_DropItem("StruggleRocketLauncherGiverDropped")
     TNT1 A 0 A_DropItem("ReliquaryRocketLauncherGiverDropped")
+    TNT1 A 0 A_DropItem("NegativeOneRocketLauncherGiverDropped")
     Stop
   RandomizerSpawn:
     TNT1 A 0 A_CheckFlag("DROPPED", "DroppedSpawn")
@@ -364,6 +410,10 @@ actor RocketLauncherReplacer : DEHDefenseWeaponSpawner replaces RocketLauncher
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_RELIQUARY, 6), "Spawn1")
     TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_WeaponSpawn", 0, DEH_DEF_RELIQUARY, DEH_DEF_SLOT_ROCKET)
     Goto Death
+  Spawn5:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_NEGATIVEONE, 1), "Spawn1")
+    TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_WeaponSpawn", 0, DEH_DEF_NEGATIVEONE, DEH_DEF_SLOT_ROCKET)
+    Goto Death
   DroppedSpawn:
     TNT1 A 0 A_Jump(256, "DroppedSpawn1", "DroppedSpawn2", "DroppedSpawn3", "DroppedSpawn4")
     Goto DroppedSpawn1
@@ -382,6 +432,10 @@ actor RocketLauncherReplacer : DEHDefenseWeaponSpawner replaces RocketLauncher
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_RELIQUARY, 6), "DroppedSpawn1")
     TNT1 A 0 A_DropItem("ReliquaryRocketLauncher")
     Goto Death
+  DroppedSpawn5:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_NEGATIVEONE, 1), "DroppedSpawn1")
+    TNT1 A 0 A_DropItem("NegativeOneRocketLauncher")
+    Goto Death
   }
 }
 
@@ -393,6 +447,7 @@ actor PlasmaRifleReplacer : DEHDefenseWeaponSpawner replaces PlasmaRifle
     DropItem "MaskimXulJackBombs", 256, 1
     DropItem "StruggleAssaultRifle", 256, 1
     DropItem "ReliquaryPlasmaRifle", 256, 1
+    DropItem "NegativeOneDarkSceptre", 256, 1
 */
   States
   {
@@ -409,6 +464,7 @@ actor PlasmaRifleReplacer : DEHDefenseWeaponSpawner replaces PlasmaRifle
     TNT1 A 0 A_SpawnItemEx("MaskimXulPlasmaRifleGiver", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     TNT1 A 0 A_SpawnItemEx("StrugglePlasmaRifleGiver", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     TNT1 A 0 A_SpawnItemEx("ReliquaryPlasmaRifleGiver", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_SpawnItemEx("NegativeOnePlasmaRifleGiver", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     Stop
   ClassSpawnDropped:
     TNT1 A 0 A_DropItem("DoomPlasmaRifleGiverDropped")
@@ -418,10 +474,11 @@ actor PlasmaRifleReplacer : DEHDefenseWeaponSpawner replaces PlasmaRifle
     TNT1 A 0 A_DropItem("MaskimXulPlasmaRifleGiverDropped")
     TNT1 A 0 A_DropItem("StrugglePlasmaRifleGiverDropped")
     TNT1 A 0 A_DropItem("ReliquaryPlasmaRifleGiverDropped")
+    TNT1 A 0 A_DropItem("NegativeOnePlasmaRifleGiverDropped")
     Stop
   RandomizerSpawn:
     TNT1 A 0 A_CheckFlag("DROPPED", "DroppedSpawn")
-    TNT1 A 0 A_Jump(256, "Spawn1", "Spawn2", "Spawn3", "Spawn4", "Spawn5")
+    TNT1 A 0 A_Jump(256, "Spawn1", "Spawn2", "Spawn3", "Spawn4", "Spawn5", "Spawn6")
     Goto Spawn1
   Spawn1:
     TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_WeaponSpawn", 0, DEH_DEF_VANILLA_DOOM, DEH_DEF_SLOT_PLASMA)
@@ -442,8 +499,12 @@ actor PlasmaRifleReplacer : DEHDefenseWeaponSpawner replaces PlasmaRifle
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_RELIQUARY, 21), "Spawn1")
     TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_WeaponSpawn", 0, DEH_DEF_RELIQUARY, DEH_DEF_SLOT_PLASMA)
     Goto Death
+  Spawn6:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_NEGATIVEONE, 1), "Spawn1")
+    TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_WeaponSpawn", 0, DEH_DEF_NEGATIVEONE, DEH_DEF_SLOT_PLASMA)
+    Goto Death
   DroppedSpawn:
-    TNT1 A 0 A_Jump(256, "DroppedSpawn1", "DroppedSpawn2", "DroppedSpawn3", "DroppedSpawn4", "DroppedSpawn5")
+    TNT1 A 0 A_Jump(256, "DroppedSpawn1", "DroppedSpawn2", "DroppedSpawn3", "DroppedSpawn4", "DroppedSpawn5", "DroppedSpawn6")
     Goto DroppedSpawn1
   DroppedSpawn1:
     TNT1 A 0 A_DropItem("DEHPlasmaRifle")
@@ -457,12 +518,16 @@ actor PlasmaRifleReplacer : DEHDefenseWeaponSpawner replaces PlasmaRifle
     TNT1 A 0 A_DropItem("MaskimXulJackBombs")
     Goto Death
   DroppedSpawn4:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRUGGLE, 16), "DroppedSpawn1")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRUGGLE, 21), "DroppedSpawn1")
     TNT1 A 0 A_DropItem("StruggleAssaultRifle")
     Goto Death
   DroppedSpawn5:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_RELIQUARY, 21), "DroppedSpawn1")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_RELIQUARY, 16), "DroppedSpawn1")
     TNT1 A 0 A_DropItem("ReliquaryPlasmaRifle")
+    Goto Death
+  DroppedSpawn6:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_NEGATIVEONE, 1), "DroppedSpawn1")
+    TNT1 A 0 A_DropItem("NegativeOneDarkSceptre")
     Goto Death
   }
 }
@@ -475,6 +540,7 @@ actor BFG9000Replacer : DEHDefenseWeaponSpawner replaces BFG9000
     DropItem "MaskimXulGrimoireExcidium", 256, 1
     DropItem "StruggleLeichenfaust", 256, 1
     DropItem "ReliquaryBFG9000", 256, 1
+    DropItem "NegativeOneUnmakyr", 256, 1
 */
   States
   {
@@ -491,6 +557,7 @@ actor BFG9000Replacer : DEHDefenseWeaponSpawner replaces BFG9000
     TNT1 A 0 A_SpawnItemEx("MaskimXulBFG9000Giver", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     TNT1 A 0 A_SpawnItemEx("StruggleBFG9000Giver", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     TNT1 A 0 A_SpawnItemEx("ReliquaryBFG9000Giver", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_SpawnItemEx("NegativeOneBFG9000Giver", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     Stop
   ClassSpawnDropped:
     TNT1 A 0 A_DropItem("DoomBFG9000GiverDropped")
@@ -500,6 +567,7 @@ actor BFG9000Replacer : DEHDefenseWeaponSpawner replaces BFG9000
     TNT1 A 0 A_DropItem("MaskimXulBFG9000GiverDropped")
     TNT1 A 0 A_DropItem("StruggleBFG9000GiverDropped")
     TNT1 A 0 A_DropItem("ReliquaryBFG9000GiverDropped")
+    TNT1 A 0 A_DropItem("NegativeOneBFG9000GiverDropped")
     Stop
   RandomizerSpawn:
     TNT1 A 0 A_CheckFlag("DROPPED", "DroppedSpawn")
@@ -509,20 +577,24 @@ actor BFG9000Replacer : DEHDefenseWeaponSpawner replaces BFG9000
     TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_WeaponSpawn", 0, DEH_DEF_VANILLA_DOOM, DEH_DEF_SLOT_BFG)
     Goto Death
   Spawn2:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRAIN, 6), "Spawn1")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRAIN, 7), "Spawn1")
     TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_WeaponSpawn", 0, DEH_DEF_STRAIN, DEH_DEF_SLOT_BFG)
     Goto Death
   Spawn3:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_MASKIMXUL, 15), "Spawn1")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_MASKIMXUL, 12), "Spawn1")
     TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_WeaponSpawn", 0, DEH_DEF_MASKIMXUL, DEH_DEF_SLOT_BFG)
     Goto Death
   Spawn4:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRUGGLE, 20), "Spawn1")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRUGGLE, 21), "Spawn1")
     TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_WeaponSpawn", 0, DEH_DEF_STRUGGLE, DEH_DEF_SLOT_BFG)
     Goto Death
   Spawn5:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_RELIQUARY, 11), "Spawn1")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_RELIQUARY, 16), "Spawn1")
     TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_WeaponSpawn", 0, DEH_DEF_RELIQUARY, DEH_DEF_SLOT_BFG)
+    Goto Death
+  Spawn6:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_NEGATIVEONE, 1), "Spawn1")
+    TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_WeaponSpawn", 0, DEH_DEF_NEGATIVEONE, DEH_DEF_SLOT_BFG)
     Goto Death
   DroppedSpawn:
     TNT1 A 0 A_Jump(256, "DroppedSpawn1", "DroppedSpawn2", "DroppedSpawn3", "DroppedSpawn4", "DroppedSpawn5")
@@ -531,20 +603,24 @@ actor BFG9000Replacer : DEHDefenseWeaponSpawner replaces BFG9000
     TNT1 A 0 A_DropItem("DEHBFG9000")
     Goto Death
   DroppedSpawn2:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRAIN, 6), "DroppedSpawn1")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRAIN, 7), "DroppedSpawn1")
     TNT1 A 0 A_DropItem("StrainPsychicBlaster")
     Goto Death
   DroppedSpawn3:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_MASKIMXUL, 15), "DroppedSpawn1")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_MASKIMXUL, 12), "DroppedSpawn1")
     TNT1 A 0 A_DropItem("MaskimXulGrimoireExcidium")
     Goto Death
   DroppedSpawn4:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRUGGLE, 20), "DroppedSpawn1")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRUGGLE, 21), "DroppedSpawn1")
     TNT1 A 0 A_DropItem("StruggleLeichenfaust")
     Goto Death
   DroppedSpawn5:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_RELIQUARY, 11), "DroppedSpawn1")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_RELIQUARY, 16), "DroppedSpawn1")
     TNT1 A 0 A_DropItem("ReliquaryBFG9000")
+    Goto Death
+  DroppedSpawn6:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_NEGATIVEONE, 1), "DroppedSpawn1")
+    TNT1 A 0 A_DropItem("NegativeOneUnmakyr")
     Goto Death
   }
 }
