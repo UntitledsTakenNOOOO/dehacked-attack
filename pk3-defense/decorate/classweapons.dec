@@ -1574,7 +1574,7 @@ Actor NegativeOnePlasmaRifleGiver : DehackedWeaponGiver
     Fail
   }
 }
-Actor NegativeOnePlasmaRifleDropped : DehackedWeaponGiver
+Actor NegativeOnePlasmaRifleGiverDropped : DehackedWeaponGiver
 {
   Inventory.RestrictedTo "JohnNegativeOne"
   VisibleToPlayerClass "JohnNegativeOne"
