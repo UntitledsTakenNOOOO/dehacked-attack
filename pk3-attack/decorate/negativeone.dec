@@ -86,12 +86,12 @@ ACTOR NegativeDarkImp : NegativeImp
     NGTR AB 10 A_Look
     Loop
   Melee:
-    TROO EE 8 A_FaceTarget
-    TROO G 6 A_CustomComboAttack("NegativeDarkImpBall", 32, 10 * random(1, 6), "negativeone/claw")
+    NGTR EE 8 A_FaceTarget
+    NGTR G 6 A_CustomComboAttack("NegativeDarkImpBall", 32, 10 * random(1, 6), "negativeone/claw")
     goto See
   Missile:
-    TROO EE 8 A_FaceTarget
-    TROO G 6 A_CustomComboAttack("NegativeDarkImpBall", 32, 10 * random(1, 6), "negativeone/claw")
+    NGTR EE 8 A_FaceTarget
+    NGTR G 6 A_CustomComboAttack("NegativeDarkImpBall", 32, 10 * random(1, 6), "negativeone/claw")
     goto See
   }
 }
