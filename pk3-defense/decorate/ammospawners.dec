@@ -123,31 +123,31 @@ actor ClipReplacer : DEHDefenseWeaponSpawner replaces Clip
     TNT1 A 0 A_DropItem("DEHPistol")
     Goto Death
   DroppedStrainPistolSpawn:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRAIN, 1), "DoomPistolSpawn")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRAIN, 1), "DroppedDoomPistolSpawn")
     TNT1 A 0 A_DropItem("DEHPistol")
     Goto Death
   DroppedDV2PistolSpawn:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_DEUS_VULT, 3), "DoomPistolSpawn")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_DEUS_VULT, 3), "DroppedDoomPistolSpawn")
     TNT1 A 0 A_DropItem("DualPistols")
     Goto Death
   DroppedValiantPistolSpawn:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_VALIANT, 5), "DoomPistolSpawn")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_VALIANT, 5), "DroppedDoomPistolSpawn")
     TNT1 A 0 A_DropItem("ValiantPistol")
     Goto Death
   DroppedMaskimXulPistolSpawn:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_MASKIMXUL, 4), "DoomPistolSpawn")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_MASKIMXUL, 4), "DroppedDoomPistolSpawn")
     TNT1 A 0 A_DropItem("DualPistols")
     Goto Death
   DroppedStrugglePistolSpawn:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRUGGLE, 6), "DoomPistolSpawn")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRUGGLE, 6), "DroppedDoomPistolSpawn")
     TNT1 A 0 A_DropItem("StrugglePistol")
     Goto Death
   DroppedReliquaryPistolSpawn:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_RELIQUARY, 7), "DoomPistolSpawn")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_RELIQUARY, 7), "DroppedDoomPistolSpawn")
     TNT1 A 0 A_DropItem("ReliquaryMachinegun")
     Goto Death
   DroppedNegativeOnePistolSpawn:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_NEGATIVEONE, 2), "DoomPistolSpawn")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_NEGATIVEONE, 2), "DroppedDoomPistolSpawn")
     TNT1 A 0 A_DropItem("NegativeOnePistol")
     Goto Death
   }

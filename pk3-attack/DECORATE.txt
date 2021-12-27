@@ -929,7 +929,7 @@ ACTOR DEHHierophantBossEye
   See:
 	TNT1 A 181
     TNT1 A 175
-    TNT1 A 525 A_SetTics(A_SetUserVar("user_count", ACS_NamedExecuteWithResult("Dehacked_BossEyeCount") * 525))
+    TNT1 A 525 A_SetTics(ACS_NamedExecuteWithResult("Dehacked_BossEyeCount") * 525)
     TNT1 A 350
     TNT1 A 700
 	TNT1 A 0 A_SpawnItemEx("DEHBossEye", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
