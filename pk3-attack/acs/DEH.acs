@@ -209,7 +209,7 @@ Script "Dehacked_BossSelect" OPEN
 	{
 		if(GetCVar("deh_finalboss") <= 0)
 		{
-			BossSelection = random(1, 12);
+			BossSelection = random(1, 13);
 		} else {
 			BossSelection = GetCVar("deh_finalboss");
 		}
