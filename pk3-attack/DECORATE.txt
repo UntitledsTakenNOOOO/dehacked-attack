@@ -928,7 +928,10 @@ ACTOR DEHHierophantBossEye
     Loop
   See:
 	TNT1 A 181
-    TNT1 A 2100
+    TNT1 A 175
+    TNT1 A 525 A_SetTics(A_SetUserVar("user_count", ACS_NamedExecuteWithResult("Dehacked_BossEyeCount") * 525))
+    TNT1 A 350
+    TNT1 A 700
 	TNT1 A 0 A_SpawnItemEx("DEHBossEye", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
     Stop
   }
@@ -950,16 +953,21 @@ ACTOR DEHHierophantSpawner
 	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 4)
 	TNT1 A 0 A_PlaySound("brain/spit", 0, 1.0, 0, ATTN_NONE)
 	TNT1 A 0 A_BrainSpit("DEHBlankShot")
-	TNT1 A 0 A_BrainSpit("DEHRealHierophantSpawnShot")
-	TNT1 A 0 A_SetUserVar("user_count", ACS_NamedExecuteWithResult("Dehacked_BossTargetCount"))
+	TNT1 A 175 A_BrainSpit("DEHFakeHierophantSpawnShot")
+	TNT1 A 0 A_SetUserVar("user_count", ACS_NamedExecuteWithResult("Dehacked_BossEyeCount") * 7)
 	Goto FakeHierophantSpawnLoop
   FakeHierophantSpawnLoop:
-	TNT1 A 0 A_BrainSpit("DEHFakeHierophantSpawnShot")
+	TNT1 A 0 A_PlaySound("brain/spit", 0, 1.0, 0, ATTN_NONE)
+	TNT1 A 0 A_BrainSpit("DEHBlankShot")
+	TNT1 A 75 A_BrainSpit("DEHFakeHierophantSpawnShot")
 	TNT1 A 0 A_SetUserVar("user_count", user_count - 1)
 	TNT1 A 0 A_JumpIf(user_count <= 1, "StopSpawning")
 	Loop
   StopSpawning:
+	TNT1 A 350
 	TNT1 A 0 A_PlaySound("brain/spit", 0, 1.0, 0, ATTN_NONE)
+	TNT1 A 0 A_BrainSpit("DEHBlankShot")
+	TNT1 A 0 A_BrainSpit("DEHRealHierophantSpawnShot")
     Stop
   }
 }
