@@ -1,4 +1,4 @@
-train/shotgf		SRSHOTGN
+strain/shotgf		SRSHOTGN
 strain/plasmaf		SRPLASMA
 strain/bfgf			SRBFG
 $limit strain/plasmaf 0
