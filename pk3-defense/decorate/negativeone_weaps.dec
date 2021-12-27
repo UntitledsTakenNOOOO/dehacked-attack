@@ -351,7 +351,7 @@ ACTOR HellCharge : Ammo
   Inventory.MaxAmount 300
   Ammo.BackpackAmount 20
   Ammo.BackpackMaxAmount 600
-  Inventory.Icon "CELLA0"
+  Inventory.Icon "NCLLA0"
   Inventory.PickupSound "negativeone/i_pkup"
   States
   {

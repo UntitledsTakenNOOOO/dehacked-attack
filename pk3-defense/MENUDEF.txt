@@ -64,7 +64,7 @@ OptionMenu "DehackedDefenseOptions"
 	Option "Level Scaling:", "deh_def_level_scaling", "DehackedDefenseWeaponSelection"
 	StaticText ""
 	StaticText "Dehacked Clip Pistol Spawning", 1
-	StaticText "If enabled, randomized pistols spawn in place of pre-placed clips."
+	StaticText "If enabled, randomized pistols spawn in place of clips."
 	StaticText "Only has an effect if the weapon selection is randomizer-based."
 	Option "Pistol Spawning:", "deh_def_spawn_pistols", "DehackedDefenseWeaponSelection"
 	StaticText ""
