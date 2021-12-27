@@ -541,7 +541,7 @@ actor CellReplacer : DEHDefenseWeaponSpawner replaces Cell
     TNT1 A 0 A_SpawnItemEx("AntaresianCell", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     Goto Death
   Spawn6:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_NEGATIVEONE, 21), "Spawn1")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_NEGATIVEONE, 1), "Spawn1")
     TNT1 A 0 A_SpawnItemEx("HellCharge", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     Goto Death
   DroppedSpawn:

@@ -233,38 +233,30 @@ actor SuperShotgunReplacer : DEHDefenseWeaponSpawner replaces SuperShotgun
     Stop
   RandomizerSpawn:
     TNT1 A 0 A_CheckFlag("DROPPED", "DroppedSpawn")
-    TNT1 A 0 A_Jump(256, "Spawn1", "Spawn2", "Spawn3", "Spawn4")
+    TNT1 A 0 A_Jump(256, "Spawn1", "Spawn1", "Spawn2", "Spawn3")
     Goto Spawn1
   Spawn1:
     TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_WeaponSpawn", 0, DEH_DEF_VANILLA_DOOM, DEH_DEF_SLOT_SSG)
     Goto Death
   Spawn2:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRUGGLE, 1), "Spawn1")
-    TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_WeaponSpawn", 0, DEH_DEF_STRUGGLE, DEH_DEF_SLOT_SSG)
-    Goto Death
-  Spawn3:
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_RELIQUARY, 16), "Spawn1")
     TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_WeaponSpawn", 0, DEH_DEF_RELIQUARY, DEH_DEF_SLOT_SSG)
     Goto Death
-  Spawn4:
+  Spawn3:
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_NEGATIVEONE, 1), "Spawn1")
     TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_WeaponSpawn", 0, DEH_DEF_NEGATIVEONE, DEH_DEF_SLOT_SSG)
     Goto Death
   DroppedSpawn:
-    TNT1 A 0 A_Jump(256, "DroppedSpawn1", "DroppedSpawn2", "DroppedSpawn3", "DroppedSpawn4")
+    TNT1 A 0 A_Jump(256, "DroppedSpawn1", "DroppedSpawn1", "DroppedSpawn2", "DroppedSpawn3")
     Goto DroppedSpawn1
   DroppedSpawn1:
     TNT1 A 0 A_DropItem("DEHSuperShotgun")
     Goto Death
   DroppedSpawn2:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRUGGLE, 1), "DroppedSpawn1")
-    TNT1 A 0 A_DropItem("StruggleSuperShotgun")
-    Goto Death
-  DroppedSpawn3:
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_RELIQUARY, 16), "DroppedSpawn1")
     TNT1 A 0 A_DropItem("ReliquarySuperShotgun")
     Goto Death
-  DroppedSpawn4:
+  DroppedSpawn3:
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_NEGATIVEONE, 1), "DroppedSpawn1")
     TNT1 A 0 A_DropItem("NegativeOneSuperShotgun")
     Goto Death

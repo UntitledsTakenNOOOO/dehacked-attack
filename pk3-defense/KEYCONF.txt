@@ -29,7 +29,6 @@ addslotdefault 1 StruggleHammer
 addslotdefault 1 StruggleDrillMachine
 addslotdefault 2 StrugglePistol
 addslotdefault 3 StruggleShotgun
-addslotdefault 3 StruggleSuperShotgun
 addslotdefault 4 StruggleDualPistols
 addslotdefault 5 StruggleGrenadeLauncher
 addslotdefault 6 StruggleAssaultRifle

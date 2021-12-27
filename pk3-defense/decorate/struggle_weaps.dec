@@ -9,7 +9,7 @@ ACTOR JohnStruggle : DoomPlayer
 /*
   Player.WeaponSlot 1, StruggleDrillMachine, StruggleHammer
   Player.WeaponSlot 2, StrugglePistol
-  Player.WeaponSlot 3, StruggleSuperShotgun, StruggleShotgun
+  Player.WeaponSlot 3, SuperShotgun, StruggleShotgun
   Player.WeaponSlot 4, StruggleDualPistols
   Player.WeaponSlot 5, StruggleGrenadeLauncher
   Player.WeaponSlot 6, StruggleAssaultRifle
@@ -257,7 +257,7 @@ ACTOR StruggleShotgun : DoomWeapon
     Stop
   }
 }
-
+/*
 ACTOR StruggleSuperShotgun : DoomWeapon
 {
   Weapon.SelectionOrder 400
@@ -302,7 +302,7 @@ ACTOR StruggleSuperShotgun : DoomWeapon
     Stop
   }
 }
-
+*/
 ACTOR StruggleDualPistols : DoomWeapon
 {
    Weapon.SelectionOrder 700

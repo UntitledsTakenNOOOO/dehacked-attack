@@ -121,12 +121,7 @@ Script "Dehacked_Defense_Enter" ENTER
 	}
 	if(GetCVar("deh_def_supershotgunstart") > 0 && !CheckInventory("DEHSuperShotgun") && !CheckInventory("StruggleSuperShotgun") && !CheckInventory("ReliquarySuperShotgun"))
 	{
-		if(GetActorClass(0) == "JohnStruggle")
-		{
-			GiveInventory("StruggleSuperShotgun", 1);
-			GiveInventory("Shell", 6);
-		}
-		else if(GetActorClass(0) == "JohnReliquary")
+		if(GetActorClass(0) == "JohnReliquary")
 		{
 			GiveInventory("ReliquarySuperShotgun", 1);
 			GiveInventory("Shell", 12);
@@ -444,7 +439,7 @@ int DehackedDefenseWeapons[8][7] =
 	//Maskim Xul
 	{"DEHChainsaw", "DEHShotgun", "DEHSuperShotgun", "DEHChaingun", "MaskimXulHandOfAfrit", "MaskimXulJackBombs", "MaskimXulGrimoireExcidium"},
 	//Stuggle
-	{"StruggleDrillMachine", "StruggleShotgun", "StruggleSuperShotgun", "StruggleDualPistols", "StruggleGrenadeLauncher", "StruggleAssaultRifle", "StruggleLeichenfaust"},
+	{"StruggleDrillMachine", "StruggleShotgun", "DEHSuperShotgun", "StruggleDualPistols", "StruggleGrenadeLauncher", "StruggleAssaultRifle", "StruggleLeichenfaust"},
 	//Antaresian Reliquary
 	{"ReliquaryChainsaw", "ReliquaryShotgun", "ReliquarySuperShotgun", "ReliquaryChaingun", "ReliquaryRocketLauncher", "ReliquaryPlasmaRifle", "ReliquaryBFG9000"},
 	//Antaresian Reliquary
