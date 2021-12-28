@@ -411,9 +411,9 @@ Actor ArchangelusA
 		Goto Plasma
 	Summon:
 		ANGL EJK 8 Bright A_FaceTarget
-		ANGL IIII 0 Bright A_BrainSpit("ArchangelusSpawnShot")
+		ANGL I 0 Bright A_BrainSpit("ArchangelusSpawnShot")
 		ANGL I 8 Bright A_BrainSpit("ArchangelusSpawnShot")
-		goto Plasma	
+		goto Plasma
 	Plasma:
 		ANGL JK 6 A_FaceTarget
 		ANGL HHHHHHHH 1 A_CustomMissile("EviternityPlasma", 32)
@@ -506,13 +506,13 @@ Actor ArchangelusB
 		ANGL JK 6 A_FaceTarget
 		goto Missile4
 	Missile4:
-		ANGL H 0 Bright A_CustomMissile("EviternityPlasma", 32)
+		ANGL H 1 Bright A_CustomMissile("EviternityPlasma", 32)
 		ANGL H 1 Bright A_Chase
 		ANGL I 0 A_Jump (248, "Missile4")
 		goto Archie
 	Summon:
 		ANGL EJK 8 Bright A_FaceTarget
-		ANGL IIII 0 Bright A_BrainSpit("ArchangelusSpawnShot")
+		ANGL I 0 Bright A_BrainSpit("ArchangelusSpawnShot")
 		ANGL I 8 Bright A_BrainSpit("ArchangelusSpawnShot")
 		ANGL JK 6 A_FaceTarget
 		ANGL HHHHHHHH 1 A_CustomMissile("EviternityPlasma", 32)

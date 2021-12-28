@@ -60,7 +60,7 @@ ACTOR MotherdemonFinal
 		64MT G 0 Bright A_FatAttack1
 		64MT G 1 Bright A_FatAttack2
 		64MT G 1 Bright A_FatAttack3
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_NoVileAttack") == 1, "Summon")
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_NoVileAttack") == 1, "AltMissile")
 		64MT H 0 Bright A_VileStart
 		64MT H 10 Bright A_FaceTarget
 		64MT H 8 Bright A_VileTarget
@@ -72,11 +72,50 @@ ACTOR MotherdemonFinal
 	Pain:
 		64MT K 40 A_Pain
 		Goto Summon
+	AltMissile:
+		64MT H 0 Bright A_VileStart
+		64MT H 10 Bright A_FaceTarget
+		64MT H 0 Bright A_FatAttack1("DoomImpBall")
+		64MT H 1 Bright A_FatAttack2("DoomImpBall")
+		64MT H 0 Bright A_FatAttack1("DoomImpBall")
+		64MT H 1 Bright A_FatAttack2("DoomImpBall")
+		64MT H 0 Bright A_FatAttack1("DoomImpBall")
+		64MT H 1 Bright A_FatAttack2("DoomImpBall")
+		64MT H 0 Bright A_FatAttack1("DoomImpBall")
+		64MT H 1 Bright A_FatAttack2("DoomImpBall")
+		64MT H 0 Bright A_FatAttack1("DoomImpBall")
+		64MT H 1 Bright A_FatAttack2("DoomImpBall")
+		64MT H 0 Bright A_FatAttack1("DoomImpBall")
+		64MT H 1 Bright A_FatAttack2("DoomImpBall")
+		64MT H 0 Bright A_FatAttack1("DoomImpBall")
+		64MT H 1 Bright A_FatAttack2("DoomImpBall")
+		64MT H 0 Bright A_FatAttack1("DoomImpBall")
+		64MT H 1 Bright A_FatAttack2("DoomImpBall")
+		64MT HH 8 Bright A_FaceTarget
+		64MT IIII 8 Bright A_FaceTarget
+		64MT J 0 A_CustomMissile("CacodemonBall", 114, -48, 0) // TOP LEFT
+		64MT J 0 A_CustomMissile("CacodemonBall",  76, -64, 0) // BOTTOM LEFT
+		64MT J 0 A_CustomMissile("CacodemonBall", 114,  48, 0) // TOP RIGHT
+		64MT J 3 A_CustomMissile("CacodemonBall",  76,  64, 0) // BOTTOM RIGHT
+		64MT J 0 A_CustomMissile("CacodemonBall", 114, -48, 0) // TOP LEFT
+		64MT J 0 A_CustomMissile("CacodemonBall",  76, -64, 0) // BOTTOM LEFT
+		64MT J 0 A_CustomMissile("CacodemonBall", 114,  48, 0) // TOP RIGHT
+		64MT J 3 A_CustomMissile("CacodemonBall",  76,  64, 0) // BOTTOM RIGHT
+		64MT J 0 A_CustomMissile("RevenantTracer", 114, -48,  90) // TOP LEFT
+		64MT J 0 A_CustomMissile("RevenantTracer",  76, -64,  90) // BOTTOM LEFT
+		64MT J 0 A_CustomMissile("RevenantTracer", 114,  48, -90) // TOP RIGHT
+		64MT J 3 A_CustomMissile("RevenantTracer",  76,  64, -90) // BOTTOM RIGHT
+		64MT J 0 A_CustomMissile("RevenantTracer", 114, -48,  90) // TOP LEFT
+		64MT J 0 A_CustomMissile("RevenantTracer",  76, -64,  90) // BOTTOM LEFT
+		64MT J 0 A_CustomMissile("RevenantTracer", 114,  48, -90) // TOP RIGHT
+		64MT J 3 A_CustomMissile("RevenantTracer",  76,  64, -90) // BOTTOM RIGHT
+		64MT J 16 Bright
+		Goto See
 	Summon:
 		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossEyeCount") > 10, "SuperSummon")
 		64MT H 4 Bright A_FaceTarget
-		64MT I 6 Bright A_DualPainAttack("DEHLostSoul") //CHANGE: Ahahahahahaha
-		64MT J 4 Bright A_DualPainAttack("Doppleganger")
+		64MT I 4 Bright A_DualPainAttack("DEHLostSoul") //CHANGE: Ahahahahahaha
+		64MT I 4 Bright A_DualPainAttack("Doppleganger")
 		64MT J 4 Bright A_DualPainAttack("DEHLostSoul")
 		64MT J 4 Bright A_DualPainAttack("AlphaSoul")
 		64MT J 4 Bright A_PainAttack("PoisonSoul")
@@ -101,7 +140,7 @@ ACTOR MotherdemonFinal
 		64MT G 0 Bright A_FatAttack1
 		64MT G 1 Bright A_FatAttack2
 		64MT G 1 Bright A_FatAttack3
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_NoVileAttack") == 1, "Summon")
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_NoVileAttack") == 1, "AltMissile")
 		TNT1 A 0 Bright A_Jump(96, "Summon")
 		64MT H 0 Bright A_VileStart
 		64MT H 10 Bright A_FaceTarget
