@@ -18,34 +18,34 @@ ACTOR JohnNegativeOne : DoomPlayer
   States
   {
   Spawn:
-    NGPL A -1
+    NPLY A -1
     Loop
   See:
-    NGPL ABCD 4 
+    NPLY ABCD 4 
     Loop
   Missile:
-    NGPL E 12
+    NPLY E 12
     Goto Spawn
   Melee:
-    NGPL F 6 BRIGHT
+    NPLY F 6 BRIGHT
     Goto Missile
   Pain:
-    NGPL G 4 
-    NGPL G 4 A_Pain
+    NPLY G 4 
+    NPLY G 4 A_Pain
     Goto Spawn
   Death:
-    NGPL H 10
-    NGPL I 10 A_PlayerScream
-    NGPL J 10 A_NoBlocking
-    NGPL KLM 10
-    NGPL N -1
+    NPLY H 10
+    NPLY I 10 A_PlayerScream
+    NPLY J 10 A_NoBlocking
+    NPLY KLM 10
+    NPLY N -1
     Stop
   XDeath:
-    NGPL O 5
-    NGPL P 5 A_XScream
-    NGPL Q 5 A_NoBlocking
-    NGPL RSTUV 5
-    NGPL W -1
+    NPLY O 5
+    NPLY P 5 A_XScream
+    NPLY Q 5 A_NoBlocking
+    NPLY RSTUV 5
+    NPLY W -1
     Stop
   }
 }

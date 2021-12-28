@@ -37,7 +37,7 @@ Actor Hierophant1 //Replaces Meat5
     Goto Idle
   Reset:
     TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
-    TNT1 A 0 A_SpawnItemEx("Archvile", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+    TNT1 A 0 A_SpawnItemEx("DEHArchvile", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
     Stop
   Idle:
     HIER A 10 A_Look

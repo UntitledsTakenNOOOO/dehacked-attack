@@ -57,9 +57,10 @@ ACTOR MotherdemonFinal
 		64MT FF 2 Bright A_SkelMissile
 		64MT F 0 Bright A_FatAttack3
 		64MT G 2 Bright A_SkelMissile
-		64MT G 0 Bright A_FatAttack3
-		64MT G 1 Bright A_FatAttack1
+		64MT G 0 Bright A_FatAttack1
 		64MT G 1 Bright A_FatAttack2
+		64MT G 1 Bright A_FatAttack3
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_NoVileAttack") == 1, "Summon")
 		64MT H 0 Bright A_VileStart
 		64MT H 10 Bright A_FaceTarget
 		64MT H 8 Bright A_VileTarget
@@ -89,7 +90,7 @@ ACTOR MotherdemonFinal
 		64MT I 8 Bright A_PainAttack("NightmareCacodemon")
 		64MT I 8 Bright A_PainAttack("AstralCaco")
 		64MT I 8 Bright A_PainAttack("DEHPainElemental")
-		64MT J 8 Bright A_PainAttack("ShadowElemental")
+		64MT J 8 Bright A_PainAttack("SpiritElemental")
 		64MT J 20 Bright A_PainAttack("NightwatchCacodemon")
 		Goto See
 	LegendaryMissile:
@@ -97,9 +98,10 @@ ACTOR MotherdemonFinal
 		64MT FF 2 Bright A_SkelMissile
 		64MT F 0 Bright A_FatAttack3
 		64MT G 2 Bright A_SkelMissile
-		64MT G 0 Bright A_FatAttack3
-		64MT G 1 Bright A_FatAttack1
+		64MT G 0 Bright A_FatAttack1
 		64MT G 1 Bright A_FatAttack2
+		64MT G 1 Bright A_FatAttack3
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_NoVileAttack") == 1, "Summon")
 		TNT1 A 0 Bright A_Jump(96, "Summon")
 		64MT H 0 Bright A_VileStart
 		64MT H 10 Bright A_FaceTarget

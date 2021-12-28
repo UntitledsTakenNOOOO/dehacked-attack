@@ -40,7 +40,7 @@ Actor FormerCaptain
 		Goto Idle
 	Reset:
 		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
-		TNT1 A 0 A_SpawnItemEx("DEHChaingunguy", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+		TNT1 A 0 A_SpawnItemEx("PlasmaElite", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
 		Stop
 	Idle:
 		EVWV AABB 10 A_Look
@@ -201,7 +201,7 @@ Actor AstralCaco : Cacodemon
 		Goto Idle
 	Reset:
 		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
-		TNT1 A 0 A_SpawnItemEx("DEHCacodemon", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+		TNT1 A 0 A_SpawnItemEx("CacoLich", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
 		Stop
 	Idle:
 		ASTR A 10 A_Look
@@ -407,21 +407,26 @@ Actor ArchangelusA
 		ANGL H 0 A_FatAttack1
 		ANGL H 0 A_FatAttack2
 		ANGL H 6 A_FatAttack3
-		ANGL H 0 A_Jump (128, "Archie")
+		ANGL H 0 A_Jump(128, "Archie")
+		Goto Plasma
+	Summon:
+		ANGL EJK 8 Bright A_FaceTarget
+		ANGL IIII 0 Bright A_BrainSpit("ArchangelusSpawnShot")
+		ANGL I 8 Bright A_BrainSpit("ArchangelusSpawnShot")
+		goto Plasma	
+	Plasma:
 		ANGL JK 6 A_FaceTarget
 		ANGL HHHHHHHH 1 A_CustomMissile("EviternityPlasma", 32)
 		ANGL I 10 A_FaceTarget
 		goto See
 	Archie:
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_NoVileAttack") == 1, "Summon")
 		ANGL J 0 Bright A_VileStart
 		ANGL J 10 Bright A_PlaySoundEx ("archangelus/pain", Auto, False, 1)
 		ANGL J 40 Bright A_VileTarget
 		ANGL KH 8 Bright A_FaceTarget
 		ANGL I 12 Bright A_VileAttack
-		ANGL JK 6 A_FaceTarget
-		ANGL HHHHHHHH 1 A_CustomMissile("EviternityPlasma", 32)
-		ANGL I 10 A_FaceTarget
-		goto See
+		Goto Plasma
 	Death:
 		ANGL V 0 A_Fall
 		ANGL V 1 A_SpawnItem ("ArchangelusB", 8, 0)
@@ -467,6 +472,16 @@ Actor ArchangelusB
 		ANGL L 9
 		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossEyeCount") > 10, "SuperSummon")
 		goto See2
+	See2:
+		ANGL AABBCCDD 2 A_Chase
+		goto See2
+	Pain:
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossEyeCount") > 10, "SuperSummon")
+		ANGL EJK 8 Bright A_FaceTarget
+		ANGL IIII 0 Bright A_BrainSpit("ArchangelusSpawnShot")
+		ANGL I 8 Bright A_BrainSpit("ArchangelusSpawnShot")
+		ANGL AABBCCDD 2 A_Chase
+		goto See2
 	SuperSummon:
 		ANGL EJK 8 Bright A_FaceTarget
 		ANGL A 0 A_SetUserVar("user_count", ACS_NamedExecuteWithResult("Dehacked_BossTargetCount"))
@@ -478,16 +493,6 @@ Actor ArchangelusB
 	EndSummonLoop:
 		ANGL I 8 Bright
 		Goto See2
-	See2:
-		ANGL AABBCCDD 2 A_Chase
-		goto See2
-	Pain:
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossEyeCount") > 10, "SuperSummon")
-		ANGL EJK 8 Bright A_FaceTarget
-		ANGL IIII 0 Bright A_BrainSpit("ArchangelusSpawnShot")
-		ANGL I 8 Bright A_BrainSpit("ArchangelusSpawnShot")
-		ANGL AABBCCDD 2 A_Chase
-		goto See2
 	Missile:
 		ANGL FG 6 A_FaceTarget
 	Missile2:
@@ -505,7 +510,16 @@ Actor ArchangelusB
 		ANGL H 1 Bright A_Chase
 		ANGL I 0 A_Jump (248, "Missile4")
 		goto Archie
+	Summon:
+		ANGL EJK 8 Bright A_FaceTarget
+		ANGL IIII 0 Bright A_BrainSpit("ArchangelusSpawnShot")
+		ANGL I 8 Bright A_BrainSpit("ArchangelusSpawnShot")
+		ANGL JK 6 A_FaceTarget
+		ANGL HHHHHHHH 1 A_CustomMissile("EviternityPlasma", 32)
+		ANGL I 10 A_FaceTarget
+		goto See2
 	Archie:
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_NoVileAttack") == 1, "Summon")
 		ANGL J 0 Bright A_VileStart
 		ANGL J 10 Bright A_PlaySoundEx ("archangelus/pain", Auto, False, 1)
 		ANGL J 40 Bright A_VileTarget

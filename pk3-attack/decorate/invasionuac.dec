@@ -105,7 +105,7 @@ ACTOR WarlordOfHell : BaronOfHell
 		Goto Idle
 	Reset:
 		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
-		TNT1 A 0 A_SpawnItemEx("SpiderMastermind", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+		TNT1 A 0 A_SpawnItemEx("DEHSpiderMastermind", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
 		Stop
 	Idle:
         BOS6 AB 10 A_Look
@@ -115,10 +115,63 @@ ACTOR WarlordOfHell : BaronOfHell
         Loop
     Melee:
     Missile:
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_NoVileAttack") == 1, "AltMissile")
         BOS6 E 12 A_VileStart //Change: Added 8 frames of delay before attack on A_VileStart call
         BOS6 E 12 Bright A_VileTarget //Change: Upped delays 8 tics --> 12 tics
         BOS6 F 12 Bright A_FaceTarget
         BOS6 G 12 Bright A_VileAttack
+        Goto See
+	AltMissile:
+        TNT1 A 0 Bright A_JumpIfHealthLower(1000, "AltMissile6")
+        TNT1 A 0 Bright A_JumpIfHealthLower(2000, "AltMissile5")
+        TNT1 A 0 Bright A_JumpIfHealthLower(3000, "AltMissile4")
+        TNT1 A 0 Bright A_JumpIfHealthLower(4000, "AltMissile3")
+        TNT1 A 0 Bright A_JumpIfHealthLower(5000, "AltMissile2")
+		Goto AltMissile1
+	AltMissile1:
+        BOS6 EF 4 Bright A_FaceTarget
+        BOS6 G 4 Bright A_CustomComboAttack("WarlordOfHellBall", 32, 10 * random(1, 8), "baron/melee")
+        BOS6 EF 4 Bright A_FaceTarget
+        BOS6 G 4 Bright A_CustomComboAttack("WarlordOfHellBall", 32, 10 * random(1, 8), "baron/melee")
+        BOS6 EF 4 Bright A_FaceTarget
+        BOS6 G 4 Bright A_CustomComboAttack("WarlordOfHellBall", 32, 10 * random(1, 8), "baron/melee")
+        Goto See
+	AltMissile2:
+        BOS6 EF 8 Bright A_FaceTarget
+        BOS6 G 8 Bright A_FatAttack1("WarlordOfHellBall")
+        BOS6 EF 8 Bright A_FaceTarget
+        BOS6 G 8 Bright A_FatAttack2("WarlordOfHellBall")
+        BOS6 EF 8 Bright A_FaceTarget
+        BOS6 G 8 Bright A_FatAttack3("WarlordOfHellBall")
+        Goto See
+	AltMissile3:
+        BOS6 EF 8 Bright A_FaceTarget
+        BOS6 G 8 Bright A_CustomComboAttack("WarlordOfHellBall", 32, 10 * random(1, 8), "baron/melee")
+		BOS6 EF 8 Bright A_FaceTarget
+        BOS6 G 0 Bright A_CustomComboAttack("WarlordOfHellBall", 32, 10 * random(1, 8), "baron/melee")
+        BOS6 G 8 Bright A_FatAttack3("WarlordOfHellBall")
+        Goto See
+	AltMissile4:
+        BOS6 EF 8 Bright A_FaceTarget
+        BOS6 G 8 Bright A_FatAttack3("WarlordOfHellBall")
+		BOS6 EF 8 Bright A_FaceTarget
+        BOS6 G 0 Bright A_FatAttack1("WarlordOfHellBall")
+        BOS6 G 8 Bright A_FatAttack2("WarlordOfHellBall")
+        Goto See
+	AltMissile5:
+        BOS6 EF 8 Bright A_FaceTarget
+        BOS6 G 1 Bright A_FatAttack1("WarlordOfHellBall")
+        BOS6 G 1 Bright A_FatAttack2("WarlordOfHellBall")
+        BOS6 G 4 Bright A_FatAttack3("WarlordOfHellBall")
+        Goto See
+	AltMissile6:
+        BOS6 EF 8 Bright A_FaceTarget
+        BOS6 G 1 Bright A_FatAttack1("WarlordOfHellBall")
+        BOS6 G 1 Bright A_CustomComboAttack("WarlordOfHellBall", 32, 10 * random(1, 8), "baron/melee")
+        BOS6 G 1 Bright A_FatAttack2("WarlordOfHellBall")
+        BOS6 G 1 Bright A_CustomComboAttack("WarlordOfHellBall", 32, 10 * random(1, 8), "baron/melee")
+        BOS6 G 1 Bright A_FatAttack3("WarlordOfHellBall")
+        BOS6 G 1 Bright A_CustomComboAttack("WarlordOfHellBall", 32, 10 * random(1, 8), "baron/melee")
         Goto See
     Pain:
         BOS6 H 2
@@ -134,4 +187,12 @@ ACTOR WarlordOfHell : BaronOfHell
     Raise:
         Stop
     }
+}
+
+ACTOR WarlordOfHellBall : BaronBall
+{
+  Speed 25
+  FastSpeed 30
+  Damage 10
+  Translation "112:127=192:207"
 }

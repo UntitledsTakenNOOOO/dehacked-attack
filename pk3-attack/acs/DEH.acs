@@ -156,6 +156,11 @@ Script "Dehacked_SubtractiveReset" (void)
 	SetResultValue(GetCVar("deh_subtractive_rendering"));
 }
 
+Script "Dehacked_NoVileAttack" (void)
+{
+	SetResultValue(GetCVar("deh_novileattack"));
+}
+
 Script "Dehacked_CyberCount" (void)
 {
 	int a, b, c, d, e, f, g, h, i, j, k;

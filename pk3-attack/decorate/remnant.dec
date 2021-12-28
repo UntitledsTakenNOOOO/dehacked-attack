@@ -100,7 +100,7 @@ ACTOR RemnantMaster
     Goto Idle
   Reset:
     TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
-    TNT1 A 0 A_SpawnItemEx("SpiderMastermind", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+    TNT1 A 0 A_SpawnItemEx("GateMaster", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
     Stop
   Idle:
     UNMB AB 15 A_Look
@@ -110,7 +110,7 @@ ACTOR RemnantMaster
     Loop
   Missile:
     TNT1 A 0 A_JumpIfInventory("LDLegendaryMonsterTransformed", 1, "LegendaryMissile")
-	UNMB D 6 A_FaceTarget
+    UNMB D 6 A_FaceTarget
     UNMB E 10 Bright A_SkelMissile
     UNMB E 5 Bright A_SkelMissile
     UNMB E 20 Bright A_FatAttack3
@@ -118,31 +118,30 @@ ACTOR RemnantMaster
     UNMB E 10 Bright A_SkelMissile
     UNMB E 5 Bright A_SkelMissile
     UNMB E 20 Bright A_FatAttack3
+    Goto See
+  SuperMissile:
+    UNMB D 6 A_FaceTarget
+    UNMB E 10 Bright A_SkelMissile
+    UNMB E 5 Bright A_SkelMissile
+    UNMB E 5 Bright A_FatAttack1
+    UNMB E 5 Bright A_FatAttack2
+    UNMB E 10 Bright A_FatAttack3
+    UNMB D 20 A_FaceTarget
+    UNMB E 10 Bright A_SkelMissile
+    UNMB E 5 Bright A_SkelMissile
+    UNMB E 5 Bright A_FatAttack1
+    UNMB E 5 Bright A_FatAttack2
+    UNMB E 10 Bright A_FatAttack3
     Goto See
   LegendaryMissile:
-    TNT1 A 0 A_Jump(64, "LegendaryMissile2")
-	UNMB D 6 A_FaceTarget
-    UNMB E 10 Bright A_SkelMissile
-    UNMB E 5 Bright A_SkelMissile
-    UNMB E 5 Bright A_FatAttack1
-    UNMB E 5 Bright A_FatAttack2
-    UNMB E 10 Bright A_FatAttack3
-    UNMB D 20 A_FaceTarget
-    UNMB E 10 Bright A_SkelMissile
-    UNMB E 5 Bright A_SkelMissile
-    UNMB E 5 Bright A_FatAttack1
-    UNMB E 5 Bright A_FatAttack2
-    UNMB E 10 Bright A_FatAttack3
-    Goto See
-  LegendaryMissile2:
-	UNMB O 0 A_VileStart
-	UNMB O 10 Bright A_FaceTarget
-	UNMB P 10 Bright A_VileTarget
-	UNMB Q 10 Bright A_FaceTarget 
-	UNMB R 6 Bright A_VileAttack
-    Goto See
+    TNT1 A 0 A_Jump(64, "PainMissile")
+    TNT1 A 0 A_Jump(85, "SuperMissile")
+    Goto Missile+1
   Pain:
     UNMB F 12 A_Pain
+    Goto PainMissile
+  PainMissile:
+	TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_NoVileAttack") == 1, "SuperMissile")
 	UNMB O 0 A_VileStart
 	UNMB O 10 Bright A_FaceTarget
 	UNMB P 10 Bright A_VileTarget
@@ -154,7 +153,7 @@ ACTOR RemnantMaster
     UNMB H 10 A_Scream
     UNMB I 10 A_Fall
     UNMB JKLM 10
-	UNMB N 30 A_SetFloorClip
+    UNMB N 30 A_SetFloorClip
     UNMB N -1 A_BossDeath
     Stop
   }

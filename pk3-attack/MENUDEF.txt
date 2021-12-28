@@ -61,6 +61,11 @@ OptionValue "DehackedFinalBossPreview"
 	0, "Boss is not revealed"
 	1, "Boss is revealed"
 }
+OptionValue "DehackedFinalBossNoVileAttack"
+{
+	0, "Bosses can use Vile Attack"
+	1, "Bosses cannot use Vile Attack"
+}
 OptionValue "DehackedNightmareRendering"
 {
 	0, "OptFuzzy (Spectre)"
@@ -125,5 +130,9 @@ OptionMenu "DehackedAttackOptions"
 	StaticText "Final Boss Preview:", 1
 	StaticText "Reveals which boss has been selected at the start of the level, if enabled."
 	Option "Final Boss Preview:", "deh_finalbosspreview", "DehackedFinalBossPreview"
+	StaticText ""
+	StaticText "Disable Boss Archvile Attack:", 1
+	StaticText "If enabled, bosses with an Archvile Attack aside from the Super Archvile can't use it."
+	Option "Boss Archvile Attack:", "deh_novileattack", "DehackedFinalBossNoVileAttack"
 	StaticText ""
 }
