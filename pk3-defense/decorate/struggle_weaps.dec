@@ -113,6 +113,7 @@ ACTOR 223CaliberMagazineBox : 223CaliberMagazine
 
 ACTOR StruggleHammer : DoomWeapon
 {
+  Weapon.SlotNumber 1
   Weapon.SelectionOrder 3700
   Weapon.Kickback 100
   Obituary "$OB_MPFIST"
@@ -143,6 +144,7 @@ ACTOR StruggleHammer : DoomWeapon
 
 ACTOR StruggleDrillMachine : DoomWeapon
 {
+  Weapon.SlotNumber 1
   Weapon.Kickback 0
   Weapon.SelectionOrder 2200
   Weapon.UpSound "struggle/sawup"
@@ -175,6 +177,7 @@ ACTOR StruggleDrillMachine : DoomWeapon
 
 ACTOR StrugglePistol : DoomWeapon
 {
+  Weapon.SlotNumber 2
   Weapon.SelectionOrder 1900
   Weapon.AmmoUse 1
   Weapon.AmmoGive 24
@@ -220,6 +223,7 @@ ACTOR StrugglePistol : DoomWeapon
 
 ACTOR StruggleShotgun : DoomWeapon
 {
+  Weapon.SlotNumber 3
   Weapon.SelectionOrder 1300
   Weapon.AmmoUse 1
   Weapon.AmmoGive 4
@@ -305,6 +309,7 @@ ACTOR StruggleSuperShotgun : DoomWeapon
 */
 ACTOR StruggleDualPistols : DoomWeapon
 {
+   Weapon.SlotNumber 4
    Weapon.SelectionOrder 700
    Weapon.AmmoUse 1
    Weapon.AmmoGive 24
@@ -341,6 +346,7 @@ ACTOR StruggleDualPistols : DoomWeapon
 
 ACTOR StruggleGrenadeLauncher : DoomWeapon
 {
+  Weapon.SlotNumber 5
   Weapon.SelectionOrder 2500
   Weapon.AmmoUse 1
   Weapon.AmmoGive 2
@@ -393,6 +399,7 @@ ACTOR StruggleRocket : Rocket
 
 ACTOR StruggleAssaultRifle : DoomWeapon
 {
+  Weapon.SlotNumber 6
   Weapon.SelectionOrder 100
   Weapon.AmmoUse 1
   Weapon.AmmoGive 40
@@ -454,6 +461,7 @@ ACTOR StruggleAssaultRifleShot : PlasmaBall
 ACTOR StruggleLeichenfaust : DoomWeapon
 {
   Height 20
+  Weapon.SlotNumber 7
   Weapon.SelectionOrder 2800
   Weapon.AmmoUse 6
   Weapon.AmmoGive 2

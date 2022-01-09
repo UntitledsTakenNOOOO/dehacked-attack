@@ -1,57 +1,58 @@
 weaponsection "DehackedDefense"
 
 addslotdefault 1 DEHFist
-addslotdefault 1 DEHChainsaw
-addslotdefault 2 DEHPistol
-addslotdefault 3 DEHShotgun
-addslotdefault 3 DEHSuperShotgun
-addslotdefault 4 DEHChaingun
-addslotdefault 5 DEHRocketLauncher
-addslotdefault 6 DEHPlasmaRifle
-addslotdefault 7 DEHBFG9000
-
 addslotdefault 1 StrainDoubleFist
-addslotdefault 3 StrainSawedOff
-addslotdefault 6 StrainNFG
-addslotdefault 7 StrainPsychicBlaster
-
-addslotdefault 1 DV2Gauntlets
-addslotdefault 2 DualPistols
-
-addslotdefault 2 ValiantPistol
-addslotdefault 4 ValiantChaingun
-
-addslotdefault 5 MaskimXulHandOfAfrit
-addslotdefault 6 MaskimXulJackBombs
-addslotdefault 7 MaskimXulGrimoireExcidium
-
 addslotdefault 1 StruggleHammer
-addslotdefault 1 StruggleDrillMachine
-addslotdefault 2 StrugglePistol
-addslotdefault 3 StruggleShotgun
-addslotdefault 4 StruggleDualPistols
-addslotdefault 5 StruggleGrenadeLauncher
-addslotdefault 6 StruggleAssaultRifle
-addslotdefault 7 StruggleLeichenfaust
-
 addslotdefault 1 ReliquaryFist
-addslotdefault 1 ReliquaryChainsaw
-addslotdefault 2 ReliquaryMachinegun
-addslotdefault 3 ReliquaryShotgun
-addslotdefault 3 ReliquarySuperShotgun
-addslotdefault 4 ReliquaryChaingun
-addslotdefault 5 ReliquaryRocketLauncher
-addslotdefault 6 ReliquaryPlasmaRifle
-addslotdefault 7 ReliquaryBFG9000
 
+addslotdefault 1 DEHChainsaw
 addslotdefault 1 NegativeOneGauntlets
+addslotdefault 1 StruggleDrillMachine
+addslotdefault 1 ReliquaryChainsaw
+addslotdefault 1 DV2Gauntlets
+
+addslotdefault 2 DEHPistol
 addslotdefault 2 NegativeOnePistol
+addslotdefault 2 DualPistols
+addslotdefault 2 ValiantPistol
+addslotdefault 2 StrugglePistol
+addslotdefault 2 ReliquaryMachinegun
+
+addslotdefault 3 DEHShotgun
 addslotdefault 3 NegativeOneShotgun
+addslotdefault 3 StrainSawedOff
+addslotdefault 3 StruggleShotgun
+addslotdefault 3 ReliquaryShotgun
+
+addslotdefault 3 DEHSuperShotgun
 addslotdefault 3 NegativeOneSuperShotgun
+addslotdefault 3 ReliquarySuperShotgun
+
+addslotdefault 4 DEHChaingun
 addslotdefault 4 NegativeOneUzi
+addslotdefault 4 ValiantChaingun
+addslotdefault 4 StruggleDualPistols
+addslotdefault 4 ReliquaryChaingun
+
+addslotdefault 5 DEHRocketLauncher
 addslotdefault 5 NegativeOneRocketLauncher
+addslotdefault 5 MaskimXulHandOfAfrit
+addslotdefault 5 StruggleGrenadeLauncher
+addslotdefault 5 ReliquaryRocketLauncher
+
+addslotdefault 6 DEHPlasmaRifle
 addslotdefault 6 NegativeOneDarkSceptre
+addslotdefault 6 StrainNFG
+addslotdefault 6 MaskimXulJackBombs
+addslotdefault 6 StruggleAssaultRifle
+addslotdefault 6 ReliquaryPlasmaRifle
+
+addslotdefault 7 DEHBFG9000
 addslotdefault 7 NegativeOneUnmakyr
+addslotdefault 7 StrainPsychicBlaster
+addslotdefault 7 MaskimXulGrimoireExcidium
+addslotdefault 7 StruggleLeichenfaust
+addslotdefault 7 ReliquaryBFG9000
 
 clearplayerclasses
 addplayerclass JohnDoom

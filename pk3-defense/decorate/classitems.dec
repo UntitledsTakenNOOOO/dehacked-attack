@@ -355,7 +355,7 @@ ACTOR NegativeOneClassCellPack : LargeHellCharge
 	VisibleToPlayerClass "JohnNegativeOne"
 }
 
-ACTOR DoomClassGreenArmor : BlueArmor
+ACTOR DoomClassGreenArmor : GreenArmor
 {
 	Inventory.ForbiddenTo "JohnNegativeOne"
 	VisibleToPlayerClass "JohnDoom", "JohnStrain", "JohnDeusVultII", "JohnValiant", "JohnMaskimXul", "JohnStruggle", "JohnReliquary"

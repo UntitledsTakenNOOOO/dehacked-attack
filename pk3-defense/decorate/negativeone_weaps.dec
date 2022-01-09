@@ -98,6 +98,7 @@ ACTOR NegativeOneBlueArmor : BasicArmorPickup
 
 ACTOR NegativeOneGauntlets : Weapon
 {
+  Weapon.SlotNumber 1
   Weapon.Kickback 0
   Weapon.SelectionOrder 2200
   Weapon.UpSound "negativeone/sawup"
@@ -130,6 +131,7 @@ ACTOR NegativeOneGauntlets : Weapon
 
 ACTOR NegativeOnePistol : DoomWeapon
 {
+  Weapon.SlotNumber 2
   Weapon.SelectionOrder 1900
   Weapon.AmmoUse 1
   Weapon.AmmoGive 20
@@ -180,6 +182,7 @@ ACTOR NegativeOnePuff : BulletPuff
 
 ACTOR NegativeOneShotgun : DoomWeapon
 {
+  Weapon.SlotNumber 3
   Weapon.SelectionOrder 1300
   Weapon.AmmoUse 1
   Weapon.AmmoGive 8
@@ -222,6 +225,7 @@ ACTOR NegativeOneShotgun : DoomWeapon
 
 ACTOR NegativeOneSuperShotgun : DoomWeapon
 {
+  Weapon.SlotNumber 3
   Weapon.SelectionOrder 400
   Weapon.AmmoUse 2
   Weapon.AmmoGive 8
@@ -267,6 +271,7 @@ ACTOR NegativeOneSuperShotgun : DoomWeapon
 
 ACTOR NegativeOneUzi : DoomWeapon
 {
+   Weapon.SlotNumber 4
    Weapon.SelectionOrder 700
    Weapon.AmmoUse 1
    Weapon.AmmoGive 20
@@ -309,6 +314,7 @@ ACTOR NegativeOneUzi : DoomWeapon
 
 ACTOR NegativeOneRocketLauncher : DoomWeapon
 {
+  Weapon.SlotNumber 5
   Weapon.SelectionOrder 2500
   Weapon.AmmoUse 1
   Weapon.AmmoGive 2
@@ -375,6 +381,7 @@ ACTOR LargeHellCharge : HellCharge
 
 ACTOR NegativeOneDarkSceptre : DoomWeapon
 {
+  Weapon.SlotNumber 6
   Weapon.SelectionOrder 100
   Weapon.AmmoUse 1
   Weapon.AmmoGive 40
@@ -427,6 +434,7 @@ ACTOR NegativeOneDarkSceptreBall : PlasmaBall
 ACTOR NegativeOneUnmakyr : DoomWeapon
 {
   Height 20
+  Weapon.SlotNumber 7
   Weapon.SelectionOrder 2800
   Weapon.AmmoUse 40
   Weapon.AmmoGive 40

@@ -84,6 +84,7 @@ ACTOR MaskimXulRouletteBerserkSphere : Berserk
 
 ACTOR MaskimXulHandOfAfrit : DoomWeapon
 {
+  Weapon.SlotNumber 5
   Weapon.SelectionOrder 2500
   Weapon.AmmoUse 1
   Weapon.AmmoGive 2
@@ -164,6 +165,7 @@ ACTOR MaskimXulDemonSoul : MaskimXulDemonHeart
 
 ACTOR MaskimXulJackBombs : DoomWeapon
 {
+  Weapon.SlotNumber 6
   Weapon.SelectionOrder 100
   Weapon.AmmoUse 1
   Weapon.AmmoGive 40
@@ -238,6 +240,7 @@ ACTOR JackBomb : PlasmaBall
 ACTOR MaskimXulGrimoireExcidium : DoomWeapon
 {
   Height 20
+  Weapon.SlotNumber 7
   Weapon.SelectionOrder 2800
   +WEAPON.NOAUTOFIRE
   Inventory.PickupMessage "You got the Grimoire Excidium! Use it wisely..."

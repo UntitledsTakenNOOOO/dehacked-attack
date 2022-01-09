@@ -17,10 +17,17 @@ ACTOR JohnDoom : DoomPlayer
 */
 }
 
-ACTOR DEHFist : Fist {}
-ACTOR DEHChainsaw : Chainsaw {}
+ACTOR DEHFist : Fist
+{
+  Weapon.SlotNumber 1
+}
+ACTOR DEHChainsaw : Chainsaw
+{
+  Weapon.SlotNumber 1
+}
 ACTOR DEHPistol : Pistol
 {
+  Weapon.SlotNumber 2
   States
   {
   Fire:
@@ -59,6 +66,7 @@ ACTOR DEHPistol : Pistol
 }
 ACTOR DEHShotgun : Shotgun
 {
+  Weapon.SlotNumber 3
   States
   {
   Fire:
@@ -84,6 +92,7 @@ ACTOR DEHShotgun : Shotgun
 }
 ACTOR DEHSuperShotgun : SuperShotgun
 {
+  Weapon.SlotNumber 3
   States
   {
   Fire:
@@ -117,6 +126,7 @@ ACTOR DEHSuperShotgun : SuperShotgun
 }
 ACTOR DEHChaingun : Chaingun
 {
+  Weapon.SlotNumber 4
   States
   {
   Fire:
@@ -146,9 +156,13 @@ ACTOR DEHChaingun : Chaingun
      Goto Ready
   }
 }
-ACTOR DEHRocketLauncher : RocketLauncher {}
+ACTOR DEHRocketLauncher : RocketLauncher
+{
+  Weapon.SlotNumber 5
+}
 ACTOR DEHPlasmaRifle : PlasmaRifle
 {
+  Weapon.SlotNumber 6
   States
   {
   Fire:
@@ -192,4 +206,7 @@ ACTOR ValiantPlasmaBall : PlasmaBall
 {
   SeeSound "valiant/plasmaf"
 }
-ACTOR DEHBFG9000 : BFG9000 {}
+ACTOR DEHBFG9000 : BFG9000
+{
+  Weapon.SlotNumber 7
+}

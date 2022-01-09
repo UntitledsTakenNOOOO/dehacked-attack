@@ -313,39 +313,39 @@ Script "Dehacked_BackpackHandler" (void)
 	SetAmmoCapacity("HellCharge", 600);
 	if(GetActorClass(0) == "JohnValiant")
 	{
-		GiveInventory("Clip", 15);
-		GiveInventory("Shell", 4);
 		SetAmmoCapacity("Clip", 600);
 		SetAmmoCapacity("Shell", 100);
 		SetAmmoCapacity("RocketAmmo", 100);
 		SetAmmoCapacity("MaskimXulDemonHeart", 100);
+		GiveInventory("Clip", 15);
+		GiveInventory("Shell", 4);
 	}
 	else if(GetActorClass(0) == "JohnStruggle")
 	{
-		GiveInventory("Clip", 12);
-		GiveInventory("Shell", 2);
 		SetAmmoCapacity("Clip", 360);
 		SetAmmoCapacity("Shell", 72);
 		SetAmmoCapacity("RocketAmmo", 36);
 		SetAmmoCapacity("MaskimXulDemonHeart", 36);
+		GiveInventory("Clip", 12);
+		GiveInventory("Shell", 2);
 	}
 	else if(GetActorClass(0) == "JohnReliquary")
 	{
-		GiveInventory("Clip", 12);
-		GiveInventory("Shell", 4);
 		SetAmmoCapacity("Clip", 480);
 		SetAmmoCapacity("Shell", 80);
 		SetAmmoCapacity("RocketAmmo", 80);
 		SetAmmoCapacity("MaskimXulDemonHeart", 80);
+		GiveInventory("Clip", 12);
+		GiveInventory("Shell", 4);
 	}
 	else //Just Vanilla Ammo
 	{
-		GiveInventory("Clip", 10);
-		GiveInventory("Shell", 4);
 		SetAmmoCapacity("Clip", 400);
 		SetAmmoCapacity("Shell", 100);
 		SetAmmoCapacity("RocketAmmo", 100);
 		SetAmmoCapacity("MaskimXulDemonHeart", 100);
+		GiveInventory("Clip", 10);
+		GiveInventory("Shell", 4);
 	}
 	GiveInventory("RocketAmmo", 1);
 	GiveInventory("MaskimXulDemonHeart", 1);

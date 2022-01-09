@@ -19,6 +19,7 @@ ACTOR JohnDeusVultII : DoomPlayer
 
 ACTOR DV2Gauntlets : DoomWeapon
 {
+  Weapon.SlotNumber 1
   Weapon.Kickback 0
   Weapon.SelectionOrder 2200
   Weapon.UpSound "dv2/sawup"
@@ -50,6 +51,7 @@ ACTOR DV2Gauntlets : DoomWeapon
 
 ACTOR DualPistols : DoomWeapon
 {
+  Weapon.SlotNumber 2
   Weapon.SelectionOrder 1900
   Weapon.AmmoUse 1
   Weapon.AmmoGive 20

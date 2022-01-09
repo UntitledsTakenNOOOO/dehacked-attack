@@ -42,8 +42,8 @@ ACTOR ValiantClipBox : Clip
 
 ACTOR ValiantPistol : Doomweapon
 {
-  Weapon.SelectionOrder 1900
   Weapon.SlotNumber 2
+  Weapon.SelectionOrder 1900
   Weapon.AmmoUse 1
   Weapon.AmmoGive 30
   Weapon.AmmoType "Clip"
@@ -81,8 +81,8 @@ ACTOR ValiantPistol : Doomweapon
 
 ACTOR ValiantChaingun : Doomweapon
 {
-	Weapon.SelectionOrder 700
 	Weapon.SlotNumber 4
+	Weapon.SelectionOrder 700
 	Weapon.AmmoUse 1
 	Weapon.AmmoGive 30
 	Weapon.AmmoType "Clip"

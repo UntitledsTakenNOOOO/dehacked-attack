@@ -69,6 +69,7 @@ ACTOR StrainRedArmor : BasicArmorPickup
 
 ACTOR StrainDoubleFist : Weapon
 {
+  Weapon.SlotNumber 1
   Weapon.SelectionOrder 3700
   Weapon.Kickback 100
   Obituary "$OB_MPFIST"
@@ -98,6 +99,7 @@ ACTOR StrainDoubleFist : Weapon
 
 ACTOR StrainSawedOff : DoomWeapon
 {
+  Weapon.SlotNumber 2
   Weapon.SelectionOrder 1300
   Weapon.AmmoUse 1
   Weapon.AmmoGive 8
@@ -140,6 +142,7 @@ ACTOR StrainSawedOff : DoomWeapon
 
 ACTOR StrainNFG : DoomWeapon
 {
+  Weapon.SlotNumber 6
   Weapon.SelectionOrder 100
   Weapon.AmmoUse 1
   Weapon.AmmoGive 12
@@ -222,6 +225,7 @@ ACTOR NFGBatteryPack : NFGBattery
 ACTOR StrainPsychicBlaster : DoomWeapon
 {
   Height 20
+  Weapon.SlotNumber 7
   Weapon.SelectionOrder 2800
   Weapon.AmmoUse 3
   Weapon.AmmoGive 3

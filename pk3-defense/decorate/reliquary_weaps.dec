@@ -19,6 +19,7 @@ ACTOR JohnReliquary : DoomPlayer
 
 ACTOR ReliquaryFist : DoomWeapon
 {
+  Weapon.SlotNumber 1
   Weapon.SelectionOrder 3700
   Weapon.Kickback 100
   Obituary "$OB_MPFIST"
@@ -51,6 +52,7 @@ ACTOR ReliquaryFist : DoomWeapon
 
 ACTOR ReliquaryChainsaw : DoomWeapon
 {
+  Weapon.SlotNumber 1
   Weapon.Kickback 0
   Weapon.SelectionOrder 2200
   Weapon.UpSound "weapons/sawup"
@@ -84,6 +86,7 @@ ACTOR ReliquaryChainsaw : DoomWeapon
 
 ACTOR ReliquaryMachinegun : DoomWeapon
 {
+  Weapon.SlotNumber 2
   Weapon.SelectionOrder 1900
   Weapon.AmmoUse 1
   Weapon.AmmoGive 24
@@ -128,6 +131,7 @@ ACTOR ReliquaryMachinegun : DoomWeapon
 
 ACTOR ReliquaryShotgun : DoomWeapon
 {
+  Weapon.SlotNumber 3
   Weapon.SelectionOrder 1300
   Weapon.AmmoUse 1
   Weapon.AmmoGive 8
@@ -174,6 +178,7 @@ ACTOR ReliquaryShotgun : DoomWeapon
 
 ACTOR ReliquarySuperShotgun : DoomWeapon
 {
+  Weapon.SlotNumber 3
   Weapon.SelectionOrder 400
   Weapon.AmmoUse 2
   Weapon.AmmoGive 8
@@ -218,6 +223,7 @@ ACTOR ReliquarySuperShotgun : DoomWeapon
 
 ACTOR ReliquaryChaingun : DoomWeapon
 {
+   Weapon.SlotNumber 4
    Weapon.SelectionOrder 700
    Weapon.AmmoUse 1
    Weapon.AmmoGive 24
@@ -266,6 +272,7 @@ ACTOR ReliquaryChaingun : DoomWeapon
 
 ACTOR ReliquaryRocketLauncher : DoomWeapon
 {
+  Weapon.SlotNumber 5
   Weapon.SelectionOrder 2500
   Weapon.AmmoUse 1
   Weapon.AmmoGive 2
@@ -319,6 +326,7 @@ ACTOR ReliquaryRocket : Rocket
 
 ACTOR ReliquaryPlasmaRifle : DoomWeapon
 {
+  Weapon.SlotNumber 6
   Weapon.SelectionOrder 100
   Weapon.AmmoUse 1
   Weapon.AmmoGive 32
@@ -375,6 +383,7 @@ ACTOR ReliquaryPlasmaBall : PlasmaBall
 ACTOR ReliquaryBFG9000 : DoomWeapon
 {
   Height 20
+  Weapon.SlotNumber 7
   Weapon.SelectionOrder 2800
   Weapon.AmmoUse 30
   Weapon.AmmoGive 32
