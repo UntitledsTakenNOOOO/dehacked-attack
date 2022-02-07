@@ -26,12 +26,13 @@ Actor SpiritImp : DoomImp
     Loop
   Melee:
   Missile:
-    SHTR FF 3 A_FaceTarget
-    SHTR G 6 A_CustomMissile("ShadowImpBall",32,0,0)
+    SHTR F 8 A_FaceTarget
+    SHTR G 8 Bright A_FaceTarget
+    SHTR G 10 Bright A_CustomMissile("SpiritImpBall",32,0,0)
     Goto See
   Pain:
-    SHTR H 2
-    SHTR H 2 A_Pain
+    SHTR H 6
+    SHTR H 6 A_Pain
     Goto See
   Death:
     SHTR I 8
@@ -46,7 +47,7 @@ Actor SpiritImp : DoomImp
     Goto See
   }
 }
-ACTOR ShadowImpBall
+ACTOR SpiritImpBall
 {
   Radius 13
   Height 8
@@ -61,15 +62,15 @@ ACTOR ShadowImpBall
   States
   {
   Spawn:
-    ACID AB 5 Bright A_SpawnItemEx("ShadowImpBallFX",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+    ACID AB 5 Bright A_SpawnItemEx("SpiritImpBallFX",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
     Loop
   Death:
-	ACID A 0 A_PainAttack("ShadowSoul")
-    ACID CDE 5 Bright
+    ACID CD 5 Bright
+	ACID E 5 A_PainAttack("LostSpirit")
     Stop
   }
 }
-ACTOR ShadowImpBallFX
+ACTOR SpiritImpBallFX
 {
   +NOINTERACTION
   +CLIENTSIDEONLY
@@ -83,11 +84,11 @@ ACTOR ShadowImpBallFX
   }
 }
 
-ACTOR ShadowSoul
+ACTOR LostSpirit
 {
   Health 5
-  Radius 16
-  Height 56
+  Radius 14
+  Height 32
   Mass 50
   Speed 7
   PainChance 256
@@ -102,27 +103,31 @@ ACTOR ShadowSoul
   DeathSound "skull/death"
   ActiveSound "skull/active"
   RenderStyle SoulTrans
-  Obituary "%o was spooked by a shadow spirit." // "%o was spooked by a lost soul."
+  Obituary "%o was spooked by a lost spirit." // "%o was spooked by a lost soul."
   BloodColor "DarkGreen"
   Tag "Spirit"
   DamageFactor "Antiair", 3.0 //Like this actually matters at 5 HP
   States
   {
   Spawn:
-    SHSP A 10 Bright A_Look
+    SHSP JIHGFE 3 Bright
+    Goto Idle
+  Idle:
+    SHSP A 3 Bright A_Look
     Loop
   See:
-    SHSP AB 3 Bright A_Chase
+    SHSP AB 5 Bright A_Chase
     Loop
   Missile:
-    SHSP AB 3 Bright A_FaceTarget
-    SHSP A 0 Bright A_BruisAttack
+    SHSP A 6 Bright A_FaceTarget
+    SHSP B 6 Bright A_BruisAttack
 	Goto See
   Pain:
-    SHSP AB 3 Bright
+    SHSP AB 5 Bright
     Goto See
   Death:
-    SHSP EFGH 3 Bright A_NoBlocking
+    SHSP E 3 Bright A_NoBlocking
+    SHSP FGH 3 Bright
     SHSP IJ 3
     Stop
   }
@@ -151,10 +156,10 @@ ACTOR SpiritElemental : PainElemental
     SHPA AABBCC 3 A_Chase
     Loop
   Missile:
-    SHPA DE 5 A_FaceTarget
-    SHPA F 5 Bright A_CustomMissile("ShadowImpBall",32,0,0)
-    SHPA E 5 A_FaceTarget
-    SHPA F 5 Bright A_CustomMissile("ShadowImpBall",32,0,0)
+    SHPA D 5 A_FaceTarget
+    SHPA E 5 Bright A_CustomMissile("SpiritImpBall",32,0,0)
+    SHPA F 5 Bright A_FaceTarget
+    SHPA F 0 Bright A_CustomMissile("SpiritImpBall",32,0,0)
     Goto See
   Pain:
     SHPA G 6
@@ -164,7 +169,7 @@ ACTOR SpiritElemental : PainElemental
     SHPA H 8 Bright
     SHPA I 8 Bright A_Scream
     SHPA JK 8 Bright
-    SHPA L 8 Bright A_PainDie("ShadowSoul")
+    SHPA L 8 Bright A_PainDie("LostSpirit")
     SHPA M 8 Bright
     Stop
   Raise:
