@@ -14,7 +14,7 @@ Script "Dehacked_Defense_Enter" ENTER
 {
 	if(GetActorClass(0) == "JohnValiant")
 	{
-		if(CheckInventory("DummyBackpackItem"))
+		if(CheckInventory("DummyBackpackItem") || CheckInventory("BackpackItem"))
 		{
 			SetAmmoCapacity("Clip", 600);
 			SetAmmoCapacity("Shell", 100);
@@ -27,7 +27,7 @@ Script "Dehacked_Defense_Enter" ENTER
 	}
 	else if(GetActorClass(0) == "JohnStruggle")
 	{
-		if(CheckInventory("DummyBackpackItem"))
+		if(CheckInventory("DummyBackpackItem") || CheckInventory("BackpackItem"))
 		{
 			SetAmmoCapacity("Clip", 360);
 			SetAmmoCapacity("Shell", 72);
@@ -40,7 +40,7 @@ Script "Dehacked_Defense_Enter" ENTER
 	}
 	else if(GetActorClass(0) == "JohnReliquary")
 	{
-		if(CheckInventory("DummyBackpackItem"))
+		if(CheckInventory("DummyBackpackItem") || CheckInventory("BackpackItem"))
 		{
 			SetAmmoCapacity("Clip", 480);
 			SetAmmoCapacity("Shell", 80);
@@ -53,7 +53,7 @@ Script "Dehacked_Defense_Enter" ENTER
 	}
 	else //Just Vanilla Ammo
 	{
-		if(CheckInventory("DummyBackpackItem"))
+		if(CheckInventory("DummyBackpackItem") || CheckInventory("BackpackItem"))
 		{
 			SetAmmoCapacity("Clip", 400);
 			SetAmmoCapacity("Shell", 100);
@@ -218,7 +218,7 @@ Script "Dehacked_Defense_Enter" ENTER
 		else if(GetActorClass(0) == "JohnNegativeOne")
 		{
 			GiveInventory("NegativeOneDarkSceptre", 1);
-			GiveInventory("HellCharge", 40);
+			GiveInventory("Cell", 40);
 		}
 		else
 		{
@@ -252,7 +252,7 @@ Script "Dehacked_Defense_Enter" ENTER
 		else if(GetActorClass(0) == "JohnNegativeOne")
 		{
 			GiveInventory("NegativeOneUnmakyr", 1);
-			GiveInventory("HellCharge", 80);
+			GiveInventory("Cell", 80);
 		}
 		else
 		{
@@ -310,7 +310,7 @@ Script "Dehacked_BackpackHandler" (void)
 	SetAmmoCapacity("JackBombAmmo", 20);
 	SetAmmoCapacity("223CaliberMagazine", 320);
 	SetAmmoCapacity("AntaresianCell", 480);
-	SetAmmoCapacity("HellCharge", 600);
+	//SetAmmoCapacity("HellCharge", 600);
 	if(GetActorClass(0) == "JohnValiant")
 	{
 		SetAmmoCapacity("Clip", 600);
@@ -354,7 +354,7 @@ Script "Dehacked_BackpackHandler" (void)
 	GiveInventory("JackBombAmmo", 1);
 	GiveInventory("223CaliberMagazine", 20);
 	GiveInventory("AntaresianCell", 16);
-	GiveInventory("HellCharge", 20);
+	//GiveInventory("HellCharge", 20);
 }
 
 Script "Dehacked_MapNumber" (void)

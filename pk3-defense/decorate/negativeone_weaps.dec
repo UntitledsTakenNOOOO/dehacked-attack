@@ -350,14 +350,14 @@ ACTOR NegativeOneRocketLauncher : DoomWeapon
   }
 }
 
-ACTOR HellCharge : Ammo
+ACTOR HellCharge : Cell
 {
   Inventory.PickupMessage "Picked up a Hell charge." // "Picked up an energy cell."
   Inventory.Amount 20
-  Inventory.MaxAmount 300
-  Ammo.BackpackAmount 20
-  Ammo.BackpackMaxAmount 600
-  Inventory.Icon "NCLLA0"
+  //Inventory.MaxAmount 300
+  //Ammo.BackpackAmount 20
+  //Ammo.BackpackMaxAmount 600
+  //Inventory.Icon "NCLLA0"
   Inventory.PickupSound "negativeone/i_pkup"
   States
   {
@@ -366,7 +366,7 @@ ACTOR HellCharge : Ammo
     Stop
   }
 }
-ACTOR LargeHellCharge : HellCharge
+ACTOR LargeHellCharge : Cell
 {
   Inventory.PickupMessage "Picked up a large Hell charge." // "Picked up an energy cell pack."
   Inventory.Amount 100
@@ -385,7 +385,7 @@ ACTOR NegativeOneDarkSceptre : DoomWeapon
   Weapon.SelectionOrder 100
   Weapon.AmmoUse 1
   Weapon.AmmoGive 40
-  Weapon.AmmoType "HellCharge"
+  Weapon.AmmoType "Cell"
   Inventory.PickupMessage "You got the Dark Sceptre, it glows with energy!"
   Tag "Dark Sceptre"
   Inventory.PickupSound "negativeone/w_pkup"
@@ -438,7 +438,7 @@ ACTOR NegativeOneUnmakyr : DoomWeapon
   Weapon.SelectionOrder 2800
   Weapon.AmmoUse 40
   Weapon.AmmoGive 40
-  Weapon.AmmoType "HellCharge"
+  Weapon.AmmoType "Cell"
   +WEAPON.NOAUTOFIRE
   Inventory.PickupMessage "You got the Unmakyr 666,000! Oh yes..."
   Tag "Unmakyr 666,000"

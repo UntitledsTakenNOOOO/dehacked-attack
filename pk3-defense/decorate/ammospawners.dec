@@ -533,11 +533,11 @@ actor CellReplacer : DEHDefenseWeaponSpawner replaces Cell
     TNT1 A 0 A_SpawnItemEx("JackBombAmmo", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     Goto Death
   Spawn4:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRUGGLE, 16), "Spawn1")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRUGGLE, 21), "Spawn1")
     TNT1 A 0 A_SpawnItemEx("223CaliberMagazine", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     Goto Death
   Spawn5:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_RELIQUARY, 21), "Spawn1")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_RELIQUARY, 16), "Spawn1")
     TNT1 A 0 A_SpawnItemEx("AntaresianCell", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     Goto Death
   Spawn6:
