@@ -1069,7 +1069,7 @@ Actor MaskimXulRocketLauncherGiver : DehackedWeaponGiver
     Goto PickupSuccess
   AmmoCheck:
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
-    TNT1 A 0 A_JumpIfInventory("MaskimXulDemonHeart", 0, "PickupFail")
+    TNT1 A 0 A_JumpIfInventory("RocketAmmo", 0, "PickupFail")
     Goto PickupSuccess
   PickupSuccess:
     TNT1 A 0 A_SpawnItemEx("MaskimXulHandOfAfrit", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
@@ -1093,7 +1093,7 @@ Actor MaskimXulRocketLauncherGiverDropped : DehackedWeaponGiver
     TNT1 A 0 A_JumpIfInventory("MaskimXulHandOfAfrit", 1, "AmmoCheck")
     Goto PickupSuccess
   AmmoCheck:
-    TNT1 A 0 A_JumpIfInventory("MaskimXulDemonHeart", 0, "PickupFail")
+    TNT1 A 0 A_JumpIfInventory("RocketAmmo", 0, "PickupFail")
     Goto PickupSuccess
   PickupSuccess:
     TNT1 A 0 A_DropItem("MaskimXulHandOfAfrit")
@@ -1477,7 +1477,7 @@ Actor ReliquaryPlasmaRifleGiver : DehackedWeaponGiver
     Goto PickupSuccess
   AmmoCheck:
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
-    TNT1 A 0 A_JumpIfInventory("AntaresianCell", 0, "PickupFail")
+    TNT1 A 0 A_JumpIfInventory("Cell", 0, "PickupFail")
     Goto PickupSuccess
   PickupSuccess:
     TNT1 A 0 A_SpawnItemEx("ReliquaryPlasmaRifle", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
@@ -1501,7 +1501,7 @@ Actor ReliquaryPlasmaRifleGiverDropped : DehackedWeaponGiver
     TNT1 A 0 A_JumpIfInventory("ReliquaryPlasmaRifle", 1, "AmmoCheck")
     Goto PickupSuccess
   AmmoCheck:
-    TNT1 A 0 A_JumpIfInventory("AntaresianCell", 0, "PickupFail")
+    TNT1 A 0 A_JumpIfInventory("Cell", 0, "PickupFail")
     Goto PickupSuccess
   PickupSuccess:
     TNT1 A 0 A_DropItem("ReliquaryPlasmaRifle")
@@ -1525,7 +1525,7 @@ Actor NegativeOnePlasmaRifleGiver : DehackedWeaponGiver
     Goto PickupSuccess
   AmmoCheck:
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
-    TNT1 A 0 A_JumpIfInventory("HellCharge", 0, "PickupFail")
+    TNT1 A 0 A_JumpIfInventory("Cell", 0, "PickupFail")
     Goto PickupSuccess
   PickupSuccess:
     TNT1 A 0 A_SpawnItemEx("NegativeOneDarkSceptre", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
@@ -1549,7 +1549,7 @@ Actor NegativeOnePlasmaRifleGiverDropped : DehackedWeaponGiver
     TNT1 A 0 A_JumpIfInventory("NegativeOneDarkSceptre", 1, "AmmoCheck")
     Goto PickupSuccess
   AmmoCheck:
-    TNT1 A 0 A_JumpIfInventory("HellCharge", 0, "PickupFail")
+    TNT1 A 0 A_JumpIfInventory("Cell", 0, "PickupFail")
     Goto PickupSuccess
   PickupSuccess:
     TNT1 A 0 A_DropItem("NegativeOneDarkSceptre")
@@ -1778,7 +1778,7 @@ Actor ReliquaryBFG9000Giver : DehackedWeaponGiver
     Goto PickupSuccess
   AmmoCheck:
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
-    TNT1 A 0 A_JumpIfInventory("AntaresianCell", 0, "PickupFail")
+    TNT1 A 0 A_JumpIfInventory("Cell", 0, "PickupFail")
     Goto PickupSuccess
   PickupSuccess:
     TNT1 A 0 A_SpawnItemEx("ReliquaryBFG9000", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
@@ -1802,7 +1802,7 @@ Actor ReliquaryBFG9000GiverDropped : DehackedWeaponGiver
     TNT1 A 0 A_JumpIfInventory("ReliquaryBFG9000", 1, "AmmoCheck")
     Goto PickupSuccess
   AmmoCheck:
-    TNT1 A 0 A_JumpIfInventory("RocketAmmo", 0, "PickupFail")
+    TNT1 A 0 A_JumpIfInventory("Cell", 0, "PickupFail")
     Goto PickupSuccess
   PickupSuccess:
     TNT1 A 0 A_DropItem("ReliquaryBFG9000")
@@ -1826,7 +1826,7 @@ Actor NegativeOneBFG9000Giver : DehackedWeaponGiver
     Goto PickupSuccess
   AmmoCheck:
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
-    TNT1 A 0 A_JumpIfInventory("HellCharge", 0, "PickupFail")
+    TNT1 A 0 A_JumpIfInventory("Cell", 0, "PickupFail")
     Goto PickupSuccess
   PickupSuccess:
     TNT1 A 0 A_SpawnItemEx("NegativeOneUnmakyr", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
@@ -1850,7 +1850,7 @@ Actor NegativeOneBFG9000GiverDropped : DehackedWeaponGiver
     TNT1 A 0 A_JumpIfInventory("NegativeOneUnmakyr", 1, "AmmoCheck")
     Goto PickupSuccess
   AmmoCheck:
-    TNT1 A 0 A_JumpIfInventory("HellCharge", 0, "PickupFail")
+    TNT1 A 0 A_JumpIfInventory("Cell", 0, "PickupFail")
     Goto PickupSuccess
   PickupSuccess:
     TNT1 A 0 A_DropItem("NegativeOneUnmakyr")

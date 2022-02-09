@@ -391,7 +391,7 @@ actor RocketLauncherReplacer : DEHDefenseWeaponSpawner replaces RocketLauncher
     TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_WeaponSpawn", 0, DEH_DEF_VANILLA_DOOM, DEH_DEF_SLOT_ROCKET)
     Goto Death
   Spawn2:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_MASKIMXUL, 16), "Spawn1")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_MASKIMXUL, 20), "Spawn1")
     TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_WeaponSpawn", 0, DEH_DEF_MASKIMXUL, DEH_DEF_SLOT_ROCKET)
     Goto Death
   Spawn3:
@@ -413,7 +413,7 @@ actor RocketLauncherReplacer : DEHDefenseWeaponSpawner replaces RocketLauncher
     TNT1 A 0 A_DropItem("DEHRocketLauncher")
     Goto Death
   DroppedSpawn2:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_MASKIMXUL, 16), "DroppedSpawn1")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_MASKIMXUL, 20), "DroppedSpawn1")
     TNT1 A 0 A_DropItem("MaskimXulHandOfAfrit")
     Goto Death
   DroppedSpawn3:

@@ -12,17 +12,26 @@
 
 Script "Dehacked_Defense_Enter" ENTER
 {
+	if(CheckInventory("DummyBackpackItem") || CheckInventory("BackpackItem"))
+	{
+		SetAmmoCapacity("Clip", 400);
+		SetAmmoCapacity("Shell", 100);
+		SetAmmoCapacity("RocketAmmo", 100);
+		SetAmmoCapacity("Cell", 600);
+	} else {
+		SetAmmoCapacity("Clip", 200);
+		SetAmmoCapacity("Shell", 50);
+		SetAmmoCapacity("RocketAmmo", 50);
+		SetAmmoCapacity("Cell", 300);
+	}
+
 	if(GetActorClass(0) == "JohnValiant")
 	{
 		if(CheckInventory("DummyBackpackItem") || CheckInventory("BackpackItem"))
 		{
 			SetAmmoCapacity("Clip", 600);
-			SetAmmoCapacity("Shell", 100);
-			SetAmmoCapacity("RocketAmmo", 100);
 		} else {
 			SetAmmoCapacity("Clip", 300);
-			SetAmmoCapacity("Shell", 50);
-			SetAmmoCapacity("RocketAmmo", 50);
 		}
 	}
 	else if(GetActorClass(0) == "JohnStruggle")
@@ -45,23 +54,12 @@ Script "Dehacked_Defense_Enter" ENTER
 			SetAmmoCapacity("Clip", 480);
 			SetAmmoCapacity("Shell", 80);
 			SetAmmoCapacity("RocketAmmo", 80);
+			SetAmmoCapacity("Cell", 480);
 		} else {
 			SetAmmoCapacity("Clip", 240);
 			SetAmmoCapacity("Shell", 40);
 			SetAmmoCapacity("RocketAmmo", 40);
-		}
-	}
-	else //Just Vanilla Ammo
-	{
-		if(CheckInventory("DummyBackpackItem") || CheckInventory("BackpackItem"))
-		{
-			SetAmmoCapacity("Clip", 400);
-			SetAmmoCapacity("Shell", 100);
-			SetAmmoCapacity("RocketAmmo", 100);
-		} else {
-			SetAmmoCapacity("Clip", 200);
-			SetAmmoCapacity("Shell", 50);
-			SetAmmoCapacity("RocketAmmo", 50);
+			SetAmmoCapacity("Cell", 240);
 		}
 	}
 	
@@ -170,7 +168,7 @@ Script "Dehacked_Defense_Enter" ENTER
 		if(GetActorClass(0) == "JohnMaskimXul")
 		{
 			GiveInventory("MaskimXulHandOfAfrit", 1);
-			GiveInventory("MaskimXulDemonHeart", 3);
+			GiveInventory("RocketAmmo", 3);
 		}
 		else if(GetActorClass(0) == "JohnStruggle")
 		{
@@ -213,7 +211,7 @@ Script "Dehacked_Defense_Enter" ENTER
 		else if(GetActorClass(0) == "JohnReliquary")
 		{
 			GiveInventory("ReliquaryPlasmaRifle", 1);
-			GiveInventory("AntaresianCell", 32);
+			GiveInventory("Cell", 32);
 		}
 		else if(GetActorClass(0) == "JohnNegativeOne")
 		{
@@ -247,7 +245,7 @@ Script "Dehacked_Defense_Enter" ENTER
 		else if(GetActorClass(0) == "JohnReliquary")
 		{
 			GiveInventory("ReliquaryBFG9000", 1);
-			GiveInventory("AntaresianCell", 64);
+			GiveInventory("Cell", 64);
 		}
 		else if(GetActorClass(0) == "JohnNegativeOne")
 		{
@@ -305,55 +303,57 @@ Script "Dehacked_Defense_Enter" ENTER
 Script "Dehacked_BackpackHandler" (void)
 {
 	GiveInventory("DummyBackpackItem", 1);
+	SetAmmoCapacity("Clip", 400);
+	SetAmmoCapacity("Shell", 100);
+	SetAmmoCapacity("RocketAmmo", 100);
+	//SetAmmoCapacity("MaskimXulDemonHeart", 100);
 	SetAmmoCapacity("Cell", 600);
 	SetAmmoCapacity("NFGBattery", 200);
 	SetAmmoCapacity("JackBombAmmo", 20);
 	SetAmmoCapacity("223CaliberMagazine", 320);
-	SetAmmoCapacity("AntaresianCell", 480);
+	//SetAmmoCapacity("AntaresianCell", 480);
 	//SetAmmoCapacity("HellCharge", 600);
 	if(GetActorClass(0) == "JohnValiant")
 	{
 		SetAmmoCapacity("Clip", 600);
-		SetAmmoCapacity("Shell", 100);
-		SetAmmoCapacity("RocketAmmo", 100);
-		SetAmmoCapacity("MaskimXulDemonHeart", 100);
 		GiveInventory("Clip", 15);
 		GiveInventory("Shell", 4);
+		GiveInventory("Cell", 20);
 	}
 	else if(GetActorClass(0) == "JohnStruggle")
 	{
 		SetAmmoCapacity("Clip", 360);
 		SetAmmoCapacity("Shell", 72);
 		SetAmmoCapacity("RocketAmmo", 36);
-		SetAmmoCapacity("MaskimXulDemonHeart", 36);
 		GiveInventory("Clip", 12);
 		GiveInventory("Shell", 2);
+		GiveInventory("Cell", 20);
 	}
 	else if(GetActorClass(0) == "JohnReliquary")
 	{
 		SetAmmoCapacity("Clip", 480);
 		SetAmmoCapacity("Shell", 80);
 		SetAmmoCapacity("RocketAmmo", 80);
-		SetAmmoCapacity("MaskimXulDemonHeart", 80);
+		SetAmmoCapacity("Cell", 480);
 		GiveInventory("Clip", 12);
 		GiveInventory("Shell", 4);
+		GiveInventory("Cell", 20);
 	}
 	else //Just Vanilla Ammo
 	{
 		SetAmmoCapacity("Clip", 400);
 		SetAmmoCapacity("Shell", 100);
 		SetAmmoCapacity("RocketAmmo", 100);
-		SetAmmoCapacity("MaskimXulDemonHeart", 100);
 		GiveInventory("Clip", 10);
 		GiveInventory("Shell", 4);
+		GiveInventory("Cell", 16);
 	}
 	GiveInventory("RocketAmmo", 1);
-	GiveInventory("MaskimXulDemonHeart", 1);
-	GiveInventory("Cell", 20);
+	//GiveInventory("MaskimXulDemonHeart", 1);
 	GiveInventory("NFGBattery", 6);
 	GiveInventory("JackBombAmmo", 1);
 	GiveInventory("223CaliberMagazine", 20);
-	GiveInventory("AntaresianCell", 16);
+	//GiveInventory("AntaresianCell", 16);
 	//GiveInventory("HellCharge", 20);
 }
 
