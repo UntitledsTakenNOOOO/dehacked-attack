@@ -578,6 +578,7 @@ ACTOR ValiantSuperVile : Archvile
 	+QUICKTORETALIATE
 	+FLOORCLIP
 	+NOTARGET
+	+BOSSDEATH
 	+BOSS //Change: has +BOSS
 	SeeSound "vile/sight"
 	PainSound "vile/pain"

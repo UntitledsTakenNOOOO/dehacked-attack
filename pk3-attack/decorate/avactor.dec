@@ -163,7 +163,7 @@ ACTOR PlasmaTank : Arachnotron
 		AVSP W 6 Bright A_NoBlocking
 		AVSP X 6
 		AVSP Y 7
-		AVSP Z -1
+		AVSP Z -1 A_BossDeath
 		Stop
 	}
 }

@@ -329,7 +329,7 @@ Actor EviternityAnnihilator : BaronOfHell
 		EBOS L 8 A_Scream
 		EBOS M 8 A_Fall
 		EBOS NOPQ 8 
-		EBOS R -1 A_KeenDie
+		EBOS R -1 A_BossDeath
 		stop
 	Raise:
 		EBOS RQPONMLK 5 

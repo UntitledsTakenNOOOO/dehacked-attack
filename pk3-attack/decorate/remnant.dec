@@ -58,9 +58,7 @@ ACTOR RemnantCardinal : Cyberdemon
     RCRD G 10 A_Scream
     RCRD HIJ 10
     RCRD K 10 A_NoBlocking
-    RCRD L 10
-    TNT1 A 30
-    TNT1 A -1 A_BossDeath
+    RCRD L 10 A_BossDeath
     Stop
   }
 }

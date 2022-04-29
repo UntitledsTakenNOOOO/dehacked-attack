@@ -70,6 +70,7 @@ Actor Hierophant2 : Hierophant1 //Replaces BloodyTwitch
   Mass 10000
   Speed 15
   +Boss
+  +BossDeath
   SeeSound "monster/hiesit"
   PainSound "monster/hiepai"
   DeathSound "monster/hiedth"
@@ -130,7 +131,7 @@ Actor Hierophant2 : Hierophant1 //Replaces BloodyTwitch
     HIER MNO 6
 	HIER P 5
 	//HIER Q 120
-	HIER Q -1 //A_BrainDie
+	HIER Q -1 A_BossDeath
     Stop
   }
 }

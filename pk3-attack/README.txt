@@ -110,12 +110,12 @@ AVACTOR: END OF THE FIFTH CIRCLE (Eradrop, 2018):
 * Chaingun Statue: A knight-like statue armed with dual chainguns. Only appears as an Icon of Sin (or other final boss) summon.
 
 MASKIM XUL (Obsidian, 2018):
-* WILL 'O WISP: A 5 HP green lost soul that retaliates when killed with a triple baron attack.
-* DAMNED SOUL: A 50 HP gray lost soul that explodes when killed and self-destructs to attack.
-* SATYR: A 500 HP Weak Hell Noble with only a deadly melee attack. Spawns with Hell Knights.
-* CACOLICH: A Cacodemon variant that shoots green homing projectiles and retaliates with a string of imp fireballs.
-* DEATH INCARNATE: A re-skin of the revenant, to help visual variety in the slot.
-* LORD OF HERESY: A 1250 HP Hell Noble that can fire a three-way baron ball spread. Spawns with barons.
+* Will 'o Wisp: A 5 HP green lost soul that retaliates when killed with a triple baron attack.
+* Damned Soul: A 50 HP gray lost soul that explodes when killed and self-destructs to attack.
+* Satyr: A 500 HP Weak Hell Noble with only a deadly melee attack. Spawns with Hell Knights.
+* Cacolich: A Cacodemon variant that shoots green homing projectiles and retaliates with a string of imp fireballs.
+* Death Incarnate: A re-skin of the revenant, to help visual variety in the slot.
+* Lord of Heresy: A 1250 HP Hell Noble that can fire a three-way baron ball spread. Spawns with barons.
 	* Change: The latter four monsters are re-based from Realm667, so there may be minor differences in frames and sounds.
 
 STRUGGLE: ANTARESIAN LEGACY (antares, 2018):
@@ -149,6 +149,22 @@ DOOM -1 (Community Project, 2020):
 * Hell Dragon: A 500 HP flying dragon monster that spawns with Pain Elementals, and fires slews of baron balls.
 * Rocket Turret: A Stationary Turret that fires rockets. Only appears as an Icon of Sin (or other final boss) summon.
 
+ROWDY RUDY 2 (Doomkid, 2020):
+* Rowdy Zombieman: Equipped with a more armored suit, this zombie variant possesses 40 HP.
+* Rowdy Shotgunner: Same deal as the previous two. Has 60 HP.
+* Rowdy Chaingunner: An 80-HP version of the chaingunner that moves slightly slower.
+* Rowdy Plasma Guy: With 60 HP and a plasma rifle, be careful if you don't want to get fried. Spawns with chaingunners.
+* Flamethrower Guy: With 80 HP, this guy is a menace in close quarters. Spawns with chaingunners.
+* Rocketman: A stronger Rocket Zombie that spawns with chaingunners. Has 120 HP.
+* Psycho Imp: With 150 HP and a stronger attack, be careful around these very strong imp variants. Rarely spawns.
+* Blood Demon: A 180 HP variant of the demon.
+* Toxicacodemon: A toxic cacodemon that fires green baron fireballs. Still only has 400 HP.
+* Flame Cacodemon: A bright cacodemon variant with a MUCH stronger attack and 600 HP that spawns with Pain Elementals.
+
+RAY MOHAWK 2 (Doomkid, 2021):
+* Sunglasses Zombie: A weaker and less deadly chaingunner that spawns with the rest but only drops a clip.
+* Slyor: An addition to the revenant spot, this monster shoots a volley of flames and fireballs that you should be wary of.
+
 BOSSES:
 * Afrit (Scythe II, Deus Vult II, Survive in Hell, Resurgence): Its volley of fireballs is deadly; you're toast if you get too close. It has 2500 HP and can fly.
 	* Spawns with cyberdemons under special circumstances, otherwise it is limited to being summoned by the Icon of Sin and other final bosses.
@@ -158,6 +174,7 @@ BOSSES:
 	* Change: Reduced health from 10000 down to 4200.
 * Remnant Cardinal (Remnant, 2019): A darker, red flying variant of the cyberdemon that fires rockets much faster in salvos of four.
 	* Change: It fires more slowly than in Remnant (4 tics/frame state --> 6), and only has 4500 health.
+* Blue Cyberdemon (Ray Mohawk 2, 2021): A blue variant of the cyberdemon that fires rockets in rounds of six.
 * Heresiarch (180 Minutes Pour Vivre): A powerful sorcerer that unleashes a torrent of fire and plasma when it attacks.
 * Gridlock Cardinal (Gridlock 64, 2017): A darker, green flying variant of the cyberdemon that cycles between different attacks. If flinched, it retaliates with a rocket.
 	* Change: Reduced health from 8000 down to 4800.
@@ -170,8 +187,8 @@ BOSSES:
 
 * Hive Mother (Sunder, 2019): This 2000 HP insectoid demon can both fire mancubus fireballs very quickly AND retaliates with a set of three rockets when flinched.
 	* Spawns with spider masterminds under special circumstances, otherwise it is limited to being summoned by the Icon of Sin and other final bosses.
-* Avactor Brain (Avactor, 2018): A floating giant 2000 HP arachnorb-like brain monster that fires BFG shots.
-	* Spawns with spider masterminds under special circumstances, otherwise it is limited to being summoned by the Icon of Sin and other final bosses.
+* Avactor Brain (Avactor, 2018): A floating giant 2200 HP arachnorb-like brain monster that fires BFG shots.
+* Flying Mastermind: While it only has 2000 HP, it's ability to fly gives it an edge that means which you should be careful while engaging it.
 * Indomitable Mastermind (Struggle: Antaresian Legacy, 2018): A variant of the spider mastermind that uses both a super-chaingun AND a plasma rifle at the same time.
 * Spectral Leviathan (Struggle: Antaresian Legacy, 2018): Less health and moves slower than the Leviathan, but he's partially invisible. Spawns with Spider Masterminds.
 * Gate Master (Counterattack, 2017): A super arachnorb with 8000 HP and an Afrit-like attack.

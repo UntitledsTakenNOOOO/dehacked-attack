@@ -93,7 +93,8 @@ ACTOR WarlordOfHell : BaronOfHell
     +FLOORCLIP
     +BOSS
 	+DONTHARMCLASS
-	+DOHARMSPECIES //Not that it matters, since arch-vile attack.
+	//+DOHARMSPECIES //Not that it matters, since arch-vile attack.
+	+BOSSDEATH
     Obituary "%o was extuingished by the warlord of hell."
     Tag "Warlord Of Hell"
 	DamageFactor "Blessed", 3.0
@@ -188,7 +189,7 @@ ACTOR WarlordOfHell : BaronOfHell
         BOS6 J 12 A_Scream
         BOS6 K 12 A_Fall
         BOS6 LMN 12
-        BOS6 O -1
+        BOS6 O -1 A_BossDeath
         Stop
     Raise:
         Stop

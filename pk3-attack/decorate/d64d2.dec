@@ -210,7 +210,7 @@ ACTOR Motherdemon : MotherdemonFinal
 		64MT NO 8
 		64MT PQRS 6
 		64MT T 48
-		64MT T -1
+		64MT T -1 A_BossDeath
 		Stop
 	}
 }

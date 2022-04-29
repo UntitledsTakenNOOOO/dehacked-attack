@@ -11,6 +11,7 @@ ACTOR HiveMother
   +DONTMORPH
   +NORADIUSDMG
   +BOSS //CHANGE: Added to be more in line with the other minibosses.
+  +BOSSDEATH
   SeeSound "hivemother/sight"
   PainSound "hivemother/pain"
   DeathSound "hivemother/death"
@@ -83,7 +84,7 @@ ACTOR HiveMother
     HVM2 D 10 A_NoBlocking
     HVM2 EF 10
     HVM2 GHIJ 5
-    HVM2 K -1
+    HVM2 K -1 A_BossDeath
     Stop
   }
 }

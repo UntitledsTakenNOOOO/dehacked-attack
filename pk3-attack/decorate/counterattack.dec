@@ -51,7 +51,7 @@ ACTOR GateMaster
 		ARNQ G 9 A_ScreamAndUnblock
 		ARNQ H 9
 		ARNQ IJKL 9
-		ARNQ M -1
+		ARNQ M -1 A_BossDeath
 		Stop
 	}
 }

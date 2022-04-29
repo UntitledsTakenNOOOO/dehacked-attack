@@ -378,7 +378,7 @@ ACTOR LordOfHeresy : BaronOfHell
         LOHS J 8 A_Scream 
         LOHS K 8 A_Fall 
         LOHS LMN 8 
-        LOHS O -1 
+        LOHS O -1 A_BossDeath
         Stop 
     Raise: 
         LOHS ONMLKJI 5 

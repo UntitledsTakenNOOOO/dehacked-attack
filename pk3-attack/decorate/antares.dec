@@ -264,6 +264,7 @@ ACTOR AfriestSpecial : Afriest
   +MISSILEMORE
   +MISSILEEVENMORE
   MinMissileChance 160
+  Health 650
   States
   {
   Spawn:
@@ -528,7 +529,7 @@ ACTOR Leviathan
     ALEV KLMNOPQRST 5 Bright
     ALEV U 5 Bright A_NoBlocking
     ALEV VWXY 5 Bright
-    ALEV Z -1 Bright
+    ALEV Z -1 Bright A_BossDeath
     Stop
   }
 }

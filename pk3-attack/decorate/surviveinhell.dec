@@ -47,7 +47,7 @@ ACTOR Belphegor : BaronOfHell
       BOS3 K 8
       BOS3 L 8 A_NoBlocking
       BOS3 MN 8
-      BOS3 O -1
+      BOS3 O -1 A_BossDeath
       Stop
    Raise:
       BOS3 ONMLKJI 8

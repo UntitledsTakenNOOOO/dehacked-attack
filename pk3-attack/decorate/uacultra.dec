@@ -54,7 +54,7 @@ actor Haymaker : Cyberdemon
     HMKR JKL 6
     HMKR M 6 A_NoBlocking
     HMKR NOPQRSTUV 6
-    HMKR V -1
+    HMKR V -1 A_BossDeath
     stop
   }
 }

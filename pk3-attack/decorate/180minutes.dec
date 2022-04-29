@@ -65,6 +65,7 @@ ACTOR VivreHeresiarch
   Monster
   +FLOORCLIP
   +BOSS
+  +BOSSDEATH
   +DONTMORPH
   +NORADIUSDMG
   +NOICEDEATH
@@ -119,7 +120,7 @@ ACTOR VivreHeresiarch
     S180 KLMNOPQRST 5 Bright
     S180 U 5 Bright A_NoBlocking
     S180 VWXY 5 Bright
-    S180 Z -1 Bright
+    S180 Z -1 Bright A_BossDeath
     Stop
   }
 }
