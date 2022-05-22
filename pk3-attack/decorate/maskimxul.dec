@@ -101,7 +101,7 @@ ACTOR CacoLich : Cacodemon
 	{
   Spawn:
     CALI A 0
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_MASKIMXUL, 2, 9), "Reset")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_MASKIMXUL, 2, 11), "Reset")
     Goto Idle
   Reset:
     TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
@@ -277,7 +277,7 @@ actor Satyr : HellKnight
     {
 	Spawn:
 		STYR A 0
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_MASKIMXUL, 2, 1), "Reset")
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_MASKIMXUL, 2, 6), "Reset")
 		Goto Idle
 	Reset:
 		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)

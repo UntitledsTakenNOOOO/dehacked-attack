@@ -17,7 +17,7 @@ ACTOR RemnantCardinal : Cyberdemon
   {
   Spawn:
     RCRD A 0
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_REMNANT, 1, 11), "Reset")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_REMNANT, 1, 13), "Reset")
     Goto Idle
   Reset:
     TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
@@ -94,7 +94,7 @@ ACTOR RemnantMaster
   {
   Spawn:
     UNMB A 0
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_REMNANT, 1, 16), "Reset")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_REMNANT, 1, 17), "Reset")
     Goto Idle
   Reset:
     TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)

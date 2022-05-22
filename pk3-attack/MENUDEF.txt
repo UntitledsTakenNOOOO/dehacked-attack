@@ -109,6 +109,8 @@ OptionMenu "DehackedAttackOptions"
 	Option "Remnant:", "deh_enable_remnant", "DehackedMonsterSelection"
 	Option "Sunder:", "deh_enable_sunder", "DehackedMonsterSelection"
 	Option "DOOM -1:", "deh_enable_negativeone", "DehackedMonsterSelection"
+	Option "Rowdy Rudy II:", "deh_enable_rowdyrudy", "DehackedMonsterSelection"
+	Option "Ray Mohawk II:", "deh_enable_raymohawk", "DehackedMonsterSelection"
 	StaticText ""
 	StaticText "Dehacked Monster Level Scaling", 1
 	StaticText "If enabled, more powerful monsters don't spawn in early maps."

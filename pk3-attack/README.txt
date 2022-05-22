@@ -153,15 +153,16 @@ ROWDY RUDY 2 (Doomkid, 2020):
 * Rowdy Zombieman: Equipped with a more armored suit, this zombie variant possesses 40 HP.
 * Rowdy Shotgunner: Same deal as the previous two. Has 60 HP.
 * Rowdy Chaingunner: An 80-HP version of the chaingunner that moves slightly slower.
-* Rowdy Plasma Guy: With 60 HP and a plasma rifle, be careful if you don't want to get fried. Spawns with chaingunners.
-* Flamethrower Guy: With 80 HP, this guy is a menace in close quarters. Spawns with chaingunners.
-* Rocketman: A stronger Rocket Zombie that spawns with chaingunners. Has 120 HP.
+* Rowdy Plasma Guy: Has 60 HP and a plasma rifle, but it's less damaging than the other plasma zombies. Spawns with zombiemen rarely.
+* Flamethrower Guy: With 80 HP, this guy is a menace in close quarters. Spawns with shotgunners.
+* Rocketman: A stronger Revenant Missile Zombie that spawns with chaingunners. Has 120 HP.
 * Psycho Imp: With 150 HP and a stronger attack, be careful around these very strong imp variants. Rarely spawns.
 * Blood Demon: A 180 HP variant of the demon.
 * Toxicacodemon: A toxic cacodemon that fires green baron fireballs. Still only has 400 HP.
 * Flame Cacodemon: A bright cacodemon variant with a MUCH stronger attack and 600 HP that spawns with Pain Elementals.
 
 RAY MOHAWK 2 (Doomkid, 2021):
+* Hula Imp: An imp with a more tropical outfit. Statistically identical to the normal imp.
 * Sunglasses Zombie: A weaker and less deadly chaingunner that spawns with the rest but only drops a clip.
 * Slyor: An addition to the revenant spot, this monster shoots a volley of flames and fireballs that you should be wary of.
 

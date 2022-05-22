@@ -113,24 +113,32 @@ ACTOR MotherdemonFinal
 		Goto See
 	Summon:
 		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossEyeCount") > 10, "SuperSummon")
-		64MT H 4 Bright A_FaceTarget
-		64MT I 4 Bright A_DualPainAttack("DEHLostSoul") //CHANGE: Ahahahahahaha
-		64MT I 4 Bright A_DualPainAttack("Doppleganger")
-		64MT J 4 Bright A_DualPainAttack("DEHLostSoul")
-		64MT J 4 Bright A_DualPainAttack("AlphaSoul")
-		64MT J 4 Bright A_PainAttack("PoisonSoul")
+		64MT H 10 Bright A_FaceTarget
+		64MT H 8 Bright A_PainAttack("DEHLostSoul")
+		64MT H 8 Bright A_DualPainAttack("WillOWisp")
+		64MT H 8 Bright A_PainAttack("DEHLostSoul")
+		64MT I 8 Bright A_DualPainAttack("DamnedSoul")
+		64MT I 8 Bright A_PainAttack("DEHLostSoul")
+		64MT I 8 Bright A_DualPainAttack("Doppleganger")
+		64MT I 8 Bright A_PainAttack("DEHLostSoul")
+		64MT J 8 Bright A_DualPainAttack("AlphaSoul")
+		64MT J 20 Bright A_PainAttack("PoisonSoul")
 		Goto See
 	SuperSummon:
 		64MT H 10 Bright A_FaceTarget
-		64MT H 8 Bright A_PainAttack("DEHCacodemon")
-		64MT H 8 Bright A_PainAttack("Cacodemoness")
-		64MT H 8 Bright A_PainAttack("SpectralCaco")
-		64MT I 8 Bright A_PainAttack("Cacolich")
-		64MT I 8 Bright A_PainAttack("NightmareCacodemon")
-		64MT I 8 Bright A_PainAttack("AstralCaco")
-		64MT I 8 Bright A_PainAttack("DEHPainElemental")
-		64MT J 8 Bright A_PainAttack("SpiritElemental")
-		64MT J 20 Bright A_PainAttack("NightwatchCacodemon")
+		64MT H 7 Bright A_PainAttack("DEHCacodemon")
+		64MT H 7 Bright A_PainAttack("Toxicacodemon")
+		64MT H 7 Bright A_PainAttack("SpectralCaco")
+		64MT H 3 Bright A_PainAttack("Cacodemoness")
+		64MT I 4 Bright
+		64MT I 7 Bright A_PainAttack("Cacolich")
+		64MT I 7 Bright A_PainAttack("Slomnibus")
+		64MT I 7 Bright A_PainAttack("NightmareCacodemon")
+		64MT I 7 Bright A_PainAttack("AstralCaco")
+		64MT J 7 Bright A_PainAttack("DEHPainElemental")
+		64MT J 7 Bright A_PainAttack("FlameCaco")
+		64MT J 7 Bright A_PainAttack("SpiritElemental")
+		64MT J 7 Bright A_PainAttack("NightwatchCacodemon")
 		Goto See
 	LegendaryMissile:
 		64MT E 10 A_FaceTarget
@@ -165,7 +173,7 @@ ACTOR MotherdemonFinal
 ACTOR Motherdemon : MotherdemonFinal
 {
 	Health 5300 //Change: 5300 Health, like in original Doom 64
-	Speed 15 //Change: Speed 25 --> 15 for balance reasons
+	Speed 20 //Change: Speed 25 --> 20 for balance reasons
 	PainChance 20 //Change: PainChance 4 --> 20 (Like in original D64)
 	-NOTELEFRAG
 	States
@@ -187,19 +195,24 @@ ACTOR Motherdemon : MotherdemonFinal
 		Loop
 	Missile:
 		//CHANGE: Attack pattern reworked for cyberdemon slot
-		//Attack is more remniscient (though still DEH-based, sort of)
-		//Of the original Doom 64 Mother Demon
+		//Attack is more remniscient of the original Doom 64 Mother Demon
 		64MT H 5 Bright A_FaceTarget
 		64MT I 5 Bright A_FaceTarget
-		64MT J 2 Bright A_FatAttack1
-		64MT J 2 Bright A_FatAttack2
-		64MT J 2 Bright A_FatAttack1
-		64MT J 2 Bright A_FatAttack2
-		64MT E 10 A_FaceTarget
-		64MT F 3 Bright A_FatAttack3
-		64MT FF 3 Bright A_SkelMissile
-		64MT G 3 Bright A_FatAttack3
-		64MT GG 3 Bright A_SkelMissile
+		64MT J 1 Bright A_FatAttack1
+		64MT J 1 Bright A_FatAttack2
+		64MT J 1 Bright A_FatAttack1
+		64MT J 1 Bright A_FatAttack2
+		64MT J 1 Bright A_FatAttack1
+		64MT J 1 Bright A_FatAttack2
+		64MT J 1 Bright A_FatAttack1
+		64MT J 1 Bright A_FatAttack2
+		64MT J 1 Bright A_FatAttack1
+		64MT J 1 Bright A_FatAttack2
+		64MT EF 10 A_FaceTarget
+		64MT G 0 A_CustomMissile("RevenantTracer", 114, -48,  90) // TOP LEFT
+		64MT G 0 A_CustomMissile("RevenantTracer",  76, -64,  90) // BOTTOM LEFT
+		64MT G 0 A_CustomMissile("RevenantTracer", 114,  48, -90) // TOP RIGHT
+		64MT G 10 A_CustomMissile("RevenantTracer",  76,  64, -90) // BOTTOM RIGHT
 		Goto See
 	Pain:
 		64MT K 40 A_Pain
@@ -236,7 +249,7 @@ ACTOR NightmareImp : DoomImp
 	{
 	Spawn:
 		TROO A 0
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_DOOM64, 3, 5), "Reset")
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_DOOM64, 3, 3), "Reset")
 		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_SubtractiveReset"), "SubtractiveReset")
 		Goto "Super::Spawn"
 	Reset:
@@ -262,7 +275,7 @@ ACTOR NightmareImpSubtract : NightmareImp
 	{
 	Spawn:
 		TROO A 0
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_DOOM64, 3, 6), "Reset")
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_DOOM64, 3, 3), "Reset")
 		Goto Idle
 	Idle:
 		TROO AB 10 A_Look
@@ -314,7 +327,7 @@ ACTOR NightmareCacodemon : Cacodemon
 	{
 	Spawn:
 		HEAD A 0
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_DOOM64, 32, 15), "Reset")
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_DOOM64, 32, 17), "Reset")
 		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_SubtractiveReset"), "SubtractiveReset")
 		Goto "Super::Spawn"
 	Reset:
@@ -341,7 +354,7 @@ ACTOR NightmareCacodemonSubtract : NightmareCacodemon
 	{
 	Spawn:
 		HEAD A 0
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_DOOM64, 32, 15), "Reset")
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_DOOM64, 32, 17), "Reset")
 		Goto Idle
 	Reset:
 		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)

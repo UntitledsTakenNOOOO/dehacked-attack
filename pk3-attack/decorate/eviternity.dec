@@ -36,7 +36,7 @@ Actor FormerCaptain
 	{
 	Spawn:
 		EVWV A 0
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_EVITERNITY, 11, 16), "Reset")
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_EVITERNITY, 11, 18), "Reset")
 		Goto Idle
 	Reset:
 		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
@@ -99,7 +99,7 @@ Actor NightmareDemon
 	{
 	Spawn:
 		EVSG A 0
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_EVITERNITY, 5, 16), "Reset")
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_EVITERNITY, 5, 19), "Reset")
 		Goto Idle
 	Reset:
 		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
@@ -149,7 +149,7 @@ Actor NightmareSpectre : Demon //PSX Doom, not Eviternity, but included anyway!
 	{
 	Spawn:
 		SARG A 0
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_PSX_DOOM, 1, 16), "Reset")
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_PSX_DOOM, 1, 19), "Reset")
 		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_SubtractiveReset"), "SubtractiveReset")
 		Goto "Super::Spawn"
 	Reset:
@@ -197,7 +197,7 @@ Actor AstralCaco : Cacodemon
 	{
 	Spawn:
 		ASTR A 0
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_EVITERNITY, 11, 17), "Reset")
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_EVITERNITY, 11, 19), "Reset")
 		Goto Idle
 	Reset:
 		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)

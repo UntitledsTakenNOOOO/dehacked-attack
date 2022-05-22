@@ -179,3 +179,10 @@ wicked/charge		NGSKLATK
 helldragon/see		NGHDSIT
 helldragon/pain		NGHDPAIN
 helldragon/death	NGHDDTH
+
+psychoimp/death		IMPYDTH
+
+slyor/sight			SLYORSIT
+slyor/active		SLYORACT
+slyor/death			SLYORPAI
+slyor/death			SLYORDTH

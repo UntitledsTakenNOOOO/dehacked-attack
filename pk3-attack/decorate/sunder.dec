@@ -18,11 +18,12 @@ ACTOR HiveMother
   ActiveSound "hivemother/active"
   Obituary "%o was shredded by a hive mother."
   DamageFactor "Heroic", 3.0
+  Tag "Hive Mother"
   States
   {
   Spawn:
     HVMM A 0
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SUNDER, 18, 1), "Reset")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SUNDER, 18, 3), "Reset")
     Goto CheckSpiderCount
   Reset:
     TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)

@@ -84,7 +84,7 @@ States
        Goto Idle
    Reset:
        TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
-       TNT1 A 0 A_SpawnItemEx("SpiritElemental", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+       TNT1 A 0 A_SpawnItemEx("DEHPainElemental", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
        Stop
    Idle:
        SKLL A 10 A_Look
@@ -141,7 +141,7 @@ ACTOR HellSmith
   Spawn:
     TNT1 A 0
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossCheck") == FINAL_HELLSMITH, "Reset")
-	TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SURVIVE_IN_HELL, 30, 20), "Reset")
+	TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SURVIVE_IN_HELL, 30, 19), "Reset")
     Goto Idle
   Idle:
     AVTR A 10 A_Look
@@ -155,9 +155,9 @@ ACTOR HellSmith
     Loop
   Missile:
     AVTR C 3 Bright A_FaceTarget
-    AVTR D 1 Bright A_FatAttack3
     AVTR D 1 Bright A_FatAttack2
     AVTR D 1 Bright A_FatAttack1
+    AVTR D 1 Bright A_FatAttack3
     AVTR E 1 Bright A_FatAttack1
     AVTR E 1 Bright A_FatAttack2
     AVTR E 1 Bright A_FatAttack3
@@ -263,6 +263,22 @@ ACTOR HellSmithFinal : HellSmith
   See:
     AVTR AABB 3 A_Chase
     Loop
+  Missile:
+    AVTR C 3 Bright A_FaceTarget
+    AVTR D 1 Bright A_FatAttack3
+    AVTR D 1 Bright A_FatAttack2
+    AVTR D 1 Bright A_FatAttack1
+    AVTR E 1 Bright A_FatAttack3
+    AVTR E 1 Bright A_FatAttack1
+    AVTR E 1 Bright A_FatAttack2
+    AVTR C 6 Bright A_FaceTarget
+    AVTR D 1 Bright A_FatAttack1
+    AVTR D 1 Bright A_FatAttack2
+    AVTR D 1 Bright A_FatAttack3
+    AVTR E 1 Bright A_FatAttack2
+    AVTR E 1 Bright A_FatAttack1
+    AVTR E 1 Bright A_FatAttack3
+    Goto See
   Pain:
     AVTR F 10 A_BrainPain
     Goto Missile

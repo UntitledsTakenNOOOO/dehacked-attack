@@ -1,0 +1,247 @@
+ACTOR SunglassesZombie : Chaingunguy
+{
+  Health 50
+  Obituary "%o met a zombie with shades."
+  Dropitem "Clip"
+  DamageFactor "Exorcist", 3.0
+  Tag "Sunglasses Zombie"
+  States
+  {
+  Spawn:
+    XSOL A 0
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_ROWDYRUDY, 1, 9), "Reset")
+    Goto Idle
+  Reset:
+    TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+    TNT1 A 0 A_SpawnItemEx("DEHChaingunguy", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+    Stop
+  Idle:
+    XSOL AB 10 A_Look
+    Loop
+  See:
+    XSOL AABBCCDD 3 A_Chase
+    Loop
+  Missile:
+    XSOL E 10 A_FaceTarget
+    XSOL F 10 A_FaceTarget
+    XSOL G 4 Bright A_CPosAttack
+    XSOL F 6 A_FaceTarget
+    XSOL G 4 Bright A_CPosAttack
+    XSOL F 1 A_CPosRefire
+    Goto Missile+1
+  Pain:
+    XSOL H 3
+    XSOL H 3 A_Pain
+    Goto See
+  Death:
+    XSOL I 5
+    XSOL J 5 A_Scream
+    XSOL K 5 A_NoBlocking
+    XSOL L 5
+    XSOL M -1
+    Stop
+  XDeath:
+    SOSS M 5
+    SOSS N 5 A_XScream
+    SOSS O 5 A_NoBlocking
+    SOSS PQRST 5
+    SOSS U -1
+    Stop
+  Raise:
+    XSOL M 5
+    XSOL LKJI 5
+    Goto See 
+  }
+}
+
+ACTOR HulaImp : DoomImp
+{
+  DamageFactor "Extinguishing", 3.0
+  Tag "Hula Imp"
+  Obituary "%o was burned by a hula imp."
+  HitObituary "%o was slashed by a hula imp."
+  States
+  {
+  Spawn:
+    HULA A 0
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_RAYMOHAWK, 1, 1), "Reset")
+    Goto Idle
+  Reset:
+    TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+    TNT1 A 0 A_SpawnItemEx("DEHDoomImp", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+    Stop
+  Idle:
+    HULA AB 10 A_Look
+    Loop
+  See:
+    HULA AABBCCDD 3 A_Chase
+    Loop
+  Melee:
+  Missile:
+    HULA EF 8 A_FaceTarget
+    HULA G 6 A_CustomComboAttack("HulaImpBall", 32, 3 * random(1, 8), "imp/melee")
+    Goto See
+  Pain:
+    HULA H 2
+    HULA H 2 A_Pain
+    Goto See
+  Death:
+    HULA I 8
+    HULA J 8 A_Scream
+    HULA K 6
+    HULA L 6 A_NoBlocking
+    HULA M -1
+    Stop
+  XDeath:
+    HULA N 5
+    HULA O 5 A_XScream
+    HULA P 5
+    HULA Q 5 A_NoBlocking
+    HULA RST 5
+    HULA U -1
+    Stop
+  Raise:
+    HULA ML 8
+    HULA KJI 6
+    Goto See
+  }
+}
+
+ACTOR HulaImpBall : DoomImpBall
+{
+  States
+  {
+  Spawn:
+    BALH AB 4 Bright
+    Loop
+  Death:
+    BALH CDE 6 Bright
+    Stop
+  }
+}
+
+Actor RayMohawkCyberdemon : Cyberdemon
+{
+  DamageFactor "Heroic", 3.0
+  Tag "Enhanced Cyberdemon"
+  States
+  {
+  Spawn:
+    CYBA A 0
+	TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_RAYMOHAWK, 6, 9), "Reset")
+    Goto Idle
+  Reset:
+	TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+	TNT1 A 0 A_SpawnItemEx("DEHCyberdemon", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+	Stop
+  Idle:
+    CYBA AB 10 A_Look
+    Loop
+  See:
+    CYBA A 3 A_Hoof
+    CYBA ABBCC 3 A_Chase
+    CYBA D 3 A_Metal
+    CYBA D 3 A_Chase
+    Loop
+  Missile:
+    CYBA E 6 A_FaceTarget
+    CYBA FFF 4 Bright A_CyberAttack
+    CYBA E 12 A_FaceTarget
+    CYBA FFF 4 Bright A_CyberAttack
+    goto See
+  Pain:
+    CYBA G 10 A_Pain
+    Goto See
+  Death:
+    CYBA H 10
+    CYBA I 10 A_Scream
+    CYBA JKL 10
+    CYBA M 10 A_NoBlocking
+    CYBA NO 10
+    CYBA P 30
+    CYBA P -1 A_BossDeath
+    Stop
+  }
+}
+
+Actor RayMohawkSlyor
+{
+	Health 250
+	Speed 10
+	Radius 24
+	Height 64
+	PainChance 50
+	Mass 1000
+	Monster
+	+FLOORCLIP
+	SeeSound "slyor/sight"
+	PainSound "imp/pain"
+	DeathSound "slyor/death"
+	ActiveSound "slyor/active"
+	DamageFactor "Extinguishing", 3.0
+	Tag "Slyor"
+	States
+	{
+	Spawn:
+		SLY2 A 0
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_RAYMOHAWK, 1, 12), "Reset")
+		Goto Idle
+	Reset:
+		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		TNT1 A 0 A_SpawnItemEx("HellCleric", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+		Stop
+	Idle:
+		SLY2 AB 10 A_Look
+		goto Spawn
+	See:
+		SLY2 A 3 A_Chase
+		SLY2 A 2 A_Chase
+		SLY2 B 3 A_Chase
+		SLY2 B 2 A_Chase
+		SLY2 C 3 A_Chase
+		SLY2 C 2 A_Chase
+		SLY2 D 3 A_Chase
+		SLY2 D 2 A_Chase
+		goto See
+	Pain:
+		SLY2 H 2
+		SLY2 H 2 A_Pain
+		goto See
+	Missile:
+		SLY2 E 8 A_FaceTarget
+		SLY2 GGG 4 Bright A_CustomMissile("RayMohawkFlamerShot",32,0,0)
+		SLY2 E 10 A_FaceTarget
+		SLY2 GGF 5 Bright A_CustomMissile("HulaImpBall",32,0,0)e")
+		goto See
+	Death:
+		SLY2 I 8
+		SLY2 J 8 A_Scream
+		SLY2 K 6
+		SLY2 L 6 A_Fall
+		SLY2 MN 6
+		SLY2 O -1
+		stop
+	Raise:
+		SLY2 ONMLKJI 6
+		goto See
+	}
+}
+
+Actor RayMohawkFlamerShot : CacodemonBall
+{
+	Speed 19
+	Damage 3
+	SeeSound "vile/firecrkl"
+	DeathSound "vile/firecrkl"
+	States
+	{
+	Spawn:
+		FIRE A 0 Bright
+		FIRE ABCDEFGH 4 Bright
+		stop
+	Death:
+		FIRE A 0 Bright
+		FIRE ABCDEFGH 4 Bright
+		stop
+	}
+}

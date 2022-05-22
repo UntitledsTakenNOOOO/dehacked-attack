@@ -1,4 +1,4 @@
-Actor HellCleric //Deus Vult II
+Actor HellCleric // Deus Vult II
 {
 	MONSTER
 	Health 300 //Change: 200 --> 300 Health to fit the revenant slot

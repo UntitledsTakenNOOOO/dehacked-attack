@@ -20,7 +20,7 @@ ACTOR SSGZombieMan
   {
   Spawn:
     PSSG A 0
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SCIMITAR, 8, 22), "Reset")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SCIMITAR, 8, 17), "Reset")
     Goto Idle
   Reset:
     TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
@@ -125,7 +125,7 @@ ACTOR Cacodemoness : Cacodemon
   {
   Spawn:
     HEAD A 0
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SCIMITAR, 10, 3), "Reset")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SCIMITAR, 10, 9), "Reset")
     Goto Idle
   Reset:
     TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)

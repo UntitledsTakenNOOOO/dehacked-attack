@@ -111,16 +111,16 @@ actor Afrit : BaronOfHell
   {
   Spawn:
     FRIT A 0
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_DEUS_VULT, 21, 1), "Spawn2")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_DEUS_VULT, 21, 3), "Spawn2")
     Goto CheckCyberCount
   Spawn2:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_RESURGENCE, 21, 1), "Spawn3")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_RESURGENCE, 21, 3), "Spawn3")
     Goto CheckCyberCount
   Spawn3:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SCYTHE, 26, 1), "Spawn4")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SCYTHE, 26, 3), "Spawn4")
     Goto CheckCyberCount
   Spawn4:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SURVIVE_IN_HELL, 15, 1), "Reset")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SURVIVE_IN_HELL, 15, 3), "Reset")
     Goto CheckCyberCount
   Reset:
     TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)

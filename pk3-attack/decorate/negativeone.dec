@@ -182,7 +182,7 @@ Actor HellDragon
 		Goto Idle
 	Reset:
 		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
-		TNT1 A 0 A_SpawnItemEx("DEHPainElemental", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+		TNT1 A 0 A_SpawnItemEx("SpiritElemental", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
 		Stop
 	Idle:
 		NGHD A 10 A_Look
@@ -316,8 +316,8 @@ Actor NegativeOneBaphomet
 		NGBP ABCD 4 A_Chase
 		goto See
 	Missile:
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossEyeCount") > 10, "SuperMissile")
 		TNT1 A 0 A_JumpIfInventory("LDLegendaryMonsterTransformed", 1, "LegendaryMissile")
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossEyeCount") > 10, "SuperMissile")
 		NGBP E 10 Bright A_FaceTarget
 		NGBP F 4 Bright A_PainAttack("NegativeOneWicked")
 		NGBP E 8 Bright A_FaceTarget
@@ -325,9 +325,9 @@ Actor NegativeOneBaphomet
 		goto Missile+3
 	SuperMissile:
 		NGBP E 10 Bright A_FaceTarget
-		NGBP F 2 Bright A_PainAttack("NegativeOneWicked")
+		NGBP F 2 Bright A_DualPainAttack("NegativeOneWicked")
 		NGBP EE 4 Bright A_FaceTarget
-		NGBP F 2 Bright A_PainAttack("LostSoul")
+		NGBP F 2 Bright A_DualPainAttack("LostSoul")
 		NGBP E 4 Bright A_FaceTarget
 		NGBP E 4 Bright A_SpidRefire
 		goto SuperMissile+1

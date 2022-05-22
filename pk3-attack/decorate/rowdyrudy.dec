@@ -1,0 +1,616 @@
+Actor RowdyZombieMan : ZombieMan
+{
+	Health 40
+	Speed 6
+	Translation 1
+	DamageFactor "Exorcist", 3.0
+	Tag "Zombieman"
+	States
+	{
+	Spawn:
+		SOSS A 0
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_ROWDYRUDY, 1, 5), "Reset")
+		Goto Idle
+	Reset:
+		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		TNT1 A 0 A_SpawnItemEx("DEHZombieman", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+		Stop
+	Idle:
+		SOSS AB 10 A_Look
+		Loop
+	See:
+		SOSS AABBCCDD 3 A_Chase
+		Loop
+	Missile:
+		SOSS E 10 A_FaceTarget
+		SOSS F 8 A_PosAttack
+		SOSS E 8
+		Goto See
+	Pain:
+		SOSS G 3
+		SOSS G 3 A_Pain
+		Goto See
+	Death:
+		SOSS H 5
+		SOSS I 5 A_Scream
+		SOSS J 5 A_NoBlocking
+		SOSS K 5
+		SOSS L -1
+		Stop
+	XDeath:
+		SOSS M 5
+		SOSS N 5 A_XScream
+		SOSS O 5 A_NoBlocking
+		SOSS PQRST 5
+		SOSS U -1
+		Stop
+	Raise:
+		SOSS K 5
+		SOSS JIH 5
+		Goto See
+	}
+}
+
+Actor RowdyShotgunGuy : ShotgunGuy
+{
+  Health 60
+  Translation 2
+  DamageFactor "Exorcist", 3.0
+  Tag "Sergeant"
+  States
+  {
+  Spawn:
+    ZPOS A 0
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_ROWDYRUDY, 1, 5), "Reset")
+    Goto Idle
+  Reset:
+    TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+    TNT1 A 0 A_SpawnItemEx("DEHShotgunguy", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+    Stop
+  Idle:
+    ZPOS AB 10 A_Look
+    Loop
+  See:
+    ZPOS AABBCCDD 3 A_Chase
+    Loop
+  Missile:
+    ZPOS E 10 A_FaceTarget
+    ZPOS F 10 Bright A_SPosAttackUseAtkSound
+    ZPOS E 10
+    Goto See
+  Pain:
+    ZPOS G 3
+    ZPOS G 3 A_Pain
+    Goto See
+  Death:
+    ZPOS H 5
+    ZPOS I 5 A_Scream
+    ZPOS J 5 A_NoBlocking
+    ZPOS K 5
+    ZPOS L -1
+    Stop
+  XDeath:
+    ZPOS M 5
+    ZPOS N 5 A_XScream
+    ZPOS O 5 A_NoBlocking
+    ZPOS PQRST 5
+    ZPOS U -1
+    Stop
+  Raise:
+    ZPOS L 5
+    ZPOS KJIH 5
+    Goto See
+  }
+}
+
+Actor RowdyDemon : Demon
+{
+  Health 180
+  DamageFactor "Wrangler", 3.0
+  Tag "Demon"
+  States
+  {
+  Spawn:
+    RSAR A 0
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_ROWDYRUDY, 2, 4), "Reset")
+    Goto Idle
+  Reset:
+    TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+    TNT1 A 0 A_SpawnItemEx("DEHDemon", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+    Stop
+  Idle:
+    RSAR AB 10 A_Look
+    Loop
+  See:
+    RSAR AABBCCDD 2 Fast A_Chase
+    Loop
+  Melee:
+    RSAR EF 8 Fast A_FaceTarget
+    RSAR G 8 Fast A_SargAttack
+    Goto See
+  Pain:
+    RSAR H 2 Fast
+    RSAR H 2 Fast A_Pain
+    Goto See
+  Death:
+    RSAR I 8
+    RSAR J 8 A_Scream
+    RSAR K 4
+    RSAR L 4 A_NoBlocking
+    RSAR M 4
+    RSAR N -1
+    Stop
+  Raise:
+    RSAR N 5
+    RSAR MLKJI 5
+    Goto See
+  }
+}
+
+Actor RowdyPlasmaZombie : Zombieman
+{
+	Health 60
+	DropItem "Cell"
+	DamageFactor "Exorcist", 3.0
+	Tag "Plasma Zombie"
+	States
+	{
+	Spawn:
+		SOSS A 0
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_ROWDYRUDY, 1, 21), "Reset")
+		Goto Idle
+	Reset:
+		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		TNT1 A 0 A_SpawnItemEx("FormerRanger", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+		Stop
+	Idle:
+		SOSS AB 10 A_Look
+		goto Spawn
+	See:
+		SOSS AABBCCDD 3 A_Chase
+		goto See
+	Pain:
+		SOSS G 3 
+		SOSS G 3 A_Pain
+		goto See
+	Missile:
+		SOSS E 10 A_FaceTarget
+		SOSS F 6 Bright A_CustomMissile("RowdyArachnotronPlasma", 32, 0, 0)
+		SOSS E 16 A_CPosRefire
+		goto Missile+1
+	Death:
+		SOSS H 5
+		SOSS I 5 A_Scream
+		SOSS J 5 A_Fall
+		SOSS K 5
+		SOSS L -1
+		stop
+	XDeath:
+		SOSS M 5
+		SOSS N 5 A_XScream
+		SOSS O 5 A_Fall
+		SOSS PQRST 5
+		SOSS U -1
+		stop
+	Raise:
+		SOSS KJIH 5
+		goto See
+	}
+}
+
+Actor RowdyArachnotronPlasma : ArachnotronPlasma
+{
+	Speed 15
+	Damage 3
+}
+
+Actor ToxiCacodemon : Cacodemon
+{
+  Speed 7
+  Obituary "%o was poisoned by a toxicacodemon."
+  HitObituary "%o let a toxicacodemon get too close."
+  DamageFactor "Antiair", 3.0
+  Tag "Toxicacodemon"
+  States
+  {
+  Spawn:
+    TOXI A 0
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_ROWDYRUDY, 2, 3), "Reset")
+    Goto Idle
+  Reset:
+    TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+    TNT1 A 0 A_SpawnItemEx("DEHCacodemon", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+    Stop
+  Idle:
+    TOXI A 10 A_Look
+    Loop
+  See:
+    TOXI A 3 A_Chase
+    Loop
+  Missile:
+    TOXI BC 5 A_FaceTarget
+    TOXI D 5 Bright A_BruisAttack
+    Goto See
+  Pain:
+    TOXI E 3
+    TOXI E 3 A_Pain
+    TOXI F 6
+    Goto See
+  Death:
+    TOXI G 8
+    TOXI H 8 A_Scream
+    TOXI IJ 8
+    TOXI K 8 A_NoBlocking
+    TOXI L -1 A_SetFloorClip
+    Stop
+  Raise:
+    TOXI L 8 A_UnSetFloorClip
+    TOXI KJIHG 8
+    Goto See
+  }
+}
+
+Actor RowdyRocketman
+{
+	+FLOORCLIP
+	Monster
+	Health 120
+	Radius 20
+	Height 56
+	PainChance 150
+	Mass 150
+	Translation 2
+	SeeSound "grunt/sight"
+	PainSound "grunt/pain"
+	DeathSound "grunt/death"
+	ActiveSound "grunt/active"
+	DropItem "RocketAmmo"
+	Obituary "%o was blasted by a rocket zombie."
+	DamageFactor "Exorcist", 3.0
+	Tag "Revenant Missile Zombie"
+	States
+	{
+	Spawn:
+		RMAN A 0
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_ROWDYRUDY, 2, 21), "Reset")
+		Goto Idle
+	Reset:
+		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		TNT1 A 0 A_SpawnItemEx("RevMissileGuy", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+		Stop
+	Idle:
+		RMAN AB 10 A_Look
+		Loop
+	See:
+		RMAN AABBCCDD 3 A_Chase
+		Loop
+	Pain:
+		RMAN G 2 
+		RMAN G 2 A_Pain
+		goto See
+	Missile:
+		RMAN E 18 A_FaceTarget
+		RMAN F 8 Bright A_SkelMissile
+		RMAN E 15 A_FaceTarget
+		goto See
+	Death:
+		RMAN H 8 
+		RMAN I 8 A_Scream
+		RMAN J 8 
+		RMAN K 8 A_Fall
+		RMAN LM 8 
+		RMAN N -1 
+		stop
+	Raise:
+		RMAN MLKJIHG 8 
+		goto See
+	}
+}
+
+Actor FlyingMastermind : SpiderMastermind
+{
+	Health 2000
+	Speed 8
+	Radius 100
+	PainChance 60
+	+NOGRAVITY
+	+DROPOFF
+	+FLOAT
+	Obituary "%o was killed by an arachnophyte."
+	DamageFactor "Heroic", 3.0
+	Tag "Arachnophyte"
+	States
+	{
+	Spawn:
+		APYT A 0
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_ROWDYRUDY, 9, 5), "Reset")
+		Goto Idle
+	Reset:
+		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		TNT1 A 0 A_SpawnItemEx("DEHSpiderMastermind", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+		Stop
+	Idle:
+		APYT AB 5 Bright A_Look
+		goto Spawn
+	See:
+		APYT A 1 Bright A_FireCrackle
+		APYT A 3 Bright A_Chase
+		APYT BB 2 Bright A_Chase
+		goto See
+	Pain:
+		APYT B 3 Bright 
+		APYT A 3 Bright A_Pain
+		APYT A 1 Bright A_FireCrackle
+		APYT A 3 Bright A_Chase
+		APYT BB 2 Bright A_Chase
+		goto See
+	Missile:
+		APYT A 20 Bright A_FaceTarget
+		APYT CD 4 Bright A_SPosAttack
+		APYT C 1 Bright A_SpidRefire
+		goto Missile+1
+	Death:
+		APYT E 20 A_Scream
+		APYT F 10 Bright A_Fall
+		APYT GHIJ 8 Bright 
+		APYT J 1 A_BossDeath
+		stop
+	}
+}
+
+Actor PsychoImp : DoomImp
+{
+	Health 140
+	Speed 15
+	Radius 20
+	Height 56
+	PainChance 90
+	Mass 100
+	PainSound "psychoimp/death"
+	DamageFactor "Extinguishing", 3.0
+	Tag "Psycho Imp"
+	States
+	{
+	Spawn:
+		IMPY A 0
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_ROWDYRUDY, 1, 15), "Reset")
+		Goto Idle
+	Reset:
+		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		TNT1 A 0 A_SpawnItemEx("DoomImp", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+		Stop
+	Idle:
+		IMPY AB 10 A_Look
+		goto Spawn
+	See:
+		IMPY ABCD 3 A_Chase
+		goto See
+	Pain:
+		IMPY H 3 A_Pain
+		goto See
+	Melee:
+	Missile:
+		IMPY E 7 A_FaceTarget
+		IMPY F 6 A_FaceTarget
+		IMPY F 1 A_CustomComboAttack("RowdyArachnotronPlasma", 32, 5 * random(1, 8), "imp/melee")
+		IMPY G 8 A_CustomComboAttack("RowdyArachnotronPlasma", 32, 5 * random(1, 8), "imp/melee")
+		goto See
+	Death:
+		IMPY I 8
+		IMPY J 8 A_Scream
+		IMPY K 6
+		IMPY L 3
+		IMPY L 3 A_Fall
+		IMPY M -1
+		stop
+	XDeath:
+		TROO N 5
+		TROO O 5 A_XScream
+		TROO P 5
+		TROO Q 5 A_Fall
+		TROO RST 5
+		TROO U -1
+		stop
+	Raise:
+		TROO A -1 
+		stop
+	}
+}
+
+Actor RowdyFlameCaco : PainElemental
+{
+	Health 600
+	Speed 9
+	PainChance 50
+	SeeSound "caco/sight"
+	PainSound "caco/pain"
+	DeathSound "caco/death"
+	ActiveSound "caco/active"
+	Obituary "%o was roasted by a flame caco."
+	HitObituary "%o shouldn't have been that close to a flame caco."
+	DamageFactor "Antiair", 3.0
+	DamageFactor "Extinguishing", 2.0
+	Tag "FlameCaco"
+	States
+	{
+	Spawn:
+		RHED A 0
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_ROWDYRUDY, 4, 3), "Reset")
+		Goto Idle
+	Reset:
+		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		TNT1 A 0 A_SpawnItemEx("DEHPainElemental", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+		Stop
+	Idle:
+		RHED A 2 A_Look
+		goto See
+	See:
+		RHED A 2 A_Chase
+		goto See
+	Pain:
+		RHED E 6 
+		RHED F 6 A_Pain
+		goto See
+	Missile:
+		RHED BC 5 A_FaceTarget
+		RHED DDDDD 2 Bright A_CustomComboAttack("RowdyRudyFlamethrowerShot", 32, 10 * random(1, 6))
+		RHED CB 5 A_FaceTarget
+		RHED A 5 A_Chase
+		RHED BC 3 A_FaceTarget
+		RHED D 5 Bright A_TroopAttack
+		goto See
+	Death:
+		RHED G 8
+		RHED H 8 A_Scream
+		RHED IJ 8
+		RHED K 8 A_Fall
+		RHED L -1 
+		stop
+	Raise:
+		RHED KJIHGF 8
+		goto See
+	}
+}
+
+Actor RowdyChaingunguy : Chaingunguy
+{
+	Health 80
+	Speed 7
+	SeeSound "grunt/sight"
+	DeathSound "grunt/death"
+	DamageFactor "Exorcist", 3.0
+	Tag "Chaingunner"
+	States
+	{
+	Spawn:
+		PCMD A 0
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_ROWDYRUDY, 1, 5), "Reset")
+		Goto Idle
+	Reset:
+		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		TNT1 A 0 A_SpawnItemEx("DEHChaingunguy", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+		Stop
+	Idle:
+		PCMD AB 10 A_Look
+		goto Spawn
+	See:
+		PCMD AABBCCDD 3 A_Chase
+		goto See
+	Pain:
+		PCMD G 3 
+		PCMD G 3 A_Pain
+		PCMD AABBCCDD 3 A_Chase
+		goto See
+	Missile:
+		PCMD E 10 A_FaceTarget
+		PCMD FE 4 Bright A_PosAttack
+		PCMD F 1 A_CPosRefire
+		goto Missile+1
+	Death:
+		PCMD H 5
+		PCMD I 5 A_Scream
+		PCMD J 5 A_Fall
+		PCMD KLM 5
+		PCMD N -1
+		stop
+	XDeath:
+		PCMD O 5
+		PCMD P 5 A_XScream
+		PCMD Q 5 A_Fall
+		PCMD RS 5
+		PCMD T -1
+		stop
+	Raise:
+		PCMD NMLKJIH 5
+		goto See
+	}
+}
+
+Actor FlamethrowerGuy : Zombieman
+{
+	Health 80
+	Speed 9
+	PainChance 170
+	Mass 100
+	+DOHARMSPECIES
+	SeeSound "grunt/sight"
+	PainSound "grunt/pain"
+	DeathSound "grunt/death"
+	ActiveSound "grunt/active"
+	DropItem "RocketAmmo"
+	DropItem "Cell"
+	Obituary "%o was flamed by a zombie with a flamethrower."
+	DamageFactor "Exorcist", 3.0
+	DamageFactor "Extinguishing", 2.0
+	Tag "Flamethrower Zombie"
+	States
+	{
+	Spawn:
+		FLMN A 0
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_ROWDYRUDY, 2, 21), "Reset")
+		Goto Idle
+	Reset:
+		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		TNT1 A 0 A_SpawnItemEx("DEHShotgunguy", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+		Stop
+	Idle:
+		FLMN AB 10 A_Look
+		goto Spawn
+	See:
+		FLMN A 2 A_Chase
+		FLMN A 3 A_Chase
+		FLMN B 2 A_Chase
+		FLMN B 3 A_Chase
+		FLMN C 2 A_Chase
+		FLMN C 3 A_Chase
+		FLMN D 2 A_Chase
+		FLMN D 3 A_Chase
+		goto See
+	Pain:
+		FLMN H 3 
+		FLMN H 3 A_Pain
+		goto See
+	Missile:
+		FLMN E 14 A_FaceTarget
+		FLMN FEFEF 3 Bright A_CustomMissile("RowdyRudyFlamethrowerShot", 32, 0, 0)
+		goto See
+	Death:
+		FLMN I 5 
+		FLMN J 5 A_Scream
+		FLMN K 5 A_Fall
+		FLMN L 5 
+		FLMN M -1 
+		stop
+	XDeath:
+		ZPOS M 5 
+		ZPOS N 5 A_XScream
+		ZPOS O 5 A_Fall
+		ZPOS PQRS 5 
+		ZPOS U -1 
+		stop
+	Raise:
+		FLMN MLKJI 5 
+		goto See
+	}
+}
+
+Actor RowdyRudyFlamethrowerShot : CacodemonBall
+{
+	Speed 19
+	Damage 2
+	SeeSound "vile/firecrkl"
+	DeathSound "vile/firecrkl"
+	States
+	{
+	Spawn:
+		FIRE ABCDEF 4 Bright
+		FIRE G 3 Bright
+		FIRE H 2 Bright
+		stop
+	Death:
+		FIRE CDEF 4 Bright
+		FIRE G 3 Bright
+		FIRE H 2 Bright
+		stop
+	}
+}

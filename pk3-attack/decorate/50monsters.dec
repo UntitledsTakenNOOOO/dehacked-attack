@@ -13,9 +13,9 @@ HitObituary "The overlord ate %o for lunch."
 Tag "Overlord"
 DamageFactor "Heroic", 2.0
 DamageFactor "Antiair", 2.0
-SeeSound "monster/ovlsit" 
-PainSound "monster/ovlpai" 
-DeathSound "monster/ovldth" 
+SeeSound "monster/ovlsit"
+PainSound "monster/ovlpai"
+DeathSound "monster/ovldth"
 ActiveSound "monster/ovlact"
 +FLOORCLIP
 +BOSS
@@ -38,20 +38,43 @@ ActiveSound "monster/ovlact"
     goto See
   Missile:
     TNT1 A 0 A_JumpIfInventory("LDLegendaryMonsterTransformed", 1, "LegendaryMissile")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossEyeCount") > 10, "SuperMissile")
     OVER EF 5 Bright A_FaceTarget
     OVER G 2 Bright A_FatAttack1
     OVER G 2 Bright A_FatAttack2
     OVER G 2 Bright A_FatAttack3
+    goto See
+  SuperMissile:
+    OVER EF 5 Bright A_FaceTarget
+    OVER G 1 Bright A_HeadAttack
+    OVER G 1 Bright A_FatAttack1
+    OVER G 1 Bright A_BruisAttack
+    OVER G 1 Bright A_FatAttack2
+    OVER G 1 Bright A_HeadAttack
+    OVER G 1 Bright A_FatAttack3
+    OVER G 1 Bright A_BruisAttack
+    OVER G 1 Bright A_FatAttack1
+    OVER G 1 Bright A_HeadAttack
+    OVER G 1 Bright A_FatAttack2
+    OVER G 1 Bright A_BruisAttack
+    OVER G 1 Bright A_FatAttack3
     goto See
   Pain:
     OVER H 6
     OVER H 6 A_Pain
     Goto SummonAttack
   SummonAttack:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossEyeCount") > 10, "SuperSummon")
     OVER BC 4 A_FaceTarget
     OVER D 8 A_PainAttack
     OVER C 4 A_FaceTarget
     OVER D 8 A_PainAttack
+    goto See
+  SuperSummon:
+    OVER BC 4 A_FaceTarget
+    OVER D 8 A_PainAttack("Cacodemon")
+    OVER C 4 A_FaceTarget
+    OVER D 8 A_PainAttack("PainElemental")
     goto See
   LegendaryMissile:
 	OVER A 0 A_Jump(85, "SummonAttack")
@@ -69,6 +92,7 @@ actor OverLordPhase1 : OverLord
 {
 Health 1350
 var int user_count;
+DeathSound "misc/teleport"
 Translation 2
   States
   {
@@ -91,18 +115,24 @@ Translation 2
 	OVER A 0 A_Jump(85, "SummonAttack")
 	Goto Missile+1
   Death:
-    TFOG ABABCDEFGHIJ 6 Bright
+    TFOG A 6 Bright A_ScreamAndUnblock
+    TFOG BABCDEFGHIJ 6 Bright
 	TNT1 A 35
 	TNT1 A 0 A_SetUserVar("user_count", 12 * ACS_NamedExecuteWithResult("Dehacked_BossEyeCount"))
   DeathLoop:
-	TNT1 A 35 A_SetTics(35 / ACS_NamedExecuteWithResult("Dehacked_BossEyeCount") + 1)
+	TNT1 A 35 A_SetTics(34 / ACS_NamedExecuteWithResult("Dehacked_BossEyeCount") + 1)
 	TNT1 A 0 A_BrainSpit("OverLordMinionSpawnShot")
+	TNT1 A 0 A_BrainSpit("DEHBlankShot")
+	TNT1 A 0 A_BrainSpit("DEHBlankShot")
 	TNT1 A 0 A_BrainSpit("OverLordFakeSpawnShot")
+	TNT1 A 0 A_BrainSpit("DEHBlankShot")
+	TNT1 A 0 A_BrainSpit("DEHBlankShot")
+	TNT1 A 0 A_BrainSpit("DEHBlankShot") //Trick to get the shots to space out more wildly
 	TNT1 A 0 A_SetUserVar("user_count", user_count - 1)
 	TNT1 A 0 A_JumpIf(user_count <= 1, "Death2")
 	Loop
   Death2:
-	TNT1 A 35 A_SetTics(35 * ACS_NamedExecuteWithResult("Dehacked_BossEyeCount"))
+	TNT1 A 105 A_SetTics(105 * ACS_NamedExecuteWithResult("Dehacked_BossEyeCount"))
 	TNT1 A 0 A_SpawnItemEx("TeleportFog", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
 	TNT1 A 35 A_SpawnItemEx("OverLord", 0, 0, 0, 0, 0, 0, 0, SXF_TELEFRAG|SXF_TRANSFERPOINTERS, 0)
 	Stop
@@ -112,6 +142,7 @@ actor OverLordFake : OverLord
 {
 Health 300
 Translation 0
+DeathSound ""
   States
   {
   Missile:
@@ -123,7 +154,8 @@ Translation 0
     OVER H 6 A_Pain
     goto See
   Death:
-    BFE1 ABCDEF 8 Bright
+    BFE1 A 8 Bright A_NoBlocking
+    BFE1 BCDEF 8 Bright
     stop
   }
 }

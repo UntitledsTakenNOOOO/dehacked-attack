@@ -15,7 +15,7 @@ ACTOR Slomnibus : Cacodemon
   {
   Spawn:
     NDCP A 5 A_Look
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_NDCP2, 2, 11), "Reset")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_NDCP2, 2, 13), "Reset")
     Goto Idle
   Reset:
     TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)

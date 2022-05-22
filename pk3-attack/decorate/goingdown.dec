@@ -10,7 +10,7 @@ ACTOR AngryMastermind : SpiderMastermind
   Spawn:
     RSPD A 0
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossCheck") == FINAL_ANGRYMIND, "Reset")
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_GOING_DOWN, 29, 20), "Reset")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_GOING_DOWN, 29, 19), "Reset")
     Goto Idle
   Idle:
     RSPD AB 10 Bright A_Look
@@ -98,11 +98,6 @@ ACTOR AngryMastermindFinalPhase1 : SpiderMastermind
 	TNT1 A 0 A_BrainSpit("GDCacoSpawnShot")
 	TNT1 A 0 A_SetUserVar("user_count", user_count - 1)
 	TNT1 A 0 A_JumpIf(user_count <= 0, "Death3")
-	Loop
-  SpawnerLoop4:
-	TNT1 AAA 0 A_BrainSpit("GDVileSpawnShot")
-	TNT1 A 0 A_SetUserVar("user_count", user_count - 1)
-	TNT1 A 0 A_JumpIf(user_count <= 0, "DeathFinal")
 	Loop
   }
 }
