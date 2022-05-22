@@ -1,4 +1,4 @@
-Actor SpiritImp : DoomImp
+Actor SpiritImp : DEHDoomImp
 {
   Health 125
   Speed 16
@@ -7,7 +7,6 @@ Actor SpiritImp : DoomImp
   BloodColor "DarkGreen"
   Obituary "%o was killed by a Spirit Imp."
   Tag "Spirit Imp"
-  DamageFactor "Extinguishing", 3.0
   States
   {
   Spawn:
@@ -133,12 +132,11 @@ ACTOR LostSpirit
   }
 }
 
-ACTOR SpiritElemental : PainElemental
+ACTOR SpiritElemental : DEHPainElemental
 {
   Obituary "%o was killed by a Spirit Elemental."
   BloodColor "DarkGreen"
   Tag "Spirit Elemental"
-  DamageFactor "Antiair", 3.0
   States
   {
   Spawn:

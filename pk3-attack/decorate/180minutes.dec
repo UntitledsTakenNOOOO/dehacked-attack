@@ -1,4 +1,4 @@
-ACTOR NightwatchCacodemon : Cacodemon
+ACTOR NightwatchCacodemon : DEHCacodemon
 {
   Health 600
   Mass 950
@@ -77,6 +77,7 @@ ACTOR VivreHeresiarch
   DeathSound "heresiarch/death"
   ActiveSound "heresiarch/active"
   Obituary "%o was smashed by a Heresiarch."
+  DamageFactor "Heroic", 3.0
   States
   {
   Spawn:

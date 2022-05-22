@@ -47,37 +47,6 @@ const int FINAL_INQUISITOR = 12;
 const int FINAL_BAPHOMET = 13;
 const int FINAL_BUBBLESHIP = 14;
 
-#include "decorate/strain.dec"
-#include "decorate/scythe2.dec"
-#include "decorate/scimitar.dec"
-#include "decorate/dv2.dec"
-#include "decorate/ndcp2.dec"
-#include "decorate/scythex.dec"
-#include "decorate/uacultra.dec"
-#include "decorate/jenesis.dec"
-#include "decorate/lunatic.dec"
-#include "decorate/surviveinhell.dec"
-#include "decorate/goingdown.dec"
-#include "decorate/mayanmishap.dec"
-#include "decorate/nova2.dec"
-#include "decorate/valiant.dec"
-#include "decorate/ancientaliens.dec"
-#include "decorate/gridlock.dec"
-#include "decorate/counterattack.dec"
-#include "decorate/50monsters.dec"
-#include "decorate/d64d2.dec"
-#include "decorate/maskimxul.dec"
-#include "decorate/avactor.dec"
-#include "decorate/180minutes.dec"
-#include "decorate/doomzero.dec"
-#include "decorate/eviternity.dec"
-#include "decorate/antares.dec"
-#include "decorate/remnant.dec"
-#include "decorate/sunder.dec"
-#include "decorate/obituary.dec"
-#include "decorate/invasionuac.dec"
-#include "decorate/negativeone.dec"
-
 ACTOR DEHZombieman : Zombieman
 {
 	DamageFactor "Exorcist", 3.0
@@ -179,6 +148,37 @@ ACTOR DEHSpiderMastermind : SpiderMastermind
 	DamageFactor "Heroic", 3.0
 	Tag "Spider Mastermind"
 }
+
+#include "decorate/strain.dec"
+#include "decorate/scythe2.dec"
+#include "decorate/scimitar.dec"
+#include "decorate/dv2.dec"
+#include "decorate/ndcp2.dec"
+#include "decorate/scythex.dec"
+#include "decorate/uacultra.dec"
+#include "decorate/jenesis.dec"
+#include "decorate/lunatic.dec"
+#include "decorate/surviveinhell.dec"
+#include "decorate/goingdown.dec"
+#include "decorate/mayanmishap.dec"
+#include "decorate/nova2.dec"
+#include "decorate/valiant.dec"
+#include "decorate/ancientaliens.dec"
+#include "decorate/gridlock.dec"
+#include "decorate/counterattack.dec"
+#include "decorate/50monsters.dec"
+#include "decorate/d64d2.dec"
+#include "decorate/maskimxul.dec"
+#include "decorate/avactor.dec"
+#include "decorate/180minutes.dec"
+#include "decorate/doomzero.dec"
+#include "decorate/eviternity.dec"
+#include "decorate/antares.dec"
+#include "decorate/remnant.dec"
+#include "decorate/sunder.dec"
+#include "decorate/obituary.dec"
+#include "decorate/invasionuac.dec"
+#include "decorate/negativeone.dec"
 
 ACTOR DehackedZombieSpawner : RandomSpawner replaces Zombieman
 {

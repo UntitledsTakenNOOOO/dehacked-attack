@@ -1,4 +1,4 @@
-ACTOR Slomnibus : Cacodemon
+ACTOR Slomnibus : DEHCacodemon
 {
   Health 150
   Speed 20 //CHANGE: Slowed from 30 --> 20, A_Chase delay 3 --> 2 tics
@@ -10,7 +10,6 @@ ACTOR Slomnibus : Cacodemon
   Obituary "%o was blown up by a Slomnibus."
   HitObituary "%o was blown up by a Slomnibus."
   Tag "Slomnibus"
-  DamageFactor "Antiair", 3.0
   States
   {
   Spawn:

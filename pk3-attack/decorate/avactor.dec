@@ -1,4 +1,4 @@
-ACTOR AvactorDemon : Demon
+ACTOR AvactorDemon : DEHDemon
 {
   Health 200
   PainChance 120
@@ -7,7 +7,6 @@ ACTOR AvactorDemon : Demon
   SeeSound "avactordemon/sight"
   Obituary "%o was bit by a horned demon."
   Tag "Horned Demon"
-  DamageFactor "Wrangler", 3.0
   States
   {
   Spawn:
@@ -99,7 +98,7 @@ ACTOR ChaingunStatue
   }
 }
 
-ACTOR PlasmaTank : Arachnotron
+ACTOR PlasmaTank : DEHArachnotron
 {
 	Health 500
 	Radius 48
@@ -116,7 +115,6 @@ ACTOR PlasmaTank : Arachnotron
 	ActiveSound "avactortank/act"
 	Obituary "%o let a plasma tank get %h."
 	Tag "Plasma Tank"
-	DamageFactor "Scrapper", 3.0
 	States
 	{
 	Spawn:
@@ -204,8 +202,8 @@ ACTOR AvactorBrain
 	ActiveSound "spider/active"
 	Obituary "%o was vaporized by an avactor brain."
 	Tag "Avactor Brain"
-	DamageFactor "Antiair", 2.0
-	DamageFactor "Heroic", 2.0
+	DamageFactor "Antiair", 3.0
+	DamageFactor "Heroic", 3.0
 	States
 	{
 	Spawn:

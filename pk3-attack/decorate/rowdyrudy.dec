@@ -1,10 +1,8 @@
-Actor RowdyZombieMan : ZombieMan
+Actor RowdyZombieMan : DEHZombieMan
 {
 	Health 40
 	Speed 6
 	Translation 1
-	DamageFactor "Exorcist", 3.0
-	Tag "Zombieman"
 	States
 	{
 	Spawn:
@@ -51,12 +49,10 @@ Actor RowdyZombieMan : ZombieMan
 	}
 }
 
-Actor RowdyShotgunGuy : ShotgunGuy
+Actor RowdyShotgunGuy : DEHShotgunGuy
 {
   Health 60
   Translation 2
-  DamageFactor "Exorcist", 3.0
-  Tag "Sergeant"
   States
   {
   Spawn:
@@ -103,11 +99,9 @@ Actor RowdyShotgunGuy : ShotgunGuy
   }
 }
 
-Actor RowdyDemon : Demon
+Actor RowdyDemon : DEHDemon
 {
   Health 180
-  DamageFactor "Wrangler", 3.0
-  Tag "Demon"
   States
   {
   Spawn:
@@ -147,12 +141,12 @@ Actor RowdyDemon : Demon
   }
 }
 
-Actor RowdyPlasmaZombie : Zombieman
+Actor RowdyPlasmaZombie : DEHZombieman
 {
 	Health 60
 	DropItem "Cell"
-	DamageFactor "Exorcist", 3.0
 	Tag "Plasma Zombie"
+	+DOHARMSPECIES
 	States
 	{
 	Spawn:
@@ -204,12 +198,11 @@ Actor RowdyArachnotronPlasma : ArachnotronPlasma
 	Damage 3
 }
 
-Actor ToxiCacodemon : Cacodemon
+Actor ToxiCacodemon : DEHCacodemon
 {
   Speed 7
   Obituary "%o was poisoned by a toxicacodemon."
   HitObituary "%o let a toxicacodemon get too close."
-  DamageFactor "Antiair", 3.0
   Tag "Toxicacodemon"
   States
   {
@@ -307,7 +300,7 @@ Actor RowdyRocketman
 	}
 }
 
-Actor FlyingMastermind : SpiderMastermind
+Actor FlyingMastermind : DEHSpiderMastermind
 {
 	Health 2000
 	Speed 8
@@ -318,6 +311,7 @@ Actor FlyingMastermind : SpiderMastermind
 	+FLOAT
 	Obituary "%o was killed by an arachnophyte."
 	DamageFactor "Heroic", 3.0
+	DamageFactor "Antiair", 2.0
 	Tag "Arachnophyte"
 	States
 	{
@@ -358,7 +352,7 @@ Actor FlyingMastermind : SpiderMastermind
 	}
 }
 
-Actor PsychoImp : DoomImp
+Actor PsychoImp : DEHDoomImp
 {
 	Health 140
 	Speed 15
@@ -367,7 +361,6 @@ Actor PsychoImp : DoomImp
 	PainChance 90
 	Mass 100
 	PainSound "psychoimp/death"
-	DamageFactor "Extinguishing", 3.0
 	Tag "Psycho Imp"
 	States
 	{
@@ -417,7 +410,7 @@ Actor PsychoImp : DoomImp
 	}
 }
 
-Actor RowdyFlameCaco : PainElemental
+Actor RowdyFlameCaco : DEHPainElemental
 {
 	Health 600
 	Speed 9
@@ -472,14 +465,12 @@ Actor RowdyFlameCaco : PainElemental
 	}
 }
 
-Actor RowdyChaingunguy : Chaingunguy
+Actor RowdyChaingunguy : DEHChaingunguy
 {
 	Health 80
 	Speed 7
 	SeeSound "grunt/sight"
 	DeathSound "grunt/death"
-	DamageFactor "Exorcist", 3.0
-	Tag "Chaingunner"
 	States
 	{
 	Spawn:
@@ -526,7 +517,7 @@ Actor RowdyChaingunguy : Chaingunguy
 	}
 }
 
-Actor FlamethrowerGuy : Zombieman
+Actor FlamethrowerGuy : DEHZombieman
 {
 	Health 80
 	Speed 9

@@ -110,7 +110,7 @@ Actor PlasmaElite : FormerCaptain
 	}
 }
 
-Actor Antaresia : BaronOfHell
+Actor Antaresia : DEHBaronOfHell
 {
 	Health 575 //575 in DECORATE, 650 in DEHACKED
 	Speed 16
@@ -122,7 +122,6 @@ Actor Antaresia : BaronOfHell
 	Obituary "An Antaresia took %o's soul again."
 	HitObituary "%o was perforated by an Antaresia."
 	Tag "Antaresia"
-	DamageFactor "Blessed", 3.0
 	States
 	{
 	Spawn:
@@ -319,7 +318,7 @@ ACTOR AfriestStatue
   }
 }
 
-ACTOR SpectralCaco : Cacodemon
+ACTOR SpectralCaco : DEHCacodemon
 {
   +SHADOW
   RenderStyle OptFuzzy
@@ -330,7 +329,6 @@ ACTOR SpectralCaco : Cacodemon
   Health 240
   PainChance 48
   Speed 12
-  DamageFactor "Antiair", 3.0
   States
   {
   Spawn:
@@ -344,13 +342,12 @@ ACTOR SpectralCaco : Cacodemon
   }
 }
 
-ACTOR AntaresianArachnotron : Arachnotron
+ACTOR AntaresianArachnotron : DEHArachnotron
 {
   Radius 56
   Speed 14
   AttackSound "chainguy/attack"
   Tag "Antaresian Arachnotron"
-  DamageFactor "Scrapper", 3.0
   States
   {
   Spawn:
@@ -395,9 +392,8 @@ ACTOR AntaresianArachnotron : Arachnotron
   }
 }
 
-ACTOR ReliquaryArachnotron : Arachnotron
+ACTOR ReliquaryArachnotron : DEHArachnotron
 {
-	DamageFactor "Scrapper", 3.0
 	States
 	{
 	Spawn:
@@ -417,14 +413,14 @@ ACTOR ReliquaryArachnotron : Arachnotron
 	}
 }
 
-ACTOR IndomitableMastermind : SpiderMastermind
+ACTOR IndomitableMastermind : DEHSpiderMastermind
 {
   Health 3300
   PainChance 10
   Speed 8
   Obituary "%o stood in awe of an indomitable mastermind."
   ReactionTime 4
-  DamageFactor "Heroic", 3.0
+  Tag "Indomitable Mastermind"
   States
   {
   Spawn:

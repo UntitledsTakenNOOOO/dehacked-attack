@@ -91,7 +91,7 @@ actor ResurgenceEvilMarine : EvilMarine
   }
 }
 
-actor Afrit : BaronOfHell
+actor Afrit : DEHBaronOfHell
 {
   Health 2500
   PainChance 30

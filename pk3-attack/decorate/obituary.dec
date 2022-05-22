@@ -13,9 +13,8 @@ That being said, in respect for the legacy of this wad, I am including them in t
 however, they will be turned off by default, though the option to turn them on exists.
 */
 
-ACTOR SuperImp : DoomImp
+ACTOR SuperImp : DEHDoomImp
 {
-	DamageFactor "Extinguishing", 3.0
 	PainChance 50
 	Obituary "%o was shocked by the imp's superior firepower."
 	Tag "Harder Imp"

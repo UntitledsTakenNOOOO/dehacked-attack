@@ -72,7 +72,7 @@ ACTOR StealthPlasmaAlien
   }
 }
 
-ACTOR AlienArachnotron : Arachnotron
+ACTOR AlienArachnotron : DEHArachnotron
 {
   Tag "Robo-alien"
   Obituary "%o let an alien get %h."
@@ -119,7 +119,7 @@ ACTOR AlienArachnotron : Arachnotron
   }
 }
 
-ACTOR AlienFatso : Fatso
+ACTOR AlienFatso : DEHFatso
 {
   Tag "Alien Pastry Chef"
   Obituary "%o was squashed by an alien."
@@ -183,6 +183,7 @@ ACTOR AlienGuardian
   ActiveSound "skull/active"
   Tag "Alien Guardian"
   Obituary "%o was fried by an alien guardian."
+  DamageFactor "Antiair", 3.0
   States
   {
   Spawn:

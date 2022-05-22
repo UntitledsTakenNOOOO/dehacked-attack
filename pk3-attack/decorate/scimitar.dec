@@ -64,7 +64,7 @@ ACTOR SSGZombieMan
   }
 }
 
-ACTOR Calfdemon : Cacodemon
+ACTOR Calfdemon : DEHCacodemon
 {
   Health 100
   Radius 16
@@ -74,7 +74,6 @@ ACTOR Calfdemon : Cacodemon
   Obituary "%o was smitten by a calfdemon."
   HitObituary "%o got too close to a calfdemon."
   Tag "Calfdemon"
-  DamageFactor "Antiair", 3.0
   States
   {
   Spawn:
@@ -114,13 +113,12 @@ ACTOR Calfdemon : Cacodemon
   }
 }
 
-ACTOR Cacodemoness : Cacodemon
+ACTOR Cacodemoness : DEHCacodemon
 {
   Translation "172:191=112:127"
   Obituary "%o was smitten by a cacodemoness."
   HitObituary "%o got too close to a cacodemoness."
   Tag "Cacodemoness"
-  DamageFactor "Antiair", 3.0
   States
   {
   Spawn:
@@ -141,11 +139,10 @@ ACTOR Cacodemoness : Cacodemon
   }
 }
 
-ACTOR FatsoII : Fatso
+ACTOR FatsoII : DEHFatso
 {
   Obituary "%o was squashed by a type II mancubus."
   Tag "Mancubus II"
-  DamageFactor "Scrapper", 3.0
   States
   {
   Spawn:
@@ -171,12 +168,11 @@ ACTOR FatsoII : Fatso
   }
 }
 
-ACTOR ArachnoGunner : Arachnotron
+ACTOR ArachnoGunner : DEHArachnotron
 {
   Health 600
   Obituary "%o let an arachnogunner get %h."
   Tag "Arachnogunner"
-  DamageFactor "Scrapper", 3.0
   Translation "192:207=112:127"
   States
   {
@@ -207,12 +203,11 @@ ACTOR ArachnoGunner : Arachnotron
   }
 }
 
-ACTOR ArachnoRocketeer : Arachnotron
+ACTOR ArachnoRocketeer : DEHArachnotron
 {
   Health 700
   Obituary "%o let an arachno rocketeer get %h."
   Tag "Arachno Rocketeer"
-  DamageFactor "Scrapper", 3.0
   Translation "192:207=176:191"
   States
   {
@@ -243,13 +238,12 @@ ACTOR ArachnoRocketeer : Arachnotron
 }
 
 //CHANGE: Brighter red colours for better visibility than in original scimitar
-ACTOR RedBaron : BaronOfHell
+ACTOR RedBaron : DEHBaronOfHell
 { 
   Translation "112:127=168:191"
   Obituary "%o was splayed by a Red Baron."
   HitObituary "%o was ripped open by a Red Baron."
   Tag "Red Baron"
-  DamageFactor "Blessed", 3.0
   States
   {
   Spawn:

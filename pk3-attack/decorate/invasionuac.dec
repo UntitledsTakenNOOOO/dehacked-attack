@@ -13,14 +13,13 @@ strange circumstances surrounding it, I'm including two of its custom monsters
 in the archive, while leaving their inclusion off by default.
 */
 
-ACTOR DarkCyberdemon : Cyberdemon
+ACTOR DarkCyberdemon : DEHCyberdemon
 {
   Health 5000 //Lowered from 10000
   Speed 22 //Lowered from 30
   PainChance 10
   Obituary "%o got exterminated by a dark cyberdemon."
   Tag "Dark Cyberdemon"
-  DamageFactor "Heroic", 3.0
   +DONTHARMSPECIES
   States
   {
@@ -80,7 +79,7 @@ ACTOR DarkCyberdemon : Cyberdemon
   }
 }
 
-ACTOR WarlordOfHell : BaronOfHell
+ACTOR WarlordOfHell : DEHBaronOfHell
 {
     Health 6000 //Lowered from 30000
     Radius 36

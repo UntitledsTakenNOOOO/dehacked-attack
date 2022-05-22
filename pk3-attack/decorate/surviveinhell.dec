@@ -1,10 +1,9 @@
-ACTOR Belphegor : BaronOfHell
+ACTOR Belphegor : DEHBaronOfHell
 {
    Health 1500
    Obituary "%o was incinerated by a Belphegor."
    HitObituary "the last thing %o saw was the Belphegor's abs."
    Tag "Belphegor"
-   DamageFactor "Blessed", 3.0
    States
    {
   Spawn:

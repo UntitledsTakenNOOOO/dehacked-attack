@@ -1,9 +1,8 @@
-ACTOR SunglassesZombie : Chaingunguy
+ACTOR SunglassesZombie : DEHChaingunguy
 {
   Health 50
   Obituary "%o met a zombie with shades."
   Dropitem "Clip"
-  DamageFactor "Exorcist", 3.0
   Tag "Sunglasses Zombie"
   States
   {
@@ -54,9 +53,8 @@ ACTOR SunglassesZombie : Chaingunguy
   }
 }
 
-ACTOR HulaImp : DoomImp
+ACTOR HulaImp : DEHDoomImp
 {
-  DamageFactor "Extinguishing", 3.0
   Tag "Hula Imp"
   Obituary "%o was burned by a hula imp."
   HitObituary "%o was slashed by a hula imp."
@@ -120,9 +118,8 @@ ACTOR HulaImpBall : DoomImpBall
   }
 }
 
-Actor RayMohawkCyberdemon : Cyberdemon
+Actor RayMohawkCyberdemon : DEHCyberdemon
 {
-  DamageFactor "Heroic", 3.0
   Tag "Enhanced Cyberdemon"
   States
   {

@@ -1,6 +1,6 @@
-A doom monster randomizer centered around recreating DEHACKED monsters. No, I don't know why either.
+A a pair of doom randomizers centered around recreating DEHACKED monsters and weapons. No, I don't know why either.
 
-You can use the options in the menu to control which WADs' monster sets are enabled or disabled.
+You can use the options in the menu to control which WADs' actor sets are enabled or disabled.
 
 CURRENTLY INCLUDED MONSTERS:
 
@@ -110,12 +110,12 @@ AVACTOR: END OF THE FIFTH CIRCLE (Eradrop, 2018):
 * Chaingun Statue: A knight-like statue armed with dual chainguns. Only appears as an Icon of Sin (or other final boss) summon.
 
 MASKIM XUL (Obsidian, 2018):
-* WILL 'O WISP: A 5 HP green lost soul that retaliates when killed with a triple baron attack.
-* DAMNED SOUL: A 50 HP gray lost soul that explodes when killed and self-destructs to attack.
-* SATYR: A 500 HP Weak Hell Noble with only a deadly melee attack. Spawns with Hell Knights.
-* CACOLICH: A Cacodemon variant that shoots green homing projectiles and retaliates with a string of imp fireballs.
-* DEATH INCARNATE: A re-skin of the revenant, to help visual variety in the slot.
-* LORD OF HERESY: A 1250 HP Hell Noble that can fire a three-way baron ball spread. Spawns with barons.
+* Will 'o Wisp: A 5 HP green lost soul that retaliates when killed with a triple baron attack.
+* Damned Soul: A 50 HP gray lost soul that explodes when killed and self-destructs to attack.
+* Satyr: A 500 HP Weak Hell Noble with only a deadly melee attack. Spawns with Hell Knights.
+* Cacolich: A Cacodemon variant that shoots green homing projectiles and retaliates with a string of imp fireballs.
+* Death Incarnate: A re-skin of the revenant, to help visual variety in the slot.
+* Lord of Heresy: A 1250 HP Hell Noble that can fire a three-way baron ball spread. Spawns with barons.
 	* Change: The latter four monsters are re-based from Realm667, so there may be minor differences in frames and sounds.
 
 STRUGGLE: ANTARESIAN LEGACY (antares, 2018):
@@ -149,6 +149,23 @@ DOOM -1 (Community Project, 2020):
 * Hell Dragon: A 500 HP flying dragon monster that spawns with Pain Elementals, and fires slews of baron balls.
 * Rocket Turret: A Stationary Turret that fires rockets. Only appears as an Icon of Sin (or other final boss) summon.
 
+ROWDY RUDY 2 (Doomkid, 2020):
+* Rowdy Zombieman: Equipped with a more armored suit, this zombie variant possesses 40 HP.
+* Rowdy Shotgunner: Same deal as the previous two. Has 60 HP.
+* Rowdy Chaingunner: An 80-HP version of the chaingunner that moves slightly slower.
+* Rowdy Plasma Guy: Has 60 HP and a plasma rifle, but it's less damaging than the other plasma zombies. Spawns with zombiemen rarely.
+* Flamethrower Guy: With 80 HP, this guy is a menace in close quarters. Spawns with shotgunners.
+* Rocketman: A stronger Revenant Missile Zombie that spawns with chaingunners. Has 120 HP.
+* Psycho Imp: With 150 HP and a stronger attack, be careful around these very strong imp variants. Rarely spawns.
+* Blood Demon: A 180 HP variant of the demon.
+* Toxicacodemon: A toxic cacodemon that fires green baron fireballs. Still only has 400 HP.
+* Flame Cacodemon: A bright cacodemon variant with a MUCH stronger attack and 600 HP that spawns with Pain Elementals.
+
+RAY MOHAWK 2 (Doomkid, 2021):
+* Hula Imp: An imp with a more tropical outfit. Statistically identical to the normal imp.
+* Sunglasses Zombie: A weaker and less deadly chaingunner that spawns with the rest but only drops a clip.
+* Slyor: An addition to the revenant spot, this monster shoots a volley of flames and fireballs that you should be wary of.
+
 BOSSES:
 * Afrit (Scythe II, Deus Vult II, Survive in Hell, Resurgence): Its volley of fireballs is deadly; you're toast if you get too close. It has 2500 HP and can fly.
 	* Spawns with cyberdemons under special circumstances, otherwise it is limited to being summoned by the Icon of Sin and other final bosses.
@@ -158,6 +175,7 @@ BOSSES:
 	* Change: Reduced health from 10000 down to 4200.
 * Remnant Cardinal (Remnant, 2019): A darker, red flying variant of the cyberdemon that fires rockets much faster in salvos of four.
 	* Change: It fires more slowly than in Remnant (4 tics/frame state --> 6), and only has 4500 health.
+* Blue Cyberdemon (Ray Mohawk 2, 2021): A blue variant of the cyberdemon that fires rockets in rounds of six.
 * Heresiarch (180 Minutes Pour Vivre): A powerful sorcerer that unleashes a torrent of fire and plasma when it attacks.
 * Gridlock Cardinal (Gridlock 64, 2017): A darker, green flying variant of the cyberdemon that cycles between different attacks. If flinched, it retaliates with a rocket.
 	* Change: Reduced health from 8000 down to 4800.
@@ -170,8 +188,8 @@ BOSSES:
 
 * Hive Mother (Sunder, 2019): This 2000 HP insectoid demon can both fire mancubus fireballs very quickly AND retaliates with a set of three rockets when flinched.
 	* Spawns with spider masterminds under special circumstances, otherwise it is limited to being summoned by the Icon of Sin and other final bosses.
-* Avactor Brain (Avactor, 2018): A floating giant 2000 HP arachnorb-like brain monster that fires BFG shots.
-	* Spawns with spider masterminds under special circumstances, otherwise it is limited to being summoned by the Icon of Sin and other final bosses.
+* Avactor Brain (Avactor, 2018): A floating giant 2200 HP arachnorb-like brain monster that fires BFG shots.
+* Flying Mastermind: While it only has 2000 HP, it's ability to fly gives it an edge that means which you should be careful while engaging it.
 * Indomitable Mastermind (Struggle: Antaresian Legacy, 2018): A variant of the spider mastermind that uses both a super-chaingun AND a plasma rifle at the same time.
 * Spectral Leviathan (Struggle: Antaresian Legacy, 2018): Less health and moves slower than the Leviathan, but he's partially invisible. Spawns with Spider Masterminds.
 * Gate Master (Counterattack, 2017): A super arachnorb with 8000 HP and an Afrit-like attack.
@@ -199,3 +217,94 @@ FINAL BOSSES (enabled by CVar and then selected in place of Icon of Sin):
 * Leviathan [Final Boss Form] (Struggle: Antaresian Legacy): With 10000 health, and summoned with many other monster-spawning statue, this guy's tough.
 * The Inquisitor (Struggle: Antaresian Legacy): This guy will unleash an absolute firestorm whenever you're in his line of sight, and spawns with a swarm of Afriests.
 * Baphomet [Final Boss Form] (DOOM -1): Spawning with a much larger army before appearing on the battlefield himself, this guy's not trivial to take out.
+
+CURRENTLY INCLUDED WEAPONS:
+
+STRAIN (Alpha Dog Alliance, 1997):
+* DOUBLE FIST: Punches twice. Not much else to say here.
+* SAWED-OFF: A variant of the shotgun that fires ever-so-slightly faster.
+* NFG: Sharing the plasma slot, this powerful weapon does 140% more damage than the plasma rifle (5 base damage to 12), but uses NFG Batteries for ammo.
+	* Change: Maximum Ammo doubled from 50/100 to 100/200, and pickups are upped from 3/15 to 6/30.
+* PSYCHIC BLASTER: Uses three rockets a shot to fire partially invisible projectiles with insane direct hit damage.
+
+DEUS VULT II (Huy Pham, 2008):
+* DUAL PISTOLS: Having much more stopping power than the singular pistol, this weapon can actually be helpful sometimes.
+* SAURON'S GAUNTLET: At sufficiently close range, you are now emperor palpatine. Almost any singular target too close to these will get shredded very quickly.
+
+VALIANT (skillsaw, 2015):
+* SUPER PISTOL: Fires significantly faster than the normal pistol.
+* SUPER CHAINGUN: 'You can't just make the chaingun fire twice as fast!' 'Ha ha, super chaingun go brrrrr'
+
+MASKIM XUL (Obsidian, 2018):
+* DUAL PISTOLS: They're back! Though they have a different firing sound than DV2's.
+* HAND OF AFRIT: A magical equivalent to the rocket launcher that fires explosive comets with far higher radius damage.
+    ^ Balanced Mode: If you're not playing Maskim Xul Doomguy, it takes 2 rockets per shot.
+* JACK BOX: Fires a mysterious jack-in-the-box that lands in front of the shooter's feet. A few seconds later, it explodes for over 1000 damage.
+* GRIMOIRE EXCIDIUM: Fires an even more powerful wave of BFG tracers upon firing, but deals a random amount of damage to the player each shot. Be careful!
+    ^ Balanced Mode: Deals a fixed 40 damage per shot, but deals less damage.
+
+EVITERNITY (Dragonfly et al, 2019):
+* PISTOL: Fires faster and with perfect accuracy. This replaces the normal pistol if you're playing Doomguy because the normal pistol is garbage.
+
+STRUGGLE: ANTARESIAN LEGACY (antares, 2018):
+* HAMMER: This melee weapon is still fairly useless, but at least it hits for more damage than the normal fist. It still works with Berserk, however!
+* DRILL MACHINE: Significantly faster than the chainsaw, this thing rips into demon flesh surprisingly effectively.
+* PISTOL: Antaresian Legacy's pistol fires faster and in rounds of two bullets at once, making it significantly stronger.
+* SHOTGUN: It looks fancy, but it's really just a slightly faster version of the normal shotgun.
+* SUPER SHOTGUN: Loaded with blue shells, otherwise this weapon is identical to the normal super shotgun.
+* DUAL PISTOLS: It turns out when you start with an already strong pistol, dual-wielding it makes the weapon pretty damn good.
+* GRENADE LAUNCHER: It fires 75% slower than the normal rocket launcher, but it does FAR higher single-target damage per missile.
+* ASSAULT RIFLE: Despite being what looks like a bullet weapon, it's very close to the plasma rifle in usage. Uses .223 caliber magazines for ammo.
+* LEICHENFAUST: And you thought the BFG 9000 was crazy. This uses rocket ammo, and against non-splash immune enemies it puts the BFG 9000 to shame.
+
+ANTARESIAN RELIQUARY (antares, 2020):
+* FIST: The Antaresian Reliquary marine can punch much harder than the ordinary marine.
+* CHAINSAW: slashes at a slightly increased speed compared to the vanilla chainsaw, but it's not as significant as other changes.
+* MACHINEGUN: Rather than start with a pistol, the Antaresian Reliquary marine starts with a fairly useful machine gun.
+* SHOTGUN: Fires ever so slightly faster, compared to the ordinary doom shotgun.
+* SUPER SHOTGUN: Autoloading shells means you can speedload this wonderful weapon even faster.
+* ROCKET LAUNCHER: Overall slightly buffed compared to the normal rocket launcher.
+* PLASMA RIFLE: The damage matches STRAIN's NFG, but it fires MUCH slower. Antaresian Cells are given in quantities of 16 (cell)/80 (cell pack).
+    ^ Balanced Mode: If you're not playing Antaresian Doomguy, it uses 2 cells per shot.
+* BFG 9000: Uses 30 Antaresian Cells instead of 40 ordinary energy cells. The projectile does slightly less damage than the ordinary BFG.
+
+DOOM -1 (Community Project, 2020):
+* GAUNTLET OF THE NECROMANCER: Not quite Sauron's Gauntlet from DV2; in fact, it's just a chainsaw re-skin. It looks neat, though.
+* PISTOL: This thing fires faster than the ordinary pistol. It's still pretty weak.
+* SHOTGUN: Despite the difference in looks, it's identical to the normal shotgun.
+* SUPER SHOTGUN: And similarily, despite the new look, it's still the same old reliable SSG.
+* UZI: The replacement for the chaingun, this weapon fires faster, matching pace with Struggle's Dual Pistols.
+* ROCKET LAUNCHER: Same as the normal version, with a new look suited for Doom -1.
+* HELLSTAFF: A variant of the plasma rifle that fires slower but with projectiles that do slightly more damage and occasionally home in on enemies.
+* UNMAKYR: Despite the new look, it's functionally identical to the BFG 9000. It's still a very powerful weapon, however.
+
+ROWDY RUDY 2 (Doomkid, 2020):
+* FISTS: Rowdy Rudy's close quarters combat training enables him to punch faster and with better damage.
+* DOUBLE-BLADED CHAINSAW: This is obviously only meant for killing, and does so with twice the efficiency of the normal chainsaw.
+* RIFLE: It's perfectly accurate, and fires faster than the normal pistol, giving it a strong presence as Rudy's starting weapon.
+* AUTOMATIC SHOTGUN: This weapon shreds demons far ahead of the relative competition, owing to a faster automatic reloading system.
+* SUPER SHOTGUN: While Rowdy Rudy can reload the weapon faster than usual, ultimately this is just a return to the old reliable SSG.
+    ^ Balanced Mode: Rowdy Rudy cannot load the weapon that much faster than usual.
+* ROCKET LAUNCHER: Putting the 'Rowdy' in Rowdy Rudy, this weapon fires faster than the ordinary Rocket Launcher.
+    ^ Balanced Mode: Fires at the same rate as the normal rocket launcher, but with the new sprites.
+* PLASMA RIFLE: 'It's green now! That's my attack!'
+* BFG 9000: More of the damage is in the tracers, making this potentially deadlier, but easier to waste the potential of.
+    ^ Balanced Mode: Does less damage, though not by as much as one might expect.
+
+RAY MOHAWK 1/2 (Doomkid, 2021):
+* KNIFE: Faster and dealing massive damage relative to the ordinary fist, Ray Mohawk came to town prepared for a fight.
+* GAUNTLETS?: No one's quite sure how these got here, but these things fire twice as fast as the chainsaw, or half as fast as Sauron's Gauntlets from DV2.
+* PISTOL: Ray Mohawk's pistol isn't really a pistol at all, but is instead a more compact shotgun, firing seven pellets per shot.
+	^ Balanced mode: it fires only three pellets and it's less accurate. Sorry, but this is a starting weapon, and a literal shotgun is too much power to have.
+* SHOTGUN: Fires 20 pellets for 2 shells, meaning that in effect this is really the Super Shotgun.
+	^ Balanced Mode: 7 pellets, 1 shell. Not in the ordinary Shotgun slot, kiddo.
+* AUTOMATIC SHOTGUN: Rapidly empties shells into enemies to destroy them.
+	^ Balanced Mode: 7 pellets, 1 shell, because a Super Shotgun with a pistol's fire rate is way too much.
+* CHAINGUN: Borrowed from the Spider Mastermind except with the playerside buff, this thing sprays lead at an unfathomable rate in the direction you point in.
+	^ Balanced Mode: Back to only 3 pellets and it's much less accurate. You're the mastermind now!
+* FLAMETHROWER: Ray doesn't use a conventional rocket launcher, and in its place is a flamethrower that's closer to the plasma rifle with a distinct ammo type.
+    ^ Balanced Mode: Base damage reduced from 15 to 8. Still stronger than the plasma rifle, but not by nearly as much.
+* CELL CANNON: Ray's explosive weapon. Awkwardly placed in the plasma slot but cell ammo comes in bigger packages, meaning he can get more value out of them.
+	^ Balanced Mode: Uses 5 cells (up from 1) because effectively infinite rockets is a bit much.
+* BFG 9002: An upgrade to the BFG 9000, it's killing power is off the charts.
+    ^ Balanced Mode: Uses 50 cells per shot (up from 25), meaning that you've got to commit to using this thing.

@@ -1,4 +1,4 @@
-Actor AlphaSoul : LostSoul
+Actor AlphaSoul : DEHLostSoul
 {
 	PainChance 40
 	AttackSound "imp/shotx"
@@ -10,7 +10,6 @@ Actor AlphaSoul : LostSoul
 	+DOHARMSPECIES //deliberately induces infighting
 	Renderstyle Normal
 	Tag "Alpha Soul"
-	DamageFactor "Antiair", 3.0
 	Obituary "%o was spooked by an alpha soul."
 	HitObituary "%o was chewed up by an alpha soul."
 	States

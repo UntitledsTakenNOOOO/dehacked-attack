@@ -1,4 +1,4 @@
-ACTOR RemnantCardinal : Cyberdemon
+ACTOR RemnantCardinal : DEHCyberdemon
 {
   Health 4500 //Change: Lowered health from 5000 to 4500
   Speed 16

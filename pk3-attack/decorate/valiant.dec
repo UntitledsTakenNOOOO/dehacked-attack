@@ -1,9 +1,8 @@
-ACTOR ValiantImp : DoomImp
+ACTOR ValiantImp : DEHDoomImp
 {
 	Obituary "%o was scorched by a valiant imp."
 	HitObituary "%o got scratched by a valiant imp."
 	Tag "Valiant Imp"
-	DamageFactor "Extinguishing", 3.0
 	States
 	{
 	Spawn:
@@ -77,12 +76,11 @@ ACTOR ValiantImpBall
   }
 }
 
-ACTOR ValiantDemon : Demon
+ACTOR ValiantDemon : DEHDemon
 {
   Speed 12
   Obituary "%o was bit by a valiant demon."
   Tag "Valiant Demon"
-  DamageFactor "Wrangler", 3.0
   States
   {
   Spawn:
@@ -122,7 +120,7 @@ ACTOR ValiantDemon : Demon
   }
 }
 
-ACTOR ValiantSpectre : ValiantDemon
+ACTOR ValiantSpectre : DEHValiantDemon
 {
   +SHADOW
   RenderStyle OptFuzzy
@@ -134,7 +132,6 @@ ACTOR ValiantSpectre : ValiantDemon
   ActiveSound "spectre/active"
   HitObituary "%o was eaten by a valiant spectre."
   Tag "Valiant Spectre"
-  DamageFactor "Wrangler", 3.0
   States
   {
   Spawn:
@@ -231,7 +228,7 @@ ACTOR ValiantBaronBall
   }
 }
 
-ACTOR ValiantPyroDemon : HellKnight
+ACTOR ValiantPyroDemon : DEHHellKnight
 {
   Monster
   SeeSound "monster/ar2sit"
@@ -305,10 +302,9 @@ ACTOR ValiantPyroDemon : HellKnight
   }
 }
 
-ACTOR ValiantArachnotron : Arachnotron
+ACTOR ValiantArachnotron : DEHArachnotron
 {
 	Tag "Valiant Arachnotron"
-	DamageFactor "Scrapper", 3.0
 	States
 	{
 	Spawn:
@@ -441,7 +437,7 @@ ACTOR ValiantArachnorbSmaller : ValiantArachnorb
 	}
 }
 
-Actor ValiantSuperMancubus : Fatso
+Actor ValiantSuperMancubus : DEHFatso
 {
    Health 1000
    PainChance 80
@@ -452,7 +448,6 @@ Actor ValiantSuperMancubus : Fatso
    ActiveSound "fatso/Active"
    Obituary "%o was torched by a super mancubus."
    Tag "Super Mancubus"
-   DamageFactor "Scrapper", 3.0
    States
    {
    Spawn:
@@ -497,7 +492,7 @@ Actor ValiantSuperMancubus : Fatso
    }
 }
 
-ACTOR ValiantCybruiser : BaronOfHell
+ACTOR ValiantCybruiser : DEHBaronOfHell
 { 
 Health 500 
 Radius 24 
@@ -518,7 +513,7 @@ PainSound "baron/pain"
 DeathSound "monster/brudth"
 MeleeSound "baron/melee"
 DamageFactor "Blessed", 3.0
-DamageFactor "Scrapper", 2.0
+DamageFactor "Scrapper", 3.0
 States 
    { 
    Spawn:

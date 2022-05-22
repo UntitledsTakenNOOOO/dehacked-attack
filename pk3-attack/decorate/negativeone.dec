@@ -1,7 +1,5 @@
-ACTOR NegativeImp : DoomImp
+ACTOR NegativeImp : DEHDoomImp
 {
-  DamageFactor "Extinguishing", 3.0
-  Tag "Imp"
   Translation 1
   States
   {
@@ -108,7 +106,7 @@ ACTOR NegativeDarkImpBall : CacodemonBall
   }
 }
 
-Actor NegativeOneWicked : LostSoul
+Actor NegativeOneWicked : DEHLostSoul
 {
   Health 20
   Speed 10
@@ -117,7 +115,6 @@ Actor NegativeOneWicked : LostSoul
   DeathSound "world/barrelx"
   Obituary "%o was spooked by a wicked."
   Tag "Wicked"
-  DamageFactor "Antiair", 3.0
   States
   {
   Spawn:

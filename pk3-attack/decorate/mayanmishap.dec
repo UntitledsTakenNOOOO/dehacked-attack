@@ -1,4 +1,4 @@
-Actor GreaterMancubus : Fatso
+Actor GreaterMancubus : DEHFatso
 {
 	Health 650
 	Speed 9
@@ -64,7 +64,7 @@ Actor GreaterMancubus : Fatso
 	}
 }
 
-Actor CyberBaron : BaronofHell
+Actor CyberBaron : DEHBaronofHell
 {
 	Health 900
 	Speed 10

@@ -131,7 +131,7 @@ Actor NightmareDemon
 	}
 }
 
-Actor NightmareSpectre : Demon //PSX Doom, not Eviternity, but included anyway!
+Actor NightmareSpectre : DEHDemon //PSX Doom, not Eviternity, but included anyway!
 {
 	Health 300
 	Speed 15
@@ -144,7 +144,6 @@ Actor NightmareSpectre : Demon //PSX Doom, not Eviternity, but included anyway!
   	Alpha 0.5
   	Obituary "%o was eaten by a nightmare spectre."
 	Tag "Nightmare Spectre"
-	DamageFactor "Wrangler", 3.0
 	States
 	{
 	Spawn:
@@ -183,7 +182,7 @@ Actor NightmareSpectreSubtract : NightmareSpectre
 	}
 }
 
-Actor AstralCaco : Cacodemon
+Actor AstralCaco : DEHCacodemon
 {
 	PainChance 20
 	Monster
@@ -192,7 +191,6 @@ Actor AstralCaco : Cacodemon
 	DeathSound "astralcaco/death"
 	Obituary "%o was burned down by an Astral Cacodemon."
 	Tag "Astral Cacodemon"
-	DamageFactor "Antiair", 3.0
 	States
 	{
 	Spawn:
@@ -245,9 +243,8 @@ Actor AstralCaco : Cacodemon
 	}
 }
 
-ACTOR EviternityArachnotron : Arachnotron
+ACTOR EviternityArachnotron : DEHArachnotron
 {
-	DamageFactor "Scrapper", 3.0
 	States
 	{
 	Spawn:
@@ -274,7 +271,7 @@ ACTOR EviternityArachnotron : Arachnotron
 	}
 }
 
-Actor EviternityAnnihilator : BaronOfHell
+Actor EviternityAnnihilator : DEHBaronOfHell
 {
 	Health 1100
 	Speed 10

@@ -1,4 +1,4 @@
-actor Haymaker : Cyberdemon
+actor Haymaker : DEHCyberdemon
 {
   Obituary "%o was floored by a Haymaker."
   HitObituary "%o was hammered by a Haymaker."
@@ -12,7 +12,6 @@ actor Haymaker : Cyberdemon
   SeeSound "haymaker/sight"
   DeathSound "haymaker/death"
   Tag "Haymaker"
-  DamageFactor "Heroic", 3.0
   states
   {
   Spawn:
