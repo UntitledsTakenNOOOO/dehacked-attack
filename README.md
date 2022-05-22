@@ -228,7 +228,7 @@ STRAIN (Alpha Dog Alliance, 1997):
 * PSYCHIC BLASTER: Uses three rockets a shot to fire partially invisible projectiles with insane direct hit damage.
 
 DEUS VULT II (Huy Pham, 2008):
-* DUAL PISTOLS: Having much more stopping power than the singular pistol, this weapon can actually be helpful sometimes.
+* DUAL PISTOLS: Having much more stopping power than the singular pistol, this weapon can actually be useful sometimes.
 * SAURON'S GAUNTLET: At sufficiently close range, you are now emperor palpatine. Almost any singular target too close to these will get shredded very quickly.
 
 VALIANT (skillsaw, 2015):
@@ -238,10 +238,10 @@ VALIANT (skillsaw, 2015):
 MASKIM XUL (Obsidian, 2018):
 * DUAL PISTOLS: They're back! Though they have a different firing sound than DV2's.
 * HAND OF AFRIT: A magical equivalent to the rocket launcher that fires explosive comets with far higher radius damage.
-    ^ Balanced Mode: If you're not playing Maskim Xul Doomguy, it takes 2 rockets per shot.
+    * Balanced Mode: If you're not playing Maskim Xul Doomguy, it takes 2 rockets per shot.
 * JACK BOX: Fires a mysterious jack-in-the-box that lands in front of the shooter's feet. A few seconds later, it explodes for over 1000 damage.
 * GRIMOIRE EXCIDIUM: Fires an even more powerful wave of BFG tracers upon firing, but deals a random amount of damage to the player each shot. Be careful!
-    ^ Balanced Mode: Deals a fixed 40 damage per shot, but deals less damage.
+    * Balanced Mode: Deals a fixed 40 damage per shot, but deals less damage.
 
 EVITERNITY (Dragonfly et al, 2019):
 * PISTOL: Fires faster and with perfect accuracy. This replaces the normal pistol if you're playing Doomguy because the normal pistol is garbage.
@@ -265,7 +265,7 @@ ANTARESIAN RELIQUARY (antares, 2020):
 * SUPER SHOTGUN: Autoloading shells means you can speedload this wonderful weapon even faster.
 * ROCKET LAUNCHER: Overall slightly buffed compared to the normal rocket launcher.
 * PLASMA RIFLE: The damage matches STRAIN's NFG, but it fires MUCH slower. Antaresian Cells are given in quantities of 16 (cell)/80 (cell pack).
-    ^ Balanced Mode: If you're not playing Antaresian Doomguy, it uses 2 cells per shot.
+    * Balanced Mode: If you're not playing Antaresian Doomguy, it uses 2 cells per shot.
 * BFG 9000: Uses 30 Antaresian Cells instead of 40 ordinary energy cells. The projectile does slightly less damage than the ordinary BFG.
 
 DOOM -1 (Community Project, 2020):
@@ -284,27 +284,27 @@ ROWDY RUDY 2 (Doomkid, 2020):
 * RIFLE: It's perfectly accurate, and fires faster than the normal pistol, giving it a strong presence as Rudy's starting weapon.
 * AUTOMATIC SHOTGUN: This weapon shreds demons far ahead of the relative competition, owing to a faster automatic reloading system.
 * SUPER SHOTGUN: While Rowdy Rudy can reload the weapon faster than usual, ultimately this is just a return to the old reliable SSG.
-    ^ Balanced Mode: Rowdy Rudy cannot load the weapon that much faster than usual.
+    * Balanced Mode: Rowdy Rudy cannot load the weapon that much faster than usual.
 * ROCKET LAUNCHER: Putting the 'Rowdy' in Rowdy Rudy, this weapon fires faster than the ordinary Rocket Launcher.
-    ^ Balanced Mode: Fires at the same rate as the normal rocket launcher, but with the new sprites.
+    * Balanced Mode: Fires at the same rate as the normal rocket launcher, but with the new sprites.
 * PLASMA RIFLE: 'It's green now! That's my attack!'
 * BFG 9000: More of the damage is in the tracers, making this potentially deadlier, but easier to waste the potential of.
-    ^ Balanced Mode: Does less damage, though not by as much as one might expect.
+    * Balanced Mode: Does less damage, though not by as much as one might expect.
 
 RAY MOHAWK 1/2 (Doomkid, 2021):
 * KNIFE: Faster and dealing massive damage relative to the ordinary fist, Ray Mohawk came to town prepared for a fight.
 * GAUNTLETS?: No one's quite sure how these got here, but these things fire twice as fast as the chainsaw, or half as fast as Sauron's Gauntlets from DV2.
 * PISTOL: Ray Mohawk's pistol isn't really a pistol at all, but is instead a more compact shotgun, firing seven pellets per shot.
-	^ Balanced mode: it fires only three pellets and it's less accurate. Sorry, but this is a starting weapon, and a literal shotgun is too much power to have.
+	* Balanced mode: it fires only three pellets and it's less accurate. Sorry, but this is a starting weapon, and a literal shotgun is too much power to have.
 * SHOTGUN: Fires 20 pellets for 2 shells, meaning that in effect this is really the Super Shotgun.
-	^ Balanced Mode: 7 pellets, 1 shell. Not in the ordinary Shotgun slot, kiddo.
+	* Balanced Mode: 7 pellets, 1 shell. Not in the ordinary Shotgun slot, kiddo.
 * AUTOMATIC SHOTGUN: Rapidly empties shells into enemies to destroy them.
-	^ Balanced Mode: 7 pellets, 1 shell, because a Super Shotgun with a pistol's fire rate is way too much.
+	* Balanced Mode: 7 pellets, 1 shell, because a Super Shotgun with a pistol's fire rate is way too much.
 * CHAINGUN: Borrowed from the Spider Mastermind except with the playerside buff, this thing sprays lead at an unfathomable rate in the direction you point in.
-	^ Balanced Mode: Back to only 3 pellets and it's much less accurate. You're the mastermind now!
+	* Balanced Mode: Back to only 3 pellets and it's much less accurate. You're the mastermind now!
 * FLAMETHROWER: Ray doesn't use a conventional rocket launcher, and in its place is a flamethrower that's closer to the plasma rifle with a distinct ammo type.
-    ^ Balanced Mode: Base damage reduced from 15 to 8. Still stronger than the plasma rifle, but not by nearly as much.
+    * Balanced Mode: Base damage reduced from 15 to 8. Still stronger than the plasma rifle, but not by nearly as much.
 * CELL CANNON: Ray's explosive weapon. Awkwardly placed in the plasma slot but cell ammo comes in bigger packages, meaning he can get more value out of them.
-	^ Balanced Mode: Uses 5 cells (up from 1) because effectively infinite rockets is a bit much.
+	* Balanced Mode: Uses 5 cells (up from 1) because effectively infinite rockets is a bit much.
 * BFG 9002: An upgrade to the BFG 9000, it's killing power is off the charts.
-    ^ Balanced Mode: Uses 50 cells per shot (up from 25), meaning that you've got to commit to using this thing.
+    * Balanced Mode: Uses 50 cells per shot (up from 25), meaning that you've got to commit to using this thing.
