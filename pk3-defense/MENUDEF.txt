@@ -68,6 +68,10 @@ OptionMenu "DehackedDefenseOptions"
 	StaticText "Only has an effect if the weapon selection is randomizer-based."
 	Option "Pistol Spawning:", "deh_def_spawn_pistols", "DehackedDefenseWeaponSelection"
 	StaticText ""
+	StaticText "Dehacked Balanced Mode", 1
+	StaticText "If enabled, some overpowered weapons are nerfed to be more reasonable."
+	Option "Balanced Mode:", "deh_def_balanace_weaps", "DehackedDefenseWeaponSelection"
+	StaticText ""
 	StaticText "Dehacked Defense Weapon Selection", 1
 	StaticText "Choose which weapon sets are enabled or disabled."
 	StaticText "Only has an effect if the weapon selection is randomizer-based."

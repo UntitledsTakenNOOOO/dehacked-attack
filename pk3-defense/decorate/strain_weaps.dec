@@ -4,7 +4,7 @@ ACTOR JohnStrain : DoomPlayer
   Player.DisplayName "Alternate Doomguy (STRAIN)"
   Player.StartItem "StrainDoubleFist"
   Player.StartItem "DEHPistol"
-  Player.StartItem "Clip", 0
+  Player.StartItem "Clip", 10
   Player.StartItem "StrainClass"
 /*
   Player.WeaponSlot 1, Chainsaw, StrainDoubleFist

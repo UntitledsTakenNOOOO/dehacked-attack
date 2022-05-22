@@ -4,7 +4,7 @@ ACTOR JohnMaskimXul : DoomPlayer
   Player.DisplayName "Doomguy (Maskim Xul)"
   Player.StartItem "DEHFist"
   Player.StartItem "DualPistols"
-  Player.StartItem "Clip", 0
+  Player.StartItem "Clip", 10
   Player.StartItem "MaskimXulClass"
 /*
   Player.WeaponSlot 1, Chainsaw, Fist
@@ -106,8 +106,8 @@ ACTOR MaskimXulHandOfAfrit : DoomWeapon
   Fire:
     MXRL A 0 A_JumpIfInventory("MaskimXulClass", 1, "FireMaskimXul")
     MXRL B 4 Bright A_GunFlash
-    MXRL C 8 Bright A_FireCustomMissile("MaskimXulHandOfAfritComet", 0, 1)
-    MXRL C 0 Bright A_TakeInventory("RocketAmmo", 1)
+    MXRL C 0 Bright A_FireCustomMissile("MaskimXulHandOfAfritComet", 0, 1)
+    MXRL C 8 Bright A_TakeInventory("RocketAmmo", 1)
     MXRL D 4
     MXRL E 4
     MXRL A 0 A_ReFire
@@ -293,6 +293,7 @@ ACTOR MaskimXulGrimoireExcidiumAttack : BFGBall
     Goto Death
   Death:
     TNT1 A 0 Bright
+    TNT1 A 0 Bright A_BFGSpray("MaskimXulBFGExtra")
     TNT1 A 0 Bright A_BFGSpray("MaskimXulBFGExtra")
     TNT1 A 0 Bright A_BFGSpray("MaskimXulBFGExtra")
     TNT1 A 0 Bright A_SargAttack
