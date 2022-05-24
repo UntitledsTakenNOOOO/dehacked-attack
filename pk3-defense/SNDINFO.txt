@@ -85,3 +85,26 @@ negativeone/bfgx		NGREXPLOD
 negativeone/w_pkup		NGWPNUP
 negativeone/p_pkup		NGGETPOW
 negativeone/i_pkup		NGITEMUP
+
+rowdyrudy/punch		RRPUNCH
+rowdyrudy/pistol	RRPISTOL
+rowdyrudy/shotgf	RRSHOTGN
+rowdyrudy/sshotgf	RRDSHTGN
+rowdyrudy/chngun	RRMINI
+$limit rowdyrudy/chngun 0
+rowdyrudy/rocklf	RRRLAUNC
+$limit rowdyrudy/rocklf 0
+rowdyrudy/plasmaf	RRPLASMA
+$limit rowdyrudy/plasmaf 0
+rowdyrudy/bfgf		RRBFG
+
+raymohawk/punch		RHPUNCH
+raymohawk/sawfull	RHSAWFUL
+raymohawk/sawhit	RHSAWHIT
+raymohawk/sawidle	RHSAWIDL
+raymohawk/sawup		RHSAWUP
+raymohawk/shotgf	RHSHOTGN
+raymohawk/sshotgf	RHDSHTGN
+raymohawk/rocklf	RHRLAUNC
+raymohawk/bfgf		RHBFG
+raymohawk/bfgx		RHREXPLOD

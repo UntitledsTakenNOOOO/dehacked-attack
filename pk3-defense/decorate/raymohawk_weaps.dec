@@ -1,0 +1,545 @@
+ACTOR RayMohawkClass : DEHBoolean {}
+ACTOR RayMohawk : DoomPlayer
+{
+  Player.DisplayName "Ray Mohawk (Ray Mohawk 2)"
+  Player.StartItem "RayMohawkPistol"
+  Player.StartItem "RayMohawkKnife"
+  Player.StartItem "Clip", 50
+  Player.StartItem "RayMohawkClass"
+/*
+  Player.WeaponSlot 1, RayMohawkGauntlets, RayMohawkKnife
+  Player.WeaponSlot 2, RayMohawkPistol
+  Player.WeaponSlot 3, RayMohawkASG, RayMohawk
+  Player.WeaponSlot 4, RayMohawkBlaster
+  Player.WeaponSlot 5, RayMohawkFlamethrower
+  Player.WeaponSlot 6, RayMohawkPlasmaRifle
+  Player.WeaponSlot 7, RayMohawkBFG9002
+*/
+  States
+  {
+  Spawn:
+    HAWK A -1
+    Loop
+  See:
+    HAWK ABCD 4 
+    Loop
+  Missile:
+    HAWK E 12
+    Goto Spawn
+  Melee:
+    HAWK F 6 BRIGHT
+    Goto Missile
+  Pain:
+    HAWK G 4 
+    HAWK G 4 A_Pain
+    Goto Spawn
+  Death:
+    HAWK H 10
+    HAWK I 10 A_PlayerScream
+    HAWK J 10 A_NoBlocking
+    HAWK KLM 10
+    HAWK N -1
+    Stop
+  XDeath:
+    HAWK O 5
+    HAWK P 5 A_XScream
+    HAWK Q 5 A_NoBlocking
+    HAWK RSTUV 5
+    HAWK W -1
+    Stop
+  }
+}
+
+ACTOR RayMohawkClip : Clip
+{
+  States
+  {
+  Spawn:
+    KLIP A -1
+    Stop
+  }
+}
+ACTOR RayMohawkClipBox : Clip
+{
+  Inventory.Amount 50
+  Inventory.PickupMessage "Picked up a box of ammo."
+  States
+  {
+  Spawn:
+    BMMO A -1
+    Stop
+  }
+}
+ACTOR RayMohawkShell : Shell
+{
+  Inventory.Amount 6
+  Inventory.PickupMessage "Picked up 6 shotgun shells."
+  States
+  {
+  Spawn:
+    SHLL A -1
+    Stop
+  }
+}
+ACTOR RayMohawkShellBox : Shell
+{
+  Inventory.Amount 30
+  Inventory.PickupMessage "Picked up a large box of shells."
+  States
+  {
+  Spawn:
+    SBXX A -1
+    Stop
+  }
+}
+ACTOR RayMohawkFuel : Ammo
+{
+  Inventory.PickupMessage "Picked up fuel."
+  Inventory.Amount 10
+  Inventory.MaxAmount 250
+  Inventory.Icon "FUELA0"
+  Ammo.BackpackAmount 50
+  Ammo.BackpackMaxAmount 500
+  states
+  {
+  Spawn:
+    FUEL A -1
+    stop
+  }
+}
+ACTOR RayMohawkFuelCan : RayMohawkFuel
+{
+  Inventory.PickupMessage "Picked up a fuel can."
+  states
+  {
+  Spawn:
+    FUE2 A -1
+    stop
+  }
+}
+
+ACTOR RayMohawkKnife : DoomWeapon
+{
+  Weapon.SlotNumber 1
+  Weapon.SelectionOrder 3700
+  Weapon.Kickback 100
+  Obituary "%o was stabbed by %k."
+  Tag "Knife"
+  AttackSound "raymohawk/punch"
+  +WEAPON.WIMPY_WEAPON
+  +WEAPON.MELEEWEAPON
+  States
+  {
+  Ready:
+    RHKN A 1 A_WeaponReady
+    Loop
+  Deselect:
+    RHKN A 1 A_Lower
+    Loop
+  Select:
+    RHKN A 1 A_Raise
+    Loop
+  Fire:
+    RHKN B 2 
+    RHKN CCCC 0 A_Punch
+    RHKN C 2 A_Punch
+    RHKN DC 3 
+    RHKN B 2 A_ReFire
+    goto Ready
+  }
+}
+
+ACTOR RayMohawkGauntlets : Weapon
+{
+  Weapon.SlotNumber 1
+  Weapon.Kickback 0
+  Weapon.SelectionOrder 2200
+  Weapon.UpSound "raymohawk/sawup"
+  Weapon.ReadySound "raymohawk/sawidle"
+  Inventory.PickupMessage "You got a pair of gauntlets!"
+  Obituary "%o was electrocuted by %k."
+  Tag "Gauntlets"
+  +WEAPON.MELEEWEAPON
+  States
+  {
+  Ready:
+    RHGA A 1 A_WeaponReady
+    Loop
+  Deselect:
+    RHGA A 1 A_Lower
+    Loop
+  Select:
+    RHGA A 1 A_Raise
+    Loop
+  Fire:
+    RHGA D 0 Bright A_Saw("raymohawk/sawfull", "raymohawk/sawhit", 2, "BulletPuff")
+    RHGA DEF 1 Bright A_Saw("raymohawk/sawfull", "raymohawk/sawhit", 2, "BulletPuff")
+    goto Ready
+  Spawn:
+    GNTL A -1
+    Stop
+  }
+}
+
+ACTOR RayMohawkPistol : DoomWeapon
+{
+  Weapon.SlotNumber 2
+  Weapon.SelectionOrder 1900
+  Weapon.AmmoUse 1
+  Weapon.AmmoGive 20
+  Weapon.AmmoType "Clip"
+  Obituary "$OB_MPPISTOL"
+  +WEAPON.WIMPY_WEAPON
+  Inventory.Pickupmessage "$PICKUP_PISTOL_DROPPED"
+  Tag "$TAG_PISTOL"
+  States
+  {
+  Ready:
+    RHPT A 1 A_WeaponReady
+    Loop
+  Deselect:
+    RHPT A 1 A_Lower
+    Loop
+  Select:
+    RHPT A 1 A_Raise
+    Loop
+  Fire:
+    RHPT A 2
+    RHPT B 0 A_FireBullets(5.6, 0, 7, 5, "BulletPuff")
+    RHPT B 0 A_PlaySound("raymohawk/shotgf", CHAN_WEAPON)
+    RHPT B 3 A_GunFlash
+    RHPT C 2
+    RHPT D 3 A_Light0
+    RHPT A 1 A_WeaponReady
+    goto Ready
+  Flash:
+    RHPX A 3 Bright A_Light1
+    Goto LightDone
+  Spawn:
+    PIST A -1
+    Stop
+  }
+}
+
+ACTOR RayMohawkShotgun : DoomWeapon
+{
+  Weapon.SlotNumber 3
+  Weapon.SelectionOrder 1300
+  Weapon.AmmoUse 2
+  Weapon.AmmoGive 8
+  Weapon.AmmoType "Shell"
+  Inventory.PickupMessage "You got a shotgun!"
+  Obituary "%o was gunned down by %k."
+  Tag "Pump Shotgun"
+  States
+  {
+  Ready:
+    RHSG A 1 A_WeaponReady
+    Loop
+  Deselect:
+    RHSG A 1 A_Lower
+    Loop
+  Select:
+    RHSG A 1 A_Raise
+    Loop
+  Fire:
+    RHSG A 2 
+    RHSG A 0 A_FireBullets(11.2, 7.1, 20, 5, "BulletPuff")
+    RHSG A 0 A_PlaySound("raymohawk/sshotf", CHAN_WEAPON)
+    RHSG A 7 A_GunFlash
+    RHSG BCD 2 
+    RHSG E 3 
+    RHSG F 2 
+    RHSG G 4 
+    RHSG F 3 
+    RHSG EDCB 2 
+    RHSG A 5 A_ReFire
+    goto Ready
+  Flash:
+    RHSF A 2 Bright A_Light1
+    RHSF B 2 Bright A_Light2
+    Goto LightDone
+  Spawn:
+    SHXX A -1
+    Stop
+  }
+}
+
+ACTOR RayMohawkSuperShotgun : DoomWeapon
+{
+  Weapon.SlotNumber 3
+  Weapon.SelectionOrder 400
+  Weapon.AmmoUse 2
+  Weapon.AmmoGive 8
+  Weapon.AmmoType "Shell"
+  Inventory.PickupMessage "You got an auto-shotgun!"
+  Obituary "%o was torn apart by %k's auto-shotgun."
+  Tag "Auto-Shotgun"
+  States
+  {
+  Ready:
+    AUTO A 1 A_WeaponReady
+    Loop
+  Deselect:
+    AUTO A 1 A_Lower
+    Loop
+  Select:
+    AUTO A 1 A_Raise
+    Loop
+  Fire:
+    AUTO A 3
+    AUTO A 0 A_FireBullets(11.2, 7.1, 20, 5, "BulletPuff")
+    AUTO A 0 A_PlaySound("raymohawk/sshotf", CHAN_WEAPON)
+    AUTO A 4 A_GunFlash
+    AUTO A 2
+    AUTO B 2 A_CheckReload
+    AUTO C 3
+    AUTO B 1 A_ReFire
+    AUTO F 1
+    AUTO GHIJ 2
+    AUTO K 4
+    AUTO JIHGF 2
+    Goto Ready
+  Flash:
+    AUTO D 3 Bright A_Light1
+    AUTO E 3 Bright A_Light2
+    Goto LightDone
+  Spawn:
+    SHX2 A -1
+    Stop
+  }
+}
+
+ACTOR RayMohawkBlaster : DoomWeapon
+{
+   Weapon.SlotNumber 4
+   Weapon.SelectionOrder 700
+   Weapon.AmmoUse 1
+   Weapon.AmmoGive 20
+   Weapon.AmmoType "Clip"
+   Inventory.PickupMessage "You got a blaster!" // "You got the chaingun"
+   Obituary "%o was eviscerated by %k's blaster." // "%o was mowed down by %k's chaingun."
+   Tag "Blaster"
+   States
+   {
+   Ready:
+     BLAS A 1 A_WeaponReady
+     Loop
+   Deselect:
+     BLAS A 1 A_Lower
+     Loop
+   Select:
+     BLAS A 1 A_Raise
+     Loop
+  Fire:
+     BLAS D 0 A_PlaySound("raymohawk/shotgf", CHAN_WEAPON)
+     BLAS D 0 A_GunFlash
+     BLAS D 2 A_FireBullets(5.6, 0, 7, 5, "BulletPuff")
+     BLAS C 2
+     BLAS A 1
+     BLAS A 0 A_ReFire
+     Goto Ready
+  Flash:
+     BLAT A 2 Bright A_Light1
+     Goto LightDone
+   Spawn:
+     BGUN A -1
+     Stop
+   }
+}
+
+ACTOR RayMohawkFlamethrower : DoomWeapon
+{
+  Weapon.SlotNumber 5
+  Weapon.SelectionOrder 2500
+  Weapon.AmmoUse 1
+  Weapon.AmmoGive 20
+  Weapon.AmmoType "RayMohawkFuel"
+  +WEAPON.NOAUTOFIRE
+  Inventory.PickupMessage "You got a flamethrower!"
+  Tag "Flamethrower"
+  States
+  {
+  Ready:
+    THRW A 1 A_WeaponReady
+    Loop
+  Deselect:
+    THRW A 1 A_Lower
+    Loop
+  Select:
+    THRW A 1 A_Raise
+    Loop
+  Fire:
+    THRW A 0 A_Jump(128, "Fire2")
+    THRW A 0 A_FireCustomMissile("RayMohawkFTFire", 0, 1)
+    THRW A 3 A_GunFlash
+    THRW A 0 A_ReFire
+    Goto Ready
+  Fire2:
+    THRW A 0 A_FireCustomMissile("RayMohawkFTFire", 0, 1)
+    THRW A 3 A_GunFlash("Flash2")
+    THRW A 0 A_ReFire
+    Goto Ready
+  Flash:
+    THRO A 3 Bright A_Light1
+    Goto LightDone
+  Flash2:
+    THRO B 3 Bright A_Light1
+    Goto LightDone
+  Spawn:
+    FLEM A -1
+    Stop
+  }
+}
+Actor RayMohawkFTFire : PlasmaBall
+{
+	Speed 35
+	Damage 15
+	SeeSound "vile/firecrkl"
+	DeathSound "vile/firecrkl"
+	Obituary "%o was roasted alive by %k."
+	States
+	{
+	Spawn:
+		FIRR A 0 Bright
+		FIRR ABCD 4 Bright
+		FIRR EFGH 4 Bright
+		stop
+	Death:
+		FIRR A 2 Bright A_PlaySound("vile/firestrt")
+		FIRR BAB 2 Bright
+		FIRR C 2 Bright A_PlaySound("vile/firecrkl")
+		FIRR BCBCDCDCDEDED 2 Bright
+		FIRR E 2 Bright A_PlaySound("vile/firecrkl")
+		FIRR FEFE 2 Bright
+		FIRR FGHGH 3 Bright
+		stop
+	}
+}
+
+ACTOR RayMohawkCellCannon : DoomWeapon
+{
+  Weapon.SlotNumber 6
+  Weapon.SelectionOrder 100
+  Weapon.AmmoUse 1
+  Weapon.AmmoGive 40
+  Weapon.AmmoType "Cell"
+  Inventory.PickupMessage "You got a cell cannon!"
+  Tag "Cell Cannon"
+  States
+  {
+  Ready:
+    RHPL A 1 A_WeaponReady
+    Loop
+  Deselect:
+    RHPL A 1 A_Lower
+    Loop
+  Select:
+    RHPL A 1 A_Raise
+    Loop
+  Fire:
+    RHPL B 5 A_GunFlash
+    RHPL B 7 A_FireCustomMissile("RayMohawkCellCannonBall", 0, 1)
+    RHPL B 0 A_Refire
+    Goto Ready
+  Flash:
+    RHPF AB 2 Bright A_Light1
+    RHPF C 2 Bright A_Light2
+    RHPF D 3 Bright A_Light2
+    Goto LightDone
+  Spawn:
+    PLAX A -1
+    Stop
+  }
+}
+
+ACTOR RayMohawkCellCannonBall : PlasmaBall
+{
+	SeeSound "raymohawk/rocklf"
+	Obituary "%o was blown to bits by %k's cell cannon."
+	Speed 25
+	Damage 30
+	+ROCKETTRAIL
+	States
+	{
+	Spawn:
+		PLZZ AB 2 Bright 
+		goto Spawn
+	Death:
+		PBMB A 8 Bright A_Explode
+		PBMB B 6 Bright 
+		PBMB C 4 Bright 
+		stop
+	}
+}
+
+ACTOR RayMohawkBFG9002 : DoomWeapon
+{
+  Height 20
+  Weapon.SlotNumber 7
+  Weapon.SelectionOrder 2800
+  Weapon.AmmoUse 25
+  Weapon.AmmoGive 40
+  Weapon.AmmoType "Cell"
+  +WEAPON.NOAUTOFIRE
+  Inventory.PickupMessage "The BFG9002! Time to clean up!"
+  Tag "BFG 9002"
+  States
+  {
+  Ready:
+    BFFF A 1 A_WeaponReady
+    Loop
+  Deselect:
+    BFFF A 1 A_Lower
+    Loop
+  Select:
+    BFFF A 1 A_Raise
+    Loop
+  Fire:
+    BFGG A 12 A_PlaySound("raymohawk/bfgf")
+    BFGG B 8 A_GunFlash
+    BFGG B 4 A_FireBFG
+    BFGG B 20 A_ReFire
+    goto Ready
+  Flash:
+    BFFX D 5 Bright A_Light1
+    BFFX E 4 Bright A_Light2
+    Goto LightDone
+  Spawn:
+    BFUG A -1
+    Stop
+  }
+}
+
+ACTOR RayMohawkBFG9002Ball : BFGBall
+{
+  Speed 32
+  Damage 60
+  DeathSound "raymohawk/bfgx"
+  Obituary "%o was removed from existence by %k's BFG 9002."
+  States
+  {
+  Spawn:
+    BFBL AB 2 Bright
+    Loop
+  Death:
+    BFA1 AB 7 Bright 
+    BFA1 C 7 Bright A_BFGSpray("BFG9002Extra")
+    BFA1 D 6 Bright A_BFGSpray("BFG9002Extra")
+    BFA1 E 5 Bright 
+    BFA1 F 4 Bright 
+    stop
+  }
+}
+
+ACTOR BFG9002Extra : BFGExtra
+{
+  Obituary "%o almost dodged %k's BFG 9002."
+  States
+  {
+  Spawn:
+    BFA2 A 0 Bright
+    BFA2 ABCDE 4 Bright
+    Stop
+  }
+}

@@ -7,8 +7,9 @@
 #define DEH_MASKIMXUL 4
 #define DEH_STRUGGLE 5
 #define DEH_RELIQUARY 6
-#define DEH_ROWDYRUDY 7
-#define DEH_NEGATIVEONE 8
+#define DEH_NEGATIVEONE 7
+#define DEH_ROWDYRUDY 8
+#define DEH_RAYMOHAWK 9
 
 Script "Dehacked_Defense_Enter" ENTER
 {
@@ -62,6 +63,21 @@ Script "Dehacked_Defense_Enter" ENTER
 			SetAmmoCapacity("Cell", 240);
 		}
 	}
+	else if(GetActorClass(0) == "RayMohawk")
+	{
+		if(CheckInventory("DummyBackpackItem") || CheckInventory("BackpackItem"))
+		{
+			SetAmmoCapacity("Clip", 150);
+			SetAmmoCapacity("Shell", 150);
+			SetAmmoCapacity("RocketAmmo", 100);
+			SetAmmoCapacity("Cell", 200);
+		} else {
+			SetAmmoCapacity("Clip", 150);
+			SetAmmoCapacity("Shell", 150);
+			SetAmmoCapacity("RocketAmmo", 100);
+			SetAmmoCapacity("Cell", 200);
+		}
+	}
 	
 	//And now all of the start settings, this giant mess
 	if((GetCVar("sv_shotgunstart") > 0 || GetCVar("deh_def_shotgunstart") > 0) && !CheckInventory("DEHShotgun") && !CheckInventory("StrainSawedOff") && !CheckInventory("StruggleShotgun") && !CheckInventory("ReliquaryShotgun"))
@@ -88,6 +104,16 @@ Script "Dehacked_Defense_Enter" ENTER
 			GiveInventory("NegativeOneShotgun", 1);
 			GiveInventory("Shell", 12);
 		}
+		else if(GetActorClass(0) == "RowdyRudy")
+		{
+			GiveInventory("RowdyRudyShotgun", 1);
+			GiveInventory("Shell", 12);
+		}
+		else if(GetActorClass(0) == "RayMohawk")
+		{
+			GiveInventory("RayMohawkShotgun", 1);
+			GiveInventory("Shell", 18);
+		}
 		else
 		{
 			GiveInventory("DEHShotgun", 1);
@@ -112,6 +138,14 @@ Script "Dehacked_Defense_Enter" ENTER
 		{
 			GiveInventory("NegativeOneGauntlets", 1);
 		}
+		else if(GetActorClass(0) == "RowdyRudy")
+		{
+			GiveInventory("RowdyRudyChainsaw", 1);
+		}
+		else if(GetActorClass(0) == "RayMohawk")
+		{
+			GiveInventory("RayMohawkGauntlets", 1);
+		}
 		else
 		{
 			GiveInventory("DEHChainsaw", 1);
@@ -128,6 +162,16 @@ Script "Dehacked_Defense_Enter" ENTER
 		{
 			GiveInventory("NegativeOneSuperShotgun", 1);
 			GiveInventory("Shell", 12);
+		}
+		else if(GetActorClass(0) == "RowdyRudy")
+		{
+			GiveInventory("RowdyRudySuperShotgun", 1);
+			GiveInventory("Shell", 12);
+		}
+		else if(GetActorClass(0) == "RayMohawk")
+		{
+			GiveInventory("RayMohawkAutoShotgun", 1);
+			GiveInventory("Shell", 18);
 		}
 		else
 		{
@@ -157,6 +201,16 @@ Script "Dehacked_Defense_Enter" ENTER
 			GiveInventory("NegativeOneUzi", 1);
 			GiveInventory("Clip", 30);
 		}
+		else if(GetActorClass(0) == "RowdyRudy")
+		{
+			GiveInventory("RowdyRudyChaingun", 1);
+			GiveInventory("Clip", 20);
+		}
+		else if(GetActorClass(0) == "RayMohawk")
+		{
+			GiveInventory("RayMohawkBlaster", 1);
+			GiveInventory("Clip", 30);
+		}
 		else
 		{
 			GiveInventory("DEHChaingun", 1);
@@ -184,6 +238,16 @@ Script "Dehacked_Defense_Enter" ENTER
 		{
 			GiveInventory("NegativeOneRocketLauncher", 1);
 			GiveInventory("RocketAmmo", 3);
+		}
+		else if(GetActorClass(0) == "RowdyRudy")
+		{
+			GiveInventory("RowdyRudyRocketLauncher", 1);
+			GiveInventory("RocketAmmo", 3);
+		}
+		else if(GetActorClass(0) == "RayMohawk")
+		{
+			GiveInventory("RayMohawkFlamethrower", 1);
+			GiveInventory("RayMohawkFuel", 30);
 		}
 		else
 		{
@@ -218,6 +282,11 @@ Script "Dehacked_Defense_Enter" ENTER
 			GiveInventory("NegativeOneDarkSceptre", 1);
 			GiveInventory("Cell", 40);
 		}
+		else if(GetActorClass(0) == "RayMohawk")
+		{
+			GiveInventory("RayMohawkCellCannon", 1);
+			GiveInventory("RayMohawkCell", 40);
+		}
 		else
 		{
 			GiveInventory("DEHPlasmaRifle", 1);
@@ -250,6 +319,16 @@ Script "Dehacked_Defense_Enter" ENTER
 		else if(GetActorClass(0) == "JohnNegativeOne")
 		{
 			GiveInventory("NegativeOneUnmakyr", 1);
+			GiveInventory("Cell", 80);
+		}
+		else if(GetActorClass(0) == "RowdyRudy")
+		{
+			GiveInventory("RowdyRudyBFG9000", 1);
+			GiveInventory("Cell", 80);
+		}
+		else if(GetActorClass(0) == "RayMohawk")
+		{
+			GiveInventory("RayMohawkBFG9002", 1);
 			GiveInventory("Cell", 80);
 		}
 		else
@@ -313,6 +392,7 @@ Script "Dehacked_BackpackHandler" (void)
 	SetAmmoCapacity("223CaliberMagazine", 320);
 	//SetAmmoCapacity("AntaresianCell", 480);
 	//SetAmmoCapacity("HellCharge", 600);
+	SetAmmoCapacity("RayMohawkFuel", 500);
 	if(GetActorClass(0) == "JohnValiant")
 	{
 		SetAmmoCapacity("Clip", 600);
@@ -339,6 +419,16 @@ Script "Dehacked_BackpackHandler" (void)
 		GiveInventory("Shell", 4);
 		GiveInventory("Cell", 20);
 	}
+	else if(GetActorClass(0) == "RayMohawk")
+	{
+		SetAmmoCapacity("Clip", 300);
+		SetAmmoCapacity("Shell", 300);
+		SetAmmoCapacity("RocketAmmo", 100);
+		SetAmmoCapacity("Cell", 400);
+		GiveInventory("Clip", 10);
+		GiveInventory("Shell", 6);
+		GiveInventory("Cell", 20);
+	}
 	else //Just Vanilla Ammo
 	{
 		SetAmmoCapacity("Clip", 400);
@@ -355,6 +445,7 @@ Script "Dehacked_BackpackHandler" (void)
 	GiveInventory("223CaliberMagazine", 20);
 	//GiveInventory("AntaresianCell", 16);
 	//GiveInventory("HellCharge", 20);
+	GiveInventory("RayMohawkFuel", 10);
 }
 
 Script "Dehacked_MapNumber" (void)
@@ -412,6 +503,12 @@ Script "Dehacked_WeaponReset" (int mapset, int tierLevel)
 	case DEH_NEGATIVEONE:
 		keep_spawn = GetCVar("deh_def_enable_negativeone");
 		break;
+	case DEH_ROWDYRUDY:
+		keep_spawn = GetCVar("deh_def_enable_rowdyrudy");
+		break;
+	case DEH_RAYMOHAWK:
+		keep_spawn = GetCVar("deh_def_enable_raymohawk");
+		break;
 	}
 	if(GetCVar("deh_def_level_scaling") && GetLevelInfo(LEVELINFO_LEVELNUM) < tierLevel)
 	{
@@ -426,7 +523,7 @@ Script "Dehacked_WeaponReset" (int mapset, int tierLevel)
 	}
 }
 
-int DehackedDefenseWeapons[8][7] = 
+int DehackedDefenseWeapons[10][7] = 
 {
 	//Doom
 	{"DEHChainsaw", "DEHShotgun", "DEHSuperShotgun", "DEHChaingun", "DEHRocketLauncher", "DEHPlasmaRifle", "DEHBFG9000"},
@@ -442,8 +539,12 @@ int DehackedDefenseWeapons[8][7] =
 	{"StruggleDrillMachine", "StruggleShotgun", "DEHSuperShotgun", "StruggleDualPistols", "StruggleGrenadeLauncher", "StruggleAssaultRifle", "StruggleLeichenfaust"},
 	//Antaresian Reliquary
 	{"ReliquaryChainsaw", "ReliquaryShotgun", "ReliquarySuperShotgun", "ReliquaryChaingun", "ReliquaryRocketLauncher", "ReliquaryPlasmaRifle", "ReliquaryBFG9000"},
-	//Antaresian Reliquary
-	{"NegativeOneGauntlets", "NegativeOneShotgun", "NegativeOneSuperShotgun", "NegativeOneUzi", "NegativeOneRocketLauncher", "NegativeOneDarkSceptre", "NegativeOneUnmakyr"}
+	//Negative One
+	{"NegativeOneGauntlets", "NegativeOneShotgun", "NegativeOneSuperShotgun", "NegativeOneUzi", "NegativeOneRocketLauncher", "NegativeOneDarkSceptre", "NegativeOneUnmakyr"},
+	//Rowdy Rudy
+	{"RowdyRudyChainsaw", "RowdyRudyShotgun", "RowdyRudySuperShotgun", "RowdyRudyChaingun", "RowdyRudyRocketLauncher", "DEHPlasmaRifle", "RowdyRudyBFG9000"},
+	//Ray Mohawk
+	{"RayMohawkGauntlets", "RayMohawkShotgun", "RayMohawkSuperShotgun", "RayMohawkBlaster", "RayMohawkFlamethrower", "RayMohawkCellCannon", "RayMohawkBFG9002"}
 };
 
 Script "Dehacked_WeaponSpawn" (int class, int slot)
@@ -454,4 +555,14 @@ Script "Dehacked_WeaponSpawn" (int class, int slot)
 	int a = GetActorAngle(0) >> 8;
 	SpawnForced(DehackedDefenseWeapons[class][slot], x, y, z, 573, a);
 	SetActorProperty(573, APROP_Dropped, FALSE);
+}
+
+Script "Dehacked_BalancedMode" (void)
+{
+	if(GetCVar("deh_def_balanced_mode"))
+	{
+		SetResultValue(0); //Go full ham, whatever
+	} else {
+		SetResultValue(1); //Nah, actually try some balance changes
+	}
 }

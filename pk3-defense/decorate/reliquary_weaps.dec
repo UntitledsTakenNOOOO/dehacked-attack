@@ -40,12 +40,10 @@ ACTOR ReliquaryFist : DoomWeapon
     PUNG A 1 A_Raise
     Loop
   Fire:
-    PUNG B 2
     PUNG C 0 A_Punch
-    PUNG C 2 A_Punch
-    PUNG D 9
-    PUNG C 4
-    PUNG B 5 A_ReFire
+    PUNG C 1 A_Punch
+    PUNG D 8
+    PUNG CB 4
     Goto Ready
   }
 }
@@ -163,8 +161,8 @@ ACTOR ReliquaryShotgun : DoomWeapon
     RSHG D 6
     RSHG C 2
     RSHG B 1
-    RSHG A 2
-    RSHG A 4 A_ReFire
+    RSHG A 4
+    RSHG A 1 A_ReFire
     Goto Ready
   Flash:
     RSHF A 2 Bright A_Light1
@@ -201,15 +199,15 @@ ACTOR ReliquarySuperShotgun : DoomWeapon
     Loop
   Fire:
     RSH2 A 0 A_FireBullets(11.2, 7.1, 20, 5, "BulletPuff")
-    RSH2 A 0 A_PlaySound("reliquary/shotgf", CHAN_WEAPON)
+    RSH2 A 0 A_PlaySound("reliquary/sshotgf", CHAN_WEAPON)
     RSH2 A 3 A_GunFlash
     RSH2 BCB 1
     RSH2 A 15 A_CheckReload
     RSH2 D 2
     RSH2 E 13
-    RSH2 F 2
-    RSH2 G 2
-    RSH2 A 9 A_ReFire
+    RSH2 FG 2
+    RSH2 A 9
+    RSH2 A 3 A_ReFire
     Goto Ready
   Flash:
     RSH2 I 2 Bright A_Light1
@@ -245,23 +243,22 @@ ACTOR ReliquaryChaingun : DoomWeapon
      RCGG A 1 A_Raise
      Loop
   Fire:
-     RCGG A 0 A_PlaySound("reliquary/chngun", CHAN_WEAPON)
-     RCGG A 0 A_GunFlash
-     RCGG A 1 A_FireBullets(5.6, 0, 1, 5, "BulletPuff")
-     RCGG B 1
-     RCGG C 0 A_PlaySound("reliquary/chngun", CHAN_WEAPON)
-     RCGG C 0 A_GunFlash("Flash2")
-     RCGG C 1 A_FireBullets(5.6, 0, 1, 5, "BulletPuff")
-     RCGG D 1
+     RCGG B 0 A_GunFlash
+     RCGG B 0 A_PlaySound("reliquary/chngun", CHAN_WEAPON)
+     RCGG B 1 A_FireBullets(5.6, 0, 1, 5, "BulletPuff")
+     RCGG C 1
+     RCGG D 0 A_PlaySound("reliquary/chngun", CHAN_WEAPON)
+     RCGG D 1 A_FireBullets(5.6, 0, 1, 5, "BulletPuff")
+     RCGG A 1
      RCGG D 0 A_ReFire
-     RCGG ABCDABCDABCDABCD 1
-     RCGG ABCDABCD 2
-     RCGG ABCD 3
+     RCGG BCDAB 1
+     RCGG CDAB 2
+     RCGG CDAB 3
+     RCGG C 4
+     RCGG D 4 A_PlaySound("reliquary/sshoto", CHAN_WEAPON)
      Goto Ready
   Flash:
      RCGF A 2 Bright A_Light1
-     Goto LightDone
-  Flash2:
      RCGF B 2 Bright A_Light2
      Goto LightDone
    Spawn:
@@ -363,8 +360,8 @@ ACTOR ReliquaryPlasmaRifle : DoomWeapon
     RPLG A 2 A_Refire
     Goto Ready
   Flash:
-    PLSF D 1 Bright A_Light2
-    PLSF E 1 Bright A_Light1
+    RPLG D 1 Bright A_Light2
+    RPLG E 1 Bright A_Light1
     Goto LightDone
   Spawn:
     RQPL A -1
@@ -415,9 +412,9 @@ ACTOR ReliquaryBFG9000 : DoomWeapon
     Loop
   Fire:
     RBFG A 20 A_PlaySound("reliquary/bfgf", CHAN_WEAPON)
-	RBFG B 0 A_GunFlash
-    RBFG B 0 A_FireCustomMissile("ReliquaryBFGBall", 0, 1)
-    RBFG BCB 2
+	RBFG B 2 A_GunFlash
+    RBFG C 2 A_FireCustomMissile("ReliquaryBFGBall", 0, 1)
+    RBFG B 2
     RBFG D 14
     RBFG A 1 A_Refire
     Goto Ready

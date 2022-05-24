@@ -6,6 +6,8 @@ const int DEH_DEF_MASKIMXUL = 4;
 const int DEH_DEF_STRUGGLE = 5;
 const int DEH_DEF_RELIQUARY = 6;
 const int DEH_DEF_NEGATIVEONE = 7; //No negative joke because it's so much harder to deal with here
+const int DEH_DEF_ROWDYRUDY = 8;
+const int DEH_DEF_RAYMOHAWK = 9;
 
 actor DEHBoolean : Inventory
 {
@@ -22,6 +24,8 @@ actor DEHBoolean : Inventory
 #include "decorate/struggle_weaps.dec"
 #include "decorate/reliquary_weaps.dec"
 #include "decorate/negativeone_weaps.dec"
+#include "decorate/rowdyrudy_weaps.dec"
+#include "decorate/raymohawk_weaps.dec"
 
 #include "decorate/classweapons.dec"
 #include "decorate/classitems.dec"

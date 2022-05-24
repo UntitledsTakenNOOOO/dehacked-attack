@@ -10,6 +10,8 @@ server bool deh_def_enable_maskimxul = true;
 server bool deh_def_enable_struggle = true;
 server bool deh_def_enable_reliquary = true;
 server bool deh_def_enable_negativeone = true;
+server bool deh_def_enable_rowdyrudy = true;
+server bool deh_def_enable_raymohawk = true;
 
 server bool deh_def_chainsawstart = false;
 server bool deh_def_shotgunstart = false;

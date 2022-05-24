@@ -83,6 +83,8 @@ OptionMenu "DehackedDefenseOptions"
 	Option "Struggle: Antaresian Legacy:", "deh_def_enable_struggle", "DehackedDefenseWeaponSelection"
 	Option "Antaresian Reliquary:", "deh_def_enable_reliquary", "DehackedDefenseWeaponSelection"
 	Option "Doom -1:", "deh_def_enable_negativeone", "DehackedDefenseWeaponSelection"
+	Option "Rowdy Rudy 2:", "deh_def_enable_rowdyrudy", "DehackedDefenseWeaponSelection"
+	Option "Ray Mohawk 2:", "deh_def_enable_raymohawk", "DehackedDefenseWeaponSelection"
 	StaticText ""
 	StaticText "Dehacked Defense Start Settings", 1
 	StaticText "Start with some additional firepower, if you wish."

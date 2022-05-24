@@ -71,29 +71,33 @@ ROWDY RUDY 2 (Doomkid, 2020):
 * FISTS: Rowdy Rudy's close quarters combat training enables him to punch faster and with better damage.
 * DOUBLE-BLADED CHAINSAW: This is obviously only meant for killing, and does so with twice the efficiency of the normal chainsaw.
 * RIFLE: It's perfectly accurate, and fires faster than the normal pistol, giving it a strong presence as Rudy's starting weapon.
+	* Change: Rowdy Rudy 2 doubles bullet ammo pickups (20/100 instead of 10/50), but for balance reasons it's kept at 10/50 here.
 * AUTOMATIC SHOTGUN: This weapon shreds demons far ahead of the relative competition, owing to a faster automatic reloading system.
+* CHAINGUN: Rowdy Rudy's chaingun is made from a darker metal, and fires faster, matching pace with DOOM -1's Uzi.
 * SUPER SHOTGUN: While Rowdy Rudy can reload the weapon faster than usual, ultimately this is just a return to the old reliable SSG.
     * Balanced Mode: Rowdy Rudy cannot load the weapon that much faster than usual.
 * ROCKET LAUNCHER: Putting the 'Rowdy' in Rowdy Rudy, this weapon fires faster than the ordinary Rocket Launcher.
     * Balanced Mode: Fires at the same rate as the normal rocket launcher, but with the new sprites.
-* PLASMA RIFLE: 'It's green now! That's my attack!'
-* BFG 9000: More of the damage is in the tracers, making this potentially deadlier, but easier to waste the potential of.
-    * Balanced Mode: Does less damage, though not by as much as one might expect.
+* BFG 9000: It's yellow now, and it's...basically identical to the standard BFG 9000. Sometimes, you can't beat the original.
 
 RAY MOHAWK 1/2 (Doomkid, 2021):
 * KNIFE: Faster and dealing massive damage relative to the ordinary fist, Ray Mohawk came to town prepared for a fight.
-* GAUNTLETS?: No one's quite sure how these got here, but these things fire twice as fast as the chainsaw, or half as fast as Sauron's Gauntlets from DV2.
+* GAUNTLETS?: No one's quite sure how these got here, but these things fire twice as fast as the chainsaw.
+	* Balanced Mode: No, actually only twice as fast.
 * PISTOL: Ray Mohawk's pistol isn't really a pistol at all, but is instead a more compact shotgun, firing seven pellets per shot.
 	* Balanced mode: it fires only three pellets and it's less accurate. Sorry, but this is a starting weapon, and a literal shotgun is too much power to have.
 * SHOTGUN: Fires 20 pellets for 2 shells, meaning that in effect this is really the Super Shotgun.
-	* Balanced Mode: 9 pellets, 1 shell. Not in the ordinary Shotgun slot, kiddo.
+	* Balanced Mode: 7 pellets, 1 shell. Not in the ordinary Shotgun slot, kiddo.
 * AUTOMATIC SHOTGUN: Rapidly empties shells into enemies to destroy them.
 	* Balanced Mode: 7 pellets, 1 shell, because a Super Shotgun with a pistol's fire rate is way too much.
-* CHAINGUN: Borrowed from the Spider Mastermind except with the playerside buff, this thing sprays lead at an unfathomable rate in the direction you point in.
+* BLASTER: Borrowed from the Spider Mastermind except with the playerside buff, this thing sprays lead at an unfathomable rate in the direction you point in.
 	* Balanced Mode: Back to only 3 pellets and it's much less accurate. You're still the mastermind now!
 * FLAMETHROWER: Ray doesn't use a conventional rocket launcher, and in its place is a flamethrower that's closer to the plasma rifle with a distinct ammo type.
+	* Change: Fuel pickups are 10/50 instead of 20/100 like in Ray Mohawk 2.
+	* Change: Moved from Slot 6 to Slot 5 for ammo consistency reasons.
     * Balanced Mode: Base damage reduced from 15 to 8. Still stronger than the plasma rifle, but not by nearly as much.
 * CELL CANNON: Ray's explosive weapon. Awkwardly placed in the plasma slot but cell ammo comes in bigger packages, meaning he can get more value out of them.
+	* Change: Moved from Slot 5 to Slot 6 for ammo consistency reasons.
 	* Balanced Mode: Uses 5 cells (up from 1) because effectively infinite rockets is a bit much.
-* BFG 9002: An upgrade to the BFG 9000, it's killing power is off the charts.
+* BFG 9002: An upgrade to the BFG 9000, it does less direct hit damage, but far more tracer damage.
     * Balanced Mode: Uses 50 cells per shot (up from 25), meaning that you've got to commit to using this thing.
