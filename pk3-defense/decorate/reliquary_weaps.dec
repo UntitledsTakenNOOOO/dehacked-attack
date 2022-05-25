@@ -345,6 +345,7 @@ ACTOR ReliquaryPlasmaRifle : DoomWeapon
     Loop
   Fire:
     RPLG A 0 A_JumpIfInventory("ReliquaryClass", 1, "FireReliquary")
+    MXBG A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BalancedMode") == 0, "FireReliquary")
     RPLG A 0 A_GunFlash
     RPLG A 0 A_FireCustomMissile("ReliquaryPlasmaBall", 0, 1)
     RPLG A 2 A_TakeInventory("Cell", 1)

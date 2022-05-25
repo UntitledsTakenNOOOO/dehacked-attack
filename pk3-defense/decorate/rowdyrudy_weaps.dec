@@ -257,6 +257,7 @@ ACTOR RowdyRudySuperShotgun : DoomWeapon
     SHH2 A 1 A_Raise
     Loop
   Fire:
+    SHH2 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BalancedMode") == 1, "BalancedFire")
     SHH2 A 3 
     SHH2 A 0 A_FireBullets(11.2, 7.1, 20, 5, "BulletPuff")
     SHH2 A 0 A_PlaySound("rowdyrudy/sshotgf", CHAN_WEAPON)
@@ -270,9 +271,27 @@ ACTOR RowdyRudySuperShotgun : DoomWeapon
     SHH2 H 4 //A_PlaySound("rowdyrudy/sshotgc", CHAN_WEAPON)
     SHH2 A 4 A_ReFire
     goto Ready
+  BalancedFire:
+    SHO2 A 3
+    SHH2 A 0 A_FireBullets(11.2, 7.1, 20, 5, "BulletPuff")
+    SHH2 A 0 A_PlaySound("rowdyrudy/sshotgf", CHAN_WEAPON)
+    SHH2 A 7 A_GunFlash("BalancedFlash")
+    SHO2 B 7
+    SHO2 C 7 A_CheckReload
+    SHO2 D 7 A_OpenShotgun2
+    SHO2 E 7
+    SHO2 F 7 A_LoadShotgun2
+    SHO2 G 6
+    SHO2 H 6 A_CloseShotgun2
+    SHO2 A 5 A_ReFire
+    Goto Ready
   Flash:
     SHH2 I 2 Bright A_Light1
     SHH2 J 2 Bright A_Light2
+    Goto LightDone
+  BalancedFlash:
+    SHO2 I 4 Bright A_Light1
+    SHO2 J 3 Bright A_Light2
     Goto LightDone
   Spawn:
     SGN2 A -1
@@ -337,27 +356,36 @@ ACTOR RowdyRudyRocketLauncher : DoomWeapon
   States
   {
   Ready:
-    RISF A 1 A_WeaponReady
+    RISG A 1 A_WeaponReady
     Loop
   Deselect:
-    RISF AAA 0 A_Lower
-    RISF A 1 A_Lower
+    RISG AAA 0 A_Lower
+    RISG A 1 A_Lower
     Loop
   Select:
-    RISF AAA 0 A_Raise
-    RISF A 1 A_Raise
+    RISG AAA 0 A_Raise
+    RISG A 1 A_Raise
     Loop
   Fire:
-    RISF B 8 A_GunFlash
-    RISF B 9 A_FireCustomMissile("RowdyRudyRocket", 0, 1)
-    RISF BCD 1
-    RISF CB 2
-    RISF A 10
-    RISF A 0 A_Refire
+    RISG A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BalancedMode") == 1, "BalancedFire")
+    RISG B 8 A_GunFlash
+    RISG B 9 A_FireCustomMissile("RowdyRudyRocket", 0, 1)
+    RISG A 0 A_Refire
+    Goto Ready
+  BalancedFire:
+    RISG B 8 A_GunFlash("BalancedFlash")
+    RISG B 11 A_FireCustomMissile("RowdyRudyRocket", 0, 1)
+    RISG A 0 A_Refire
     Goto Ready
   Flash:
-    XLSF A 4 Bright A_Light1
-    XLSF BC 2 Bright A_Light2
+    RISF A 1 Bright A_Light1
+    RISF B 2 Bright A_Light1
+    RISF CD 3 Bright A_Light2
+    Goto LightDone
+  BalancedFlash:
+    RISF A 3 Bright A_Light1
+    RISF B 4 Bright A_Light1
+    RISF CD 4 Bright A_Light2
     Goto LightDone
   Spawn:
     RAUN A -1

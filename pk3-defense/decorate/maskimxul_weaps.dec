@@ -105,6 +105,7 @@ ACTOR MaskimXulHandOfAfrit : DoomWeapon
     Loop
   Fire:
     MXRL A 0 A_JumpIfInventory("MaskimXulClass", 1, "FireMaskimXul")
+    MXRL A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BalancedMode") == 0, "FireMaskimXul")
     MXRL B 4 Bright A_GunFlash
     MXRL C 0 Bright A_FireCustomMissile("MaskimXulHandOfAfritComet", 0, 1)
     MXRL C 8 Bright A_TakeInventory("RocketAmmo", 1)
@@ -266,10 +267,18 @@ ACTOR MaskimXulGrimoireExcidium : DoomWeapon
     MXBG A 1 A_Raise
     Loop
   Fire:
+    MXBG A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BalancedMode") == 1, "FireBalanced")
     MXBG B 10 A_PlaySound("maskimxul/bfgf", CHAN_WEAPON)
     MXBG C 5 A_GunFlash
     MXBG D 5 Bright
     MXBG E 5 Bright A_FireCustomMissile("MaskimXulGrimoireExcidiumAttack", 0, 0)
+	MXBG CB 5
+    Goto Ready
+  FireBalanced:
+    MXBG B 10 A_PlaySound("maskimxul/bfgf", CHAN_WEAPON)
+    MXBG C 5 A_GunFlash
+    MXBG D 5 Bright
+    MXBG E 5 Bright A_FireCustomMissile("MaskimXulGrimoireExcidiumAttackBalanced", 0, 0)
 	MXBG CB 5
     Goto Ready
   Flash:
@@ -298,6 +307,23 @@ ACTOR MaskimXulGrimoireExcidiumAttack : BFGBall
     TNT1 A 0 Bright A_BFGSpray("MaskimXulBFGExtra")
     TNT1 A 0 Bright A_SargAttack
     TNT1 A 1 Bright A_SargAttack
+    Stop
+  }
+}
+ACTOR MaskimXulGrimoireExcidiumAttackBalanced : BFGBall
+{
+  DeathSound ""
+  States
+  {
+  Spawn:
+    TNT1 A 0
+	TNT1 A 0 A_Die
+    Goto Death
+  Death:
+    TNT1 A 0 Bright
+    TNT1 A 0 Bright A_BFGSpray("MaskimXulBFGExtra")
+    TNT1 A 0 Bright A_BFGSpray("MaskimXulBFGExtra")
+    TNT1 A 1 Bright A_CustomMeleeAttack(40, "", "", "Melee")
     Stop
   }
 }

@@ -172,7 +172,11 @@ ACTOR RayMohawkGauntlets : Weapon
     RHGA A 1 A_Raise
     Loop
   Fire:
+    RHGA A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BalancedMode") == 1, "BalancedFire")
     RHGA DEF 1 Bright A_Saw("raymohawk/sawfull", "raymohawk/sawhit", 2, "BulletPuff")
+    goto Ready
+  BalancedFire:
+    RHGA DEF 2 Bright A_Saw("raymohawk/sawfull", "raymohawk/sawhit", 2, "BulletPuff")
     goto Ready
   Spawn:
     GNTL A -1
@@ -203,8 +207,18 @@ ACTOR RayMohawkPistol : DoomWeapon
     RHPT A 1 A_Raise
     Loop
   Fire:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BalancedMode") == 1, "BalancedFire")
     RHPT A 2
     RHPT B 0 A_FireBullets(5.6, 0, 7, 5, "BulletPuff")
+    RHPT B 0 A_PlaySound("raymohawk/shotgf", CHAN_WEAPON)
+    RHPT B 3 A_GunFlash
+    RHPT C 2
+    RHPT D 3 A_Light0
+    RHPT A 1 A_WeaponReady
+    goto Ready
+  BalancedFire:
+    RHPT A 2
+    RHPT B 0 A_FireBullets(22.5, 0, 3, 5, "BulletPuff")
     RHPT B 0 A_PlaySound("raymohawk/shotgf", CHAN_WEAPON)
     RHPT B 3 A_GunFlash
     RHPT C 2
@@ -224,7 +238,7 @@ ACTOR RayMohawkShotgun : DoomWeapon
 {
   Weapon.SlotNumber 3
   Weapon.SelectionOrder 1300
-  Weapon.AmmoUse 2
+  Weapon.AmmoUse 1
   Weapon.AmmoGive 8
   Weapon.AmmoType "Shell"
   Inventory.PickupMessage "You got a shotgun!"
@@ -242,16 +256,31 @@ ACTOR RayMohawkShotgun : DoomWeapon
     RHSG A 1 A_Raise
     Loop
   Fire:
-    RHSG A 2 
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BalancedMode") == 1, "BalancedFire")
+    RHSG A 2
     RHSG A 0 A_FireBullets(11.2, 7.1, 20, 5, "BulletPuff")
+    RHSG A 0 A_TakeInventory("Shell", 1)
     RHSG A 0 A_PlaySound("raymohawk/sshotf", CHAN_WEAPON)
     RHSG A 7 A_GunFlash
-    RHSG BCD 2 
-    RHSG E 3 
-    RHSG F 2 
-    RHSG G 4 
-    RHSG F 3 
-    RHSG EDCB 2 
+    RHSG BCD 2
+    RHSG E 3
+    RHSG F 2
+    RHSG G 4
+    RHSG F 3
+    RHSG EDCB 2
+    RHSG A 5 A_ReFire
+    goto Ready
+  BalancedFire:
+    RHSG A 2
+    RHSG A 0 A_FireBullets(8, 7, 7, 5, "BulletPuff")
+    RHSG A 0 A_PlaySound("raymohawk/sshotf", CHAN_WEAPON)
+    RHSG A 7 A_GunFlash
+    RHSG BCD 2
+    RHSG E 3
+    RHSG F 2
+    RHSG G 4
+    RHSG F 3
+    RHSG EDCB 2
     RHSG A 5 A_ReFire
     goto Ready
   Flash:
@@ -286,8 +315,24 @@ ACTOR RayMohawkSuperShotgun : DoomWeapon
     AUTO A 1 A_Raise
     Loop
   Fire:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BalancedMode") == 1, "BalancedFire")
     AUTO A 3
     AUTO A 0 A_FireBullets(11.2, 7.1, 20, 5, "BulletPuff")
+    AUTO A 0 A_TakeInventory("Shell", 1)
+    AUTO A 0 A_PlaySound("raymohawk/sshotf", CHAN_WEAPON)
+    AUTO A 4 A_GunFlash
+    AUTO A 2
+    AUTO B 2 A_CheckReload
+    AUTO C 3
+    AUTO B 1 A_ReFire
+    AUTO F 1
+    AUTO GHIJ 2
+    AUTO K 4
+    AUTO JIHGF 2
+    Goto Ready
+  BalancedFire:
+    AUTO A 3
+    AUTO A 0 A_FireBullets(8, 7, 7, 5, "BulletPuff")
     AUTO A 0 A_PlaySound("raymohawk/sshotf", CHAN_WEAPON)
     AUTO A 4 A_GunFlash
     AUTO A 2
@@ -330,10 +375,19 @@ ACTOR RayMohawkBlaster : DoomWeapon
    Select:
      BLAS A 1 A_Raise
      Loop
-  Fire:
+   Fire:
+     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BalancedMode") == 1, "BalancedFire")
      BLAS D 0 A_PlaySound("raymohawk/shotgf", CHAN_WEAPON)
      BLAS D 0 A_GunFlash
      BLAS D 2 A_FireBullets(5.6, 0, 7, 5, "BulletPuff")
+     BLAS C 2
+     BLAS A 1
+     BLAS A 0 A_ReFire
+     Goto Ready
+   BalancedFire:
+     BLAS D 0 A_PlaySound("raymohawk/shotgf", CHAN_WEAPON)
+     BLAS D 0 A_GunFlash
+     BLAS D 2 A_FireBullets(22.5, 0, 3, 5, "BulletPuff")
      BLAS C 2
      BLAS A 1
      BLAS A 0 A_ReFire
@@ -369,6 +423,7 @@ ACTOR RayMohawkFlamethrower : DoomWeapon
     THRW A 1 A_Raise
     Loop
   Fire:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BalancedMode") == 1, "BalancedFire")
     THRW A 0 A_Jump(128, "Fire2")
     THRW A 0 A_FireCustomMissile("RayMohawkFTFire", 0, 1)
     THRW A 3 A_GunFlash
@@ -376,6 +431,17 @@ ACTOR RayMohawkFlamethrower : DoomWeapon
     Goto Ready
   Fire2:
     THRW A 0 A_FireCustomMissile("RayMohawkFTFire", 0, 1)
+    THRW A 3 A_GunFlash("Flash2")
+    THRW A 0 A_ReFire
+    Goto Ready
+  BalancedFire:
+    THRW A 0 A_Jump(128, "BalancedFire2")
+    THRW A 0 A_FireCustomMissile("RayMohawkFTFireBalanced", 0, 1)
+    THRW A 3 A_GunFlash
+    THRW A 0 A_ReFire
+    Goto Ready
+  BalancedFire2:
+    THRW A 0 A_FireCustomMissile("RayMohawkFTFireBalanced", 0, 1)
     THRW A 3 A_GunFlash("Flash2")
     THRW A 0 A_ReFire
     Goto Ready
@@ -415,7 +481,10 @@ Actor RayMohawkFTFire : PlasmaBall
 		stop
 	}
 }
-
+Actor RayMohawkFTFireBalanced : RayMohawkFTFire
+{
+	Damage 7
+}
 ACTOR RayMohawkCellCannon : DoomWeapon
 {
   Weapon.SlotNumber 6
@@ -437,8 +506,15 @@ ACTOR RayMohawkCellCannon : DoomWeapon
     RHPL A 1 A_Raise
     Loop
   Fire:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BalancedMode") == 1, "BalancedFire")
     RHPL B 5 A_GunFlash
     RHPL B 7 A_FireCustomMissile("RayMohawkCellCannonBall", 0, 1)
+    RHPL B 0 A_Refire
+    Goto Ready
+  BalancedFire:
+    RHPL B 5 A_GunFlash
+    RHPL B 0 A_FireCustomMissile("RayMohawkCellCannonBallBalanced", 0, 1)
+    RHPL B 10 A_TakeInventory("Cell", 4)
     RHPL B 0 A_Refire
     Goto Ready
   Flash:
@@ -451,7 +527,6 @@ ACTOR RayMohawkCellCannon : DoomWeapon
     Stop
   }
 }
-
 ACTOR RayMohawkCellCannonBall : PlasmaBall
 {
 	SeeSound "raymohawk/rocklf"
@@ -466,6 +541,23 @@ ACTOR RayMohawkCellCannonBall : PlasmaBall
 		goto Spawn
 	Death:
 		PBMB A 8 Bright A_Explode
+		PBMB B 6 Bright 
+		PBMB C 4 Bright 
+		stop
+	}
+}
+ACTOR RayMohawkCellCannonBallBalanced : RayMohawkCellCannonBall
+{
+	Damage 10
+	States
+	{
+	Spawn:
+		PLZZ AB 2 Bright 
+		goto Spawn
+	Death:
+		PBMB A 0 Bright A_Explode(64, 128, 0)
+		PBMB A 0 Bright A_ChangeFlag("FORCERADIUSDMG", TRUE)
+		PBMB A 8 Bright A_Explode(64, 128)
 		PBMB B 6 Bright 
 		PBMB C 4 Bright 
 		stop
@@ -495,10 +587,19 @@ ACTOR RayMohawkBFG9002 : DoomWeapon
     BFFF A 1 A_Raise
     Loop
   Fire:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BalancedMode") == 1, "BalancedFire")
     BFGG A 12 A_PlaySound("raymohawk/bfgf")
     BFGG B 8 A_GunFlash
-    BFGG B 4 A_FireBFG
+    BFGG B 4 A_FireCustomMissile("RayMohawkBFG9002Ball", 0, 1)
     BFGG B 20 A_ReFire
+    goto Ready
+  BalancedFire:
+    BFGG A 12 A_PlaySound("raymohawk/bfgf")
+    BFGG B 8 A_GunFlash
+    BFGG B 0 A_FireCustomMissile("RayMohawkBFG9002Ball", 0, 1)
+    RHPL B 4 A_TakeInventory("Cell", 25)
+    BFGG B 20
+    BFGG A 0 A_ReFire
     goto Ready
   Flash:
     BFFX D 5 Bright A_Light1
