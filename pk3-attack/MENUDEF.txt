@@ -120,20 +120,25 @@ OptionMenu "DehackedAttackOptions"
 	StaticText "Render nightmare monsters fuzzy (like spectres), or subtractively."
 	Option "Nightmare Monster Rendering:", "deh_subtractive_rendering", "DehackedNightmareRendering"
 	StaticText ""
+	StaticText "Force MAP07 Fix", 1
+	StaticText "Monster selection and Level scaling tends to break the MAP07 Mancubi and Arachnotron specials."
+	StaticText "Enabling this disables monster selection and level scaling for Mancubi and Arachnotrons on MAP07."
+	Option "Force MAP07 Fix:", "deh_force_map07_fix", "DehackedMonsterSelection"
+	StaticText ""
 	StaticText "Final Boss Selection", 1
 	StaticText "Choose one from multiple final bosses."
 	StaticText "WARNING: Most of these are not very well balanced."
 	Option "Final Boss Selection:", "deh_finalboss", "DehackedFinalBoss"
 	StaticText ""
-	StaticText "Final Boss Music:", 1
+	StaticText "Final Boss Music", 1
 	StaticText "Switch Music at the start of the final boss fight, if applicable."
 	Option "Final Boss Music:", "deh_finalbossmusic", "DehackedFinalBossMusic"
 	StaticText ""
-	StaticText "Final Boss Preview:", 1
+	StaticText "Final Boss Preview", 1
 	StaticText "Reveals which boss has been selected at the start of the level, if enabled."
 	Option "Final Boss Preview:", "deh_finalbosspreview", "DehackedFinalBossPreview"
 	StaticText ""
-	StaticText "Disable Boss Archvile Attack:", 1
+	StaticText "Disable Boss Archvile Attack", 1
 	StaticText "If enabled, bosses with an Archvile Attack aside from the Super Archvile can't use it."
 	Option "Boss Archvile Attack:", "deh_novileattack", "DehackedFinalBossNoVileAttack"
 	StaticText ""

@@ -5,6 +5,7 @@ server bool deh_novileattack = false;
 
 server int deh_level_scaling = 0;
 server bool deh_subtractive_rendering = true;
+server bool deh_force_map07_fix = true;
 
 server bool deh_enable_obituary = false;
 server bool deh_enable_strain = true;

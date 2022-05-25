@@ -43,7 +43,7 @@ ACTOR DamnedSoul : DEHLostSoul
   Health 50
   Obituary "%o was damned by a damned soul."
   Translation 0
-  DeathSound "weapons/rocklx"
+  DeathSound "world/barrelx"
   Tag "Damned Soul"
   States
   {
@@ -108,7 +108,7 @@ ACTOR CacoLich : DEHCacodemon
          CALI A 1 A_Look
 	   Loop
 	See: //WTF is this indentation, I'm not fixing this mess
-	   CALI A 4 A_Chase
+	   CALI A 3 A_Chase
          Loop
 	  Melee:
       Missile:
@@ -134,7 +134,6 @@ ACTOR CacoLich : DEHCacodemon
          CALI G 2 A_TroopAttack
          CALI F 2 A_FaceTarget
          CALI G 2 A_TroopAttack
-         CALI FE 5 A_FaceTarget
          Goto See
       Death:
          CALI J 0
@@ -338,7 +337,7 @@ ACTOR LordOfHeresy : DEHBaronOfHell
         LOHS AB 10 A_Look 
         Loop 
     See: 
-        LOHS AABBCCDD 4 A_Chase
+        LOHS AABBCCDDAABBCCDD 3 A_Chase
         Goto WalkMissile
     WalkMissile:
         LOHS EF 8 A_FaceTarget

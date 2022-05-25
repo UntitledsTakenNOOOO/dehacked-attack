@@ -3,6 +3,7 @@ Actor RowdyZombieMan : DEHZombieMan
 	Health 40
 	Speed 6
 	Translation 1
+	Obituary "%o was shot down by a soldier."
 	States
 	{
 	Spawn:
@@ -53,6 +54,7 @@ Actor RowdyShotgunGuy : DEHShotgunGuy
 {
   Health 60
   Translation 2
+  Obituary "%o was blasted by a sergeant."
   States
   {
   Spawn:
@@ -145,6 +147,7 @@ Actor RowdyPlasmaZombie : DEHZombieman
 {
 	Health 60
 	DropItem "Cell"
+	Obituary "%o was melted by a plasma trooper."
 	Tag "Plasma Zombie"
 	+DOHARMSPECIES
 	States
@@ -202,7 +205,7 @@ Actor ToxiCacodemon : DEHCacodemon
 {
   Speed 7
   Obituary "%o was poisoned by a toxicacodemon."
-  HitObituary "%o let a toxicacodemon get too close."
+  HitObituary "%o was feasted upon by a toxicacodemon."
   Tag "Toxicacodemon"
   States
   {
@@ -258,7 +261,7 @@ Actor RowdyRocketman
 	DeathSound "grunt/death"
 	ActiveSound "grunt/active"
 	DropItem "RocketAmmo"
-	Obituary "%o was blasted by a rocket zombie."
+	Obituary "%o was blown to bits by a rocketman."
 	DamageFactor "Exorcist", 3.0
 	Tag "Revenant Missile Zombie"
 	States
@@ -309,7 +312,7 @@ Actor FlyingMastermind : DEHSpiderMastermind
 	+NOGRAVITY
 	+DROPOFF
 	+FLOAT
-	Obituary "%o was killed by an arachnophyte."
+	Obituary "%o was shredded by an arachnophyte."
 	DamageFactor "Heroic", 3.0
 	DamageFactor "Antiair", 2.0
 	Tag "Arachnophyte"
@@ -362,6 +365,7 @@ Actor PsychoImp : DEHDoomImp
 	Mass 100
 	PainSound "psychoimp/death"
 	Tag "Psycho Imp"
+	Obituary "%o was melted by a psycho imp."
 	States
 	{
 	Spawn:
@@ -419,8 +423,8 @@ Actor RowdyFlameCaco : DEHPainElemental
 	PainSound "caco/pain"
 	DeathSound "caco/death"
 	ActiveSound "caco/active"
-	Obituary "%o was roasted by a flame caco."
-	HitObituary "%o shouldn't have been that close to a flame caco."
+	Obituary "%o was burnt to a crisp by a flame caco."
+	HitObituary "%o was feasted upon by a flame caco."
 	DamageFactor "Antiair", 3.0
 	DamageFactor "Extinguishing", 2.0
 	Tag "FlameCaco"
@@ -471,6 +475,7 @@ Actor RowdyChaingunguy : DEHChaingunguy
 	Speed 7
 	SeeSound "grunt/sight"
 	DeathSound "grunt/death"
+	Obituary "%o was gunned down down by a chaingunner."
 	States
 	{
 	Spawn:
@@ -530,7 +535,7 @@ Actor FlamethrowerGuy : DEHZombieman
 	ActiveSound "grunt/active"
 	DropItem "RocketAmmo"
 	DropItem "Cell"
-	Obituary "%o was flamed by a zombie with a flamethrower."
+	Obituary "%o was toasted by a flamethrower soldier."
 	DamageFactor "Exorcist", 3.0
 	DamageFactor "Extinguishing", 2.0
 	Tag "Flamethrower Zombie"
