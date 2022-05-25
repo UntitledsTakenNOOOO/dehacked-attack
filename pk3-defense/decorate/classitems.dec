@@ -62,6 +62,16 @@ ACTOR NegativeOneClassClip : NegativeOneClip
 	Inventory.RestrictedTo "JohnNegativeOne"
 	VisibleToPlayerClass "JohnNegativeOne"
 }
+ACTOR RowdyRudyClassClip : RowdyRudyClip
+{
+	Inventory.RestrictedTo "RowdyRudy"
+	VisibleToPlayerClass "RowdyRudy"
+}
+ACTOR RayMohawkClassClip : RayMohawkClip
+{
+	Inventory.RestrictedTo "RayMohawk"
+	VisibleToPlayerClass "RayMohawk"
+}
 
 ACTOR DoomClassClipBox : ClipBox
 {
@@ -102,6 +112,16 @@ ACTOR NegativeOneClassClipBox : ClipBox
 {
 	Inventory.RestrictedTo "JohnNegativeOne"
 	VisibleToPlayerClass "JohnNegativeOne"
+}
+ACTOR RowdyRudyClassClipBox : RowdyRudyClipBox
+{
+	Inventory.RestrictedTo "RowdyRudy"
+	VisibleToPlayerClass "RowdyRudy"
+}
+ACTOR RayMohawkClassClipBox : RayMohawkClipBox
+{
+	Inventory.RestrictedTo "RayMohawk"
+	VisibleToPlayerClass "RayMohawk"
 }
 
 ACTOR DoomClassShell : Shell
@@ -144,6 +164,16 @@ ACTOR NegativeOneClassShell : Shell
 	Inventory.RestrictedTo "JohnNegativeOne"
 	VisibleToPlayerClass "JohnNegativeOne"
 }
+ACTOR RowdyRudyClassShell : Shell
+{
+	Inventory.RestrictedTo "RowdyRudy"
+	VisibleToPlayerClass "RowdyRudy"
+}
+ACTOR RayMohawkClassShell : RayMohawkShell
+{
+	Inventory.RestrictedTo "RayMohawk"
+	VisibleToPlayerClass "RayMohawk"
+}
 
 ACTOR DoomClassShellBox : ShellBox
 {
@@ -184,6 +214,16 @@ ACTOR NegativeOneClassShellBox : ShellBox
 {
 	Inventory.RestrictedTo "JohnNegativeOne"
 	VisibleToPlayerClass "JohnNegativeOne"
+}
+ACTOR RowdyRudyClassShellBox : ShellBox
+{
+	Inventory.RestrictedTo "RowdyRudy"
+	VisibleToPlayerClass "RowdyRudy"
+}
+ACTOR RayMohawkClassShellBox : RayMohawkShellBox
+{
+	Inventory.RestrictedTo "RayMohawk"
+	VisibleToPlayerClass "RayMohawk"
 }
 
 ACTOR DoomClassRocketAmmo : RocketAmmo
@@ -226,6 +266,16 @@ ACTOR NegativeOneClassRocketAmmo : RocketAmmo
 	Inventory.RestrictedTo "JohnNegativeOne"
 	VisibleToPlayerClass "JohnNegativeOne"
 }
+ACTOR RowdyRudyClassRocketAmmo : RocketAmmo
+{
+	Inventory.RestrictedTo "RowdyRudy"
+	VisibleToPlayerClass "RowdyRudy"
+}
+ACTOR RayMohawkClassRocketAmmo : RayMohawkFuel
+{
+	Inventory.RestrictedTo "RayMohawk"
+	VisibleToPlayerClass "RayMohawk"
+}
 
 ACTOR DoomClassRocketBox : RocketBox
 {
@@ -267,6 +317,16 @@ ACTOR NegativeOneClassRocketBox : RocketBox
 	Inventory.RestrictedTo "JohnNegativeOne"
 	VisibleToPlayerClass "JohnNegativeOne"
 }
+ACTOR RowdyRudyClassRocketBox : RocketBox
+{
+	Inventory.RestrictedTo "RowdyRudy"
+	VisibleToPlayerClass "RowdyRudy"
+}
+ACTOR RayMohawkClassRocketBox : RayMohawkFuelCan
+{
+	Inventory.RestrictedTo "RayMohawk"
+	VisibleToPlayerClass "RayMohawk"
+}
 
 ACTOR DoomClassCell : Cell
 {
@@ -307,6 +367,16 @@ ACTOR NegativeOneClassCell : HellCharge
 {
 	Inventory.RestrictedTo "JohnNegativeOne"
 	VisibleToPlayerClass "JohnNegativeOne"
+}
+ACTOR RowdyRudyClassCell : Cell
+{
+	Inventory.RestrictedTo "RowdyRudy"
+	VisibleToPlayerClass "RowdyRudy"
+}
+ACTOR RayMohawkClassCell : Cell
+{
+	Inventory.RestrictedTo "RayMohawk"
+	VisibleToPlayerClass "RayMohawk"
 }
 
 ACTOR DoomClassCellPack : CellPack
@@ -353,6 +423,16 @@ ACTOR NegativeOneClassCellPack : LargeHellCharge
 {
 	Inventory.RestrictedTo "JohnNegativeOne"
 	VisibleToPlayerClass "JohnNegativeOne"
+}
+ACTOR RowdyRudyClassCellPack : CellPack
+{
+	Inventory.RestrictedTo "RowdyRudy"
+	VisibleToPlayerClass "RowdyRudy"
+}
+ACTOR RayMohawkClassCellPack : CellPack
+{
+	Inventory.RestrictedTo "RayMohawk"
+	VisibleToPlayerClass "RayMohawk"
 }
 
 ACTOR DoomClassGreenArmor : GreenArmor

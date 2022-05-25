@@ -43,6 +43,7 @@ ACTOR DV2Gauntlets : DoomWeapon
     DVSA A 1 A_Raise
     Loop
   Fire:
+    DVSA D 0 Bright A_Saw("dv2/sawfull", "dv2/sawhit", 2, "BulletPuff", SF_RANDOMLIGHTBOTH)
     DVSA DEF 1 Bright A_Saw("dv2/sawfull", "dv2/sawhit", 2, "BulletPuff", SF_RANDOMLIGHTBOTH)
     DVSA C 0 A_ReFire
     Goto Ready

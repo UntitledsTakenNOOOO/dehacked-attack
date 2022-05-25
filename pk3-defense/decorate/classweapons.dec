@@ -227,6 +227,80 @@ Actor NegativeOneChainsawGiverDropped : DehackedWeaponGiver
     Fail
   }
 }
+Actor RowdyRudyChainsawGiver : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "RowdyRudy"
+  VisibleToPlayerClass "RowdyRudy"
+  States
+  {
+  Spawn:
+    CSAW A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("RowdyRudyChainsaw", 1, "PickupFail")
+    TNT1 A 0 A_SpawnItemEx("RowdyRudyChainsaw", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    Stop
+  PickupFail:
+    CSAW A 1
+    Fail
+  }
+}
+Actor RowdyRudyChainsawGiverDropped : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "RowdyRudy"
+  VisibleToPlayerClass "RowdyRudy"
+  States
+  {
+  Spawn:
+    CSAW A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("RowdyRudyChainsaw", 1, "PickupFail")
+    TNT1 A 0 A_SpawnItemEx("RowdyRudyChainsaw", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    Stop
+  PickupFail:
+    CSAW A 1
+    Fail
+  }
+}
+Actor RayMohawkChainsawGiver : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "RayMohawk"
+  VisibleToPlayerClass "RayMohawk"
+  States
+  {
+  Spawn:
+    GNTL A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("RayMohawkGauntlets", 1, "PickupFail")
+    TNT1 A 0 A_SpawnItemEx("RayMohawkGauntlets", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    Stop
+  PickupFail:
+    GNTL A 1
+    Fail
+  }
+}
+Actor NegativeOneChainsawGiverDropped : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "RayMohawk"
+  VisibleToPlayerClass "RayMohawk"
+  States
+  {
+  Spawn:
+    GNTL A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("RayMohawkGauntlets", 1, "PickupFail")
+    TNT1 A 0 A_SpawnItemEx("RayMohawkGauntlets", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    Stop
+  PickupFail:
+    GNTL A 1
+    Fail
+  }
+}
 
 /////////////
 // SHOTGUN //
@@ -501,6 +575,102 @@ Actor NegativeOneShotgunGiverDropped : DehackedWeaponGiver
     Fail
   }
 }
+Actor RowdyRudyShotgunGiver : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "RowdyRudy"
+  VisibleToPlayerClass "RowdyRudy"
+  States
+  {
+  Spawn:
+    SGUN A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("RowdyRudyShotgun", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    TNT1 A 0 A_JumpIfInventory("Shell", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_SpawnItemEx("RowdyRudyShotgun", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    Stop
+  PickupFail:
+    SGUN A 1
+    Fail
+  }
+}
+Actor RowdyRudyShotgunGiverDropped : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "RowdyRudy"
+  VisibleToPlayerClass "RowdyRudy"
+  States
+  {
+  Spawn:
+    SGUN A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("RowdyRudyShotgun", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIfInventory("Shell", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_DropItem("RowdyRudyShotgun")
+    Stop
+  PickupFail:
+    SGUN A 1
+    Fail
+  }
+}
+Actor RayMohawkShotgunGiver : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "RayMohawk"
+  VisibleToPlayerClass "RayMohawk"
+  States
+  {
+  Spawn:
+    SHXX A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("RayMohawkShotgun", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    TNT1 A 0 A_JumpIfInventory("Shell", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_SpawnItemEx("RayMohawkShotgun", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    Stop
+  PickupFail:
+    SHXX A 1
+    Fail
+  }
+}
+Actor RayMohawkShotgunGiverDropped : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "RayMohawk"
+  VisibleToPlayerClass "RayMohawk"
+  States
+  {
+  Spawn:
+    SHXX A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("RayMohawkShotgun", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIfInventory("Shell", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_DropItem("RayMohawkShotgun")
+    Stop
+  PickupFail:
+    SHXX A 1
+    Fail
+  }
+}
 
 ///////////////////
 // SUPER SHOTGUN //
@@ -696,6 +866,102 @@ Actor NegativeOneSuperShotgunGiverDropped : DehackedWeaponGiver
     Stop
   PickupFail:
     SGN2 A 1
+    Fail
+  }
+}
+Actor RowdyRudySuperShotgunGiver : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "RowdyRudy"
+  VisibleToPlayerClass "RowdyRudy"
+  States
+  {
+  Spawn:
+    SGN2 A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("RowdyRudySuperShotgun", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    TNT1 A 0 A_JumpIfInventory("Shell", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_SpawnItemEx("RowdyRudySuperShotgun", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    Stop
+  PickupFail:
+    SGN2 A 1
+    Fail
+  }
+}
+Actor RowdyRudySuperShotgunGiverDropped : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "RowdyRudy"
+  VisibleToPlayerClass "RowdyRudy"
+  States
+  {
+  Spawn:
+    SGN2 A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("RowdyRudySuperShotgun", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIfInventory("Shell", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_DropItem("RowdyRudySuperShotgun")
+    Stop
+  PickupFail:
+    SGN2 A 1
+    Fail
+  }
+}
+Actor RayMohawkSuperShotgunGiver : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "RayMohawk"
+  VisibleToPlayerClass "RayMohawk"
+  States
+  {
+  Spawn:
+    SHX2 A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("RayMohawkAutoShotgun", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    TNT1 A 0 A_JumpIfInventory("Shell", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_SpawnItemEx("RayMohawkAutoShotgun", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    Stop
+  PickupFail:
+    SHX2 A 1
+    Fail
+  }
+}
+Actor RayMohawkSuperShotgunGiverDropped : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "RayMohawk"
+  VisibleToPlayerClass "RayMohawk"
+  States
+  {
+  Spawn:
+    SHX2 A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("RayMohawkAutoShotgun", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIfInventory("Shell", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_DropItem("RayMohawkAutoShotgun")
+    Stop
+  PickupFail:
+    SHX2 A 1
     Fail
   }
 }
@@ -973,6 +1239,102 @@ Actor NegativeOneChaingunGiverDropped : DehackedWeaponGiver
     Fail
   }
 }
+Actor RowdyRudyChaingunGiver : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "RowdyRudy"
+  VisibleToPlayerClass "RowdyRudy"
+  States
+  {
+  Spawn:
+    CGUN A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("RowdyRudyChaingun", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    TNT1 A 0 A_JumpIfInventory("Clip", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_SpawnItemEx("RowdyRudyChaingun", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    Stop
+  PickupFail:
+    CGUN A 1
+    Fail
+  }
+}
+Actor RowdyRudyChaingunGiverDropped : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "RowdyRudy"
+  VisibleToPlayerClass "RowdyRudy"
+  States
+  {
+  Spawn:
+    CGUN A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("RowdyRudyChaingun", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIfInventory("Clip", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_DropItem("RowdyRudyChaingun")
+    Stop
+  PickupFail:
+    CGUN A 1
+    Fail
+  }
+}
+Actor NegativeOneChaingunGiver : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "RayMohawk"
+  VisibleToPlayerClass "RayMohawk"
+  States
+  {
+  Spawn:
+    BGUN A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("RayMohawkBlaster", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    TNT1 A 0 A_JumpIfInventory("Clip", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_SpawnItemEx("RayMohawkBlaster", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    Stop
+  PickupFail:
+    BGUN A 1
+    Fail
+  }
+}
+Actor NegativeOneChaingunGiverDropped : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "RayMohawk"
+  VisibleToPlayerClass "RayMohawk"
+  States
+  {
+  Spawn:
+    BGUN A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("RayMohawkBlaster", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIfInventory("Clip", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_DropItem("RayMohawkBlaster")
+    Stop
+  PickupFail:
+    BGUN A 1
+    Fail
+  }
+}
 
 /////////////////////
 // ROCKET LAUNCHER //
@@ -1244,6 +1606,102 @@ Actor NegativeOneRocketLauncherGiverDropped : DehackedWeaponGiver
     Stop
   PickupFail:
     NLAU A 1
+    Fail
+  }
+}
+Actor RowdyRudyRocketLauncherGiver : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "RowdyRudy"
+  VisibleToPlayerClass "RowdyRudy"
+  States
+  {
+  Spawn:
+    RAUN A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("RowdyRudyRocketLauncher", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    TNT1 A 0 A_JumpIfInventory("RocketAmmo", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_SpawnItemEx("RowdyRudyRocketLauncher", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    Stop
+  PickupFail:
+    RAUN A 1
+    Fail
+  }
+}
+Actor RowdyRudyRocketLauncherGiverDropped : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "RowdyRudy"
+  VisibleToPlayerClass "RowdyRudy"
+  States
+  {
+  Spawn:
+    RAUN A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("RowdyRudyRocketLauncher", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIfInventory("RocketAmmo", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_DropItem("RowdyRudyRocketLauncher")
+    Stop
+  PickupFail:
+    RAUN A 1
+    Fail
+  }
+}
+Actor RayMohawkRocketLauncherGiver : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "RayMohawk"
+  VisibleToPlayerClass "RayMohawk"
+  States
+  {
+  Spawn:
+    FLEM A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("RayMohawkFlamethrower", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    TNT1 A 0 A_JumpIfInventory("RayMohawkFuel", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_SpawnItemEx("RayMohawkFlamethrower", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    Stop
+  PickupFail:
+    FLEM A 1
+    Fail
+  }
+}
+Actor RayMohawkRocketLauncherGiverDropped : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "RayMohawk"
+  VisibleToPlayerClass "RayMohawk"
+  States
+  {
+  Spawn:
+    FLEM A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("RayMohawkFlamethrower", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIfInventory("RayMohawkFuel", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_DropItem("RayMohawkFlamethrower")
+    Stop
+  PickupFail:
+    FLEM A 1
     Fail
   }
 }
@@ -1559,6 +2017,64 @@ Actor NegativeOnePlasmaRifleGiverDropped : DehackedWeaponGiver
     Fail
   }
 }
+Actor RowdyRudyPlasmaRifleGiver : DoomPlasmaRifleGiver
+{
+  Inventory.RestrictedTo "RowdyRudy"
+  VisibleToPlayerClass "RowdyRudy"
+}
+Actor RowdyRudyPlasmaRifleGiverDropped : DoomPlasmaRifleGiverDropped
+{
+  Inventory.RestrictedTo "RowdyRudy"
+  VisibleToPlayerClass "RowdyRudy"
+}
+Actor RayMohawkPlasmaRifleGiver : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "RayMohawk"
+  VisibleToPlayerClass "RayMohawk"
+  States
+  {
+  Spawn:
+    PLAX A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("RayMohawkCellCannon", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    TNT1 A 0 A_JumpIfInventory("Cell", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_SpawnItemEx("RayMohawkCellCannon", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    Stop
+  PickupFail:
+    PLAX A 1
+    Fail
+  }
+}
+Actor RayMohawkPlasmaRifleGiverDropped : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "RayMohawk"
+  VisibleToPlayerClass "RayMohawk"
+  States
+  {
+  Spawn:
+    PLAX A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("RayMohawkCellCannon", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIfInventory("Cell", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_DropItem("RayMohawkCellCannon")
+    Stop
+  PickupFail:
+    PLAX A 1
+    Fail
+  }
+}
 
 //////////////
 // BFG 9000 //
@@ -1857,6 +2373,102 @@ Actor NegativeOneBFG9000GiverDropped : DehackedWeaponGiver
     Stop
   PickupFail:
     NBFU A 1
+    Fail
+  }
+}
+Actor RowdyRudyBFG9000Giver : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "RowdyRudy"
+  VisibleToPlayerClass "RowdyRudy"
+  States
+  {
+  Spawn:
+    BFUG A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("RowdyRudyBFG9000", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    TNT1 A 0 A_JumpIfInventory("Cell", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_SpawnItemEx("RowdyRudyBFG9000", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    Stop
+  PickupFail:
+    BFUG A 1
+    Fail
+  }
+}
+Actor RowdyRudyBFG9000GiverDropped : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "RowdyRudy"
+  VisibleToPlayerClass "RowdyRudy"
+  States
+  {
+  Spawn:
+    BFUG A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("RowdyRudyBFG9000", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIfInventory("Cell", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_DropItem("RowdyRudyBFG9000")
+    Stop
+  PickupFail:
+    BFUG A 1
+    Fail
+  }
+}
+Actor RowdyRudyBFG9000Giver : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "RayMohawk"
+  VisibleToPlayerClass "RayMohawk"
+  States
+  {
+  Spawn:
+    BFUG A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("RayMohawkBFG9002", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    TNT1 A 0 A_JumpIfInventory("Cell", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_SpawnItemEx("RayMohawkBFG9002", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    Stop
+  PickupFail:
+    BFUG A 1
+    Fail
+  }
+}
+Actor RowdyRudyBFG9000GiverDropped : DehackedWeaponGiver
+{
+  Inventory.RestrictedTo "RayMohawk"
+  VisibleToPlayerClass "RayMohawk"
+  States
+  {
+  Spawn:
+    BFUG A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("RayMohawkBFG9002", 1, "AmmoCheck")
+    Goto PickupSuccess
+  AmmoCheck:
+    TNT1 A 0 A_JumpIfInventory("Cell", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_DropItem("RayMohawkBFG9002")
+    Stop
+  PickupFail:
+    BFUG A 1
     Fail
   }
 }

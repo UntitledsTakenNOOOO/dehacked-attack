@@ -172,7 +172,6 @@ ACTOR RayMohawkGauntlets : Weapon
     RHGA A 1 A_Raise
     Loop
   Fire:
-    RHGA D 0 Bright A_Saw("raymohawk/sawfull", "raymohawk/sawhit", 2, "BulletPuff")
     RHGA DEF 1 Bright A_Saw("raymohawk/sawfull", "raymohawk/sawhit", 2, "BulletPuff")
     goto Ready
   Spawn:
@@ -393,7 +392,7 @@ ACTOR RayMohawkFlamethrower : DoomWeapon
 }
 Actor RayMohawkFTFire : PlasmaBall
 {
-	Speed 35
+	Speed 32
 	Damage 15
 	SeeSound "vile/firecrkl"
 	DeathSound "vile/firecrkl"

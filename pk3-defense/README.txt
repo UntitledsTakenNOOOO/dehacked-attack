@@ -95,7 +95,7 @@ RAY MOHAWK 1/2 (Doomkid, 2021):
 * FLAMETHROWER: Ray doesn't use a conventional rocket launcher, and in its place is a flamethrower that's closer to the plasma rifle with a distinct ammo type.
 	* Change: Fuel pickups are 10/50 instead of 20/100 like in Ray Mohawk 2.
 	* Change: Moved from Slot 6 to Slot 5 for ammo consistency reasons.
-    * Balanced Mode: Base damage reduced from 15 to 8. Still stronger than the plasma rifle, but not by nearly as much.
+    * Balanced Mode: Base damage reduced from 15 to 7. Still stronger than the plasma rifle, but not by nearly as much.
 * CELL CANNON: Ray's explosive weapon. Awkwardly placed in the plasma slot but cell ammo comes in bigger packages, meaning he can get more value out of them.
 	* Change: Moved from Slot 5 to Slot 6 for ammo consistency reasons.
 	* Balanced Mode: Uses 5 cells (up from 1) because effectively infinite rockets is a bit much.

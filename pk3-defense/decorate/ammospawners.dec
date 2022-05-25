@@ -7,6 +7,8 @@ actor ClipReplacer : DEHDefenseWeaponSpawner replaces Clip
     DropItem "StruggleClip", 256, 1
     DropItem "ReliquaryClip", 256, 1
     DropItem "NegativeOneClip", 256, 1
+    DropItem "RowdyRudyClip", 256, 1
+    DropItem "RayMohawkClip", 256, 1
 */
   States
   {
@@ -24,6 +26,8 @@ actor ClipReplacer : DEHDefenseWeaponSpawner replaces Clip
     TNT1 A 0 A_SpawnItemEx("StruggleClassClip", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     TNT1 A 0 A_SpawnItemEx("ReliquaryClassClip", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     TNT1 A 0 A_SpawnItemEx("NegativeOneClassClip", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_SpawnItemEx("RowdyRudyClassClip", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_SpawnItemEx("RayMohawkClassClip", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     Stop
   ClassSpawnDropped:
     TNT1 A 0 A_DropItem("DoomClassClip")
@@ -34,56 +38,74 @@ actor ClipReplacer : DEHDefenseWeaponSpawner replaces Clip
     TNT1 A 0 A_DropItem("StruggleClassClip")
     TNT1 A 0 A_DropItem("ReliquaryClassClip")
     TNT1 A 0 A_DropItem("NegativeOneClassClip")
+    TNT1 A 0 A_DropItem("RowdyRudyClassClip")
+    TNT1 A 0 A_DropItem("RayMohawkClassClip")
     Stop
   RandomizerSpawn:
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_PistolCheck"), "PistolSpawn")
     TNT1 A 0 A_CheckFlag("DROPPED", "DroppedSpawn")
-    TNT1 A 0 A_Jump(128, "Spawn2", "Spawn3", "Spawn4", "Spawn5")
+    TNT1 A 0 A_Jump(170, "Spawn2", "Spawn3", "Spawn4", "Spawn5", "Spawn6", "Spawn7")
     Goto Spawn1
   Spawn1:
     TNT1 A 0 A_SpawnItemEx("DEHClip", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     Goto Death
   Spawn2:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_VALIANT, 4), "Spawn1")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_VALIANT, 7), "Spawn1")
     TNT1 A 0 A_SpawnItemEx("ValiantClip", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     Goto Death
   Spawn3:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRUGGLE, 3), "Spawn1")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRUGGLE, 5), "Spawn1")
     TNT1 A 0 A_SpawnItemEx("StruggleClip", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     Goto Death
   Spawn4:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_RELIQUARY, 2), "Spawn1")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_RELIQUARY, 3), "Spawn1")
     TNT1 A 0 A_SpawnItemEx("ReliquaryClip", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     Goto Death
   Spawn5:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_RELIQUARY, 1), "Spawn1")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_NEGATIVEONE, 1), "Spawn1")
     TNT1 A 0 A_SpawnItemEx("NegativeOneClip", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     Goto Death
+  Spawn6:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_ROWDYRUDY, 1), "Spawn1")
+    TNT1 A 0 A_SpawnItemEx("RowdyRudyClip", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    Goto Death
+  Spawn7:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_RAYMOHAWK, 1), "Spawn1")
+    TNT1 A 0 A_SpawnItemEx("RayMohawkClip", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    Goto Death
   DroppedSpawn:
-    TNT1 A 0 A_Jump(128, "DroppedSpawn2", "DroppedSpawn3", "DroppedSpawn4", "DroppedSpawn5")
+    TNT1 A 0 A_Jump(170, "DroppedSpawn2", "DroppedSpawn3", "DroppedSpawn4", "DroppedSpawn5", "DroppedSpawn6", "DroppedSpawn7")
     Goto DroppedSpawn1
   DroppedSpawn1:
     TNT1 A 0 A_DropItem("DEHClip")
     Goto Death
   DroppedSpawn2:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_VALIANT, 4), "DroppedSpawn1")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_VALIANT, 7), "DroppedSpawn1")
     TNT1 A 0 A_DropItem("ValiantClip")
     Goto Death
   DroppedSpawn3:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRUGGLE, 3), "DroppedSpawn1")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRUGGLE, 5), "DroppedSpawn1")
     TNT1 A 0 A_DropItem("StruggleClip")
     Goto Death
   DroppedSpawn4:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_RELIQUARY, 2), "DroppedSpawn1")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_RELIQUARY, 3), "DroppedSpawn1")
     TNT1 A 0 A_DropItem("ReliquaryClip")
     Goto Death
   DroppedSpawn5:
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_NEGATIVEONE, 1), "DroppedSpawn1")
     TNT1 A 0 A_DropItem("NegativeOneClip")
     Goto Death
+  DroppedSpawn6:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_ROWDYRUDY, 1), "DroppedSpawn1")
+    TNT1 A 0 A_DropItem("RowdyRudyClip")
+    Goto Death
+  DroppedSpawn7:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_RAYMOHAWK, 1), "DroppedSpawn1")
+    TNT1 A 0 A_DropItem("RayMohawkClip")
+    Goto Death
   PistolSpawn:
     TNT1 A 0 A_CheckFlag("DROPPED", "DroppedPistolSpawn")
-    TNT1 A 0 A_Jump(255, "DoomPistolSpawn", "StrainPistolSpawn", "DV2PistolSpawn", "MaskimXulPistolSpawn", "ValiantPistolSpawn", "StrugglePistolSpawn", "ReliquaryPistolSpawn", "NegativeOnePistolSpawn")
+    TNT1 A 0 A_Jump(255, "DoomPistolSpawn", "StrainPistolSpawn", "DV2PistolSpawn", "MaskimXulPistolSpawn", "ValiantPistolSpawn", "StrugglePistolSpawn", "ReliquaryPistolSpawn", "NegativeOnePistolSpawn", "RowdyRudyPistolSpawn", "RayMohawkPistolSpawn")
 	Goto DoomPistolSpawn
   DoomPistolSpawn:
     TNT1 A 0 A_SpawnItemEx("DEHPistol", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
@@ -116,8 +138,16 @@ actor ClipReplacer : DEHDefenseWeaponSpawner replaces Clip
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_NEGATIVEONE, 2), "DoomPistolSpawn")
     TNT1 A 0 A_SpawnItemEx("NegativeOnePistol", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     Goto Death
+  RowdyRudyPistolSpawn:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_ROWDYRUDY, 8), "DoomPistolSpawn")
+    TNT1 A 0 A_SpawnItemEx("RowdyRudyRifle", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    Goto Death
+  RayMohawkPistolSpawn:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_RAYMOHAWK, 9), "DoomPistolSpawn")
+    TNT1 A 0 A_SpawnItemEx("RayMohawkPistol", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    Goto Death
   DroppedPistolSpawn:
-    TNT1 A 0 A_Jump(255, "DroppedDoomPistolSpawn", "DroppedStrainPistolSpawn", "DroppedDV2PistolSpawn", "DroppedMaskimXulPistolSpawn", "DroppedValiantPistolSpawn", "DroppedStrugglePistolSpawn", "DroppedReliquaryPistolSpawn", "DroppedNegativeOnePistolSpawn")
+    TNT1 A 0 A_Jump(255, "DroppedDoomPistolSpawn", "DroppedStrainPistolSpawn", "DroppedDV2PistolSpawn", "DroppedMaskimXulPistolSpawn", "DroppedValiantPistolSpawn", "DroppedStrugglePistolSpawn", "DroppedReliquaryPistolSpawn", "DroppedNegativeOnePistolSpawn", "DroppedRowdyRudyPistolSpawn", "DroppedRayMohawkPistolSpawn")
 	Goto DroppedDoomPistolSpawn
   DroppedDoomPistolSpawn:
     TNT1 A 0 A_DropItem("DEHPistol")
@@ -150,6 +180,14 @@ actor ClipReplacer : DEHDefenseWeaponSpawner replaces Clip
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_NEGATIVEONE, 2), "DroppedDoomPistolSpawn")
     TNT1 A 0 A_DropItem("NegativeOnePistol")
     Goto Death
+  DroppedRowdyRudyPistolSpawn:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_ROWDYRUDY, 8), "DroppedDoomPistolSpawn")
+    TNT1 A 0 A_DropItem("RowdyRudyRifle")
+    Goto Death
+  DroppedRayMohawkPistolSpawn:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_RAYMOHAWK, 9), "DroppedDoomPistolSpawn")
+    TNT1 A 0 A_DropItem("RayMohawkPistol")
+    Goto Death
   }
 }
 
@@ -161,6 +199,8 @@ actor ClipBoxReplacer : DEHDefenseWeaponSpawner replaces ClipBox
     DropItem "ValiantClipBox", 256, 1
     DropItem "StruggleClipBox", 256, 1
     DropItem "ReliquaryClipBox", 256, 1
+    DropItem "RowdyRudyClipBox", 256, 1
+    DropItem "RayMohawkClipBox", 256, 1
 */
   States
   {
@@ -178,6 +218,8 @@ actor ClipBoxReplacer : DEHDefenseWeaponSpawner replaces ClipBox
     TNT1 A 0 A_SpawnItemEx("StruggleClassClipBox", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     TNT1 A 0 A_SpawnItemEx("ReliquaryClassClipBox", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     TNT1 A 0 A_SpawnItemEx("NegativeOneClassClipBox", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_SpawnItemEx("RowdyRudyClassClipBox", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_SpawnItemEx("RayMohawkClassClipBox", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     Stop
   ClassSpawnDropped:
     TNT1 A 0 A_DropItem("DoomClassClipBox")
@@ -188,10 +230,12 @@ actor ClipBoxReplacer : DEHDefenseWeaponSpawner replaces ClipBox
     TNT1 A 0 A_DropItem("StruggleClassClipBox")
     TNT1 A 0 A_DropItem("ReliquaryClassClipBox")
     TNT1 A 0 A_DropItem("NegativeOneClassClipBox")
+    TNT1 A 0 A_DropItem("RowdyRudyClassClipBox")
+    TNT1 A 0 A_DropItem("RayMohawkClassClipBox")
     Stop
   RandomizerSpawn:
     TNT1 A 0 A_CheckFlag("DROPPED", "DroppedSpawn")
-    TNT1 A 0 A_Jump(128, "Spawn2", "Spawn3", "Spawn4")
+    TNT1 A 0 A_Jump(153, "Spawn2", "Spawn3", "Spawn4", "Spawn5", "Spawn6")
     Goto Spawn1
   Spawn1:
     TNT1 A 0 A_SpawnItemEx("DEHClipBox", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
@@ -208,8 +252,16 @@ actor ClipBoxReplacer : DEHDefenseWeaponSpawner replaces ClipBox
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_RELIQUARY, 3), "Spawn1")
     TNT1 A 0 A_SpawnItemEx("ReliquaryClipBox", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     Goto Death
+  Spawn5:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_ROWDYRUDY, 1), "Spawn1")
+    TNT1 A 0 A_SpawnItemEx("RowdyRudyClipBox", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    Goto Death
+  Spawn6:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_RAYMOHAWK, 1), "Spawn1")
+    TNT1 A 0 A_SpawnItemEx("RayMohawkClipBox", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    Goto Death
   DroppedSpawn:
-    TNT1 A 0 A_Jump(128, "DroppedSpawn2", "DroppedSpawn3", "DroppedSpawn4")
+    TNT1 A 0 A_Jump(153, "DroppedSpawn2", "DroppedSpawn3", "DroppedSpawn4", "DroppedSpawn5", "DroppedSpawn6")
     Goto DroppedSpawn1
   DroppedSpawn1:
     TNT1 A 0 A_DropItem("DEHClipBox")
@@ -226,6 +278,14 @@ actor ClipBoxReplacer : DEHDefenseWeaponSpawner replaces ClipBox
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_RELIQUARY, 3), "DroppedSpawn1")
     TNT1 A 0 A_DropItem("ReliquaryClipBox")
     Goto Death
+  DroppedSpawn5:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_ROWDYRUDY, 1), "Spawn1")
+    TNT1 A 0 A_DropItem("RowdyRudyClipBox")
+    Goto Death
+  DroppedSpawn6:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_RAYMOHAWK, 1), "Spawn1")
+    TNT1 A 0 A_DropItem("RayMohawkClipBox")
+    Goto Death
   }
 }
 
@@ -233,8 +293,9 @@ actor DEHShell : Shell {}
 actor ShellReplacer : DEHDefenseWeaponSpawner replaces Shell
 {
 /*
-    DropItem "DEHShell", 256, 6
+    DropItem "DEHShell", 256, 7
     DropItem "StruggleShell", 256, 1
+    DropItem "RayMohawkShell", 256, 1
 */
   States
   {
@@ -252,6 +313,8 @@ actor ShellReplacer : DEHDefenseWeaponSpawner replaces Shell
     TNT1 A 0 A_SpawnItemEx("StruggleClassShell", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     TNT1 A 0 A_SpawnItemEx("ReliquaryClassShell", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     TNT1 A 0 A_SpawnItemEx("NegativeOneClassShell", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_SpawnItemEx("RowdyRudyClassShell", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_SpawnItemEx("RayMohawkClassShell", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     Stop
   ClassSpawnDropped:
     TNT1 A 0 A_DropItem("DoomClassShell")
@@ -262,27 +325,37 @@ actor ShellReplacer : DEHDefenseWeaponSpawner replaces Shell
     TNT1 A 0 A_DropItem("StruggleClassShell")
     TNT1 A 0 A_DropItem("ReliquaryClassShell")
     TNT1 A 0 A_DropItem("NegativeOneClassShell")
+    TNT1 A 0 A_DropItem("RowdyRudyClassShell")
+    TNT1 A 0 A_DropItem("RayMohawkClassShell")
     Stop
   RandomizerSpawn:
     TNT1 A 0 A_CheckFlag("DROPPED", "DroppedSpawn")
-    TNT1 A 0 A_Jump(64, "Spawn2")
+    TNT1 A 0 A_Jump(64, "Spawn2", "Spawn3")
     Goto Spawn1
   Spawn1:
     TNT1 A 0 A_SpawnItemEx("DEHShell", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     Goto Death
   Spawn2:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRUGGLE, 1), "Spawn1")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRUGGLE, 2), "Spawn1")
     TNT1 A 0 A_SpawnItemEx("StruggleShell", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     Goto Death
+  Spawn3:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_RAYMOHAWK, 3), "Spawn1")
+    TNT1 A 0 A_SpawnItemEx("RayMohawkShell", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    Goto Death
   DroppedSpawn:
-    TNT1 A 0 A_Jump(64, "DroppedSpawn2")
+    TNT1 A 0 A_Jump(64, "DroppedSpawn2", "DroppedSpawn3")
     Goto DroppedSpawn1
   DroppedSpawn1:
     TNT1 A 0 A_DropItem("DEHShell")
     Goto Death
   DroppedSpawn2:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRUGGLE, 1), "DroppedSpawn1")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRUGGLE, 2), "DroppedSpawn1")
     TNT1 A 0 A_DropItem("StruggleShell")
+    Goto Death
+  DroppedSpawn3:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_RAYMOHAWK, 3), "DroppedSpawn1")
+    TNT1 A 0 A_DropItem("RayMohawkShell")
     Goto Death
   }
 }
@@ -291,8 +364,9 @@ actor DEHShellBox : ShellBox {}
 actor ShellBoxReplacer : DEHDefenseWeaponSpawner replaces ShellBox
 {
 /*
-    DropItem "DEHShellBox", 256, 6
+    DropItem "DEHShellBox", 256, 7
     DropItem "StruggleShellBox", 256, 1
+    DropItem "RayMohawkShellBox", 256, 1
 */
   States
   {
@@ -310,6 +384,8 @@ actor ShellBoxReplacer : DEHDefenseWeaponSpawner replaces ShellBox
     TNT1 A 0 A_SpawnItemEx("StruggleClassShellBox", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     TNT1 A 0 A_SpawnItemEx("ReliquaryClassShellBox", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     TNT1 A 0 A_SpawnItemEx("NegativeOneClassShellBox", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_SpawnItemEx("RowdyRudyClassShellBox", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_SpawnItemEx("RayMohawkClassShellBox", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     Stop
   ClassSpawnDropped:
     TNT1 A 0 A_DropItem("DoomClassShellBox")
@@ -320,27 +396,37 @@ actor ShellBoxReplacer : DEHDefenseWeaponSpawner replaces ShellBox
     TNT1 A 0 A_DropItem("StruggleClassShellBox")
     TNT1 A 0 A_DropItem("ReliquaryClassShellBox")
     TNT1 A 0 A_DropItem("NegativeOneClassShellBox")
+    TNT1 A 0 A_DropItem("RowdyRudyClassShellBox")
+    TNT1 A 0 A_DropItem("RayMohawkClassShellBox")
     Stop
   RandomizerSpawn:
     TNT1 A 0 A_CheckFlag("DROPPED", "DroppedSpawn")
-    TNT1 A 0 A_Jump(85, "Spawn2")
+    TNT1 A 0 A_Jump(85, "Spawn2", "Spawn3")
     Goto Spawn1
   Spawn1:
     TNT1 A 0 A_SpawnItemEx("DEHShellBox", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     Goto Death
   Spawn2:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRUGGLE, 1), "Spawn1")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRUGGLE, 3), "Spawn1")
     TNT1 A 0 A_SpawnItemEx("StruggleShellBox", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     Goto Death
+  Spawn3:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_RAYMOHAWK, 5), "Spawn1")
+    TNT1 A 0 A_SpawnItemEx("RayMohawkShellBox", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    Goto Death
   DroppedSpawn:
-    TNT1 A 0 A_Jump(85, "DroppedSpawn2")
+    TNT1 A 0 A_Jump(85, "DroppedSpawn2", "DroppedSpawn3")
     Goto DroppedSpawn1
   DroppedSpawn1:
     TNT1 A 0 A_DropItem("DEHShellBox")
     Goto Death
   DroppedSpawn2:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRUGGLE, 1), "DroppedSpawn1")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRUGGLE, 3), "DroppedSpawn1")
     TNT1 A 0 A_DropItem("StruggleShellBox")
+    Goto Death
+  DroppedSpawn2:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_RAYMOHAWK, 5), "DroppedSpawn1")
+    TNT1 A 0 A_DropItem("RayMohawkShellBox")
     Goto Death
   }
 }
@@ -349,9 +435,10 @@ actor DEHRocketAmmo : RocketAmmo {}
 actor RocketAmmoReplacer : DEHDefenseWeaponSpawner replaces RocketAmmo
 {
 /*
-    DropItem "DEHRocketAmmo", 256, 5
+    DropItem "DEHRocketAmmo", 256, 6
     DropItem "StruggleRocketAmmo", 256, 1
     DropItem "MaskimXulDemonHeart", 256, 1
+    DropItem "RayMohawkFuel", 256, 1
 */
   States
   {
@@ -369,6 +456,8 @@ actor RocketAmmoReplacer : DEHDefenseWeaponSpawner replaces RocketAmmo
     TNT1 A 0 A_SpawnItemEx("StruggleClassRocketAmmo", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     TNT1 A 0 A_SpawnItemEx("ReliquaryClassRocketAmmo", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     TNT1 A 0 A_SpawnItemEx("NegativeOneClassRocketAmmo", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_SpawnItemEx("RowdyRudyClassRocketAmmo", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_SpawnItemEx("RayMohawkClassRocketAmmo", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     Stop
   ClassSpawnDropped:
     TNT1 A 0 A_DropItem("DoomClassRocketAmmo")
@@ -379,35 +468,45 @@ actor RocketAmmoReplacer : DEHDefenseWeaponSpawner replaces RocketAmmo
     TNT1 A 0 A_DropItem("StruggleClassRocketAmmo")
     TNT1 A 0 A_DropItem("ReliquaryClassRocketAmmo")
     TNT1 A 0 A_DropItem("NegativeOneClassRocketAmmo")
+    TNT1 A 0 A_DropItem("RowdyRudyClassRocketAmmo")
+    TNT1 A 0 A_DropItem("RayMohawkClassRocketAmmo")
     Stop
   RandomizerSpawn:
     TNT1 A 0 A_CheckFlag("DROPPED", "DroppedSpawn")
-    TNT1 A 0 A_Jump(128, "Spawn2", "Spawn3")
+    TNT1 A 0 A_Jump(128, "Spawn2", "Spawn3", "Spawn4")
     Goto Spawn1
   Spawn1:
     TNT1 A 0 A_SpawnItemEx("DEHRocketAmmo", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     Goto Death
   Spawn2:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRUGGLE, 11), "Spawn1")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRUGGLE, 18), "Spawn1")
     TNT1 A 0 A_SpawnItemEx("StruggleRocketAmmo", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     Goto Death
   Spawn3:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_MASKIMXUL, 16), "Spawn1")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_MASKIMXUL, 21), "Spawn1")
     TNT1 A 0 A_SpawnItemEx("MaskimXulDemonHeart", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     Goto Death
+  Spawn4:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_RAYMOHAWK, 15), "Spawn1")
+    TNT1 A 0 A_SpawnItemEx("RayMohawkFuel", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    Goto Death
   DroppedSpawn:
-    TNT1 A 0 A_Jump(128, "DroppedSpawn2", "DroppedSpawn3")
+    TNT1 A 0 A_Jump(128, "DroppedSpawn2", "DroppedSpawn3", "DroppedSpawn4")
     Goto DroppedSpawn1
   DroppedSpawn1:
     TNT1 A 0 A_DropItem("DEHRocketAmmo")
     Goto Death
   DroppedSpawn2:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRUGGLE, 11), "DroppedSpawn1")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRUGGLE, 18), "DroppedSpawn1")
     TNT1 A 0 A_DropItem("StruggleRocketAmmo")
     Goto Death
   DroppedSpawn3:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_MASKIMXUL, 16), "DroppedSpawn1")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_MASKIMXUL, 21), "DroppedSpawn1")
     TNT1 A 0 A_DropItem("MaskimXulDemonHeart")
+    Goto Death
+  DroppedSpawn4:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_RAYMOHAWK, 15), "DroppedSpawn1")
+    TNT1 A 0 A_DropItem("RayMohawkFuel")
     Goto Death
   }
 }
@@ -436,6 +535,8 @@ actor RocketBoxReplacer : DEHDefenseWeaponSpawner replaces RocketBox
     TNT1 A 0 A_SpawnItemEx("StruggleClassRocketBox", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     TNT1 A 0 A_SpawnItemEx("ReliquaryClassRocketBox", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     TNT1 A 0 A_SpawnItemEx("NegativeOneClassRocketBox", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_SpawnItemEx("RowdyRudyClassRocketBox", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_SpawnItemEx("RayMohawkClassRocketBox", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     Stop
   ClassSpawnDropped:
     TNT1 A 0 A_DropItem("DoomClassRocketBox")
@@ -446,36 +547,46 @@ actor RocketBoxReplacer : DEHDefenseWeaponSpawner replaces RocketBox
     TNT1 A 0 A_DropItem("StruggleClassRocketBox")
     TNT1 A 0 A_DropItem("ReliquaryClassRocketBox")
     TNT1 A 0 A_DropItem("NegativeOneClassRocketBox")
+    TNT1 A 0 A_DropItem("RowdyRudyClassRocketBox")
+    TNT1 A 0 A_DropItem("RayMohawkClassRocketBox")
     Stop
   RandomizerSpawn:
     TNT1 A 1
     TNT1 A 0 A_CheckFlag("DROPPED", "DroppedSpawn")
-    TNT1 A 0 A_Jump(128, "Spawn2", "Spawn3")
+    TNT1 A 0 A_Jump(128, "Spawn2", "Spawn3", "Spawn4")
     Goto Spawn1
   Spawn1:
     TNT1 A 0 A_SpawnItemEx("DEHRocketBox", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     Goto Death
   Spawn2:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRUGGLE, 11), "Spawn1")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRUGGLE, 18), "Spawn1")
     TNT1 A 0 A_SpawnItemEx("StruggleRocketBox", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     Goto Death
   Spawn3:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_MASKIMXUL, 16), "Spawn1")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_MASKIMXUL, 21), "Spawn1")
     TNT1 A 0 A_SpawnItemEx("MaskimXulDemonSoul", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     Goto Death
+  Spawn4:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_RAYMOHAWK, 15), "Spawn1")
+    TNT1 A 0 A_SpawnItemEx("RayMohawkFuelCan", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    Goto Death
   DroppedSpawn:
-    TNT1 A 0 A_Jump(128, "DroppedSpawn2", "DroppedSpawn3")
+    TNT1 A 0 A_Jump(128, "DroppedSpawn2", "DroppedSpawn3", "DroppedSpawn34")
     Goto DroppedSpawn1
   DroppedSpawn1:
     TNT1 A 0 A_DropItem("DEHRocketBox")
     Goto Death
   DroppedSpawn2:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRUGGLE, 11), "DroppedSpawn1")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRUGGLE, 18), "DroppedSpawn1")
     TNT1 A 0 A_DropItem("StruggleRocketBox")
     Goto Death
   DroppedSpawn3:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_MASKIMXUL, 16), "DroppedSpawn1")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_MASKIMXUL, 21), "DroppedSpawn1")
     TNT1 A 0 A_DropItem("MaskimXulDemonSoul")
+    Goto Death
+  DroppedSpawn4:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_RAYMOHAWK, 15), "DroppedSpawn1")
+    TNT1 A 0 A_DropItem("RayMohawkFuelCan")
     Goto Death
   }
 }
@@ -506,6 +617,8 @@ actor CellReplacer : DEHDefenseWeaponSpawner replaces Cell
     TNT1 A 0 A_SpawnItemEx("StruggleClassCell", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     TNT1 A 0 A_SpawnItemEx("ReliquaryClassCell", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     TNT1 A 0 A_SpawnItemEx("NegativeOneClassCell", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_SpawnItemEx("RowdyRudyClassCell", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_SpawnItemEx("RayMohawkClassCell", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     Stop
   ClassSpawnDropped:
     TNT1 A 0 A_DropItem("DoomClassCell")
@@ -516,6 +629,8 @@ actor CellReplacer : DEHDefenseWeaponSpawner replaces Cell
     TNT1 A 0 A_DropItem("StruggleClassCell")
     TNT1 A 0 A_DropItem("ReliquaryClassCell")
     TNT1 A 0 A_DropItem("NegativeOneClassCell")
+    TNT1 A 0 A_DropItem("RowdyRudyClassCell")
+    TNT1 A 0 A_DropItem("RayMohawkClassCell")
     Stop
   RandomizerSpawn:
     TNT1 A 0 A_CheckFlag("DROPPED", "DroppedSpawn")
@@ -533,7 +648,7 @@ actor CellReplacer : DEHDefenseWeaponSpawner replaces Cell
     TNT1 A 0 A_SpawnItemEx("JackBombAmmo", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     Goto Death
   Spawn4:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRUGGLE, 21), "Spawn1")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRUGGLE, 16), "Spawn1")
     TNT1 A 0 A_SpawnItemEx("223CaliberMagazine", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     Goto Death
   Spawn5:
@@ -559,7 +674,7 @@ actor CellReplacer : DEHDefenseWeaponSpawner replaces Cell
     TNT1 A 0 A_DropItem("JackBombAmmo")
     Goto Death
   DroppedSpawn4:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRUGGLE, 21), "DroppedSpawn1")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRUGGLE, 16), "DroppedSpawn1")
     TNT1 A 0 A_DropItem("223CaliberMagazine")
     Goto Death
   DroppedSpawn5:
@@ -600,6 +715,8 @@ actor CellPackReplacer : DEHDefenseWeaponSpawner replaces CellPack
     TNT1 A 0 A_SpawnItemEx("StruggleClassCellPack", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     TNT1 A 0 A_SpawnItemEx("ReliquaryClassCellPack", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     TNT1 A 0 A_SpawnItemEx("NegativeOneClassCellPack", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_SpawnItemEx("RowdyRudyClassCellPack", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_SpawnItemEx("RayMohawkClassCellPack", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     Stop
   ClassSpawnDropped:
     TNT1 A 0 A_DropItem("DoomClassCellPack")
@@ -611,6 +728,8 @@ actor CellPackReplacer : DEHDefenseWeaponSpawner replaces CellPack
     TNT1 A 0 A_DropItem("StruggleClassCellPack")
     TNT1 A 0 A_DropItem("ReliquaryClassCellPack")
     TNT1 A 0 A_DropItem("NegativeOneClassCellPack")
+    TNT1 A 0 A_DropItem("RowdyRudyClassCellPack")
+    TNT1 A 0 A_DropItem("RayMohawkClassCellPack")
     Stop
   RandomizerSpawn:
     TNT1 A 0 A_CheckFlag("DROPPED", "DroppedSpawn")
@@ -620,11 +739,11 @@ actor CellPackReplacer : DEHDefenseWeaponSpawner replaces CellPack
     TNT1 A 0 A_SpawnItemEx("DEHCellPack", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     Goto Death
   Spawn2:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRAIN, 6), "Spawn1")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRAIN, 7), "Spawn1")
     TNT1 A 0 A_SpawnItemEx("NFGBatteryPack", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     Goto Death
   Spawn3:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_MASKIMXUL, 11), "Spawn1")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_MASKIMXUL, 12), "Spawn1")
     TNT1 A 0 A_SpawnItemEx("JackBombAmmo", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     TNT1 A 0 A_SpawnItemEx("Medikit", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     Goto Death
@@ -647,11 +766,11 @@ actor CellPackReplacer : DEHDefenseWeaponSpawner replaces CellPack
     TNT1 A 0 A_DropItem("DEHCellPack")
     Goto Death
   DroppedSpawn2:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRAIN, 6), "DroppedSpawn1")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_STRAIN, 7), "DroppedSpawn1")
     TNT1 A 0 A_DropItem("NFGBatteryPack")
     Goto Death
   DroppedSpawn3:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_MASKIMXUL, 11), "DroppedSpawn1")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponReset", DEH_DEF_MASKIMXUL, 12), "DroppedSpawn1")
     TNT1 A 0 A_DropItem("JackBombAmmo")
     TNT1 A 0 A_DropItem("Medikit")
     Goto Death
