@@ -246,7 +246,7 @@ Actor ToxiCacodemon : DEHCacodemon
   }
 }
 
-Actor RowdyRocketman
+Actor Rocketman
 {
 	+FLOORCLIP
 	Monster
@@ -414,7 +414,7 @@ Actor PsychoImp : DEHDoomImp
 	}
 }
 
-Actor RowdyFlameCaco : DEHPainElemental
+Actor FlameCaco : DEHPainElemental
 {
 	Health 600
 	Speed 9

@@ -89,6 +89,7 @@ ACTOR ReliquaryMachinegun : DoomWeapon
   Weapon.AmmoUse 1
   Weapon.AmmoGive 24
   Weapon.AmmoType "Clip"
+  Weapon.UpSound "reliquary/sshotc"
   Obituary "$OB_MPPISTOL"
   +WEAPON.WIMPY_WEAPON
   Inventory.Pickupmessage "You got a machinegun!"
@@ -107,14 +108,20 @@ ACTOR ReliquaryMachinegun : DoomWeapon
     RQPG A 1 A_Raise
     Loop
   Fire:
+    RQPG A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BalancedMode") == 1, "BalancedFire")
     RQPG A 1
     RQPG B 0 A_FireBullets(0, 0, 1, 5, "BulletPuff")
     RQPG B 0 A_PlaySound("reliquary/pistol", CHAN_WEAPON)
     RQPG B 1 A_GunFlash
-    RQPG C 1
-    RQPG D 1
-    RQPG C 1
-    RQPG B 1
+    RQPG CDCB 1
+    RQPG A 3 A_ReFire
+    Goto Ready
+  BalancedFire:
+    RQPG A 1
+    RQPG B 0 A_FireBullets(5.6, 0, 1, 5, "BulletPuff")
+    RQPG B 0 A_PlaySound("reliquary/pistol", CHAN_WEAPON)
+    RQPG B 1 A_GunFlash
+    RQPG CDCB 1
     RQPG A 3 A_ReFire
     Goto Ready
   Flash:
@@ -134,6 +141,7 @@ ACTOR ReliquaryShotgun : DoomWeapon
   Weapon.AmmoUse 1
   Weapon.AmmoGive 8
   Weapon.AmmoType "Shell"
+  Weapon.UpSound "reliquary/sshoto"
   Inventory.PickupMessage "$GOTSHOTGUN"
   Obituary "$OB_MPSHOTGUN"
   Tag "$TAG_SHOTGUN"
@@ -181,6 +189,7 @@ ACTOR ReliquarySuperShotgun : DoomWeapon
   Weapon.AmmoUse 2
   Weapon.AmmoGive 8
   Weapon.AmmoType "Shell"
+  Weapon.UpSound "reliquary/sshotl"
   Inventory.PickupMessage "$GOTSHOTGUN2"
   Obituary "$OB_MPSSHOTGUN"
   Tag "$TAG_SUPERSHOTGUN"
@@ -226,6 +235,7 @@ ACTOR ReliquaryChaingun : DoomWeapon
    Weapon.AmmoUse 1
    Weapon.AmmoGive 24
    Weapon.AmmoType "Clip"
+   Weapon.UpSound "reliquary/sshoto"
    Inventory.PickupMessage "$GOTCHAINGUN" // "You got the chaingun"
    Obituary "$OB_MPCHAINGUN" // "%o was mowed down by %k's chaingun."
    Tag "$TAG_CHAINGUN"
@@ -274,6 +284,7 @@ ACTOR ReliquaryRocketLauncher : DoomWeapon
   Weapon.AmmoUse 1
   Weapon.AmmoGive 2
   Weapon.AmmoType "RocketAmmo"
+  Weapon.UpSound "reliquary/sshotl"
   +WEAPON.NOAUTOFIRE
   Inventory.PickupMessage "$GOTLAUNCHER"
   Tag "$TAG_ROCKETLAUNCHER"
@@ -328,6 +339,7 @@ ACTOR ReliquaryPlasmaRifle : DoomWeapon
   Weapon.AmmoUse 1
   Weapon.AmmoGive 32
   Weapon.AmmoType "Cell"
+  Weapon.UpSound "reliquary/sshotc"
   Inventory.PickupMessage "$GOTPLASMA"
   Tag "$TAG_PLASMARIFLE"
   States
@@ -379,10 +391,10 @@ ACTOR ReliquaryPlasmaBall : PlasmaBall
   States
   {
   Spawn:
-    RPLS A 1 Bright
+    QPLS A 1 Bright
     Loop
   Death:
-    RPLE ABCDE 4 Bright
+    QPLE ABCDE 4 Bright
     Stop
   }
 }
@@ -395,6 +407,7 @@ ACTOR ReliquaryBFG9000 : DoomWeapon
   Weapon.AmmoUse 30
   Weapon.AmmoGive 32
   Weapon.AmmoType "Cell"
+  Weapon.UpSound "reliquary/sshotl"
   +WEAPON.NOAUTOFIRE
   Inventory.PickupMessage "$GOTBFG9000"
   Tag "$TAG_BFG9000"

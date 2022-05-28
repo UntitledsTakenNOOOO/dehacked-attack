@@ -283,7 +283,7 @@ Actor RayMohawkChainsawGiver : DehackedWeaponGiver
     Fail
   }
 }
-Actor NegativeOneChainsawGiverDropped : DehackedWeaponGiver
+Actor RayMohawkChainsawGiverDropped : DehackedWeaponGiver
 {
   Inventory.RestrictedTo "RayMohawk"
   VisibleToPlayerClass "RayMohawk"
@@ -1287,7 +1287,7 @@ Actor RowdyRudyChaingunGiverDropped : DehackedWeaponGiver
     Fail
   }
 }
-Actor NegativeOneChaingunGiver : DehackedWeaponGiver
+Actor RayMohawkChaingunGiver : DehackedWeaponGiver
 {
   Inventory.RestrictedTo "RayMohawk"
   VisibleToPlayerClass "RayMohawk"
@@ -1312,7 +1312,7 @@ Actor NegativeOneChaingunGiver : DehackedWeaponGiver
     Fail
   }
 }
-Actor NegativeOneChaingunGiverDropped : DehackedWeaponGiver
+Actor RayMohawkChaingunGiverDropped : DehackedWeaponGiver
 {
   Inventory.RestrictedTo "RayMohawk"
   VisibleToPlayerClass "RayMohawk"
@@ -2424,7 +2424,7 @@ Actor RowdyRudyBFG9000GiverDropped : DehackedWeaponGiver
     Fail
   }
 }
-Actor RowdyRudyBFG9000Giver : DehackedWeaponGiver
+Actor RayMohawkBFG9000Giver : DehackedWeaponGiver
 {
   Inventory.RestrictedTo "RayMohawk"
   VisibleToPlayerClass "RayMohawk"
@@ -2449,7 +2449,7 @@ Actor RowdyRudyBFG9000Giver : DehackedWeaponGiver
     Fail
   }
 }
-Actor RowdyRudyBFG9000GiverDropped : DehackedWeaponGiver
+Actor RayMohawkBFG9000GiverDropped : DehackedWeaponGiver
 {
   Inventory.RestrictedTo "RayMohawk"
   VisibleToPlayerClass "RayMohawk"

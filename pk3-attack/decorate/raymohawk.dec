@@ -208,7 +208,7 @@ Actor RayMohawkSlyor
 		SLY2 E 8 A_FaceTarget
 		SLY2 GGG 4 Bright A_CustomMissile("RayMohawkFlamerShot",32,0,0)
 		SLY2 E 10 A_FaceTarget
-		SLY2 GGF 5 Bright A_CustomMissile("HulaImpBall",32,0,0)e")
+		SLY2 GGF 5 Bright A_CustomMissile("HulaImpBall",32,0,0)
 		goto See
 	Death:
 		SLY2 I 8

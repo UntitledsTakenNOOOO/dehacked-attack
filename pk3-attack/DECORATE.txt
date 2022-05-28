@@ -179,6 +179,8 @@ ACTOR DEHSpiderMastermind : SpiderMastermind
 #include "decorate/obituary.dec"
 #include "decorate/invasionuac.dec"
 #include "decorate/negativeone.dec"
+#include "decorate/rowdyrudy.dec"
+#include "decorate/raymohawk.dec"
 
 ACTOR DehackedZombieSpawner : RandomSpawner replaces Zombieman
 {
@@ -216,8 +218,8 @@ ACTOR DehackedChaingunguySpawner : RandomSpawner replaces Chaingunguy
 ACTOR DehackedImpSpawner : RandomSpawner replaces DoomImp
 {
 	DropItem "DEHDoomImp", 256, 15
-	DropItem "HulaImp", 256, 10
 	DropItem "NegativeImp", 256, 10
+	DropItem "HulaImp", 256, 10
 	DropItem "NightmareImp", 256, 10
 	DropItem "ValiantImp", 256, 10
 	DropItem "StrainFastImp", 256, 10

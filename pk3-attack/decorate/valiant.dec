@@ -120,7 +120,7 @@ ACTOR ValiantDemon : DEHDemon
   }
 }
 
-ACTOR ValiantSpectre : DEHValiantDemon
+ACTOR ValiantSpectre : ValiantDemon
 {
   +SHADOW
   RenderStyle OptFuzzy

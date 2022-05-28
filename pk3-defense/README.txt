@@ -50,6 +50,7 @@ ANTARESIAN RELIQUARY (antares, 2020):
 * FIST: The Antaresian Reliquary marine can punch much harder than the ordinary marine.
 * CHAINSAW: slashes at a slightly increased speed compared to the vanilla chainsaw, but it's not as significant as other changes.
 * MACHINEGUN: Rather than start with a pistol, the Antaresian Reliquary marine starts with a fairly useful machine gun.
+    * Balanced Mode: No longer is the weapon perfectly accurate. It still fires absurdly fast for a pistol, however.
 * SHOTGUN: Fires ever so slightly faster, compared to the ordinary doom shotgun.
 * SUPER SHOTGUN: Autoloading shells means you can speedload this wonderful weapon even faster.
 * ROCKET LAUNCHER: Overall slightly buffed compared to the normal rocket launcher.
@@ -72,10 +73,11 @@ ROWDY RUDY 2 (Doomkid, 2020):
 * DOUBLE-BLADED CHAINSAW: This is obviously only meant for killing, and does so with twice the efficiency of the normal chainsaw.
 * RIFLE: It's perfectly accurate, and fires faster than the normal pistol, giving it a strong presence as Rudy's starting weapon.
 	* Change: Rowdy Rudy 2 doubles bullet ammo pickups (20/100 instead of 10/50), but for balance reasons it's kept at 10/50 here.
+    * Balanced Mode: Works identically to Rowdy Rudy 1, meaning it fires in bursts in two, but fires much slower.
 * AUTOMATIC SHOTGUN: This weapon shreds demons far ahead of the relative competition, owing to a faster automatic reloading system.
 * CHAINGUN: Rowdy Rudy's chaingun is made from a darker metal, and fires faster, matching pace with DOOM -1's Uzi.
 * SUPER SHOTGUN: While Rowdy Rudy can reload the weapon faster than usual, ultimately this is just a return to the old reliable SSG.
-    * Balanced Mode: Rowdy Rudy cannot load the weapon that much faster than usual.
+    * Balanced Mode: Rowdy Rudy cannot load the weapon faster than usual.
 * ROCKET LAUNCHER: Putting the 'Rowdy' in Rowdy Rudy, this weapon fires faster than the ordinary Rocket Launcher.
     * Balanced Mode: Fires at the same rate as the normal rocket launcher, but with the new sprites.
 * BFG 9000: It's yellow now, and it's...basically identical to the standard BFG 9000. Sometimes, you can't beat the original.
@@ -85,15 +87,15 @@ RAY MOHAWK 1/2 (Doomkid, 2021):
 * GAUNTLETS?: No one's quite sure how these got here, but these things fire twice as fast as the chainsaw.
 	* Balanced Mode: No, actually only twice as fast.
 * PISTOL: Ray Mohawk's pistol isn't really a pistol at all, but is instead a more compact shotgun, firing seven pellets per shot.
-	* Balanced mode: it fires only three pellets and it's less accurate. Sorry, but this is a starting weapon, and a literal shotgun is too much power to have.
+	* Balanced mode: Only fires 3 pellets instead of 7. Sorry, but this is a starting weapon, and a literal shotgun is too much power to have.
 * SHOTGUN: Fires 20 pellets for 2 shells, meaning that in effect this is really the Super Shotgun.
-	* Balanced Mode: 7 pellets, 1 shell. Not in the ordinary Shotgun slot, kiddo.
+	* Balanced Mode: Fires an ordinary shotgun blast. Not getting the SSG in the normal Shotgun slot, kiddo.
 * AUTOMATIC SHOTGUN: Rapidly empties shells into enemies to destroy them.
-	* Balanced Mode: 7 pellets, 1 shell, because a Super Shotgun with a pistol's fire rate is way too much.
+	* Balanced Mode: Again, 7 pellets, 1 shell, because a Super Shotgun with a pistol's fire rate is too much, but the ASG is fairly unique in its own right.
 * BLASTER: Borrowed from the Spider Mastermind except with the playerside buff, this thing sprays lead at an unfathomable rate in the direction you point in.
-	* Balanced Mode: Back to only 3 pellets and it's much less accurate. You're still the mastermind now!
+	* Balanced Mode: It's only 3 bullets per shot instead of 7, alongside a massive accuracy decrease. You're still the mastermind now, just more literally.
 * FLAMETHROWER: Ray doesn't use a conventional rocket launcher, and in its place is a flamethrower that's closer to the plasma rifle with a distinct ammo type.
-	* Change: Fuel pickups are 10/50 instead of 20/100 like in Ray Mohawk 2.
+	* Change: Fuel pickups are 10/50 instead of 20/100 like they are in Ray Mohawk 2.
 	* Change: Moved from Slot 6 to Slot 5 for ammo consistency reasons.
     * Balanced Mode: Base damage reduced from 15 to 7. Still stronger than the plasma rifle, but not by nearly as much.
 * CELL CANNON: Ray's explosive weapon. Awkwardly placed in the plasma slot but cell ammo comes in bigger packages, meaning he can get more value out of them.

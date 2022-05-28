@@ -104,7 +104,7 @@ raymohawk/sawhit	RHSAWHIT
 raymohawk/sawidle	RHSAWIDL
 raymohawk/sawup		RHSAWUP
 raymohawk/shotgf	RHSHOTGN
-raymohawk/sshotgf	RHDSHTGN
+raymohawk/sshotf	RHDSHTGN
 raymohawk/rocklf	RHRLAUNC
 raymohawk/bfgf		RHBFG
 raymohawk/bfgx		RHREXPLOD

@@ -176,6 +176,22 @@ ACTOR DEHPlasmaRifle : PlasmaRifle
   Weapon.AmmoGive1 40
   States
   {
+  Deselect:
+    PLSG A 0 A_JumpIfInventory("RowdyRudyClass", 1, "DeselectRowdyRudy")
+    PLSG A 1 A_Lower
+    Loop
+  DeselectRowdyRudy:
+    PLSG AAA 0 A_Lower
+    PLSG A 1 A_Lower
+    Loop
+  Select:
+    PLSG A 0 A_JumpIfInventory("RowdyRudyClass", 1, "SelectRowdyRudy")
+    PLSG A 1 A_Raise
+    Loop
+  SelectRowdyRudy:
+    PLSG AAA 0 A_Raise
+    PLSG A 1 A_Raise
+    Loop
   Fire:
     PLSG A 0 A_JumpIfInventory("ValiantClass", 1, "FireValiant")
     PLSG A 0 A_JumpIfInventory("RowdyRudyClass", 1, "FireRowdyRudy")

@@ -19,11 +19,20 @@ Script "Dehacked_Defense_Enter" ENTER
 		SetAmmoCapacity("Shell", 100);
 		SetAmmoCapacity("RocketAmmo", 100);
 		SetAmmoCapacity("Cell", 600);
+		SetAmmoCapacity("NFGBattery", 200);
+		SetAmmoCapacity("JackBombAmmo", 20);
+		SetAmmoCapacity("223CaliberMagazine", 320);
+		SetAmmoCapacity("RayMohawkFuel", 500);
 	} else {
 		SetAmmoCapacity("Clip", 200);
 		SetAmmoCapacity("Shell", 50);
 		SetAmmoCapacity("RocketAmmo", 50);
 		SetAmmoCapacity("Cell", 300);
+		SetAmmoCapacity("NFGBattery", 100);
+		SetAmmoCapacity("JackBombAmmo", 10);
+		SetAmmoCapacity("223CaliberMagazine", 160);
+		SetAmmoCapacity("RayMohawkFuel", 250);
+
 	}
 
 	if(GetActorClass(0) == "JohnValiant")
@@ -69,13 +78,13 @@ Script "Dehacked_Defense_Enter" ENTER
 		{
 			SetAmmoCapacity("Clip", 150);
 			SetAmmoCapacity("Shell", 150);
-			SetAmmoCapacity("RocketAmmo", 100);
+			SetAmmoCapacity("RocketAmmo", 50);
 			SetAmmoCapacity("Cell", 200);
 		} else {
-			SetAmmoCapacity("Clip", 150);
-			SetAmmoCapacity("Shell", 150);
+			SetAmmoCapacity("Clip", 300);
+			SetAmmoCapacity("Shell", 300);
 			SetAmmoCapacity("RocketAmmo", 100);
-			SetAmmoCapacity("Cell", 200);
+			SetAmmoCapacity("Cell", 400);
 		}
 	}
 	
@@ -559,10 +568,10 @@ Script "Dehacked_WeaponSpawn" (int class, int slot)
 
 Script "Dehacked_BalancedMode" (void)
 {
-	if(GetCVar("deh_def_balanced_mode"))
+	if(GetCVar("deh_def_balanace_weaps"))
 	{
-		SetResultValue(0); //Go full ham, whatever
+		SetResultValue(1);
 	} else {
-		SetResultValue(1); //Nah, actually try some balance changes
+		SetResultValue(0);
 	}
 }

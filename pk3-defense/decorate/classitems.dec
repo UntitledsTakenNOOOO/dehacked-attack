@@ -438,7 +438,7 @@ ACTOR RayMohawkClassCellPack : CellPack
 ACTOR DoomClassGreenArmor : GreenArmor
 {
 	Inventory.ForbiddenTo "JohnNegativeOne"
-	VisibleToPlayerClass "JohnDoom", "JohnStrain", "JohnDeusVultII", "JohnValiant", "JohnMaskimXul", "JohnStruggle", "JohnReliquary"
+	VisibleToPlayerClass "JohnDoom", "JohnStrain", "JohnDeusVultII", "JohnValiant", "JohnMaskimXul", "JohnStruggle", "JohnReliquary", "RowdyRudy", "RayMohawk"
 }
 ACTOR NegativeOneClassGreenArmor : NegativeOneGreenArmor
 {
@@ -449,7 +449,7 @@ ACTOR NegativeOneClassGreenArmor : NegativeOneGreenArmor
 ACTOR DoomClassBlueArmor : BlueArmor
 {
 	Inventory.ForbiddenTo "JohnStrain", "JohnNegativeOne"
-	VisibleToPlayerClass "JohnDoom", "JohnDeusVultII", "JohnValiant", "JohnMaskimXul", "JohnStruggle", "JohnReliquary"
+	VisibleToPlayerClass "JohnDoom", "JohnDeusVultII", "JohnValiant", "JohnMaskimXul", "JohnStruggle", "JohnReliquary", "RowdyRudy", "RayMohawk"
 }
 ACTOR StrainClassBlueArmor : StrainRedArmor
 {

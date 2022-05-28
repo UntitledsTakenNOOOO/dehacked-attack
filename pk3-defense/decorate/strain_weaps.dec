@@ -161,9 +161,15 @@ ACTOR StrainNFG : DoomWeapon
     FFGG A 1 A_Raise
     Loop
   Fire:
+    FFGG A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BalancedMode") == 1, "BalancedFire")
     FFGG A 0 A_GunFlash
     FFGG A 3 A_FireCustomMissile("NFGPlasmaBall", 0, 1)
     FFGG B 40 A_ReFire
+    Goto Ready
+  BalancedFire:
+    FFGG A 0 A_GunFlash
+    FFGG A 3 A_FireCustomMissile("NFGPlasmaBall", 0, 1)
+    FFGG B 20 A_ReFire
     Goto Ready
   Flash:
     FFGF A 4 Bright A_Light1
