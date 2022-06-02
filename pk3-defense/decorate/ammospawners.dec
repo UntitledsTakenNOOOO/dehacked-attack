@@ -15,7 +15,15 @@ actor ClipReplacer : DEHDefenseWeaponSpawner replaces Clip
   Spawn:
     TNT1 A 1
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_RandomizerCheck"), "RandomizerSpawn")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MergeAmmoCheck"), "MergedAmmoSpawn")
     Goto ClassSpawn
+  MergedAmmoSpawn:
+    TNT1 A 0 A_CheckFlag("DROPPED", "MergedAmmoSpawnDropped")
+    TNT1 A 0 A_SpawnItemEx("DehackedMergedClip", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+	Stop
+  MergedAmmoSpawnDropped:
+    TNT1 A 0 A_DropItem("DehackedMergedClip")
+	Stop
   ClassSpawn:
     TNT1 A 0 A_CheckFlag("DROPPED", "ClassSpawnDropped")
     TNT1 A 0 A_SpawnItemEx("DoomClassClip", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
@@ -207,7 +215,15 @@ actor ClipBoxReplacer : DEHDefenseWeaponSpawner replaces ClipBox
   Spawn:
     TNT1 A 1
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_RandomizerCheck"), "RandomizerSpawn")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MergeAmmoCheck"), "MergedAmmoSpawn")
     Goto ClassSpawn
+  MergedAmmoSpawn:
+    TNT1 A 0 A_CheckFlag("DROPPED", "MergedAmmoSpawnDropped")
+    TNT1 A 0 A_SpawnItemEx("DehackedMergedClipBox", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+	Stop
+  MergedAmmoSpawnDropped:
+    TNT1 A 0 A_DropItem("DehackedMergedClipBox")
+	Stop
   ClassSpawn:
     TNT1 A 0 A_CheckFlag("DROPPED", "ClassSpawnDropped")
     TNT1 A 0 A_SpawnItemEx("DoomClassClipBox", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
@@ -302,7 +318,15 @@ actor ShellReplacer : DEHDefenseWeaponSpawner replaces Shell
   Spawn:
     TNT1 A 1
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_RandomizerCheck"), "RandomizerSpawn")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MergeAmmoCheck"), "MergedAmmoSpawn")
     Goto ClassSpawn
+  MergedAmmoSpawn:
+    TNT1 A 0 A_CheckFlag("DROPPED", "MergedAmmoSpawnDropped")
+    TNT1 A 0 A_SpawnItemEx("DehackedMergedShell", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+	Stop
+  MergedAmmoSpawnDropped:
+    TNT1 A 0 A_DropItem("DehackedMergedShell")
+	Stop
   ClassSpawn:
     TNT1 A 0 A_CheckFlag("DROPPED", "ClassSpawnDropped")
     TNT1 A 0 A_SpawnItemEx("DoomClassShell", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
@@ -373,7 +397,15 @@ actor ShellBoxReplacer : DEHDefenseWeaponSpawner replaces ShellBox
   Spawn:
     TNT1 A 1
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_RandomizerCheck"), "RandomizerSpawn")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MergeAmmoCheck"), "MergedAmmoSpawn")
     Goto ClassSpawn
+  MergedAmmoSpawn:
+    TNT1 A 0 A_CheckFlag("DROPPED", "MergedAmmoSpawnDropped")
+    TNT1 A 0 A_SpawnItemEx("DehackedMergedShellBox", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+	Stop
+  MergedAmmoSpawnDropped:
+    TNT1 A 0 A_DropItem("DehackedMergedShellBox")
+	Stop
   ClassSpawn:
     TNT1 A 0 A_CheckFlag("DROPPED", "ClassSpawnDropped")
     TNT1 A 0 A_SpawnItemEx("DoomClassShellBox", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
@@ -445,7 +477,15 @@ actor RocketAmmoReplacer : DEHDefenseWeaponSpawner replaces RocketAmmo
   Spawn:
     TNT1 A 1
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_RandomizerCheck"), "RandomizerSpawn")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MergeAmmoCheck"), "MergedAmmoSpawn")
     Goto ClassSpawn
+  MergedAmmoSpawn:
+    TNT1 A 0 A_CheckFlag("DROPPED", "MergedAmmoSpawnDropped")
+    TNT1 A 0 A_SpawnItemEx("DehackedMergedRocketAmmo", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+	Stop
+  MergedAmmoSpawnDropped:
+    TNT1 A 0 A_DropItem("DehackedMergedRocketAmmo")
+	Stop
   ClassSpawn:
     TNT1 A 0 A_CheckFlag("DROPPED", "ClassSpawnDropped")
     TNT1 A 0 A_SpawnItemEx("DoomClassRocketAmmo", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
@@ -524,7 +564,15 @@ actor RocketBoxReplacer : DEHDefenseWeaponSpawner replaces RocketBox
   Spawn:
     TNT1 A 1
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_RandomizerCheck"), "RandomizerSpawn")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MergeAmmoCheck"), "MergedAmmoSpawn")
     Goto ClassSpawn
+  MergedAmmoSpawn:
+    TNT1 A 0 A_CheckFlag("DROPPED", "MergedAmmoSpawnDropped")
+    TNT1 A 0 A_SpawnItemEx("DehackedMergedRocketBox", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+	Stop
+  MergedAmmoSpawnDropped:
+    TNT1 A 0 A_DropItem("DehackedMergedRocketBox")
+	Stop
   ClassSpawn:
     TNT1 A 0 A_CheckFlag("DROPPED", "ClassSpawnDropped")
     TNT1 A 0 A_SpawnItemEx("DoomClassRocketBox", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
@@ -606,7 +654,15 @@ actor CellReplacer : DEHDefenseWeaponSpawner replaces Cell
   Spawn:
     TNT1 A 1
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_RandomizerCheck"), "RandomizerSpawn")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MergeAmmoCheck"), "MergedAmmoSpawn")
     Goto ClassSpawn
+  MergedAmmoSpawn:
+    TNT1 A 0 A_CheckFlag("DROPPED", "MergedAmmoSpawnDropped")
+    TNT1 A 0 A_SpawnItemEx("DehackedMergedCell", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+	Stop
+  MergedAmmoSpawnDropped:
+    TNT1 A 0 A_DropItem("DehackedMergedCell")
+	Stop
   ClassSpawn:
     TNT1 A 0 A_CheckFlag("DROPPED", "ClassSpawnDropped")
     TNT1 A 0 A_SpawnItemEx("DoomClassCell", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
@@ -703,7 +759,15 @@ actor CellPackReplacer : DEHDefenseWeaponSpawner replaces CellPack
   Spawn:
     TNT1 A 1
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_RandomizerCheck"), "RandomizerSpawn")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MergeAmmoCheck"), "MergedAmmoSpawn")
     Goto ClassSpawn
+  MergedAmmoSpawn:
+    TNT1 A 0 A_CheckFlag("DROPPED", "MergedAmmoSpawnDropped")
+    TNT1 A 0 A_SpawnItemEx("DehackedMergedCellPack", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+	Stop
+  MergedAmmoSpawnDropped:
+    TNT1 A 0 A_DropItem("DehackedMergedCellPack")
+	Stop
   ClassSpawn:
     TNT1 A 0 A_CheckFlag("DROPPED", "ClassSpawnDropped")
     TNT1 A 0 A_SpawnItemEx("DoomClassCellPack", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
@@ -712,6 +776,7 @@ actor CellPackReplacer : DEHDefenseWeaponSpawner replaces CellPack
     TNT1 A 0 A_SpawnItemEx("ValiantClassCellPack", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     TNT1 A 0 A_SpawnItemEx("MaskimXulClassCellPack", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     TNT1 A 0 A_SpawnItemEx("MaskimXulClassMedikit", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_SpawnItemEx("MaskimXulClassStimpack", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     TNT1 A 0 A_SpawnItemEx("StruggleClassCellPack", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     TNT1 A 0 A_SpawnItemEx("ReliquaryClassCellPack", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     TNT1 A 0 A_SpawnItemEx("NegativeOneClassCellPack", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)

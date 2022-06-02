@@ -6,13 +6,14 @@ ACTOR RowdyRudy : DoomPlayer
   Player.StartItem "RowdyRudyFists"
   Player.StartItem "Clip", 150
   Player.StartItem "RowdyRudyClass"
+  Player.SoundClass "RowdyRudy"
 /*
   Player.WeaponSlot 1, RowdyRudyChainsaw, RowdyRudyFists
   Player.WeaponSlot 2, RowdyRudyRifle
   Player.WeaponSlot 3, RowdyRudySuperShotgun, RowdyRudyShotgun
   Player.WeaponSlot 4, RowdyRudyChaingun
   Player.WeaponSlot 5, RowdyRudyRocketLauncher
-  Player.WeaponSlot 6, RowdyRudyPlasmaRifle
+  Player.WeaponSlot 6, PlasmaRifle
   Player.WeaponSlot 7, RowdyRudyBFG9000
 */
   States

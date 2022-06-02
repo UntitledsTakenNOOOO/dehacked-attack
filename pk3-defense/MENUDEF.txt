@@ -32,6 +32,11 @@ OptionValue "DehackedDefenseWeaponSelection"
 	0, "Disabled"
 	1, "Enabled"
 }
+OptionValue "DehackedAmmoSelection"
+{
+	0, "Class-based Pickups (More Faithful Visuals)"
+	1, "Generic Doom Pickups (Better Performance)"
+}
 OptionValue "DehackedDefenseStartingWeapon"
 {
 	0, "Don't start with it"
@@ -63,14 +68,23 @@ OptionMenu "DehackedDefenseOptions"
 	StaticText "Only has an effect if the weapon selection is randomizer-based."
 	Option "Level Scaling:", "deh_def_level_scaling", "DehackedDefenseWeaponSelection"
 	StaticText ""
-	StaticText "Dehacked Clip Pistol Spawning", 1
+	StaticText "Pistol Spawns in Place of Clips", 1
 	StaticText "If enabled, randomized pistols spawn in place of clips."
 	StaticText "Only has an effect if the weapon selection is randomizer-based."
 	Option "Pistol Spawning:", "deh_def_spawn_pistols", "DehackedDefenseWeaponSelection"
 	StaticText ""
-	StaticText "Dehacked Balanced Mode", 1
+	StaticText "Dehacked Defense Balanced Mode", 1
 	StaticText "If enabled, some overpowered weapons are nerfed to be more reasonable."
+	StaticText "If disabled, some weaker weapons are made to be a bit more ridiculous."
+	StaticText "Look, this thing turns off game balance; I don't know what you expect."
 	Option "Balanced Mode:", "deh_def_balanace_weaps", "DehackedDefenseWeaponSelection"
+	StaticText ""
+	StaticText "Merge Class Ammo+Health Pickups", 1
+	StaticText "In class-based mode, every class has separate ammo and health pickups."
+	StaticText "However, the manner in which this was implemented can cause potential performance issues."
+	StaticText "Turning this on merges the classes' ammo and health pickups into universal pickups."
+	StaticText "This only has an effect if the weapon selection is class-based."
+	Option "Pickup Mode:", "deh_def_merge_ammo", "DehackedAmmoSelection"
 	StaticText ""
 	StaticText "Dehacked Defense Weapon Selection", 1
 	StaticText "Choose which weapon sets are enabled or disabled."

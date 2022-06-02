@@ -108,3 +108,42 @@ raymohawk/sshotf	RHDSHTGN
 raymohawk/rocklf	RHRLAUNC
 raymohawk/bfgf		RHBFG
 raymohawk/bfgx		RHREXPLOD
+
+$playersound	NegativeOne	male	*death		dspldeth
+$playersound	NegativeOne	male	*xdeath		dspdiehi
+$playersound	NegativeOne	male	*gibbed		dsslop
+$playersound	NegativeOne	male	*pain100	ngplpain
+$playersounddup	NegativeOne	male	*pain75		*pain100
+$playersounddup	NegativeOne	male	*pain50		*pain100
+$playersounddup	NegativeOne	male	*pain25		*pain100
+$playersound	NegativeOne	male	*grunt		dsoof
+$playersounddup	NegativeOne	male	*land		*grunt
+$playersound	NegativeOne	male	*jump		dsjump
+$playersound	NegativeOne	male	*fist		ngpunch
+$playersound	NegativeOne	male	*usefail	ngnoway
+
+$playersound	RowdyRudy	male	*death		dspldeth
+$playersound	RowdyRudy	male	*xdeath		rrpdiehi
+$playersound	RowdyRudy	male	*gibbed		dsslop
+$playersound	RowdyRudy	male	*pain100	rrplpain
+$playersounddup	RowdyRudy	male	*pain75		*pain100
+$playersounddup	RowdyRudy	male	*pain50		*pain100
+$playersounddup	RowdyRudy	male	*pain25		*pain100
+$playersound	RowdyRudy	male	*grunt		dsoof
+$playersounddup	RowdyRudy	male	*land		*grunt
+$playersound	RowdyRudy	male	*jump		dsjump
+$playersound	RowdyRudy	male	*fist		rrpunch
+$playersound	RowdyRudy	male	*usefail	dsnoway
+
+$playersound	RayMohawk	male	*death		dspldeth
+$playersound	RayMohawk	male	*xdeath		dspdiehi
+$playersound	RayMohawk	male	*gibbed		dsslop
+$playersound	RayMohawk	male	*pain100	dsplpain
+$playersounddup	RayMohawk	male	*pain75		*pain100
+$playersounddup	RayMohawk	male	*pain50		*pain100
+$playersounddup	RayMohawk	male	*pain25		*pain100
+$playersound	RayMohawk	male	*grunt		dsoof
+$playersounddup	RayMohawk	male	*land		*grunt
+$playersound	RayMohawk	male	*jump		dsjump
+$playersound	RayMohawk	male	*fist		rhpunch
+$playersound	RayMohawk	male	*usefail	dsnoway

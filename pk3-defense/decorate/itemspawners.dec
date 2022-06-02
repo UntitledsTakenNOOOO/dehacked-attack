@@ -1,3 +1,85 @@
+actor DEHStimpack : Stimpack {}
+actor StimpackReplacer : DEHDefenseWeaponSpawner replaces Stimpack
+{
+  States
+  {
+  Spawn:
+    TNT1 A 1
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_RandomizerCheck"), "Spawn1")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MergeAmmoCheck"), "Spawn1")
+    Goto ClassSpawn
+  ClassSpawn:
+    TNT1 A 0 A_CheckFlag("DROPPED", "ClassSpawnDropped")
+    TNT1 A 0 A_SpawnItemEx("DoomClassStimpack", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_SpawnItemEx("StrainClassStimpack", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_SpawnItemEx("DV2ClassStimpack", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_SpawnItemEx("ValiantClassStimpack", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_SpawnItemEx("MaskimXulClassStimpack", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_SpawnItemEx("StruggleClassStimpack", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_SpawnItemEx("ReliquaryClassStimpack", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_SpawnItemEx("NegativeOneClassStimpack", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_SpawnItemEx("RowdyRudyClassStimpack", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_SpawnItemEx("RayMohawkClassStimpack", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+	Stop
+  ClassSpawnDropped:
+    TNT1 A 0 A_DropItem("DoomClassStimpack")
+    TNT1 A 0 A_DropItem("StrainClassStimpack")
+    TNT1 A 0 A_DropItem("DV2ClassStimpack")
+    TNT1 A 0 A_DropItem("ValiantClassStimpack")
+    TNT1 A 0 A_DropItem("MaskimXulClassStimpack")
+    TNT1 A 0 A_DropItem("StruggleClassStimpack")
+    TNT1 A 0 A_DropItem("ReliquaryClassStimpack")
+    TNT1 A 0 A_DropItem("NegativeOneClassStimpack")
+    TNT1 A 0 A_DropItem("RowdyRudyClassStimpack")
+    TNT1 A 0 A_DropItem("RayMohawkClassStimpack")
+	Stop
+  Spawn1:
+    TNT1 A 0 A_SpawnItemEx("DEHStimpack", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    Goto Death
+  }
+}
+
+actor DEHMedikit : Medikit {}
+actor MedikitReplacer : DEHDefenseWeaponSpawner replaces Medikit
+{
+  States
+  {
+  Spawn:
+    TNT1 A 1
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_RandomizerCheck"), "Spawn1")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MergeAmmoCheck"), "Spawn1")
+    Goto ClassSpawn
+  ClassSpawn:
+    TNT1 A 0 A_CheckFlag("DROPPED", "ClassSpawnDropped")
+    TNT1 A 0 A_SpawnItemEx("DoomClassMedikit", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_SpawnItemEx("StrainClassMedikit", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_SpawnItemEx("DV2ClassMedikit", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_SpawnItemEx("ValiantClassMedikit", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_SpawnItemEx("MaskimXulClassMedikit", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_SpawnItemEx("StruggleClassMedikit", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_SpawnItemEx("ReliquaryClassMedikit", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_SpawnItemEx("NegativeOneClassMedikit", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_SpawnItemEx("RowdyRudyClassMedikit", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_SpawnItemEx("RayMohawkClassMedikit", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+	Stop
+  ClassSpawnDropped:
+    TNT1 A 0 A_DropItem("DoomClassMedikit")
+    TNT1 A 0 A_DropItem("StrainClassMedikit")
+    TNT1 A 0 A_DropItem("DV2ClassMedikit")
+    TNT1 A 0 A_DropItem("ValiantClassMedikit")
+    TNT1 A 0 A_DropItem("MaskimXulClassMedikit")
+    TNT1 A 0 A_DropItem("StruggleClassMedikit")
+    TNT1 A 0 A_DropItem("ReliquaryClassMedikit")
+    TNT1 A 0 A_DropItem("NegativeOneClassMedikit")
+    TNT1 A 0 A_DropItem("RowdyRudyClassMedikit")
+    TNT1 A 0 A_DropItem("RayMohawkClassMedikit")
+	Stop
+  Spawn1:
+    TNT1 A 0 A_SpawnItemEx("Medikit", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    Goto Death
+  }
+}
+
 actor DEHGreenArmor : GreenArmor {}
 actor GreenArmorReplacer : DEHDefenseWeaponSpawner replaces GreenArmor
 {

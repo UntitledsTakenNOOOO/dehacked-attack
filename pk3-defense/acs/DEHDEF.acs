@@ -575,3 +575,13 @@ Script "Dehacked_BalancedMode" (void)
 		SetResultValue(0);
 	}
 }
+
+Script "Dehacked_MergeAmmoCheck" (void)
+{
+	if(GetCVar("deh_def_merge_ammo"))
+	{
+		SetResultValue(1);
+	} else {
+		SetResultValue(0);
+	}
+}

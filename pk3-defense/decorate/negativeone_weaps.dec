@@ -6,6 +6,7 @@ ACTOR JohnNegativeOne : DoomPlayer
   Player.StartItem "DEHFist"
   Player.StartItem "Clip", 50
   Player.StartItem "NegativeOneClass"
+  Player.SoundClass "NegativeOne"
 /*
   Player.WeaponSlot 1, NegativeOneGauntlets, Fist
   Player.WeaponSlot 2, NegativeOnePistol
@@ -60,6 +61,29 @@ ACTOR NegativeOneClip : Clip
     Stop
   }
 }
+ACTOR NegativeOneStimpack : Health
+{
+  Inventory.Amount 10
+  Inventory.PickupMessage "$GOTSTIM" // "Picked up a stimpack."
+  States
+  {
+  Spawn:
+    NSTM A -1
+    Stop
+  }
+}
+ACTOR NegativeOneMedikit : Health
+{
+  Inventory.Amount 25
+  Inventory.PickupMessage "$GOTMEDIKIT" // "Picked up a medikit."
+  Health.LowMessage 25, "$GOTMEDINEED" // "Picked up a medikit that you REALLY need!"
+  States
+  {
+  Spawn:
+    NMED A -1
+    Stop
+  }
+}
 ACTOR NegativeOneGreenArmor : BasicArmorPickup
 {
   Radius 20
@@ -77,7 +101,6 @@ ACTOR NegativeOneGreenArmor : BasicArmorPickup
     Loop
   }
 }
-
 ACTOR NegativeOneBlueArmor : BasicArmorPickup
 {
   Radius 20

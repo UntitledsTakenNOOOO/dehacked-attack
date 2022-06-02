@@ -2,6 +2,7 @@ server int deh_def_randomizer = 1;
 server int deh_def_level_scaling = 1;
 server int deh_def_spawn_pistols = 1;
 server int deh_def_balanace_weaps = 1;
+server int deh_def_merge_ammo = 0;
 
 server bool deh_def_enable_strain = true;
 server bool deh_def_enable_deusvult2 = true;
