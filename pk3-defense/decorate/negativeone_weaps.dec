@@ -411,9 +411,11 @@ ACTOR NegativeOneDarkSceptre : DoomWeapon
 {
   Weapon.SlotNumber 6
   Weapon.SelectionOrder 100
-  Weapon.AmmoUse 1
+  Weapon.AmmoUse1 1
+  Weapon.AmmoUse2 10
   Weapon.AmmoGive 40
-  Weapon.AmmoType "Cell"
+  Weapon.AmmoType1 "Cell"
+  Weapon.AmmoType2 "Cell"
   Inventory.PickupMessage "You got the Dark Sceptre, it glows with energy!"
   Tag "Dark Sceptre"
   Inventory.PickupSound "negativeone/w_pkup"
@@ -429,9 +431,30 @@ ACTOR NegativeOneDarkSceptre : DoomWeapon
     NPLG A 1 A_Raise
     Loop
   Fire:
+    NPLG A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BalancedMode") == 0, "FirePowered")
     NPLG B 0 A_FireCustomMissile("NegativeOneDarkSceptreBall", 0, 1)
     NPLG B 5 A_GunFlash
     NPLG B 8 A_ReFire
+    Goto Ready
+  FirePowered:
+    NPLG B 0 A_FireCustomMissile("NegativeOneDarkSceptreBall", 0, 1)
+    NPLG B 4 A_GunFlash
+    NPLG B 0 A_ReFire
+    Goto Ready
+  AltFire:
+    NPLG A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BalancedMode") == 0, "BerserkCheck")
+    Goto Ready
+  BerserkCheck:
+    NPLG A 0 A_JumpIfInventory("PowerStrength", 1, "AltFirePowered")
+	Goto Ready
+  AltFirePowered:
+    NPLG A 2
+    NPLG B 5
+    NPLG B 0 A_FireCustomMissile("NegativeOneDarkSceptreBallPowered", 0, 1)
+    NPLG B 4 A_GunFlash
+    NPLG B 5
+    NPLG A 5
+    NPLG A 2 A_ReFire("AltFirePowered")
     Goto Ready
   Flash:
     NPLF AB 2 Bright A_Light1
@@ -441,7 +464,6 @@ ACTOR NegativeOneDarkSceptre : DoomWeapon
     Stop
   }
 }
-
 ACTOR NegativeOneDarkSceptreBall : PlasmaBall
 {
 	SeeSound "negativeone/plasmaf"
@@ -459,14 +481,47 @@ ACTOR NegativeOneDarkSceptreBall : PlasmaBall
 	}
 }
 
+ACTOR NegativeOneDarkSceptreBallPowered : HornRodFX2
+{
+	SeeSound "negativeone/plasmaf"
+	Obituary "%o was scorched by %k's Dark Sceptre." // "%o was melted by %k's plasma gun."
+	Damage 20
+	Scale 1.5
+	+SEEKERMISSILE
+	+ROCKETTRAIL
+	States
+	{
+	Spawn:
+		NPLS AABB 2 Bright A_SeekerMissile(10,30)
+		loop
+	Death:
+		NPLE A 4 Bright A_AddPlayerRain
+		NPLE B 4 Bright
+		NPLE C 4 Bright
+		NPLE D 4 Bright
+		NPLE E 4 Bright
+		TNT1 A 1 Bright A_HideInCeiling
+		TNT1 A 1 Bright A_SkullRodStorm
+		wait
+	}
+}
+
+ACTOR NegativeOneUnmakyrCounter : Inventory
+{
+	-INVENTORY.INVBAR
+	Inventory.Amount 1
+	Inventory.MaxAmount 600
+}
 ACTOR NegativeOneUnmakyr : DoomWeapon
 {
   Height 20
   Weapon.SlotNumber 7
   Weapon.SelectionOrder 2800
-  Weapon.AmmoUse 40
+  Weapon.AmmoUse1 40
+  Weapon.AmmoUse2 1
   Weapon.AmmoGive 40
-  Weapon.AmmoType "Cell"
+  Weapon.AmmoType1 "Cell"
+  Weapon.AmmoType2 "Cell"
   +WEAPON.NOAUTOFIRE
   Inventory.PickupMessage "You got the Unmakyr 666,000! Oh yes..."
   Tag "Unmakyr 666,000"
@@ -488,16 +543,53 @@ ACTOR NegativeOneUnmakyr : DoomWeapon
     NBFG B 10 A_FireCustomMissile("NegativeOneUnmakyrBall", 0, 1)
     NBFG B 20 A_ReFire
     Goto Ready
+  AltFire:
+    NBFG A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BalancedMode") == 0, "AltHold")
+    Goto Ready
+  AltHold:
+    NBFG B 0 A_JumpIfInventory("NegativeOneUnmakyrCounter", 600, "AltHold3")
+    NBFG B 0 A_JumpIfInventory("NegativeOneUnmakyrCounter", 240, "AltHold2")
+    NBFG B 0 A_JumpIfInventory("NegativeOneUnmakyrCounter", 60, "AltHold1")
+    NBFG B 0 A_GiveInventory("NegativeOneUnmakyrCounter", 1)
+    NBFG B 0 A_GunFlash("AltFlash")
+    NBFG B 10 A_FireCustomMissile("UnmakyrPlasmaBall", 0, 1)
+    NBFG B 0 A_ReFire("AltHold")
+    Goto Ready
+  AltHold1:
+    NBFG B 0 A_JumpIfInventory("NegativeOneUnmakyrCounter", 240, "AltHold2")
+    NBFG B 0 A_GiveInventory("NegativeOneUnmakyrCounter", 1)
+    NBFG B 0 A_GunFlash("AltFlash")
+    NBFG B 5 A_FireCustomMissile("UnmakyrPlasmaBall", 0, 1)
+    NBFG B 0 A_ReFire("AltHold1")
+    Goto Ready
+  AltHold2:
+    NBFG B 0 A_JumpIfInventory("NegativeOneUnmakyrCounter", 600, "AltHold3")
+    NBFG B 0 A_GiveInventory("NegativeOneUnmakyrCounter", 2)
+    NBFG B 0 A_GunFlash("AltFlash")
+    NBFG B 0 A_FireCustomMissile("UnmakyrPlasmaBall", 2, 1)
+    NBFG B 5 A_FireCustomMissile("UnmakyrPlasmaBall", -2, 1)
+    NBFG B 0 A_ReFire("AltHold2")
+    Goto Ready
+  AltHold3:
+    NBFG B 0 A_GunFlash("AltFlash")
+    NBFG B 0 A_FireCustomMissile("UnmakyrPlasmaBall", 0, 1)
+    NBFG B 0 A_FireCustomMissile("UnmakyrPlasmaBall", 5, 1)
+    NBFG B 5 A_FireCustomMissile("UnmakyrPlasmaBall", -5, 1)
+    NBFG B 0 A_ReFire("AltHold3")
+    Goto Ready
   Flash:
     NBFG D 11 Bright A_Light1
     NBFG E 6 Bright A_Light2
+    Goto LightDone
+  AltFlash:
+    NBFG D 5 Bright A_Light2
+    NBFG E 5 Bright A_Light1
     Goto LightDone
   Spawn:
     NBFU A -1
     Stop
   }
 }
-
 ACTOR NegativeOneUnmakyrBall : BFGBall
 {
   DeathSound "negativeone/bfgx"
@@ -514,7 +606,6 @@ ACTOR NegativeOneUnmakyrBall : BFGBall
     Stop
   }
 }
-
 ACTOR UnmakyrExtra : BFGExtra
 {
   Obituary "%o couldn't hide from %k's Unmakyr."
@@ -522,6 +613,20 @@ ACTOR UnmakyrExtra : BFGExtra
   {
   Spawn:
     NBF2 ABCD 8 Bright
+    Stop
+  }
+}
+ACTOR UnmakyrPlasmaBall : NFGPlasmaBall
+{
+  Damage 10
+  Obituary "%o was unmade by %k's Unmakyr."
+  States
+  {
+  Spawn:
+    FFGS A 6 Bright
+    Loop
+  Death:
+    FFGE ABCDE 4 Bright
     Stop
   }
 }

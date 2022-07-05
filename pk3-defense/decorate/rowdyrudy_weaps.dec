@@ -177,10 +177,18 @@ ACTOR RowdyRudyRifle : DoomWeapon
   Fire:
     RRRI A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BalancedMode") == 1, "BalancedFire")
     RRRI A 0
-    RRRI B 0 A_FireBullets(0, 0, 1, 5, "BulletPuff")
+    RRRI B 0 A_FireBullets(0, 0, 1, 5, "BulletPuff", FBF_USEAMMO)
     RRRI B 0 A_PlaySound("rowdyrudy/pistol", CHAN_WEAPON)
     RRRI B 3 A_GunFlash
     RRRI A 2
+    RRRI A 0 A_ReFire("Fire2")
+	Goto Ready
+  Fire2:
+    RRRI B 0 A_FireBullets(0, 0, 1, 5, "BulletPuff", 0)
+    RRRI B 0 A_PlaySound("rowdyrudy/pistol", CHAN_WEAPON)
+    RRRI B 3 A_GunFlash
+    RRRI A 2
+    RRRI A 0 A_ReFire("Fire")
     Goto Ready
   BalancedFire:
     RRRI A 0
@@ -190,6 +198,7 @@ ACTOR RowdyRudyRifle : DoomWeapon
     RRRI B 0 A_PlaySound("rowdyrudy/pistol", CHAN_WEAPON)
     RRRI B 2 A_FireBullets(0, 0, 1, 5, "BulletPuff")
     RRRI CDCBA 2
+    RRRI A 0 A_ReFire
     Goto Ready
   Flash:
     RRRF A 2 Bright A_Light1
@@ -339,12 +348,22 @@ ACTOR RowdyRudyChaingun : DoomWeapon
      CHAI A 1 A_Raise
      Loop
   Fire:
+     CHAI A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BalancedMode") == 0, "FirePowered")
      CHAI A 0 A_PlaySound("rowdyrudy/chngun", CHAN_WEAPON)
      CHAI A 0 A_GunFlash
      CHAI A 3 A_FireBullets(5.6, 0, 1, 5, "BulletPuff")
      CHAI B 0 A_PlaySound("rowdyrudy/chngun", CHAN_WEAPON)
      CHAI B 0 A_GunFlash("Flash2")
      CHAI B 3 A_FireBullets(5.6, 0, 1, 5, "BulletPuff")
+     CHAI B 0 A_ReFire
+     Goto Ready
+  FirePowered:
+     CHAI A 0 A_PlaySound("rowdyrudy/chngun", CHAN_WEAPON)
+     CHAI A 0 A_GunFlash
+     CHAI A 3 A_FireBullets(5.6, 0, 1, 5, "BulletPuff", FBF_USEAMMO)
+     CHAI B 0 A_PlaySound("rowdyrudy/chngun", CHAN_WEAPON)
+     CHAI B 0 A_GunFlash("Flash2")
+     CHAI B 3 A_FireBullets(5.6, 0, 1, 5, "BulletPuff", 0)
      CHAI B 0 A_ReFire
      Goto Ready
   Flash:
@@ -494,9 +513,16 @@ ACTOR RowdyRudyBFG9000 : DoomWeapon
     BFGR A 1 A_Raise
     Loop
   Fire:
+    BFGR A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BalancedMode") == 0, "FirePowered")
     BFGR A 20 A_PlaySound("rowdyrudy/bfgf", CHAN_WEAPON)
 	BFGR B 12 A_GunFlash
     BFGR C 8 A_FireCustomMissile("RowdyRudyBFGBall", 0, 1)
+    BFGR A 1 A_Refire
+    Goto Ready
+  FirePowered:
+    BFGR A 20 A_PlaySound("rowdyrudy/bfgf", CHAN_WEAPON)
+	BFGR B 12 A_GunFlash
+    BFGR C 8 A_FireCustomMissile("RowdyRudyBFGBallPowered", 0, 1)
     BFGR A 1 A_Refire
     Goto Ready
   Flash:
@@ -531,6 +557,19 @@ ACTOR RowdyRudyBFGExtra : BFGExtra
     FIRE ABCDEF 4 Bright
     FIRE G 3 Bright
     FIRE H 2 Bright
+    Stop
+  }
+}
+ACTOR RowdyRudyBFGBallPowered : RowdyRudyBFGBall
+{
+  Damage 75
+  States
+  {
+  Death:
+    BFX1 A 4 Bright
+    BFX1 B 4 Bright A_BFGSpray("RowdyRudyBFGExtra", 30, 15)
+    BFX1 C 4 Bright A_BFGSpray("RowdyRudyBFGExtra", 45, 15)
+    BFX1 DEF 4 Bright
     Stop
   }
 }

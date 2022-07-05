@@ -262,7 +262,7 @@ ACTOR DEHPlasmaRifle : PlasmaRifle
     PLSG A 0 A_GunFlash("GFlash2")
     PLSG A 3 A_FireCustomMissile("DEHPlasmaBall2", 0, 1)
     PLSG B 20 A_ReFire
-    Goto ImbalancedAltFire3
+    Goto Ready
   ImbalancedAltFire2A:
     PLSG A 0 A_GunFlash("GFlash2")
     PLSG A 3 A_FireCustomMissile("NegativeOneDarkSceptreBall", 0, 1)

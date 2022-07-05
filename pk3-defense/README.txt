@@ -8,17 +8,21 @@ CURRENTLY INCLUDED WEAPONS:
 DOOM BETA:
 * PLASMA RIFLE: Using alt-fire on the Plasma Rifle while playing vanilla Doomguy will spew alternating green and red projectiles.
 * BFG 9000: If playing Vanilla Doomguy, the Beta BFG 9000, the 'Christmas gun', can be used by pressing alt-fire on the BFG 9000.
+	* If balanced mode is turned off, this weapon becomes significantly more powerful and also much sillier.
 
 STRAIN (Alpha Dog Alliance, 1997):
 * DOUBLE FIST: Punches twice. Not much else to say here.
 * SAWED-OFF: A variant of the shotgun that fires ever-so-slightly faster.
 * NFG: Sharing the plasma slot, this powerful weapon does 140% more damage than the plasma rifle (5 base damage to 12), but uses NFG Batteries for ammo.
 	* Change: Maximum Ammo doubled from 50/100 to 100/200, and pickups are upped from 3/15 to 6/30.
+	* If balanced mode is turned off, this weapon uses only one ammo per two shots, at the expense of doing slightly less damage.
 * PSYCHIC BLASTER: Uses three rockets a shot to fire partially invisible projectiles with insane direct hit damage.
+	* If balanced mode is turned off, this weapon becomes significantly more explosive.
 
 DEUS VULT II (Huy Pham, 2008):
 * DUAL PISTOLS: Having much more stopping power than the singular pistol, this weapon can actually be useful sometimes.
 * SAURON'S GAUNTLET: At sufficiently close range, you are now emperor palpatine. Almost any singular target too close to these will get shredded very quickly.
+	* If balanced mode is turned off, this weapon becomes powered up, like in Heretic - meaning that, yes, it drains life.
 
 VALIANT (skillsaw, 2015):
 * SUPER PISTOL: Fires significantly faster than the normal pistol.
@@ -65,8 +69,11 @@ DOOM -1 (Community Project, 2020):
 * SUPER SHOTGUN: And similarily, despite the new look, it's still the same old reliable SSG.
 * UZI: The replacement for the chaingun, this weapon fires faster, matching pace with Struggle's Dual Pistols.
 * ROCKET LAUNCHER: Same as the normal version, with a new look suited for Doom -1.
-* HELLSTAFF: A variant of the plasma rifle that fires slower but with projectiles that do slightly more damage and occasionally home in on enemies.
+* DARK SCEPTRE: A variant of the plasma rifle that fires slower but with projectiles that do slightly more damage and occasionally home in on enemies.
+	* If balanced mode is turned off, this weapon fires faster.
+	* If balanced mode is turned off, it also gains a VERY powerful altfire under specific circumstances. It feels a little...heretical?
 * UNMAKYR: Despite the new look, it's functionally identical to the BFG 9000. It's still a very powerful weapon, however.
+	* Turning balanced mode off enables Altfire. Though, really, what the $%^& is this?
 
 ROWDY RUDY 2 (Doomkid, 2020):
 * FISTS: Rowdy Rudy's close quarters combat training enables him to punch faster and with better damage.
@@ -74,18 +81,21 @@ ROWDY RUDY 2 (Doomkid, 2020):
 * RIFLE: It's perfectly accurate, and fires faster than the normal pistol, giving it a strong presence as Rudy's starting weapon.
 	* Change: Rowdy Rudy 2 doubles bullet ammo pickups (20/100 instead of 10/50), but for balance reasons it's kept at 10/50 here.
     * Balanced Mode: Works identically to Rowdy Rudy 1, meaning it fires in bursts in two, but fires much slower.
+    * If balanced mode is turned off, it magically only uses one bullet per two shots to emulate doubled pickup sizes.
 * AUTOMATIC SHOTGUN: This weapon shreds demons far ahead of the relative competition, owing to a faster automatic reloading system.
 * CHAINGUN: Rowdy Rudy's chaingun is made from a darker metal, and fires faster, matching pace with DOOM -1's Uzi.
+    * If balanced mode is turned off, it magically only uses one bullet per two shots.
 * SUPER SHOTGUN: While Rowdy Rudy can reload the weapon faster than usual, ultimately this is just a return to the old reliable SSG.
     * Balanced Mode: Rowdy Rudy cannot load the weapon faster than usual.
 * ROCKET LAUNCHER: Putting the 'Rowdy' in Rowdy Rudy, this weapon fires faster than the ordinary Rocket Launcher.
     * Balanced Mode: Fires at the same rate as the normal rocket launcher, but with the new sprites.
 * BFG 9000: It's yellow now, and it's...basically identical to the standard BFG 9000. Sometimes, you can't beat the original.
+	* If balanced mode is turned off, it gets some additional tracers, in accordance with rowdy2.txt's description.
 
 RAY MOHAWK 1/2 (Doomkid, 2021):
 * KNIFE: Faster and dealing massive damage relative to the ordinary fist, Ray Mohawk came to town prepared for a fight.
 * GAUNTLETS?: No one's quite sure how these got here, but these things fire twice as fast as the chainsaw.
-	* Balanced Mode: No, actually only twice as fast.
+	* Balanced Mode: No, actually only twice as fast instead of four times as fast.
 * PISTOL: Ray Mohawk's pistol isn't really a pistol at all, but is instead a more compact shotgun, firing seven pellets per shot.
 	* Balanced mode: Only fires 3 pellets instead of 7. Sorry, but this is a starting weapon, and a literal shotgun is too much power to have.
 * SHOTGUN: Fires 20 pellets for 2 shells, meaning that in effect this is really the Super Shotgun.
@@ -100,6 +110,6 @@ RAY MOHAWK 1/2 (Doomkid, 2021):
     * Balanced Mode: Base damage reduced from 15 to 7. Still stronger than the plasma rifle, but not by nearly as much.
 * CELL CANNON: Ray's explosive weapon. Awkwardly placed in the plasma slot but cell ammo comes in bigger packages, meaning he can get more value out of them.
 	* Change: Moved from Slot 5 to Slot 6 for ammo consistency reasons.
-	* Balanced Mode: Uses 5 cells (up from 1) because effectively infinite rockets is a bit much.
+	* Balanced Mode: Uses 5 cells (up from 1) because effectively infinite rockets is a bit much, and it does less damage.
 * BFG 9002: An upgrade to the BFG 9000, it does less direct hit damage, but far more tracer damage.
     * Balanced Mode: Uses 50 cells per shot (up from 25), meaning that you've got to commit to using this thing.
