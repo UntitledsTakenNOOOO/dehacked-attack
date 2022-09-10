@@ -75,7 +75,7 @@ actor MedikitReplacer : DEHDefenseWeaponSpawner replaces Medikit
     TNT1 A 0 A_DropItem("RayMohawkClassMedikit")
 	Stop
   Spawn1:
-    TNT1 A 0 A_SpawnItemEx("Medikit", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_SpawnItemEx("DEHMedikit", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
     Goto Death
   }
 }
