@@ -548,33 +548,61 @@ ACTOR NegativeOneUnmakyr : DoomWeapon
     Goto Ready
   AltHold:
     NBFG B 0 A_JumpIfInventory("NegativeOneUnmakyrCounter", 600, "AltHold3")
-    NBFG B 0 A_JumpIfInventory("NegativeOneUnmakyrCounter", 240, "AltHold2")
-    NBFG B 0 A_JumpIfInventory("NegativeOneUnmakyrCounter", 60, "AltHold1")
+    NBFG B 0 A_JumpIfInventory("NegativeOneUnmakyrCounter", 200, "AltHold2")
+    NBFG B 0 A_JumpIfInventory("NegativeOneUnmakyrCounter", 40, "AltHold1")
     NBFG B 0 A_GiveInventory("NegativeOneUnmakyrCounter", 1)
     NBFG B 0 A_GunFlash("AltFlash")
-    NBFG B 10 A_FireCustomMissile("UnmakyrPlasmaBall", 0, 1)
+    NBFG B 0 A_PlayWeaponSound("strain/plasmaf")
+    NBFG B 10 A_RailAttack(random(1,8)*10, 0, 1, None, "Red", RGF_SILENT|RGF_NOPIERCING|RGF_EXPLICITANGLE, 0, "UnmakerPlasmaPuff", 0, 0, 4096)
     NBFG B 0 A_ReFire("AltHold")
     Goto Ready
   AltHold1:
-    NBFG B 0 A_JumpIfInventory("NegativeOneUnmakyrCounter", 240, "AltHold2")
+    NBFG B 0 A_JumpIfInventory("NegativeOneUnmakyrCounter", 200, "AltHold2")
     NBFG B 0 A_GiveInventory("NegativeOneUnmakyrCounter", 1)
     NBFG B 0 A_GunFlash("AltFlash")
-    NBFG B 5 A_FireCustomMissile("UnmakyrPlasmaBall", 0, 1)
+    NBFG B 0 A_PlayWeaponSound("strain/plasmaf")
+    NBFG B 6 A_RailAttack(random(1,8)*10, 0, 1, None, "Red", RGF_SILENT|RGF_NOPIERCING|RGF_EXPLICITANGLE, 0, "UnmakerPlasmaPuff", 0, 0, 4096)
     NBFG B 0 A_ReFire("AltHold1")
     Goto Ready
   AltHold2:
     NBFG B 0 A_JumpIfInventory("NegativeOneUnmakyrCounter", 600, "AltHold3")
     NBFG B 0 A_GiveInventory("NegativeOneUnmakyrCounter", 2)
     NBFG B 0 A_GunFlash("AltFlash")
-    NBFG B 0 A_FireCustomMissile("UnmakyrPlasmaBall", 2, 1)
-    NBFG B 5 A_FireCustomMissile("UnmakyrPlasmaBall", -2, 1)
+    NBFG B 0 A_PlayWeaponSound("strain/plasmaf")
+    NBFG B 0 A_RailAttack(random(1,8)*10, 0, 1, None, "Red", RGF_SILENT|RGF_NOPIERCING|RGF_EXPLICITANGLE, 0, "UnmakerPlasmaPuff", -2, 0, 4096)
+    NBFG B 5 A_RailAttack(random(1,8)*10, 0, 1, None, "Red", RGF_SILENT|RGF_NOPIERCING|RGF_EXPLICITANGLE, 0, "UnmakerPlasmaPuff", 2, 0, 4096)
     NBFG B 0 A_ReFire("AltHold2")
     Goto Ready
   AltHold3:
     NBFG B 0 A_GunFlash("AltFlash")
-    NBFG B 0 A_FireCustomMissile("UnmakyrPlasmaBall", 0, 1)
-    NBFG B 0 A_FireCustomMissile("UnmakyrPlasmaBall", 5, 1)
-    NBFG B 5 A_FireCustomMissile("UnmakyrPlasmaBall", -5, 1)
+    NBFG B 0 A_PlayWeaponSound("strain/plasmaf")
+    NBFG B 0 A_RailAttack(random(1,8)*10, 0, 1, None, "Red", RGF_SILENT|RGF_NOPIERCING|RGF_EXPLICITANGLE, 0, "UnmakerPlasmaPuff", -3, 0, 4096)
+    NBFG B 0 A_RailAttack(random(1,8)*10, 0, 1, None, "Red", RGF_SILENT|RGF_NOPIERCING|RGF_EXPLICITANGLE, 0, "UnmakerPlasmaPuff", 3, 0, 4096)
+    NBFG B 5 A_RailAttack(random(1,8)*10, 0, 1, None, "Red", RGF_SILENT|RGF_NOPIERCING|RGF_EXPLICITANGLE, 0, "UnmakerPlasmaPuff", 0, 0, 4096)
+    NBFG B 0 A_ReFire("AltHold3A")
+    Goto Ready
+  AltHold3A:
+    NBFG B 0 A_GunFlash("AltFlash")
+    NBFG B 0 A_PlayWeaponSound("strain/plasmaf")
+    NBFG B 0 A_RailAttack(random(1,8)*10, 0, 1, None, "Red", RGF_SILENT|RGF_NOPIERCING|RGF_EXPLICITANGLE, 0, "UnmakerPlasmaPuff", -6, 0, 4096)
+    NBFG B 0 A_RailAttack(random(1,8)*10, 0, 1, None, "Red", RGF_SILENT|RGF_NOPIERCING|RGF_EXPLICITANGLE, 0, "UnmakerPlasmaPuff", 6, 0, 4096)
+    NBFG B 5 A_RailAttack(random(1,8)*10, 0, 1, None, "Red", RGF_SILENT|RGF_NOPIERCING|RGF_EXPLICITANGLE, 0, "UnmakerPlasmaPuff", 0, 0, 4096)
+    NBFG B 0 A_ReFire("AltHold3B")
+    Goto Ready
+  AltHold3B:
+    NBFG B 0 A_GunFlash("AltFlash")
+    NBFG B 0 A_PlayWeaponSound("strain/plasmaf")
+    NBFG B 0 A_RailAttack(random(1,8)*10, 0, 1, None, "Red", RGF_SILENT|RGF_NOPIERCING|RGF_EXPLICITANGLE, 0, "UnmakerPlasmaPuff", -9, 0, 4096)
+    NBFG B 0 A_RailAttack(random(1,8)*10, 0, 1, None, "Red", RGF_SILENT|RGF_NOPIERCING|RGF_EXPLICITANGLE, 0, "UnmakerPlasmaPuff", 9, 0, 4096)
+    NBFG B 5 A_RailAttack(random(1,8)*10, 0, 1, None, "Red", RGF_SILENT|RGF_NOPIERCING|RGF_EXPLICITANGLE, 0, "UnmakerPlasmaPuff", 0, 0, 4096)
+    NBFG B 0 A_ReFire("AltHold3C")
+    Goto Ready
+  AltHold3C:
+    NBFG B 0 A_GunFlash("AltFlash")
+    NBFG B 0 A_PlayWeaponSound("strain/plasmaf")
+    NBFG B 0 A_RailAttack(random(1,8)*10, 0, 1, None, "Red", RGF_SILENT|RGF_NOPIERCING|RGF_EXPLICITANGLE, 0, "UnmakerPlasmaPuff", -12, 0, 4096)
+    NBFG B 0 A_RailAttack(random(1,8)*10, 0, 1, None, "Red", RGF_SILENT|RGF_NOPIERCING|RGF_EXPLICITANGLE, 0, "UnmakerPlasmaPuff", 12, 0, 4096)
+    NBFG B 5 A_RailAttack(random(1,8)*10, 0, 1, None, "Red", RGF_SILENT|RGF_NOPIERCING|RGF_EXPLICITANGLE, 0, "UnmakerPlasmaPuff", 0, 0, 4096)
     NBFG B 0 A_ReFire("AltHold3")
     Goto Ready
   Flash:
@@ -616,16 +644,17 @@ ACTOR UnmakyrExtra : BFGExtra
     Stop
   }
 }
-ACTOR UnmakyrPlasmaBall : NFGPlasmaBall
+ACTOR UnmakerPlasmaPuff
 {
-  Damage 10
-  Obituary "%o was unmade by %k's Unmakyr."
+  +NOBLOCKMAP
+  +NOGRAVITY
+  +ALWAYSPUFF
+  RenderStyle add
+  Scale 0.5
+  Mass 5
   States
   {
   Spawn:
-    FFGS A 6 Bright
-    Loop
-  Death:
     FFGE ABCDE 4 Bright
     Stop
   }

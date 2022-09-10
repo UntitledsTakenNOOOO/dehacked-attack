@@ -205,7 +205,7 @@ ACTOR RowdyRudyRifle : DoomWeapon
     Goto LightDone
   BalancedFlash:
     RRRF A 1 Bright A_Light1
-    TNT1 A 1 Bright A_Light0
+    TNT1 A 0 Bright A_Light0
     RRRF A 1 Bright A_Light1
     Goto LightDone
   Spawn:
