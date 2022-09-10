@@ -40,3 +40,4 @@ server bool deh_enable_doomzero = true;
 server bool deh_enable_negativeone = true;
 server bool deh_enable_rowdyrudy = true;
 server bool deh_enable_raymohawk = true;
+server bool deh_enable_jamaljones = true;

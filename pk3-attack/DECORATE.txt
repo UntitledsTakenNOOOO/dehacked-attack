@@ -31,6 +31,7 @@ const int DEH_DOOMZERO = 30;
 const int DEH_NEGATIVEONE = -1; //I had to.
 const int DEH_ROWDYRUDY = 31;
 const int DEH_RAYMOHAWK = 32;
+const int DEH_JAMALJONES = 33;
 
 const int FINAL_ICONOFSIN = 1;
 const int FINAL_COUNTDOWN = 2;
@@ -181,199 +182,207 @@ ACTOR DEHSpiderMastermind : SpiderMastermind
 #include "decorate/negativeone.dec"
 #include "decorate/rowdyrudy.dec"
 #include "decorate/raymohawk.dec"
+#include "decorate/jamaljones.dec"
 
+//(Original first appearance map #, Tier-based first appearance map #, functional reskins are always 1, 1)
 ACTOR DehackedZombieSpawner : RandomSpawner replaces Zombieman
 {
-	DropItem "DEHZombieman", 256, 35
-	DropItem "RowdyZombieman", 256, 20
-	DropItem "FormerRanger", 256, 20
-	DropItem "RocketGuy", 256, 10
-	DropItem "SSGZombieMan", 256, 10
-	DropItem "RowdyPlasmaZombie", 256, 5
+	DropItem "DEHZombieman", 256, 35 //1, 1
+	DropItem "RowdyZombieman", 256, 20 //1, 5
+	DropItem "FormerRanger", 256, 20 //1, 9
+	DropItem "RocketGuy", 256, 10 //1, 13
+	DropItem "SSGZombieMan", 256, 10 //8, 17
+	DropItem "RowdyPlasmaZombie", 256, 5 //1, 21
 }
 
 ACTOR DehackedShotgunguySpawner : RandomSpawner replaces Shotgunguy
 {
-	DropItem "DEHShotgunguy", 256, 40
-	DropItem "RowdyShotgunguy", 256, 10
-	DropItem "PlasmaZombie", 256, 10
-	DropItem "StealthPlasmaAlien", 256, 10
-	DropItem "JenesisMutant", 256, 10
-	DropItem "StealthFighter", 256, 10
-	DropItem "FlamethrowerGuy", 256, 10
+	DropItem "DEHShotgunguy", 256, 40 //1, 1
+	DropItem "RowdyShotgunguy", 256, 10 //1, 5
+	DropItem "PlasmaZombie", 256, 10 //2, 8
+	DropItem "HazmatGuy", 256, 10 //1, 11
+	DropItem "StealthPlasmaAlien", 256, 10 //11, 14
+	DropItem "StealthFighter", 256, 10 //1, 18
+	DropItem "FlamethrowerGuy", 256, 10 //2, 21
 }
 
 ACTOR DehackedChaingunguySpawner : RandomSpawner replaces Chaingunguy
 {
-	DropItem "DEHChaingunguy", 256, 30
-	DropItem "SubvertedGuard", 256, 15
-	DropItem "RowdyChaingunguy", 256, 10
-	DropItem "SunglassesZombie", 256, 15
-	DropItem "PlasmaElite", 256, 10
-	DropItem "RevMissileGuy", 256, 10
-	DropItem "FormerCaptain", 256, 5
-	DropItem "Rocketman", 256, 5
+	DropItem "DEHChaingunguy", 256, 15 //1, 1
+	DropItem "SubvertedGuard", 256, 10 //1, 1
+	DropItem "RowdyChaingunguy", 256, 10 //1, 5
+	DropItem "SunglassesZombie", 256, 10 //1, 7
+	DropItem "NegativeOneZombieSoldier", 256, 10 //14, 9
+	DropItem "JenesisMutant", 256, 10 //20, 11
+	DropItem "JJPlasmaGuy", 256, 10 //2, 13
+	DropItem "RevMissileGuy", 256, 10 //2, 15
+	DropItem "PlasmaElite", 256, 5 //1, 17
+	DropItem "Rocketman", 256, 5 //2, 19
+	DropItem "FormerCaptain", 256, 5 //11, 21
 }
 
 ACTOR DehackedImpSpawner : RandomSpawner replaces DoomImp
 {
-	DropItem "DEHDoomImp", 256, 15
-	DropItem "NegativeImp", 256, 10
-	DropItem "HulaImp", 256, 10
-	DropItem "NightmareImp", 256, 10
-	DropItem "ValiantImp", 256, 10
-	DropItem "StrainFastImp", 256, 10
-	DropItem "SuperImp", 256, 10
-	DropItem "NegativeDarkImp", 256, 10
-	DropItem "SpiritImp", 256, 10
-	DropItem "PsychoImp", 256, 5
+	DropItem "DEHDoomImp", 256, 10 //1, 1
+	DropItem "NegativeImp", 256, 9 //1, 1
+	DropItem "HulaImp", 256, 9 //1, 1
+	DropItem "JJImp", 256, 9 //1, 1
+	DropItem "NightmareImp", 256, 9 //3, 3
+	DropItem "ValiantImp", 256, 9 //1, 5
+	DropItem "StrainFastImp", 256, 9 //3, 7
+	DropItem "SuperImp", 256, 9 //1, 9
+	DropItem "NegativeDarkImp", 256, 9 //3, 11
+	DropItem "SpiritImp", 256, 8 //10, 13
+	DropItem "PsychoImp", 256, 5 //1, 15
+	DropItem "AlienImp", 256, 5 //1, 17
 }
 
 ACTOR DehackedDemonSpawner : RandomSpawner replaces Demon
 {
-	DropItem "DEHDemon", 256, 40
-	DropItem "RowdyDemon", 256, 10
-	DropItem "AvactorDemon", 256, 10
-	DropItem "ValiantDemon", 256, 10
-	DropItem "SuicideBomber", 256, 10
-	DropItem "StrainDemon", 256, 10
-	DropItem "NightmareDemon", 256, 10
+	DropItem "DEHDemon", 256, 30 //1, 1
+	DropItem "RowdyDemon", 256, 10 //2, 4
+	DropItem "AvactorDemon", 256, 10 //5, 7
+	DropItem "ValiantDemon", 256, 10 //1, 10
+	DropItem "SuicideBomber", 256, 10 //14, 10
+	DropItem "BlindDemon", 256, 10 //2, 13
+	DropItem "StrainDemon", 256, 10 //2, 16
+	DropItem "NightmareDemon", 256, 10 //5, 19
 }
 
 ACTOR DehackedSpectreSpawner : RandomSpawner replaces Spectre
 {
-	DropItem "DEHSpectre", 256, 70
-	DropItem "ValiantSpectre", 256, 20
-	DropItem "NightmareSpectre", 256, 10
+	DropItem "DEHSpectre", 256, 70 //1, 1
+	DropItem "ValiantSpectre", 256, 20 //1, 10
+	DropItem "NightmareSpectre", 256, 10 //1, 19
 }
 
 ACTOR DehackedRevSpawner : RandomSpawner replaces Revenant
 {
-	DropItem "DEHRevenant", 256, 30
-	DropItem "Incarnate", 256, 15
-	DropItem "HellCleric", 256, 30
-	DropItem "RayMohawkSlyor", 256, 15
-	DropItem "MinisterOfHate", 256, 5
-	DropItem "ResurgenceEvilMarine", 256, 5
+	DropItem "DEHRevenant", 256, 30 //1, 1
+	DropItem "Incarnate", 256, 15 //1, 1
+	DropItem "HellCleric", 256, 30 //21, 7
+	DropItem "RayMohawkSlyor", 256, 15 //1, 12
+	DropItem "MinisterOfHate", 256, 5 //13, 16
+	DropItem "ResurgenceEvilMarine", 256, 5 //21, 21
 }
 
 ACTOR DehackedCacoSpawner : RandomSpawner replaces Cacodemon
 {
-	DropItem "DEHCacodemon", 256, 25
-	DropItem "Toxicacodemon", 256, 10
-	DropItem "Holobot", 256, 10
-	DropItem "SpectralCaco", 256, 10
-	DropItem "Cacodemoness", 256, 10
-	DropItem "Cacolich", 256, 8
-	DropItem "Slomnibus", 256, 7
-	DropItem "AlienGuardian", 256, 5
-	DropItem "NightmareCacodemon", 256, 5
-	DropItem "AstralCaco", 256, 5
-	DropItem "Afriest", 256, 5
+	DropItem "DEHCacodemon", 256, 25 //1, 1
+	DropItem "Toxicacodemon", 256, 10 //(2 or 1), 3
+	DropItem "Holobot", 256, 10 //6, 5
+	DropItem "SpectralCaco", 256, 10 //1, 7
+	DropItem "Cacodemoness", 256, 10 //10, 9
+	DropItem "Cacolich", 256, 8 //2, 11
+	DropItem "Slomnibus", 256, 7 //2, 13
+	DropItem "AlienGuardian", 256, 5 //11, 15
+	DropItem "NightmareCacodemon", 256, 5 //31, 17
+	DropItem "AstralCaco", 256, 5 //11, 19
+	DropItem "Afriest", 256, 5 //6, 21
 }
 
 ACTOR DehackedSoulSpawner : RandomSpawner replaces LostSoul
 {
-	DropItem "DEHLostSoul", 256, 18
-	DropItem "NegativeOneWicked", 256, 14
-	DropItem "Calfdemon", 256, 10
-	DropItem "Doppleganger", 256, 10
-	DropItem "WillOWisp", 256, 10
-	DropItem "DamnedSoul", 256, 10
-	DropItem "ValiantArachnorbSmaller", 256, 14
-	DropItem "AlphaSoul", 256, 14
+	DropItem "DEHLostSoul", 256, 18 //1, 1
+	DropItem "NegativeOneWicked", 256, 14 //3, 1
+	DropItem "Calfdemon", 256, 10 //11, 6
+	DropItem "Doppleganger", 256, 10 //4, 7
+	DropItem "WillOWisp", 256, 10 //2, 11
+	DropItem "DamnedSoul", 256, 10 //2, 12
+	DropItem "AlphaSoul", 256, 14 //21, 15
+	DropItem "ValiantArachnorbSmaller", 256, 14 //4, 16
 }
 
 ACTOR DehackedPainSpawner : RandomSpawner replaces PainElemental
 {
-	DropItem "DEHPainElemental", 256, 15
-	DropItem "FlameCaco", 256, 15
-	DropItem "InvisibleHolobot", 256, 15
-	DropItem "PoisonSoul", 256, 15
-	DropItem "SpiritElemental", 256, 15
-	DropItem "HellDragon", 256, 15
-	DropItem "NightwatchCacodemon", 256, 10
+	DropItem "DEHPainElemental", 256, 15 //1, 1
+	DropItem "FlameCaco", 256, 15 //(4 or 3), 3
+	DropItem "InvisibleHolobot", 256, 15 //11, 5
+	DropItem "PoisonSoul", 256, 15 //11, 9
+	DropItem "SpiritElemental", 256, 15 //10, 13
+	DropItem "HellDragon", 256, 15 //4, 17
+	DropItem "NightwatchCacodemon", 256, 10 //2, 21
 }
 
 ACTOR DehackedKnightSpawner : RandomSpawner replaces HellKnight
 {
-	DropItem "DEHHellKnight", 256, 50
-	DropItem "Satyr", 256, 20
-	DropItem "ValiantPyroDemon", 256, 12
-	DropItem "Antaresia", 256, 10
-	DropItem "ValiantCybruiser", 256, 8
+	DropItem "DEHHellKnight", 256, 50 //1, 1
+	DropItem "Satyr", 256, 20 //2, 6
+	DropItem "ValiantPyroDemon", 256, 12 //9, 11
+	DropItem "Antaresia", 256, 10 //2, 16
+	DropItem "ValiantCybruiser", 256, 8 //15, 21
 }
 
 ACTOR DehackedBaronSpawner : RandomSpawner replaces BaronOfHell
 {
-	DropItem "DEHBaronOfHell", 256, 40
-	DropItem "RedBaron", 256, 12
-	DropItem "CyberBaron", 256, 12
-	DropItem "Belphegor", 256, 10
-	DropItem "LordOfHeresy", 256, 10
-	DropItem "EviternityAnnihilator", 256, 8
-	DropItem "StrainDemonLord", 256, 8
+	DropItem "DEHBaronOfHell", 256, 40 //1, 1
+	DropItem "RedBaron", 256, 12 //6, 6
+	DropItem "CyberBaron", 256, 12 //1, 7
+	DropItem "Belphegor", 256, 10 //7, 11
+	DropItem "LordOfHeresy", 256, 10 //2, 12
+	DropItem "EviternityAnnihilator", 256, 8 //10, 20
+	DropItem "StrainDemonLord", 256, 8 //15, 21
 }
 
 ACTOR DehackedFatsoSpawner : RandomSpawner replaces Fatso
 {
-	DropItem "DEHFatso", 256, 40
-	DropItem "AlienFatso", 256, 20
-	DropItem "FatsoII", 256, 20
-	DropItem "GreaterMancubus", 256, 10
-	DropItem "ValiantSuperMancubus", 256, 10
+	DropItem "DEHFatso", 256, 40 //1, 1
+	DropItem "AlienFatso", 256, 20 //1, 1
+	DropItem "FatsoII", 256, 20 //7, 7
+	DropItem "GreaterMancubus", 256, 10 //1, 12
+	DropItem "ValiantSuperMancubus", 256, 10 //19, 21
 }
 
 ACTOR DehackedArachSpawner : RandomSpawner replaces Arachnotron
 {
-	DropItem "DEHArachnotron", 256, 16
-	DropItem "AlienArachnotron", 256, 12
-	DropItem "ValiantArachnotron", 256, 12
-	DropItem "EviternityArachnotron", 256, 10
-	DropItem "PlasmaTank", 256, 10
-	DropItem "ReliquaryArachnotron", 256, 10
-	DropItem "AntaresianArachnotron", 256, 10
-	DropItem "ArachnoGunner", 256, 10
-	DropItem "ArachnoRocketeer", 256, 10
+	DropItem "DEHArachnotron", 256, 16 //1, 1
+	DropItem "AlienArachnotron", 256, 12 //1, 1
+	DropItem "ValiantArachnotron", 256, 12 //4, 8
+	DropItem "PlasmaTank", 256, 10 //3, 4
+	DropItem "EviternityArachnotron", 256, 10 //4, 2
+	DropItem "ReliquaryArachnotron", 256, 10 //1, 15
+	DropItem "AntaresianArachnotron", 256, 10 //2, 16
+	DropItem "MiniMastermind", 256, 10 //3, 20
+	DropItem "ArachnoRocketeer", 256, 10 //15, 21
 }
 
 ACTOR DehackedArchSpawner : RandomSpawner replaces Archvile
 {
-	DropItem "DEHArchvile", 256, 70
-	DropItem "Hierophant1", 256, 10
-	DropItem "EvilMarine", 256, 10
-	DropItem "AntaresiaElite", 256, 10
+	DropItem "DEHArchvile", 256, 70 //1, 1
+	DropItem "Hierophant1", 256, 10 //30, 16
+	DropItem "EvilMarine", 256, 10 //16, 16
+	DropItem "AntaresiaElite", 256, 10 //24, 16
 }
 
 ACTOR DehackedCyberSpawner : RandomSpawner replaces Cyberdemon
 {
-	DropItem "DEHCyberdemon", 256, 10
-	DropItem "Haymaker", 256, 10
-	DropItem "Afrit", 256, 10
-	DropItem "DarkCyberdemon", 256, 10
-	DropItem "Leviathan", 256, 10
-	DropItem "RayMohawkCyberdemon", 256, 10
-	DropItem "VivreHeresiarch", 256, 10
-	DropItem "RemnantCardinal", 256, 10
-	DropItem "Hierophant2", 256, 5
-	DropItem "GridlockCardinal", 256, 5
-	DropItem "HellSmith", 256, 5
-	DropItem "Motherdemon", 256, 5
+	DropItem "DEHCyberdemon", 256, 10 //1, 1
+	DropItem "Haymaker", 256, 10 //7, 1
+	DropItem "Afrit", 256, 10 //(21, 21, 26, 15), 3
+	DropItem "DarkCyberdemon", 256, 10 //11, 5
+	DropItem "Leviathan", 256, 10 //19, 7
+	DropItem "RayMohawkCyberdemon", 256, 10 //6, 9
+	DropItem "VivreHeresiarch", 256, 10 //2, 11
+	DropItem "RemnantCardinal", 256, 10 //1, 13
+	DropItem "Hierophant2", 256, 5 //30, 15
+	DropItem "GridlockCardinal", 256, 5 //30, 17
+	DropItem "HellSmith", 256, 5 //30, 19
+	DropItem "Motherdemon", 256, 5 //30, 21
 }
 
 ACTOR DehackedSpiderSpawner : RandomSpawner replaces SpiderMastermind
 {
-	DropItem "DEHSpiderMastermind", 256, 10
-	DropItem "HiveMother", 256, 10
-	DropItem "FlyingMastermind", 256, 10
-	DropItem "AvactorBrain", 256, 10
-	DropItem "IndomitableMastermind", 256, 10
-	DropItem "SpectralLeviathan", 256, 10
-	DropItem "WarlordOfHell", 256, 10
-	DropItem "GateMaster", 256, 10
-	DropItem "RemnantMaster", 256, 10
-	DropItem "AngryMastermind", 256, 5
-	DropItem "ValiantSuperVile", 256, 5
+	DropItem "DEHSpiderMastermind", 256, 10 //1, 1
+	DropItem "HiveMother", 256, 10 //18, 3
+	DropItem "FlyingMastermind", 256, 10 //9, 5
+	DropItem "AvactorBrain", 256, 10 //5, 7
+	DropItem "IndomitableMastermind", 256, 10 //11, 9
+	DropItem "SpectralLeviathan", 256, 10 //20, 11
+	DropItem "WarlordOfHell", 256, 10 //18, 13
+	DropItem "GateMaster", 256, 10 //5, 15
+	DropItem "RemnantMaster", 256, 10 //1, 17
+	DropItem "AngryMastermind", 256, 5 //29, 19
+	DropItem "ValiantSuperVile", 256, 5 //30, 21
 }
 
 //////////////////

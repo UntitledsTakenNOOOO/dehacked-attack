@@ -11,7 +11,7 @@ ACTOR NightwatchCacodemon : DEHCacodemon
   {
   Spawn:
     H180 A 0
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_180_MINUTES_POUR_VIVRE, 9, 21), "Reset")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_180_MINUTES_POUR_VIVRE, 2, 21), "Reset")
     Goto Idle
   Reset:
     TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)

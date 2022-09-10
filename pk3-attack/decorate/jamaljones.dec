@@ -1,0 +1,263 @@
+Actor JJImp : DoomImp
+{
+  Translation 1
+  SeeSound "alienimp/sight"
+  DeathSound "alienimp/death"
+  ActiveSound "alienimp/active"
+  States
+  {
+  Spawn:
+    JJTR A 0
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_JAMALJONES, 1, 1), "Reset")
+    Goto Idle
+  Reset:
+    TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+    TNT1 A 0 A_SpawnItemEx("DEHDoomImp", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+    Stop
+  Idle:
+    JJTR AB 10 A_Look
+    Loop
+  See:
+    JJTR AABBCCDD 3 A_Chase
+    Loop
+  Melee:
+  Missile:
+    JJTR E 8 A_FaceTarget
+    JJTR F 7 A_FaceTarget
+    JJTR G 6 A_CustomComboAttack("HulaImpBall", 32, 3 * random(1, 8), "imp/melee")
+    Goto See
+  Pain:
+    JJTR H 2
+    JJTR H 2 A_Pain
+    Goto See
+  Death:
+    JJTR I 8
+    JJTR J 8 A_Scream
+    JJTR K 6
+    JJTR L 6 A_NoBlocking
+    JJTR M -1
+    Stop
+  XDeath:
+    JJTR N 5
+    JJTR O 5 A_XScream
+    JJTR P 5
+    JJTR Q 5 A_NoBlocking
+    JJTR RST 5
+    JJTR U -1
+    Stop
+  Raise:
+    JJTR ML 8
+    JJTR KJI 6
+    Goto See
+  }
+}
+
+Actor BlindDemon : Demon
+{
+	Tag "Blind Demon"
+	States
+	{
+	Spawn:
+		BPWA A 0
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_JAMALJONES, 2, 16), "Reset")
+		Goto Idle
+	Reset:
+		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		TNT1 A 0 A_SpawnItemEx("DEHDemon", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+		Stop
+	Idle:
+		BPWA AB 10 A_Look
+		Goto See
+	See:
+		BPWA A 2 Fast A_Chase
+		BPWA A 1 A_Chase
+		BPWA B 2 Fast A_Chase
+		BPWA B 1 A_Chase
+		BPWA C 2 Fast A_Chase
+		BPWA C 1 A_Chase
+		BPWA D 2 Fast A_Chase
+		BPWA D 1 A_Chase
+		goto See
+	Pain:
+		BPWA H 2 Fast
+		BPWA H 2 Fast A_Pain
+		goto See
+	Melee:
+		BPWA E 7 Fast A_FaceTarget
+		BPWA F 8 Fast A_FaceTarget
+		BPWA G 6 Fast A_SargAttack
+		goto See
+	Death:
+		BPWA I 8
+		BPWA J 8 A_Scream
+		BPWA K 4
+		BPWA L 4 A_NoBlocking
+		BPWA M 4
+		BPWA N -1
+		Stop
+	Raise:
+		BPWA NMLKJI 5
+		goto See
+	}
+}
+
+Actor JJPlasmaGuy : Zombieman
+{
+	+DOHARMSPECIES
+	Health 90
+	Tag "Plasma Zombie"
+	States
+	{
+	Spawn:
+		BAS2 A 0
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_JAMALJONES, 2, 13), "Reset")
+		Goto Idle
+	Reset:
+		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		TNT1 A 0 A_SpawnItemEx("DEHChaingunguy", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+		Stop
+	Idle:
+		BAS2 AB 10 A_Look
+		goto Spawn
+	See:
+		BAS2 AABBCCDD 3 A_Chase
+		goto See
+	Pain:
+		BAS2 G 2
+		BAS2 G 2 A_Pain
+		goto See
+	Melee:
+	Missile:
+		BAS2 E 15 A_FaceTarget
+		BAS2 F 5 Bright A_BspiAttack
+		BAS2 E 3 A_CPosRefire
+		goto Melee
+	Death:
+		BAS2 H 8
+		BAS2 I 8 A_Scream
+		BAS2 J 8
+		BAS2 K 8 A_Fall
+		BAS2 LL 8
+		BAS2 L -1 A_Fall
+		stop
+	Raise:
+		BAS2 LKJIH 8
+		BAS2 G 8
+		goto See
+	}
+}
+
+Actor HazmatGuy : Zombieman
+{
+	Health 50
+	DeathSound "hazmatguy/death"
+	Tag "Hazmat Zombie"
+	States
+	{
+	Spawn:
+		SSMR A 0
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_JAMALJONES, 1, 11), "Reset")
+		Goto Idle
+	Reset:
+		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		TNT1 A 0 A_SpawnItemEx("DEHShotgunguy", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+		Stop
+	Idle:
+		SSMR AB 10 A_Look
+		Loop
+	See:
+		SSMR AABBCCDD 3 A_Chase
+		Loop
+	Pain:
+		SSMR G 3
+		SSMR G 3 A_Pain
+		goto See
+	Missile:
+		SSMR E 10 A_FaceTarget
+		SSMR E 10 A_FaceTarget
+		SSMR F 4 Bright A_CPosAttack
+		SSMR E 6 A_FaceTarget
+		SSMR F 4 Bright A_CPosAttack
+		SSMR E 1 A_CPosRefire
+		goto Missile+1
+	Death:
+		SSMR H 5
+		SSMR I 5 A_Scream
+		SSMR J 5 A_Fall
+		SSMR K 5
+		SSMR L -1
+		stop
+	XDeath:
+		SSMR M 5
+		SSMR N 5 A_XScream
+		SSMR O 5 A_Fall
+		SSMR PQRST 5
+		SSMR U -1
+		stop
+	Raise:
+		SSMR LKJIH 5
+		goto See
+	}
+}
+
+Actor AlienImp : DoomImp
+{
+	Health 130
+	Speed 12
+	SeeSound "alienimp/sight"
+	PainSound "imp/pain"
+	DeathSound "alienimp/death"
+	ActiveSound "alienimp/active"
+	Tag "Alien Imp"
+	States
+	{
+	Spawn:
+		JJTR A 0
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_JAMALJONES, 1, 17), "Reset")
+		Goto Idle
+	Reset:
+		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		TNT1 A 0 A_SpawnItemEx("DoomImp", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+		Stop
+	Idle:
+		JJTR AB 10 A_Look
+		goto Spawn
+	See:
+		JJTR AABBCCDD 3 A_Chase
+		goto See
+	Pain:
+		JJTR H 2
+		JJTR H 2 A_Pain
+		goto See
+	Melee:
+		JJTR E 8 A_FaceTarget
+		JJTR F 7 A_FaceTarget
+		JJTR G 6 A_CustomComboAttack("HulaImpBall", 32, 3 * random(1, 8), "imp/melee")
+		goto See
+	Missile:
+		JJTR E 7 A_FaceTarget
+		JJTR F 6 A_FaceTarget
+		JJTR G 5 A_BruisAttack
+		JJTR E 8 A_FaceTarget
+		JJTR F 7 A_FaceTarget
+		JJTR G 6 A_CustomComboAttack("HulaImpBall", 32, 3 * random(1, 8), "imp/melee")
+		goto See
+	Death:
+		JJTR I 8
+		JJTR J 8 A_Scream
+		JJTR K 6
+		JJTR L 6 A_Fall
+		JJTR M -1
+	XDeath:
+		JJTR N 5
+		JJTR O 5 A_XScream
+		JJTR P 5
+		JJTR Q 5 A_Fall
+		JJTR RST 5
+		JJTR U -1
+	Raise:
+		JJTR ML 8 
+		JJTR KJI 6 
+		goto See
+	}
+}

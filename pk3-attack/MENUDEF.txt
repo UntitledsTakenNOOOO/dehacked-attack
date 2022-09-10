@@ -111,6 +111,7 @@ OptionMenu "DehackedAttackOptions"
 	Option "DOOM -1:", "deh_enable_negativeone", "DehackedMonsterSelection"
 	Option "Rowdy Rudy II:", "deh_enable_rowdyrudy", "DehackedMonsterSelection"
 	Option "Ray Mohawk II:", "deh_enable_raymohawk", "DehackedMonsterSelection"
+	Option "Jamal Jones:", "deh_enable_jamaljones", "DehackedMonsterSelection"
 	StaticText ""
 	StaticText "Dehacked Monster Level Scaling", 1
 	StaticText "If enabled, more powerful monsters don't spawn in early maps."

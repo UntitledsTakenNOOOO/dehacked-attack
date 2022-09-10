@@ -179,6 +179,10 @@ wicked/charge		NGSKLATK
 helldragon/see		NGHDSIT
 helldragon/pain		NGHDPAIN
 helldragon/death	NGHDDTH
+negativeone/shotgf	NGSHOTGN
+negativeone/unused	NGSKLDTH
+negativeone/ss/sit	NGSSSIT
+negativeone/ss/death	NGSSDTH
 
 psychoimp/death		IMPYDTH
 
@@ -186,3 +190,14 @@ slyor/sight			SLYORSIT
 slyor/active		SLYORACT
 slyor/death			SLYORPAI
 slyor/death			SLYORDTH
+
+$random alienimp/sight		{ alienimp/sight1  alienimp/sight2 }
+$random alienimp/death		{ alienimp/death1  alienimp/death2 }
+alienimp/sight1			jjbgsit1
+alienimp/sight2			jjbgsit2
+alienimp/active			jjbgact
+alienimp/death1			jjbgdth1
+alienimp/death2			jjbgdth2
+$limit alienimp/active 6
+
+hazmatguy/death			jjssdth

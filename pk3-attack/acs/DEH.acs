@@ -34,6 +34,7 @@
 #define DEH_NEGATIVEONE -1 //I had to.
 #define DEH_ROWDYRUDY 31
 #define DEH_RAYMOHAWK 32
+#define DEH_JAMALJONES 33
 
 Script "Dehacked_MonsterReset" (int mapset, int origLevel, int tierLevel, int bossSpecial)
 {
@@ -141,6 +142,9 @@ Script "Dehacked_MonsterReset" (int mapset, int origLevel, int tierLevel, int bo
 		break;
 	case DEH_RAYMOHAWK:
 		keep_spawn = GetCVar("deh_enable_raymohawk");
+		break;
+	case DEH_JAMALJONES:
+		keep_spawn = GetCVar("deh_enable_jamaljones");
 		break;
 	}
 	

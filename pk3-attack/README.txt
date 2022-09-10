@@ -47,8 +47,8 @@ SCYTHE X (Erik Alm, 2009):
 * Shadow Spirit: The aforementioned spiritual creatures summoned by the Shadow Imp. They do not spawn naturally.
 
 JENESIS (Jimmy, 2011):
-* Mutant Gateway Technician: Possessing a whole 90 HP, these are rather durable variants of the shotgunner.
-	* Change: Drops a shotgun (it drops only a clip in the original Jenesis) to maintain consistency with it's weapon of choice.
+* Mutant Gateway Technician: Possessing a whole 90 HP, these are rather durable variants of the shotgunner. Spawns with chaingunners.
+	* Change: Drops a shotgun (it drops only a clip in the original Jenesis) to maintain consistency with its weapon of choice.
 
 LUNATIC (skillsaw, 2011):
 * Plasma Zombie: A Zombie that can fire arachnotron plasma in bursts of three. Spawns with shotgunners.
@@ -143,8 +143,9 @@ ANTARESIAN RELIQUARY (antares, 2020):
 * Reliquary Arachnotron: A variant of the arachnotron that uses the energy bolts used by the former ranger and plasma elite.
 
 DOOM -1 (Community Project, 2020):
-* Doom -1 Imp: Another imp variant with a visually distinct fireball.
+* Imp: A functionally identical imp variant with a visually distinct fireball.
 * Dark Imp: A stronger, translucent, 100 HP variant of the previous imp.
+* Zombie Soldier: A gunman that spawns with chaingunners. Fires slower, but has 80 HP.
 * Wicked: A lost soul that has only 20 HP, and self-destructs when in melee range or when killed. Have fun!
 * Hell Dragon: A 500 HP flying dragon monster that spawns with Pain Elementals, and fires slews of baron balls.
 * Rocket Turret: A Stationary Turret that fires rockets. Only appears as an Icon of Sin (or other final boss) summon.
@@ -165,6 +166,14 @@ RAY MOHAWK 2 (Doomkid, 2021):
 * Hula Imp: An imp with a more tropical outfit. Statistically identical to the normal imp.
 * Sunglasses Zombie: A weaker and less deadly chaingunner that spawns with the rest but only drops a clip.
 * Slyor: An addition to the revenant spot, this monster shoots a volley of flames and fireballs that you should be wary of.
+
+JAMAL JONES (Doomkid, 2022):
+* Imp: Another nearly functionally identical but visually distinct imp variant.
+* Hazmat Zombie: A gunman, similar to the sunglasses zombie up above. Spawns with shotgunners for balance reasons.
+* Plasma Zombie: A 90-HP zombie with a plasma rifle. Spawns with chaingunners.
+* Blind Demon: Despite its supposed 'blindness', this monster can still see, and in fact, moves faster than the normal pinky demon.
+* Alien Imp: A green imp that attacks with imp fireballs and baron fireballs, making it much deadlier.
+* The Toxicacodemon and Flame Cacodemon are shared with Rowdy Rudy 2 - these will appear if either monster set is enabled.
 
 BOSSES:
 * Afrit (Scythe II, Deus Vult II, Survive in Hell, Resurgence): Its volley of fireballs is deadly; you're toast if you get too close. It has 2500 HP and can fly.
@@ -216,4 +225,4 @@ FINAL BOSSES (enabled by CVar and then selected in place of Icon of Sin):
 * Archangelus (Eviternity): Descending from the realm opposite Hell, this guy is insane. One might wish for good luck; but truth be told, it won't save you.
 * Leviathan [Final Boss Form] (Struggle: Antaresian Legacy): With 10000 health, and summoned with many other monster-spawning statue, this guy's tough.
 * The Inquisitor (Struggle: Antaresian Legacy): This guy will unleash an absolute firestorm whenever you're in his line of sight, and spawns with a swarm of Afriests.
-* Baphomet [Final Boss Form] (DOOM -1): Spawning with a much larger army before appearing on the battlefield himself, this guy's not trivial to take out.
+* Baphomet (DOOM -1): Spawning with his personal army before appearing on the battlefield himself, this guy's not trivial to take out.
