@@ -131,6 +131,10 @@ Actor NegativeOneWicked : DEHLostSoul
   See:
     NGSK AB 6 Bright A_Chase
     Loop
+  Pain:
+    NGSK E 3 Bright
+    NGSK E 3 Bright A_Pain
+    Goto See
   Missile:
     NGSK C 10 Bright A_FaceTarget
     NGSK D 4 Bright A_SkullAttack

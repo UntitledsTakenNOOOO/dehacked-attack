@@ -343,7 +343,7 @@ ACTOR LordOfHeresy : DEHBaronOfHell
         LOHS EF 8 A_FaceTarget
         LOHS G 1 A_BruisAttack
         LOHS G 7 A_FatAttack3("BaronBall")
-        Loop
+        Goto See
     Melee:
     Missile:
         TNT1 A 0 A_JumpIfInventory("LDLegendaryMonsterTransformed", 1, "LegendaryMissile")

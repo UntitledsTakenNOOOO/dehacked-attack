@@ -617,7 +617,7 @@ Actor RowdyRudyFlamethrowerShot : CacodemonBall
 	}
 }
 
-Actor MiniMastermind : Arachnotron
+Actor MiniMastermind : DEHArachnotron
 {
 	SeeSound "spider/sight"
 	PainSound "spider/pain"

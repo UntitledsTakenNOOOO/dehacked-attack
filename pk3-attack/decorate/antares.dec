@@ -193,6 +193,8 @@ Actor AntaresiaElite : Antaresia
 		ANTR F 12 Bright A_FaceTarget
 		ANTR FFFF 1 Bright A_CustomMissile("AntaresianPlasma",32,0,0)
 		goto See
+	Raise: //Not in the archvile slot.
+		Stop
 	}
 }
 

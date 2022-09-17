@@ -1,4 +1,4 @@
-Actor JJImp : DoomImp
+Actor JJImp : DEHDoomImp
 {
   Translation 1
   SeeSound "alienimp/sight"
@@ -52,9 +52,10 @@ Actor JJImp : DoomImp
   }
 }
 
-Actor BlindDemon : Demon
+Actor BlindDemon : DEHDemon
 {
 	Tag "Blind Demon"
+	Obituary "%o was bit by a blind demon."
 	States
 	{
 	Spawn:
@@ -101,11 +102,13 @@ Actor BlindDemon : Demon
 	}
 }
 
-Actor JJPlasmaGuy : Zombieman
+Actor JJPlasmaGuy : DEHZombieman
 {
 	+DOHARMSPECIES
 	Health 90
 	Tag "Plasma Zombie"
+	DropItem "Cell"
+	Obituary "%o was fried by a plasma guy."
 	States
 	{
 	Spawn:
@@ -147,11 +150,13 @@ Actor JJPlasmaGuy : Zombieman
 	}
 }
 
-Actor HazmatGuy : Zombieman
+Actor HazmatGuy : DEHZombieman
 {
 	Health 50
 	DeathSound "hazmatguy/death"
 	Tag "Hazmat Zombie"
+	DropItem "Clip"
+	Obituary "%o met a hazmat zombie."
 	States
 	{
 	Spawn:
@@ -200,7 +205,7 @@ Actor HazmatGuy : Zombieman
 	}
 }
 
-Actor AlienImp : DoomImp
+Actor AlienImp : DEHDoomImp
 {
 	Health 130
 	Speed 12
@@ -209,6 +214,7 @@ Actor AlienImp : DoomImp
 	DeathSound "alienimp/death"
 	ActiveSound "alienimp/active"
 	Tag "Alien Imp"
+	Obituary "%o was burned by an alien imp."
 	States
 	{
 	Spawn:
