@@ -26,8 +26,6 @@ SCIMITAR (Cycloid, 2006):
 * Calfdemon: A white baby cacodemon with 100 hit points, spawning with the lost soul.
 * Cacodemoness: A green cacodemon variant emitting green fireballs.
 * Mancubus II: A mancubus with a slightly different attack pattern.
-* Arachnogunner: An arachnotron with green eyes that uses a spiderdemon-like attack, though it fires slower.
-	* Change: Has more firing frames, so it animates better.
 * Arachnorocketeer: An arachnotron with red eyes that fires rockets, though it does not fire them on repeat.
 * Red baron: A baron of Hell that throws faster and more deadly red fireballs.
 	* Change: Red fireballs are much brighter for visibility reasons; you should always be able to see these guys.
@@ -47,8 +45,8 @@ SCYTHE X (Erik Alm, 2009):
 * Shadow Spirit: The aforementioned spiritual creatures summoned by the Shadow Imp. They do not spawn naturally.
 
 JENESIS (Jimmy, 2011):
-* Mutant Gateway Technician: Possessing a whole 90 HP, these are rather durable variants of the shotgunner.
-	* Change: Drops a shotgun (it drops only a clip in the original Jenesis) to maintain consistency with it's weapon of choice.
+* Mutant Gateway Technician: Possessing a whole 90 HP, these are rather durable variants of the shotgunner. Spawns with chaingunners.
+	* Change: Drops a shotgun (it drops only a clip in the original Jenesis) to maintain consistency with its weapon of choice.
 
 LUNATIC (skillsaw, 2011):
 * Plasma Zombie: A Zombie that can fire arachnotron plasma in bursts of three. Spawns with shotgunners.
@@ -88,6 +86,7 @@ VALIANT (skillsaw, 2015):
 
 ANCIENT ALIENS (skillaw et al, 2016):
 * Stealth Plasma Alien: A 30 HP alien (actually a zombie) with an alien plasma rifle that is nearly invisible until it becomes active. Spawns with shotgunners.
+	* Change: Drops a cell for consistency reasons.
 * Alien Guardian: A flying construct that fires salvos of revenant missiles, and even self destructs upon death. Spawns with cacodemons.
 	* Change: HP raised from 100 to 200.
 * Alien Mancubus: A re-skin of the mancubus with a unique look.
@@ -128,6 +127,7 @@ STRUGGLE: ANTARESIAN LEGACY (antares, 2018):
 
 EVITERNITY (Dragonfly, 2018):
 * Former Captain: These nasty zombies shoot out yellow energy bolts in volleys of five. Spawns with chaingunners.
+	* Change: Drops a cell for consistency reasons.
 * Nightmare Demon: These guys are faster than the ordinary pinky demon and have 300 HP.
 * Astral Cacodemon: These guys unleash a pair of mancubi fireballs in addition to their cacodemon fireball.
 * Eviternity Arachnotron: A variant of the arachnotron that uses the energy bolts used by the former captain.
@@ -138,13 +138,15 @@ DOOM ZERO (Christopher Golden, 2019):
 
 ANTARESIAN RELIQUARY (antares, 2020):
 * Former Ranger: Possessing an energy blaster instead of a rifle, these guys are a bit scarier than the ordinary zombie that they spawn with.
+	* Change: Drops a cell for consistency reasons.
 * Plasma Elite: A variant of the former captain up above; these guys shoot blue energy bolts in volleys of three instead, and spawn with the chaingunner.
 	* Change: Uses a blue color scheme more remniscent of Struggle, to make it visually distinct from the Former Captain.
 * Reliquary Arachnotron: A variant of the arachnotron that uses the energy bolts used by the former ranger and plasma elite.
 
 DOOM -1 (Community Project, 2020):
-* Doom -1 Imp: Another imp variant with a visually distinct fireball.
+* Imp: A functionally identical imp variant with a visually distinct fireball.
 * Dark Imp: A stronger, translucent, 100 HP variant of the previous imp.
+* Zombie Soldier: A gunman that spawns with chaingunners. Fires slower, but has 80 HP.
 * Wicked: A lost soul that has only 20 HP, and self-destructs when in melee range or when killed. Have fun!
 * Hell Dragon: A 500 HP flying dragon monster that spawns with Pain Elementals, and fires slews of baron balls.
 * Rocket Turret: A Stationary Turret that fires rockets. Only appears as an Icon of Sin (or other final boss) summon.
@@ -154,17 +156,30 @@ ROWDY RUDY 2 (Doomkid, 2020):
 * Rowdy Shotgunner: Same deal as the previous two. Has 60 HP.
 * Rowdy Chaingunner: An 80-HP version of the chaingunner that moves slightly slower.
 * Rowdy Plasma Guy: Has 60 HP and a plasma rifle, but it's less damaging than the other plasma zombies. Spawns with zombiemen rarely.
+	* Change: Drops a cell for consistency reasons.
 * Flamethrower Guy: With 80 HP, this guy is a menace in close quarters. Spawns with shotgunners.
+	* Change: Drops a single rocket, in reference to Ray Mohawk's rocket launcher being a flamethrower.
 * Rocketman: A stronger Revenant Missile Zombie that spawns with chaingunners. Has 120 HP.
+	* Change: Drops a single rocket.
 * Psycho Imp: With 150 HP and a stronger attack, be careful around these very strong imp variants. Rarely spawns.
 * Blood Demon: A 180 HP variant of the demon.
 * Toxicacodemon: A toxic cacodemon that fires green baron fireballs. Still only has 400 HP.
 * Flame Cacodemon: A bright cacodemon variant with a MUCH stronger attack and 600 HP that spawns with Pain Elementals.
+* Mini-Mastermind: A smaller mastermind with 500 HP, using a single chaingung which it drops. Spawns with arachnotrons.
 
 RAY MOHAWK 2 (Doomkid, 2021):
 * Hula Imp: An imp with a more tropical outfit. Statistically identical to the normal imp.
 * Sunglasses Zombie: A weaker and less deadly chaingunner that spawns with the rest but only drops a clip.
 * Slyor: An addition to the revenant spot, this monster shoots a volley of flames and fireballs that you should be wary of.
+
+JAMAL JONES (Doomkid, 2022):
+* Imp: Another nearly functionally identical but visually distinct imp variant.
+* Hazmat Zombie: A gunman, similar to the sunglasses zombie up above. Spawns with shotgunners for balance reasons.
+* Plasma Zombie: A 90-HP zombie with a plasma rifle. Spawns with chaingunners.
+	* Change: Drops a cell for consistency reasons.
+* Blind Demon: Despite its supposed 'blindness', this monster can still see, and in fact, moves faster than the normal pinky demon.
+* Alien Imp: A green imp that attacks with imp fireballs and baron fireballs, making it much deadlier.
+* The Toxicacodemon and Flame Cacodemon are shared with Rowdy Rudy 2 - these will appear if either monster set is enabled.
 
 BOSSES:
 * Afrit (Scythe II, Deus Vult II, Survive in Hell, Resurgence): Its volley of fireballs is deadly; you're toast if you get too close. It has 2500 HP and can fly.
@@ -216,24 +231,28 @@ FINAL BOSSES (enabled by CVar and then selected in place of Icon of Sin):
 * Archangelus (Eviternity): Descending from the realm opposite Hell, this guy is insane. One might wish for good luck; but truth be told, it won't save you.
 * Leviathan [Final Boss Form] (Struggle: Antaresian Legacy): With 10000 health, and summoned with many other monster-spawning statue, this guy's tough.
 * The Inquisitor (Struggle: Antaresian Legacy): This guy will unleash an absolute firestorm whenever you're in his line of sight, and spawns with a swarm of Afriests.
-* Baphomet [Final Boss Form] (DOOM -1): Spawning with a much larger army before appearing on the battlefield himself, this guy's not trivial to take out.
+* Baphomet (DOOM -1): Spawning with his personal army before appearing on the battlefield himself, this guy's not trivial to take out.
 
 CURRENTLY INCLUDED WEAPONS:
 
 DOOM BETA:
 * PLASMA RIFLE: Using alt-fire on the Plasma Rifle while playing vanilla Doomguy will spew alternating green and red projectiles.
 * BFG 9000: If playing Vanilla Doomguy, the Beta BFG 9000, the 'Christmas gun', can be used by pressing alt-fire on the BFG 9000.
+	* If balanced mode is turned off, this weapon becomes significantly more powerful and also much sillier.
 
 STRAIN (Alpha Dog Alliance, 1997):
 * DOUBLE FIST: Punches twice. Not much else to say here.
 * SAWED-OFF: A variant of the shotgun that fires ever-so-slightly faster.
 * NFG: Sharing the plasma slot, this powerful weapon does 140% more damage than the plasma rifle (5 base damage to 12), but uses NFG Batteries for ammo.
 	* Change: Maximum Ammo doubled from 50/100 to 100/200, and pickups are upped from 3/15 to 6/30.
+	* If balanced mode is turned off, this weapon uses only one ammo per two shots, at the expense of doing slightly less damage.
 * PSYCHIC BLASTER: Uses three rockets a shot to fire partially invisible projectiles with insane direct hit damage.
+	* If balanced mode is turned off, this weapon becomes significantly more explosive.
 
 DEUS VULT II (Huy Pham, 2008):
 * DUAL PISTOLS: Having much more stopping power than the singular pistol, this weapon can actually be useful sometimes.
 * SAURON'S GAUNTLET: At sufficiently close range, you are now emperor palpatine. Almost any singular target too close to these will get shredded very quickly.
+	* If balanced mode is turned off, this weapon becomes powered up, like in Heretic - meaning that, yes, it drains life.
 
 VALIANT (skillsaw, 2015):
 * SUPER PISTOL: Fires significantly faster than the normal pistol.
@@ -265,6 +284,7 @@ ANTARESIAN RELIQUARY (antares, 2020):
 * FIST: The Antaresian Reliquary marine can punch much harder than the ordinary marine.
 * CHAINSAW: slashes at a slightly increased speed compared to the vanilla chainsaw, but it's not as significant as other changes.
 * MACHINEGUN: Rather than start with a pistol, the Antaresian Reliquary marine starts with a fairly useful machine gun.
+    * Balanced Mode: No longer is the weapon perfectly accurate. It still fires absurdly fast for a pistol, however.
 * SHOTGUN: Fires ever so slightly faster, compared to the ordinary doom shotgun.
 * SUPER SHOTGUN: Autoloading shells means you can speedload this wonderful weapon even faster.
 * ROCKET LAUNCHER: Overall slightly buffed compared to the normal rocket launcher.
@@ -279,40 +299,47 @@ DOOM -1 (Community Project, 2020):
 * SUPER SHOTGUN: And similarily, despite the new look, it's still the same old reliable SSG.
 * UZI: The replacement for the chaingun, this weapon fires faster, matching pace with Struggle's Dual Pistols.
 * ROCKET LAUNCHER: Same as the normal version, with a new look suited for Doom -1.
-* HELLSTAFF: A variant of the plasma rifle that fires slower but with projectiles that do slightly more damage and occasionally home in on enemies.
+* DARK SCEPTRE: A variant of the plasma rifle that fires slower but with projectiles that do slightly more damage and occasionally home in on enemies.
+	* If balanced mode is turned off, this weapon fires faster.
+	* If balanced mode is turned off, it also gains a VERY powerful altfire under specific circumstances. It feels a little...heretical?
 * UNMAKYR: Despite the new look, it's functionally identical to the BFG 9000. It's still a very powerful weapon, however.
+	* Turning balanced mode off enables Altfire. Though, really, what the $%^& is this?
 
 ROWDY RUDY 2 (Doomkid, 2020):
 * FISTS: Rowdy Rudy's close quarters combat training enables him to punch faster and with better damage.
 * DOUBLE-BLADED CHAINSAW: This is obviously only meant for killing, and does so with twice the efficiency of the normal chainsaw.
 * RIFLE: It's perfectly accurate, and fires faster than the normal pistol, giving it a strong presence as Rudy's starting weapon.
 	* Change: Rowdy Rudy 2 doubles bullet ammo pickups (20/100 instead of 10/50), but for balance reasons it's kept at 10/50 here.
+    * Balanced Mode: Works identically to Rowdy Rudy 1, meaning it fires in bursts in two, but fires much slower.
+    * If balanced mode is turned off, it magically only uses one bullet per two shots to emulate doubled pickup sizes.
 * AUTOMATIC SHOTGUN: This weapon shreds demons far ahead of the relative competition, owing to a faster automatic reloading system.
 * CHAINGUN: Rowdy Rudy's chaingun is made from a darker metal, and fires faster, matching pace with DOOM -1's Uzi.
+    * If balanced mode is turned off, it magically only uses one bullet per two shots.
 * SUPER SHOTGUN: While Rowdy Rudy can reload the weapon faster than usual, ultimately this is just a return to the old reliable SSG.
-    * Balanced Mode: Rowdy Rudy cannot load the weapon that much faster than usual.
+    * Balanced Mode: Rowdy Rudy cannot load the weapon faster than usual.
 * ROCKET LAUNCHER: Putting the 'Rowdy' in Rowdy Rudy, this weapon fires faster than the ordinary Rocket Launcher.
     * Balanced Mode: Fires at the same rate as the normal rocket launcher, but with the new sprites.
 * BFG 9000: It's yellow now, and it's...basically identical to the standard BFG 9000. Sometimes, you can't beat the original.
+	* If balanced mode is turned off, it gets some additional tracers, in accordance with rowdy2.txt's description.
 
 RAY MOHAWK 1/2 (Doomkid, 2021):
 * KNIFE: Faster and dealing massive damage relative to the ordinary fist, Ray Mohawk came to town prepared for a fight.
 * GAUNTLETS?: No one's quite sure how these got here, but these things fire twice as fast as the chainsaw.
-	* Balanced Mode: No, actually only twice as fast.
+	* Balanced Mode: No, actually only twice as fast instead of four times as fast.
 * PISTOL: Ray Mohawk's pistol isn't really a pistol at all, but is instead a more compact shotgun, firing seven pellets per shot.
-	* Balanced mode: it fires only three pellets and it's less accurate. Sorry, but this is a starting weapon, and a literal shotgun is too much power to have.
+	* Balanced mode: Only fires 3 pellets instead of 7. Sorry, but this is a starting weapon, and a literal shotgun is too much power to have.
 * SHOTGUN: Fires 20 pellets for 2 shells, meaning that in effect this is really the Super Shotgun.
-	* Balanced Mode: 7 pellets, 1 shell. Not in the ordinary Shotgun slot, kiddo.
+	* Balanced Mode: Fires an ordinary shotgun blast. Not getting the SSG in the normal Shotgun slot, kiddo.
 * AUTOMATIC SHOTGUN: Rapidly empties shells into enemies to destroy them.
-	* Balanced Mode: 7 pellets, 1 shell, because a Super Shotgun with a pistol's fire rate is way too much.
+	* Balanced Mode: Again, 7 pellets, 1 shell, because a Super Shotgun with a pistol's fire rate is too much, but the ASG is fairly unique in its own right.
 * BLASTER: Borrowed from the Spider Mastermind except with the playerside buff, this thing sprays lead at an unfathomable rate in the direction you point in.
-	* Balanced Mode: Back to only 3 pellets and it's much less accurate. You're still the mastermind now!
+	* Balanced Mode: It's only 3 bullets per shot instead of 7, alongside a massive accuracy decrease. You're still the mastermind now, just more literally.
 * FLAMETHROWER: Ray doesn't use a conventional rocket launcher, and in its place is a flamethrower that's closer to the plasma rifle with a distinct ammo type.
-	* Change: Fuel pickups are 10/50 instead of 20/100 like in Ray Mohawk 2.
+	* Change: Fuel pickups are 10/50 instead of 20/100 like they are in Ray Mohawk 2.
 	* Change: Moved from Slot 6 to Slot 5 for ammo consistency reasons.
-    * Balanced Mode: Base damage reduced from 15 to 8. Still stronger than the plasma rifle, but not by nearly as much.
+    * Balanced Mode: Base damage reduced from 15 to 7. Still stronger than the plasma rifle, but not by nearly as much.
 * CELL CANNON: Ray's explosive weapon. Awkwardly placed in the plasma slot but cell ammo comes in bigger packages, meaning he can get more value out of them.
 	* Change: Moved from Slot 5 to Slot 6 for ammo consistency reasons.
-	* Balanced Mode: Uses 5 cells (up from 1) because effectively infinite rockets is a bit much.
+	* Balanced Mode: Uses 5 cells (up from 1) because effectively infinite rockets is a bit much, and it does less damage.
 * BFG 9002: An upgrade to the BFG 9000, it does less direct hit damage, but far more tracer damage.
     * Balanced Mode: Uses 50 cells per shot (up from 25), meaning that you've got to commit to using this thing.
