@@ -214,7 +214,7 @@ Actor RayMohawkSlyor
 		SLY2 I 8
 		SLY2 J 8 A_Scream
 		SLY2 K 6
-		SLY2 L 6 A_Fall
+		SLY2 L 6 A_NoBlocking
 		SLY2 MN 6
 		SLY2 O -1
 		stop

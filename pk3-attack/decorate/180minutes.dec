@@ -7,6 +7,7 @@ ACTOR NightwatchCacodemon : DEHCacodemon
   SeeSound "nightcaco/sight"
   Obituary "%o was ignited by a nightwatch cacodemon."
   HitObituary "%o became the nightwatch cacodemon's snack."
+  Tag "Nightwatch Cacodemon"
   States
   {
   Spawn:
@@ -77,6 +78,7 @@ ACTOR VivreHeresiarch
   DeathSound "heresiarch/death"
   ActiveSound "heresiarch/active"
   Obituary "%o was smashed by a Heresiarch."
+  Tag "Heresiarch"
   DamageFactor "Heroic", 3.0
   States
   {

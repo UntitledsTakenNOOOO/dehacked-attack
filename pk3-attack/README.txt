@@ -26,8 +26,6 @@ SCIMITAR (Cycloid, 2006):
 * Calfdemon: A white baby cacodemon with 100 hit points, spawning with the lost soul.
 * Cacodemoness: A green cacodemon variant emitting green fireballs.
 * Mancubus II: A mancubus with a slightly different attack pattern.
-* Arachnogunner: An arachnotron with green eyes that uses a spiderdemon-like attack, though it fires slower.
-	* Change: Has more firing frames, so it animates better.
 * Arachnorocketeer: An arachnotron with red eyes that fires rockets, though it does not fire them on repeat.
 * Red baron: A baron of Hell that throws faster and more deadly red fireballs.
 	* Change: Red fireballs are much brighter for visibility reasons; you should always be able to see these guys.
@@ -88,6 +86,7 @@ VALIANT (skillsaw, 2015):
 
 ANCIENT ALIENS (skillaw et al, 2016):
 * Stealth Plasma Alien: A 30 HP alien (actually a zombie) with an alien plasma rifle that is nearly invisible until it becomes active. Spawns with shotgunners.
+	* Change: Drops a cell for consistency reasons.
 * Alien Guardian: A flying construct that fires salvos of revenant missiles, and even self destructs upon death. Spawns with cacodemons.
 	* Change: HP raised from 100 to 200.
 * Alien Mancubus: A re-skin of the mancubus with a unique look.
@@ -128,6 +127,7 @@ STRUGGLE: ANTARESIAN LEGACY (antares, 2018):
 
 EVITERNITY (Dragonfly, 2018):
 * Former Captain: These nasty zombies shoot out yellow energy bolts in volleys of five. Spawns with chaingunners.
+	* Change: Drops a cell for consistency reasons.
 * Nightmare Demon: These guys are faster than the ordinary pinky demon and have 300 HP.
 * Astral Cacodemon: These guys unleash a pair of mancubi fireballs in addition to their cacodemon fireball.
 * Eviternity Arachnotron: A variant of the arachnotron that uses the energy bolts used by the former captain.
@@ -138,6 +138,7 @@ DOOM ZERO (Christopher Golden, 2019):
 
 ANTARESIAN RELIQUARY (antares, 2020):
 * Former Ranger: Possessing an energy blaster instead of a rifle, these guys are a bit scarier than the ordinary zombie that they spawn with.
+	* Change: Drops a cell for consistency reasons.
 * Plasma Elite: A variant of the former captain up above; these guys shoot blue energy bolts in volleys of three instead, and spawn with the chaingunner.
 	* Change: Uses a blue color scheme more remniscent of Struggle, to make it visually distinct from the Former Captain.
 * Reliquary Arachnotron: A variant of the arachnotron that uses the energy bolts used by the former ranger and plasma elite.
@@ -155,12 +156,16 @@ ROWDY RUDY 2 (Doomkid, 2020):
 * Rowdy Shotgunner: Same deal as the previous two. Has 60 HP.
 * Rowdy Chaingunner: An 80-HP version of the chaingunner that moves slightly slower.
 * Rowdy Plasma Guy: Has 60 HP and a plasma rifle, but it's less damaging than the other plasma zombies. Spawns with zombiemen rarely.
+	* Change: Drops a cell for consistency reasons.
 * Flamethrower Guy: With 80 HP, this guy is a menace in close quarters. Spawns with shotgunners.
+	* Change: Drops a single rocket, in reference to Ray Mohawk's rocket launcher being a flamethrower.
 * Rocketman: A stronger Revenant Missile Zombie that spawns with chaingunners. Has 120 HP.
+	* Change: Drops a single rocket.
 * Psycho Imp: With 150 HP and a stronger attack, be careful around these very strong imp variants. Rarely spawns.
 * Blood Demon: A 180 HP variant of the demon.
 * Toxicacodemon: A toxic cacodemon that fires green baron fireballs. Still only has 400 HP.
 * Flame Cacodemon: A bright cacodemon variant with a MUCH stronger attack and 600 HP that spawns with Pain Elementals.
+* Mini-Mastermind: A smaller mastermind with 500 HP, using a single chaingung which it drops. Spawns with arachnotrons.
 
 RAY MOHAWK 2 (Doomkid, 2021):
 * Hula Imp: An imp with a more tropical outfit. Statistically identical to the normal imp.
@@ -171,6 +176,7 @@ JAMAL JONES (Doomkid, 2022):
 * Imp: Another nearly functionally identical but visually distinct imp variant.
 * Hazmat Zombie: A gunman, similar to the sunglasses zombie up above. Spawns with shotgunners for balance reasons.
 * Plasma Zombie: A 90-HP zombie with a plasma rifle. Spawns with chaingunners.
+	* Change: Drops a cell for consistency reasons.
 * Blind Demon: Despite its supposed 'blindness', this monster can still see, and in fact, moves faster than the normal pinky demon.
 * Alien Imp: A green imp that attacks with imp fireballs and baron fireballs, making it much deadlier.
 * The Toxicacodemon and Flame Cacodemon are shared with Rowdy Rudy 2 - these will appear if either monster set is enabled.

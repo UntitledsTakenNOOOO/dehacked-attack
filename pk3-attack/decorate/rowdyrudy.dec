@@ -178,14 +178,14 @@ Actor RowdyPlasmaZombie : DEHZombieman
 	Death:
 		SOSS H 5
 		SOSS I 5 A_Scream
-		SOSS J 5 A_Fall
+		SOSS J 5 A_NoBlocking
 		SOSS K 5
 		SOSS L -1
 		stop
 	XDeath:
 		SOSS M 5
 		SOSS N 5 A_XScream
-		SOSS O 5 A_Fall
+		SOSS O 5 A_NoBlocking
 		SOSS PQRST 5
 		SOSS U -1
 		stop
@@ -258,6 +258,7 @@ Actor Rocketman
 	Height 56
 	PainChance 150
 	Mass 150
+	Speed 8
 	Translation 2
 	SeeSound "grunt/sight"
 	PainSound "grunt/pain"
@@ -296,7 +297,7 @@ Actor Rocketman
 		RMAN H 8 
 		RMAN I 8 A_Scream
 		RMAN J 8 
-		RMAN K 8 A_Fall
+		RMAN K 8 A_NoBlocking
 		RMAN LM 8 
 		RMAN N -1 
 		stop
@@ -351,9 +352,9 @@ Actor FlyingMastermind : DEHSpiderMastermind
 		goto Missile+1
 	Death:
 		APYT E 20 A_Scream
-		APYT F 10 Bright A_Fall
-		APYT GHIJ 8 Bright 
-		APYT J 1 A_BossDeath
+		APYT F 10 Bright A_NoBlocking
+		APYT GHIJ 8 Bright
+		TNT1 A -1 A_BossDeath
 		stop
 	}
 }
@@ -407,7 +408,7 @@ Actor PsychoImp : DEHDoomImp
 		TROO N 5
 		TROO O 5 A_XScream
 		TROO P 5
-		TROO Q 5 A_Fall
+		TROO Q 5 A_NoBlocking
 		TROO RST 5
 		TROO U -1
 		stop
@@ -466,7 +467,7 @@ Actor FlameCaco : DEHPainElemental
 		RHED G 8
 		RHED H 8 A_Scream
 		RHED IJ 8
-		RHED K 8 A_Fall
+		RHED K 8 A_NoBlocking
 		RHED L -1 
 		stop
 	Raise:
@@ -511,14 +512,14 @@ Actor RowdyChaingunguy : DEHChaingunguy
 	Death:
 		PCMD H 5
 		PCMD I 5 A_Scream
-		PCMD J 5 A_Fall
+		PCMD J 5 A_NoBlocking
 		PCMD KLM 5
 		PCMD N -1
 		stop
 	XDeath:
 		PCMD O 5
 		PCMD P 5 A_XScream
-		PCMD Q 5 A_Fall
+		PCMD Q 5 A_NoBlocking
 		PCMD RS 5
 		PCMD T -1
 		stop
@@ -540,7 +541,6 @@ Actor FlamethrowerGuy : DEHZombieman
 	DeathSound "grunt/death"
 	ActiveSound "grunt/active"
 	DropItem "RocketAmmo"
-	DropItem "Cell"
 	Obituary "%o was toasted by a flamethrower soldier."
 	DamageFactor "Exorcist", 3.0
 	DamageFactor "Extinguishing", 2.0
@@ -579,14 +579,14 @@ Actor FlamethrowerGuy : DEHZombieman
 	Death:
 		FLMN I 5 
 		FLMN J 5 A_Scream
-		FLMN K 5 A_Fall
+		FLMN K 5 A_NoBlocking
 		FLMN L 5 
 		FLMN M -1 
 		stop
 	XDeath:
 		ZPOS M 5 
 		ZPOS N 5 A_XScream
-		ZPOS O 5 A_Fall
+		ZPOS O 5 A_NoBlocking
 		ZPOS PQRS 5 
 		ZPOS U -1 
 		stop

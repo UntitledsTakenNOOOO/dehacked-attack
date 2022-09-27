@@ -313,7 +313,7 @@ ACTOR RowdyRudyPlasmaBall : PlasmaBall
     APLS AB 5 Bright
     Loop
   Death:
-    APLX ABCDE 5 Bright
+    APBX ABCDE 5 Bright
     Stop
   }
 }

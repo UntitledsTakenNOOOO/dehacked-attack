@@ -14,8 +14,7 @@ ACTOR JenesisMutant
   DeathSound "chainguy/death"
   ActiveSound "chainguy/active"
   Obituary "%o was shot by a mutant gateway technician."
-  DropItem "Clip"
-  DropItem "Shotgun" //Change: Drops shotgun as well to be more consistent
+  DropItem "Shotgun" //Change: Drops shotgun to be more consistent
   Tag "Mutant Gateway Technician"
   DamageFactor "Exorcist", 3.0
   States

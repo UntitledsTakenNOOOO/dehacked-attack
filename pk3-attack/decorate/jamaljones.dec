@@ -139,9 +139,9 @@ Actor JJPlasmaGuy : DEHZombieman
 		BAS2 H 8
 		BAS2 I 8 A_Scream
 		BAS2 J 8
-		BAS2 K 8 A_Fall
+		BAS2 K 8 A_NoBlocking
 		BAS2 LL 8
-		BAS2 L -1 A_Fall
+		BAS2 L -1
 		stop
 	Raise:
 		BAS2 LKJIH 8
@@ -195,7 +195,7 @@ Actor HazmatGuy : DEHZombieman
 	XDeath:
 		SSMR M 5
 		SSMR N 5 A_XScream
-		SSMR O 5 A_Fall
+		SSMR O 5 A_NoBlocking
 		SSMR PQRST 5
 		SSMR U -1
 		stop
@@ -252,7 +252,7 @@ Actor AlienImp : DEHDoomImp
 		JJTR I 8
 		JJTR J 8 A_Scream
 		JJTR K 6
-		JJTR L 6 A_Fall
+		JJTR L 6 A_NoBlocking
 		JJTR M -1
 	XDeath:
 		JJTR N 5
