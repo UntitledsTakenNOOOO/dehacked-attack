@@ -45,7 +45,7 @@ ACTOR DEHPistol : Pistol
     PISG A 1
     PISG B 0 A_FireBullets(0, 0, 1, 5, "BulletPuff")
     PISG B 0 A_PlaySound("weapons/pistol", CHAN_WEAPON)
-    PISG B 3 A_GunFlash
+    PISG B 3 A_GunFlash("Flash1")
     PISG CB 3
     Goto Ready
   FireDV2:
@@ -66,6 +66,9 @@ ACTOR DEHPistol : Pistol
     Goto Ready
   Flash:
     PISF A 7 Bright A_Light1
+    Goto LightDone
+  Flash1:
+    PISF A 4 Bright A_Light1
     Goto LightDone
   Flash2:
     PISF A 6 Bright A_Light1

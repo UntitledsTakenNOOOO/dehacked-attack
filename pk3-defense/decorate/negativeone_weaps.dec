@@ -510,7 +510,7 @@ ACTOR NegativeOneUnmakyrCounter : Inventory
 {
 	-INVENTORY.INVBAR
 	Inventory.Amount 1
-	Inventory.MaxAmount 600
+	Inventory.MaxAmount 3
 }
 ACTOR NegativeOneUnmakyr : DoomWeapon
 {
@@ -547,26 +547,23 @@ ACTOR NegativeOneUnmakyr : DoomWeapon
     NBFG A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BalancedMode") == 0, "AltHold")
     Goto Ready
   AltHold:
-    NBFG B 0 A_JumpIfInventory("NegativeOneUnmakyrCounter", 600, "AltHold3")
-    NBFG B 0 A_JumpIfInventory("NegativeOneUnmakyrCounter", 200, "AltHold2")
-    NBFG B 0 A_JumpIfInventory("NegativeOneUnmakyrCounter", 40, "AltHold1")
-    NBFG B 0 A_GiveInventory("NegativeOneUnmakyrCounter", 1)
+    NBFG B 0 A_JumpIfInventory("NegativeOneUnmakyrCounter", 3, "AltHold3")
+    NBFG B 0 A_JumpIfInventory("NegativeOneUnmakyrCounter", 2, "AltHold2")
+    NBFG B 0 A_JumpIfInventory("NegativeOneUnmakyrCounter", 1, "AltHold1")
     NBFG B 0 A_GunFlash("AltFlash")
     NBFG B 0 A_PlayWeaponSound("strain/plasmaf")
     NBFG B 10 A_RailAttack(random(1,8)*10, 0, 1, None, "Red", RGF_SILENT|RGF_NOPIERCING|RGF_EXPLICITANGLE, 0, "UnmakerPlasmaPuff", 0, 0, 4096)
     NBFG B 0 A_ReFire("AltHold")
     Goto Ready
   AltHold1:
-    NBFG B 0 A_JumpIfInventory("NegativeOneUnmakyrCounter", 200, "AltHold2")
-    NBFG B 0 A_GiveInventory("NegativeOneUnmakyrCounter", 1)
+    NBFG B 0 A_JumpIfInventory("NegativeOneUnmakyrCounter", 2, "AltHold2")
     NBFG B 0 A_GunFlash("AltFlash")
     NBFG B 0 A_PlayWeaponSound("strain/plasmaf")
     NBFG B 6 A_RailAttack(random(1,8)*10, 0, 1, None, "Red", RGF_SILENT|RGF_NOPIERCING|RGF_EXPLICITANGLE, 0, "UnmakerPlasmaPuff", 0, 0, 4096)
     NBFG B 0 A_ReFire("AltHold1")
     Goto Ready
   AltHold2:
-    NBFG B 0 A_JumpIfInventory("NegativeOneUnmakyrCounter", 600, "AltHold3")
-    NBFG B 0 A_GiveInventory("NegativeOneUnmakyrCounter", 2)
+    NBFG B 0 A_JumpIfInventory("NegativeOneUnmakyrCounter", 3, "AltHold3")
     NBFG B 0 A_GunFlash("AltFlash")
     NBFG B 0 A_PlayWeaponSound("strain/plasmaf")
     NBFG B 0 A_RailAttack(random(1,8)*10, 0, 1, None, "Red", RGF_SILENT|RGF_NOPIERCING|RGF_EXPLICITANGLE, 0, "UnmakerPlasmaPuff", -2, 0, 4096)

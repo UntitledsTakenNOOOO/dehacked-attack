@@ -2338,16 +2338,93 @@ Actor NegativeOneBFG9000Giver : DehackedWeaponGiver
     NBFU A -1 Bright
     Stop
   Pickup:
-    TNT1 A 0 A_JumpIfInventory("NegativeOneUnmakyr", 1, "AmmoCheck")
+    TNT1 A 0 A_JumpIfInventory("NegativeOneUnmakyr", 1, "DemonKeyCheck")
     Goto PickupSuccess
+  DemonKeyCheck:
+    TNT1 A 0 A_JumpIfInventory("NegativeOneUnmakyrCounter", 3, "AmmoCheck")
+	Goto GiveDemonKey
   AmmoCheck:
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
     TNT1 A 0 A_JumpIfInventory("Cell", 0, "PickupFail")
     Goto PickupSuccess
   PickupSuccess:
     TNT1 A 0 A_SpawnItemEx("NegativeOneUnmakyr", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "GiveDemonKeys")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_DemonKeyFinalCheck"), "GiveAllDemonKeys")
     Stop
+  GiveDemonKey:
+	TNT1 A 0 A_PlaySound("misc/w_pkup", CHAN_WEAPON)
+	TNT1 A 0 A_PlaySound("misc/p_pkup", CHAN_ITEM)
+	TNT1 A 0 A_GiveInventory("Cell", 40)
+	TNT1 A 0 A_GiveInventory("NegativeOneUnmakyrCounter", 1)
+	TNT1 A 0 A_JumpIfInventory("NegativeOneUnmakyrCounter", 3, "DemonKeyMessage3")
+	TNT1 A 0 A_JumpIfInventory("NegativeOneUnmakyrCounter", 2, "DemonKeyMessage2")
+	TNT1 A 0 A_JumpIfInventory("NegativeOneUnmakyrCounter", 1, "DemonKeyMessage1")
+	Stop
+  GiveAllDemonKeys:
+	TNT1 A 0 A_GiveInventory("NegativeOneUnmakyrCounter", 3)
+	TNT1 A 0 A_Log("What the $%^& is this?")
+	Stop
+  DemonKeyMessage1:
+	TNT1 A 0 A_Log("You have a feeling that it wasn't to be touched...")
+	Stop
+  DemonKeyMessage2:
+	TNT1 A 0 A_Log("Whatever it is, it doesn't belong in this world...")
+	Stop
+  DemonKeyMessage3:
+	TNT1 A 0 A_Log("It must do something...")
+	Stop
+  GiveDemonKeys:
+	TNT1 A 0 A_GiveInventory("NegativeOneUnmakyrCounter", 3)
+	Goto PickupFail
+  PickupFail:
+    NBFU A 1
+    Fail
+  }
+}
+//Hack to make "Demon Keys" work because I don't have a better idea
+Actor NegativeOneUnmakyrFake : DehackedWeaponGiver 
+{
+  States
+  {
+  Spawn:
+    NBFU A -1 Bright
+    Stop
+  Pickup:
+    TNT1 A 0 A_JumpIfInventory("NegativeOneUnmakyr", 1, "DemonKeyCheck")
+    Goto PickupSuccess
+  DemonKeyCheck:
+    TNT1 A 0 A_JumpIfInventory("NegativeOneUnmakyrCounter", 3, "AmmoCheck")
+	Goto GiveDemonKey
+  AmmoCheck:
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "PickupFail")
+    TNT1 A 0 A_JumpIfInventory("Cell", 0, "PickupFail")
+    Goto PickupSuccess
+  PickupSuccess:
+    TNT1 A 0 A_SpawnItemEx("NegativeOneUnmakyr", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_WeaponStay"), "GiveDemonKeys")
+    Stop
+  GiveDemonKey:
+	TNT1 A 0 A_PlaySound("misc/w_pkup", CHAN_WEAPON)
+	TNT1 A 0 A_PlaySound("misc/p_pkup", CHAN_ITEM)
+	TNT1 A 0 A_GiveInventory("Cell", 40)
+	TNT1 A 0 A_GiveInventory("NegativeOneUnmakyrCounter", 1)
+	TNT1 A 0 A_JumpIfInventory("NegativeOneUnmakyrCounter", 3, "DemonKeyMessage3")
+	TNT1 A 0 A_JumpIfInventory("NegativeOneUnmakyrCounter", 2, "DemonKeyMessage2")
+	TNT1 A 0 A_JumpIfInventory("NegativeOneUnmakyrCounter", 1, "DemonKeyMessage1")
+	Stop
+  DemonKeyMessage1:
+	TNT1 A 0 A_Log("You have a feeling that it wasn't to be touched...")
+	Stop
+  DemonKeyMessage2:
+	TNT1 A 0 A_Log("Whatever it is, it doesn't belong in this world...")
+	Stop
+  DemonKeyMessage3:
+	TNT1 A 0 A_Log("It must do something...")
+	Stop
+  GiveDemonKeys:
+	TNT1 A 0 A_GiveInventory("NegativeOneUnmakyrCounter", 3)
+	Goto PickupFail
   PickupFail:
     NBFU A 1
     Fail

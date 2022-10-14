@@ -44,7 +44,7 @@ int DehackedDefenseWeapons[DEH_NUM_CLASSES][7] =
 	//Antaresian Reliquary
 	{"ReliquaryChainsaw", "ReliquaryShotgun", "ReliquarySuperShotgun", "ReliquaryChaingun", "ReliquaryRocketLauncher", "ReliquaryPlasmaRifle", "ReliquaryBFG9000"},
 	//Negative One
-	{"NegativeOneGauntlets", "NegativeOneShotgun", "NegativeOneSuperShotgun", "NegativeOneUzi", "NegativeOneRocketLauncher", "NegativeOneDarkSceptre", "NegativeOneUnmakyr"},
+	{"NegativeOneGauntlets", "NegativeOneShotgun", "NegativeOneSuperShotgun", "NegativeOneUzi", "NegativeOneRocketLauncher", "NegativeOneDarkSceptre", "NegativeOneUnmakyrFake"},
 	//Rowdy Rudy
 	{"RowdyRudyChainsaw", "RowdyRudyShotgun", "RowdyRudySuperShotgun", "RowdyRudyChaingun", "RowdyRudyRocketLauncher", "DEHPlasmaRifle", "RowdyRudyBFG9000"},
 	//Ray Mohawk
@@ -241,32 +241,6 @@ Script "Dehacked_BackpackHandler" (void)
 	GiveInventory("RayMohawkFuel", 10);
 }
 
-Script "Dehacked_MapNumber" (void)
-{
-	int x = GetLevelInfo(LEVELINFO_LEVELNUM);
-	SetResultValue(x);
-}
-Script "Dehacked_RandomizerCheck" (void)
-{
-	int x = GetCVar("deh_def_randomizer");
-	SetResultValue(x);
-}
-Script "Dehacked_LevelScaling" (void)
-{
-	int x = GetCVar("deh_def_level_scaling");
-	SetResultValue(x);
-}
-Script "Dehacked_PistolCheck" (void)
-{
-	int x = GetCVar("deh_def_spawn_pistols");
-	SetResultValue(x);
-}
-Script "Dehacked_WeaponStay" (void)
-{
-	int x = GetCVar("sv_weaponstay");
-	SetResultValue(x);
-}
-
 Script "Dehacked_WeaponReset" (int mapset, int tierLevel)
 {
 	bool keep_spawn = TRUE;
@@ -326,19 +300,67 @@ Script "Dehacked_WeaponSpawn" (int class, int slot)
 	SetActorProperty(573, APROP_Dropped, FALSE);
 }
 
+Script "Dehacked_MapNumber" (void)
+{
+	int x = GetLevelInfo(LEVELINFO_LEVELNUM);
+	SetResultValue(x);
+}
+Script "Dehacked_RandomizerCheck" (void)
+{
+	int x = GetCVar("deh_def_randomizer");
+	SetResultValue(x);
+}
+Script "Dehacked_LevelScaling" (void)
+{
+	int x = GetCVar("deh_def_level_scaling");
+	SetResultValue(x);
+}
+Script "Dehacked_PistolCheck" (void)
+{
+	int x = GetCVar("deh_def_spawn_pistols");
+	SetResultValue(x);
+}
+Script "Dehacked_WeaponStay" (void)
+{
+	int x = GetCVar("sv_weaponstay");
+	SetResultValue(x);
+}
 Script "Dehacked_BalancedMode" (void)
 {
-	if(GetCVar("deh_def_balanace_weaps"))
-	{
-		SetResultValue(1);
-	} else {
-		SetResultValue(0);
-	}
+	int x = GetCVar("deh_def_balanace_weaps");
+	SetResultValue(x);
 }
-
 Script "Dehacked_MergeAmmoCheck" (void)
 {
-	if(GetCVar("deh_def_merge_ammo"))
+	int x = GetCVar("deh_def_merge_ammo");
+	SetResultValue(x);
+}
+
+Script "Dehacked_DemonKeyFinalCheck" (void)
+{
+	bool GiveKeys = FALSE;
+
+	int a = ThingCountName("DEHGridlockCardinalSpawner", 0);
+	int b = ThingCountName("DEHArchangelusSpawner", 0);
+	int c = ThingCountName("DEHTheInquisitorSpawner", 0);
+	int d = ThingCountName("DEHBubbleShipSpawner", 0);
+	int check = a + b + c + d;
+	if(check > 0)
+	{
+		GiveKeys = TRUE;
+	}
+	
+	a = ThingCountName("BossEye", 0);
+	b = ThingCountName("DEHBossEye", 0);
+	c = ThingCountName("DEHFinalBossSpawner", 0);
+	d = ThingCountName("Robot_BossEye", 0); //Rampancy Compatibility
+	check = a + b + c + d;
+	if(check >= 4)
+	{
+		GiveKeys = TRUE;
+	}
+	
+	if(GiveKeys)
 	{
 		SetResultValue(1);
 	} else {
