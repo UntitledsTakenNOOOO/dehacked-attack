@@ -3,7 +3,6 @@ Actor RowdyZombieMan : DEHZombieMan
 	Health 40
 	Speed 6
 	Translation 1
-	Obituary "%o was shot down by a soldier."
 	States
 	{
 	Spawn:
@@ -54,7 +53,6 @@ Actor RowdyShotgunGuy : DEHShotgunGuy
 {
   Health 60
   Translation 2
-  Obituary "%o was blasted by a sergeant."
   States
   {
   Spawn:
@@ -324,7 +322,7 @@ Actor FlyingMastermind : DEHSpiderMastermind
 	{
 	Spawn:
 		APYT A 0
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_ROWDYRUDY, 9, 5), "Reset")
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_ROWDYRUDY, 9, 6), "Reset")
 		Goto Idle
 	Reset:
 		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
@@ -341,9 +339,6 @@ Actor FlyingMastermind : DEHSpiderMastermind
 	Pain:
 		APYT B 3 Bright 
 		APYT A 3 Bright A_Pain
-		APYT A 1 Bright A_FireCrackle
-		APYT A 3 Bright A_Chase
-		APYT BB 2 Bright A_Chase
 		goto See
 	Missile:
 		APYT A 20 Bright A_FaceTarget
@@ -629,7 +624,7 @@ Actor MiniMastermind : DEHArachnotron
 	{
 	Spawn:
 		MINS A 0
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_ROWDYRUDY, 3, 20, 1), "Reset")
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_ROWDYRUDY, 3, 18, 1), "Reset")
 		Goto Idle
 	Reset:
 		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)

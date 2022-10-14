@@ -36,6 +36,21 @@
 #define DEH_RAYMOHAWK 32
 #define DEH_JAMALJONES 33
 
+#define FINAL_ICONOFSIN 1
+#define FINAL_COUNTDOWN 2
+#define FINAL_HELLSMITH 3
+#define FINAL_ANGRYMIND 4
+#define FINAL_HIEROPHANT 5
+#define FINAL_SUPERVILE 6
+#define FINAL_CARDINAL 7
+#define FINAL_OVERLORD 8
+#define FINAL_MOTHERDEMON 9
+#define FINAL_ARCHANGELUS 10
+#define FINAL_LEVIATHAN 11
+#define FINAL_BAPHOMET 12
+#define FINAL_INQUISITOR 13
+#define FINAL_BUBBLESHIP 14
+
 Script "Dehacked_MonsterReset" (int mapset, int origLevel, int tierLevel, int bossSpecial)
 {
 	bool keep_spawn = TRUE;
@@ -233,7 +248,7 @@ Script "Dehacked_BossSelect" OPEN
 	{
 		if(GetCVar("deh_finalboss") <= 0)
 		{
-			BossSelection = random(1, 13);
+			BossSelection = random(1, 12);
 		} else {
 			BossSelection = GetCVar("deh_finalboss");
 		}
@@ -242,120 +257,120 @@ Script "Dehacked_BossSelect" OPEN
 	{
 		SetHudSize(512,384,1);
 		SetFont("BIGFONT");
-		if(BossSelection == 1)
+		if(BossSelection == FINAL_ICONOFSIN)
 		{
-			HudMessageBold(s:"VS. Icon of Sin";HUDMSG_FADEINOUT,0,CR_UNTRANSLATED,256.0,144.1,3.0,1.0,1.0);
+			HudMessageBold(s:"VS. Icon of Sin";HUDMSG_FADEINOUT|HUDMSG_LOG,0,CR_UNTRANSLATED,256.0,144.1,3.0,1.0,1.0);
 		}
-		else if(BossSelection == 2)
+		else if(BossSelection == FINAL_COUNTDOWN)
 		{
-			HudMessageBold(s:"VS. The Final Countdown";HUDMSG_FADEINOUT,0,CR_WHITE,256.0,144.1,3.0,1.0,1.0);
+			HudMessageBold(s:"VS. The Final Countdown";HUDMSG_FADEINOUT|HUDMSG_LOG,0,CR_WHITE,256.0,144.1,3.0,1.0,1.0);
 		}
-		else if(BossSelection == 3)
+		else if(BossSelection == FINAL_HELLSMITH)
 		{
-			HudMessageBold(s:"VS. Hell Smith";HUDMSG_FADEINOUT,0,CR_FIRE,256.0,144.1,3.0,1.0,1.0);
+			HudMessageBold(s:"VS. Hell Smith";HUDMSG_FADEINOUT|HUDMSG_LOG,0,CR_FIRE,256.0,144.1,3.0,1.0,1.0);
 		}
-		else if(BossSelection == 4)
+		else if(BossSelection == FINAL_ANGRYMIND)
 		{
-			HudMessageBold(s:"VS. Spider Mastermind?";HUDMSG_FADEINOUT,0,CR_TAN,256.0,144.1,3.0,1.0,1.0);
+			HudMessageBold(s:"VS. Spider Mastermind?";HUDMSG_FADEINOUT|HUDMSG_LOG,0,CR_TAN,256.0,144.1,3.0,1.0,1.0);
 		}
-		else if(BossSelection == 5)
+		else if(BossSelection == FINAL_HIEROPHANT)
 		{
-			HudMessageBold(s:"VS. Hierophant";HUDMSG_FADEINOUT,0,CR_ORANGE,256.0,144.1,3.0,1.0,1.0);
+			HudMessageBold(s:"VS. Hierophant";HUDMSG_FADEINOUT|HUDMSG_LOG,0,CR_ORANGE,256.0,144.1,3.0,1.0,1.0);
 		}
-		else if(BossSelection == 6)
+		else if(BossSelection == FINAL_SUPERVILE)
 		{
-			HudMessageBold(s:"VS. Super Archvile";HUDMSG_FADEINOUT,0,CR_RED,256.0,144.1,3.0,1.0,1.0);
+			HudMessageBold(s:"VS. Super Archvile";HUDMSG_FADEINOUT|HUDMSG_LOG,0,CR_RED,256.0,144.1,3.0,1.0,1.0);
 		}
-		else if(BossSelection == 7)
+		else if(BossSelection == FINAL_CARDINAL)
 		{
-			HudMessageBold(s:"VS. Gridlock Cardinal";HUDMSG_FADEINOUT,0,CR_DARKGREEN,256.0,144.1,3.0,1.0,1.0);
+			HudMessageBold(s:"VS. Gridlock Cardinal";HUDMSG_FADEINOUT|HUDMSG_LOG,0,CR_DARKGREEN,256.0,144.1,3.0,1.0,1.0);
 		}
-		else if(BossSelection == 8)
+		else if(BossSelection == FINAL_OVERLORD)
 		{
-			HudMessageBold(s:"VS. Overlord";HUDMSG_FADEINOUT,0,CR_DARKRED,256.0,144.1,3.0,1.0,1.0);
+			HudMessageBold(s:"VS. Overlord";HUDMSG_FADEINOUT|HUDMSG_LOG,0,CR_DARKRED,256.0,144.1,3.0,1.0,1.0);
 		}
-		else if(BossSelection == 9)
+		else if(BossSelection == FINAL_MOTHERDEMON)
 		{
-			HudMessageBold(s:"VS. Motherdemon";HUDMSG_FADEINOUT,0,CR_BRICK,256.0,144.1,3.0,1.0,1.0);
+			HudMessageBold(s:"VS. Motherdemon";HUDMSG_FADEINOUT|HUDMSG_LOG,0,CR_BRICK,256.0,144.1,3.0,1.0,1.0);
 		}
-		else if(BossSelection == 10)
+		else if(BossSelection == FINAL_ARCHANGELUS)
 		{
-			HudMessageBold(s:"VS. Archangelus";HUDMSG_FADEINOUT,0,CR_YELLOW,256.0,144.1,3.0,1.0,1.0);
+			HudMessageBold(s:"VS. Archangelus";HUDMSG_FADEINOUT|HUDMSG_LOG,0,CR_YELLOW,256.0,144.1,3.0,1.0,1.0);
 		}
-		else if(BossSelection == 11)
+		else if(BossSelection == FINAL_LEVIATHAN)
 		{
-			HudMessageBold(s:"VS. The Leviathan";HUDMSG_FADEINOUT,0,CR_BLUE,256.0,144.1,3.0,1.0,1.0);
+			HudMessageBold(s:"VS. The Leviathan";HUDMSG_FADEINOUT|HUDMSG_LOG,0,CR_BLUE,256.0,144.1,3.0,1.0,1.0);
 		}
-		else if(BossSelection == 12)
+		else if(BossSelection == FINAL_BAPHOMET)
 		{
-			HudMessageBold(s:"VS. The Inquisitor";HUDMSG_FADEINOUT,0,CR_BLUE,256.0,144.1,3.0,1.0,1.0);
+			HudMessageBold(s:"VS. Baphomet";HUDMSG_FADEINOUT|HUDMSG_LOG,0,CR_DARKGRAY,256.0,144.1,3.0,1.0,1.0);
 		}
-		else if(BossSelection == 13)
+		else if(BossSelection == FINAL_INQUISITOR)
 		{
-			HudMessageBold(s:"VS. Baphomet";HUDMSG_FADEINOUT,0,CR_DARKGRAY,256.0,144.1,3.0,1.0,1.0);
+			HudMessageBold(s:"VS. The Inquisitor";HUDMSG_FADEINOUT|HUDMSG_LOG,0,CR_BLUE,256.0,144.1,3.0,1.0,1.0);
 		}
-		else if(BossSelection == 14)
+		else if(BossSelection == FINAL_BUBBLESHIP)
 		{
-			HudMessageBold(s:"VS. The Bubble Ship";HUDMSG_FADEINOUT,0,CR_SAPPHIRE,256.0,144.1,3.0,1.0,1.0);
+			HudMessageBold(s:"VS. The Bubble Ship";HUDMSG_FADEINOUT|HUDMSG_LOG,0,CR_SAPPHIRE,256.0,144.1,3.0,1.0,1.0);
 		}
 	}
 }
 
 Script "Dehacked_BossSpawn" (void)
 {
-	if(BossSelection <= 1)
+	if(BossSelection <= FINAL_ICONOFSIN)
 	{
 		SetActorState(0, "NormalFinalBoss", 0);
 	}
-	else if(BossSelection == 2)
+	else if(BossSelection == FINAL_COUNTDOWN)
 	{
 		SetActorState(0, "FinalCountdown", 0);
 	}
-	else if(BossSelection == 3)
+	else if(BossSelection == FINAL_HELLSMITH)
 	{
 		SetActorState(0, "HellSmith", 0);
 	}
-	else if(BossSelection == 4)
+	else if(BossSelection == FINAL_ANGRYMIND)
 	{
 		SetActorState(0, "SpiderMastermind", 0);
 	}
-	else if(BossSelection == 5)
+	else if(BossSelection == FINAL_HIEROPHANT)
 	{
 		SetActorState(0, "Hierophant", 0);
 	}
-	else if(BossSelection == 6)
+	else if(BossSelection == FINAL_SUPERVILE)
 	{
 		SetActorState(0, "SuperArchvile", 0);
 	}
-	else if(BossSelection == 7)
+	else if(BossSelection == FINAL_CARDINAL)
 	{
 		SetActorState(0, "GridlockCardinal", 0);
 	}
-	else if(BossSelection == 8)
+	else if(BossSelection == FINAL_OVERLORD)
 	{
 		SetActorState(0, "Overlord", 0);
 	}
-	else if(BossSelection == 9)
+	else if(BossSelection == FINAL_MOTHERDEMON)
 	{
 		SetActorState(0, "Motherdemon", 0);
 	}
-	else if(BossSelection == 10)
+	else if(BossSelection == FINAL_ARCHANGELUS)
 	{
 		SetActorState(0, "Archangelus", 0);
 	}
-	else if(BossSelection == 11)
+	else if(BossSelection == FINAL_LEVIATHAN)
 	{
 		SetActorState(0, "Leviathan", 0);
 	}
-	else if(BossSelection == 12)
-	{
-		SetActorState(0, "TheInquisitor", 0);
-	}
-	else if(BossSelection == 13)
+	else if(BossSelection == FINAL_BAPHOMET)
 	{
 		SetActorState(0, "Baphomet", 0);
 	}
-	else if(BossSelection == 14)
+	else if(BossSelection == FINAL_INQUISITOR)
+	{
+		SetActorState(0, "TheInquisitor", 0);
+	}
+	else if(BossSelection == FINAL_BUBBLESHIP)
 	{
 		SetActorState(0, "BubbleShip", 0);
 	}

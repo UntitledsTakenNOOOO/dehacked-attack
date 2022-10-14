@@ -92,7 +92,7 @@ ROWDY RUDY 2 (Doomkid, 2020):
 * BFG 9000: It's yellow now, and it's...basically identical to the standard BFG 9000. Sometimes, you can't beat the original.
 	* If balanced mode is turned off, it gets some additional tracers, in accordance with rowdy2.txt's description.
 
-RAY MOHAWK 1/2 (Doomkid, 2021):
+RAY MOHAWK 2 (Doomkid, 2021):
 * KNIFE: Faster and dealing massive damage relative to the ordinary fist, Ray Mohawk came to town prepared for a fight.
 * GAUNTLETS?: No one's quite sure how these got here, but these things fire twice as fast as the chainsaw.
 	* Balanced Mode: No, actually only twice as fast instead of four times as fast.

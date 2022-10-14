@@ -78,7 +78,7 @@ ACTOR Calfdemon : DEHCacodemon
   {
   Spawn:
     H3AD A 0
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SCIMITAR, 11, 6), "Reset")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SCIMITAR, 11, 8), "Reset")
     Goto Idle
   Reset:
     TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
@@ -248,7 +248,7 @@ ACTOR RedBaron : DEHBaronOfHell
   {
   Spawn:
     BOSS A 0
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SCIMITAR, 6, 6), "Reset")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SCIMITAR, 6, 4), "Reset")
     Goto Idle
   Reset:
     TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)

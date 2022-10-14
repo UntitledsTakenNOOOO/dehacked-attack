@@ -99,7 +99,7 @@ Actor NightmareDemon
 	{
 	Spawn:
 		EVSG A 0
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_EVITERNITY, 5, 19), "Reset")
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_EVITERNITY, 5, 22), "Reset")
 		Goto Idle
 	Reset:
 		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
@@ -148,7 +148,7 @@ Actor NightmareSpectre : DEHDemon //PSX Doom, not Eviternity, but included anywa
 	{
 	Spawn:
 		SARG A 0
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_PSX_DOOM, 1, 19), "Reset")
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_PSX_DOOM, 1, 21), "Reset")
 		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_SubtractiveReset"), "SubtractiveReset")
 		Goto "Super::Spawn"
 	Reset:
@@ -249,7 +249,7 @@ ACTOR EviternityArachnotron : DEHArachnotron
 	{
 	Spawn:
 		BSPI A 0
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_EVITERNITY, 4, 2, 1), "Reset")
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_EVITERNITY, 4, 3, 1), "Reset")
 		Goto "Super::Spawn"
 	Reset:
 		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
@@ -289,7 +289,7 @@ Actor EviternityAnnihilator : DEHBaronOfHell
 	{
 	Spawn:
 		EBOS A 0
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_EVITERNITY, 10, 20), "Reset")
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_EVITERNITY, 10, 24), "Reset")
 		Goto Idle
 	Reset:
 		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
@@ -467,13 +467,13 @@ Actor ArchangelusB
 		ANGL WXY 9 
 		ANGL Z 9 A_KeenDie
 		ANGL L 9
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossEyeCount") > 10, "SuperSummon")
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossEyeCount") >= 10, "SuperSummon")
 		goto See2
 	See2:
 		ANGL AABBCCDD 2 A_Chase
 		goto See2
 	Pain:
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossEyeCount") > 10, "SuperSummon")
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossEyeCount") >= 10, "SuperSummon")
 		ANGL EJK 8 Bright A_FaceTarget
 		ANGL IIII 0 Bright A_BrainSpit("ArchangelusSpawnShot")
 		ANGL I 8 Bright A_BrainSpit("ArchangelusSpawnShot")

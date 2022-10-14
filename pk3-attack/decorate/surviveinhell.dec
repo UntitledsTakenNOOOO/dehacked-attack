@@ -8,7 +8,7 @@ ACTOR Belphegor : DEHBaronOfHell
    {
   Spawn:
     BOS3 A 0
-	TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SURVIVE_IN_HELL, 7, 11), "Reset")
+	TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SURVIVE_IN_HELL, 7, 12), "Reset")
     Goto Idle
   Reset:
     TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
@@ -140,7 +140,7 @@ ACTOR HellSmith
   Spawn:
     TNT1 A 0
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossCheck") == FINAL_HELLSMITH, "Reset")
-	TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SURVIVE_IN_HELL, 30, 19), "Reset")
+	TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_SURVIVE_IN_HELL, 30, 22), "Reset")
     Goto Idle
   Idle:
     AVTR A 10 A_Look

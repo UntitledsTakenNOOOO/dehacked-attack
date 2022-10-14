@@ -18,7 +18,7 @@ Actor GreaterMancubus : DEHFatso
 	{
 	Spawn:
 		GRFT A 0
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_MAYANMISHAP, 1, 12, 1), "Reset")
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_MAYANMISHAP, 1, 13, 1), "Reset")
 		Goto Idle
 	Reset:
 		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
@@ -85,7 +85,7 @@ Actor CyberBaron : DEHBaronofHell
 	{
 	Spawn:
 		CBOS A 0
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_MAYANMISHAP, 1, 7), "Reset")
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_MAYANMISHAP, 1, 8), "Reset")
 		Goto Idle
 	Reset:
 		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)

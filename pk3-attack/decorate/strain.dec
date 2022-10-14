@@ -93,7 +93,7 @@ ACTOR Doppleganger : DEHLostSoul //Where do they get these names from?
   {
   Spawn:
     SKL2 A 0
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_STRAIN, 4, 7), "Reset")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_STRAIN, 4, 5), "Reset")
     Goto Idle
   Reset:
     TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
@@ -161,11 +161,11 @@ ACTOR Holobot : DEHCacodemon
   Missile:
     TNT1 A 0 A_JumpIfInventory("LDLegendaryMonsterTransformed", 1, "LegendaryMissile")
     FBOT AA 5 A_FaceTarget
-    FBOT A 5 Bright A_CustomMissile("HolobotRevenantTracer", 32)
+    FBOT A 5 Bright A_CustomMissile("HolobotRevenantTracer", 40)
     Goto See
   LegendaryMissile:
     FBOT AA 5 A_FaceTarget
-    FBOT A 5 Bright A_CustomMissile("RevenantTracer", 32)
+    FBOT A 5 Bright A_CustomMissile("RevenantTracer", 40)
     Goto See
   Pain:
     FBOT A 3
@@ -218,7 +218,7 @@ ACTOR StrainDemon : DEHDemon
   {
   Spawn:
     SAR2 A 0
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_STRAIN, 2, 16), "Reset")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_STRAIN, 2, 19), "Reset")
     Goto Idle
   Reset:
     TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
@@ -320,7 +320,7 @@ ACTOR StrainDemonLord : DEHBaronOfHell
   {
   Spawn:
     BOSL A 0
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_STRAIN, 15, 21), "Reset")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_STRAIN, 15, 20), "Reset")
     Goto Idle
   Reset:
     TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)

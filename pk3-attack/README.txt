@@ -92,6 +92,9 @@ ANCIENT ALIENS (skillaw et al, 2016):
 * Alien Mancubus: A re-skin of the mancubus with a unique look.
 * Alien Arachnotron: A re-skin of the arachnotron that fires the purple-ish alien plasma used by the stealth plasma alien.
 
+COUNTERATTACK (Mechadon, 2017):
+* Skull Turret: A stationary turret that fires arachnotron plasma. Only appears as an Icon of Sin (or other final boss) summon.
+
 180 MINUTES POUR VIVRE (French Doom Community, 2018)
 * Nightwatch Cacodemon: A very deadly 4-eyed monstronsity with 600 HP that thankfully spawns with pain elementals.
 
@@ -229,6 +232,7 @@ FINAL BOSSES (enabled by CVar and then selected in place of Icon of Sin):
 * Overlord (50 Monsters): A flying demon with a triple cacodemon attack and an ability to summon lost souls. This doesn't seem too bad at first...and then you enter phase 2.
 * Motherdemon [Final Boss Form] (Doom 64 for Doom 2): With 9000 HP, an archvile attack, and an army of other monsters at its disposal, good luck; you'll need it here.
 * Archangelus (Eviternity): Descending from the realm opposite Hell, this guy is insane. One might wish for good luck; but truth be told, it won't save you.
-* Leviathan [Final Boss Form] (Struggle: Antaresian Legacy): With 10000 health, and summoned with many other monster-spawning statue, this guy's tough.
-* The Inquisitor (Struggle: Antaresian Legacy): This guy will unleash an absolute firestorm whenever you're in his line of sight, and spawns with a swarm of Afriests.
+* Leviathan [Final Boss Form] (Struggle: Antaresian Legacy): With 10000 health, while also being summoned with many other monster-spawning statues, this guy's tough.
 * Baphomet (DOOM -1): Spawning with his personal army before appearing on the battlefield himself, this guy's not trivial to take out.
+* The Inquisitor (Struggle: Antaresian Legacy): This guy will unleash an absolute firestorm whenever you're in his line of sight, and spawns with a swarm of Afriests. Can't be spawned randomly.
+* The Bubble Ship (Counterattack): Fires a stream of every vanilla monster attack at the player when he attacks. Spawns with a large number of skull turrets and cannot be spawned randomly.

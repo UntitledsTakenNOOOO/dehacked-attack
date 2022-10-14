@@ -318,7 +318,7 @@ Actor NegativeOneBaphomet
 		goto See
 	Missile:
 		TNT1 A 0 A_JumpIfInventory("LDLegendaryMonsterTransformed", 1, "LegendaryMissile")
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossEyeCount") > 10, "SuperMissile")
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossEyeCount") >= 10, "SuperMissile")
 		NGBP E 10 Bright A_FaceTarget
 		NGBP F 4 Bright A_PainAttack("NegativeOneWicked")
 		NGBP E 8 Bright A_FaceTarget

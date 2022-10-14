@@ -44,8 +44,8 @@ const int FINAL_OVERLORD = 8;
 const int FINAL_MOTHERDEMON = 9;
 const int FINAL_ARCHANGELUS = 10;
 const int FINAL_LEVIATHAN = 11;
-const int FINAL_INQUISITOR = 12;
-const int FINAL_BAPHOMET = 13;
+const int FINAL_BAPHOMET = 12;
+const int FINAL_INQUISITOR = 13;
 const int FINAL_BUBBLESHIP = 14;
 
 ACTOR DEHZombieman : Zombieman
@@ -199,10 +199,10 @@ ACTOR DehackedShotgunguySpawner : RandomSpawner replaces Shotgunguy
 {
 	DropItem "DEHShotgunguy", 256, 40 //1, 1
 	DropItem "RowdyShotgunguy", 256, 10 //1, 5
-	DropItem "PlasmaZombie", 256, 10 //2, 8
-	DropItem "HazmatGuy", 256, 10 //1, 11
-	DropItem "StealthPlasmaAlien", 256, 10 //11, 14
-	DropItem "StealthFighter", 256, 10 //1, 18
+	DropItem "PlasmaZombie", 256, 10 //2, 9
+	DropItem "HazmatGuy", 256, 10 //1, 13
+	DropItem "StealthPlasmaAlien", 256, 10 //11, 13
+	DropItem "StealthFighter", 256, 10 //1, 17
 	DropItem "FlamethrowerGuy", 256, 10 //2, 21
 }
 
@@ -243,25 +243,25 @@ ACTOR DehackedDemonSpawner : RandomSpawner replaces Demon
 	DropItem "RowdyDemon", 256, 10 //2, 4
 	DropItem "AvactorDemon", 256, 10 //5, 7
 	DropItem "ValiantDemon", 256, 10 //1, 10
-	DropItem "SuicideBomber", 256, 10 //14, 10
-	DropItem "BlindDemon", 256, 10 //2, 13
-	DropItem "StrainDemon", 256, 10 //2, 16
-	DropItem "NightmareDemon", 256, 10 //5, 19
+	DropItem "SuicideBomber", 256, 10 //14, 13
+	DropItem "BlindDemon", 256, 10 //2, 16
+	DropItem "StrainDemon", 256, 10 //2, 19
+	DropItem "NightmareDemon", 256, 10 //5, 22
 }
 
 ACTOR DehackedSpectreSpawner : RandomSpawner replaces Spectre
 {
 	DropItem "DEHSpectre", 256, 70 //1, 1
-	DropItem "ValiantSpectre", 256, 20 //1, 10
-	DropItem "NightmareSpectre", 256, 10 //1, 19
+	DropItem "ValiantSpectre", 256, 20 //1, 11
+	DropItem "NightmareSpectre", 256, 10 //1, 21
 }
 
 ACTOR DehackedRevSpawner : RandomSpawner replaces Revenant
 {
 	DropItem "DEHRevenant", 256, 30 //1, 1
 	DropItem "Incarnate", 256, 15 //1, 1
-	DropItem "HellCleric", 256, 30 //21, 7
-	DropItem "RayMohawkSlyor", 256, 15 //1, 12
+	DropItem "HellCleric", 256, 30 //21, 6
+	DropItem "RayMohawkSlyor", 256, 15 //1, 11
 	DropItem "MinisterOfHate", 256, 5 //13, 16
 	DropItem "ResurgenceEvilMarine", 256, 5 //21, 21
 }
@@ -278,19 +278,20 @@ ACTOR DehackedCacoSpawner : RandomSpawner replaces Cacodemon
 	DropItem "AlienGuardian", 256, 5 //11, 15
 	DropItem "NightmareCacodemon", 256, 5 //31, 17
 	DropItem "AstralCaco", 256, 5 //11, 19
-	DropItem "Afriest", 256, 5 //6, 21
+	DropItem "Afriest", 256, 4 //6, 21
+	DropItem "AfriestSpecial", 256, 1 //19, 23
 }
 
 ACTOR DehackedSoulSpawner : RandomSpawner replaces LostSoul
 {
 	DropItem "DEHLostSoul", 256, 18 //1, 1
 	DropItem "NegativeOneWicked", 256, 14 //3, 1
-	DropItem "Calfdemon", 256, 10 //11, 6
-	DropItem "Doppleganger", 256, 10 //4, 7
-	DropItem "WillOWisp", 256, 10 //2, 11
-	DropItem "DamnedSoul", 256, 10 //2, 12
-	DropItem "AlphaSoul", 256, 14 //21, 15
-	DropItem "ValiantArachnorbSmaller", 256, 14 //4, 16
+	DropItem "WillOWisp", 256, 10 //2, 2
+	DropItem "DamnedSoul", 256, 10 //2, 3
+	DropItem "Doppleganger", 256, 10 //4, 5
+	DropItem "Calfdemon", 256, 10 //11, 8
+	DropItem "ValiantArachnorbSmaller", 256, 14 //4, 13
+	DropItem "AlphaSoul", 256, 14 //21, 21
 }
 
 ACTOR DehackedPainSpawner : RandomSpawner replaces PainElemental
@@ -308,20 +309,20 @@ ACTOR DehackedKnightSpawner : RandomSpawner replaces HellKnight
 {
 	DropItem "DEHHellKnight", 256, 50 //1, 1
 	DropItem "Satyr", 256, 20 //2, 6
-	DropItem "ValiantPyroDemon", 256, 12 //9, 11
-	DropItem "Antaresia", 256, 10 //2, 16
-	DropItem "ValiantCybruiser", 256, 8 //15, 21
+	DropItem "ValiantPyroDemon", 256, 12 //9, 12
+	DropItem "Antaresia", 256, 10 //2, 18
+	DropItem "ValiantCybruiser", 256, 8 //25, 24
 }
 
 ACTOR DehackedBaronSpawner : RandomSpawner replaces BaronOfHell
 {
 	DropItem "DEHBaronOfHell", 256, 40 //1, 1
-	DropItem "RedBaron", 256, 12 //6, 6
-	DropItem "CyberBaron", 256, 12 //1, 7
-	DropItem "Belphegor", 256, 10 //7, 11
-	DropItem "LordOfHeresy", 256, 10 //2, 12
-	DropItem "EviternityAnnihilator", 256, 8 //10, 20
-	DropItem "StrainDemonLord", 256, 8 //15, 21
+	DropItem "RedBaron", 256, 12 //6, 4
+	DropItem "CyberBaron", 256, 12 //1, 8
+	DropItem "Belphegor", 256, 10 //7, 12
+	DropItem "LordOfHeresy", 256, 10 //2, 16
+	DropItem "StrainDemonLord", 256, 8 //15, 20
+	DropItem "EviternityAnnihilator", 256, 8 //10, 24
 }
 
 ACTOR DehackedFatsoSpawner : RandomSpawner replaces Fatso
@@ -329,60 +330,60 @@ ACTOR DehackedFatsoSpawner : RandomSpawner replaces Fatso
 	DropItem "DEHFatso", 256, 40 //1, 1
 	DropItem "AlienFatso", 256, 20 //1, 1
 	DropItem "FatsoII", 256, 20 //7, 7
-	DropItem "GreaterMancubus", 256, 10 //1, 12
-	DropItem "ValiantSuperMancubus", 256, 10 //19, 21
+	DropItem "GreaterMancubus", 256, 10 //1, 13
+	DropItem "ValiantSuperMancubus", 256, 10 //19, 19
 }
 
 ACTOR DehackedArachSpawner : RandomSpawner replaces Arachnotron
 {
 	DropItem "DEHArachnotron", 256, 16 //1, 1
 	DropItem "AlienArachnotron", 256, 12 //1, 1
-	DropItem "ValiantArachnotron", 256, 12 //4, 8
-	DropItem "PlasmaTank", 256, 10 //3, 4
-	DropItem "EviternityArachnotron", 256, 10 //4, 2
-	DropItem "ReliquaryArachnotron", 256, 10 //1, 15
-	DropItem "AntaresianArachnotron", 256, 10 //2, 16
-	DropItem "MiniMastermind", 256, 10 //3, 20
+	DropItem "EviternityArachnotron", 256, 10 //4, 3
+	DropItem "PlasmaTank", 256, 10 //3, 6
+	DropItem "ValiantArachnotron", 256, 12 //4, 9
+	DropItem "ReliquaryArachnotron", 256, 10 //1, 12
+	DropItem "AntaresianArachnotron", 256, 10 //2, 15
+	DropItem "MiniMastermind", 256, 10 //3, 18
 	DropItem "ArachnoRocketeer", 256, 10 //15, 21
 }
 
 ACTOR DehackedArchSpawner : RandomSpawner replaces Archvile
 {
 	DropItem "DEHArchvile", 256, 70 //1, 1
-	DropItem "Hierophant1", 256, 10 //30, 16
+	DropItem "Hierophant1", 256, 10 //30, 14
 	DropItem "EvilMarine", 256, 10 //16, 16
-	DropItem "AntaresiaElite", 256, 10 //24, 16
+	DropItem "AntaresiaElite", 256, 10 //24, 18
 }
 
 ACTOR DehackedCyberSpawner : RandomSpawner replaces Cyberdemon
 {
 	DropItem "DEHCyberdemon", 256, 10 //1, 1
 	DropItem "Haymaker", 256, 10 //7, 1
-	DropItem "Afrit", 256, 10 //(21, 21, 26, 15), 3
-	DropItem "DarkCyberdemon", 256, 10 //11, 5
-	DropItem "Leviathan", 256, 10 //19, 7
-	DropItem "RayMohawkCyberdemon", 256, 10 //6, 9
-	DropItem "VivreHeresiarch", 256, 10 //2, 11
-	DropItem "RemnantCardinal", 256, 10 //1, 13
-	DropItem "Hierophant2", 256, 5 //30, 15
-	DropItem "GridlockCardinal", 256, 5 //30, 17
-	DropItem "HellSmith", 256, 5 //30, 19
-	DropItem "Motherdemon", 256, 5 //30, 21
+	DropItem "Afrit", 256, 10 //(21, 21, 26, 15), 1
+	DropItem "DarkCyberdemon", 256, 10 //11, 8
+	DropItem "Leviathan", 256, 10 //19, 10
+	DropItem "RayMohawkCyberdemon", 256, 10 //6, 12
+	DropItem "VivreHeresiarch", 256, 10 //9, 14
+	DropItem "RemnantCardinal", 256, 10 //1, 16
+	DropItem "Hierophant2", 256, 5 //30, 18
+	DropItem "GridlockCardinal", 256, 5 //30, 20
+	DropItem "HellSmith", 256, 5 //30, 22
+	DropItem "Motherdemon", 256, 5 //30, 24
 }
 
 ACTOR DehackedSpiderSpawner : RandomSpawner replaces SpiderMastermind
 {
 	DropItem "DEHSpiderMastermind", 256, 10 //1, 1
-	DropItem "HiveMother", 256, 10 //18, 3
-	DropItem "FlyingMastermind", 256, 10 //9, 5
-	DropItem "AvactorBrain", 256, 10 //5, 7
-	DropItem "IndomitableMastermind", 256, 10 //11, 9
-	DropItem "SpectralLeviathan", 256, 10 //20, 11
-	DropItem "WarlordOfHell", 256, 10 //18, 13
-	DropItem "GateMaster", 256, 10 //5, 15
-	DropItem "RemnantMaster", 256, 10 //1, 17
-	DropItem "AngryMastermind", 256, 5 //29, 19
-	DropItem "ValiantSuperVile", 256, 5 //30, 21
+	DropItem "HiveMother", 256, 10 //18, 1
+	DropItem "FlyingMastermind", 256, 10 //9, 6
+	DropItem "AvactorBrain", 256, 10 //5, 9
+	DropItem "IndomitableMastermind", 256, 10 //11, 12
+	DropItem "SpectralLeviathan", 256, 10 //20, 15
+	DropItem "WarlordOfHell", 256, 10 //18, 17
+	DropItem "GateMaster", 256, 10 //5, 19
+	DropItem "RemnantMaster", 256, 10 //1, 21
+	DropItem "AngryMastermind", 256, 5 //29, 23
+	DropItem "ValiantSuperVile", 256, 5 //30, 25
 }
 
 //////////////////
@@ -449,12 +450,12 @@ ACTOR DEHFinalBossSpawner : SpecialSpot replaces BossEye
 	TNT1 A 0 A_SpawnSingleItem("DEHLeviathanSpawner", 0, 0, 256)
 	TNT1 A -1
 	Stop
-  TheInquisitor:
-	TNT1 A 0 A_SpawnSingleItem("DEHTheInquisitorSpawner", 0, 0, 256)
-	TNT1 A -1
-	Stop
   Baphomet:
 	TNT1 A 0 A_SpawnSingleItem("DEHBaphometSpawner", 0, 0, 256)
+	TNT1 A -1
+	Stop
+  TheInquisitor:
+	TNT1 A 0 A_SpawnSingleItem("DEHTheInquisitorSpawner", 0, 0, 256)
 	TNT1 A -1
 	Stop
   BubbleShip:
@@ -1234,42 +1235,6 @@ ACTOR DEHAfriestStatueSpawnShot : AntaresianSpawnShot
 {
   DropItem "AfriestStatue", 256, 1
 }
-ACTOR DEHTheInquisitorSpawner
-{
-  Height 32
-  +NOBLOCKMAP
-  +NOSECTOR
-  var int user_count;
-  States
-  {
-  Spawn:
-    TNT1 A 10 A_Look
-    Loop
-  See:
-	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 0)
-	TNT1 A 181 A_BrainAwake
-	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 10)
-	TNT1 A 0 A_BrainSpit("DEHBlankShot")
-	TNT1 A 0 A_BrainSpit("DEHTheInquisitorSpawnShot")
-	TNT1 A 0 A_SetUserVar("user_count", ACS_NamedExecuteWithResult("Dehacked_BossTargetCount"))
-  AfriestSpawnLoop:
-	TNT1 A 0 A_BrainSpit("DEHAfriestSpecialSpawnShot")
-	TNT1 A 0 A_SetUserVar("user_count", user_count - 1)
-	TNT1 A 0 A_JumpIf(user_count <= 1, "EndLoop")
-	Loop
-  EndLoop:
-	TNT1 A 0
-	Stop
-  }
-}
-ACTOR DEHAfriestSpecialSpawnShot : AntaresianSpawnShot
-{
-  DropItem "AfriestSpecial", 256, 1
-}
-ACTOR DEHTheInquisitorSpawnShot : AntaresianSpawnShot
-{
-  DropItem "TheInquisitor", 256, 1
-}
 
 ACTOR DEHBaphometSpawner
 {
@@ -1309,6 +1274,43 @@ ACTOR DEHBaphometMinionShot : SpawnShot
 ACTOR DEHBaphometSpawnerShot : SpawnShot
 {
   DropItem "NegativeOneBaphomet", 256, 1
+}
+
+ACTOR DEHTheInquisitorSpawner
+{
+  Height 32
+  +NOBLOCKMAP
+  +NOSECTOR
+  var int user_count;
+  States
+  {
+  Spawn:
+    TNT1 A 10 A_Look
+    Loop
+  See:
+	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 0)
+	TNT1 A 181 A_BrainAwake
+	TNT1 A 0 ACS_NamedExecuteAlways("Dehacked_BossMusic", 0, 10)
+	TNT1 A 0 A_BrainSpit("DEHBlankShot")
+	TNT1 A 0 A_BrainSpit("DEHTheInquisitorSpawnShot")
+	TNT1 A 0 A_SetUserVar("user_count", ACS_NamedExecuteWithResult("Dehacked_BossTargetCount"))
+  AfriestSpawnLoop:
+	TNT1 A 0 A_BrainSpit("DEHAfriestSpecialSpawnShot")
+	TNT1 A 0 A_SetUserVar("user_count", user_count - 1)
+	TNT1 A 0 A_JumpIf(user_count <= 1, "EndLoop")
+	Loop
+  EndLoop:
+	TNT1 A 0
+	Stop
+  }
+}
+ACTOR DEHAfriestSpecialSpawnShot : AntaresianSpawnShot
+{
+  DropItem "AfriestSpecial", 256, 1
+}
+ACTOR DEHTheInquisitorSpawnShot : AntaresianSpawnShot
+{
+  DropItem "TheInquisitor", 256, 1
 }
 
 ACTOR DEHBubbleShipSpawner

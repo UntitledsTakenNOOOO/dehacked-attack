@@ -126,7 +126,7 @@ Actor Antaresia : DEHBaronOfHell
 	{
 	Spawn:
 		ANTR A 0
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_ANTARES, 2, 16), "Reset")
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_ANTARES, 2, 18), "Reset")
 		Goto Idle
 	Reset:
 		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
@@ -179,7 +179,7 @@ Actor AntaresiaElite : Antaresia
 	{
 	Spawn:
 		ANTR A 0
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_ANTARES, 24, 16), "Reset")
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_ANTARES, 24, 18), "Reset")
 		Goto "Super::Spawn"
 	Reset:
 		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
@@ -270,7 +270,7 @@ ACTOR AfriestSpecial : Afriest
   {
   Spawn:
     ABIS A 0
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_ANTARES, 19, 1), "Reset")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_ANTARES, 19, 23), "Reset")
     Goto Idle
   Reset:
     TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
@@ -354,7 +354,7 @@ ACTOR AntaresianArachnotron : DEHArachnotron
   {
   Spawn:
     ASPI A 0
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_ANTARES, 2, 16, 1), "Reset")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_ANTARES, 2, 15, 1), "Reset")
     Goto Idle
   Reset:
     TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
@@ -400,7 +400,7 @@ ACTOR ReliquaryArachnotron : DEHArachnotron
 	{
 	Spawn:
 		BSPI A 0
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_ANTARES, 1, 15, 1), "Reset")
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_ANTARES, 1, 12, 1), "Reset")
 		Goto "Super::Spawn"
 	Reset:
 		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
@@ -427,7 +427,7 @@ ACTOR IndomitableMastermind : DEHSpiderMastermind
   {
   Spawn:
     ANSP A 0
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_ANTARES, 11, 9), "Reset")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_ANTARES, 11, 12), "Reset")
     Goto Idle
   Reset:
     TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
@@ -493,7 +493,7 @@ ACTOR Leviathan
   Spawn:
     ALEV A 0
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossCheck") == FINAL_LEVIATHAN, "Reset")
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_ANTARES, 19, 7), "Reset")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_ANTARES, 19, 10), "Reset")
     ALEV A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossTargetCount") > 0, "Summoner")
     Goto Idle
   Idle:
@@ -547,7 +547,7 @@ ACTOR SpectralLeviathan : Leviathan
   Spawn:
     ALEV A 0
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossCheck") == FINAL_LEVIATHAN, "Reset")
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_ANTARES, 20, 11), "Reset")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_ANTARES, 20, 15), "Reset")
     ALEV A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossTargetCount") > 0, "Summoner")
     Goto Idle
   Idle:
@@ -631,7 +631,7 @@ ACTOR LeviathanFinal : Leviathan
     ALEV AAAABBBBCCCCDDDD 1 A_Chase
     Loop
   Missile:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossEyeCount") > 10, "SuperMissile")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossEyeCount") >= 10, "SuperMissile")
     TNT1 A 0 A_JumpIfInventory("LDLegendaryMonsterTransformed", 1, "LegendaryMissile")
     ALEV F 10 Bright A_FaceTarget
     ALEV E 0 Bright A_FatAttack1
@@ -662,7 +662,7 @@ ACTOR LeviathanFinal : Leviathan
   Pain:
     ALEV G 2 A_BrainPain
     ALEV G 8 A_Pain
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossEyeCount") > 10, "SuperSummon")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossEyeCount") >= 10, "SuperSummon")
     Goto SummonMonsters
   SummonMonsters:
     ALEV F 8 Bright A_FaceTarget
@@ -704,8 +704,7 @@ ACTOR AntaresianSpawnShot : SpawnShot
   DropItem "ReliquaryArachnotron"	255 15
   DropItem "DEHFatso"		255 25
   DropItem "Antaresia"		255 20
-  DropItem "Afriest"		255 8
-  DropItem "AfriestSpecial"	255 8
+  DropItem "Afriest"		255 16
   DropItem "AntaresiaElite"	255 4
   Speed 20
   SeeSound "leviathan/spit"
@@ -761,6 +760,11 @@ ACTOR TheInquisitor
     AINQ A 10 Bright A_Look
     Loop
   See:
+    TNT1 A 0 Bright A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossEyeCount") >= 10, "SuperSee")
+    AINQ A 1 Bright A_Chase
+    Loop
+  SuperSee:
+    AINQ A 0 Bright A_Chase
     AINQ A 1 Bright A_Chase
     Loop
 /*
@@ -780,7 +784,7 @@ ACTOR TheInquisitor
     work outside of the largest of arenas.
 */
   Missile:
-    TNT1 A 0 Bright A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossEyeCount") > 10, "SuperMissile")
+    TNT1 A 0 Bright A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossEyeCount") >= 10, "SuperMissile")
     AINQ B 1 Bright A_Chase
     AINQ B 0 Bright A_CustomMissile("DoomImpBall", 32, 0, 0 + frandom(-22.5, 22.5))
     AINQ B 1 Bright A_Wander
@@ -792,23 +796,23 @@ ACTOR TheInquisitor
     AINQ B 0 Bright A_SpidRefire
     Loop
   SuperMissile:
-    AINQ B 1 Bright A_Chase
+    AINQ B 0 Bright A_Wander
     AINQ B 0 Bright A_CustomMissile("FatShot", 32, 0, 0 + frandom(-22.5, 22.5))
     AINQ B 0 Bright A_CustomMissile("FatShot", 32, 0, 11.25 + frandom(-22.5, 22.5))
     AINQ B 1 Bright A_Wander
     AINQ B 0 Bright A_CustomMissile("FatShot", 32, 0, 5.625 + frandom(-22.5, 22.5))
     AINQ B 0 Bright A_CustomMissile("FatShot", 32, 0, -5.625 + frandom(-22.5, 22.5))
-    AINQ B 1 Bright A_Chase
+    AINQ B 0 Bright A_Wander
     AINQ B 0 Bright A_CustomMissile("FatShot", 32, 0, 0 + frandom(-22.5, 22.5))
     AINQ B 0 Bright A_CustomMissile("FatShot", 32, 0, -11.25 + frandom(-22.5, 22.5))
-    AINQ B 1 Bright A_Wander
+    AINQ B 1 Bright A_Chase
     AINQ B 0 Bright A_CustomMissile("FatShot", 32, 0, 5.625 + frandom(-22.5, 22.5))
     AINQ B 0 Bright A_CustomMissile("FatShot", 32, 0, -5.625 + frandom(-22.5, 22.5))
     AINQ B 0 Bright A_SpidRefire
     Loop
   Pain:
     AINQ A 20 Bright A_PlaySound("inquisitory/pain", 0, 1.0, 0, ATTN_NONE)
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossEyeCount") > 10, "SuperSummon")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossEyeCount") >= 10, "SuperSummon")
     ALEV EEEE 0 Bright A_BrainSpit("DEHAfriestSpecialSpawnShot")
     Goto See
   SuperSummon:

@@ -112,7 +112,7 @@ ACTOR MotherdemonFinal
 		64MT J 16 Bright
 		Goto See
 	Summon:
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossEyeCount") > 10, "SuperSummon")
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossEyeCount") >= 10, "SuperSummon")
 		64MT H 10 Bright A_FaceTarget
 		64MT H 8 Bright A_PainAttack("DEHLostSoul")
 		64MT H 8 Bright A_DualPainAttack("WillOWisp")
@@ -181,7 +181,7 @@ ACTOR Motherdemon : MotherdemonFinal
 	Spawn:
 		64MT A 0
 		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_BossCheck") == FINAL_MOTHERDEMON, "Reset")
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_DOOM64, 30, 21), "Reset")
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("Dehacked_MonsterReset", DEH_DOOM64, 30, 24), "Reset")
 		Goto Idle
 	Reset:
 		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
