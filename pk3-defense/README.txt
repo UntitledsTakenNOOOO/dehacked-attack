@@ -31,10 +31,10 @@ VALIANT (skillsaw, 2015):
 MASKIM XUL (Obsidian, 2018):
 * DUAL PISTOLS: They're back! Though they have a different firing sound than DV2's.
 * HAND OF AFRIT: A magical equivalent to the rocket launcher that fires explosive comets with far higher radius damage.
-    * Balanced Mode: If you're not playing Maskim Xul Doomguy, it takes 2 rockets per shot.
+	* Balanced Mode: If you're not playing Maskim Xul Doomguy, it takes 2 rockets per shot.
 * JACK BOX: Fires a mysterious jack-in-the-box that lands in front of the shooter's feet. A few seconds later, it explodes for over 1000 damage.
 * GRIMOIRE EXCIDIUM: Fires an even more powerful wave of BFG tracers upon firing, but deals a random amount of damage to the player each shot. Be careful!
-    * Balanced Mode: Deals a fixed 40 damage per shot, but deals less damage.
+	* Balanced Mode: Deals a fixed 40 damage per shot, but deals less damage.
 
 EVITERNITY (Dragonfly et al, 2019):
 * PISTOL: Fires faster and with perfect accuracy. This replaces the normal pistol if you're playing Doomguy because the normal pistol is garbage.
@@ -54,12 +54,12 @@ ANTARESIAN RELIQUARY (antares, 2020):
 * FIST: The Antaresian Reliquary marine can punch much harder than the ordinary marine.
 * CHAINSAW: slashes at a slightly increased speed compared to the vanilla chainsaw, but it's not as significant as other changes.
 * MACHINEGUN: Rather than start with a pistol, the Antaresian Reliquary marine starts with a fairly useful machine gun.
-    * Balanced Mode: No longer is the weapon perfectly accurate. It still fires absurdly fast for a pistol, however.
+	* Balanced Mode: No longer is the weapon perfectly accurate. It still fires absurdly fast for a pistol, however.
 * SHOTGUN: Fires ever so slightly faster, compared to the ordinary doom shotgun.
 * SUPER SHOTGUN: Autoloading shells means you can speedload this wonderful weapon even faster.
 * ROCKET LAUNCHER: Overall slightly buffed compared to the normal rocket launcher.
 * PLASMA RIFLE: The damage matches STRAIN's NFG, but it fires MUCH slower. Antaresian Cells are given in quantities of 16 (cell)/80 (cell pack).
-    * Balanced Mode: If you're not playing Antaresian Doomguy, it uses 2 cells per shot.
+	* Balanced Mode: If you're not playing Antaresian Doomguy, it uses 2 cells per shot.
 * BFG 9000: Uses 30 Antaresian Cells instead of 40 ordinary energy cells. The projectile does slightly less damage than the ordinary BFG.
 
 DOOM -1 (Community Project, 2020):
@@ -72,23 +72,24 @@ DOOM -1 (Community Project, 2020):
 * DARK SCEPTRE: A variant of the plasma rifle that fires slower but with projectiles that do slightly more damage and occasionally home in on enemies.
 	* If balanced mode is turned off, this weapon fires faster.
 	* If balanced mode is turned off, it also gains a VERY powerful altfire under specific circumstances. It feels a little...heretical?
-* UNMAKYR: Despite the new look, it's functionally identical to the BFG 9000. It's still a very powerful weapon, however.
-	* Turning balanced mode off enables Altfire. Though, really, what the $%^& is this?
+* UNMAKYR: Despite the new look, it's functionally identical to the BFG 9000, which is still a very good weapon.
+	* Alt-fire, referencing a weapon scrapped during development of DOOM -1, fires the old BFG. It's only available to the DOOM -1 Doomguy.
+	* Turning balanced mode off changes the Altfire entirely. Though, really, what the $%^& is this?
 
 ROWDY RUDY 2 (Doomkid, 2020):
 * FISTS: Rowdy Rudy's close quarters combat training enables him to punch faster and with better damage.
 * DOUBLE-BLADED CHAINSAW: This is obviously only meant for killing, and does so with twice the efficiency of the normal chainsaw.
 * RIFLE: It's perfectly accurate, and fires faster than the normal pistol, giving it a strong presence as Rudy's starting weapon.
 	* Change: Rowdy Rudy 2 doubles bullet ammo pickups (20/100 instead of 10/50), but for balance reasons it's kept at 10/50 here.
-    * Balanced Mode: Works identically to Rowdy Rudy 1, meaning it fires in bursts in two, but fires much slower.
-    * If balanced mode is turned off, it magically only uses one bullet per two shots to emulate doubled pickup sizes.
+	* Balanced Mode: Works identically to Rowdy Rudy 1, meaning it fires in bursts in two, but fires much slower.
+	* If balanced mode is turned off, it magically only uses one bullet per two shots to emulate doubled pickup sizes.
 * AUTOMATIC SHOTGUN: This weapon shreds demons far ahead of the relative competition, owing to a faster automatic reloading system.
 * CHAINGUN: Rowdy Rudy's chaingun is made from a darker metal, and fires faster, matching pace with DOOM -1's Uzi.
-    * If balanced mode is turned off, it magically only uses one bullet per two shots.
+	* If balanced mode is turned off, it magically only uses one bullet per two shots.
 * SUPER SHOTGUN: While Rowdy Rudy can reload the weapon faster than usual, ultimately this is just a return to the old reliable SSG.
-    * Balanced Mode: Rowdy Rudy cannot load the weapon faster than usual.
+	* Balanced Mode: Rowdy Rudy cannot load the weapon faster than usual.
 * ROCKET LAUNCHER: Putting the 'Rowdy' in Rowdy Rudy, this weapon fires faster than the ordinary Rocket Launcher.
-    * Balanced Mode: Fires at the same rate as the normal rocket launcher, but with the new sprites.
+	* Balanced Mode: Fires at the same rate as the normal rocket launcher, but with the new sprites.
 * BFG 9000: It's yellow now, and it's...basically identical to the standard BFG 9000. Sometimes, you can't beat the original.
 	* If balanced mode is turned off, it gets some additional tracers, in accordance with rowdy2.txt's description.
 
@@ -107,9 +108,9 @@ RAY MOHAWK 2 (Doomkid, 2021):
 * FLAMETHROWER: Ray doesn't use a conventional rocket launcher, and in its place is a flamethrower that's closer to the plasma rifle with a distinct ammo type.
 	* Change: Fuel pickups are 10/50 instead of 20/100 like they are in Ray Mohawk 2.
 	* Change: Moved from Slot 6 to Slot 5 for ammo consistency reasons.
-    * Balanced Mode: Base damage reduced from 15 to 7. Still stronger than the plasma rifle, but not by nearly as much.
+	* Balanced Mode: Base damage reduced from 15 to 7. Still stronger than the plasma rifle, but not by nearly as much.
 * CELL CANNON: Ray's explosive weapon. Awkwardly placed in the plasma slot but cell ammo comes in bigger packages, meaning he can get more value out of them.
 	* Change: Moved from Slot 5 to Slot 6 for ammo consistency reasons.
 	* Balanced Mode: Uses 5 cells (up from 1) because effectively infinite rockets is a bit much, and it does less damage.
 * BFG 9002: An upgrade to the BFG 9000, it does less direct hit damage, but far more tracer damage.
-    * Balanced Mode: Uses 50 cells per shot (up from 25), meaning that you've got to commit to using this thing.
+	* Balanced Mode: Uses 50 cells per shot (up from 25), meaning that you've got to commit to using this thing.
