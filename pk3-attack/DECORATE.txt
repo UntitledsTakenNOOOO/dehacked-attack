@@ -128,11 +128,32 @@ ACTOR DEHFatso : Fatso
 {
 	DamageFactor "Scrapper", 3.0
 	Tag "Mancubus"
+	+BOSSDEATH //Redundant, but added for consistency because I hate MAP07
+	States
+	{
+	Death:
+		FATT K 6
+		FATT L 6 A_Scream
+		FATT M 6 A_NoBlocking
+		FATT NOPQRS 6
+		FATT T -1 A_KillMaster
+		Stop
+	}
 }
 ACTOR DEHArachnotron : Arachnotron
 {
 	DamageFactor "Scrapper", 3.0
 	Tag "Arachnotron"
+	+BOSSDEATH //Redundant, but added for consistency because I hate MAP07
+	States
+	{
+	Death:
+		BSPI J 20 A_Scream
+		BSPI K 7 A_NoBlocking
+		BSPI LMNO 7
+		BSPI P -1 A_KillMaster
+		Stop
+	}
 }
 ACTOR DEHArchvile : Archvile
 {
@@ -325,6 +346,7 @@ ACTOR DehackedBaronSpawner : RandomSpawner replaces BaronOfHell
 	DropItem "EviternityAnnihilator", 256, 8 //10, 24
 }
 
+/*
 ACTOR DehackedFatsoSpawner : RandomSpawner replaces Fatso
 {
 	DropItem "DEHFatso", 256, 40 //1, 1
@@ -333,7 +355,52 @@ ACTOR DehackedFatsoSpawner : RandomSpawner replaces Fatso
 	DropItem "GreaterMancubus", 256, 10 //1, 13
 	DropItem "ValiantSuperMancubus", 256, 10 //19, 19
 }
+*/
+Actor DehackedFatsoSpawner Replaces Arachnotron
+{
+  +NoBlockMap
+  +NoSector
+  +NoGravity
+  +NoRadiusDMG
+  +NoInteraction
+  +IsMonster
+  +Shootable
+  +BossDeath
+  Health 1
+  Radius 0
+  Height 0
+  Mass 0x7FFFFFFF
+  States
+  {
+  Spawn:
+    TNT1 A 1 
+    TNT1 A 0 A_Jump(102, "Spawn1")
+    TNT1 A 0 A_Jump(85, "Spawn2")
+    TNT1 A 0 A_Jump(128, "Spawn3")
+    TNT1 A 0 A_Jump(128, "Spawn4")
+    Goto Spawn5
+  Spawn1:
+    TNT1 A 0 A_SpawnItemEx("DEHFatso", 0, 0, 0, 0, 0, 0, 0, SXF_SETMASTER|SXF_TRANSFERAMBUSHFLAG)
+    Goto Nothing 
+  Spawn2:
+    TNT1 A 0 A_SpawnItemEx("AlienFatso", 0, 0, 0, 0, 0, 0, 0, SXF_SETMASTER|SXF_TRANSFERAMBUSHFLAG)
+    Goto Nothing 
+  Spawn3:
+    TNT1 A 0 A_SpawnItemEx("FatsoII", 0, 0, 0, 0, 0, 0, 0, SXF_SETMASTER|SXF_TRANSFERAMBUSHFLAG)
+    Goto Nothing
+  Spawn4:
+    TNT1 A 0 A_SpawnItemEx("GreaterMancubus", 0, 0, 0, 0, 0, 0, 0, SXF_SETMASTER|SXF_TRANSFERAMBUSHFLAG)
+    Goto Nothing
+  Spawn5:
+    TNT1 A 0 A_SpawnItemEx("ValiantSuperMancubus", 0, 0, 0, 0, 0, 0, 0, SXF_SETMASTER|SXF_TRANSFERAMBUSHFLAG)
+    Goto Nothing
+  Death:
+    TNT1 A 1 A_BossDeath
+    Stop
+  }
+}
 
+/*
 ACTOR DehackedArachSpawner : RandomSpawner replaces Arachnotron
 {
 	DropItem "DEHArachnotron", 256, 16 //1, 1
@@ -345,6 +412,63 @@ ACTOR DehackedArachSpawner : RandomSpawner replaces Arachnotron
 	DropItem "AntaresianArachnotron", 256, 10 //2, 15
 	DropItem "MiniMastermind", 256, 10 //3, 18
 	DropItem "ArachnoRocketeer", 256, 10 //15, 21
+}
+*/
+Actor DehackedArachSpawner Replaces Arachnotron
+{
+  +NoBlockMap
+  +NoSector
+  +NoGravity
+  +NoRadiusDMG
+  +NoInteraction
+  +IsMonster
+  +Shootable
+  +BossDeath
+  Health 1
+  Radius 0
+  Height 0
+  Mass 0x7FFFFFFF
+  States
+  {
+  Spawn:
+    TNT1 A 1 
+    TNT1 A 0 A_Jump(153, "Spawn3", "Spawn4", "Spawn6", "Spawn7", "Spawn8", "Spawn9")
+    TNT1 A 0 A_Jump(153, "Spawn2", "Spawn5")
+    Goto Spawn1
+  Spawn1:
+    TNT1 A 0 A_SpawnItemEx("DEHArachnotron", 0, 0, 0, 0, 0, 0, 0, SXF_SETMASTER|SXF_TRANSFERAMBUSHFLAG)
+    Goto Nothing 
+  Spawn2:
+    TNT1 A 0 A_SpawnItemEx("AlienArachnotron", 0, 0, 0, 0, 0, 0, 0, SXF_SETMASTER|SXF_TRANSFERAMBUSHFLAG)
+    Goto Nothing 
+  Spawn3:
+    TNT1 A 0 A_SpawnItemEx("EviternityArachnotron", 0, 0, 0, 0, 0, 0, 0, SXF_SETMASTER|SXF_TRANSFERAMBUSHFLAG)
+    Goto Nothing
+  Spawn4:
+    TNT1 A 0 A_SpawnItemEx("PlasmaTank", 0, 0, 0, 0, 0, 0, 0, SXF_SETMASTER|SXF_TRANSFERAMBUSHFLAG)
+    Goto Nothing
+  Spawn5:
+    TNT1 A 0 A_SpawnItemEx("ValiantArachnotron", 0, 0, 0, 0, 0, 0, 0, SXF_SETMASTER|SXF_TRANSFERAMBUSHFLAG)
+    Goto Nothing
+  Spawn6:
+    TNT1 A 0 A_SpawnItemEx("ReliquaryArachnotron", 0, 0, 0, 0, 0, 0, 0, SXF_SETMASTER|SXF_TRANSFERAMBUSHFLAG)
+    Goto Nothing
+  Spawn7:
+    TNT1 A 0 A_SpawnItemEx("AntaresianArachnotron", 0, 0, 0, 0, 0, 0, 0, SXF_SETMASTER|SXF_TRANSFERAMBUSHFLAG)
+    Goto Nothing
+  Spawn8:
+    TNT1 A 0 A_SpawnItemEx("MiniMastermind", 0, 0, 0, 0, 0, 0, 0, SXF_SETMASTER|SXF_TRANSFERAMBUSHFLAG)
+    Goto Nothing
+  Spawn9:
+    TNT1 A 0 A_SpawnItemEx("ArachnoRocketeer", 0, 0, 0, 0, 0, 0, 0, SXF_SETMASTER|SXF_TRANSFERAMBUSHFLAG)
+    Goto Nothing
+  Nothing:
+    TNT1 A 1
+    Loop
+  Death:
+    TNT1 A 1 A_BossDeath
+    Stop
+  }
 }
 
 ACTOR DehackedArchSpawner : RandomSpawner replaces Archvile

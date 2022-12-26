@@ -123,7 +123,7 @@ ACTOR PlasmaTank : DEHArachnotron
 		Goto Idle
 	Reset:
 		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
-		TNT1 A 0 A_SpawnItemEx("ValiantArachnotron", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
+		TNT1 A 0 A_SpawnItemEx("DEHArachnotron", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION, 0)
 		Stop
 	Idle:
 		AVSP A 3 A_Look
@@ -161,7 +161,7 @@ ACTOR PlasmaTank : DEHArachnotron
 		AVSP W 6 Bright A_NoBlocking
 		AVSP X 6
 		AVSP Y 7
-		AVSP Z -1 A_BossDeath
+		AVSP Z -1 A_KillMaster
 		Stop
 	}
 }

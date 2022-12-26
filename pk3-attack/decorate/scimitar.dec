@@ -143,6 +143,7 @@ ACTOR FatsoII : DEHFatso
 {
   Obituary "%o was squashed by a type II mancubus."
   Tag "Mancubus II"
+  +BOSSDEATH //Redundant, but added for consistency because I hate MAP07
   States
   {
   Spawn:

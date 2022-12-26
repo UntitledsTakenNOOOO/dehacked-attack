@@ -305,6 +305,7 @@ ACTOR ValiantPyroDemon : DEHHellKnight
 ACTOR ValiantArachnotron : DEHArachnotron
 {
 	Tag "Valiant Arachnotron"
+	+BOSSDEATH //Redundant, but added for consistency because I hate MAP07
 	States
 	{
 	Spawn:
@@ -341,7 +342,7 @@ ACTOR ValiantArachnotron : DEHArachnotron
 		VSPI J 7 A_Fall
 		VSPI KLM 7
 		VSPI N 7
-		VSPI P -1 A_BossDeath
+		VSPI P -1 A_KillMaster
 		Stop
 	Death2:
 		VACB I 0 A_Fall
@@ -349,7 +350,7 @@ ACTOR ValiantArachnotron : DEHArachnotron
 		VACB J 11
 		VACB K 7
 		VACB L 7
-		VACB M -1 A_BossDeath
+		VACB M -1 A_KillMaster
 		Stop
 	Raise:
 		VSPI P 5
@@ -448,6 +449,7 @@ Actor ValiantSuperMancubus : DEHFatso
    ActiveSound "fatso/Active"
    Obituary "%o was torched by a super mancubus."
    Tag "Super Mancubus"
+   +BOSSDEATH //Redundant, but added for consistency because I hate MAP07
    States
    {
    Spawn:
@@ -484,7 +486,7 @@ Actor ValiantSuperMancubus : DEHFatso
       DAED L 6 A_Scream
       DAED M 6 A_NoBlocking
       DAED NOPQRS 6
-      DAED T -1 A_BossDeath
+      DAED T -1 A_KillMaster
       Stop
    Raise:
       DAED RQPONMLK 5

@@ -76,6 +76,7 @@ ACTOR AlienArachnotron : DEHArachnotron
 {
   Tag "Robo-alien"
   Obituary "%o let an alien get %h."
+  +BOSSDEATH //Redundant, but added for consistency because I hate MAP07
   States
   {
   Spawn:
@@ -110,7 +111,7 @@ ACTOR AlienArachnotron : DEHArachnotron
     AASP J 20 A_Scream
     AASP K 7 A_NoBlocking
     AASP LMNO 7
-    AASP P -1 A_BossDeath
+    AASP P -1 A_KillMaster
     Stop
   Raise:
     AASP P 5
@@ -123,6 +124,7 @@ ACTOR AlienFatso : DEHFatso
 {
   Tag "Alien Pastry Chef"
   Obituary "%o was squashed by an alien."
+  +BOSSDEATH //Redundant, but added for consistency because I hate MAP07
   States
   {
   Spawn:
@@ -157,7 +159,7 @@ ACTOR AlienFatso : DEHFatso
     AAFT L 6 A_Scream
     AAFT M 6 A_NoBlocking
     AAFT NOPQRS 6
-    AAFT T -1 A_BossDeath
+    AAFT T -1 A_KillMaster
     Stop
   Raise:
     AAFT R 5

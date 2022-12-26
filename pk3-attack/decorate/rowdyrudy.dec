@@ -620,6 +620,7 @@ Actor MiniMastermind : DEHArachnotron
 	ActiveSound "spider/active"
 	DropItem "Chaingun"
 	Tag "Mini-Mastermind"
+	+BOSSDEATH //Redundant, but added for consistency because I hate MAP07
 	States
 	{
 	Spawn:
@@ -657,7 +658,7 @@ Actor MiniMastermind : DEHArachnotron
 		MINS K 9 A_Fall
 		MINS LMNO 9 
 		MINS PQR 8 
-		MINS S -1 A_BossDeath
+		MINS S -1 A_KillMaster
 		stop
 	Raise:
 		MINS SONMLKJ 7
