@@ -120,7 +120,6 @@ ACTOR CacoLich : DEHCacodemon
     Pain:
          CALI H 3
          CALI I 6 A_Pain
-		 Goto See
     PainMissile:
          CALI EF 5 A_FaceTarget
          CALI G 2 A_TroopAttack

@@ -197,7 +197,7 @@ BOSSES:
 * Heresiarch (180 Minutes Pour Vivre): A powerful sorcerer that unleashes a torrent of fire and plasma when it attacks.
 * Gridlock Cardinal (Gridlock 64, 2017): A darker, green flying variant of the cyberdemon that cycles between different attacks. If flinched, it retaliates with a rocket.
 	* Change: Reduced health from 8000 down to 4800.
-* Hierophant (NOVA II: The Hirth, 2015): A flying afrit-like beast who can fire both a stream of baron projectiles and retaliates with a mancubus volley all at once.
+* Hierophant (NOVA II: The Birth, 2015): A flying afrit-like beast who can fire both a stream of baron projectiles and retaliates with a mancubus volley all at once.
 	* Change: Reduced health from 8000 down to 5400.
 * Hell Smith (Survive in Hell, 2012): This guy unleashes a powerful wave of 12 fireballs at once as his attack, and has a LOT of health. He spawns in the cyberdemon slot.
 	* Change: Health reduced from 20000 to 8000, because he isn't the final boss of the game anymore.
