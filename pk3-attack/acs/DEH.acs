@@ -510,6 +510,18 @@ Script "Dehacked_BossExitHandler" (int boss)
 	}
 }
 
+Script "Dehacked_LevelEndCheck" (void)
+{
+	if(GetCVar("deh_force_exit"))
+	{
+		Exit_Normal(0);
+	} else if(ThingCountName("DEHBossBrain", 0) > 0) {
+		Exit_Normal(0);
+	} else {
+		SetMusic("*");
+	}
+}
+
 Script "Dehacked_Death" DEATH
 {
 	if(GameType() == GAME_SINGLE_PLAYER)

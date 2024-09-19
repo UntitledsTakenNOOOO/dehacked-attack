@@ -157,7 +157,7 @@ Actor FinalBossHierophant : Hierophant2
     HIER MNO 6
 	HIER P 5
 	HIER Q 120 A_BrainScream
-	HIER Q -1 A_BrainDie
+	HIER Q -1 ACS_NamedExecute("Dehacked_LevelEndCheck", 0, 0, 0, 0)
     Stop
   }
 }

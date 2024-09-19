@@ -365,7 +365,7 @@ Actor NegativeOneBaphomet
 		NGBP I 5 A_Fall
 		NGBP JKLM 5 
 		NGBP N 100 
-		NGBP N -1 A_BrainDie
+		NGBP N -1 ACS_NamedExecute("Dehacked_LevelEndCheck", 0, 0, 0, 0)
 		stop
 	}
 }

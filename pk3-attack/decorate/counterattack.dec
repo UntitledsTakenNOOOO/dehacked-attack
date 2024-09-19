@@ -204,7 +204,7 @@ ACTOR BubbleShip
 		BUBS I 8 Bright
 		BUBS JK 8 Bright
 		TNT1 A 80
-		TNT1 A -1 A_BrainDie
+		TNT1 A -1 ACS_NamedExecute("Dehacked_LevelEndCheck", 0, 0, 0, 0)
 		Stop
 	}
 }

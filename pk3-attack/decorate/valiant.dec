@@ -793,7 +793,7 @@ ACTOR ValiantSuperVileFinal : ValiantSuperVile
 		DIAB VWX 7
 		DIAB Y 7
 		DIAB Z 64
-		DIAB Z -1 A_BrainDie
+		DIAB Z -1 ACS_NamedExecute("Dehacked_LevelEndCheck", 0, 0, 0, 0)
 		Stop
 	}
 }

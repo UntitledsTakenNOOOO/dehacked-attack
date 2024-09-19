@@ -539,7 +539,7 @@ Actor ArchangelusB
 		ANGL R 4 Bright A_Mushroom ("EviternityPlasma", 0, MSF_Classic, 1.2, 1.25)
 		ANGL S 4 Bright A_Mushroom ("FatShot", 0, MSF_Classic, 4.0, 0.5)
 		ANGL U 224 Bright 
-		ANGL U -1 Bright A_BrainDie
+		ANGL U -1 Bright ACS_NamedExecute("Dehacked_LevelEndCheck", 0, 0, 0, 0)
 		stop
 	}
 }

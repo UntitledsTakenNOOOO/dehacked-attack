@@ -689,7 +689,7 @@ ACTOR LeviathanFinal : Leviathan
     ALEV KLMNOPQRST 5 Bright
     ALEV U 5 Bright A_NoBlocking
     ALEV VWXY 5 Bright
-    ALEV Z -1 Bright A_BrainDie
+    ALEV Z -1 Bright ACS_NamedExecute("Dehacked_LevelEndCheck", 0, 0, 0, 0)
     Stop
   }
 }
@@ -831,7 +831,7 @@ ACTOR TheInquisitor
     AINQ G 7 A_NoBlocking
     AINQ H 7
     AINQ I 85
-    AINQ I -1 A_BrainDie
+    AINQ I -1 ACS_NamedExecute("Dehacked_LevelEndCheck", 0, 0, 0, 0)
     Stop
   }
 }

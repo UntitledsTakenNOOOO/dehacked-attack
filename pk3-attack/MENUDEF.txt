@@ -161,4 +161,9 @@ OptionMenu "DehackedAttackOptions"
 	StaticText "If enabled, bosses with an Archvile Attack aside from the Super Archvile can't use it."
 	Option "Boss Archvile Attack:", "deh_novileattack", "DehackedFinalBossNoVileAttack"
 	StaticText ""
+	StaticText "Force Level Exit on Final Boss Death", 1
+	StaticText "If a final boss is killed in a level with a boss shooter but no boss brain,"
+	StaticText "This will force the level to end regardless of level progression."
+	Option "Force Level Exit:", "deh_force_level_exit", "DehackedMonsterSelection"
+	StaticText ""
 }

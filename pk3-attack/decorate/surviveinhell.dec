@@ -287,7 +287,7 @@ ACTOR HellSmithFinal : HellSmith
     AVTR L 5 Bright A_NoBlocking
     AVTR MNO 5 Bright
     AVTR P 75
-    AVTR P -1 A_BrainDie
+    AVTR P -1 ACS_NamedExecute("Dehacked_LevelEndCheck", 0, 0, 0, 0)
     Stop
   }
 }

@@ -211,7 +211,7 @@ ACTOR AngryMastermindFinalPhase2 : AngryMastermind
     RSPD N 10 A_NoBlocking
     RSPD OPQRSTU 10
     RSPD V 30
-    RSPD V -1 A_BrainDie
+    RSPD V -1 ACS_NamedExecute("Dehacked_LevelEndCheck", 0, 0, 0, 0)
     Stop
   }
 }

@@ -1,6 +1,7 @@
 server int deh_finalboss = 1;
 server int deh_finalbossmusic = 1;
 server int deh_finalbosspreview = 1;
+server bool deh_force_exit = 0;
 server bool deh_novileattack = false;
 
 server int deh_level_scaling = 0;

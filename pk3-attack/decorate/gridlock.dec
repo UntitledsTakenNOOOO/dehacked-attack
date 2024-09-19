@@ -273,7 +273,7 @@ ACTOR GridlockCardinalFinalPhase2 : GridlockCardinal
     GCRD K 10 A_NoBlocking
     GCRD L 10
     GCRD M 50
-    GCRD M -1 A_BrainDie
+    GCRD M -1 ACS_NamedExecute("Dehacked_LevelEndCheck", 0, 0, 0, 0)
     Stop
   }
 }
